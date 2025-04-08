@@ -12,9 +12,9 @@
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `<w:body>` | `<body>` | body | the main part of file in xml (and html5) | | |
 | `<w:p>` | `<p>` | paragraph | A paragraph | notice that if an end-user only inputs an whitespace in .docx file, it will have `<w:p>` tag, see `docx格式文档详解：xml解析并用html还原`[^1] | 
-| `<w:pPr>` | | paragraph property | property of a paragraph in Microsoft Word file | Pr stands for Property | |
+| `<w:pPr>` | | paragraph property | property of a paragraph in Microsoft Word file | Pr stands for *Pr*operty | |
 | `<w:spacing>` | spacing | settings about spacing between paragraphs | | |
-| `<w:jc>` | | justification | settings about justification (alignment) of the paragraph | jc stands for **j**ustifi**c**ation | |
+| `<w:jc>` | | justification | settings about justification (alignment) of the paragraph | jc stands for *j*ustifi*c*ation | |
 | `<w:tbl>` | `<table>` | table | a table in Microsoft Word file | tbl stands for table | |
 | `<w:tr>` | `<tr>` | table row | a row of a table | t stands for table, r stands row | |
 | `<w:tblPr>` | | table property | property (such as style and appearance) of a table in Microsoft Word file | | |
