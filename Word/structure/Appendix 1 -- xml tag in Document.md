@@ -46,6 +46,9 @@
 | `<w:col>` | | columns in section | add columns in section (that is inside `<w:sectPr>` tag) | | |
 | `<w:docGrid>` | | document grid | add document grid (that is inside `<w:sectPr>` tag) | | |
 | | | | | | | | 
+| `<w:tabs>` | | many tabs | define lots of a tab stop you may see lots of | you may see one or more `<w:tab>` tag inside `<w:tabs>` tag. | | 
+| `<w:tab>` | | tab | define property of a tab stop by assign the value to its attributes. | | | 
+| | | | | | | | 
 | `<w:bookmarkStart>` | | bookmark start | defines a bookmark with start point | | One `<w:bookmarkStart>` tag must match one `<w:bookmarkEnd>` tag. Otherwise, the file is corrupted. | 
 | `<w:bookmarkEnd>` | | bookmark end | defines a bookmark with end point to enclose a bookmark | | Same as above | 
 | | | | | | | | 
@@ -63,6 +66,11 @@
 | `w:rsidR` | | revision id for run | assign the value of revision id for run  | rs stands for *r*evi*s*ion, R stands for *R*un | |
 | `w:rsidRDefault` | | revision id for run default | assign the default value of revision id for run  | rs stands for *r*evi*s*ion, R stands for *R*un | |
 | `w:rsidSect` | | revision id for section | assign the default value of revision id for section | rs stands for *r*evi*s*ion | |
+
+###### attribute in `<w:tab>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| w:val | | | determines alignment or behavior of the tab stop. | | |
 
 ###### attribute in `<w:sz>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
