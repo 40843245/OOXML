@@ -1,7 +1,13 @@
 # Appendix 2 -- available options of attribute of tag in xml for Word
 ## tables
-### namespace in xml tag
+### `<w:docGrid>` -> `w:linePitch` attribute
+#### available options of attribute in tag
+
+> [!WARNING]
+> I refers from Google Gemini's answer which may be incorrect.
+
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `<w>` | `<word>` | Microsoft Word | indicates that it describes xml content of a Microsoft Word file.| w stands for Microsoft Word | |
-| `<o>` | `<ol>` | ordered list | an ordered list (including a numbered list) | o stands for ordered, l stands for list | |
+| `lines` | | | The grid controls the vertical spacing of lines. | | |
+| `snapToChars` | | | The grid aligns to character boundaries. | | |
+| `fixed` | | | A fixed horizontal and vertical grid. | | |
