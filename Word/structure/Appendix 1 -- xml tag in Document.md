@@ -34,8 +34,9 @@
 | `<w:tblPr>` | | table property | configure property (such as style and appearance) of a table (that is inside `<w:tbl>` tag) in Microsoft Word file | | |
 | `<w:tblGrid>` | `<tr>` (first occurence) | table grid | defines a grid (header) of a table in Microsoft Word file | you can think of a grid like a header row ( consists of lots of columns ) in table | |
 | `<w:gridCol>` | `<th>` | table grid column | defines a cell in a grid of a table in Microsoft Word file | | it must be inside `<w:tblGrid>` tag. Otherwise, the Word file is corrupted. |
-| `<w:tr>` | `<tr>` | table row | a row of a table | t stands for table, r stands row | |
-| `<w:tc>` | `<td>` | table cell | an cell of a table | c stands for cell | |
+| `<w:tr>` | `<tr>` | table row | a row of a table | t stands for *t*able, r stands *r*ow | |
+| `<w:tc>` | `<td>` | table cell | an cell of a table | c stands for *c*ell | |
+| `<w:tcW>` | | table cell width | determines the width of the cell of a table | W stands for *w*idth | |
 | `<w:tcPr>` | | table cell property | configure property of a table cell (that is inside `<w:tc>` tag) | including width and grid span | |
 | `<w:tblStyle>` | | table style | applies style (according to value of `w:val` attribute) to paragraph (that is inside `<w:tbl>` tag) | the style to apply is defined in `~/word/style.xml` file | |
 | | | | | | | | 
@@ -105,6 +106,12 @@
 | w:charSpace | | horizontal spacing | assign an value to determine horizontal spacing between grid lines in section (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
 | w:type | | type of document grid | assign an value to determine the type of document grid will be used in section (that is inside `<w:sectPr>` tag) | See `Appendix 2`[^2] for more information | |
 | w:lineGrid | | number of line per grid | assign an value to determine number of line per grid in section (that is inside `<w:sectPr>` tag) | | its value must be positive number. |
+
+###### attribute in `<w:tbW>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| w:w | | width | assign an value to determine the width of the cell (that is inside `<w:tc>` tag) | NOTES that its unit is not necessary twips (its unit is according to value of `w:type` attribute. See next record | |
+| w:type | | type | assign an value to determine its unit | | |
 
 ###### attribute in `<w:pStyle>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
