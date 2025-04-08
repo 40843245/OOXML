@@ -85,6 +85,12 @@
 | w:bottom | `margin-bottom` in css | assign the value to determine bottom of page margin (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
 | w:left | `margin-left` in css | assign the value to determine left of page margin (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
 
+###### attribute in `<w:cols>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| w:space | | assign an value  (that is inside `<w:sectPr>` tag) will apply to | its unit is twips (twentieths of a point). | |
+
+
 ###### attribute in `<w:pStyle>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
