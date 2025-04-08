@@ -42,6 +42,8 @@
 | `<w:sectPr>` | | sect property | configure property of a sect | sect stands for section | |
 | `<w:pgSz>` | | page size | configures a page size (that is inside `<w:sectPr>` tag) | pg stands for *p*a*g*e | |
 | `<w:pgMar>` | | page margin | configures a page margin (that is inside `<w:sectPr>` tag) | Mar stands for *Mar*gin | |
+| `<w:col>` | | columns in section | add columns in section (that is inside `<w:sectPr>` tag) | | |
+| `<w:docGrid>` | | document grid | add document grid (that is inside `<w:sectPr>` tag) | | |
 | | | | | | | | 
 | `<w:bookmarkStart>` | | bookmark start | defines a bookmark with start point | | One `<w:bookmarkStart>` tag must match one `<w:bookmarkEnd>` tag. Otherwise, the file is corrupted. | 
 | `<w:bookmarkEnd>` | | bookmark end | defines a bookmark with end point to enclose a bookmark | | Same as above | 
@@ -80,16 +82,24 @@
 ###### attribute in `<w:pgMar>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| w:top | `margin-top` in css | assign the value to determine top of page margin (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
-| w:right | `margin-right` in css | assign the value to determine right of page margin (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
-| w:bottom | `margin-bottom` in css | assign the value to determine bottom of page margin (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
-| w:left | `margin-left` in css | assign the value to determine left of page margin (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
+| w:top | `margin-top` in css | margin-top |assign the value to determine top of page margin (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
+| w:right | `margin-right` in css | margin-right | assign the value to determine right of page margin (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
+| w:bottom | `margin-bottom` in css | margin-bottom | assign the value to determine bottom of page margin (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
+| w:left | `margin-left` in css | margin-left | assign the value to determine left of page margin (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
+| w:header | | header | assign the value to determine the distance from the top edge to the header (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
+| w:footer | | footer | assign the value to determine the distance from the bottom edge to the footer (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
+| w:footer | | footer | assign the value to determine gutter margin (for binding) | its unit is twips (twentieths of a point). | |
 
 ###### attribute in `<w:cols>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| w:space | | assign an value  (that is inside `<w:sectPr>` tag) will apply to | its unit is twips (twentieths of a point). | |
+| w:space | | space | assign an value to determine the space between columns in section (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
 
+###### attribute in `<w:docGrid>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| w:linePitch | | space | assign an value to determine the vertical spacing between grid lines in section (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
+| w:type | | type of document grid | assign an value to determine the type of document grid will be used in section (that is inside `<w:sectPr>` tag) | | |
 
 ###### attribute in `<w:pStyle>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -114,9 +124,8 @@ Way to parsing it is similar to parsing `<w:pStyle>`.
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:id` | `id` in native html5 | id of end point of bookmark | assign the id of end point of bookmark that in the tag | |
 
-
 ##### examples and explanations
-###### example 1
+###### example 1 -- run
 ```
 <w:r>
   <w:rPr>
@@ -153,7 +162,7 @@ it also configure the default size is 52 for **complex script characters** (like
 > [APPRECIATION]
 > Thanks to Google Gemini, it refers from Google Gemini's answer.
 
-###### example 2
+###### example 2 -- table
 
 ```
 <w:tbl>
