@@ -34,7 +34,8 @@
 | | | | | | | | 
 | `<w:tbl>` | `<table>` | table | a table in Microsoft Word file | tbl stands for table | |
 | `<w:tblPr>` | | table property | configure property (such as style and appearance) of a table (that is inside `<w:tbl>` tag) in Microsoft Word file | | |
-| `<w:tblGrid>` | | table column | columns of a table in Microsoft Word file | you can think of a grid as a lots of columns in table | |
+| `<w:tblGrid>` | `<tr>` (first occurence) | table grid | defines a grid (header) of a table in Microsoft Word file | you can think of a grid like a header row ( consists of lots of columns ) in table | |
+| `<w:gridCol>` | `<th>` | table grid column | defines a cell in a grid of a table in Microsoft Word file | | it must be inside `<w:tblGrid>` tag. Otherwise, the Word file is corrupted. |
 | `<w:tr>` | `<tr>` | table row | a row of a table | t stands for table, r stands row | |
 | `<w:tc>` | `<td>` | table cell | an cell of a table | c stands for cell | |
 | `<w:tcPr>` | | table cell property | configure property of a table cell (that is inside `<w:tc>` tag) | including width and grid span | |
@@ -63,6 +64,14 @@
 ###### attribute in `<w:pStyle>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
+| w:val | `value` in native html5 | assign an Guid as value that determines what the paragraph (that is inside `<w:p>` tag) will apply to | | |
+
+###### attribute in `<w:tblStyle>`
+Way to parsing it is similar to parsing `<w:pStyle>`.
+
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| w:val | `value` in native html5 | assign an Guid as value that determines what the table (that is inside `<w:tbl>` tag) will apply to | | |
 
 ###### attribute in `<w:bookmarkStart>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -73,7 +82,8 @@
 ###### attribute in `<w:bookmarkEnd>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w:id` | `id` in native html5 | id of end point of bookmark | assign the id of end point of bookmark that in the tag | | |
+| `w:id` | `id` in native html5 | id of end point of bookmark | assign the id of end point of bookmark that in the tag | |
+
 
 ##### examples and explanations
 ###### example 1
