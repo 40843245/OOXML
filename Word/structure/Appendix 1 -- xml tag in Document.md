@@ -70,7 +70,9 @@
 ###### attribute in `<w:tab>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| w:val | | | determines alignment or behavior of the tab stop. | | |
+| w:val | | | determines alignment or behavior of the tab stop. | This attribute is required. | |
+| w:pos | | | determines position of the tab stop. | This attribute is required. | |
+| w:leader | | leader character | determines leader character that will fill the space before the tab stop.  | This attribute is optional. | |
 
 ###### attribute in `<w:sz>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
