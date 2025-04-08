@@ -1,5 +1,18 @@
 # Appendix 2 -- available options of attribute of tag in xml for Word
 ## tables
+### `<w:tab>` -> `w:val` attribute
+> [!WARNING]
+> I refers from Google Gemini's answer which may be incorrect.
+
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `left` | | left-aligned | The text that flows into the tab stop will be left-aligned at that position. | |
+| `right` | | right-aligned | The text that flows into the tab stop will be right-aligned at that position. | |
+| `center` | | center-aligned | The text that flows into the tab stop will be center-aligned at that position. | |
+| `decimal` | | decimal point | Numbers will be aligned by their decimal point. | |
+| `bar` | | tab-bar | A vertical line (i.e. tab bar) will be inserted at the tab stop position | |
+| `clear` | | clear | Removes a previously defined tab stop at the specified position. | |
+
 ### `<w:tcW>` -> `w:type` attribute
 #### available options of attribute in tag
 
