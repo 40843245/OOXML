@@ -27,8 +27,8 @@
 | `<w:tblGrid>` | | table column | columns of a table in Microsoft Word file | you can think of a grid as a lots of columns in table | |
 | `<w:tc>` | `<td>` | table cell | an cell of a table | c stands for cell | |
 | `<w:tcPr>` | | table cell property | configure property of a table cell (configure property of the tag that is inside `<w:tc>` tag) | including width and grid span | |
-| `<w:rsidRDefault>`
-
+| | | | | | | | 
+| `<w:bookmarkStart>`| 
 ###### attribute in `<w:p>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
