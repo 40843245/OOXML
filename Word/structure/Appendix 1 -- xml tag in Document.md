@@ -31,7 +31,6 @@
 | `<w:szCs>` | | size | defines a font size for complex script characters (that is inside `<w:rPr>` tag) | Cs stands for *C*omplex *s*cript | |
 | | | | | | | | 
 | `<w:pgSz>` | | page size | defines a page size (that is inside `<w:sectPr>` tag) | pg stands for *p*a*g*e | |
-
 | | | | | | | | 
 | `<w:tbl>` | `<table>` | table | a table in Microsoft Word file | tbl stands for table | |
 | `<w:tblPr>` | | table property | configure property (such as style and appearance) of a table (that is inside `<w:tbl>` tag) in Microsoft Word file | | |
