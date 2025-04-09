@@ -9,7 +9,8 @@ According to this article -- [`Adjusting Text Pitch`](https://wordribbon.tips.ne
 In traditional typing, pitch is defined as a unit of measurement indicating the number of characters to a horizontal inch.
 ```
 
-<img width="952" alt="image" src="https://github.com/user-attachments/assets/9d98c888-2c7b-48f5-855d-18b0aa2c4c8d" />
+<img width="952" alt="image" src="https://github.com/user-attachments/assets/c7080e93-0684-42eb-8c76-36ee6b93e05f" />
+
 
 ### unit measurements
 See `Appendix 3`[^1] for more explanation.
