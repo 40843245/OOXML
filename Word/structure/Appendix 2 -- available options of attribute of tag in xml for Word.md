@@ -52,7 +52,10 @@
 
 ### `<w:plt>` -> `w:val` attribute
 #### available options of attribute in tag
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"SingleLevel"`| | single-level | says that it is a single-level list | | |
+| `"MultiLevel"`| | multi-level | says that it is a multi-level list | | |
 
 ### `<w:lvl>` -> `w:ilvl` attribute
 > [!WARNING]
