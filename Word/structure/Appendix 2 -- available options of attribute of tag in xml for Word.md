@@ -57,7 +57,26 @@
 | `"SingleLevel"`| | single-level | says that it is a single-level list | | |
 | `"MultiLevel"`| | multi-level | says that it is a multi-level list | | |
 
+### `<w:start>` -> `w:val` attribute
+#### available options of attribute in tag
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"1"`| | | first item at this list level will be numbered or lettered starting from 1 (or equivalent corresponding symbol with different number formatting) | | |
+
+### `<w:numFmt>` -> `w:val` attribute
+#### available options of attribute in tag
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"decimal"` | | decimal number | the item in the list level will be numbered by number (for example, the list starts witg `1`, `2`, `3`, and so on. | | |
+| `"lowerRoman"` | | lowercase roman number | the item in the list level will be numbered by lowercase of roman number (for example, the list starts with `i`, `ii`, `iii`, and so on. | | |
+| `"upperRoman"` | | uppercase roman number | the item in the list level will be numbered by uppercase of roman number (for example, the list starts with `I`, `II`, `III`, and so on. | | |
+| `"lowerLetter"` | | lowercase alphabet | the item in the list level will be numbered by lowercase of alphabet (for example, the list starts from `a`, `b`, `c`, and so on. | | |
+| `"upperLetter"` | | uppercase alphabet | the item in the list level will be numbered by uppercase of alphabet (for example, the list starts from `A`, `B`, `C`, and so on. | | |
+| `"bullet"` | | bullet | the item in the list level will be lettered by bullet character (for example, the list starts from `●`, `●`, `●`, and so on. | | |
+| `"none"` | | nothing | the item in the list level will be listed without use of number, lettering, bullet character etc.  | | |
+
 ### `<w:lvl>` -> `w:ilvl` attribute
+
 > [!WARNING]
 > I refers from Google Gemini's answer which may be incorrect.
 
@@ -66,11 +85,3 @@
 | `"0"` | | | defines the formatting for the first level of the list.  | zero-based | | 
 | `"1"` | | |  defines the top-most or first level of the list.| | | 
 | etc | | | | | | 
-
-
-> [!WARNING]
-> I refers from Google Gemini's answer which may be incorrect.
-
-| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"SingleLevel"` | | single level | indicates that this list definition is designed for a simple (or exactly siad, single-level) list. |  
