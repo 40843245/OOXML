@@ -34,7 +34,7 @@
 | `<w:tblPr>` | | table property | configure property (such as style and appearance) of a table (that is inside `<w:tbl>` tag) in Microsoft Word file | | |
 | `<w:tblGrid>` | `<tr>` (first occurence) | table grid | defines a grid (header) of a table in Microsoft Word file | you can think of a grid like a header row ( consists of lots of columns ) in table | |
 | `<w:gridCol>` | `<th>` | table grid column | defines a cell in a grid of a table in Microsoft Word file | | it must be inside `<w:tblGrid>` tag. Otherwise, the Word file is corrupted. |
-| `<w:tr>` | `<tr>` | table row | a row of a table | t stands for *t*able, r stands *r*ow | |
+| `<w:tr>`| `<tr>` | table row | a row of a table | t stands for *t*able, r stands *r*ow | |
 | `<w:tc>` | `<td>` | table cell | an cell of a table | c stands for *c*ell | |
 | `<w:tcW>` | | table cell width | determines the width of the cell of a table | W stands for *w*idth | |
 | `<w:tcPr>` | | table cell property | configure property of a table cell (that is inside `<w:tc>` tag) | including width and grid span | |
@@ -52,6 +52,10 @@
 | `<w:bookmarkStart>` | | bookmark start | defines a bookmark with start point | | One `<w:bookmarkStart>` tag must match one `<w:bookmarkEnd>` tag. Otherwise, the file is corrupted. | 
 | `<w:bookmarkEnd>` | | bookmark end | defines a bookmark with end point to enclose a bookmark | | Same as above | 
 | | | | | | | | 
+| `<w:listDef>` | | list definition | defines a list with specific id for style | | |
+| `<w:lsid>` | | list style id | assign the value of `w:val` attribute to id of list style to determine which style will be used | the id is defined in `~/word/style.xml` | |
+| `<w:lvl>` | | list level | defines a level of list | lvl stands for *l*e*v*e*l* | |
+| `<w:plt>` | | picture list type (exactly to say, list pattern type in modern version of Word) | it describes the complexity or structure of the list definition|  
 
 ###### attribute in `<w:p>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -60,7 +64,7 @@
 | `w:rsidRDefault` | | revision id for run default | assign the default value of revision id for run  | rs stands for *r*evi*s*ion, R stands for *R*un | |
 | `w:rsidSect` | | revision id for section | assign the default value of revision id for section | rs stands for *r*evi*s*ion | |
 
-###### attribute in `<w:p>`
+###### attribute in `<w:r>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:rsidR` | | revision id for run | assign the value of revision id for run  | rs stands for *r*evi*s*ion, R stands for *R*un | |
@@ -126,14 +130,19 @@
 ###### attribute in `<w:pStyle>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| w:val | `value` in native html5 | assign an Guid as value that determines what the paragraph (that is inside `<w:p>` tag) will apply to | | |
+| w:val | `value` in native html5 | assign an Guid as value that determines what style of 7the paragraph (that is inside `<w:p>` tag) will apply to | | |
 
 ###### attribute in `<w:tblStyle>`
 Way to parsing it is similar to parsing `<w:pStyle>`.
 
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| w:val | `value` in native html5 | assign an Guid as value that determines what the table (that is inside `<w:tbl>` tag) will apply to | | |
+| w:val | `value` in native html5 | assign an Guid as value that determines what style of the table (that is inside `<w:tbl>` tag) will apply to | | |
+
+###### attribute in `<w:lsid>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| w:val | `value` in native html5 | assign an Guid as value that determines what style of the list (that is inside `<w:listDef>` tag) will apply to | | |
 
 ###### attribute in `<w:bookmarkStart>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -145,6 +154,16 @@ Way to parsing it is similar to parsing `<w:pStyle>`.
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:id` | `id` in native html5 | id of end point of bookmark | assign the id of end point of bookmark that in the tag | |
+
+###### attribute in `<w:listDef>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:listDefId` | | list definition id | specify the unique id when defines a list to determine which style will be used. | |
+
+###### attribute in `<w:plt>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | specifies the value of the list pattern type | |
 
 ##### examples and explanations
 ###### example 1 -- run
