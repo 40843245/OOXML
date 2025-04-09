@@ -27,6 +27,8 @@ It's like a dictionary, search it when you want to know a vocabulary.
 >
 > Read with caution.
 
+### xml declaration
+See `Appendix 1 -- tags in xml`[^3]
 ### namespace declaration in xml tag 
 | namespace in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
@@ -105,11 +107,6 @@ You can know which namespaces in `xmlns` namespace are declared through finding 
 | `<o:Notes>` | | notes | estimated of the number of notes in the document. | (Potentially for notes in the document). | |
 | `<o:MMClips>` | | *M*utli*m*edia clips | estimated of the number of mutlimedia clips in the document. | (Potentially for embededded mutlimedia in the document). | |
 
-###### xml attribute
-###### attribute in `<o>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-
 #### `<w>` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
@@ -120,6 +117,7 @@ You can know which namespaces in `xmlns` namespace are declared through finding 
 | `<w:charset>` | `<charset>` in native html5 | charset | configure charset of this font | | |
 | `<w:family>` | | family | configure family of this font | | |
 | `<w:pitch>` | | character's pitch | configure pitch of characters that uses this font. | | | 
+| `<w:defaultFont>` | | configure the default font | | |
 | `<w:font>` | font in native css | define a font | | |
 | `<w:sig>` | | digital signature | encapsulate the digital signature of this font. | | | 
 | `<w:panose1>` | | panose | configure the panose (with highest priority) | The lower number is it, the higher priority it has. | |
@@ -210,6 +208,9 @@ You can know which namespaces in `xmlns` namespace are declared through finding 
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:val` | | value | assign a value to determine which how many pitches will be used for those text that uses this font. | | |
+
+###### attribute in `<w:defaultFonts>`
+Same as attribute in `<w:rFonts>`.
 
 ###### attribute in `<w:p>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -467,8 +468,10 @@ In this example, we can know that
 
 [^2]:[Appendix 2 -- available options of attribute of tag in xml for Word](https://github.com/40843245/XmlOfOffice/blob/main/Word/structure/Appendix%202%20--%20available%20options%20of%20attribute%20of%20tag%20in%20xml%20for%20Word.md#appendix-2----available-options-of-attribute-of-tag-in-xml-for-word)
 
-[^3]:[`docx格式文档详解：xml解析并用html还原`](https://juejin.cn/post/7166821284087595038)
+[^3]:[`Appendix 1 -- tags in xml`](https://github.com/40843245/Xml/blob/main/structure/Appendix%201%20--%20tags%20in%20xml.md)
 
 [^4]:[9.2 Relationships in Office Open XML](https://ooxml.info/docs/9/9.2/)
 
 [^5]:[ DocumentFormat.OpenXml.Linq.WNE class (MSDS API reference)](https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.linq.wne?view=openxml-3.0.1) 
+
+[^6]:[`docx格式文档详解：xml解析并用html还原`](https://juejin.cn/post/7166821284087595038)
