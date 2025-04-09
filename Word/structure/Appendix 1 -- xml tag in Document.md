@@ -60,6 +60,8 @@
 | `<w:numFmt>` | | number formatting | determines whether this level uses numbers or bullets, and the specific style  | | |
 | `<w:bullet>` | | bullet formatting | same above| | |
 | `<w:numPr>` | | number property | configure the property if it7 uses number formatting.  | | |
+| `<w:suff>` | | suffix | specifies what character (if any) follows the number (e.g., a period, a hyphen, or a tab) | | |
+| `<w:lvlText>` | | level text | defines the numbering format using placeholders (e.g., "%1." for first-level numbers) | | |
 
 ###### attribute in `<w:p>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
