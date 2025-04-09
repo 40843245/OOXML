@@ -57,6 +57,9 @@
 | `<w:lvl>` | | list level | defines a level of list | lvl stands for *l*e*v*e*l* | |
 | `<w:plt>` | | picture list type (exactly to say, list pattern type in modern version of Word) | it describes the complexity or structure of the list definition | | |   
 | `<w:tmpl>` | | template | it configure the what template will be used | <ol><li>tmpl stands for *t*e*mpl*ate</li><li>It accords to value of `W:val` attribute.</li><li>The template that will be used must be prefined (usually is predefined in `~/word/style.xml` or `~/word/template.xml`</li></ol> | | 
+| `<w:numFmt>` | | number formatting | determines whether this level uses numbers or bullets, and the specific style  | | |
+| `<w:bullet>` | | bullet formatting | same above| | |
+| `<w:numPr>` | | number property | configure the property if it7 uses number formatting.  | | |
 
 ###### attribute in `<w:p>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
