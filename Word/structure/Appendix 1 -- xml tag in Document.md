@@ -63,11 +63,56 @@ It's like a dictionary, search it when you want to know a vocabulary.
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w` | | Microsoft Word | indicates that it describes xml content of a Microsoft Word file.| w stands for Microsoft *W*ord | |
 
+### namespace declared in `<w:wordDocument>`
+You can know which namespaces in `xmlns` namespace are declared through finding `xmlns` in `<w:wordDocument>`.
+
+| namespace in xml tag | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `o` | *O*ffice-specific namespace | it contains metadata about the Word document itself. | | |
+
 ### element in xml tag for OOXML
+#### `<o>` namespace
+`o` namespace contains metadata about the Word document itself.
+
+| element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `<o:DocumentProperties>` | | document property | defines a property for the document itself. | | |
+| `<o:Subject>` | | document subject | configures the subject of the document itself. | | |
+| `<o:Author>` | | document author | configures the author of the document itself. | | |
+| `<o:Keywords>` | | document keywords | configures keywords or tags associated with the document itself. | | |
+| `<o:Description>` | | document description | configures the description of the document itself. | | |
+| `<o:LastAuthor>` | | last saved author | configures the author who saved the document itself recently. | | |
+| `<o:Revision>` | | document revision number | configures the revision number of the document itself recently. | | |
+| `<o:TotalTime>` | | total time | stores the total time spent on the document itself. | | |
+| `<o:LastPrinted>` | | last printed date and time | stores the date and time of last print to the document itself. | | |
+| `<o:Created>` | | created date and time | stores the date and time the document was created. | | |
+| `<o:LastSaved>` | | last saved date and time | stores the date and time the document was last saved. | | |
+| `<o:Company>` | | company | stores the company or organization associated with the document. | | |
+| `<o:Manager>` | | manager | stores the manager or responsible person for the document. | | |
+| `<o:Category>` | | category | stores the category of the document. | | |
+| `<o:PresentationFormat>` | | Presentation Format | The format used when saving as a presentation. | | |
+| `<o:Bytes>` | | bytes | estimated of the document size in bytes. | | |
+| `<o:Words>` | | words | estimated of the number of words in the document. | | |
+| `<o:Characters>` | | characters | estimated of the number of characters in the document. | excluding spaces. | |
+| `<o:CharactersWithSpaces>` | | characters | estimated of the number of characters in the document. | including spaces. | |
+| `<o:Lines>` | | lines | estimated of the number of lines in the document. | | |
+| `<o:Paragraphs>` | | paragraphs | estimated of the number of paragraphs in the document. | | |
+| `<o:Version>` | | version | The version number of the application that created the document. | | |
+| `<o:GUID>` | | Guid | Guid of the document. | | |
+| `<o:HyperlinkBase>` | | base of hyperlink | The base path or URL for hyperlinks within the document. | | |
+| `<o:Slides>` | | slides | estimated of the number of slides in the Slide. | (Potentially for PowerPoint documents etc embedded in Word) | |
+| `<o:HiddenSlides>` | | notes | estimated of the number of hidden slides in the document. | (Potentially for PowerPoint documents etc embedded in Word) | |
+| `<o:Notes>` | | notes | estimated of the number of notes in the document. | (Potentially for notes in the document). | |
+| `<o:MMClips>` | | *M*utli*m*edia clips | estimated of the number of mutlimedia clips in the document. | (Potentially for embededded mutlimedia in the document). | |
+
+###### xml attribute
+###### attribute in `<o>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+
 #### `<w>` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `o` | `<ol>` | ordered list | an ordered list (including a numbered list) | o stands for *o*rdered, l stands for *l*ist | |
 | `<w:wordDocument>` | `<html>` | root node | the root node of a Microsoft Word file. | | |
 | `<w:ignoreSubtree>` | | ignore a specific subtree | it instructs the Word processor to ignore a specific subtree of the XML document (according to the value of `w:val` attribute) during processing. | | | 
 | `<w:body>` | `<body>` | body | the main part of file in native xml (and native html5) | | |
@@ -134,9 +179,10 @@ It's like a dictionary, search it when you want to know a vocabulary.
 | `<w:nfc>` | | Number Formatting Code | configures Number Formatting Code of this level | nfc stands for *N*umber *F*ormatting *C*ode | | 
 
 ###### xml attribute
+###### attribute in `xmlns` namespace
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `xml:space` | | space | assign a value to determine how to deal with whitespace (i.e. ` `, `\t`,`\n`).
+| `xmlns:space` | | space | assign a value to determine how to deal with whitespace (i.e. ` `, `\t`,`\n`).
 
 ###### attribute in `<w:word>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
