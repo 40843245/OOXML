@@ -22,6 +22,11 @@ After all, it only lists some tags and its attribute in OOXML.
 It's like a dictionary, search it when you want to know a vocabulary.
 
 ## tables
+> [!WARNING]
+> Most content of these table are refered from Google Gemini's answer or from non-official website, which BOTH may be incorrect.
+>
+> Read with caution.
+
 ### namespace declaration in xml tag 
 | namespace in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
