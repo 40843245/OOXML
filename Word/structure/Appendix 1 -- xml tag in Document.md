@@ -1,4 +1,26 @@
 # Appendix 1 -- xml tag in Document.md
+## Prequisite
+To have a better understanding of a list of tags in OOXML, it's better to be familiar with these basic knowledgement or concepts before looking at these articles.
+
++ concept of layout, style, headings etc that will be used in a Document.
++ commonly used terms. (Some advanced terms can be reviewed at this article -- `Prequisite Review 1 -- terms`[^1] )
++ commonly used tags (and theire attributes) in native html5.
++ concepts of namespace, class in OO (Object-Oriented) design pattern.
++ concepts of `Part and Relationship in OOXML`[^4].
+
+## Suggestion
+Here is my suggestion to reader.
+
+**NEVER cram these tags in OOXML into your brain (死記，沒理解就硬塞東西)**. Otherwise, you may got stuck on this.
+
+Just understand these commonly used tags in OOXML then remember (理解在記住) it.
+
+For those uncommonly used tags and attribute, **search it when you need it**. 
+
+After all, it only lists some tags and its attribute in OOXML. 
+
+It's like a dictionary, search it when you want to know a vocabulary.
+
 ## tables
 ### namespace in xml tag
 | namespace in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -318,8 +340,10 @@ In this example, we can know that
 
 1. In `<w:tr>`, it defines 
 
-[^1]:[`docx格式文档详解：xml解析并用html还原`](https://juejin.cn/post/7166821284087595038)
+[^1]:[Prequisite Review 1 -- terms](https://github.com/40843245/XmlOfOffice/blob/main/Word/structure/Prequisite%20Review%201%20--%20terms.md)
 
 [^2]:[Appendix 2 -- available options of attribute of tag in xml for Word](https://github.com/40843245/XmlOfOffice/blob/main/Word/structure/Appendix%202%20--%20available%20options%20of%20attribute%20of%20tag%20in%20xml%20for%20Word.md#appendix-2----available-options-of-attribute-of-tag-in-xml-for-word)
 
-[^3]:[Appendix 4 -- terms](https://github.com/40843245/XmlOfOffice/blob/main/Word/structure/Appendix%204%20--%20terms.md)
+[^3]:[`docx格式文档详解：xml解析并用html还原`](https://juejin.cn/post/7166821284087595038)
+
+[^4]: [9.2 Relationships in Office Open XML](https://ooxml.info/docs/9/9.2/)
