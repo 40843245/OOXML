@@ -57,8 +57,9 @@
 | `<w:lvl>` | | list level | defines a level of list | lvl stands for *l*e*v*e*l* | |
 | `<w:plt>` | | picture list type (exactly to say, list pattern type in modern version of Word) | it describes the complexity or structure of the list definition | | |   
 | `<w:tmpl>` | | template | it configure the what template will be used | <ol><li>tmpl stands for *t*e*mpl*ate</li><li>It accords to value of `W:val` attribute.</li><li>The template that will be used must be prefined (usually is predefined in `~/word/style.xml` or `~/word/template.xml`</li></ol> | | 
+| `<w:start>` | | start | configure starting value for the numbering sequence at this list level | | It's only relevant when the <w:numFmt> (number format) for this level is set to a numbering style (like decimal, upperRoman, lowerLetter, etc.). |
 | `<w:numFmt>` | | number formatting | determines whether this level uses numbers or bullets, and the specific style  | | |
-| `<w:bullet>` | | bullet formatting | same above| | |
+| `<w:bullet>` | | bullet formatting | same above | | |
 | `<w:numPr>` | | number property | configure the property if it7 uses number formatting.  | | |
 | `<w:suff>` | | suffix | specifies what character (if any) follows the number (e.g., a period, a hyphen, or a tab) | | |
 | `<w:lvlText>` | | level text | defines the numbering format using placeholders (e.g., "%1." for first-level numbers) | | |
