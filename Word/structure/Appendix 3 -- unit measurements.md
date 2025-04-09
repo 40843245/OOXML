@@ -24,6 +24,13 @@ CPI stands for *c*ounts *p*er *i*nch. indicates the number of horizontal charact
 #### LPI
 LPI stands for *l*ine *p*er *i*nch. indicates the number of vertical lines of text that will fit in one inch.
 
+#### PPI
+PPI stands for *P*ixel *P*er *I*nch. 
+
+Indicates thickness of paper.
+
+Expressed in thousandths of an inch or pages per inch, or sometimes no of horizontal pixels closely printed or displayed per inch.
+
 #### pitch
 Pitch is a term generally used with non-proportional (fixed-width) fonts.
 
