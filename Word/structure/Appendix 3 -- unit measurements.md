@@ -48,6 +48,26 @@ A half of an em.
 
 For examplem a 10-point en space will be 5 points wide.
 
+#### font size
+size of font.
+
+font size is the baseline distance for which the font was designed. 
+
+A font should normally be identified and selected by this size, 
+
+because the intended baseline distance is much more relevant for practical layout work than the actual dimensions of certain characters.
+
+#### font height
+height of font.
+
+#### x-height
+x-height indicates typesize of lower-case letters excluding ascenders and descenders (from the height of the lower-case x)
+
+#### h-height
+h-height or cap height refers to the height of a capital letter above the baseline for a particular typeface. 
+
+It specifically refers to the height of capital letters that are flat—such as H or I—as opposed to round letters such as O.
+
 ### conversion
 
 1 point (Truchet) = 0.188 mm (obsolete today)
@@ -62,3 +82,7 @@ For examplem a 10-point en space will be 5 points wide.
 
 1 point (l’Imprimerie nationale, IN) = 0.4 mm
 
+## reference
++ About introduction of some terms, see [Twips, pixels, and points, oh my!](https://stackoverflow.com/questions/604203/twips-pixels-and-points-oh-my)
+
++ About Pixel, see [Pixel (Wiki)](https://en.wikipedia.org/wiki/Pixel)
