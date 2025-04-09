@@ -49,3 +49,13 @@
 | `lines` | | | The grid controls the vertical spacing of lines. | | |
 | `snapToChars` | | | The grid aligns to character boundaries. | | |
 | `fixed` | | | A fixed horizontal and vertical grid. | | |
+
+### `<w:plt>` -> `w:val` attribute
+#### available options of attribute in tag
+
+> [!WARNING]
+> I refers from Google Gemini's answer which may be incorrect.
+
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"SingleLevel"` | | single level | indicates that this list definition is designed for a simple (or exactly siad, single-level) list. |  
