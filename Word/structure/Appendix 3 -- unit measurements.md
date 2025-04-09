@@ -10,13 +10,20 @@ Available typographically unit measurements list in this article [Twips, pixels,
 #### pixel
 The smallest unit in typographically unit measurements. You can thinks the smallest dot you can draw on device screen.
 
+#### twips
+twips stands for *tw*entieth of an *i*mperial *p*oint.
+
+As Google Gemini's answer, you can think twips as twentieth of a half-point.
+
+#### dxa
+As Google Gemini's answer, you can think dxa as twips (i.e. twentieth of a half-point).
+
 #### CPI
 CPI stands for *c*ounts *p*er *i*nch. indicates the number of horizontal characters will fit into in one inch.
 
 #### LPI
 LPI stands for *l*ine *p*er *i*nch. indicates the number of vertical lines of text that will fit in one inch.
 
-### 
 #### pitch
 Pitch is a term generally used with non-proportional (fixed-width) fonts.
 
