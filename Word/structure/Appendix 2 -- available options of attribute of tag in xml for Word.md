@@ -52,6 +52,18 @@
 
 ### `<w:plt>` -> `w:val` attribute
 #### available options of attribute in tag
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+
+### `<w:lvl>` -> `w:ilvl` attribute
+> [!WARNING]
+> I refers from Google Gemini's answer which may be incorrect.
+
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"0"` | | | defines the formatting for the first level of the list.  | zero-based | | 
+| `"1"` | | |  defines the top-most or first level of the list.| | | 
+| etc | | | | | | 
+
 
 > [!WARNING]
 > I refers from Google Gemini's answer which may be incorrect.
