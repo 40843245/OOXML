@@ -32,9 +32,24 @@ It's like a dictionary, search it when you want to know a vocabulary.
 | :---------- | :----------- | :----- | :--- | :-- |
 | `aml` | *A*nnotation *M*arkup *L*anguage | used for comments and revisions. | | |
 | `dt` | *D*ata *T*ypes | often used for properties or values within the document. | | |
-| `dt` | *D*ata *T*ypes | often used for properties or values within the document. | | |
-| `dt` | *D*ata *T*ypes | often used for properties or values within the document. | | |
+| `mc` | *Markup* *C*ompatibility | determine which version of documents are allowed to be able to be compatible with different versions of Office Open XML. | | |
+| `o` | *O*ffice | it is for Office-specific elements, often related to general Office document properties. | | | 
+| `v` | *V*ector Markup Language | it is for Vector Markup Language, which is a legacy format for vector graphics in Office documents. | | |
+| `w10` | *W*ord *10*-specific elements | it is for Word 10-specific elements, indicating features or settings from that version. | | |
+| `w` | *W*ord 2003 elements | it is the primary namespace for Word 2003 XML. | reason about why it is for Word 203 XML see following history. | |
+| `wx` | *W*ord 2003 Au*x*iliary Hints | it is for Word 2003 Auxiliary Hints, which might contain additional information for specific Word features. | The word `Auxiliary` has a meaning of the word `Extension`, but its usage of the word `Auxiliary` is narrower and more concise than that of the word `Extension`, and we usually abbreviates the word `Extension` to `X`. And I guess this is the reason why the namespace is declared as `wx`. | |
+| `wne`| WNE | it points to elements from which version (according to the value of `xml:wne`). Its presence suggests potential compatibility features or elements used across versions. | See `WNE class`[^5] for more details. | | 
 
+> [!NOTE]
+> History of Office and OOXML.
+>
+> + In year 2000, Microsoft released Microsoft Office 2000 which is the intial release that uses XML tag.
+>
+> + In year 2003, Microsoft released Microsoft Office 2003 which is the intial release that uses XML tag cooperate with OOXML,
+> 
+> making the Office file in cross-platform (before that, to view the Office file or access it, you must use Office products which is developed by Microsoft)
+>
+> and more sharable.
 ### namespace in xml tag for OOXML
 | namespace in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
@@ -386,4 +401,6 @@ In this example, we can know that
 
 [^3]:[`docx格式文档详解：xml解析并用html还原`](https://juejin.cn/post/7166821284087595038)
 
-[^4]: [9.2 Relationships in Office Open XML](https://ooxml.info/docs/9/9.2/)
+[^4]:[9.2 Relationships in Office Open XML](https://ooxml.info/docs/9/9.2/)
+
+[^5]:[ DocumentFormat.OpenXml.Linq.WNE class (MSDS API reference)](https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.linq.wne?view=openxml-3.0.1) 
