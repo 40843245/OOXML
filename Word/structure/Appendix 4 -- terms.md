@@ -22,4 +22,14 @@ It will look like this
 > 2. Second item
 >
 > 3. Third item
+
+### indentation
+#### hanging indentation
+A hanging indent is used to indent all lines of a paragraph except the first.
+
+![image](https://github.com/user-attachments/assets/5b7a9900-717c-4b1a-a0a2-24189b64d4ee)
+
+### reference
++ [hanging indentation](https://www.scribbr.com/citing-sources/hanging-indent/)
+  
 [^1]: [Appendix 3 -- unit measurements](https://github.com/40843245/XmlOfOffice/blob/main/Word/structure/Appendix%203%20--%20unit%20measurements.md)
