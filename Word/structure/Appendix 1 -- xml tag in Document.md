@@ -75,8 +75,14 @@
 ###### attribute in `<w:ind>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w:left-chars` | | left indentation, characters | assign an positive integer to specify left indentation of the paragraph, measured in character units. | it is measured with its unit -- default character  | |
-| `w:left` | | left indentation | assign an positive integer to specify left indentation of the paragraph, measured in twips.  | its unit is twips | |
+| `w:left-chars` | | left indentation, characters | assign an positive integer to specify left indentation of the paragraph, measured in character units. | it is measured with its unit -- default character | it is deprecated, but not obsolete. At Microsoft Office 2019, it can recongize this attribute |
+| `w:left` | | left indentation | assign an positive integer to specify left indentation of the paragraph, measured in twips.  | its unit is twips | same as above |
+| `w:start-chars` | | start indentation, characters | assign an positive integer to specify left indentation of the paragraph, measured in character units. | it has meaning of `w:left-char` attribute | However, it is implemented in later version of OOXML standard (ECMA-376, 2011), so Microsoft Word 2007 may not recognize this attribute. |
+| `w:start` | | start indentation | assign an positive integer to specify start indentation of the paragraph, measured in twips.  |  it has meaning of `w:left` attribute | same as above |
+| `w:right-chars` | | right indentation, characters | assign an positive integer to specify right indentation of the paragraph, measured in character units. | it is measured with its unit -- default character | it is deprecated, but not obsolete. At Microsoft Office 2019, it can recongize this attribute |
+| `w:right` | | right indentation | assign an positive integer to specify right indentation of the paragraph, measured in twips.  | its unit is twips | same as above |
+| `w:end-chars` | | end indentation, characters | assign an positive integer to specify end indentation of the paragraph, measured in character units. | it has meaning of `w:right-char` attribute | However, it is implemented in later version of OOXML standard (ECMA-376, 2011), so Microsoft Word 2007 may not recognize this attribute. |
+| `w:end` | | end indentation | assign an positive integer to specify end indentation of the paragraph, measured in twips.  |  it has meaning of `w:right` attribute | same as above |
 | `w:hang-chars` | | hang indentation, characters | assign an positive integer to specify hang indentation of the paragraph, measured in character units. | <ol><li>it is measured with its unit -- default character</li><li>For explanation about the term hang indentation, see `Appendix 4 -- terms`[^3]</li></ol>| |
 | `w:hang` | | hang indentation | assign an positive integer to specify hang indentation of the paragraph, measured in twips.  | its unit is twips | |
 
