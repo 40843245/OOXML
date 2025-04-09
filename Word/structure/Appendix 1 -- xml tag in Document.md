@@ -91,7 +91,8 @@
 > [!NOTE]
 > I list some common used attributes.
 >
-> For `<w:ind>` tag and its attributes, see the [DocumentFormat.OpenXml.Wordprocessing.Indentation class (MSDS API reference)](https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.wordprocessing.indentation?view=openxml-3.0.1) 
+> For `<w:ind>` tag and its attributes, see the [DocumentFormat.OpenXml.Wordprocessing.Indentation class (MSDS API reference)](https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.wordprocessing.indentation?view=openxml-3.0.1)
+
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:left-chars` | | left indentation, characters unit | assign an positive value to specify left indentation of the paragraph, measured in character units. | it is measured with its unit -- default character | it is deprecated, but not obsolete. At Microsoft Office 2019, it can recongize this attribute |
