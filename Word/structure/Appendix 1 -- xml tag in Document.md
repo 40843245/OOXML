@@ -69,6 +69,7 @@ It's like a dictionary, search it when you want to know a vocabulary.
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `o` | `<ol>` | ordered list | an ordered list (including a numbered list) | o stands for *o*rdered, l stands for *l*ist | |
 | `<w:wordDocument>` | `<html>` | root node | the root node of a Microsoft Word file. | | |
+| `<w:ignoreSubtree>` | | ignore a specific subtree | it instructs the Word processor to ignore a specific subtree of the XML document (according to the value of `w:val` attribute) during processing. | | | 
 | `<w:body>` | `<body>` | body | the main part of file in native xml (and native html5) | | |
 | `<w:lang>` | `<lang>` | language | the language for characters | lang stands for *lang*uage | |
 | `<w:charset>` | `<charset>` in native html5 | charset | configure charset of this font | | |
