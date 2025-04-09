@@ -1,5 +1,19 @@
 # Appendix 2 -- available options of attribute of tag in xml for Word
 ## tables
+> [!WARNING]
+> Most content of these table are refered from Google Gemini's answer or from non-official website, which BOTH may be incorrect.
+>
+> Read with caution.
+
+
+### `<w:wordDocument>` -> `xml:space` attribute
+> [!WARNING]
+> I refers from Google Gemini's answer which may be incorrect.
+
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"preserve"` | | preserve | | 
+
 ### `<w:tab>` -> `w:val` attribute
 > [!WARNING]
 > I refers from Google Gemini's answer which may be incorrect.
