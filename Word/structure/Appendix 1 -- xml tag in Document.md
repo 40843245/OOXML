@@ -86,7 +86,7 @@
 >
 > The Google Gemini says that
 >
->> If both `w:first-line` and` w:hanging` are specified, `w:hanging` is usually ignored.
+>> If both `w:first-line-chars` and` w:hanging-chars` are specified, `w:hanging-chars` is usually ignored.
 
 > [!NOTE]
 > I list some common used attributes.
