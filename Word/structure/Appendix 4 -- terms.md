@@ -8,7 +8,7 @@ See `Appendix 3`[^1] for more explanation.
 #### single-level list
 A signle-level list has these feature.
 
-+ All items in same level.
++ All items in same level (i.e. with same indentation).
 + If it is a numbered list, all items are marked with sequential number.
 
 For example,
