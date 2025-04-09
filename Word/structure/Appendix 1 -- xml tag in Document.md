@@ -77,7 +77,7 @@
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:left-chars` | | left indentation, characters | assign an positive integer to specify left indentation of the paragraph, measured in character units. | it is measured with its unit -- default character  | |
 | `w:left` | | left | assign an positive integer to specify left indentation of the paragraph, measured in twips.  | its unit is twips | |
-| `w:left-chars` | | hang indentation, characters | assign an positive integer to specify hang indentation of the paragraph, measured in character units. | it is measured with its unit -- default character | |
+| `w:left-chars` | | hang indentation, characters | assign an positive integer to specify hang indentation of the paragraph, measured in character units. | <ol><li>it is measured with its unit -- default character</li><li>For explanation about the term hang indentation, see `Appendix 4 -- terms`[^3]</li></ol>| |
 
 ###### attribute in `<w:r>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -287,3 +287,5 @@ In this example, we can know that
 [^1]:[`docx格式文档详解：xml解析并用html还原`](https://juejin.cn/post/7166821284087595038)
 
 [^2]:[Appendix 2 -- available options of attribute of tag in xml for Word](https://github.com/40843245/XmlOfOffice/blob/main/Word/structure/Appendix%202%20--%20available%20options%20of%20attribute%20of%20tag%20in%20xml%20for%20Word.md#appendix-2----available-options-of-attribute-of-tag-in-xml-for-word)
+
+[^3]:[Appendix 4 -- terms](https://github.com/40843245/XmlOfOffice/blob/main/Word/structure/Appendix%204%20--%20terms.md)
