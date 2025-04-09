@@ -38,7 +38,9 @@ It's like a dictionary, search it when you want to know a vocabulary.
 | `w10` | *W*ord *10*-specific elements | it is for Word 10-specific elements, indicating features or settings from that version. | | |
 | `w` | *W*ord 2003 elements | it is the primary namespace for Word 2003 XML. | reason about why it is for Word 203 XML see following history. | |
 | `wx` | *W*ord 2003 Au*x*iliary Hints | it is for Word 2003 Auxiliary Hints, which might contain additional information for specific Word features. | The word `Auxiliary` has a meaning of the word `Extension`, but its usage of the word `Auxiliary` is narrower and more concise than that of the word `Extension`, and we usually abbreviates the word `Extension` to `X`. And I guess this is the reason why the namespace is declared as `wx`. | |
-| `wne`| WNE | it points to elements from which version (according to the value of `xml:wne`). Its presence suggests potential compatibility features or elements used across versions. | See `WNE class`[^5] for more details. | | 
+| `wne`| WNE | it points to elements from which version (according to the value of `xmlns:wne`). Its presence suggests potential compatibility features or elements used across versions. | See `WNE class`[^5] for more details. | | 
+| `wsp` | *W*ord *S*ervice *P*ack | This namespace might relate to Word xxx (version according to value of `xmlns:wsp` ) Service Pack 2 specific elements or extensions. | | | 
+| `sl` | *S*chema *L*ibrary | This namespace could be for a Schema Library, possibly related to document templates or components. | | | 
 
 > [!NOTE]
 > History of Office and OOXML.
@@ -50,6 +52,7 @@ It's like a dictionary, search it when you want to know a vocabulary.
 > making the Office file in cross-platform (before that, to view the Office file or access it, you must use Office products which is developed by Microsoft)
 >
 > and more sharable.
+
 ### namespace in xml tag for OOXML
 | namespace in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
@@ -59,7 +62,8 @@ It's like a dictionary, search it when you want to know a vocabulary.
 #### `<w>` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `o` | `<ol>` | ordered list | an ordered list (including a numbered list) | o stands for ordered, l stands for list | |
+| `o` | `<ol>` | ordered list | an ordered list (including a numbered list) | o stands for *o*rdered, l stands for *l*ist | |
+| `<w:wordDocument>` | `<html>` | root node | the root node of a Microsoft Word file. | | |
 | `<w:body>` | `<body>` | body | the main part of file in native xml (and native html5) | | |
 | `<w:lang>` | `<lang>` | language | the language for characters | lang stands for *lang*uage | |
 | `<w:charset>` | `<charset>` in native html5 | charset | configure charset of this font | | |
@@ -122,6 +126,18 @@ It's like a dictionary, search it when you want to know a vocabulary.
 | `<w:lvlText>` | | level text | defines the numbering format using placeholders (e.g., "%1." for first-level numbers) | | |
 | `<w:lvlJc>` | | level justification | configures the justification of this level | | | 
 | `<w:nfc>` | | Number Formatting Code | configures Number Formatting Code of this level | nfc stands for *N*umber *F*ormatting *C*ode | | 
+
+###### xml attribute
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `xml:space` | | space | assign a value to determine how to deal with whitespace (i.e. ` `, `\t`,`\n`).
+
+###### attribute in `<w:word>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:macrosPresent` | | macro to present or not | assign a value to determine it will use macro (written in VBA or VB).</br>If it is specified to "yes", it will use macro.</br>Otherwise, it will not use macro. | | |
+| `w:embeddedObjPresent` | | embedded object to present or not | assign a value to determine whether the document contains embedded objects (like Excel spreadsheets or other OLE objects). | | |
+| `w:ocxPresent` | | OCX controls to present or not | assign a value to determine whether the document will use OCX controls (i.e. ActiveX controls) | | |  
 
 ###### attribute in `<w:font>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
