@@ -5,14 +5,30 @@
 >
 > Read with caution.
 
-
-### `<w:wordDocument>` -> `xml:space` attribute
+### `xml:space` attribute
 > [!WARNING]
 > I refers from Google Gemini's answer which may be incorrect.
 
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"preserve"` | | preserve | | 
+| `"preserve"` | | preserve | whitespace (i.e. ` `, `\t`, and `\n`) within the element's content should be preserved exactly as it appears in the XML source. The application processing the XML should not normalize or remove any of this whitespace. | | | 
+| `"default"` | | default processing (not fully preserve) | Default whitespace handling of the XML processor should be applied to the content of this element. | See following for more details. | | 
+
+> [!NOTE]
+> If the `xml:space` attribute is not specified,
+>
+> it will use the value of the attribute in parent node (if it has a parent), or
+>
+> it usually use `"default"` value (if it has not parent (i.e. it is a root node)).
+
+> [!NOTE]
+> Typically, XML processor will handle the whitespace through normalization by default (if the whitespace should not be fully preserved).
+> 
+> Normalizing the whitespace involves these steps:
+>
+> + Collapsing sequences of whitespace characters into a single space.
+> + Removing leading and trailing whitespace.
+> + Treating line breaks as whitespace.
 
 ### `<w:tab>` -> `w:val` attribute
 > [!WARNING]
