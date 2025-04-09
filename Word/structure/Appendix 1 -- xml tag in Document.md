@@ -4,7 +4,7 @@ To have a better understanding of a list of tags in OOXML, it's better to be fam
 
 + concept of layout, style, headings etc that will be used in a Document.
 + commonly used terms. (Some advanced terms can be reviewed at this article -- `Prequisite Review 1 -- terms`[^1] )
-+ commonly used tags (and theire attributes) in native html5.
++ commonly used tags (and theire attributes) in native html5 and native xml.
 + concepts of namespace, class in OO (Object-Oriented) design pattern.
 + concepts of `Part and Relationship in OOXML`[^4].
 
@@ -22,20 +22,40 @@ After all, it only lists some tags and its attribute in OOXML.
 It's like a dictionary, search it when you want to know a vocabulary.
 
 ## tables
-### namespace in xml tag
+### namespace declaration in xml tag 
 | namespace in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `<w>` | `<word>` | Microsoft Word | indicates that it describes xml content of a Microsoft Word file.| w stands for Microsoft Word | |
-| `<o>` | `<ol>` | ordered list | an ordered list (including a numbered list) | o stands for ordered, l stands for list | |
+| `xmlns` | | xml namespace | declare a namespace in xml. Or configure the property in xml (such as `xmlns:aml`) | | |
 
-### element in xml tag
+### namespace under `xmlns` namespace
+| namespace under `xmlns` namespace | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `aml` | *A*nnotation *M*arkup *L*anguage | used for comments and revisions. | | |
+| `dt` | *D*ata *T*ypes | often used for properties or values within the document. | | |
+| `dt` | *D*ata *T*ypes | often used for properties or values within the document. | | |
+| `dt` | *D*ata *T*ypes | often used for properties or values within the document. | | |
+
+### namespace in xml tag for OOXML
+| namespace in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w` | | Microsoft Word | indicates that it describes xml content of a Microsoft Word file.| w stands for Microsoft *W*ord | |
+
+### element in xml tag for OOXML
 #### `<w>` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `o` | `<ol>` | ordered list | an ordered list (including a numbered list) | o stands for ordered, l stands for list | |
 | `<w:body>` | `<body>` | body | the main part of file in native xml (and native html5) | | |
 | `<w:lang>` | `<lang>` | language | the language for characters | lang stands for *lang*uage | |
+| `<w:charset>` | `<charset>` in native html5 | charset | configure charset of this font | | |
+| `<w:family>` | | family | configure family of this font | | |
+| `<w:pitch>` | | character's pitch | configure pitch of characters that uses this font. | | | 
+| `<w:font>` | font in native css | define a font | | |
+| `<w:sig>` | | digital signature | encapsulate the digital signature of this font. | | | 
+| `<w:panose1>` | | panose | configure the panose (with highest priority) | The lower number is it, the higher priority it has. | |
+| `<w:altName>` | `alt` attribute in `<img>` tag in native html5 | alternative | use the alternative (according to the value specified in `w:val` attribute) **when** an element (such as an image) or things that used in an element (such as font) **can not be used or worked correctly**. | | |
 | | | | | | | | 
-| `<w:p>` | `<p>` | paragraph | A paragraph | notice that if an end-user only inputs an whitespace in .docx file, it will have `<w:p>` tag, the article `docx格式文档详解：xml解析并用html还原`[^1] says this situation. | 
+| `<w:p>` | `<p>` | paragraph | A paragraph | notice that if an end-user only inputs an whitespace in .docx file, it will have `<w:p>` tag, the article `docx格式文档详解：xml解析并用html还原`[^2] says this situation. | 
 | `<w:pStyle>` | | paragraph style | applies style (according to value of `w:val` attribute) to paragraph (that is inside `<w:p>` tag) | the style to apply is defined in `~/word/style.xml` file | |
 | `<w:pPr>` | | paragraph property | property of a paragraph (that is inside `<w:p>` tag) in Microsoft Word file | Pr stands for *Pr*operty | |
 | `<w:ind>` | | paragraph indentation | configure the indentation for this paragraph. | ind stands for *ind*entation | |
@@ -87,6 +107,26 @@ It's like a dictionary, search it when you want to know a vocabulary.
 | `<w:lvlText>` | | level text | defines the numbering format using placeholders (e.g., "%1." for first-level numbers) | | |
 | `<w:lvlJc>` | | level justification | configures the justification of this level | | | 
 | `<w:nfc>` | | Number Formatting Code | configures Number Formatting Code of this level | nfc stands for *N*umber *F*ormatting *C*ode | | 
+
+###### attribute in `<w:font>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:name` | | name | assign a value to give the name to this font. | | |
+
+###### attribute in `<w:family>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:val` | | value | assign a value to determine which family will be used for those text that uses this font. | | |
+
+###### attribute in `<w:charset>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:val` | | value | assign a value to determine which charset will be used for those text that uses this font. | | |
+
+###### attribute in `<w:pitch>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:val` | | value | assign a value to determine which how many pitches will be used for those text that uses this font. | | |
 
 ###### attribute in `<w:p>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
