@@ -11,7 +11,14 @@ In traditional typing, pitch is defined as a unit of measurement indicating the 
 
 <img width="952" alt="image" src="https://github.com/user-attachments/assets/c7080e93-0684-42eb-8c76-36ee6b93e05f" />
 
+##### reference
++ [`Adjusting Text Pitch`](https://wordribbon.tips.net/T013688_Adjusting_Text_Pitch.html)
 
+#### panose 
+PANOSE System is a method for classifying typefaces solely on their visual characteristics.
+
+##### reference
++ [PANOSE (Wiki)](https://en.wikipedia.org/wiki/PANOSE)
 ### unit measurements
 See `Appendix 3`[^1] for more explanation.
 
