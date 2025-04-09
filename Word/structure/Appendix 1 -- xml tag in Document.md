@@ -14,9 +14,9 @@
 | `<w:lang>` | `<lang>` | language | the language for characters | lang stands for *lang*uage | |
 | | | | | | | | 
 | `<w:p>` | `<p>` | paragraph | A paragraph | notice that if an end-user only inputs an whitespace in .docx file, it will have `<w:p>` tag, the article `docx格式文档详解：xml解析并用html还原`[^1] says this situation. | 
-| | | | | | | | 
 | `<w:pStyle>` | | paragraph style | applies style (according to value of `w:val` attribute) to paragraph (that is inside `<w:p>` tag) | the style to apply is defined in `~/word/style.xml` file | |
 | `<w:pPr>` | | paragraph property | property of a paragraph (that is inside `<w:p>` tag) in Microsoft Word file | Pr stands for *Pr*operty | |
+| `<w:ind>` | | paragraph indentation | configure the indentation for this paragraph. | ind stands for *ind*entation | |
 | | | | | | | | 
 | `<w:b/>` | `<b>` and `<b/>` in native html5 | bold | determine the text is bold | | |
 | `<w:spacing>` | spacing | settings about spacing between paragraphs | | |
@@ -71,6 +71,13 @@
 | `w:rsidR` | | revision id for run | assign the value of revision id for run  | rs stands for *r*evi*s*ion, R stands for *R*un | |
 | `w:rsidRDefault` | | revision id for run default | assign the default value of revision id for run  | rs stands for *r*evi*s*ion, R stands for *R*un | |
 | `w:rsidSect` | | revision id for section | assign the default value of revision id for section | rs stands for *r*evi*s*ion | |
+
+###### attribute in `<w:ind>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:left-chars` | | left indentation, characters | assign an positive integer to specify left indentation of the paragraph, measured in character units. | it is measured with its unit -- default character  | |
+| `w:left` | | left | assign an positive integer to specify left indentation of the paragraph, measured in twips.  | its unit is twips | |
+| `w:left-chars` | | hang indentation, characters | assign an positive integer to specify hang indentation of the paragraph, measured in character units. | it is measured with its unit -- default character | |
 
 ###### attribute in `<w:r>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
