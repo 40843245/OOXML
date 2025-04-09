@@ -63,6 +63,18 @@
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"1"`| | | first item at this list level will be numbered or lettered starting from 1 (or equivalent corresponding symbol with different number formatting) | | |
 
+### `<w:lvlJs>` -> `w:val` attribute
+#### available options of attribute in tag
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"left"` | | left-aligned | this item will be left-aligned | In newer version (Microsoft Office 2007 or above), it is obsolete. It uses `"start"`. See above for more reason. | |
+| `"start"` | | aligned from start (left-aligned in horizontal orientation, or top-aligned in vertical orientation) | this item will be aligned from start | This value is used at first release of `OOXML` which is implemented in Microsoft Word 2007. Thus, we can say that in Microsoft Office 2007, it uses `"start"` instead of `"left"` (which is obsolete) | |
+| `"right"` | | right-aligned | this item will be right-aligned | In newer version (Microsoft Office 2007 or above), it is obsolete. It uses `"end"`. See above for more reason. | |
+| `"end"` | | aligned from end (right-aligned in horizontal orientation, or bottom-aligned in vertical orientation) | this item will be aligned from end | This value is used at first release of `OOXML` which is implemented in Microsoft Word 2007. Thus, we can say that in Microsoft Office 2007, it uses `"end"` instead of `"right"` (which is obsolete) | |
+| `"center"` | | center-aligned | this item will be center-aligned | | |
+| `"both"` | | | justifies the text of the numbering symbol (if it were more than one character) between both margins.  | However, this does not affect inter-character spacing. | |
+| `"distribute"` | | | justifies the text of the numbering symbol (if it were more than one character) between both margins.  | To achieve even distribution (i.e. with same space), it will affect both inter-word and inter-character spacing | |
+
 ### `<w:numFmt>` -> `w:val` attribute
 #### available options of attribute in tag
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
