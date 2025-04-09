@@ -27,8 +27,36 @@ It's like a dictionary, search it when you want to know a vocabulary.
 >
 > Read with caution.
 
-### xml declaration
+### processing instruction
 See `Appendix 1 -- tags in xml`[^3]
+
+But in OOXML, there are many ways added to process a file that will be parse with OOXML preprocessor.
+
+I just list some of them that commonly seen in Word file.
+
+| target of the processing instruction | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `mso-application` | | targets Microsoft Office applications. | | |
+
+#### attributes in `mso-application`
+| attributes name | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `progid` | *Pr*ogrammatic *Id*entifier | It's a string that uniquely identifies a COM (Component Object Model) component or application. | | |
+
+#### examples
+##### example 1
+`Docx1.docx` file
+
+```
+<?mso-application progid="Word.Document"?>
+```
+
+In above example, we can know that
+
++ `Docx1.docx` file targets to Microsoft Office.
++ it is a Document.
++ Thus, it targets to Microsoft Office Word and you can open it with Microsoft Office Word.
+
 ### namespace declaration in xml tag 
 | namespace in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
