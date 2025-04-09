@@ -63,6 +63,7 @@
 | `<w:numPr>` | | number property | configure the property if it7 uses number formatting.  | | |
 | `<w:suff>` | | suffix | specifies what character (if any) follows the number (e.g., a period, a hyphen, or a tab) | | |
 | `<w:lvlText>` | | level text | defines the numbering format using placeholders (e.g., "%1." for first-level numbers) | | |
+| `<w:lvlJc>` | | level justification | configures the justification of this level | | | 
 
 ###### attribute in `<w:p>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -160,17 +161,42 @@ Way to parsing it is similar to parsing `<w:pStyle>`.
 ###### attribute in `<w:bookmarkEnd>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w:id` | `id` in native html5 | id of end point of bookmark | assign the id of end point of bookmark that in the tag | |
+| `w:id` | `id` in native html5 | id of end point of bookmark | assign the id of end point of bookmark that in the tag | | | 
 
 ###### attribute in `<w:listDef>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w:listDefId` | | list definition id | specify the unique id when defines a list to determine which style will be used. | |
+| `w:listDefId` | | list definition id | specify the unique id when defines a list to determine which style will be used. | | |
 
 ###### attribute in `<w:plt>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w:val` | | | specifies the value of the list pattern type | |
+| `w:val` | | | assign the Guid as value to determine which style will be applied to for the list pattern type | | |
+
+###### attribute in `<w:tmpl>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | assign the Guid as value to determine which template will be applied to for the list pattern type | | |
+
+###### attribute in `<w:lvl>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:ilvl` | | | specifies indentation of this level | | it must be a positive integer |
+
+###### attribute in `<w:start>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | assign the positive integer as value to determine which the first item will be numbered to | the first item will use number or letter or bullet accords to value of `w:val` attribute in `<w:numFmt>` | it must be a positive integer |
+
+###### attribute in `<w:lvlText>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | assign the string as value to specify the format for this level | | |
+
+###### attribute in `<w:lvlJc>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | assign the string as value to determine the alignment for this level | | |
 
 ##### examples and explanations
 ###### example 1 -- run
