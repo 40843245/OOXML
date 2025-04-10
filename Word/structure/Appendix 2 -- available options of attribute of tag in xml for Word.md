@@ -180,6 +180,42 @@ Same as `<w:bdr>` -> `w:val` attribute.
 ### `<w:pgBorders>` -> <w:down> -> `w:val` attribute
 Same as `<w:bdr>` -> `w:val` attribute.
 
+### `<w:bdr>` -> `w:color` attribute
+> [!WARNING]
+> I refers from Google Gemini's answer which may be incorrect.
+
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"auto"` | | auto | automatic color | | |
+| `"<RGB>"` | | rgb color | should be a string consist of six hexadecimal digit.</br>The value indicates its rgb color. | `#` symbol is not used for color elements in OOXML. | |
+
+### `<w:bdr>` -> `w:themeColor` attribute
+Ranging is same as `<w:bdr>` -> `w:color` attribute.
+
+But the value indicates its theme color.
+
+### `<w:bdr>` -> `w:themeTint` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"<lightness>"` | | lightness | should be a string consist of two hexadecimal digit.</br>The value indicates the lightness of theme color.</br>`00`: darkest</br>`FF`: lightest | `#` symbol is not used for color elements in OOXML. | |
+
+### `<w:bdr>` -> `w:themeShade` attribute
+Ranging is same as `<w:bdr>` -> `w:themeTint` attribute.
+
+But the value indicates its theme shade.
+
+### `<w:bdr>` -> `w:frame` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"true"` | | true | should have frame effect | | |
+| `"false"` | | false | should not have frame effect | | |
+
+### `<w:bdr>` -> `w:shadow` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"true"` | | true | should have shadow effect | | |
+| `"false"` | | false | should not have shadow effect | | |
+
 ### `<w:pgBorders>` -> `w:display` attribute
 
 > [!WARNING]
