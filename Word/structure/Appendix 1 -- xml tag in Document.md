@@ -528,6 +528,8 @@ it also configure the default size is 52 for **complex script characters** (like
 ###### example 2 -- table
 
 ```
+<!-- other elements omitted -->
+
 <w:tbl>
   <w:tblPr>
     <w:tblStyle w:val="TableGrid"/>
@@ -562,9 +564,13 @@ it also configure the default size is 52 for **complex script characters** (like
 </w:tbl>
 ```
 
-In this example, we can know that
+In the above example, we can know that
 
-1. In `<w:tr>`, it defines 
++ In `<w:tbl>`, it adds a table.
++ In `<w:tblPr>`, it add some properties of the table.
++ In `<w:tblStyle w:val="TableGrid"/>`, the table uses predefined style named `TableGrid` which is defined in `~/word/style.xml`.
++ In `<w:tblW w:w="5000" w:type="auto"/>`, the table width is 5000 and the Word will automatically justify the width to fit the content in cells.
++ In `<w:tblLook w:val="04A0"/>`, the `<w:tblLook>` tag determines which table styles and formatting options should be applied to a table. The value of `w:val` attribute acts like a bitmask then determines which table styles and formatting options. Its value is `04A0` which is a hexadecimal number. Converting `04A0` from hexadecimal number to binary number  gets `0000 0100 1010 0000`. Only 5th bit (counting from LST, zero-based), 7th bit and 10th bit are set to 1 (other bits is set to 0). When 5th bit is set to 1, applies table formatting for first row. When 7th bit is set to 1, applies table formatting for first column. When 10th bit is set to 1, do not apply column banding. Therefore, applies table formatting for first row and first column. Dont't apply column banding.
 
 [^1]:[Prequisite Review 1 -- terms](https://github.com/40843245/XmlOfOffice/blob/main/Word/structure/Prequisite%20Review%201%20--%20terms.md)
 
