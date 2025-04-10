@@ -570,7 +570,24 @@ In the above example, we can know that
 + In `<w:tblPr>`, it add some properties of the table.
 + In `<w:tblStyle w:val="TableGrid"/>`, the table uses predefined style named `TableGrid` which is defined in `~/word/style.xml`.
 + In `<w:tblW w:w="5000" w:type="auto"/>`, the table width is 5000 and the Word will automatically justify the width to fit the content in cells.
-+ In `<w:tblLook w:val="04A0"/>`, the `<w:tblLook>` tag determines which table styles and formatting options should be applied to a table. The value of `w:val` attribute acts like a bitmask then determines which table styles and formatting options. Its value is `04A0` which is a hexadecimal number. Converting `04A0` from hexadecimal number to binary number  gets `0000 0100 1010 0000`. Only 5th bit (counting from LST, zero-based), 7th bit and 10th bit are set to 1 (other bits is set to 0). When 5th bit is set to 1, applies table formatting for first row. When 7th bit is set to 1, applies table formatting for first column. When 10th bit is set to 1, do not apply column banding. Therefore, applies table formatting for first row and first column. Dont't apply column banding.
++ In `<w:tblLook w:val="04A0"/>`, the `<w:tblLook>` tag determines which table styles and formatting options should be applied to a table. The value of `w:val` attribute acts like a bitmask then determines which table styles and formatting options. Its value is `04A0` which is a hexadecimal number. Converting `04A0` from hexadecimal number to binary number  gets `0000 0100 1010 0000`. Only 5th bit (counting from LST, zero-based), 7th bit and 10th bit are set to 1 (other bits is set to 0). When 5th bit is set to 1, applies table formatting for first row. When 7th bit is set to 1, applies table formatting for first column. When 10th bit is set to 1, do not apply column banding. Therefore, applies table formatting for first row and first column. Dont't apply column banding. For more details, see [table formatting option and styling](https://github.com/40843245/Microsoft_Office/blob/main/Product/General%20Product/elements/table/table%20formatting%20option%20and%20styling/element%20value%20in%20OOXML.md)
++ In `<w:tblGrid>`, it defines a header of the table.
++ In `<w:gridCol w:w="1892.5"/>`, it defines a column of the table and set its width as 1892.5 twips.
++ In `<w:tr>`, it defines a row of the table.
++ In `<w:tc>`, it defines a cell in the row.
++ In `<w:tcPr>`, it defines the cell property.
++ In `<w:tcW w:w="15140" w:type="dxa"/>`, it configures width of the cell is 15140 twips.
++ In `<w:gridSpan w:val="9"/>`, it configure the grid span of the cell is nine, which means that the cell is cross from nine columns. The nine columns of this row is merged into this one cell.
++ In `<w:p>`, it defines a paragraph.
++ In `<w:pPr>`, it defines properties of the paragraph.
++ In `<w:jc w:val="left"/>`, it configures the alignment of the paragraph as left. The paragraph is left-aligned.
++ In `<w:r>` (inside `<w:p>`), it defines a run in this paragraph..
++ In `<w:rPr>`, it defines properties of the run.
++ In `<w:rFonts w:ascii="標楷體" w:hAnsi="標楷體" w:cs="標楷體" w:eastAsia="標楷體"/>`, it configures the fonts of run. It is `標楷體` when the text that uses the run is encoded with ascii encoding. It is `標楷體` when the text that uses the run is encoded with high Ansi encoding. It is `標楷體` for those complex-script text that uses the run. It is `標楷體` when the text that uses the run is eastern-asia text (東南亞文字).
++ In `<w:sz w:val="32"/>`, it configures the size for those non-complex script text that uses the run is 32 twips.
++ In `<w:szCs w:val="32"/>`, it configures the size for those complex script text that uses the run is 32 twips.
++ In `<w:b/>`, it configures the text that uses the run is bold.
++ In `<w:t>text 1</w:t>` (inside `<w:r>`), it adds a text with content`text 1` in the run which is used by the paragraph. 
 
 [^1]:[Prequisite Review 1 -- terms](https://github.com/40843245/XmlOfOffice/blob/main/Word/structure/Prequisite%20Review%201%20--%20terms.md)
 
