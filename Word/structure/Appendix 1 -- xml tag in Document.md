@@ -278,7 +278,8 @@ In above example, we can know that
 | `<w:lvlJc>` | | level justification | configures the justification of this level | | | 
 | `<w:nfc>` | | Number Formatting Code | configures Number Formatting Code of this level | nfc stands for *N*umber *F*ormatting *C*ode | | 
 | | | | | | | | 
-| `<w:bdr>`| `border` in css | border | configures properties of a border. | | |
+| `<w:bdr>` | `border` in css | border | configures properties of the border. | | |
+| `<w:pgBorders>` | | page border | configures properties of the borders of page. | | |
 
 ###### xml attribute
 ###### attribute in `xmlns` namespace
@@ -498,6 +499,13 @@ Way to parsing it is similar to parsing `<w:pStyle>`.
 | `w:space` | | space | specifies spacing of border. | | | 
 | `w:color` | color in css | color | specifies color of the border. | | |
 
+###### attribute in `<w:bdr>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:display` | | display | specifies on which pages within the section the page border should be displayed. | It is optional | | 
+| `w:offsetFrom` | | offeset from | determines how the page border's position is calculated relative to the page. | It is optional | |  
+| `w:zOrder` | | z order | whether the page border should be rendered in front of or behind the document content. | | |
+
 ##### examples and explanations
 ###### example 1 -- fonts
 ```
@@ -543,7 +551,6 @@ In above example, we can know that
 > 8.  **Letterform**: 02 = Normal/upright
 > 9.  **Midline**: 03 = Continuous
 > 10. **X-height**: 04 = Medium
-
 
 ###### example 2 -- run
 ```
@@ -645,6 +652,30 @@ In the above example, we can know that
 + In `<w:szCs w:val="32"/>`, it configures the size for those complex script text that uses the run is 32 twips.
 + In `<w:b/>`, it configures the text that uses the run is bold.
 + In `<w:t>text 1</w:t>` (inside `<w:r>`), it adds a text with content`text 1` in the run which is used by the paragraph. 
+
+###### example 4 -- list
+
+###### example 5 -- line border
+
+```
+<w:rPr>
+   <!-- other tags omitted -->
+   <w:rFonts w:fareast="標楷體" w:hint="fareast" />
+   <w:bdr w:val="single" w:sz="4" wx:bdrwidth="10" w:space="0" w:color="auto" />
+</w:rPr>
+```
+
+###### example 6 -- page border
+```
+<w:sectPr>
+  <w:pgBorders w:display="notFirstPage" w:offsetFrom="text" w:zOrder="back">
+    <w:top w:val="single" w:sz="8" w:space="24" w:color="0000FF"/>
+    <w:left w:val="dashed" w:sz="12" w:space="18" w:color="FF0000"/>
+    <w:bottom w:val="double" w:sz="6" w:space="24" w:color="008000"/>
+    <w:right w:val="dotted" w:sz="10" w:space="18" w:color="800080"/>
+  </w:pgBorders>
+</w:sectPr>
+```
 
 [^1]:[Prequisite Review 1 -- terms](https://github.com/40843245/XmlOfOffice/blob/main/Word/structure/Prequisite%20Review%201%20--%20terms.md)
 
