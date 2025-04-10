@@ -88,6 +88,19 @@ In above example, we can know that
 >
 > and more sharable.
 
+#### examples
+##### example 1
+`Docx1.docx` file.
+
+```
+<w:wordDocument xmlns:aml="http://schemas.microsoft.com/aml/2001/core" xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.microsoft.com/office/word/2003/wordml" xmlns:wx="http://schemas.microsoft.com/office/word/2003/auxHint" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wsp="http://schemas.microsoft.com/office/word/2003/wordml/sp2" xmlns:sl="http://schemas.microsoft.com/schemaLibrary/2003/core" w:macrosPresent="no" w:embeddedObjPresent="no" w:ocxPresent="no" xml:space="preserve">
+```
+
+In above example, we can know that
+
++ The tag is a root node in an Office Word file.
++ In `xmlns:aml="http://schemas.microsoft.com/aml/2001/core"`, its *A*nnotation *M*arkup *L*anguage refers the url `http://schemas.microsoft.com/aml/2001/core`.
++ In `xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"`
 ### namespace in xml tag for OOXML
 | namespace in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
