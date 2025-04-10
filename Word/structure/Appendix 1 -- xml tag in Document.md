@@ -66,9 +66,33 @@ In above example, we can know that
 | namespace under `xmlns` namespace | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- |
 | `aml` | *A*nnotation *M*arkup *L*anguage | used for comments and revisions. | | |
-| `wpc` | *W*ord*P*rocessing*C*anvas | assign a value to it determine which WordProcessing Canvas is used, WordProcessing Canvas is for drawing and layout within the Word document (particularly newer drawing features). | | |
+| `a` | *A*nnotation | specifies which core DrawingML elements will be used for graphical objects. | | |
+| `w` | *W*ordProcessingML | assign a value to it determine which WordprocessingML elements is used. | | |
+| `w14` | *W*ordProcessingML | assign a value to it determine which WordprocessingML (with version id 14) elements is used. | | |
+| `w15` | *W*ordProcessingML | assign a value to it determine which WordprocessingML (with version id 15) elements is used. | | |
+| `w16cid` | *W*ordProcessingML *C*ontent *Id*entifiers | assign a value to it determine which Content Identifiers of WordprocessingML (with version id 16) elements is used. | | |
+| `w16se` | *W*ordProcessingML *S*ymbol *E*xtensibility | assign a value to it determine which Symbol Extensibility of WordprocessingML (with version id 16) elements is used. | | |
+| `wpg` | *W*ordProcessingML *G*rouping  | assign a value to it determine which Symbol Extensibility of WordprocessingML Grouping is used. | | |
+| `wpi` | *W*ordProcessingML *I*nk  | assign a value to it determine which Symbol Extensibility of WordprocessingML Ink is used. | At intial release of WordprocessingML Ink (in Microsoft Office 2010), its namespace is named as `wpi` but it is named as `aink` at later release. | |
+| `wps` | *W*ord*P*rocessing *S*hapes | assign a value to it determine which Wordprocessing Shapes is used. | | |
+| `wp` | *W*ord*P*rocessing | assign a value to it determine which WordProcessing is used. | | |
+| `wp14` | *W*ord*P*rocessing version id 14 | assign a value to it determine which WordProcessing with version id 14 is used. | | |
+| `wpc` | *W*ord*P*rocessing *C*anvas | assign a value to it determine which WordProcessing Canvas is used, WordProcessing Canvas is for drawing and layout within the Word document (particularly newer drawing features). | | |
+| `c` | *C*harts | specific which `DrawingML Charting Schema` is used. It is used for defining properties for charts. | | |
+| `cx` | *C*harts E*x*tension | specific which extension of `DrawingML Charting Schema` (main extension) is used. | | |
+| `cx1` | *C*harts E*x*tension | specific which extension of `DrawingML Charting Schema` (sub extension 1) is used. | | |
+| `cx2` | *C*harts E*x*tension | specific which extension of `DrawingML Charting Schema` (sub extension 2) is used. | | |
+| `cx3` | *C*harts E*x*tension | specific which extension of `DrawingML Charting Schema` (sub extension 3) is used. | | |
+| `cx4` | *C*harts E*x*tension | specific which extension of `DrawingML Charting Schema` (sub extension 4) is used. | | |
+| `cx5` | *C*harts E*x*tension | specific which extension of `DrawingML Charting Schema` (sub extension 5) is used. | | |
+| `cx6` | *C*harts E*x*tension | specific which extension of `DrawingML Charting Schema` (sub extension 6) is used. | | |
+| `cx7` | *C*harts E*x*tension | specific which extension of `DrawingML Charting Schema` (sub extension 7) is used. | | |
+| `cx8` | *C*harts E*x*tension | specific which extension of `DrawingML Charting Schema` (sub extension 8) is used. | | |
+| `aink` | Ink | specific which `DrawingML Ink Schema` is used. It is used for defining properties for inks, provide Digital Ink Support, and provide DrawingML Integration  | | |
+| `am3d` | *M*odel *3D* | specific which `DrawingML 3D Model Schema` is used. It is used for defining properties for 3D model, embed 3D models, and provide DrawingML Integration  | | |
 | `dt` | *D*ata *T*ypes | often used for properties or values within the document. | | |
 | `mc` | *Markup* *C*ompatibility | determine which version of documents are allowed to be able to be compatible with different versions of Office Open XML. | | |
+| `ve` | *Markup* *C*ompatibility | Same as above | a convention of `mc` in `~/word/document.xml` file under a Office Word file | |
 | `o` | *O*ffice | it is for Office-specific elements, often related to general Office document properties. | | | 
 | `v` | *V*ector Markup Language | it is for Vector Markup Language, which is a legacy format for vector graphics in Office documents. | | |
 | `w10` | *W*ord *10*-specific elements | it is for Word 10-specific elements, indicating features or settings from that version. | | |
@@ -77,6 +101,8 @@ In above example, we can know that
 | `wne`| WNE | it points to elements from which version (according to the value of `xmlns:wne`). Its presence suggests potential compatibility features or elements used across versions. | See `WNE class`[^5] for more details. | | 
 | `wsp` | *W*ord *S*ervice *P*ack | This namespace might relate to Word xxx (version according to value of `xmlns:wsp` ) Service Pack 2 specific elements or extensions. | | | 
 | `sl` | *S*chema *L*ibrary | This namespace could be for a Schema Library, possibly related to document templates or components. | | | 
+| `r` | *R*elationship | it specifies which relationship will be used. | | | 
+| `m` | *M*ath | it specifies which tools about math (its functionalities contain `Equation`) will be used. | | | 
 
 > [!NOTE]
 > History of Office and OOXML.
@@ -213,6 +239,7 @@ In above example, we can know that
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `<w:wordDocument>` | `<html>` | root node | the root node of a Microsoft Word file. | | |
+| `<w:document>` | `<html>` | root node | the root node of **`~/word/document.xml`** file under a Microsoft Word file. | | |
 | `<w:ignoreSubtree>` | | ignore a specific subtree | it instructs the Word processor to ignore a specific subtree of the XML document (according to the value of `w:val` attribute) during processing. | | | 
 | `<w:body>` | `<body>` | body | the main part of file in native xml (and native html5) | | |
 | `<w:lang>` | `<lang>` | language | the language for characters | lang stands for *lang*uage | |
