@@ -164,7 +164,52 @@ You can know which namespaces in `xmlns` namespace are declared through finding 
 | `<o:Notes>` | | notes | estimated of the number of notes in the document. | (Potentially for notes in the document). | |
 | `<o:MMClips>` | | *M*utli*m*edia clips | estimated of the number of mutlimedia clips in the document. | (Potentially for embededded mutlimedia in the document). | |
 
-#### `<w>` namespace
+##### examples
+###### example 1
+`Docx1.docx` file.
+
+```
+<o:DocumentProperties>
+   <o:Title>Docx1</o:Title>
+   <o:Author>40843245</o:Author>
+   <o:LastAuthor>40843245</o:LastAuthor>
+   <o:Revision>2</o:Revision>
+   <o:TotalTime>0</o:TotalTime>
+   <o:LastPrinted>2016-06-13T09:16:00Z</o:LastPrinted>
+   <o:Created>2016-12-13T04:53:00Z</o:Created>
+   <o:LastSaved>2016-12-13T04:53:00Z</o:LastSaved>
+   <o:Pages>1</o:Pages>
+   <o:Words>70</o:Words>
+   <o:Characters>405</o:Characters>
+   <o:Company>NFU</o:Company>
+   <o:Lines>3</o:Lines>
+   <o:Paragraphs>1</o:Paragraphs>
+   <o:CharactersWithSpaces>474</o:CharactersWithSpaces>
+   <o:Version>15</o:Version>
+</o:DocumentProperties>
+```
+
+In above example, we can know that
+
++ To look at `<o:DocumentProperties>` tag, it contains metadata about `Docx1.docx` file.
++ In `<o:Title>Docx1</o:Title>`, its title is `Docx1`.
++ In `<o:Author>40843245</o:Author>`, the author of document when it is created is `40843245`.
++ In `<o:LastAuthor>40843245</o:LastAuthor>`, the author who last modifies it is `40843245`.
++ In `<o:Revision>2</o:Revision>`, its revision number is 2.
++ In `<o:TotalTime>0</o:TotalTime>`, the last modifies spent 0 minutes (or less than 1 minute) on this file
++ In `<o:LastPrinted>2016-06-13T09:16:00Z</o:LastPrinted>`, it will not be printed after `2016-06-13 09:16:00` UTC Time Zone.
++ In `<o:Created>2016-12-13T04:53:00Z</o:Created>`, someone creates this file at `2016-12-13 04:53:00` UTC Time Zone.
++ In `<o:LastSaved>2016-12-13T04:53:00Z</o:LastSaved>`, this file is saved at `2016-12-13 04:53:00` UTC Time Zone.
++ In `<o:Pages>1</o:Pages>`, this file has one page.
++ In `<o:Words>70</o:Words>`, this file contains exactly 70 words.
++ In `<o:Characters>405</o:Characters>`, this file contains exactly 405 characters (excluding space).
++ In `<o:Company>NFU</o:Company>`, this file is create by orginization NFU. Simply said, someone creates this file with Microsoft Office Word where its Microsoft Office product is registered by NFU.
++ In `<o:Lines>3</o:Lines>`, Office Word estimates this file has three lines.
++ In `<o:Paragraphs>1</o:Paragraphs>`, Office Word estimates this file has one paragraph.
++ In `<o:CharactersWithSpaces>474</o:CharactersWithSpaces>` Office Word estimates this file has 474 characters (including space).
++ In `<o:Version>15</o:Version>`, this file is created with Microsoft Office 2015. Here the version number 15 suggests version 2015.
+   
+#### `<w>` namespace7
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `<w:wordDocument>` | `<html>` | root node | the root node of a Microsoft Word file. | | |
