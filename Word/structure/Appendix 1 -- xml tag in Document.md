@@ -668,6 +668,47 @@ In the above example, we can know that
 + In `<w:t>text 1</w:t>` (inside `<w:r>`), it adds a text with content`text 1` in the run which is used by the paragraph. 
 
 ###### example 4 -- list
+```
+<w:lists>
+   <w:listDef w:listDefId="0">
+      <w:lsid w:val="FFFFFF7C"/>
+      <w:plt w:val="SingleLevel"/>
+      <w:tmpl w:val="CC904CB8"/>
+      <w:lvl w:ilvl="0">
+         <w:start w:val="1"/>
+         <w:lvlText w:val="%1."/>
+         <w:lvlJc w:val="left"/>
+         <w:pPr>
+            <w:tabs>
+               <w:tab w:val="list" w:pos="2281"/>
+            </w:tabs>
+            <w:ind w:left-chars="1000" w:left="2281" w:hanging-chars="200" w:hanging="360"/>
+         </w:pPr>
+      </w:lvl>
+   </w:listDef>
+</w:lists>
+```
+
+In above example, we can know that
+
++ In `<w:lists>`, it acts as a container for the list definitions.
++ In `<w:listDef w:listDefId="0">`, it defines the definition of list</br>which id is 0.
++ In `<w:lsid w:val="FFFFFF7C"/>`, it specifies the list style identifier whose value is `FFFFFF7C`.
++ In `<w:plt w:val="SingleLevel"/>`, it specifies the list pattern type is `single`, which means this list has only one level.
++ In `<w:tmpl w:val="CC904CB8"/>`, it specifies the template identifier whose value is `CC904CB8`.
++ In `<w:lvl w:ilvl="0">`, it defines the properties for a specific level, whose indentation level is 0.
++ In `<w:start w:val="1"/>`, it speficies the start point is 1.</br>i.e. The placeholder of first item in this level will be marked as `1` (or its corresponding symbol according to number formatting).
++ In `<w:lvlText w:val="%1."/>`, it specifies the placeholder.</br>The placeholder of first item in this level will be marked as `%1` (or its corresponding symbol according to number formatting) instead of `1`.
++ In `<w:lvlJc w:val="left"/>`, the placeholder of items in this level item in this level are left-aligned.
++ In `<w:pPr>`, it defines properties of a paragraph.
++ In `<w:tabs>`, it acts a container of a tab stop.
++ In `<w:tab w:val="list" w:pos="2281"/>`, it defines a tab stop specifically for list indentation at the position "2281" twips (i.e. twentieths of a point).
++ In `<w:ind w:left-chars="1000" w:left="2281" w:hanging-chars="200" w:hanging="360"/>`, controls the indentation of the list item.</br>By this attribute `w:left="2281"`, left indentation of the paragraph takes 2281 twips in total.</br>By this attribute `w:left-chars="1000"`, left indentation of the paragraph takes 1000 characters unit in total.</br>By this attribute `w:hanging="360"`, hanging indentation of the paragraph takes 360 twips in total.</br>By this attribute `w:hanging-chars="200"`, hanging indentation of the paragraph takes 200 characters unit in total.</br>Watch out for preceedence of this attribute. See following note.
+
+> [!NOTE]
+> The `w:hanging` attributes usually takes precedence over than `w:hanging-chars`.
+>
+> Similarly, the `w:left` attributes usually takes precedence over than `w:left-chars`.
 
 ###### example 5 -- line border
 
