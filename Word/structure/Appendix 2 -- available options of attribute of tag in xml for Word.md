@@ -168,10 +168,40 @@
 | `"thickThinLargeGap"` | | | a thick line, a thin line, and another thick line, with large gaps. | | | 
 | `"thinThickThinLargeGap"` | | | a thin line, a thick line, and a thin line, with large gaps. | | |
 
-### `<w:pgBorder>` -> `w:val` attribute
+### `<w:pgBorders>` -> `w:display` attribute
 
 > [!WARNING]
 > I refers from Google Gemini's answer which may be incorrect.
 
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"allPages"` | | all pages | the page borders defined for the section should be displayed on every page within that section. | default value | |
+| `"firstPage"` | | first page | the page borders defined for the section should be displayed on the first page of the current section. | | |
+| `"notFirstPage"` | | not first pages | the page borders defined for the section should be displayed on every page (except first page) within that section. | | |
+
+### `<w:pgBorders>` -> `w:offsetFrom` attribute
+
+> [!WARNING]
+> I refers from Google Gemini's answer which may be incorrect.
+
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"page"` | | page | the `w:space` attribute of the individual border elements (`<w:top>`, `<w:left>`, `<w:bottom>`, `<w:right>`) is interpreted as the distance from the **edge of the page** to the beginning of the border.  | | |
+| `"text"` | | text | the `w:space` attribute of the individual border elements (`<w:top>`, `<w:left>`, `<w:bottom>`, `<w:right>`) is interpreted as the distance from the **text margins** to the beginning of the border.  | | |
+
+> [!NOTE]
+> `w:offsetFrom` determines the reference point from which the spacing of the page borders is measured.
+>
+> Choosing `page` makes the border spacing absolute relative to the paper's edges.
+>
+> While choosing `text` makes it relative to the document's text boundaries, which are defined by the page margins.
+
+### `<w:pgBorders>` -> `w:zOrder` attribute
+
+> [!WARNING]
+> I refers from Google Gemini's answer which may be incorrect.
+
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"front"` | | |  the page border should be rendered **above** any intersecting text and other objects on the page. | default value | |
+| `"back"` | | |  the page border should be rendered **below** any intersecting text and other objects on the page. | | |
