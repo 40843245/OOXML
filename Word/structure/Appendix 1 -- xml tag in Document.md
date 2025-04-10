@@ -501,11 +501,11 @@ Way to parsing it is similar to parsing `<w:pStyle>`.
 | `wx:bdrwidth` | `border-width` in css | *b*or*d*e*r* width | specifies border width. | Observe name of namespace -- `wx`, we can know its used in Word 2003-specific extension.</br>So this tag is available on Word that can the extension -- Word 2003-specific extension.</br> Use alternative `w:sz` instead. | | 
 | `w:space` | | space | specifies spacing of border. | It is required. | | 
 | `w:color` | color in css | color | specifies color of the border. | It is required. | |
-| `w:themeColor` | | theme color | specifies theme color of the border. | It is optional. | |
-| `w:themeTint` | | theme tint | specifies theme tint of the border. | It is optional. | |
-| `w:themeShade` | | theme shade | specifies theme shade of the border. | It is optional. | |
-| `w:frame` | | frame | determines the border should have frame effect. | It is optional. | |
-| `w:shadow` | | shadow | determines the border should have shadow effect. | It is optional. | |
+| `w:themeColor` | | theme color | specifies theme color of the border. | It is optional.</br>There are default value. | |
+| `w:themeTint` | | theme tint | specifies theme tint of the border. | It is optional.</br>There are default value. | |
+| `w:themeShade` | | theme shade | specifies theme shade of the border. | It is optional.</br>There are default value. | |
+| `w:frame` | | frame | determines the border should have frame effect. | It is optional.</br>Default value is `"false"`. | |
+| `w:shadow` | | shadow | determines the border should have shadow effect. | It is optional.</br>Default value is `"false"`. | |
 
 > [!NOTE]
 > For introduction of frame effect, see [frame effect.md](https://github.com/40843245/CSS/blob/main/terms/frame%20effect.md)
