@@ -66,6 +66,7 @@ In above example, we can know that
 | namespace under `xmlns` namespace | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- |
 | `aml` | *A*nnotation *M*arkup *L*anguage | used for comments and revisions. | | |
+| `wpc` | *W*ord*P*rocessing*C*anvas | assign a value to it determine which WordProcessing Canvas is used, WordProcessing Canvas is for drawing and layout within the Word document (particularly newer drawing features). | | |
 | `dt` | *D*ata *T*ypes | often used for properties or values within the document. | | |
 | `mc` | *Markup* *C*ompatibility | determine which version of documents are allowed to be able to be compatible with different versions of Office Open XML. | | |
 | `o` | *O*ffice | it is for Office-specific elements, often related to general Office document properties. | | | 
@@ -100,7 +101,22 @@ In above example, we can know that
 
 + The tag is a root node in an Office Word file.
 + In `xmlns:aml="http://schemas.microsoft.com/aml/2001/core"`, its *A*nnotation *M*arkup *L*anguage refers the url `http://schemas.microsoft.com/aml/2001/core`.
-+ In `xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"`
++ In `xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"`, it uses the url `http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas` as WordProcessing Canvas.
++ In `xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"`, its data type is UUID where its UUID is `C2F41010-65B3-11d1-A29F-00AA00C14882`.
++ In `xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006`, for markup language, it is compatible with version 2006 or above.
++ In `xmlns:o="urn:schemas-microsoft-com:office:office"`, it declares a namespace named `o` and alias the namespace `urn:schemas-microsoft-com:office:office` as `o`.
++ In `xmlns:v="urn:schemas-microsoft-com:vml"`, its Vector Markup Language uses `urn:schemas-microsoft-com:vml`
++ In `xmlns:w10="urn:schemas-microsoft-com:office:word`, its Word 10-specific elements targets to the namespace `urn:schemas-microsoft-com:office:word`.
++ In `xmlns:w="http://schemas.microsoft.com/office/word/2003/wordml"`, its Word 2003 elements targets to the url `http://schemas.microsoft.com/office/word/2003/wordml`.
++ In `xmlns:wx="http://schemas.microsoft.com/office/word/2003/auxHint"`, its Word 2003 Auxiliary Hints targets to the url `http://schemas.microsoft.com/office/word/2003/auxHint`, simply said, it uses `http://schemas.microsoft.com/office/word/2003/auxHint` as an extension for Word 2003 elements.
++ In `xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"`, its wne targets to the url `http://schemas.microsoft.com/office/word/2006/wordml`.
++ In `xmlns:wsp="http://schemas.microsoft.com/office/word/2003/wordml/sp2"`, its Word Service Pack targets to the url `http://schemas.microsoft.com/office/word/2003/wordml/sp2`, and its Word Service Pack uses version 2003.
++ In `xmlns:sl="http://schemas.microsoft.com/schemaLibrary/2003/core"`, its Schema Library targets to the url `http://schemas.microsoft.com/schemaLibrary/2003/core` and the Word file uses Schema Library in version 2003.
++ In `w:macrosPresent="no"`, the Word file does NOT execute the macros (written in VBA or VB)
++ In `w:embeddedObjPresent="no"`, the Word file does NOT embed object.
++ In `w:ocxPresent="no"`, the Word file does NOT use Active Control.
++ In `xml:space="preserve"`, the Word file does fully preserve the space.
+   
 ### namespace in xml tag for OOXML
 | namespace in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
