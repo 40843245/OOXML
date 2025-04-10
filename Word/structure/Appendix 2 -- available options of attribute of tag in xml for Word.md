@@ -208,13 +208,13 @@ But the value indicates its theme shade.
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"true"` | | true | should have frame effect | | |
-| `"false"` | | false | should not have frame effect | | |
+| `"false"` | | false | should not have frame effect | default value | |
 
 ### `<w:bdr>` -> `w:shadow` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"true"` | | true | should have shadow effect | | |
-| `"false"` | | false | should not have shadow effect | | |
+| `"false"` | | false | should not have shadow effect | default value | |
 
 ### `<w:pgBorders>` -> `w:display` attribute
 
