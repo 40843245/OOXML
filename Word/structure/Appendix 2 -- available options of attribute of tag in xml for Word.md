@@ -133,8 +133,22 @@
 > [!WARNING]
 > I refers from Google Gemini's answer which may be incorrect.
 
+> [!IMPORTANT]
+> About `Art Border Styles`, they can always be used in `w:val` attribute inside page border elements (`<w:top>`,`<w:left>`,`<w:bottom>`,`<w:right>`).
+>
+> While, they sometimes could not be used in in `w:val` attribute in line border elements (`<w:bdr>`). It depends on the context.
+
+> [!IMPORTANT]
+> Due to
+>
+> 1. there are so many Art Border Styles and
+> 2. some may be deprecated even removed or added in different version of Microsoft Office Word.
+>
+> I only list them which appears on the earlier version than Microsoft Office Word 2003.
+
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
+| Line Border Styles | | | | | |
 | `"nil"` | | nil | no border | | | 
 | `"none"` | | none | no border | equivalent to `""nil` | | 
 | `"single"` | | single | a single solid line | | | 
@@ -167,6 +181,94 @@
 | `"thinThickLargeGap"` | | | a thin line, a thick line, and another thin line, with large gaps. | | | 
 | `"thickThinLargeGap"` | | | a thick line, a thin line, and another thick line, with large gaps. | | | 
 | `"thinThickThinLargeGap"` | | | a thin line, a thick line, and a thin line, with large gaps. | | |
+| | | | | | |
+| Art Border Styles | | | | | |
+| `"apples"` | | | a border made of repeating apple illustrations. | | |
+| `"archedScallops"` | | | a border with a repeating arched scallop design | | |
+| `"babyPacifier"` | | | a border featuring repeating baby pacifier images | | |
+| `"babyRattle"` | | | a border with repeating baby rattle illustrations | | |
+| `"balloons3Colors"` | | | a border with a repeating arched scallop design | | |
+| `"bats"` | | | a border with repeating bat silhouettes | | |
+| `"birds"` | | | a border featuring repeating bird illustrations | | |
+| `"cakeSlice"` | | | a border with repeating slices of cake. | | |
+| `"candyCorn"` | | | a border made of repeating candy corn images | | |
+| `"celticKnotwork"` | | | a border with an intricate, repeating Celtic knot design. | | |
+| `"certificateBanner"` | | | a border resembling a decorative banner often found on certificates. | | |
+| `"chamomile"` | | | a border featuring repeating chamomile flower illustrations. | | |
+| `"christmasTree"` | | | a border made of repeating Christmas tree images. | | |
+| `"circles"` | | | a border with repeating circular shapes. | | |
+| `"clover"` | | | a border featuring repeating clover leaves. | | |
+| `"compass"` | | | a border with repeating compass rose illustrations. | | |
+| `"confetti"` | | | a border that looks like scattered confetti. | | |
+| `"cornerClusters"` | | | a border with decorative clusters in the corners. | | |
+| `"couponCutoutDashes"` | | | a border that resembles a cutout line on a coupon, made of dashes. | | |
+| `"couponCutoutDots"` | | | a border that resembles a cutout line on a coupon, made of dots. | | |
+| `"crossStitch"` | | | a border that looks like a cross-stitch pattern | | |
+| `"decoArch"` | | | a border with a repeating decorative arch design. | | |
+| `"decoBlock"` | | | a border made of repeating decorative rectangular blocks. | | |
+| `"diamonds"` | | | a border with repeating diamond shapes. | | |
+| `"dogPawPrints"` | | | a border featuring repeating dog paw prints. | | |
+| `"doubleD"` | | | a border with a repeating "D" shape, often interlocked or doubled. | | |
+| `"downDiamonds"` | | | a border with repeating diamond shapes pointing downwards. | | |
+| `"dragons"` | | | a border featuring repeating dragon illustrations. | | |
+| `"easterEggs"` | | | a border made of repeating Easter egg images | | |
+| `"edgeOfTheWorld"` | | | a border with a design that evokes a landscape or horizon. | | |
+| `"elephants"` | | | a border featuring repeating elephant illustrations. | | |
+| `"fence"` | | | a border that looks like a repeating fence pattern. | | |
+| `"fireworks"` | | | a border with repeating firework burst illustrations. | | |
+| `"flowersMultiple"` | | | a border featuring repeating illustrations of multiple flowers. | | |
+| `"flowersSingle"` | | | a border with repeating illustrations of a single type of flower. | | |
+| `"follyBalloon"` | | | a border with repeating whimsical balloon illustrations. | | |
+| `"grapes"` | | | a border made of repeating grape illustrations. | | |
+| `"groovy"` | | | a border with a retro, wavy, or psychedelic design. | | |
+| `"hearts"` | | | a border featuring repeating heart shapes | | |
+| `"heirloom"` | | | a border with a traditional or antique-looking design. | | |
+| `"holly"` | | | a border made of repeating holly leaves and berries, often used for Christmas themes. | | |
+| `"houseFunky"` | | | a border with repeating stylized or whimsical house illustrations. | | |
+| `"hypnotic"` | | | a border with a repeating pattern that creates a visually mesmerizing or swirling effect. | | |
+| `"iceCreamCones"` | | | a border featuring repeating ice cream cone illustrations. | | |
+| `"lightBulb"` | | | a border with repeating light bulb illustrations. | | |
+| `"lightning1"` | | | a border made of repeating lightning bolt shapes (style 1). | | |
+| `"lightning2"` | | | a border made of repeating lightning bolt shapes (style 2). | possibly different from `lightning1`. | |
+| `"mapPins"` | | | a border featuring repeating map pin icons. | | |
+| `"marquee"` | | | a border that resembles a decorative marquee or ribbon. | | |
+| `"marqueeToothed"` | | | a marquee-style border with a toothed or jagged edge. | | |
+| `"moons"` | | | a border with repeating moon illustrations. | | |
+| `"mosaic"` | | | a border that looks like a repeating mosaic tile pattern. | | |
+| `"musicNotes"` | | | a border featuring repeating musical note symbols. | | |
+| `"northwest"` | | | a border with a design that might evoke a Northwestern or geometric style. | | |
+| `"ornaments1"` | | | a border made of repeating decorative ornaments (style 1). | | |
+| `"ornaments2"` | | | a border made of repeating decorative ornaments (style 2). | possibly different from `ornaments1` | |
+| `"paperClips"` | | | a border featuring repeating paper clip illustrations. | | |
+| `"pencils"` | | | a border with repeating pencil illustrations. | | |
+| `"people"` | | | a border featuring repeating stylized human figures. | | |
+| `"peopleWaving"` | | | a border with repeating illustrations of people waving. | | |
+| `"pineTrees"` | | | a border made of repeating pine tree illustrations. | | |
+| `"puzzlePieces"` | | | a border with repeating jigsaw puzzle piece shapes. | | |
+| `"pyramids"` | | | a border featuring repeating pyramid shapes. | | |
+| `"rings"` | | | a border made of repeating ring shapes. | | |
+| `"romanArc"` | | | a border with a repeating Roman arch design. | | |
+| `"rose"` | | | a border featuring repeating rose illustrations. | | |
+| `"sawtooth"` | | | a border with a repeating jagged, tooth-like edge | | |
+| `"shootingStar"` | | | a border with repeating shooting star illustrations. | | |
+| `"snowflake"` | | | a border made of repeating snowflake illustrations. | | |
+| `"southwest"` | | | a border with a design that might evoke a Southwestern or geometric style. | | |
+| `"stars"` | | | a border featuring repeating star shapes. | | |
+| `"starsTop"` | | | a border with repeating stars, possibly positioned along the top edge. | | |
+| `"sun"` | | | a border with repeating sun illustrations. | | |
+| `"swirlArrows"` | | | a border made of repeating swirling arrow shapes. | | |
+| `"swordArrows"` | | | a border with repeating sword and arrow illustrations. | | |
+| `"treeBalloon"` | | | a border featuring repeating illustrations of trees shaped like balloons. | | |
+| `"triangleParty"` | | | a border made of repeating triangles in a festive arrangement. | | |
+| `"triangles"` | | | a border with repeating triangular shapes. | | |
+| `"twistedLines1"` | | | a border with repeating twisted line designs (style 1). | | |
+| `"twistedLines2"` | | | a border with repeating twisted line designs (style 2). | possibly different from `twistedLines1` | |
+| `"vine"` | | | a border featuring repeating vine or leaf illustrations. | | |
+| `"mapPins"` | | | a border featuring repeating map pin icons. | | |
+| `"wavyDouble"` | | | a border with two parallel wavy lines. | | |
+| `"wavyLine"` | | | a single wavy line. | | |
+| `"weavedmat"` | | | a border that looks like a repeating woven mat pattern. | | |
+| `"zigzag"` | | | a border featuring repeating map pin icons. | | |
 
 ### `<w:pgBorders>` -> <w:top> -> `w:val` attribute
 Same as `<w:bdr>` -> `w:val` attribute.
