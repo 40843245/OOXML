@@ -488,7 +488,53 @@ Way to parsing it is similar to parsing `<w:pStyle>`.
 | `w:val` | | | assign the string as value to determine the alignment for this level | | |
 
 ##### examples and explanations
-###### example 1 -- run
+###### example 1 -- fonts
+```
+<w:fonts>
+   <w:defaultFonts w:ascii="Times New Roman" w:fareast="新細明體" w:h-ansi="Times New Roman" w:cs="Times New Roman"/>
+   <w:font w:name="Times New Roman">
+      <w:panose-1 w:val="02020603050405020304"/>
+      <w:charset w:val="00"/>
+      <w:family w:val="Roman"/>
+      <w:pitch w:val="variable"/>
+      <w:sig w:usb-0="E0002EFF" w:usb-1="C000785B" w:usb-2="00000009" w:usb-3="00000000" w:csb-0="000001FF" w:csb-1="00000000"/>
+   </w:font>
+</w:fonts>
+```
+
+In above example, we can know that
+
++ In `<w:fonts>`, it configures properties of a collection of fonts.
++ In `<w:defaultFonts w:ascii="Times New Roman" w:fareast="新細明體" w:h-ansi="Times New Roman" w:cs="Times New Roman"/>`, it configure the default font.</br>It is `Times New Roman` when thoese text that uses default font is encoded with ascii encoding.</br>It is `新細明體` for thoese fareast-text that uses default font.</br>It is `Times New Roman` when thoese text that uses default font is encoded with high Ansi encoding.</br>It is `Times New Roman` for those complex script text that uses default font.
++ In `<w:font w:name="Times New Roman">`, it gives name of the font as `Times New Roman`, which indicates the text whose font is `Times New Roman` have these properties (inside `<w:font w:name="Times New Roman">` tag).
++ In `<w:panose-1 w:val="02020603050405020304"/>` (inside `<w:font w:name="Times New Roman">` tag), it classifies the text by PANOSE system with id `02020603050405020304` (that will be used with highest priority)
++ In `<w:charset w:val="00"/>`, it configures charset id as `00`.
++ In `<w:family w:val="Roman"/>`, it configures family of font as `Roman`.
++ In `<w:pitch w:val="variable"/>`, it configures pitch as variable-pitch.
++ In `<w:sig w:usb-0="E0002EFF" w:usb-1="C000785B" w:usb-2="00000009" w:usb-3="00000000" w:csb-0="000001FF" w:csb-1="00000000"/>`, it configure the digital signature.</br>Its 0th USB identifier (with highest priority) is `E0002EFF`.</br>Its 1th USB identifier is `C000785B`.</br>Its 2th USB identifier is `00000000`.</br>Its 3th USB identifier is `00000000`.</br>Its 0th CSB identifier is `000001FF`.</br>Its 1th CSB identifier is `00000000`.
+
+> [!NOTE]
+> USB id stands for unique signature block identifier.
+> CSB id stands for custom signature block identifier.
+
+> [!IMPORTANT]
+> PANOSE system will be used when the specific font is NOT found in the device, it is corrupted, or it can not work.
+
+> [!IMPORTANT]
+> the value of the `w:val` attribute is "02020603050405020304". Each pair of digits represents a specific aspect of the font:
+> 1.  **Family**: 02 = Text and display
+> 2.  **Serif style**: 02 = Cove
+> 3.  **Weight**: 06 = Book
+> 4.  **Proportion**: 03 = Even width
+> 5.  **Contrast**: 05 = Medium
+> 6.  **Stroke variation**: 04 = Gradual/transitional
+> 7.  **Arm style**: 05 = Slanted
+> 8.  **Letterform**: 02 = Normal/upright
+> 9.  **Midline**: 03 = Continuous
+> 10. **X-height**: 04 = Medium
+
+
+###### example 2 -- run
 ```
 <w:r>
   <w:rPr>
