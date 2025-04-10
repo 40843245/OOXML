@@ -277,6 +277,8 @@ In above example, we can know that
 | `<w:lvlText>` | | level text | defines the numbering format using placeholders (e.g., "%1." for first-level numbers) | | |
 | `<w:lvlJc>` | | level justification | configures the justification of this level | | | 
 | `<w:nfc>` | | Number Formatting Code | configures Number Formatting Code of this level | nfc stands for *N*umber *F*ormatting *C*ode | | 
+| | | | | | | | 
+| `<w:bdr>`| `border` in css | border | configures properties of a border. | | |
 
 ###### xml attribute
 ###### attribute in `xmlns` namespace
@@ -486,6 +488,15 @@ Way to parsing it is similar to parsing `<w:pStyle>`.
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:val` | | | assign the string as value to determine the alignment for this level | | |
+
+###### attribute in `<w:bdr>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:val` | `style` attribute in tag in native html5 | style | specifies the style of the border. | | | 
+| `w:sz` | | size | specifies thickness or size of the border line | | | 
+| `wx:bdrwidth` | `border-width` in css | *b*or*d*e*r* width | specifies border width. | | | 
+| `w:space` | | space | specifies spacing of border. | | | 
+| `w:color` | color in css | color | specifies color of the border. | | |
 
 ##### examples and explanations
 ###### example 1 -- fonts
