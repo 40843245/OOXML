@@ -209,7 +209,7 @@ In above example, we can know that
 + In `<o:CharactersWithSpaces>474</o:CharactersWithSpaces>` Office Word estimates this file has 474 characters (including space).
 + In `<o:Version>15</o:Version>`, this file is created with Microsoft Office 2015. Here the version number 15 suggests version 2015.
    
-#### `<w>` namespace7
+#### `<w>` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `<w:wordDocument>` | `<html>` | root node | the root node of a Microsoft Word file. | | |
@@ -258,12 +258,13 @@ In above example, we can know that
 | `<w:col>` | | columns in section | add columns in section (that is inside `<w:sectPr>` tag) | | |
 | `<w:docGrid>` | | document grid | add document grid (that is inside `<w:sectPr>` tag) | | |
 | | | | | | | | 
-| `<w:tabs>` | | many tabs | define lots of a tab stop you may see lots of | you may see one or more `<w:tab>` tag inside `<w:tabs>` tag. | | 
+| `<w:tabs>` | | | acts like a container of tab stops (`<w:tab>`) | you may see one or more `<w:tab>` tag inside `<w:tabs>` tag. | | 
 | `<w:tab>` | | tab | define property of a tab stop by assign the value to its attributes. | | | 
 | | | | | | | | 
 | `<w:bookmarkStart>` | | bookmark start | defines a bookmark with start point | | One `<w:bookmarkStart>` tag must match one `<w:bookmarkEnd>` tag. Otherwise, the file is corrupted. | 
 | `<w:bookmarkEnd>` | | bookmark end | defines a bookmark with end point to enclose a bookmark | | Same as above | 
 | | | | | | | | 
+| `<w:lists>` | | | acts like a container of a list (`<w:list>`) | | |
 | `<w:listDef>` | | list definition | defines a list with specific id for style | | |
 | `<w:lsid>` | | list style id | assign the value of `w:val` attribute to id of list style to determine which style will be used | the id is defined in `~/word/style.xml` | |
 | `<w:lvl>` | | list level | defines a level of list | lvl stands for *l*e*v*e*l* | |
