@@ -280,6 +280,11 @@ In above example, we can know that
 | | | | | | | | 
 | `<w:bdr>` | `border` in css | border | configures properties of the border. | | |
 | `<w:pgBorders>` | | page border | configures properties of the borders of page. | | |
+| `<w:top>` | | top | configures properties of top borders of some elements (according to this tag is inside what tag). | | |
+| `<w:left>` | | left | configures properties of left borders of some elements (according to this tag is inside what tag). | | |
+| `<w:bottom>` | | bottom | configures properties of bottom borders of some elements (according to this tag is inside what tag). | | |
+| `<w:right>` | | right | configures properties of right borders of some elements (according to this tag is inside what tag). | | |
+
 
 ###### xml attribute
 ###### attribute in `xmlns` namespace
@@ -361,8 +366,6 @@ Same as attribute in `<w:rFonts>`.
 | `w:first-line` | | first-line indentation | assign an value to specify first-line indentation of the paragraph, measured in twips.  | its unit is twips |
 same as above |
 | `w:mirrorIndents` | | mirror indentation | the indentation should be mirrored.</br>Specifying to `"false"` indicates that the indentation will not be mirrored.</br>Otherwise, specifying to `"true"` indicates that it will be indented.</br>Default value is `"false"`. | | |
-| etc | | | | | |
-
 
 ###### attribute in `<w:r>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -493,11 +496,22 @@ Way to parsing it is similar to parsing `<w:pStyle>`.
 ###### attribute in `<w:bdr>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w:val` | `style` attribute in tag in native html5 | style | specifies the style of the border. | | | 
-| `w:sz` | | size | specifies thickness or size of the border line | | | 
-| `wx:bdrwidth` | `border-width` in css | *b*or*d*e*r* width | specifies border width. | | | 
-| `w:space` | | space | specifies spacing of border. | | | 
-| `w:color` | color in css | color | specifies color of the border. | | |
+| `w:val` | `style` attribute in tag in native html5 | style | specifies the style of the border. | It is required. | | 
+| `w:sz` | | size | specifies thickness or size of the border line | It is required. | | 
+| `wx:bdrwidth` | `border-width` in css | *b*or*d*e*r* width | specifies border width. | Observe name of namespace -- `wx`, we can know its used in Word 2003-specific extension.</br>So this tag is available on Word that can the extension -- Word 2003-specific extension.</br> Use alternative `w:sz` instead. | | 
+| `w:space` | | space | specifies spacing of border. | It is required. | | 
+| `w:color` | color in css | color | specifies color of the border. | It is required. | |
+| `w:themeColor` | | theme color | specifies theme color of the border. | It is optional. | |
+| `w:themeTint` | | theme tint | specifies theme tint of the border. | It is optional. | |
+| `w:themeShade` | | theme shade | specifies theme shade of the border. | It is optional. | |
+| `w:frame` | | frame | determines the border should have frame effect. | It is optional. | |
+| `w:shadow` | | shadow | determines the border should have shadow effect. | It is optional. | |
+
+> [!NOTE]
+> For introduction of frame effect, see [frame effect.md](https://github.com/40843245/CSS/blob/main/terms/frame%20effect.md)
+
+> [!NOTE]
+> For introduction of shadow effect, see [shadow effect.md](https://github.com/40843245/CSS/blob/main/terms/shadow%20effect.md)
 
 ###### attribute in `<w:pgBorders>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -676,6 +690,11 @@ In the above example, we can know that
   </w:pgBorders>
 </w:sectPr>
 ```
+
+In above example, we can know that
+
++ In `<w:sectPr>`, it defines properties of the section.
++ In `<w:pgBorders w:display="notFirstPage" w:offsetFrom="text" w:zOrder="back">`, <ol><li>`w:display="notFirstPage"` indicates all pages (except for first page) should be display the page border within the section.</li><li>`w:offsetFrom="text"` indicates the values of `w:space` attribute (inside this tag) will be measured from the text margins of the page.</li><li>`w:zOrder="back"` specifies that the page borders should be rendered behind the document content.</li></ol>
 
 [^1]:[Prequisite Review 1 -- terms](https://github.com/40843245/XmlOfOffice/blob/main/Word/structure/Prequisite%20Review%201%20--%20terms.md)
 
