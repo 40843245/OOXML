@@ -168,6 +168,18 @@
 | `"thickThinLargeGap"` | | | a thick line, a thin line, and another thick line, with large gaps. | | | 
 | `"thinThickThinLargeGap"` | | | a thin line, a thick line, and a thin line, with large gaps. | | |
 
+### `<w:pgBorders>` -> <w:top> -> `w:val` attribute
+Same as `<w:bdr>` -> `w:val` attribute.
+
+### `<w:pgBorders>` -> <w:left> -> `w:val` attribute
+Same as `<w:bdr>` -> `w:val` attribute.
+
+### `<w:pgBorders>` -> <w:right> -> `w:val` attribute
+Same as `<w:bdr>` -> `w:val` attribute.
+
+### `<w:pgBorders>` -> <w:down> -> `w:val` attribute
+Same as `<w:bdr>` -> `w:val` attribute.
+
 ### `<w:pgBorders>` -> `w:display` attribute
 
 > [!WARNING]
