@@ -127,3 +127,44 @@
 | `"0"` | | | defines the formatting for the first level of the list.  | zero-based | | 
 | `"1"` | | |  defines the top-most or first level of the list.| | | 
 | etc | | | | | | 
+
+### `<w:bdr>` -> `w:val` attribute
+
+> [!WARNING]
+> I refers from Google Gemini's answer which may be incorrect.
+
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"nil"` | | nil | no border | | | 
+| `"none"` | | none | no border | equivalent to `""nil` | | 
+| `"single"` | | single | a single solid line | | | 
+| `"thick"` | | thick | a thicker single solid line | | | 
+| `"double"` | | double | a double solid line | | | 
+| `"dotted"` | | dotted | a dotted line | | | 
+| `"dashed"` | | dashed | a dashed line with larger gaps | | | 
+| `"dotDash"` | | dot, dash | a line with alternating dots and dashes. | | | 
+| `"dotDotDash"` | | dot, dot, dash | a line with repeating pattern -- dot, dot, dash. | | | 
+| `"mediumDashed"` | | | a dashed line with medium thickness dashes. | | | 
+| `"mediumDashDot"` | | | a line with alternating medium dashes and meduim dots. | | | 
+| `"mediumDashDotDot"` | | | a line with repeating pattern -- meduim dash, meduim dot, meduim dot. | | | 
+| `"slantDashDot"` | | | a line with alternating slanting dashes and slanting dots. | | | 
+| `"triple"` | | triple | three parallel solid lines. | | | 
+| `"wave"` | | wave | a single wavy line. | | | 
+| `"doubleWave"` | | double wave | a double wavy line. | | | 
+| `"dashSmallGap"` | | | a dashed line with smaller gaps. | | | 
+| `"dashDotStroked"` | | | a line with alternating thin and thick dashes. | | | 
+| `"threeDEmboss"` | | |  a border that appears embossed (raised) | | | 
+| `"threeDEngrave"` | | | a border that appears engraved (sunken). | | | 
+| `"outset"` | | | a border that appears to be outside the frame. | | | 
+| `"inset"` | | | a border that appears to be inside the frame. | | | 
+| `"hair"` | | hairline |  a hairline (i.e. a very thin line). | | | 
+| `"thinThickSmallGap"` | | | a thin line, a thick line, and another thin line, with small gaps. | | | 
+| `"thickThinSmallGap"` | | | a thick line, a thin line, and another thick line, with small gaps. | | | 
+| `"thinThickThinSmallGap"` | | | a thin line, a thick line, and a thin line, with small gaps. | | | 
+| `"thinThickMediumGap"` | | | a thin line, a thick line, and another thin line, with medium gaps. | | | 
+| `"thickThinMediumGap"` | | | a thick line, a thin line, and another thick line, with medium gaps. | | | 
+| `"thinThickThinMediumGap"` | | | a thin line, a thick line, and a thin line, with medium gaps. | | |
+| `"thinThickLargeGap"` | | | a thin line, a thick line, and another thin line, with large gaps. | | | 
+| `"thickThinLargeGap"` | | | a thick line, a thin line, and another thick line, with large gaps. | | | 
+| `"thinThickThinLargeGap"` | | | a thin line, a thick line, and a thin line, with large gaps. | | |
+
