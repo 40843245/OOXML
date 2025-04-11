@@ -404,6 +404,11 @@ In above example, we can know that
 | `<w:left>` | | left | configures properties of left borders of some elements (according to this tag is inside what tag). | | |
 | `<w:bottom>` | | bottom | configures properties of bottom borders of some elements (according to this tag is inside what tag). | | |
 | `<w:right>` | | right | configures properties of right borders of some elements (according to this tag is inside what tag). | | |
+| | | | | | | | 
+| `<w:mathPr>` | | math properties | configures properties about math. | | |
+| `<w:mathFont>` | | math font | configures properties of font that used in mathematical content. | | |
+| `<w:brkBin>` | | *br*ea*k* *bin*ary| configures properties of break binary (such as operations) that used in mathematical content. | See `Appendix 5`[^4] for more information.| |
+| | | | | | | | 
 
 
 ###### xml attribute
@@ -424,6 +429,11 @@ In above example, we can know that
 
 > [!IMPORTANT]
 > The available value of `w:val` attribute in `<w:characterSpacingControl>` is defined in [Character-Level Whitespace Compression Settings](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_CharacterSpacing_topic_ID0E6AK2.html)
+
+###### attribute in `<w:rsid>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | specifies a Guid as a revision save identifier. | | |
 
 ###### attribute in `<w:word>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -879,8 +889,10 @@ In above example, we can know that
 
 [^3]:[`Appendix 1 -- tags in xml`](https://github.com/40843245/Xml/blob/main/structure/Appendix%201%20--%20tags%20in%20xml.md)
 
-[^4]:[9.2 Relationships in Office Open XML](https://ooxml.info/docs/9/9.2/)
+[^4]: [Appendix 5 -- break on binary operations](https://github.com/40843245/XmlOfOffice/blob/main/Word/structure/Appendix%205%20--%20break%20on%20binary%20operations.md)
 
-[^5]:[ DocumentFormat.OpenXml.Linq.WNE class (MSDS API reference)](https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.linq.wne?view=openxml-3.0.1) 
+[^5]:[9.2 Relationships in Office Open XML](https://ooxml.info/docs/9/9.2/)
 
-[^6]:[`docx格式文档详解：xml解析并用html还原`](https://juejin.cn/post/7166821284087595038)
+[^6]:[ DocumentFormat.OpenXml.Linq.WNE class (MSDS API reference)](https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.linq.wne?view=openxml-3.0.1) 
+
+[^7]:[`docx格式文档详解：xml解析并用html还原`](https://juejin.cn/post/7166821284087595038)
