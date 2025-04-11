@@ -248,6 +248,12 @@ You can know which namespaces in `xmlns` namespace are declared through finding 
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `xml:space` | | space | assign a value to determine how to deal with whitespace (i.e. ` `, `\t`,`\n`).
 
+#### about `v` namespace
+##### attribute in `v` namespace
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `v:ext` | | | specifies editing behavior for shapes created with these defaults. | | |
+
 ### element and its attribute in xml tag in OOXML
 #### about `o` namespace
 `o` namespace contains metadata about the Word document itself.
@@ -283,6 +289,16 @@ You can know which namespaces in `xmlns` namespace are declared through finding 
 | `<o:HiddenSlides>` | | notes | estimated of the number of hidden slides in the document. | (Potentially for PowerPoint documents etc embedded in Word) | |
 | `<o:Notes>` | | notes | estimated of the number of notes in the document. | (Potentially for notes in the document). | |
 | `<o:MMClips>` | | *M*utli*m*edia clips | estimated of the number of mutlimedia clips in the document. | (Potentially for embededded mutlimedia in the document). | |
+| | | | | | |
+| `<o:shapedefaults>` |
+| |
+
+##### attribute about `o` namespace
+###### attribute in `<o:shapedefaults>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `v:ext` | | | | explained in **`attribute in `\v`\ namespace` section**| |
+| `spidmax` | | max *s*ha*p*e *id* | sets the maximum Shape ID that can be assigned to new shapes created within the current drawing canvas. | 
 
 ##### examples and explanation
 ###### example 1
@@ -420,8 +436,9 @@ In above example, we can know that
 | `<w:bottom>` | | bottom | configures properties of bottom borders of some elements (according to this tag is inside what tag). | | |
 | `<w:right>` | | right | configures properties of right borders of some elements (according to this tag is inside what tag). | | |
 | `<w:displayBackgroundShape/>` | | | determines if the background shape is display or not | | | 
-| `<w:themeFontLang/>`| | | | specifies the language settings for the theme fonts used in a Microsoft Word document. | | | 
-| | | | | | | | 
+| `<w:themeFontLang/>`| | | specifies the language settings for the theme fonts used in a Microsoft Word document. | | | 
+| `<w:clrSchemeMapping/>` | | | maps semantic color roles within a Word document to specific color definitions defined elsewhere in the theme. | | |
+| `<w:shapeDefaults>` | | | acts like an container containing default properties for newly created drawing shapes within a Microsoft Word document. | It usually resides in `~/word/settings.xml` under a Word file. | |
 
 ##### attribute about `w` namespace
 ###### attribute in `<w:zoom>`
@@ -680,8 +697,26 @@ Way to parsing it is similar to parsing `<w:pStyle>`.
 ###### attribute in `<w:themeFontLang>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w:val` | | | specifies a language code to determines which language will be used, for complex script text, when the theme fonts are applied. | | |
-| `w:bidi` | | | specifies a language code to determines which language will be used, for bi-directional text (such as Arabic or Hebrew) , when the theme fonts are applied. | | |
+| `w:val` | | | specifies a language code to determines which language will be used, for complex script language, when the theme fonts are applied. | | |
+| `w:bidi` | | | specifies a language code to determines which language will be used, for bi-directional language (such as Arabic or Hebrew) , when the theme fonts are applied. | | |
+
+###### attribute in `<w:clrSchemeMapping>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:bg1` | | background color 1 | specifics background color 1 in scheme mapping table. | | | 
+| `w:bg2` | | background color 2 | specifics background color 2  in scheme mapping table. | | | 
+| `w:t1` | | text color 1 | specifics text color 1 in scheme mapping table. | | | 
+| `w:t2` | | text color 2 | specifics text color 2 in scheme mapping table. | | | 
+| `w:accent1` | | accent color 1 | specifics accent color 1 in scheme mapping table. | | | 
+| `w:accent2` | | accent color 2 | specifics accent color 2 in scheme mapping table. | | | 
+| `w:accent3` | | accent color 3 | specifics accent color 3 in scheme mapping table. | | | 
+| `w:accent4` | | accent color 4 | specifics accent color 4 in scheme mapping table. | | | 
+| `w:accent5` | | accent color 5 | specifics accent color 5 in scheme mapping table. | | | 
+| `w:accent6` | | accent color 6 | specifics accent color 6 in scheme mapping table. | | | 
+| `w:hyperlink` | | hyperlink | specifics hyperlink in scheme mapping table. | | | 
+| `w:followedHyperlink` | | followedHyperlink  | specifics followed hyperlink in scheme mapping table. | | | 
+
+For more informations and details, see [DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping Class (MSDS API reference)](https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.wordprocessing.colorschememapping?view=openxml-3.0.1)
 
 ##### examples and explanations
 ###### example 1 -- fonts
@@ -898,6 +933,40 @@ In above example, we can know that
 
 + In `<w:sectPr>`, it defines properties of the section.
 + In `<w:pgBorders w:display="notFirstPage" w:offsetFrom="text" w:zOrder="back">`, <ol><li>`w:display="notFirstPage"` indicates all pages (except for first page) should be display the page border within the section.</li><li>`w:offsetFrom="text"` indicates the values of `w:space` attribute (inside this tag) will be measured from the text margins of the page.</li><li>`w:zOrder="back"` specifies that the page borders should be rendered behind the document content.</li></ol>
+
+###### example 7 -- display background shape
+```
+<w:displayBackgroundShape w:val="true"/>
+```
+
+In above example, we can know that
+
++ In `<w:displayBackgroundShape w:val="true"/>`, it will display background shape when a user open a Word file with Microsoft Office Word.
+
+###### example 8 -- theme font language
+```
+<w:themeFontLang w:val="zh-TW" w:bidi="ar-SA"/>
+```
+
+In above example, we can know that
+
++ In `w:val="zh-TW"`, when applying theme fonts to text that is marked as **Traditional Chinese (Taiwan)**, use language-specific rendering rules appropriate for `zh-TW`.
++ In `w:bidi="ar-SA"`, When applying theme fonts to text that is marked as **Arabic (Saudi Arabia)** (a right-to-left language), use language-specific rendering rules appropriate for `ar-SA`.
+
+###### example 9 -- color scheme
+```
+<w:clrSchemeMapping w:bg1="light1" w:t1="dark1" w:bg2="light2" w:t2="dark2" w:accent1="accent1" w:accent2="accent2" w:accent3="accent3" w:accent4="accent4" w:accent5="accent5" w:accent6="accent6" w:hyperlink="hyperlink" w:followedHyperlink="followedHyperlink"/>
+```
+
+###### example 10 -- default shape
+```
+<w:shapeDefaults>
+    <o:shapedefaults v:ext="edit" spidmax="2050"/>
+    <o:shapelayout v:ext="edit">
+    <o:idmap v:ext="edit" data="1"/>
+    </o:shapelayout>
+</w:shapeDefaults>
+```
 
 #### about `m` namespace
 ##### elements in `m` namespace
