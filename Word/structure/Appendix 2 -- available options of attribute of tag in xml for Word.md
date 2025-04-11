@@ -367,6 +367,51 @@ But the value indicates its theme shade.
 | `"front"` | | |  the page border should be rendered **above** any intersecting text and other objects on the page. | default value | |
 | `"back"` | | |  the page border should be rendered **below** any intersecting text and other objects on the page. | | |
 
+#### `<w:latentStyles>` -> `w:defLockedState` attribute
+> [!WARNING]
+> I refers from Google Gemini's answer which may be incorrect.
+
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"false"` or `"0"` | | | | indicates new latent styles are not locked by default and can be modified. | | |
+| `"true"` or `"1"` | | | | indicates new latent styles are locked by default and harder to be modified. | | |
+
+#### `<w:latentStyles>` -> `w:defUnhideWhenUsed` attribute
+> [!WARNING]
+> I refers from Google Gemini's answer which may be incorrect.
+
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"false"` or `"0"` | | | | indicates that if a latent style is actually used in the document content, it will NOT become visible in the user interface. | | |
+| `"true"` or `"1"` | | | | indicates that if a latent style is actually used in the document content, it will become visible in the user interface. | This allows styles that are relevant to the content to appear when needed. | |
+
+#### `<w:latentStyles>` -> `w:defQFormat` attribute
+> [!WARNING]
+> I refers from Google Gemini's answer which may be incorrect.
+
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"false"` or `"0"` | | | | indicates that new latent styles will NOT appear in the Quick Styles gallery by default. | | |
+| `"true"` or `"1"` | | | | indicates that new latent styles will appear in the Quick Styles gallery by default. |  | |
+
+#### `<w:lsdException>` -> `w:name` attribute
+> [!WARNING]
+> I refers from Google Gemini's answer which may be incorrect.
+
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"false"` or `"0"` | | | | indicates that new latent styles will NOT appear in the Quick Styles gallery by default. | | |
+| `"true"` or `"1"` | | | | indicates that new latent styles will appear in the Quick Styles gallery by default. |  | |
+
+#### `<w:lsdException>` -> `w:semiHidden` attribute
+> [!WARNING]
+> I refers from Google Gemini's answer which may be incorrect.
+
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"false"` or `"0"` | | | | indicates that the style is not semi-hidden and will be visible in the Styles pane. | | |
+| `"true"` or `"1"` | | | | indicates that the style is semi-hidden. it will be invisible unless it's actively in use in the document. | | |
+
 ### about `m` namespace
 #### `<m:brkBin>` -> `m:val` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
