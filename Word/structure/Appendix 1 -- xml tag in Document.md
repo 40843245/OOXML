@@ -1055,6 +1055,54 @@ In above example, we can know that
 
 + In `<w:listSeparator w:val=","/>`, it specifies the separator of list is `,`.
 
+###### example 13 -- default setting for entire document
+```
+<w:docDefaults>
+    <w:rPrDefault>
+        <w:rPr>
+            <w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+            <w:sz w:val="22"/>
+            <w:szCs w:val="22"/>
+            <w:lang w:val="zh-TW" w:eastAsia="en-US" w:bidi="ar-SA"/>
+        </w:rPr>
+    </w:rPrDefault>
+    <w:pPrDefault/>
+</w:docDefaults>
+```
+
+In above example, we can know that
+
++
+
+###### example 14 -- default latent style
+```
+<w:latentStyles w:defLockedState="0" w:defUIPriority="99" w:defSemiHidden="1" w:defUnhideWhenUsed="1" w:defQFormat="0" w:count="267">
+```
+
+In above example, we can know that
+
++ In `w:latentStyles`, it specifies the default setting for latent styles.
++ In `w:defLockedState="0"`, it sets the locked state to `false` by default , meaning the latent styles will NOT be locked by default.
++ In `w:defUIPriority="99"`, it sets the ui priority of latent style to 99 by default.
++ In `w:defSemiHidden="1"`, it sets the semi-hidden state to `true` by default, meaning the latent styles are semi-hidden by default,</br>so that they will not be readily visible in the Styles pane unless they are in use in the document, by default.\
++ In `w:defUnhideWhenUsed`, it sets the unhide-when-used state to `true` by default, meaning that if a latent style is applied to content, then it will automatically become unhidden and visible in the Styles pane, by default.
++ In `w:defQFormat`, it sets the quick format style to `false`, meaning that latent styles are not included in the Quick Styles gallery, by default.
++ In `w:count="267"`, we can know there are 267 latent styles defined in the Word file.
+
+###### example 15 -- LSD and latent style
+```
+<w:lsdException w:name="Normal" w:semiHidden="0" w:uiPriority="0" w:unhideWhenUsed="0" w:qFormat="1"/>
+```
+
+In above example, we can know that
+
++ In `w:lsdException`, it defines a latent style.
++ In `w:name="Normal"`, it uses `Normal` style.
++ In `w:semiHidden="0"`, it sets semi-hidden state to `false`, meaning that the latent style is NOT semi-hidden and will be visible in the Styles pane.
++ In `w:uiPriority="0"`, it sets the ui priority to zero.
++ In `w:unhideWhenUsed="0"`, the latent style is NOT unhide (i.e. become visible) when it is actually used.
++ In `w:qFormat="1"`, the latent style will be placed in Quick Style pane.
+  
 #### about `m` namespace
 ##### elements in `m` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
