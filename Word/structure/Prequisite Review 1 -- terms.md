@@ -1,6 +1,16 @@
 # Prequisite Review 1 -- terms
-## toc
 ## terms explanation
+### about hyperlink
+#### followed hyperlink
+followed hyperlink is a link that has been clicked.
+
+When a links has been clicked, it will be a followed hyperlink.
+
+#### followed hyperlink style
+followed hyperlink style is a style for followed hyperlink.
+
+When a links has been clicked, it will be a followed hyperlink and apply followed hyperlink style.
+
 ### about font
 #### pitch 
 According to this article -- [`Adjusting Text Pitch`](https://wordribbon.tips.net/T013688_Adjusting_Text_Pitch.html), it is defined as 
