@@ -66,5 +66,14 @@ A hanging indent is used to indent all lines of a paragraph except the first.
 
 ### about role
 #### document role
+document role in OOXML determines what document should behaves when the property of an element in a Word file is not explicitly specified.
+
+#### scheme mapping table
+scheme mapping table stores the default behaviour of default scheme for document role. default scheme is only used iff the property of an element in a Word file is not explicitly specified.
+
+> [!TIP]
+> You can configure the scheme mapping table so that you don't have to set its attribute of tag many times.
+>
+> It is more maintenable and more readable.
   
 [^1]: [Appendix 3 -- unit measurements](https://github.com/40843245/XmlOfOffice/blob/main/Word/structure/Appendix%203%20--%20unit%20measurements.md)
