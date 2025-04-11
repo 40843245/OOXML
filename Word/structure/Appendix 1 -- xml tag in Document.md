@@ -322,6 +322,11 @@ In above example, we can know that
 | `<w:settings>` | | setting | it serves as a container for a wide range of document-level settings and properties that control how the Word document behaves and is displayed. | it usually resides in `~/word/setting.xml` file under a Office Word file. | |
 | `<w:zoom>` | | zoom | specifies the display zoom level for the document when it is opened in Microsoft Word. | same as above| |
 | `<w:characterSpacingControl>` | | character spacing controlls | specifies how to adjust the spacing between characters. | |
+| `<w:compat/>` | | compatibility | it is a container element that holds various compatibility settings designed to ensure the document is displayed and behaves as expected across different versions of Microsoft Word. | | |
+| | | | | | |
+| `<w:rsids>` | | *r*evision *s*ave *id*entifier*s* | it is a container of revision save identifiers element (`<w:rsid>`, `<w:rsidRoot>`) | | |
+| `<w:rsidRoot>` | | *r*evision *s*ave *id*entifiers baseline | establishes a revision save identifiers baseline for current editing session or the most recent save operation that affected the main content of the document. | | |
+| `<w:rsid>` | | *r*evi*s*ion save | establishes a revision save identifier. | | |
 | | | | | | |
 | `<w:wordDocument>` | `<html>` | root node | the root node of a Microsoft Word file. | | |
 | `<w:document>` | `<html>` | root node | the root node of **`~/word/document.xml`** file under a Microsoft Word file. | | |
