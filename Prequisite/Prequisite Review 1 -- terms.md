@@ -85,5 +85,34 @@ scheme mapping table stores the default behaviour of default scheme for document
 > You can configure the scheme mapping table so that you don't have to set its attribute of tag many times.
 >
 > It is more maintenable and more readable.
-  
+
+### about style
+#### quick format style
+quick format styles are those that appear in the quick styles gallery for easy access.
+
+#### quick style gallery
+Quick Styles Gallery in Microsoft Word is a visual display of a subset of the available styles in a document. 
+
+In Microsoft Office Word, an editor can quickly set the style of text through selecting style in quick style gallery.
+
+![image](https://github.com/user-attachments/assets/0bb82f9e-d021-45ec-8250-7ff01bd7042c)
+
+### about outline
+#### outline
+outline in presentation acts like an TOC (table of content) in the document.
+
+outline in presentation lists all pages of the presentation.
+
+#### outline view
+This term is self-explanatory. 
+
+It's like a blueprint for your presentation.
+
+It provides a high-level view of your structure, allowing you to see the key points and content without getting lost in the details.
+
+##### reference
+[Why you Should Use Outline View in Microsoft PowerPoint](https://keystrokelearning.com.au/use-outline-view-in-microsoft-powerpoint/#:~:text=Enter%20Outline%20view%20%E2%80%93%20it%E2%80%99s%20like%20a%20blueprint,and%20content%20without%20getting%20lost%20in%20the%20details.)
 [^1]: [Appendix 3 -- unit measurements](https://github.com/40843245/XmlOfOffice/blob/main/Word/structure/Appendix%203%20--%20unit%20measurements.md)
+
+##### demo
+[Demo of create an outline view in powerpoint](https://youtu.be/pgqgyrAnoQM)
