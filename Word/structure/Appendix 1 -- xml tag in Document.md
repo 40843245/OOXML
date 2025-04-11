@@ -460,6 +460,8 @@ In above example, we can know that
 | `<w:rPrDefault>` | | | defines the default formatting properties for all text runs within the document. | | |
 | `<w:pPrDefault/>` | | | defines the default formatting properties for all paragraphs in the document. | | |
 | `<w:latentStyles> | | | servers as a container for defining the latent styles (i.e. current unused styles). | | |
+| `<w:lsdException>` | | LSD exception | defines exceptions to the default behavior of LSD (Linked Style Definitions). | | |
+
 
 ##### attribute about `w` namespace
 ###### attribute in `<w:zoom>`
@@ -739,16 +741,27 @@ Way to parsing it is similar to parsing `<w:pStyle>`.
 
 For more informations and details, see [DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping Class (MSDS API reference)](https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.wordprocessing.colorschememapping?view=openxml-3.0.1)
 
-###### attribute in `<w:clrSchemeMapping>`
+###### attribute in `<w:latentStyles>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:default` | | | determined whether latent styles are enabled by default for the document. | | |
 | `w:count` | | | an integer indicating the total number of latent styles defined within this element. | | |
 | `w:defLockedState` | | | specifies the default locked state for new latent styles. | | |
-| `w:defUIPriority` | | | specifies the default UI priority for new latent styles tosets the default UI priority for new latent styles. | The higher value of ui priority is, the less preceedence it has so that styles might be displayed less prominently. | |
+| `w:defUIPriority` | | | specifies the default UI priority for new latent styles. | The higher value of ui priority is, the less preceedence it has so that styles might be displayed less prominently. | |
 | `w:defSemiHidden` | | | specifies the default semi-hidden state for new latent styles. | | |
 | `w:defUnhideWhenUsed` | | | specifies the default `unhide when used` state. | | |
 | `w:defQFormat` | | | specifies the default "quick format" state for new latent styles. | | |
+
+###### attribute in `<w:lsdException>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:name` | | | defines the exception to default LSD as `Normal` style | | |
+| `w:semiHidden` | | | determines whether the style is hidden from the user interface under normal circumstances. | | |
+| `w:uiPriority` | | | of the style in the user interface (e.g., in the Styles pane). | Concept similar to the concept mentioned at cell whose row is `w:defUIPriority` and column is `note`. | |
+| `w:unhideWhenUsed` | | | specifies whether the style should become visible in the UI if it's used in the document, even if it was initially semi-hidden. | Concept similar to the concept mentioned at cell whose row is `w:defUnhideWhenUsed` and column is `note`. | | 
+| `w:qFormat` | | | determines whether the style appears in the Quick Styles gallery. | Concept similar to the concept mentioned at cell whose row is `w:defQFormat` and column is `note`. | |
+
+
 
 ##### examples and explanations
 ###### example 1 -- fonts
