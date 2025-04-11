@@ -142,7 +142,86 @@ In above example, we can know that
 + In `w:embeddedObjPresent="no"`, the Word file does NOT embed object.
 + In `w:ocxPresent="no"`, the Word file does NOT use Active Control.
 + In `xml:space="preserve"`, the Word file does fully preserve the space.
-   
+
+##### example 2
+`~/word/document.xml` file under `Docx1.docx` file.
+
+```
+<w:document
+    xmlns:ve="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:o="urn:schemas-microsoft-com:office:office"
+    xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+    xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+    xmlns:v="urn:schemas-microsoft-com:vml"
+    xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+    xmlns:w10="urn:schemas-microsoft-com:office:word"
+    xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+    xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+    xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"
+    xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart"
+    xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+    xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"
+    xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex"
+    xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex"
+    xmlns:cx3="http://schemas.microsoft.com/office/drawing/2016/5/9/chartex"
+    xmlns:cx4="http://schemas.microsoft.com/office/drawing/2016/5/10/chartex"
+    xmlns:cx5="http://schemas.microsoft.com/office/drawing/2016/5/11/chartex"
+    xmlns:cx6="http://schemas.microsoft.com/office/drawing/2016/5/12/chartex"
+    xmlns:cx7="http://schemas.microsoft.com/office/drawing/2016/5/13/chartex"
+    xmlns:cx8="http://schemas.microsoft.com/office/drawing/2016/5/14/chartex"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:aink="http://schemas.microsoft.com/office/drawing/2016/ink"
+    xmlns:am3d="http://schemas.microsoft.com/office/drawing/2017/model3d"
+    xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+    xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+    xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+    xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"
+    xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"
+    xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+    xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+    xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+    mc:Ignorable="w14 w15 w16se w16cid wp14">
+</w:document>
+```
+
+In above example, we can know that
+
++ In `<w:document>` tag, we define a document and configure metedata about the `Docx1.docx` file.
++ In `xmlns:ve="http://schemas.openxmlformats.org/markup-compatibility/2006"`, `ve` is a convention of `mc` namespace. This namespace indicates that markup compatibility targets to the url `http://schemas.openxmlformats.org/markup-compatibility/2006"`, indicating that it is compatible with markup language released in 2006.
++ In `xmlns:o="urn:schemas-microsoft-com:office:office"`, it targets to `urn:schemas-microsoft-com:office:office`
+, indicating the office refers to Microsoft Office. 
++ In `xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"`, it targets to the namespace `http://schemas.openxmlformats.org/officeDocument/2006/relationships`, indicating the relationship targets to `http://schemas.openxmlformats.org/officeDocument/2006/relationships` (in version Office 2006).
++ In `xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"`, it targets to `http://schemas.openxmlformats.org/officeDocument/2006/math`, indicating that it refers to math tool in version Office 2006.
++ In `xmlns:v="urn:schemas-microsoft-com:vml"`, it targets to `urn:schemas-microsoft-com:vml`, indicating the vml refers to vml developed by Microsoft.
++ In `xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"`, it targets to `http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing`, indicating that it refers WordprocessingML Drawing in version Office 2006.
++ In `xmlns:w10="urn:schemas-microsoft-com:office:word"`, it targets to `urn:schemas-microsoft-com:office:word`, indicating that it is Word-10 specific.
++ In `xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"`, it targets to `http://schemas.openxmlformats.org/wordprocessingml/2006/main`, indicating that its main functionality of WordProcessingML refers to that in version Office 2006.
++ In `xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"`, it targets to `http://schemas.microsoft.com/office/word/2006/wordml`, indicating that its WNE refers to WordML in version Office 2006.
++ In `xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"`, it targets to `http://schemas.openxmlformats.org/drawingml/2006/main`, indicating that its DrawingML refers to that in version Office 2006.
++ In `xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart"`, it targets to `http://schemas.openxmlformats.org/drawingml/2006/chart`, indicating that the chart refers that in version Office 2006.
++ In `xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"`, it targets to `http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas`, indicating that the WordProcessing Canvas refers that in version Office 2006.
++ In `xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex"`, it indicates the extension of chart package (with highest preceedence) refers to the release at 2014 from Microsoft Office.
++ In `xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex"`, it indicates the extension of chart package refers to the release at 2015/09/08 from Microsoft Office.
++ In `xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex"`, it indicates the extension of chart package refers to the release at 2015/10/21 from Microsoft Office.
++ In `xmlns:cx3="http://schemas.microsoft.com/office/drawing/2016/5/9/chartex"`, it indicates the extension of chart package refers to the release at 2016/5/9 from Microsoft Office.
++ In `xmlns:cx4="http://schemas.microsoft.com/office/drawing/2016/5/10/chartex"`, it indicates the extension of chart package refers to the release at 2016/5/10 from Microsoft Office.
++ In `xmlns:cx5="http://schemas.microsoft.com/office/drawing/2016/5/11/chartex"`, it indicates the extension of chart package refers to the release at 2016/5/10 from Microsoft Office.
++ In `xmlns:cx6="http://schemas.microsoft.com/office/drawing/2016/5/12/chartex"` , it indicates the extension of chart package refers to the release at 2016/5/12 from Microsoft Office.
++ In `xmlns:cx7="http://schemas.microsoft.com/office/drawing/2016/5/13/chartex"`, it indicates the extension of chart package refers to the release at 2016/5/13 from Microsoft Office.
++ In `xmlns:cx8="http://schemas.microsoft.com/office/drawing/2016/5/14/chartex"`, it indicates the extension of chart package refers to the release at 2016/5/14 from Microsoft Office.
++ In `xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"`, its other convention is `ve`. But it has higher preceedence.
++ In `xmlns:aink="http://schemas.microsoft.com/office/drawing/2016/ink"`, it targets to `http://schemas.microsoft.com/office/drawing/2016/ink`, indicating that the Drawing ink refers that in version Office 2016.
++ In `xmlns:am3d="http://schemas.microsoft.com/office/drawing/2017/model3d"`, it targets to `http://schemas.microsoft.com/office/drawing/2017/model3d`, indicating that the 3D Model Drawing refers that in version Office 2017.
++ In `xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"`, it targets to `http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing`, indicating that, for Office 2014 ,WordProcessing Drawing refers that in version Office 2010.
++ In `xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"`, it targets to `http://schemas.microsoft.com/office/word/2010/wordml`, indicating that, for Office 2014, WordProcessingML refers that in version Office 2017.
++ In `xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"`, it targets to `http://schemas.microsoft.com/office/word/2012/wordml`, indicating that, for Office 2015, WordProcessingML refers that in version Office 2012.
++ In `xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid"`, it targets to `http://schemas.microsoft.com/office/word/2016/wordml/cid`, indicating that, for Office 2016, WordProcessingML Content Identifiers refers that in version Office 2016.
++ In `xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex"`, it targets to `http://schemas.microsoft.com/office/word/2016/wordml/cid`, indicating that, for Office 2015, WordProcessingML Symbol Extensibility refers that in version Office 2015.
++ In `xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"`, it targets to `http://schemas.microsoft.com/office/word/2016/wordml/cid`, indicating that WordProcessingML Grouping refers that in version Office 2010.
++ In `xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"`, `wpi` is an old alternative name of `aink`. But it has lower preceedence.
++ In `xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"`,  it targets to `http://schemas.microsoft.com/office/word/2010/wordprocessingShape`, indicating that WordProcessingML Shapes refers that in version Office 2010.
++ In `mc:Ignorable="w14 w15 w16se w16cid wp14"`, it ignores the following namespace in this tag.</br>`xmlns:w14`</br>`xmlns:w15`</br>`xmlns:w16se`</br>`xmlns:w16cid`</br>`xmlns:wp14`.
+  
 ### namespace in xml tag for OOXML
 | namespace in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
