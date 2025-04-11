@@ -1,7 +1,7 @@
 # Prequisite Review 1 -- terms
 ## toc
 ## terms explanation
-### font
+### about font
 #### pitch 
 According to this article -- [`Adjusting Text Pitch`](https://wordribbon.tips.net/T013688_Adjusting_Text_Pitch.html), it is defined as 
 
@@ -19,10 +19,11 @@ PANOSE System is a method for classifying typefaces solely on their visual chara
 
 ##### reference
 + [PANOSE (Wiki)](https://en.wikipedia.org/wiki/PANOSE)
-### unit measurements
+
+### about unit measurements
 See `Appendix 3`[^1] for more explanation.
 
-### list
+### about list
 #### single-level list
 A signle-level list has these feature.
 
@@ -41,7 +42,20 @@ It will look like this
 >
 > 3. Third item
 
-### indentation
+#### multi-level list
+It is the opposite of single-level list.
+
+For example,
+
+A single-level numbered list, 
+
+It will look like this
+
+> 1. First item
+>    1.1 First subitem in first item
+>    1.2 Second subitem in first item
+
+### about indentation
 #### hanging indentation
 A hanging indent is used to indent all lines of a paragraph except the first.
 
@@ -49,5 +63,8 @@ A hanging indent is used to indent all lines of a paragraph except the first.
 
 ### reference
 + [hanging indentation](https://www.scribbr.com/citing-sources/hanging-indent/)
+
+### about role
+#### document role
   
 [^1]: [Appendix 3 -- unit measurements](https://github.com/40843245/XmlOfOffice/blob/main/Word/structure/Appendix%203%20--%20unit%20measurements.md)
