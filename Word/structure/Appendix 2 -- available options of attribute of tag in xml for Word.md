@@ -5,7 +5,8 @@
 >
 > Read with caution.
 
-### `xml:space` attribute
+### about `xml` namespace
+#### `xml:space` attribute
 > [!WARNING]
 > I refers from Google Gemini's answer which may be incorrect.
 
@@ -30,9 +31,8 @@
 > + Removing leading and trailing whitespace.
 > + Treating line breaks as whitespace.
 
-### `<w:characterSpacingControl>` -> `w:val` attribute
-#### available options of attribute in tag
-
+### about `w` namespace
+#### `<w:characterSpacingControl>` -> `w:val` attribute
 > [!WARNING]
 > I refers from Google Gemini's answer which may be incorrect.
 
@@ -46,7 +46,7 @@
 | `compressPunctuation` | | Compress Punctuation | specifies that only whitespace characters shall have whitespace compression applied to them. | | |
 | `compressPunctuationAndJapaneseKana` | Compress Punctuation and Japanese kana (日本的假名) | specifies that whitespace and Japanese kana characters shall have whitespace compression applied to them. |
 
-### `<w:tab>` -> `w:val` attribute
+#### `<w:tab>` -> `w:val` attribute
 > [!WARNING]
 > I refers from Google Gemini's answer which may be incorrect.
 
@@ -59,9 +59,7 @@
 | `bar` | | tab-bar | A vertical line (i.e. tab bar) will be inserted at the tab stop position | |
 | `clear` | | clear | Removes a previously defined tab stop at the specified position. | |
 
-### `<w:tcW>` -> `w:type` attribute
-#### available options of attribute in tag
-
+#### `<w:tcW>` -> `w:type` attribute
 > [!WARNING]
 > I refers from Google Gemini's answer which may be incorrect.
 
@@ -72,7 +70,7 @@
 | `auto` | | auto | Word will automatically determine the width of the table cell based on its content and the overall table layout. | the value in the `w:w` attribute is typically ignored. | |
 | `nil` | | nil | the value is explicitly set to zero (even if the `w:w` is not set to zero) | | |
 
-### `<w:tab>` -> `w:leader` attribute
+#### `<w:tab>` -> `w:leader` attribute
 > [!WARNING]
 > I refers from Google Gemini's answer which may be incorrect.
 
@@ -84,9 +82,7 @@
 | `underscore` | | underscore | underscore (i.e. `_`) as leader character | | |
 | `middleDot` | | middle dot | middle dot (i.e. `·`) as leader character | | |
 
-### `<w:docGrid>` -> `w:linePitch` attribute
-#### available options of attribute in tag
-
+#### `<w:docGrid>` -> `w:linePitch` attribute
 > [!WARNING]
 > I refers from Google Gemini's answer which may be incorrect.
 
@@ -96,21 +92,18 @@
 | `snapToChars` | | | The grid aligns to character boundaries. | | |
 | `fixed` | | | A fixed horizontal and vertical grid. | | |
 
-### `<w:plt>` -> `w:val` attribute
-#### available options of attribute in tag
+#### `<w:plt>` -> `w:val` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"SingleLevel"`| | single-level | says that it is a single-level list | | |
 | `"MultiLevel"`| | multi-level | says that it is a multi-level list | | |
 
-### `<w:start>` -> `w:val` attribute
-#### available options of attribute in tag
+#### `<w:start>` -> `w:val` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"1"`| | | first item at this list level will be numbered or lettered starting from 1 (or equivalent corresponding symbol with different number formatting) | | |
 
-### `<w:lvlJs>` -> `w:val` attribute
-#### available options of attribute in tag
+#### `<w:lvlJs>` -> `w:val` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"left"` | | left-aligned | this item will be left-aligned | In newer version (Microsoft Office 2007 or above), it is obsolete. It uses `"start"`. See above for more reason. | |
@@ -121,8 +114,7 @@
 | `"both"` | | | justifies the text of the numbering symbol (if it were more than one character) between both margins.  | However, this does not affect inter-character spacing. | |
 | `"distribute"` | | | justifies the text of the numbering symbol (if it were more than one character) between both margins.  | To achieve even distribution (i.e. with same space), it will affect both inter-word and inter-character spacing | |
 
-### `<w:numFmt>` -> `w:val` attribute
-#### available options of attribute in tag
+#### `<w:numFmt>` -> `w:val` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"decimal"` | | decimal number | the item in the list level will be numbered by number (for example, the list starts witg `1`, `2`, `3`, and so on. | | |
@@ -133,8 +125,7 @@
 | `"bullet"` | | bullet | the item in the list level will be lettered by bullet character (for example, the list starts from `●`, `●`, `●`, and so on. | | |
 | `"none"` | | nothing | the item in the list level will be listed without use of number, lettering, bullet character etc.  | | |
 
-### `<w:lvl>` -> `w:ilvl` attribute
-
+#### `<w:lvl>` -> `w:ilvl` attribute
 > [!WARNING]
 > I refers from Google Gemini's answer which may be incorrect.
 
@@ -144,8 +135,7 @@
 | `"1"` | | |  defines the top-most or first level of the list.| | | 
 | etc | | | | | | 
 
-### `<w:bdr>` -> `w:val` attribute
-
+#### `<w:bdr>` -> `w:val` attribute
 > [!WARNING]
 > I refers from Google Gemini's answer which may be incorrect.
 
@@ -286,19 +276,19 @@
 | `"weavedmat"` | | | a border that looks like a repeating woven mat pattern. | | |
 | `"zigzag"` | | | a border featuring repeating map pin icons. | | |
 
-### `<w:pgBorders>` -> <w:top> -> `w:val` attribute
+#### `<w:pgBorders>` -> <w:top> -> `w:val` attribute
 Same as `<w:bdr>` -> `w:val` attribute.
 
-### `<w:pgBorders>` -> <w:left> -> `w:val` attribute
+#### `<w:pgBorders>` -> <w:left> -> `w:val` attribute
 Same as `<w:bdr>` -> `w:val` attribute.
 
-### `<w:pgBorders>` -> <w:right> -> `w:val` attribute
+#### `<w:pgBorders>` -> <w:right> -> `w:val` attribute
 Same as `<w:bdr>` -> `w:val` attribute.
 
-### `<w:pgBorders>` -> <w:down> -> `w:val` attribute
+#### `<w:pgBorders>` -> <w:down> -> `w:val` attribute
 Same as `<w:bdr>` -> `w:val` attribute.
 
-### `<w:bdr>` -> `w:color` attribute
+#### `<w:bdr>` -> `w:color` attribute
 > [!WARNING]
 > I refers from Google Gemini's answer which may be incorrect.
 
@@ -307,35 +297,34 @@ Same as `<w:bdr>` -> `w:val` attribute.
 | `"auto"` | | auto | automatic color | | |
 | `"<RGB>"` | | rgb color | should be a string consist of six hexadecimal digit.</br>The value indicates its rgb color. | `#` symbol is not used for color elements in OOXML. | |
 
-### `<w:bdr>` -> `w:themeColor` attribute
+#### `<w:bdr>` -> `w:themeColor` attribute
 Ranging is same as `<w:bdr>` -> `w:color` attribute.
 
 But the value indicates its theme color.
 
-### `<w:bdr>` -> `w:themeTint` attribute
+#### `<w:bdr>` -> `w:themeTint` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"<lightness>"` | | lightness | should be a string consist of two hexadecimal digit.</br>The value indicates the lightness of theme color.</br>`00`: darkest</br>`FF`: lightest | `#` symbol is not used for color elements in OOXML. | |
 
-### `<w:bdr>` -> `w:themeShade` attribute
+#### `<w:bdr>` -> `w:themeShade` attribute
 Ranging is same as `<w:bdr>` -> `w:themeTint` attribute.
 
 But the value indicates its theme shade.
 
-### `<w:bdr>` -> `w:frame` attribute
+#### `<w:bdr>` -> `w:frame` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"true"` | | true | should have frame effect | | |
 | `"false"` | | false | should not have frame effect | default value | |
 
-### `<w:bdr>` -> `w:shadow` attribute
+#### `<w:bdr>` -> `w:shadow` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"true"` | | true | should have shadow effect | | |
 | `"false"` | | false | should not have shadow effect | default value | |
 
-### `<w:pgBorders>` -> `w:display` attribute
-
+#### `<w:pgBorders>` -> `w:display` attribute
 > [!WARNING]
 > I refers from Google Gemini's answer which may be incorrect.
 
@@ -345,8 +334,7 @@ But the value indicates its theme shade.
 | `"firstPage"` | | first page | the page borders defined for the section should be displayed on the first page of the current section. | | |
 | `"notFirstPage"` | | not first pages | the page borders defined for the section should be displayed on every page (except first page) within that section. | | |
 
-### `<w:pgBorders>` -> `w:offsetFrom` attribute
-
+#### `<w:pgBorders>` -> `w:offsetFrom` attribute
 > [!WARNING]
 > I refers from Google Gemini's answer which may be incorrect.
 
@@ -362,8 +350,7 @@ But the value indicates its theme shade.
 >
 > While choosing `text` makes it relative to the document's text boundaries, which are defined by the page margins.
 
-### `<w:pgBorders>` -> `w:zOrder` attribute
-
+#### `<w:pgBorders>` -> `w:zOrder` attribute
 > [!WARNING]
 > I refers from Google Gemini's answer which may be incorrect.
 
@@ -371,3 +358,27 @@ But the value indicates its theme shade.
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"front"` | | |  the page border should be rendered **above** any intersecting text and other objects on the page. | default value | |
 | `"back"` | | |  the page border should be rendered **below** any intersecting text and other objects on the page. | | |
+
+### about `m` namespace
+#### `<m:brkBin>` -> `m:val` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"before"` | | | If a line break is necessary in an expression with a binary operator, the binary operator should be **at the beginning of the new line.** | | | 
+| `"after"` | | | If a line break is necessary in an expression with a binary operator, the binary operator should be **at the end of the preceeding line.** | | | 
+
+#### `<m:smallFrac>` -> `m:val` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"on"` | | | fractions appearing within the text would typically be rendered with a smaller font size for the numerator and denominator, and possibly a shorter fraction bar, to better integrate with the line height of the surrounding text. | | | 
+| `"off"` | | |  fractions will be displayed in their full size, even when they are part of the regular text flow. | | | 
+
+#### `<m:defJc>` -> `m:val` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"left"` | | left-aligned | default settings of math equation is left-aligned | | | 
+| `"right"` | | right-aligned | default settings of math equation is right-aligned | | | 
+| `"center"` | | center-aligned | default settings of math equation is center-aligned | | | 
+| `"inside"` | | | default settings of math equation is aligned inside the page | For left-to-right languages, this is equivalent to `"left"`.</br>For right-to-left languages, it's equivalent to `"right"` | | 
+| `"outside"` | | | opposite of the value `"inside"` | For left-to-right languages, this is equivalent to `"right"`.</br>For right-to-left languages, it's equivalent to `"left"` | | 
+| `"centerGroup"` | | center group | default settings of math equation is center-aligned and applied for a group of element (such as numerator is a fraction) | | <ol><li> It is not a standard option on native OOXML.</li><li>the presence of centerGroup strongly implies a scenario are:<ul><li>Math elements are treated as groups or columns within a larger structure.</li><li>The justification is applied to ensure these groups or columns are centered relative to each other or some central axis within the math zone.</li></ul></li></ol>| 
+| `"center"` | | center-aligned | default settings of math equation is center-aligned | | | 
