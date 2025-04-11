@@ -31,6 +31,14 @@
 > + Removing leading and trailing whitespace.
 > + Treating line breaks as whitespace.
 
+### about `v` namespace
+#### `v:ext` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"edit"` | | editable | indicates that the shapes are **fully** editable within Office app. | | |
+| `"view"` | | editable | indicates that the shapes are **NOT fully** editable within Office app. i.e. can only view or is ediatble but some capabilities are limited. | | |
+| `"backwardCompatible"` | | | indicates that the VML extension is intended for backward compatibility with older versions of applications. | | Newer editors should render it, and ideally, allow some level of editing, while older editors might ignore or render it in a basic way without full understanding of the extended features. |
+
 ### about `w` namespace
 #### `<w:characterSpacingControl>` -> `w:val` attribute
 > [!WARNING]
