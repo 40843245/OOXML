@@ -37,7 +37,7 @@
 > I refers from Google Gemini's answer which may be incorrect.
 
 > [!IMPORTANT]
-> The available value of `w:val` attribute in `<w:characterSpacingControl>` is defined in [Character-Level Whitespace Compression Settings](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_CharacterSpacing_topic_ID0E6AK2.html)
+> The available value of `w:val` attribute in `<w:characterSpacingControl>` is defined in `ST_CharacterSpacing` simple type, possible value listed in [Character-Level Whitespace Compression Settings](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_CharacterSpacing_topic_ID0E6AK2.html)
 
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
