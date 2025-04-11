@@ -385,8 +385,8 @@ But the value indicates its theme shade.
 #### `<m:intLim>` -> `m:val` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `undOvr` | | *und*er, *ov*e*r* | indicates that `lim` should be displayed in the **under-over position**,</br>meaning that the lower limit is placed below the integral symbol and the upper limit is placed above it. This is the more traditional and common way of displaying integral limits. | | | |
-| `subSup` | | *sub*-script, *sup*er-script | indicates that `lim` should be displayed in the **subscript-superscript position**,</br>meaning that the lower limit is placed as a subscript and the upper limit as a superscript to the integral symbol.</br>This is often used for inline integrals or when space is constrained. | | | |
+| `undOvr` | | *und*er, *ov*e*r* | indicates that lower limit and upper limit of integration operators should be displayed in the **under-over position**,</br>meaning that the lower limit is placed below the integral symbol and the upper limit is placed above it. This is the more traditional and common way of displaying integral limits. | | | |
+| `subSup` | | *sub*-script, *sup*er-script | indicates that lower limit and upper limit of integration operators should be displayed in the **subscript-superscript position**,</br>meaning that the lower limit is placed as a subscript and the upper limit as a superscript to the integral symbol.</br>This is often used for inline integrals or when space is constrained. | | | |
 
 > [!NOTE]
 >
@@ -395,7 +395,8 @@ But the value indicates its theme shade.
 #### `<m:naryLim>` -> `m:val` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `undOvr` | | *und*er, *ov*e*r* | specifies that the limit should be rendered with the lower limit positioned as a subscript below the n-ary operator and the upper limit positioned as a superscript above the operator. | | |
+| `undOvr` | | *und*er, *ov*e*r* | specifies that the limit of n-ary operators should be displayed in the **under-over position** | | |
+| `subSup` | | *sub*-script, *sup*er-script | indicates limit of n-ary operators should be displayed in the **subscript-superscript position**. | | | |
 
 > [!NOTE]
 > See [`<m:naryLim>` tag (OOXML docs)](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_naryLim_topic_ID0EZ43ZB.html) for more information.
