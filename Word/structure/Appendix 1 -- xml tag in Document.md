@@ -736,12 +736,36 @@ Way to parsing it is similar to parsing `<w:pStyle>`.
 > This is an example of equation that apply the configuration set by `<m:intLim m:val="subSup">`.
 >
 > <img width="570" alt="image" src="https://github.com/user-attachments/assets/5e850987-7ee7-425e-abee-daec42024f51" />
+
+> [!NOTE]
+> This is an example of equation that apply the configuration set by `<m:intLim m:val="undOvr">`.
+>
+> <img width="445" alt="image" src="https://github.com/user-attachments/assets/61b8c6bf-bd28-4eb9-8489-96778d353194" />
+
  
 ##### attribute in `<m:naryLim>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `m:val` | | | determines the behaviour for limitations of n-ary operators | | |
 
+> [!NOTE]
+> n-ary operators includes:
+>
+> + summation: <img width="50" alt="image" src="https://github.com/user-attachments/assets/d6e87f62-8e05-4a91-8081-e1bb62088943" />
+> + product: <img width="82" alt="image" src="https://github.com/user-attachments/assets/4f1127b4-8c9b-484c-a338-895f20e96961" />
+> + union: <img width="22" alt="image" src="https://github.com/user-attachments/assets/fc6ffa1f-d2c5-44fd-a9f0-7881fefe2f06" />
+> + intersection: <img width="22" alt="image" src="https://github.com/user-attachments/assets/88a3d1a0-a3d4-4d2c-87a4-b84757f254d9" />
+
+> [!NOTE]
+> An example of equations that use the configuration set by `<m:naryLim m:val="subSup"/>`.
+>
+> <img width="509" alt="image" src="https://github.com/user-attachments/assets/3c11af0e-f8c5-4f0c-919a-82861352179e" />
+
+> [!NOTE]
+> An example of equations that use the configuration set by `<m:naryLim m:val="undOvr"/>`.
+>
+> <img width="547" alt="image" src="https://github.com/user-attachments/assets/1149ce2c-8790-4579-b1ff-f0a43c03c835" />
+ 
 #### examples and explanations
 ##### example 1 -- fonts
 ```
@@ -988,8 +1012,9 @@ In above example, we can know that
 + In `<m:rMargin m:val="0"/>`, right-margin is 0.
 + In `<m:defJc m:val="centerGroup"/>`, the default justification of math equation is center-aligned. It is applied to a group of element.
 + In `<m:wrapIndent m:val="1440"/>`, when wrapping the text on a math equation, it indents 1440 twips.
-+ In `<m:intLim m:val="subSup"/>`, for integral, the 
-    <m:naryLim m:val="undOvr"/>`
++ In `<m:intLim m:val="subSup"/>`, for integration operators, the lower limit will be placed as sub-script and upper limit will be placed in super-script. 
++ In `<m:naryLim m:val="undOvr"/>`, for n-ary operator, the n-th symbol should be displayed underneath and over the equation.
+  
 [^1]:[Prequisite Review 1 -- terms](https://github.com/40843245/XmlOfOffice/blob/main/Word/structure/Prequisite%20Review%201%20--%20terms.md)
 
 [^2]:[Appendix 2 -- available options of attribute of tag in xml for Word](https://github.com/40843245/XmlOfOffice/blob/main/Word/structure/Appendix%202%20--%20available%20options%20of%20attribute%20of%20tag%20in%20xml%20for%20Word.md#appendix-2----available-options-of-attribute-of-tag-in-xml-for-word)
