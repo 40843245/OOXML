@@ -223,7 +223,7 @@ In above example, we can know that
 + In `xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"`,  it targets to `http://schemas.microsoft.com/office/word/2010/wordprocessingShape`, indicating that WordProcessingML Shapes refers that in version Office 2010.
 + In `mc:Ignorable="w14 w15 w16se w16cid wp14"`, it ignores the following namespace in this tag.</br>`xmlns:w14`</br>`xmlns:w15`</br>`xmlns:w16se`</br>`xmlns:w16cid`</br>`xmlns:wp14`.
   
-### namespace in xml tag for OOXML
+### namespace in xml tag in OOXML
 | namespace in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w` | | Microsoft Word | indicates that it describes xml content of a Microsoft Word file.| w stands for Microsoft *W*ord | |
@@ -419,8 +419,8 @@ In above example, we can know that
 | `<w:left>` | | left | configures properties of left borders of some elements (according to this tag is inside what tag). | | |
 | `<w:bottom>` | | bottom | configures properties of bottom borders of some elements (according to this tag is inside what tag). | | |
 | `<w:right>` | | right | configures properties of right borders of some elements (according to this tag is inside what tag). | | |
-| `<w:displayBackgroundShape/>` | | | the background shape for display | | | 
-| | | | | | | | 
+| `<w:displayBackgroundShape/>` | | | determines if the background shape is display or not | | | 
+| `<w:themeFontLang/>`| | | | specifies the language settings for the theme fonts used in a Microsoft Word document. | | | 
 | | | | | | | | 
 
 ##### attribute about `w` namespace
@@ -671,6 +671,17 @@ Way to parsing it is similar to parsing `<w:pStyle>`.
 | `w:display` | | display | specifies on which pages within the section the page border should be displayed. | It is optional | | 
 | `w:offsetFrom` | | offeset from | determines how the page border's position is calculated relative to the page. | It is optional | |  
 | `w:zOrder` | | z order | whether the page border should be rendered in front of or behind the document content. | | |
+
+###### attribute in `<w:displayBackgroundShape>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | determines to display the background shape or not | | |
+
+###### attribute in `<w:themeFontLang>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | specifies a language code to determines which language will be used, for complex script text, when the theme fonts are applied. | | |
+| `w:bidi` | | | specifies a language code to determines which language will be used, for bi-directional text (such as Arabic or Hebrew) , when the theme fonts are applied. | | |
 
 ##### examples and explanations
 ###### example 1 -- fonts
