@@ -290,15 +290,27 @@ You can know which namespaces in `xmlns` namespace are declared through finding 
 | `<o:Notes>` | | notes | estimated of the number of notes in the document. | (Potentially for notes in the document). | |
 | `<o:MMClips>` | | *M*utli*m*edia clips | estimated of the number of mutlimedia clips in the document. | (Potentially for embededded mutlimedia in the document). | |
 | | | | | | |
-| `<o:shapedefaults>` |
-| |
+| `<o:shapedefaults/>` | | | specifies the default properties for newly created shapes within a drawing canvas. | | |
+| `<o:shapelayout>`| | | acts a container that holds information about how shapes are laid out and interact with the surrounding text. | | |
+| `<o:idmap/>` | | | defines the map id. | | |
 
 ##### attribute about `o` namespace
 ###### attribute in `<o:shapedefaults>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `v:ext` | | | | explained in **`attribute in `\v`\ namespace` section**| |
+| `v:ext` | | | | explained in ``attribute in `v` namespace`` section | |
 | `spidmax` | | max *s*ha*p*e *id* | sets the maximum Shape ID that can be assigned to new shapes created within the current drawing canvas. | 
+
+###### attribute in `<o:shapelayout>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `v:ext` | | | | explained in ``attribute in `v` namespace`` section | |
+
+###### attribute in `<o:idmap>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `v:ext` | | | | explained in ``attribute in `v` namespace`` section | |
+| `data` | | | specifies the current shape ID. | The id of newly create shape will be value of `data` attribute plus one. | |
 
 ##### examples and explanation
 ###### example 1
@@ -437,8 +449,13 @@ In above example, we can know that
 | `<w:right>` | | right | configures properties of right borders of some elements (according to this tag is inside what tag). | | |
 | `<w:displayBackgroundShape/>` | | | determines if the background shape is display or not | | | 
 | `<w:themeFontLang/>`| | | specifies the language settings for the theme fonts used in a Microsoft Word document. | | | 
-| `<w:clrSchemeMapping/>` | | | maps semantic color roles within a Word document to specific color definitions defined elsewhere in the theme. | | |
+| `<w:clrSchemeMapping/>` | | | clear the settings of scheme mapping table, then configures the properties of scheme mapping table for document role. | | |
+| | | | | | | | 
 | `<w:shapeDefaults>` | | | acts like an container containing default properties for newly created drawing shapes within a Microsoft Word document. | It usually resides in `~/word/settings.xml` under a Word file. | |
+| | | | | | | | 
+| `<w:decimalSymbol/>` | | | explicitly specifies the decimal separator (by given value of `w:val` attribute) for numbers within the document. | | |
+| `<w:listSeparator/>` | | | explicitly specifies the list separator (by given value of `w:val` attribute) for list within the document. | It is used when there are many items. | |
+| | | | | | | | 
 
 ##### attribute about `w` namespace
 ###### attribute in `<w:zoom>`
@@ -958,15 +975,57 @@ In above example, we can know that
 <w:clrSchemeMapping w:bg1="light1" w:t1="dark1" w:bg2="light2" w:t2="dark2" w:accent1="accent1" w:accent2="accent2" w:accent3="accent3" w:accent4="accent4" w:accent5="accent5" w:accent6="accent6" w:hyperlink="hyperlink" w:followedHyperlink="followedHyperlink"/>
 ```
 
+In above example, we can know that
+
++ By tag name `w:clrSchemeMapping`, we can know it configure the scheme mapping table for document role.
++ In `w:bg1`, in the scheme mapping table, the property -- background color 1 is set to `light1`.
++ In `w:t1`, in the scheme mapping table, the property -- text color 1 is set to `dark1`.
++ In `w:bg2`, in the scheme mapping table, the property -- background color 2 is set to `light2`.
++ In `w:t2`, in the scheme mapping table, the property -- text color 2 is set to `dark2`.
++ In `w:accent1`, in the scheme mapping table, the property -- accent color 1 is set to `accent1`.
++ In `w:accent2`, in the scheme mapping table, the property -- accent color 2 is set to `accent2`.
++ In `w:accent3`, in the scheme mapping table, the property -- accent color 3 is set to `accent3`.
++ In `w:accent4`, in the scheme mapping table, the property -- accent color 4 is set to `accent4`.
++ In `w:accent5`, in the scheme mapping table, the property -- accent color 5 is set to `accent5`.
++ In `w:accent6`, in the scheme mapping table, the property -- accent color 6 is set to `accent6`.
++ In `w:hyperlink`, in the scheme mapping table, the property -- hyperlink is set to `hyperlink`.
++ In `w:followedHyperlink`, in the scheme mapping table, the property -- followed hyperlink 1 is set to `followedHyperlink`.
+
+
+
 ###### example 10 -- default shape
 ```
 <w:shapeDefaults>
     <o:shapedefaults v:ext="edit" spidmax="2050"/>
     <o:shapelayout v:ext="edit">
-    <o:idmap v:ext="edit" data="1"/>
+        <o:idmap v:ext="edit" data="1"/>
     </o:shapelayout>
 </w:shapeDefaults>
 ```
+
+In above example, we can know that
+
++ In `<w:shapeDefaults>`, it defines a container containing default shapes.
++ In `<o:shapedefaults v:ext="edit" spidmax="2050"/>`, it specifies that id of newly created shape must be less than or equal to 2050 (according from `spidmax="2050"`).</br>Additionally,it specifies that newly created shape is fully editable in Office app (according from `v:ext="edit"`).
++ In `<o:idmap v:ext="edit" data="1"/>`, it sets the current id of newly created shape to one. Thus, the next id of newly created shape will be set to two. And it is current newly created shape is fully editable.
+  
+###### example 11 -- separator for number symbol
+```
+<w:decimalSymbol w:val="."/>
+```
+
+In above example, we can know that
+
++ In `<w:decimalSymbol w:val="."/>`, it specifies the separator of decimal symbol is `.`.
+
+###### example 12 -- separator for list
+```
+<w:listSeparator w:val=","/>
+```
+
+In above example, we can know that
+
++ In `<w:listSeparator w:val=","/>`, it specifies the separator of list is `,`.
 
 #### about `m` namespace
 ##### elements in `m` namespace
