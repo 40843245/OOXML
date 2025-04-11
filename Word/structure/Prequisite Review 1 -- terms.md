@@ -45,13 +45,15 @@ It is the opposite of single-level list.
 
 For example,
 
-A single-level numbered list, 
+A multi-level numbered list, 
 
 It will look like this
 
 1. First item
-    1.1 First subitem in first item
-    1.2 Second subitem in first item
+
+   1.1. First subitem in first item
+
+   1.2. Second subitem in first item
 
 ### about indentation
 #### hanging indentation
