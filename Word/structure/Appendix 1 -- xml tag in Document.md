@@ -103,6 +103,7 @@ In above example, we can know that
 | `sl` | *S*chema *L*ibrary | This namespace could be for a Schema Library, possibly related to document templates or components. | | | 
 | `r` | *R*elationship | it specifies which relationship will be used. | | | 
 | `m` | *M*ath | it specifies which tools about math (its functionalities contain `Equation`) will be used. | | | 
+| `ignorable` | ignorable | it specifies which namespace declaration in this tag will be ignored. | it must be string, seperated by exactly one space. (To represent that many of them will be ignored.) | | 
 
 > [!NOTE]
 > History of Office and OOXML.
@@ -317,6 +318,11 @@ In above example, we can know that
 #### `<w>` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
+| | | | | | |
+| `<w:settings>` | | setting | it serves as a container for a wide range of document-level settings and properties that control how the Word document behaves and is displayed. | it usually resides in `~/word/setting.xml` file under a Office Word file. | |
+| `<w:zoom>` | | zoom | specifies the display zoom level for the document when it is opened in Microsoft Word. | same as above| |
+| `<w:characterSpacingControl>` | | character spacing controlls | specifies how to adjust the spacing between characters. | |
+| | | | | | |
 | `<w:wordDocument>` | `<html>` | root node | the root node of a Microsoft Word file. | | |
 | `<w:document>` | `<html>` | root node | the root node of **`~/word/document.xml`** file under a Microsoft Word file. | | |
 | `<w:ignoreSubtree>` | | ignore a specific subtree | it instructs the Word processor to ignore a specific subtree of the XML document (according to the value of `w:val` attribute) during processing. | | | 
@@ -365,12 +371,14 @@ In above example, we can know that
 | `<w:docGrid>` | | document grid | add document grid (that is inside `<w:sectPr>` tag) | | |
 | | | | | | | | 
 | `<w:tabs>` | | | acts like a container of tab stops (`<w:tab>`) | you may see one or more `<w:tab>` tag inside `<w:tabs>` tag. | | 
+| `<w:defaultTabStop>` | | tab | define property of the default tab stop by assign the value to its attributes. | | | 
 | `<w:tab>` | | tab | define property of a tab stop by assign the value to its attributes. | | | 
 | | | | | | | | 
 | `<w:bookmarkStart>` | | bookmark start | defines a bookmark with start point | | One `<w:bookmarkStart>` tag must match one `<w:bookmarkEnd>` tag. Otherwise, the file is corrupted. | 
 | `<w:bookmarkEnd>` | | bookmark end | defines a bookmark with end point to enclose a bookmark | | Same as above | 
 | | | | | | | | 
 | `<w:lists>` | | | acts like a container of a list (`<w:list>`) | | |
+| `<w:numbering>` | | numbering | It acts as a container for numbering definitions, which are then referenced by paragraphs to apply specific list styles. | | |
 | `<w:listDef>` | | list definition | defines a list with specific id for style | | |
 | `<w:lsid>` | | list style id | assign the value of `w:val` attribute to id of list style to determine which style will be used | the id is defined in `~/word/style.xml` | |
 | `<w:lvl>` | | list level | defines a level of list | lvl stands for *l*e*v*e*l* | |
@@ -398,6 +406,19 @@ In above example, we can know that
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `xmlns:space` | | space | assign a value to determine how to deal with whitespace (i.e. ` `, `\t`,`\n`).
+
+###### attribute in `<w:zoom>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:percentage` | | percentage | which zoom level should be when the document is displayed. | | must be a string contains positive number. |
+
+###### attribute in `<w:characterSpacingControl>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:val` | | percentage | determines how to adjust characters between spaces. | | |
+
+> [!IMPORTANT]
+> The available value of `w:val` attribute in `<w:characterSpacingControl>` is defined in [Character-Level Whitespace Compression Settings](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_CharacterSpacing_topic_ID0E6AK2.html)
 
 ###### attribute in `<w:word>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -487,6 +508,9 @@ same as above |
 | `w:val` | | | determines alignment or behavior of the tab stop. | This attribute is required. | |
 | `w:pos` | | | determines position of the tab stop. | This attribute is required. | |
 | `w:leader` | | leader character | determines leader character that will fill the space before the tab stop.  | This attribute is optional. | |
+
+###### attribute in `<w:defaultTabStop>`
+Same as attribute in `<w:tab>`.
 
 ###### attribute in `<w:sz>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
