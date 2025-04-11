@@ -456,6 +456,10 @@ In above example, we can know that
 | `<w:decimalSymbol/>` | | | explicitly specifies the decimal separator (by given value of `w:val` attribute) for numbers within the document. | | |
 | `<w:listSeparator/>` | | | explicitly specifies the list separator (by given value of `w:val` attribute) for list within the document. | It is used when there are many items. | |
 | | | | | | | | 
+| `<w:docDefaults>` | | | serves as a container for defining the default formatting properties for the entire document. | | |
+| `<w:rPrDefault>` | | | defines the default formatting properties for all text runs within the document. | | |
+| `<w:pPrDefault/>` | | | defines the default formatting properties for all paragraphs in the document. | | |
+| `<w:latentStyles> | | | servers as a container for defining the latent styles (i.e. current unused styles). | | |
 
 ##### attribute about `w` namespace
 ###### attribute in `<w:zoom>`
@@ -734,6 +738,17 @@ Way to parsing it is similar to parsing `<w:pStyle>`.
 | `w:followedHyperlink` | | followedHyperlink  | specifics followed hyperlink in scheme mapping table. | | | 
 
 For more informations and details, see [DocumentFormat.OpenXml.Wordprocessing.ColorSchemeMapping Class (MSDS API reference)](https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.wordprocessing.colorschememapping?view=openxml-3.0.1)
+
+###### attribute in `<w:clrSchemeMapping>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:default` | | | determined whether latent styles are enabled by default for the document. | | |
+| `w:count` | | | an integer indicating the total number of latent styles defined within this element. | | |
+| `w:defLockedState` | | | specifies the default locked state for new latent styles. | | |
+| `w:defUIPriority` | | | specifies the default UI priority for new latent styles tosets the default UI priority for new latent styles. | The higher value of ui priority is, the less preceedence it has so that styles might be displayed less prominently. | |
+| `w:defSemiHidden` | | | specifies the default semi-hidden state for new latent styles. | | |
+| `w:defUnhideWhenUsed` | | | specifies the default `unhide when used` state. | | |
+| `w:defQFormat` | | | specifies the default "quick format" state for new latent styles. | | |
 
 ##### examples and explanations
 ###### example 1 -- fonts
