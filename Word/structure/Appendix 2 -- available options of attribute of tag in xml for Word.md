@@ -381,4 +381,17 @@ But the value indicates its theme shade.
 | `"inside"` | | | default settings of math equation is aligned inside the page | For left-to-right languages, this is equivalent to `"left"`.</br>For right-to-left languages, it's equivalent to `"right"` | | 
 | `"outside"` | | | opposite of the value `"inside"` | For left-to-right languages, this is equivalent to `"right"`.</br>For right-to-left languages, it's equivalent to `"left"` | | 
 | `"centerGroup"` | | center group | default settings of math equation is center-aligned and applied for a group of element (such as numerator is a fraction) | | <ol><li> It is not a standard option on native OOXML.</li><li>the presence of centerGroup strongly implies a scenario are:<ul><li>Math elements are treated as groups or columns within a larger structure.</li><li>The justification is applied to ensure these groups or columns are centered relative to each other or some central axis within the math zone.</li></ul></li></ol>| 
-| `"center"` | | center-aligned | default settings of math equation is center-aligned | | | 
+
+#### `<m:intLim>` -> `m:val` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `undOvr` | | *und*er, *ov*e*r* | indicates that `lim` should be displayed in the **under-over position**,</br>meaning that the lower limit is placed below the integral symbol and the upper limit is placed above it. This is the more traditional and common way of displaying integral limits. | | | |
+| `subSup` | | *sub*-script, *sup*er-script | indicates that `lim` should be displayed in the **subscript-superscript position**,</br>meaning that the lower limit is placed as a subscript and the upper limit as a superscript to the integral symbol.</br>This is often used for inline integrals or when space is constrained. | | | |
+
+#### `<m:naryLim>` -> `m:val` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `undOvr` | | *und*er, *ov*e*r* | specifies that the limit should be rendered with the lower limit positioned as a subscript below the n-ary operator and the upper limit positioned as a superscript above the operator. | | |
+
+> [!NOTE]
+> See [`<m:naryLim>` tag (OOXML docs)](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_naryLim_topic_ID0EZ43ZB.html) for more information.
