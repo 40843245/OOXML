@@ -43,7 +43,7 @@ I just list some of them that commonly seen in Word file.
 | :---------- | :----------- | :----- | :--- | :-- |
 | `progid` | *Pr*ogrammatic *Id*entifier | It's a string that uniquely identifies a COM (Component Object Model) component or application. | | |
 
-#### examples
+#### examples and explanation
 ##### example 1
 `Docx1.docx` file
 
@@ -116,7 +116,7 @@ In above example, we can know that
 >
 > and more sharable.
 
-#### examples
+#### examples and explanation
 ##### example 1
 `Docx1.docx` file.
 
@@ -235,10 +235,24 @@ You can know which namespaces in `xmlns` namespace are declared through finding 
 | :---------- | :----------- | :----- | :--- | :-- |
 | `o` | *O*ffice-specific namespace | it contains metadata about the Word document itself. | | |
 
-### element in xml tag for OOXML
-#### `o` namespace
+### namespace and its attribute in OOXML
+#### about `xmlns` namespace
+##### attribute in `xmlns` namespace
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `xmlns:space` | | space | assign a value to determine how to deal with whitespace (i.e. ` `, `\t`,`\n`).
+
+#### about `xml` namespace
+##### attribute in `xml` namespace
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `xml:space` | | space | assign a value to determine how to deal with whitespace (i.e. ` `, `\t`,`\n`).
+
+### element and its attribute in xml tag in OOXML
+#### about `o` namespace
 `o` namespace contains metadata about the Word document itself.
 
+##### elements in `o` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `<o:DocumentProperties>` | | document property | defines a property for the document itself. | | |
@@ -270,7 +284,7 @@ You can know which namespaces in `xmlns` namespace are declared through finding 
 | `<o:Notes>` | | notes | estimated of the number of notes in the document. | (Potentially for notes in the document). | |
 | `<o:MMClips>` | | *M*utli*m*edia clips | estimated of the number of mutlimedia clips in the document. | (Potentially for embededded mutlimedia in the document). | |
 
-##### examples
+##### examples and explanation
 ###### example 1
 `Docx1.docx` file.
 
@@ -315,7 +329,8 @@ In above example, we can know that
 + In `<o:CharactersWithSpaces>474</o:CharactersWithSpaces>` Office Word estimates this file has 474 characters (including space).
 + In `<o:Version>15</o:Version>`, this file is created with Microsoft Office 2015. Here the version number 15 suggests version 2015.
    
-#### `w` namespace
+#### about `w` namespace
+##### elements in `w` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | | | | | | |
@@ -404,43 +419,17 @@ In above example, we can know that
 | `<w:left>` | | left | configures properties of left borders of some elements (according to this tag is inside what tag). | | |
 | `<w:bottom>` | | bottom | configures properties of bottom borders of some elements (according to this tag is inside what tag). | | |
 | `<w:right>` | | right | configures properties of right borders of some elements (according to this tag is inside what tag). | | |
+| `<w:displayBackgroundShape/>` | | | the background shape for display | | | 
+| | | | | | | | 
+| | | | | | | | 
 
-#### `m` namespace
-| element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `<m:mathPr>` | | math properties | configures properties about math. | | |
-| `<m:mathFont>` | | math font | configures properties of font that used in mathematical content. | | |
-| `<m:brkBin>` | | *br*ea*k* on *bin*ary operators | configures properties of break on binary operator (such as `+` in `3+4`.) that used in mathematical content. | See `Appendix 5`[^4] for more information. | |
-| `<m:brkBinSub>` | | substitution string for *br*ea*k* on *bin*ary operators | configures properties of substitution string for break on binary operators (such as `+` in `3+4`.) that used in mathematical content.</br>Simply said, it configures the text to be displayed as a visual indicator of a broken binary operation. | See `Appendix 5`[^4] for more information.| |
-| `<m:smallFrac>` | | small *frac*tion style | configure the setting for the display of inline fractions. | | DON'T confuse small *frac*tion style and style of small fraction (i.e. the style of fraction which is small (with small numerator and denominator)). |
-| `<m:dispDef/>` | | display mode for default setting | indicates that the default display mode for equations (inline or block) should be determined by the application's default settings |
-| `<m:lMargin/>` | | left margin | left margin for displayed (block-level) equations. | | |
-| `<m:rMargin/>` | | right margin | right margin for displayed (block-level) equations. | | |
-| `<m:defJc/>` | | *def*ault *j*ustifi*c*ation | configures default justification for groups to an equation. | | |
-| `<m:wrapIndent>` | | wrap indent | configure indentation for wrapped lines within multiline equations. | | |
-| `<m:intLim>` | | *int*egration *lim*itation | configures limits of integration should be displayed as.  | | | | 
-| `<m:naryLim>` | | *n*-*ary* operation *lim*itation | configures limits of n-ary operator should be displayed as.  | | | 
-
-### element in xml tag for OOXML
-#### about `xmlns` namespace
-##### attribute in `xmlns` namespace
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `xmlns:space` | | space | assign a value to determine how to deal with whitespace (i.e. ` `, `\t`,`\n`).
-
-#### about `xml` namespace
-##### attribute in `xml` namespace
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `xml:space` | | space | assign a value to determine how to deal with whitespace (i.e. ` `, `\t`,`\n`).
-
-#### about `w` namespace
-##### attribute in `<w:zoom>`
+##### attribute about `w` namespace
+###### attribute in `<w:zoom>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:percentage` | | percentage | which zoom level should be when the document is displayed. | | must be a string contains positive number. |
 
-##### attribute in `<w:characterSpacingControl>`
+###### attribute in `<w:characterSpacingControl>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:val` | | percentage | determines how to adjust characters between spaces. | | |
@@ -448,50 +437,49 @@ In above example, we can know that
 > [!IMPORTANT]
 > The available value of `w:val` attribute in `<w:characterSpacingControl>` is defined in [Character-Level Whitespace Compression Settings](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_CharacterSpacing_topic_ID0E6AK2.html)
 
-##### attribute in `<w:rsid>`
+###### attribute in `<w:rsid>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:val` | | | specifies a Guid as a revision save identifier. | | |
 
-##### attribute in `<w:word>`
+###### attribute in `<w:word>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:macrosPresent` | | macro to present or not | assign a value to determine it will use macro (written in VBA or VB).</br>If it is specified to "yes", it will use macro.</br>Otherwise, it will not use macro. | | |
 | `w:embeddedObjPresent` | | embedded object to present or not | assign a value to determine whether the document contains embedded objects (like Excel spreadsheets or other OLE objects). | | |
 | `w:ocxPresent` | | OCX controls to present or not | assign a value to determine whether the document will use OCX controls (i.e. ActiveX controls) | | |  
 
-##### attribute in `<w:font>`
+###### attribute in `<w:font>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:name` | | name | assign a value to give the name to this font. | | |
 
-##### attribute in `<w:family>`
+###### attribute in `<w:family>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:val` | | value | assign a value to determine which family will be used for those text that uses this font. | | |
 
-##### attribute in `<w:charset>`
+###### attribute in `<w:charset>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:val` | | value | assign a value to determine which charset will be used for those text that uses this font. | | |
 
-##### attribute in `<w:pitch>`
+###### attribute in `<w:pitch>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:val` | | value | assign a value to determine which how many pitches will be used for those text that uses this font. | | |
 
-##### attribute in `<w:defaultFonts>`
+###### attribute in `<w:defaultFonts>`
 Same as attribute in `<w:rFonts>`.
 
-##### attribute in `<w:p>`
+###### attribute in `<w:p>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:rsidR` | | revision id for run | assign the value of revision id for run  | rs stands for *r*evi*s*ion, R stands for *R*un | |
 | `w:rsidRDefault` | | revision id for run default | assign the default value of revision id for run  | rs stands for *r*evi*s*ion, R stands for *R*un | |
 | `w:rsidSect` | | revision id for section | assign the default value of revision id for section | rs stands for *r*evi*s*ion | |
 
-##### attribute in `<w:ind>`
-
+###### attribute in `<w:ind>`
 > [!CAUTION]
 > I highly NOT recommend that specify BOTH `w:first-line` and `w:hanging` attribute.
 >
@@ -535,33 +523,33 @@ same as above |
 | `w:rsidRDefault` | | revision id for run default | assign the default value of revision id for run  | rs stands for *r*evi*s*ion, R stands for *R*un | |
 | `w:rsidSect` | | revision id for section | assign the default value of revision id for section | rs stands for *r*evi*s*ion | |
 
-##### attribute in `<w:tab>`
+###### attribute in `<w:tab>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:val` | | | determines alignment or behavior of the tab stop. | This attribute is required. | |
 | `w:pos` | | | determines position of the tab stop. | This attribute is required. | |
 | `w:leader` | | leader character | determines leader character that will fill the space before the tab stop.  | This attribute is optional. | |
 
-##### attribute in `<w:defaultTabStop>`
+###### attribute in `<w:defaultTabStop>`
 Same as attribute in `<w:tab>`.
 
-##### attribute in `<w:sz>`
+###### attribute in `<w:sz>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:val` | `value` in native html5 | assign the value to determine default font size for **non-complex script characters** (that is inside `<w:pPr>` tag) | its unit is half-point. | |
 
-##### attribute in `<w:szCs>`
+###### attribute in `<w:szCs>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:val` | `value` in native html5 | assign the value to determine default font size for **complex script characters** (that is inside `<w:pPr>` tag) | its unit is half-point. | |
 
-##### attribute in `<w:pgSz>`
+###### attribute in `<w:pgSz>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:w` | `width` in css | assign the value to determine width of page size (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
 | `w:h` | `height` in css | assign the value to determine height of page size (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
 
-##### attribute in `<w:pgMar>`
+###### attribute in `<w:pgMar>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:top` | `margin-top` in css | margin-top |assign the value to determine top of page margin (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
@@ -572,12 +560,12 @@ Same as attribute in `<w:tab>`.
 | `w:footer` | | footer | assign the value to determine the distance from the bottom edge to the footer (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
 | `w:gutter` | | footer | assign the value to determine gutter margin (for binding) | its unit is twips (twentieths of a point). | |
 
-##### attribute in `<w:cols>`
+###### attribute in `<w:cols>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | w:space | | space | assign an value to determine the space between columns in section (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
 
-##### attribute in `<w:docGrid>`
+###### attribute in `<w:docGrid>`
 > [!WARNING]
 > I refers from Google Gemini's answer which may be incorrect.
 
@@ -588,76 +576,76 @@ Same as attribute in `<w:tab>`.
 | w:type | | type of document grid | assign an value to determine the type of document grid will be used in section (that is inside `<w:sectPr>` tag) | See `Appendix 2`[^2] for more information | |
 | w:lineGrid | | number of line per grid | assign an value to determine number of line per grid in section (that is inside `<w:sectPr>` tag) | | its value must be positive number. |
 
-##### attribute in `<w:tbW>`
+###### attribute in `<w:tbW>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | w:w | | width | assign an value to determine the width of the cell (that is inside `<w:tc>` tag) | NOTES that its unit is not necessary twips (its unit is according to value of `w:type` attribute. See next record | |
 | w:type | | type | assign an value to determine its unit | | |
 
-##### attribute in `<w:pStyle>`
+###### attribute in `<w:pStyle>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | w:val | `value` in native html5 | assign an Guid as value that determines what style of 7the paragraph (that is inside `<w:p>` tag) will apply to | | |
 
-##### attribute in `<w:tblStyle>`
+###### attribute in `<w:tblStyle>`
 Way to parsing it is similar to parsing `<w:pStyle>`.
 
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | w:val | `value` in native html5 | assign an Guid as value that determines what style of the table (that is inside `<w:tbl>` tag) will apply to | | |
 
-##### attribute in `<w:lsid>`
+###### attribute in `<w:lsid>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | w:val | `value` in native html5 | assign an Guid as value that determines what style of the list (that is inside `<w:listDef>` tag) will apply to | | |
 
-##### attribute in `<w:bookmarkStart>`
+###### attribute in `<w:bookmarkStart>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:id` | `id` in native html5 | id of start point of bookmark | assign the id of start point of bookmark that in the tag | | |
 | `w:name` | `name` in native html5 | name of start point of bookmark | assign the name of start point of bookmark that in the tag | | |
 
-##### attribute in `<w:bookmarkEnd>`
+###### attribute in `<w:bookmarkEnd>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:id` | `id` in native html5 | id of end point of bookmark | assign the id of end point of bookmark that in the tag | | | 
 
-##### attribute in `<w:listDef>`
+###### attribute in `<w:listDef>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:listDefId` | | list definition id | specify the unique id when defines a list to determine which style will be used. | | |
 
-##### attribute in `<w:plt>`
+###### attribute in `<w:plt>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:val` | | | assign the Guid as value to determine which style will be applied to for the list pattern type | | |
 
-##### attribute in `<w:tmpl>`
+###### attribute in `<w:tmpl>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:val` | | | assign the Guid as value to determine which template will be applied to for the list pattern type | | |
 
-##### attribute in `<w:lvl>`
+###### attribute in `<w:lvl>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:ilvl` | | | specifies indentation of this level | | it must be a positive integer |
 
-##### attribute in `<w:start>`
+###### attribute in `<w:start>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:val` | | | assign the positive integer as value to determine which the first item will be numbered to | the first item will use number or letter or bullet accords to value of `w:val` attribute in `<w:numFmt>` | it must be a positive integer |
 
-##### attribute in `<w:lvlText>`
+###### attribute in `<w:lvlText>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:val` | | | assign the string as value to specify the format for this level | | |
 
-##### attribute in `<w:lvlJc>`
+###### attribute in `<w:lvlJc>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:val` | | | assign the string as value to determine the alignment for this level | | |
 
-##### attribute in `<w:bdr>`
+###### attribute in `<w:bdr>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:val` | `style` attribute in tag in native html5 | style | specifies the style of the border. | It is required. | | 
@@ -677,97 +665,15 @@ Way to parsing it is similar to parsing `<w:pStyle>`.
 > [!NOTE]
 > For introduction of shadow effect, see [shadow effect.md](https://github.com/40843245/CSS/blob/main/terms/shadow%20effect.md)
 
-##### attribute in `<w:pgBorders>`
+###### attribute in `<w:pgBorders>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:display` | | display | specifies on which pages within the section the page border should be displayed. | It is optional | | 
 | `w:offsetFrom` | | offeset from | determines how the page border's position is calculated relative to the page. | It is optional | |  
 | `w:zOrder` | | z order | whether the page border should be rendered in front of or behind the document content. | | |
 
-#### about `m` namespace
-##### attribute in `<m:brkBin>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `m:val` | | | determines which position the binary operator should be placed when it has neccessary line break of the expression with a binary operator. | | |
-
-##### attribute in `<m:brkBinSub>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `m:val` | | | the string that will replaced to for the line break on an expression with a binary operator. | | |
-
-##### attribute in `<m:smallFrac>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `m:val` | | | determines small fraction style is enabled or disabled. | | |
-
-##### attribute in `<m:lMargin>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `m:val` | | | determines left margin of the equation | its unit is in twips. | |
-
-##### attribute in `<m:rMargin>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `m:val` | | | determines right margin of the equation | its unit is in twips. | |
-
-##### attribute in `<m:defJc>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `m:val` | | | determines justification of the equation in the default settings | | |
-
-##### attribute in `<m:wrapIndent>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `m:val` | | | determines indentation for wrapping text in a multiline equation. | | |
-
-##### attribute in `<m:intLim>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `m:val` | | | determines the behaviour for limitations of integration operators. | | |
-
-> [!NOTE]
-> Integration operators includes:
->
-> + integral: <img width="71" alt="image" src="https://github.com/user-attachments/assets/22d6eb26-9b8f-4b7d-91b2-5b6e75ed3582" />
-> + summation: <img width="50" alt="image" src="https://github.com/user-attachments/assets/d6e87f62-8e05-4a91-8081-e1bb62088943" />
-> + product: <img width="82" alt="image" src="https://github.com/user-attachments/assets/4f1127b4-8c9b-484c-a338-895f20e96961" />
-
-> [!NOTE]
-> This is an example of equation that apply the configuration set by `<m:intLim m:val="subSup">`.
->
-> <img width="570" alt="image" src="https://github.com/user-attachments/assets/5e850987-7ee7-425e-abee-daec42024f51" />
-
-> [!NOTE]
-> This is an example of equation that apply the configuration set by `<m:intLim m:val="undOvr">`.
->
-> <img width="445" alt="image" src="https://github.com/user-attachments/assets/61b8c6bf-bd28-4eb9-8489-96778d353194" />
-
- 
-##### attribute in `<m:naryLim>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `m:val` | | | determines the behaviour for limitations of n-ary operators | | |
-
-> [!NOTE]
-> n-ary operators includes:
->
-> + summation: <img width="50" alt="image" src="https://github.com/user-attachments/assets/d6e87f62-8e05-4a91-8081-e1bb62088943" />
-> + product: <img width="82" alt="image" src="https://github.com/user-attachments/assets/4f1127b4-8c9b-484c-a338-895f20e96961" />
-> + union: <img width="22" alt="image" src="https://github.com/user-attachments/assets/fc6ffa1f-d2c5-44fd-a9f0-7881fefe2f06" />
-> + intersection: <img width="22" alt="image" src="https://github.com/user-attachments/assets/88a3d1a0-a3d4-4d2c-87a4-b84757f254d9" />
-
-> [!NOTE]
-> An example of equations that use the configuration set by `<m:naryLim m:val="subSup"/>`.
->
-> <img width="509" alt="image" src="https://github.com/user-attachments/assets/3c11af0e-f8c5-4f0c-919a-82861352179e" />
-
-> [!NOTE]
-> An example of equations that use the configuration set by `<m:naryLim m:val="undOvr"/>`.
->
-> <img width="547" alt="image" src="https://github.com/user-attachments/assets/1149ce2c-8790-4579-b1ff-f0a43c03c835" />
- 
-#### examples and explanations
-##### example 1 -- fonts
+##### examples and explanations
+###### example 1 -- fonts
 ```
 <w:fonts>
    <w:defaultFonts w:ascii="Times New Roman" w:fareast="新細明體" w:h-ansi="Times New Roman" w:cs="Times New Roman"/>
@@ -812,7 +718,7 @@ In above example, we can know that
 > 9.  **Midline**: 03 = Continuous
 > 10. **X-height**: 04 = Medium
 
-##### example 2 -- run
+###### example 2 -- run
 ```
 <w:r>
   <w:rPr>
@@ -849,8 +755,7 @@ it also configure the default size is 52 for **complex script characters** (like
 > [APPRECIATION]
 > Thanks to Google Gemini, it refers from Google Gemini's answer.
 
-##### example 3 -- table
-
+###### example 3 -- table
 ```
 <!-- other elements omitted -->
 
@@ -913,7 +818,7 @@ In the above example, we can know that
 + In `<w:b/>`, it configures the text that uses the run is bold.
 + In `<w:t>text 1</w:t>` (inside `<w:r>`), it adds a text with content`text 1` in the run which is used by the paragraph. 
 
-##### example 4 -- list
+###### example 4 -- list
 ```
 <w:lists>
    <w:listDef w:listDefId="0">
@@ -956,7 +861,7 @@ In above example, we can know that
 >
 > Similarly, the `w:left` attributes usually takes precedence over than `w:left-chars`.
 
-##### example 5 -- line border
+###### example 5 -- line border
 
 ```
 <w:rPr>
@@ -966,7 +871,7 @@ In above example, we can know that
 </w:rPr>
 ```
 
-##### example 6 -- page border
+###### example 6 -- page border
 ```
 <w:sectPr>
   <w:pgBorders w:display="notFirstPage" w:offsetFrom="text" w:zOrder="back">
@@ -983,7 +888,106 @@ In above example, we can know that
 + In `<w:sectPr>`, it defines properties of the section.
 + In `<w:pgBorders w:display="notFirstPage" w:offsetFrom="text" w:zOrder="back">`, <ol><li>`w:display="notFirstPage"` indicates all pages (except for first page) should be display the page border within the section.</li><li>`w:offsetFrom="text"` indicates the values of `w:space` attribute (inside this tag) will be measured from the text margins of the page.</li><li>`w:zOrder="back"` specifies that the page borders should be rendered behind the document content.</li></ol>
 
-##### example 7 -- configuration about math equation
+#### about `m` namespace
+##### elements in `m` namespace
+| element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `<m:mathPr>` | | math properties | configures properties about math. | | |
+| `<m:mathFont>` | | math font | configures properties of font that used in mathematical content. | | |
+| `<m:brkBin>` | | *br*ea*k* on *bin*ary operators | configures properties of break on binary operator (such as `+` in `3+4`.) that used in mathematical content. | See `Appendix 5`[^4] for more information. | |
+| `<m:brkBinSub>` | | substitution string for *br*ea*k* on *bin*ary operators | configures properties of substitution string for break on binary operators (such as `+` in `3+4`.) that used in mathematical content.</br>Simply said, it configures the text to be displayed as a visual indicator of a broken binary operation. | See `Appendix 5`[^4] for more information.| |
+| `<m:smallFrac>` | | small *frac*tion style | configure the setting for the display of inline fractions. | | DON'T confuse small *frac*tion style and style of small fraction (i.e. the style of fraction which is small (with small numerator and denominator)). |
+| `<m:dispDef/>` | | display mode for default setting | indicates that the default display mode for equations (inline or block) should be determined by the application's default settings |
+| `<m:lMargin/>` | | left margin | left margin for displayed (block-level) equations. | | |
+| `<m:rMargin/>` | | right margin | right margin for displayed (block-level) equations. | | |
+| `<m:defJc/>` | | *def*ault *j*ustifi*c*ation | configures default justification for groups to an equation. | | |
+| `<m:wrapIndent>` | | wrap indent | configure indentation for wrapped lines within multiline equations. | | |
+| `<m:intLim>` | | *int*egration *lim*itation | configures limits of integration should be displayed as.  | | | | 
+| `<m:naryLim>` | | *n*-*ary* operation *lim*itation | configures limits of n-ary operator should be displayed as.  | | | 
+
+##### atttribute about `m` namespace
+###### attribute in `<m:brkBin>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `m:val` | | | determines which position the binary operator should be placed when it has neccessary line break of the expression with a binary operator. | | |
+
+###### attribute in `<m:brkBinSub>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `m:val` | | | the string that will replaced to for the line break on an expression with a binary operator. | | |
+
+###### attribute in `<m:smallFrac>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `m:val` | | | determines small fraction style is enabled or disabled. | | |
+
+###### attribute in `<m:lMargin>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `m:val` | | | determines left margin of the equation | its unit is in twips. | |
+
+###### attribute in `<m:rMargin>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `m:val` | | | determines right margin of the equation | its unit is in twips. | |
+
+###### attribute in `<m:defJc>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `m:val` | | | determines justification of the equation in the default settings | | |
+
+###### attribute in `<m:wrapIndent>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `m:val` | | | determines indentation for wrapping text in a multiline equation. | | |
+
+###### attribute in `<m:intLim>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `m:val` | | | determines the behaviour for limitations of integration operators. | | |
+
+> [!NOTE]
+> Integration operators includes:
+>
+> + integral: <img width="71" alt="image" src="https://github.com/user-attachments/assets/22d6eb26-9b8f-4b7d-91b2-5b6e75ed3582" />
+> + summation: <img width="50" alt="image" src="https://github.com/user-attachments/assets/d6e87f62-8e05-4a91-8081-e1bb62088943" />
+> + product: <img width="82" alt="image" src="https://github.com/user-attachments/assets/4f1127b4-8c9b-484c-a338-895f20e96961" />
+
+> [!NOTE]
+> This is an example of equation that apply the configuration set by `<m:intLim m:val="subSup">`.
+>
+> <img width="570" alt="image" src="https://github.com/user-attachments/assets/5e850987-7ee7-425e-abee-daec42024f51" />
+
+> [!NOTE]
+> This is an example of equation that apply the configuration set by `<m:intLim m:val="undOvr">`.
+>
+> <img width="445" alt="image" src="https://github.com/user-attachments/assets/61b8c6bf-bd28-4eb9-8489-96778d353194" />
+
+###### attribute in `<m:naryLim>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `m:val` | | | determines the behaviour for limitations of n-ary operators | | |
+
+> [!NOTE]
+> n-ary operators includes:
+>
+> + summation: <img width="50" alt="image" src="https://github.com/user-attachments/assets/d6e87f62-8e05-4a91-8081-e1bb62088943" />
+> + product: <img width="82" alt="image" src="https://github.com/user-attachments/assets/4f1127b4-8c9b-484c-a338-895f20e96961" />
+> + union: <img width="22" alt="image" src="https://github.com/user-attachments/assets/fc6ffa1f-d2c5-44fd-a9f0-7881fefe2f06" />
+> + intersection: <img width="22" alt="image" src="https://github.com/user-attachments/assets/88a3d1a0-a3d4-4d2c-87a4-b84757f254d9" />
+
+> [!NOTE]
+> An example of equations that use the configuration set by `<m:naryLim m:val="subSup"/>`.
+>
+> <img width="509" alt="image" src="https://github.com/user-attachments/assets/3c11af0e-f8c5-4f0c-919a-82861352179e" />
+
+> [!NOTE]
+> An example of equations that use the configuration set by `<m:naryLim m:val="undOvr"/>`.
+>
+> <img width="547" alt="image" src="https://github.com/user-attachments/assets/1149ce2c-8790-4579-b1ff-f0a43c03c835" />
+
+##### examples and explanations
+###### example 1 -- configuration about math equation
 ```
 <m:mathPr>
     <m:mathFont m:val="Cambria Math"/>
@@ -1014,7 +1018,7 @@ In above example, we can know that
 + In `<m:wrapIndent m:val="1440"/>`, when wrapping the text on a math equation, it indents 1440 twips.
 + In `<m:intLim m:val="subSup"/>`, for integration operators, the lower limit will be placed as sub-script and upper limit will be placed in super-script. 
 + In `<m:naryLim m:val="undOvr"/>`, for n-ary operator, the n-th symbol should be displayed underneath and over the equation.
-  
+
 [^1]:[Prequisite Review 1 -- terms](https://github.com/40843245/XmlOfOffice/blob/main/Word/structure/Prequisite%20Review%201%20--%20terms.md)
 
 [^2]:[Appendix 2 -- available options of attribute of tag in xml for Word](https://github.com/40843245/XmlOfOffice/blob/main/Word/structure/Appendix%202%20--%20available%20options%20of%20attribute%20of%20tag%20in%20xml%20for%20Word.md#appendix-2----available-options-of-attribute-of-tag-in-xml-for-word)
