@@ -30,6 +30,22 @@
 > + Removing leading and trailing whitespace.
 > + Treating line breaks as whitespace.
 
+### `<w:characterSpacingControl>` -> `w:val` attribute
+#### available options of attribute in tag
+
+> [!WARNING]
+> I refers from Google Gemini's answer which may be incorrect.
+
+> [!IMPORTANT]
+> The available value of `w:val` attribute in `<w:characterSpacingControl>` is defined in [Character-Level Whitespace Compression Settings](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_CharacterSpacing_topic_ID0E6AK2.html)
+
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `dontCompress` | | Don't Compress | specifies that no character compression shall be applied to any character when the document is displayed.  | | |
+| `doNotCompress` | Do not Compress | specifies that characters shall not have whitespace compression applied to them | 
+| `compressPunctuation` | | Compress Punctuation | specifies that only whitespace characters shall have whitespace compression applied to them. | | |
+| `compressPunctuationAndJapaneseKana` | Compress Punctuation and Japanese kana (日本的假名) | specifies that whitespace and Japanese kana characters shall have whitespace compression applied to them. |
+
 ### `<w:tab>` -> `w:val` attribute
 > [!WARNING]
 > I refers from Google Gemini's answer which may be incorrect.
