@@ -240,7 +240,8 @@ You can know which namespaces in `xmlns` namespace are declared through finding 
 ##### attribute in `xmlns` namespace
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `xmlns:space` | | space | assign a value to determine how to deal with whitespace (i.e. ` `, `\t`,`\n`).
+| `xmlns:space` | | space | assign a value to determine how to deal with whitespace (i.e. ` `, `\t`,`\n`). | | |
+| `xmlns:a` | | | specifies the namespace of `a` for DrawingML. | It usually in `<a:theme>`. | |
 
 #### about `xml` namespace
 ##### attribute in `xml` namespace
@@ -253,6 +254,34 @@ You can know which namespaces in `xmlns` namespace are declared through finding 
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `v:ext` | | | specifies editing behavior for shapes created with these defaults. | | |
+
+#### about `a` namespace
+##### elements in `a` namespace
+| elements in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `<a:theme>` | | | defines the theme. | It is usually in `~/word/theme/theme1.xml` file. | |
+| `<a:themeElements>` | | | acts a container that defines theme elements. | | |
+| `<a:clrScheme>` | | | clear the color scheme and defines the color palette for the theme. | | |
+| `<a:dk1>` | | dark 1 | dark 1. | | |
+| `<a:lt1>` | | light 1 | light 1. | | |
+| `<a:sysClr>` | | system color | configure something to system color.7 | | | 
+| `<a:srgbClr>` | | *s*econdary *RGB* *c*olor | set's secondary RGB color. | | |
+| `<a:accent1>` | | accent color 1 | defines the accent color 1.
+| `<a:hlink>` | | *h*yper*link* | defines the properties of hyperlink. | | |
+| `<a:folHlink>` | | *fol*lowed *h*yper*link* | defines the properties of followed hyperlink. | | |
+| `<a:majorFont>` | | major font | defines the properties of major font. | | |
+| `<a:minorFont>` | | *fol*lowed *h*yper*link* | defines the properties of minor font. | | |
+| `<a:fmtScheme>` | | *f*or*m*a scheme | defines the properties of format scheme. | | |
+| `<a:objectDefaults>` | | | default settings for objects. | | |
+| `<a:extraClrSchemeLst/>` | | | would contain definitions for additional color schemes beyond the main "Office" scheme. | | |
+| `<a:extLst>` | | | defines an extension list. | | |
+
+
+##### attribute in `a` namespace
+###### attribute in `<a:theme>`
+| elements in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `name` | | | specifies the name of theme. | | |
 
 ### element and its attribute in xml tag in OOXML
 #### about `o` namespace
