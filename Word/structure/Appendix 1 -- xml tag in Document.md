@@ -391,7 +391,8 @@ In above example, we can know that
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | | | | | | |
-| `<w:settings>` | | setting | it serves as a container for a wide range of document-level settings and properties that control how the Word document behaves and is displayed. | it usually resides in `~/word/setting.xml` file under a Office Word file. | |
+| `<w:settings>` | | settings | it serves as a container for a wide range of document-level settings and properties that control how the Word document behaves and is displayed. | it usually resides in `~/word/setting.xml` file under a Office Word file. | |
+| `<w:webSettings>` | | web settings | is the root element for web-related settings in the Word document. | it usually resides in `~/word/setting.xml` file under a Office Word file. | |
 | `<w:zoom>` | | zoom | specifies the display zoom level for the document when it is opened in Microsoft Word. | same as above| |
 | `<w:characterSpacingControl>` | | character spacing controlls | specifies how to adjust the spacing between characters. | |
 | `<w:compat/>` | | compatibility | it is a container element that holds various compatibility settings designed to ensure the document is displayed and behaves as expected across different versions of Microsoft Word. | | |
