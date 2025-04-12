@@ -1072,7 +1072,9 @@ In above example, we can know that
 
 In above example, we can know that
 
-+
++ In `<w:docDefaults>`, it configures default settings for entire documents.
++ In `<w:rPrDefault>`, it configures default property of text run.
++ In `<w:rPr>`, it defines properties of text run.
 
 ###### example 14 -- default latent style
 ```
