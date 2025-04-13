@@ -460,6 +460,11 @@ In above example, we can know that
 | `<w:adjusLeftind>` | | adust left indentation | configure the left indentation will be adjusted due to different window size. | | |
 | `<w:adjusRightind>` | | adust right indentation | configure the right indentation will be adjusted due to different window size. | | |
 | | | | | | | | 
+| `<w:autoSpaceDE>` | | | controls whether Word should automatically adjust the spacing between Asian characters and Latin text (like English) within a paragraph. | | |
+| `<w:autoSpaceDN>` | | | controls whether Word should automatically adjust the spacing between Asian characters and adjacent numbers (0-9) within a paragraph. | | |
+| | | | | | | | 
+| `<w:bar>` | | | insert a vertical line | | | | 
+| | | | | | | | 
 | `<w:spacing>` | spacing | settings about spacing between paragraphs | | |
 | `<w:jc>` | | justification | settings about justification (alignment) of the paragraph | jc stands for *j*ustifi*c*ation | |
 | | | | | | | | 
@@ -602,6 +607,26 @@ In above example, we can know that
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:val` | | value | assign a value to determine which how many pitches will be used for those text that uses this font. | | |
+
+###### attribute in `<w:bar>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | style of bar | | |
+
+###### attribute in `<w:adjustLeftInd>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | adjust left indentation due to different window size. | | |
+
+###### attribute in `<w:adjustRightInd>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | adjust right indentation due to different window size. | | |
+
+###### attribute in `<w:bar>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | style of bar | | |
 
 ###### attribute in `<w:defaultFonts>`
 Same as attribute in `<w:rFonts>`.
