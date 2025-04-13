@@ -548,21 +548,22 @@ In above example, we can know that
 | `<w:divId>`| | | speficies the div id | | | 
 
 ##### attribute about `w` namespace
-###### attribute in `<w:cnfStyle>`
+###### attribute in `<w:framePr>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:w` | | width | set width | | |
 | `w:h` | | height | set height | | |
+| `w:x` | | height | | horizontal position of the frame relative to its horizontal anchor (the page). | |
 | `w:hRule` | | height rule | specifies how the height of the frame should be determined. | | |
 | `w:hSpace` | | horizontal spacing | sets the horizontal spacing around the frame, specifically to the left and right.  | | |
-| `w:h` | | height | set height | | |
-| `w:h` | | height | set height | | |
+| `w:wrap` | | wrap | determines how the surrounding text interacts with the frame | | |
+| `w:vAnchor` | | vertical anchor | specifies the vertical anchor for the frame's positioning. | | |
+| `w:hAnchor` | | horizontal anchor | specifies the horizontal anchor for the frame's positioning. | | |
 
 ###### attribute in `<w:cnfStyle>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:evenHBand` | | Even Numbered *H*orizontal Band | specifies that the object has inherited the conditional properties applied to the even numbered horizontal bands of the parent object. | | |
-
 
 ###### attribute in `<w:background>`
 [!WARNING]
@@ -1113,7 +1114,6 @@ In above example, we can know that
 > Similarly, the `w:left` attributes usually takes precedence over than `w:left-chars`.
 
 ###### example 5 -- line border
-
 ```
 <w:rPr>
    <!-- other tags omitted -->
@@ -1121,6 +1121,18 @@ In above example, we can know that
    <w:bdr w:val="single" w:sz="4" wx:bdrwidth="10" w:space="0" w:color="auto" />
 </w:rPr>
 ```
+
+In above example, we can know that
+
++ In `<w:rFonts>`, it defines the font of the run.
++ In `w:fareast="標楷體"`, for those far east asian characters that uses the run, the font of run is `標楷體`.
++ In `w:hint="fareast"`, it provides a hint to the rendering engine about the character set of the text in this run, and it reinforces that the primary character set for this text is East Asian.
++ In `<w:bdr>`, it defines a border of the run.
++ In `w:val="single"`, set the border as single solid line.
++ In `w:sz="4"`, set border width to 4 twips.
++ In `wx:bdrwidth="10"`, for Word that uses Word XML schema extension (it coulde be happen on Word in older version that it can not parse the attribute `w:sz`), sets its border width to 10 twips. 
++ In `w:space="0"`, it sets the spacing (from the border to its inner element) to zero.
++ In `w:color="auto"`, the border color is determined by the XML preprocessor.
 
 ###### example 6 -- page border
 ```
@@ -1264,7 +1276,34 @@ In above example, we can know that
 + In `w:uiPriority="0"`, it sets the ui priority to zero.
 + In `w:unhideWhenUsed="0"`, the latent style is NOT unhide (i.e. become visible) when it is actually used.
 + In `w:qFormat="1"`, the latent style will be placed in Quick Style pane.
-  
+
+###### example 16 -- paragraph with frame configuration
+```
+<w:p>
+  <w:pPr>
+    <w:framePr w:w="2191" w:h="811" w:hRule="exact" w:hSpace="180"
+w:wrap="around" w:vAnchor="text" w:hAnchor="page" w:x="1921"/>
+  </w:pPr>
+  <w:r>
+    <w:t>Paragraph One</w:t>
+  </w:r>
+</w:p>
+```
+
+In above example, we can know that
+
++ In `<w:p>`, it defines a paragraph.
++ In `<w:pPr>`, it configures the properties of the paragraph.
++ In `<w:framePr>`, it defines a frame and configures properties of the frame.
++ In `w:w="2191"`, it sets the width of the frame is 2191 twips.
++ In `w:h="811"`, it sets the height of the frame is 811 twips.
++ In `w:hRule="exact"`, it specifies that the height should be exactly the value.
++ In `w:hSpace="180"`, it sets the horizontal spacing to 180 twips.
++ In `w:wrap="around"`, it will makes the surrounding text flow around all sides of the frame.
++ In `w:vAnchor="text"`, anchors the frame vertically to the flow of the surrounding text.
++ In `w:hAnchor="text"`, anchors the frame horizontally to the page margins.
++ In `w:x="1921"`, it positions the left side of the frame approximately 1921 twips from the left edge of the page.
+
 #### about `m` namespace
 ##### elements in `m` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
