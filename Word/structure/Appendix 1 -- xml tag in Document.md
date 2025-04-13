@@ -275,6 +275,8 @@ You can know which namespaces in `xmlns` namespace are declared through finding 
 | `<a:objectDefaults>` | | | default settings for objects. | | |
 | `<a:extraClrSchemeLst/>` | | | would contain definitions for additional color schemes beyond the main "Office" scheme. | | |
 | `<a:extLst>` | | | defines an extension list. | | |
+| `<a:graphic>` | | | servers a container about an actual graph. | | |
+| `<a:graphicData>` | | | configure properties about the actual graph. | | |
 
 
 ##### attribute in `a` namespace
@@ -282,6 +284,19 @@ You can know which namespaces in `xmlns` namespace are declared through finding 
 | elements in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `name` | | | specifies the name of theme. | | |
+
+###### attribute in `<a:graphic>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `a:spid` | | *s*ha*p*e *id*entifier | specifies shape identifier of the actual graph. | It is required. | |
+
+###### attribute in `<a:graphicData>`
+> [!NOTE]
+> there are extensibility attributes (which is optional) in `<a:graphicData>` tag.
+
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `a:uri` | | uri | specifies uri of the actual graph. | It is required. | |
 
 ### element and its attribute in xml tag in OOXML
 #### about `o` namespace
@@ -385,27 +400,6 @@ In above example, we can know that
 + In `<o:Paragraphs>1</o:Paragraphs>`, Office Word estimates this file has one paragraph.
 + In `<o:CharactersWithSpaces>474</o:CharactersWithSpaces>` Office Word estimates this file has 474 characters (including space).
 + In `<o:Version>15</o:Version>`, this file is created with Microsoft Office 2015. Here the version number 15 suggests version 2015.
-
-#### about `a` namespace
-##### elements in `a` namespace
-| element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `<a:graphic>` | | | servers a container about an actual graph. | | |
-| `<a:graphicData>` | | | configure properties about the actual graph. | | |
-
-##### attribute about `a` namespace
-###### attribute in `<a:graphic>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `a:spid` | | *s*ha*p*e *id*entifier | specifies shape identifier of the actual graph. | It is required. | |
-
-###### attribute in `<a:graphicData>`
-> [!NOTE]
-> there are extensibility attributes (which is optional) in `<a:graphicData>` tag.
-
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `a:uri` | | uri | specifies uri of the actual graph. | It is required. | |
 
 #### about `wp` namespace
 ##### elements in `wp` namespace
@@ -541,11 +535,13 @@ In above example, we can know that
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:themeColor` | | theme color | specifies the theme color. | | |
 | `w:themeShade` | | theme shade | specifies the darkness of theme color. | | |
+| `w:themeTint` | | theme tint | specifies the lightness of theme color. | | |
 | `w:color` | | | specifies background color. | | |
 | `w:fill` | | | specifies background color. | | |
 | `w:fillThemeColor` | | | specifies background color of theme. | | |
 | `w:fillShade` | | | specifies the darkness of background color of theme. | | |
 | `w:fillTint` | | | specifies the lightness of background color of theme. | | |
+| `w:backgroundType` | | | specifies the type of background. | | |
 
 
 ###### attribute in `<w:zoom>`
