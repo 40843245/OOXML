@@ -451,7 +451,9 @@ In above example, we can know that
 | `<w:sig>` | | digital signature | encapsulate the digital signature of this font. | | | 
 | `<w:panose1>` | | panose | configure the panose (with highest priority) | The lower number is it, the higher priority it has. | |
 | `<w:altName>` | `alt` attribute in `<img>` tag in native html5 | alternative | use the alternative (according to the value specified in `w:val` attribute) **when** an element (such as an image) or things that used in an element (such as font) **can not be used or worked correctly**. | | |
-| | | | | | | | 
+| | | | | | | |
+| `<w:framePr>` | | frame property | configure property of frame | | |
+| | | | | | | |
 | `<w:p>` | `<p>` | paragraph | A paragraph | notice that if an end-user only inputs an whitespace in .docx file, it will have `<w:p>` tag, the article `docx格式文档详解：xml解析并用html还原`[^4] says this situation. | 
 | `<w:pStyle>` | | paragraph style | applies style (according to value of `w:val` attribute) to paragraph (that is inside `<w:p>` tag) | the style to apply is defined in `~/word/style.xml` file | |
 | `<w:pPr>` | | paragraph property | property of a paragraph (that is inside `<w:p>` tag) in Microsoft Word file | Pr stands for *Pr*operty | |
@@ -536,14 +538,33 @@ In above example, we can know that
 | `<w:b/>` | `<b>` and `<b/>` in native html5 | bold | determine the text is bold | | |
 | `<w:i/>` | | italic | the text is italic | | |
 | `<w:t/>` | | text | defines the text | | |
+| `<w:bidi/>` | | text | defines the bidirectional text | | |
 | `<w:rPrDefault>` | | | defines the default formatting properties for all text runs within the document. | | |
 | `<w:pPrDefault/>` | | | defines the default formatting properties for all paragraphs in the document. | | |
-| `<w:latentStyles> | | | servers as a container for defining the latent styles (i.e. current unused styles). | | |
+| `<w:latentStyles>` | | | servers as a container for defining the latent styles (i.e. current unused styles). | | |
 | `<w:lsdException>` | | LSD exception | defines exceptions to the default behavior of LSD (Linked Style Definitions). | | |
+| `<w:cnfStyle>` | | conflict styles | It's used to store information about how styles should be applied or resolved in situations where there might be conflicts or variations. | | |
+| `<w:contextualSpacing>` | | | determine that Word can dynamically modify the line spacing in situations | `"true"` to modify, `"false"` to not modify. default value to `"true"` | |
+| `<w:divId>`| | | speficies the div id | | | 
 
 ##### attribute about `w` namespace
-###### attribute in `<w:background>`
+###### attribute in `<w:cnfStyle>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:w` | | width | set width | | |
+| `w:h` | | height | set height | | |
+| `w:hRule` | | height rule | specifies how the height of the frame should be determined. | | |
+| `w:hSpace` | | horizontal spacing | sets the horizontal spacing around the frame, specifically to the left and right.  | | |
+| `w:h` | | height | set height | | |
+| `w:h` | | height | set height | | |
 
+###### attribute in `<w:cnfStyle>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:evenHBand` | | Even Numbered *H*orizontal Band | specifies that the object has inherited the conditional properties applied to the even numbered horizontal bands of the parent object. | | |
+
+
+###### attribute in `<w:background>`
 [!WARNING]
 > If the background specifies the use of a theme color via the themeColor attribute, this value is ignored.
 > Thus, Applications are discouraged from specifying both the color and themeColor attributes on the same parent element.
@@ -563,7 +584,6 @@ In above example, we can know that
 | `w:fillShade` | | | specifies the darkness of background color of theme. | | |
 | `w:fillTint` | | | specifies the lightness of background color of theme. | | |
 | `w:backgroundType` | | | specifies the type of background. | | |
-
 
 ###### attribute in `<w:zoom>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -871,7 +891,7 @@ For more informations and details, see [DocumentFormat.OpenXml.Wordprocessing.Co
 | `w:defUIPriority` | | | specifies the default UI priority for new latent styles. | The higher value of ui priority is, the less preceedence it has so that styles might be displayed less prominently. | |
 | `w:defSemiHidden` | | | specifies the default semi-hidden state for new latent styles. | | |
 | `w:defUnhideWhenUsed` | | | specifies the default `unhide when used` state. | | |
-| `w:defQFormat` | | | specifies the default "quick format" state for new latent styles. | | |
+| `w:defQFormat` | | | specifies the default quick format state for new latent styles. | | |
 
 ###### attribute in `<w:lsdException>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -882,6 +902,25 @@ For more informations and details, see [DocumentFormat.OpenXml.Wordprocessing.Co
 | `w:unhideWhenUsed` | | | specifies whether the style should become visible in the UI if it's used in the document, even if it was initially semi-hidden. | Concept similar to the concept mentioned at cell whose row is `w:defUnhideWhenUsed` and column is `note`. | | 
 | `w:qFormat` | | | determines whether the style appears in the Quick Styles gallery. | Concept similar to the concept mentioned at cell whose row is `w:defQFormat` and column is `note`. | |
 
+###### attribute in `<w:cnfStyle>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | might indicate that some form of conflict resolution or style application rule is active. | | |
+| `w:firstColumn` | | | apply the style to first column | | |
+| `w:lastColumn` | | | apply the style to last column | | |
+| `w:firstRow` | | | apply the style to first row | | |
+| `w:lastRow` | | | apply the style to last row | | |
+| `w:firstRowFirstColumn` | | | apply the style to first row and first row | | |
+| `w:firstRowLastColumn` | | | apply the style to first row and last column | | |
+| `w:lastRowFirstColumn` | | | apply the style to last row and first column | | |
+| `w:lastRowLastColumn` | | | apply the style to last row and last column | | |
+| `w:italic` | | | the applied style is italic | | |
+| `w:bold` | | | the applied style is bold | | |
+| `w:underline` | | | the applied style is underlined | | |
+| `w:color` | | | color of applied style | | |
+| `w:oddHBand` | | | odd numbered horizontal bands of applied style | | |
+| `w:oddVBand` | | | odd numbered vertical bands of applied style | | |
+| `w:evenVBand` | | | even numbered vertical bands of applied style | | |
 
 
 ##### examples and explanations
@@ -1011,7 +1050,7 @@ In the above example, we can know that
 + In `<w:tblPr>`, it add some properties of the table.
 + In `<w:tblStyle w:val="TableGrid"/>`, the table uses predefined style named `TableGrid` which is defined in `~/word/style.xml`.
 + In `<w:tblW w:w="5000" w:type="auto"/>`, the table width is 5000 and the Word will automatically justify the width to fit the content in cells.
-+ In `<w:tblLook w:val="04A0"/>`, the `<w:tblLook>` tag determines which table styles and formatting options should be applied to a table.</br>The value of `w:val` attribute acts like a bitmask then determines which table styles and formatting options.</br>Its value is `04A0` which is a hexadecimal number.</br>Converting `04A0` from hexadecimal number to binary number  gets `0000 0100 1010 0000`.</br>Only 5th bit (counting from LST, zero-based), 7th bit and 10th bit are set to 1 (other bits is set to 0).</br>When 5th bit is set to 1, applies table formatting for first row.</br>When 7th bit is set to 1, applies table formatting for first column.</br>When 10th bit is set to 1, do not apply column banding.</br>Therefore, applies table formatting for first row and first column. Dont't apply column banding. For more details, see [table formatting option and styling](https://github.com/40843245/Microsoft_Office/blob/main/Product/General%20Product/elements/table/table%20formatting%20option%20and%20styling/element%20value%20in%20OOXML.md)
++ In `<w:tblLook w:val="04A0"/>`, the `<w:tblLook>` tag determines which table styles and formatting options should be applied to a table.</br>The value of `w:val` attribute acts like a bitmask then determines which table styles and formatting options.</br>Its value is `04A0` which is a hexadecimal number.</br>Converting `04A0` from hexadecimal number to binary number gets `0000 0100 1010 0000`.</br>Only 5th bit (counting from LST, zero-based), 7th bit and 10th bit are set to 1 (other bits is set to 0).</br>When 5th bit is set to 1, applies table formatting for first row.</br>When 7th bit is set to 1, applies table formatting for first column.</br>When 10th bit is set to 1, do not apply column banding.</br>Therefore, applies table formatting for first row and first column. Dont't apply column banding. For more details, see [table formatting option and styling](https://github.com/40843245/Microsoft_Office/blob/main/Product/General%20Product/elements/table/table%20formatting%20option%20and%20styling/element%20value%20in%20OOXML.md)
 + In `<w:tblGrid>`, it defines a header of the table.
 + In `<w:gridCol w:w="1892.5"/>`, it defines a column of the table and set its width as 1892.5 twips.
 + In `<w:tr>`, it defines a row of the table.
