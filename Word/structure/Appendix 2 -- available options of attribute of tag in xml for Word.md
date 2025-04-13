@@ -46,8 +46,18 @@
 
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"true"` | | | adjust right indentation due to different windows size. |
-| `"false"` | | | NOT adjust right indentation due to different windows size. |
+| `"true"` | | | adjust right indentation due to different windows size. | | |
+| `"false"` | | | NOT adjust right indentation due to different windows size. | | |
+
+#### `<w:framePr>` -> `w:h` attribute
+> [!WARNING]
+> I refers from Google Gemini's answer which may be incorrect.
+
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"auto"` | | | determined based on the height of its contents. | | The value of `w:h` is ignored. |
+| `"exact"` | | | height of frame must be exactly the value of `w:h` attribute. | | If the height of its content is larger than the value of `w:h` attribute, then its content will be overflowed. |
+| `"atLeast"` | | | height of frame must be at least the value of `w:h` attribute. height of frame is the max of value of `w:h` attribute and height of its content. | | |
 
 #### `<w:adjustLeftInd>` -> `w:val` attribute
 > [!WARNING]
