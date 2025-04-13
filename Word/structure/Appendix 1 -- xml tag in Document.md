@@ -536,6 +536,18 @@ In above example, we can know that
 | `<w:lsdException>` | | LSD exception | defines exceptions to the default behavior of LSD (Linked Style Definitions). | | |
 
 ##### attribute about `w` namespace
+###### attribute in `<w:background>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:themeColor` | | theme color | specifies the theme color. | | |
+| `w:themeShade` | | theme shade | specifies the darkness of theme color. | | |
+| `w:color` | | | specifies background color. | | |
+| `w:fill` | | | specifies background color. | | |
+| `w:fillThemeColor` | | | specifies background color of theme. | | |
+| `w:fillShade` | | | specifies the darkness of background color of theme. | | |
+| `w:fillTint` | | | specifies the lightness of background color of theme. | | |
+
+
 ###### attribute in `<w:zoom>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
