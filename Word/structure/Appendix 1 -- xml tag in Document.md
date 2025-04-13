@@ -457,7 +457,6 @@ In above example, we can know that
 | `<w:pPr>` | | paragraph property | property of a paragraph (that is inside `<w:p>` tag) in Microsoft Word file | Pr stands for *Pr*operty | |
 | `<w:ind>` | | paragraph indentation | configure the indentation for this paragraph. | ind stands for *ind*entation | |
 | | | | | | | | 
-| `<w:b/>` | `<b>` and `<b/>` in native html5 | bold | determine the text is bold | | |
 | `<w:spacing>` | spacing | settings about spacing between paragraphs | | |
 | `<w:jc>` | | justification | settings about justification (alignment) of the paragraph | jc stands for *j*ustifi*c*ation | |
 | | | | | | | | 
@@ -524,7 +523,9 @@ In above example, we can know that
 | `<w:listSeparator/>` | | | explicitly specifies the list separator (by given value of `w:val` attribute) for list within the document. | It is used when there are many items. | |
 | | | | | | | | 
 | `<w:docDefaults>` | | | serves as a container for defining the default formatting properties for the entire document. | | |
-| `<w:i/>` | | | the text is italic | | |
+| `<w:b/>` | `<b>` and `<b/>` in native html5 | bold | determine the text is bold | | |
+| `<w:i/>` | | italic | the text is italic | | |
+| `<w:t/>` | | text | defines the text | | |
 | `<w:rPrDefault>` | | | defines the default formatting properties for all text runs within the document. | | |
 | `<w:pPrDefault/>` | | | defines the default formatting properties for all paragraphs in the document. | | |
 | `<w:latentStyles> | | | servers as a container for defining the latent styles (i.e. current unused styles). | | |
