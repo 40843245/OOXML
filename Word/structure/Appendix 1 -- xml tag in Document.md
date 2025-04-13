@@ -923,6 +923,20 @@ For more informations and details, see [DocumentFormat.OpenXml.Wordprocessing.Co
 | `w:oddVBand` | | | odd numbered vertical bands of applied style | | |
 | `w:evenVBand` | | | even numbered vertical bands of applied style | | |
 
+###### attribute in `<w:framePr>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:w` | | width | sets border width | Its unit is twips. | It is required. |
+| `w:h` | | height | sets border height | Its unit is twips. | It can be omitted. If it is omitted, it uses the default value zero. |
+| `w:hRule` | | height rule | sets how to deals with border height | | |
+| `w:hSpace` | | horizontal spacing | sets the horizontal spacing | Its unit is twips. | |
+| `w:wrap` | | wrapping | determines how to deal the text when overflow occurs. | | |
+| `w:vAnchor` | | vertical anchor | sets vertical anchor | Its unit is twips. | | |
+| `w:hAnchor` | | horizontal anchor | sets horizontal anchor | Its unit is twips. | | |
+| `w:x` | | | sets the x-coordination. That is, it positions the left side of the frame the specific distance from the left edge of the page. | | |
+| `w:y` | | | sets the y-coordination. That is, it positions the top side of the frame the specific distance from the top edge of the page. | | |
+| `w:anchorLock` | | | specifies that the frame shall always remain in the same logical position relative to the non-frame paragraphs which precede and follow it in this document. | See [anchorLock](https://ooxml.info/docs/17/17.3/17.3.1/17.3.1.11/#anchorlock-lock-frame-anchor-to-paragraph) for more information. | | |
+| `w:dropCap` | | specifies that the current frame contains a drop cap to be located at the beginning of the next non-frame paragraph in the document. | | If this attribute is omitted, then this frame shall not be considered a drop cap frame. |
 
 ##### examples and explanations
 ###### example 1 -- fonts
