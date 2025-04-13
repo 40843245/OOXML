@@ -516,6 +516,8 @@ In above example, we can know that
 | `<w:nfc>` | | Number Formatting Code | configures Number Formatting Code of this level | nfc stands for *N*umber *F*ormatting *C*ode | | 
 | | | | | | | | 
 | `<w:bdr>` | `border` in css | border | configures properties of the border. | | |
+| `<w:pBdr>` | | paragraph border | configure paragraph border | | |
+| `<w:between>` | | | border that appears between consecutive paragraphs | | |
 | `<w:pgBorders>` | | page border | configures properties of the borders of page. | | |
 | `<w:top>` | | top | configures properties of top borders of some elements (according to this tag is inside what tag). | | |
 | `<w:left>` | | left | configures properties of left borders of some elements (according to this tag is inside what tag). | | |
