@@ -524,6 +524,7 @@ In above example, we can know that
 | `<w:listSeparator/>` | | | explicitly specifies the list separator (by given value of `w:val` attribute) for list within the document. | It is used when there are many items. | |
 | | | | | | | | 
 | `<w:docDefaults>` | | | serves as a container for defining the default formatting properties for the entire document. | | |
+| `<w:i/>` | | | the text is italic | | |
 | `<w:rPrDefault>` | | | defines the default formatting properties for all text runs within the document. | | |
 | `<w:pPrDefault/>` | | | defines the default formatting properties for all paragraphs in the document. | | |
 | `<w:latentStyles> | | | servers as a container for defining the latent styles (i.e. current unused styles). | | |
@@ -531,6 +532,15 @@ In above example, we can know that
 
 ##### attribute about `w` namespace
 ###### attribute in `<w:background>`
+
+[!WARNING]
+> If the background specifies the use of a theme color via the themeColor attribute, this value is ignored.
+> Thus, Applications are discouraged from specifying both the color and themeColor attributes on the same parent element.
+
+[!WARNING]
+> If neither the color nor themeColor attributes are present,
+> the parent page shall be treated as though it has no background defined.
+
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:themeColor` | | theme color | specifies the theme color. | | |
