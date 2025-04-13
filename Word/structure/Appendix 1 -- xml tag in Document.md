@@ -385,7 +385,48 @@ In above example, we can know that
 + In `<o:Paragraphs>1</o:Paragraphs>`, Office Word estimates this file has one paragraph.
 + In `<o:CharactersWithSpaces>474</o:CharactersWithSpaces>` Office Word estimates this file has 474 characters (including space).
 + In `<o:Version>15</o:Version>`, this file is created with Microsoft Office 2015. Here the version number 15 suggests version 2015.
-   
+
+#### about `a` namespace
+##### elements in `a` namespace
+| element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `<a:graphic>` | | | servers a container about an actual graph. | | |
+| `<a:graphicData>` | | | configure properties about the actual graph. | | |
+
+##### attribute about `a` namespace
+###### attribute in `<a:graphic>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `a:spid` | | *s*ha*p*e *id*entifier | specifies shape identifier of the actual graph. | It is required. | |
+
+###### attribute in `<a:graphicData>`
+> [!NOTE]
+> there are extensibility attributes (which is optional) in `<a:graphicData>` tag.
+
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `a:uri` | | uri | specifies uri of the actual graph. | It is required. | |
+
+#### about `wp` namespace
+##### elements in `wp` namespace
+| element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `<wp:inline>` | | inline | configure it (the tag that contains `<wp:inline>`) is inline.</br>For example, a `.xml` file that contains ``<w:drawing><wp:inline> <!-- element omitted --> </wp:inline></w:drawing>``, `<wp:inline>` element signifies that the drawing object is treated as if it were a character within the text flow. | see following example. | | 
+
+##### attribute about `wp` namespace
+###### attribute in `<wp:inline>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| `wp:cx` | | | specifies the width of the drawing object | Its unit is EMU. | |
+| `wp:cy` | | | specifies the height of the drawing object | Its unit is EMU. | |
+| `wp:distT` | | | specifies the distance from top of the drawing object | Its unit is EMU. | |
+| `wp:distB` | | | specifies the distance from bottom of the drawing object | Its unit is EMU. | |
+| `wp:distL` | | | specifies the distance from left of the drawing object | Its unit is EMU. | |
+| `wp:distR` | | | specifies the distance from right of the drawing object | Its unit is EMU. | |
+| `wp:editId` | | | specifies the edit id | | |
+| `wp:anchorId ` | | | specifies the anchor id | | |
+| `wp:simplePos` | | | determines it uses simple position schema | | |
+| `wp:relativeFrom ` | | | determines what the positioning of the object is relative to (e.g., page, margin). | | |
+
 #### about `w` namespace
 ##### elements in `w` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -403,6 +444,8 @@ In above example, we can know that
 | | | | | | |
 | `<w:wordDocument>` | `<html>` | root node | the root node of a Microsoft Word file. | | |
 | `<w:document>` | `<html>` | root node | the root node of **`~/word/document.xml`** file under a Microsoft Word file. | | |
+| `<w:background>` |  | background | deals with background settings. | | |
+| `<w:drawing>` |  | drawing | defines a drawing. | | |
 | `<w:ignoreSubtree>` | | ignore a specific subtree | it instructs the Word processor to ignore a specific subtree of the XML document (according to the value of `w:val` attribute) during processing. | | | 
 | `<w:body>` | `<body>` | body | the main part of file in native xml (and native html5) | | |
 | `<w:lang>` | `<lang>` | language | the language for characters | lang stands for *lang*uage | |
@@ -491,7 +534,6 @@ In above example, we can know that
 | `<w:pPrDefault/>` | | | defines the default formatting properties for all paragraphs in the document. | | |
 | `<w:latentStyles> | | | servers as a container for defining the latent styles (i.e. current unused styles). | | |
 | `<w:lsdException>` | | LSD exception | defines exceptions to the default behavior of LSD (Linked Style Definitions). | | |
-
 
 ##### attribute about `w` namespace
 ###### attribute in `<w:zoom>`
