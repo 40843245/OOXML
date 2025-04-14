@@ -936,13 +936,19 @@ For more informations and details, see [DocumentFormat.OpenXml.Wordprocessing.Co
 | `w:h` | | height | sets border height | Its unit is twips. | It can be omitted. If it is omitted, it uses the default value zero. |
 | `w:hRule` | | height rule | sets how to deals with border height | | |
 | `w:hSpace` | | horizontal spacing | sets the horizontal spacing | Its unit is twips. | |
+| `w:lSpace` | | left spacing | sets the left spacing | Its unit is twips. | |
+| `w:hRel` | | *h*orizontal, *rel*ative | determines the horizontal positioning relative to the anchor | | |
+| `w:vRel` | | *v*ertical, *rel*ative | determines the vertical positioning relative to the anchor | | |
 | `w:wrap` | | wrapping | determines how to deal the text when overflow occurs. | | |
 | `w:vAnchor` | | vertical anchor | sets vertical anchor | Its unit is twips. | | |
 | `w:hAnchor` | | horizontal anchor | sets horizontal anchor | Its unit is twips. | | |
 | `w:x` | | | sets the x-coordination. That is, it positions the left side of the frame the specific distance from the left edge of the page. | | |
 | `w:y` | | | sets the y-coordination. That is, it positions the top side of the frame the specific distance from the top edge of the page. | | |
+| `w:xAlign` | | x-*align*ment | determines the horizontal  alignment of the frame relative to its vertical anchor | | |
+| `w:yAlign` | | y-*align*ment | determines the vertical alignment of the frame relative to its vertical anchor | | |
 | `w:anchorLock` | | | specifies that the frame shall always remain in the same logical position relative to the non-frame paragraphs which precede and follow it in this document. | See [anchorLock](https://ooxml.info/docs/17/17.3/17.3.1/17.3.1.11/#anchorlock-lock-frame-anchor-to-paragraph) for more information. | | |
 | `w:dropCap` | | specifies that the current frame contains a drop cap to be located at the beginning of the next non-frame paragraph in the document. | | If this attribute is omitted, then this frame shall not be considered a drop cap frame. |
+| `w:line` | | specifies the number of lines in the non-frame paragraph to which this text frame is anchored which should be used to calculate the drop cap’s height. | | If this attribute is omitted, then it should use the default value `"1"`. |
 
 ##### examples and explanations
 ###### example 1 -- fonts
