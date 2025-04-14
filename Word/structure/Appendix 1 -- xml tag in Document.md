@@ -279,6 +279,13 @@ You can know which namespaces in `xmlns` namespace are declared through finding 
 | `<a:graphicData>` | | | configure properties about the actual graph. | | |
 | `<a:graphicFrameLocks>` | | | specifies the locking properties for the graphic frame | | |
 | `<a:blip>` | | blip | points to the actual image data that is stored elsewhere within the OOXML package. | | |
+| `<a:stretch>` | | stretch | acts as a container whose child will be stretched to fit its content. | | It can have exactly one child. |
+| `<a:fillRect>` | | fill *rect*angle | fills the rectangle | | It can have exactly one child. |
+| `<a:xfrm>` | | transform | transforms the graphical object. | | |
+| `<a:off>` | | *off*set | offsets the graphical object | | |
+| `<a:ext>` | | *ext*ent | defines the width and height of the object's bounding box. | | |
+| `<a:prstGeom>` | | *pr*e*s*e*t* *geom*etry | configures preset geometry, is used in DrawingML to define the basic shape of an object by referencing a predefined geometric form. | |
+| `a:avLst` | | *a*djustment *v*alue *l*i*st* | specifies adjustment values for preset shapes that have adjustable parameters. | | |
 
 ##### namespace declaration about `a` namespace
 ###### namespace declaration in `<a:blip>`
@@ -360,7 +367,44 @@ You can know which namespaces in `xmlns` namespace are declared through finding 
 | | | | | | | |
 | `a:gray` | | grayscale mode | a boolean value that determines whether the image is in grayscale. | | |
 
-###### example 1 -- a drawing object
+###### attribute in `<a:fillRect>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `a:l` | | left | specifies the position of the **left** edge of the rectangle within the original fill, as a percentage. | For example, a value of "10%" means the left edge of the stretching region starts at 10% of the original fill's width from the left. | |
+| `a:t` | | top | specifies the position of the **top** edge of the rectangle within the original fill, as a percentage. | For example, "20%" means the top edge starts at 20% of the original fill's height from the top. | |
+| `a:r` | | right | specifies the position of the **right** edge of the rectangle within the original fill, as a percentage. | For instance, "90%" means the right edge of the stretching region is at 90% of the original fill's width from the left (or 10% from the right edge). | |
+| `a:b` | | bottom | specifies the position of the **bottom** edge of the rectangle within the original fill, as a percentage. | For example, "80%" means the bottom edge is at 80% of the original fill's height from the top (or 20% from the bottom edge).| |
+
+> [!IMPORTANT]
+> If any of these attributes are omitted, the corresponding edge of the fill rectangle defaults to the edge of the original fill
+>
+> (i.e., l and t default to 0%, and r and b default to 100%).
+
+###### attribute in `<a:xfrm>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `a:flipH` | | flip *h*orizontally | a boolean value to determine whether flips horizontally a graphical object | | |
+| `a:flipV` | | flip *v*ertically | a boolean value to determine whether flips vertically a graphical object | | |
+| `rot` | | rotation | rotates the graphical object clockwisely in degrees. | <ol><li>its unit is in sixtieths of a degree.</li><li>positive values indicate clockwise rotation, and negative values indicate counter-clockwise rotation.</li></ol> | The default value is `"0"`. |
+
+###### attribute in `<a:off>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `a:x` | | horizontal offset | sets horizontal offset | its unit is EMU. | coordinates of the top-left corner of a graphical object's bounding box relative to its parent. |
+| `a:y` | | vertical offset | sets vertical offset | its unit is EMU. | coordinates of the top-left corner of a graphical object's bounding box relative to its parent. |
+
+###### attribute in `<a:ext>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `a:cx` | | *c*oordinate *X* | sets width of the bounding box | its unit is EMU. | |
+| `a:cy` | | *c*oordinate *Y* | sets height of the bounding box | its unit is EMU. | |
+
+###### attribute in `<a:prstGeom>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `a:prst` | | *pr*e*s*e*t* | specific predefined shape  | | It is required |
+
+###### example 1 -- a simple drawing object
 ```
 <w:drawing>
           <wp:inline distT="0" distB="0" distL="0" distR="0" wp14:anchorId="56C264D6" wp14:editId="7AA34E44">
@@ -403,6 +447,62 @@ In above example, we can know that
       - In `uri="http://schemas.openxmlformats.org/drawingml/2006/chart"`, it specifies the graph data is a chart.
 
 + In `<c:chart xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="rId4" />`, it comes from the ChartML namespace (c:), references the actual chart data. And its id is `rId4`, we can found the actual chart definition according to the `r:id` whose value os `rId4`.
+  
+###### example 2 -- a complex drawing object
+```
+<w:p>
+    <w:pPr/>
+        <w:r>
+            <w:rPr>
+                <w:lang w:val="zh-TW"/>
+            </w:rPr>
+            <w:t>Here is Ai</w:t>
+        </w:r>
+        <w:r>
+            <w:br/>
+        </w:r>
+        <w:r xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+            <w:drawing>
+                <wp:inline xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" distT="0" distB="0" distL="0" distR="0">
+                    <wp:extent cx="5080000" cy="5080000"/>
+                    <wp:effectExtent l="0" t="0" r="0" b="0"/>
+                    <wp:docPr id="1" name="" descr=""/>
+                    <wp:cNvGraphicFramePr>
+                        <a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/>
+                    </wp:cNvGraphicFramePr>
+                    <a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+                        <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                            <pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+                                <pic:nvPicPr>
+                                    <pic:cNvPr id="0" name=""/>
+                                    <pic:cNvPicPr/>
+                                </pic:nvPicPr>
+                            <pic:blipFill>
+                                <a:blip xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:embed="R530625ccf2364ebb"/>
+                                <a:stretch>
+                                    <a:fillRect/>
+                                </a:stretch>
+                            </pic:blipFill>
+                            <pic:spPr>
+                                <a:xfrm flipH="0" flipV="0">
+                                    <a:off x="0" y="0"/>
+                                    <a:ext cx="5080000" cy="5080000"/>
+                                </a:xfrm>
+                                <a:prstGeom prst="rect">
+                                    <a:avLst/>
+                                </a:prstGeom>
+                            </pic:spPr>
+                        </pic:pic>
+                    </a:graphicData>
+                </a:graphic>
+            </wp:inline>
+        </w:drawing>
+    </w:r>
+</w:p>
+```
+
+In above example, we can know that
+
 
 ### element and its attribute in xml tag in OOXML
 #### about `c` namespace
@@ -431,6 +531,8 @@ In above example, we can know that
 | `<pic:nvPicPr>` | | *N*on-*v*isual *Pic*ture *Pr*operties | acts as a container that contains Non-Visual Picture Properties | | |
 | `<pic:cNvPr>` | | *C*ommon *N*on-*v*isual Picture *Pr*operties | defines Common Non-visual Picture Pr*operties | | |
 | `<pic:blipFill>` | | | defines how the actual image data is used to fill the shape of the picture object. | it controls aspects like tiling, stretching, and the portion of the image that is visible. | |
+| `<pic:spPr>` | | *s*ha*p*e *pr*operties | defines shape properties| | |
+
 
 
 ##### attribute about `pic` namespace
