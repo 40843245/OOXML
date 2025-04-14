@@ -40,13 +40,25 @@
 | `"backwardCompatible"` | | | indicates that the VML extension is intended for backward compatibility with older versions of applications. | | Newer editors should render it, and ideally, allow some level of editing, while older editors might ignore or render it in a basic way without full understanding of the extended features. |
 
 ### about `a` namespace
-#### `a:blip` attribute
+#### `<a:blip>` -> `a:cstate` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"none"` | | | no compression | | |
 | `"store"` | | | store without compression | It is equivalent to `"none"`. | |
 | `"deflate"` | | deflation | compress it with deflate algorithm | | |
 | `"lzma"` | | lzma | compress it with lzma (Lempel–Ziv–Markov chain) algorithm | | |
+
+#### `<a:blip>` -> `a:alphaInverse` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"true"` | | | inverse the alpha value of the image. | | |
+| `"false"` | | | NOT inverse the alpha value of the image. | | |
+
+#### `<a:blip>` -> `a:gray` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"true"` | | | the image is in grayscale. | | |
+| `"false"` | | | the image is NOT in grayscale. It may be colorful. | | |
 
 ### about `w` namespace
 #### `<w:kinsoku>` -> `w:val` attribute
