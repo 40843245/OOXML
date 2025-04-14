@@ -550,8 +550,27 @@ In above example, we can know that
 | `<w:keepLines>` | | | determines whether keep lines to make the paragraph must be on the same page. | | | 
 | `<w:keepNext>` | | | specifies that the contents of this paragraph are at least partly rendered on the same page as the following paragraph whenever possible. | | | 
 | | | | | | |
+| <w:kinsoku> | | Kinsoku Shori (禁則處理) | specifies whether East Asian typography and line-breaking rules shall be applied to text in this paragraph to determine which characters can begin and end each line. | | This property only applies to Simplified Chinese, Traditional Chinese, and Japanese text in this paragraph. |
 
 ##### attribute about `w` namespace
+###### attribute in `<w:minorIdents>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | detemines whether if this tag is present, Word will swap the left and right indent settings if the document or section is set to a right-to-left reading order. | | |
+
+###### attribute in `<w:kinsoku>`
+> [!WARNING]
+> This property only applies to Simplified Chinese, Traditional Chinese, and Japanese text in this paragraph.
+
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | specifies whether East Asian typography and line-breaking rules shall be applied to text in this paragraph to determine which characters can begin and end each line. | | |
+
+> [!IMPORTANT]
+> What kind of characters are typically affected by kinsoku rules?
+>
+> + For starting characters: Small kana characters (like っ, ゃ), opening brackets/parentheses, punctuation marks.
+> + For ending characters: Closing brackets/parentheses, certain punctuation marks.
 ###### attribute in `<w:keepLines>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
