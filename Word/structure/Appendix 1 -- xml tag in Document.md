@@ -363,8 +363,42 @@ In above example, we can know that
       - In `uri="http://schemas.openxmlformats.org/drawingml/2006/chart"`, it specifies the graph data is a chart.
 
 + In `<c:chart xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="rId4" />`, it comes from the ChartML namespace (c:), references the actual chart data. And its id is `rId4`, we can found the actual chart definition according to the `r:id` whose value os `rId4`.
-  
+
 ### element and its attribute in xml tag in OOXML
+#### about `c` namespace
+##### elements in `c` namespace
+| elements in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `c:chart` | | chart | defines a chart |
+
+##### attribute about `c` namespace
+###### namespace declaration in `<c:chart>`
+| namespace declaration | description | notes | notice |
+| :---------- | :----------- | :----- | :--- |
+| `xmlns:c` | | | as discussed above |
+| `xmlns:r` | | | as discussed above |
+
+###### attribute in `<c:chart>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `style` | | | speficies the style of the chart. | | |
+
+#### about `pic` namespace
+##### elements in `pic` namespace
+| elements in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `<pic:nvPicPr>` | | *N*on-*v*isual *Pic*ture *Pr*operties | acts as a container that contains Non-Visual Picture Properties | | |
+| `<pic:cNvPr>` | | *C*ommon *N*on-*v*isual Picture *Pr*operties | defines Common Non-visual Picture Pr*operties | | |
+| `<pic:blipFill>` | | | defines how the actual image data is used to fill the shape of the picture object. | it controls aspects like tiling, stretching, and the portion of the image that is visible. | |
+
+
+##### attribute about `pic` namespace
+###### attribute in `<pic:cNvPr>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `id` | | | speficies the id. | | |
+| `name` | | | speficies the name. | | |
+
 #### about `o` namespace
 `o` namespace contains metadata about the Word document itself.
 
