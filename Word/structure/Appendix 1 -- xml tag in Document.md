@@ -553,12 +553,18 @@ In above example, we can know that
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:w` | | width | set width | | |
 | `w:h` | | height | set height | | |
-| `w:x` | | height | | horizontal position of the frame relative to its horizontal anchor (the page). | |
+| `w:x` | | | horizontal position of the frame relative to its horizontal anchor (the page). | |
+| `w:xAlign` | | | specifies the horizontal alignment of the frame relative to its horizontal anchor | |
+| `w:yAlign` | | | specifies the vertical alignment of the frame relative to its vertical anchor | |
+| `w:hRel` | | | specifies the horizontal positioning relative to the anchor | |
+| `w:vRel` | | | specifies the vertical positioning relative to the anchor | |
 | `w:hRule` | | height rule | specifies how the height of the frame should be determined. | | |
 | `w:hSpace` | | horizontal spacing | sets the horizontal spacing around the frame, specifically to the left and right.  | | |
+| `w:lSpace` | | left spacing | sets the left spacing around the frame.  | | |
 | `w:wrap` | | wrap | determines how the surrounding text interacts with the frame | | |
 | `w:vAnchor` | | vertical anchor | specifies the vertical anchor for the frame's positioning. | | |
 | `w:hAnchor` | | horizontal anchor | specifies the horizontal anchor for the frame's positioning. | | |
+| `w:wAnchor` | | wrapped anchor | specifies the horizontal reference point for the frame's sizing. | | |
 
 ###### attribute in `<w:cnfStyle>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
