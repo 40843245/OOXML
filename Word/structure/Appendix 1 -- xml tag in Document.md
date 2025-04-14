@@ -549,11 +549,18 @@ In above example, we can know that
 | | | | | | |
 | `<w:keepLines>` | | | determines to keep lines or not | | | 
 | | | | | | |
+
 ##### attribute about `w` namespace
 ###### attribute in `<w:keepLines>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w:val` | | | determines to keep lines or not | | It default value is `"true"`|
+| `w:val` | | | determines to keep lines or not | | It default value is `"true"` |
+
+> [!IMPORTANT]
+> **Why is `<w:keepLines>` useful?**
+> + **Headings:** You usually want a heading to stay on the same page as the text that follows it.
+> + **Short paragraphs or lists:** Keeping these together can improve readability and prevent awkward breaks.
+> + **Tables and figures with accompanying text:** You might want to ensure that a caption or a short explanation remains on the same page as the object it describes.
 
 ###### attribute in `<w:framePr>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
