@@ -116,3 +116,8 @@ It provides a high-level view of your structure, allowing you to see the key poi
 
 ##### demo
 [Demo of create an outline view in powerpoint](https://youtu.be/pgqgyrAnoQM)
+
+### about lightness
+#### blip
+is a small spot of light, sometimes with a short, sharp sound, that appears on a computer screen.
+
