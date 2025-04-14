@@ -547,7 +547,8 @@ In above example, we can know that
 | `<w:contextualSpacing>` | | | determine that Word can dynamically modify the line spacing in situations | `"true"` to modify, `"false"` to not modify. default value to `"true"` | |
 | `<w:divId>`| | | speficies the div id | | | 
 | | | | | | |
-| `<w:keepLines>` | | | determines to keep lines or not | | | 
+| `<w:keepLines>` | | | determines whether keep lines to make the paragraph must be on the same page. | | | 
+| `<w:keepNext>` | | | specifies that the contents of this paragraph are at least partly rendered on the same page as the following paragraph whenever possible. | | | 
 | | | | | | |
 
 ##### attribute about `w` namespace
@@ -562,6 +563,12 @@ In above example, we can know that
 > + **Short paragraphs or lists:** Keeping these together can improve readability and prevent awkward breaks.
 > + **Tables and figures with accompanying text:** You might want to ensure that a caption or a short explanation remains on the same page as the object it describes.
 
+###### attribute in `<w:keepNext>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | allows a page break to occur between the current paragraph and the following one if needed. | | It default value is `"true"` |
+
+For more details, see [OOXML docs CH117.3.1.15](https://ooxml.info/docs/17/17.3/17.3.1/17.3.1.15/)
 ###### attribute in `<w:framePr>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
