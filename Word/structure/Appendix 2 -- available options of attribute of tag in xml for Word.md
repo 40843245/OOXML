@@ -49,6 +49,15 @@
 | `"true"` | | | keep lines. | it instructs Word to keep all lines of the paragraph together on the same page.| default value. |
 | `"false"` | | | NOT keep lines. | it allows Word to break the paragraph across page breaks if necessary to fit the content. | When `<w:keepLines>` tag is not used, we can think that it will NOT keep lines. (same effect of `<w:keepLines w:val="false">`) |
 
+#### `<w:keepNext>` -> `w:val` attribute
+> [!WARNING]
+> I refers from Google Gemini's answer which may be incorrect.
+  
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"true"` | | | to prevent a page break from occurring between the current paragraph and the one immediately after it. | If the two paragraphs together cannot fit on the current page, both will be moved to the next page. | default value. |
+| `"false"` | | | NOT keep lines. | it allows Word to break the paragraph across page breaks if necessary to fit the content. | When `<w:keepLines>` tag is not used, we can think that it will NOT keep lines. (same effect of `<w:keepLines w:val="false">`) |
+
 #### `<w:adjustRightInd>` -> `w:val` attribute
 > [!WARNING]
 > I refers from Google Gemini's answer which may be incorrect.
