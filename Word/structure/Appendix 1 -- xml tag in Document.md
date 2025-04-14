@@ -1259,8 +1259,6 @@ In above example, we can know that
 + In `w:hyperlink`, in the scheme mapping table, the property -- hyperlink is set to `hyperlink`.
 + In `w:followedHyperlink`, in the scheme mapping table, the property -- followed hyperlink 1 is set to `followedHyperlink`.
 
-
-
 ###### example 10 -- default shape
 ```
 <w:shapeDefaults>
@@ -1376,9 +1374,52 @@ In above example, we can know that
 
 ###### example 18 -- paragraph with frame configuration
 
-###### example 19 -- combine two paragraph in same page (if possible)
+###### example 19 -- combine two paragraphs in same page (if possible)
 ```
-
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- other tags omitted -->
+  <w:body>
+    <w:p>
+      <w:pPr>
+        <w:keepNext/>
+        <w:t>This is the first paragraph -- (1)</w:t>
+        <w:t>This is the first paragraph -- (2)</w:t>
+        <w:t>This is the first paragraph -- (3)</w:t>
+        <w:t>This is the first paragraph -- (4)</w:t>
+        <w:t>This is the first paragraph -- (5)</w:t>
+        <w:t>This is the first paragraph -- (6)</w:t>
+        <w:t>This is the first paragraph -- (7)</w:t>
+        <w:t>This is the first paragraph -- (8)</w:t>
+        <w:t>This is the first paragraph -- (9)</w:t>
+        <w:t>This is the first paragraph -- (10)</w:t>
+        <w:t>This is the first paragraph -- (11)</w:t>
+        <w:t>This is the first paragraph -- (12)</w:t>
+        <w:t>This is the first paragraph -- (13)</w:t>
+        <w:t>This is the first paragraph -- (14)</w:t>
+        <w:t>This is the first paragraph -- (15)</w:t>
+        <w:t>This is the first paragraph -- (16)</w:t>
+      </w:pPr>
+      <w:pPr>
+        <w:t>This is the second paragraph -- (1)</w:t>
+        <w:t>This is the second paragraph -- (2)</w:t>
+        <w:t>This is the second paragraph -- (3)</w:t>
+        <w:t>This is the second paragraph -- (4)</w:t>
+        <w:t>This is the second paragraph -- (5)</w:t>
+        <w:t>This is the second paragraph -- (6)</w:t>
+        <w:t>This is the second paragraph -- (7)</w:t>
+        <w:t>This is the second paragraph -- (8)</w:t>
+        <w:t>This is the second paragraph -- (9)</w:t>
+        <w:t>This is the second paragraph -- (10)</w:t>
+        <w:t>This is the second paragraph -- (11)</w:t>
+        <w:t>This is the second paragraph -- (12)</w:t>
+        <w:t>This is the second paragraph -- (13)</w:t>
+        <w:t>This is the second paragraph -- (14)</w:t>
+        <w:t>This is the second paragraph -- (15)</w:t>
+        <w:t>This is the second paragraph -- (16)</w:t>
+      </w:pPr>
+    </w:p>
+  </w:body>
+</w:document>
 ```
 
 ###### example 20 -- outline level
