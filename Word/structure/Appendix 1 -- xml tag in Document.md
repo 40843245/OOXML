@@ -537,6 +537,7 @@ In above example, we can know that
 | `<w:listSeparator/>` | | | explicitly specifies the list separator (by given value of `w:val` attribute) for list within the document. | It is used when there are many items. | |
 | | | | | | | | 
 | `<w:docDefaults>` | | | serves as a container for defining the default formatting properties for the entire document. | | |
+| `</w:br>` | `</br>` in native html5 | *br*eak *line | adds a new line. | | |
 | `<w:b/>` | `<b>` and `<b/>` in native html5 | bold | determine the text is bold | | |
 | `<w:i/>` | | italic | the text is italic | | |
 | `<w:t/>` | | text | defines the text | | |
@@ -1372,56 +1373,193 @@ In above example, we can know that
 
 ###### example 17 -- paragraph with frame configuration
 
-###### example 18 -- paragraph with frame configuration
+###### example 18 -- always keep the paragraph in same page (if possible)
+`~/word/document.xml` file under `Docx1.docx` file
 
-###### example 19 -- combine two paragraphs in same page (if possible)
 ```
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<!-- other tags omitted -->
+<!-- this tag `<w:document>` omitted -->
   <w:body>
     <w:p>
       <w:pPr>
-        <w:keepNext/>
         <w:t>This is the first paragraph -- (1)</w:t>
+        </w:br>
         <w:t>This is the first paragraph -- (2)</w:t>
+        </w:br>
         <w:t>This is the first paragraph -- (3)</w:t>
+        </w:br>
         <w:t>This is the first paragraph -- (4)</w:t>
+        </w:br>
         <w:t>This is the first paragraph -- (5)</w:t>
+        </w:br>
         <w:t>This is the first paragraph -- (6)</w:t>
+        </w:br>
         <w:t>This is the first paragraph -- (7)</w:t>
+        </w:br>
         <w:t>This is the first paragraph -- (8)</w:t>
+        </w:br>
         <w:t>This is the first paragraph -- (9)</w:t>
+        </w:br>
         <w:t>This is the first paragraph -- (10)</w:t>
+        </w:br>
         <w:t>This is the first paragraph -- (11)</w:t>
+        </w:br>
         <w:t>This is the first paragraph -- (12)</w:t>
+        </w:br>
         <w:t>This is the first paragraph -- (13)</w:t>
+        </w:br>
         <w:t>This is the first paragraph -- (14)</w:t>
+        </w:br>
         <w:t>This is the first paragraph -- (15)</w:t>
+        </w:br>
         <w:t>This is the first paragraph -- (16)</w:t>
+        </w:br>
       </w:pPr>
       <w:pPr>
+        <w:keepLine/>
         <w:t>This is the second paragraph -- (1)</w:t>
+        </w:br>
         <w:t>This is the second paragraph -- (2)</w:t>
+        </w:br>
         <w:t>This is the second paragraph -- (3)</w:t>
+        </w:br>
         <w:t>This is the second paragraph -- (4)</w:t>
+        </w:br>
         <w:t>This is the second paragraph -- (5)</w:t>
+        </w:br>
         <w:t>This is the second paragraph -- (6)</w:t>
+        </w:br>
         <w:t>This is the second paragraph -- (7)</w:t>
+        </w:br>
         <w:t>This is the second paragraph -- (8)</w:t>
+        </w:br>
         <w:t>This is the second paragraph -- (9)</w:t>
+        </w:br>
         <w:t>This is the second paragraph -- (10)</w:t>
+        </w:br>
         <w:t>This is the second paragraph -- (11)</w:t>
+        </w:br>
         <w:t>This is the second paragraph -- (12)</w:t>
+        </w:br>
         <w:t>This is the second paragraph -- (13)</w:t>
+        </w:br>
         <w:t>This is the second paragraph -- (14)</w:t>
+        </w:br>
         <w:t>This is the second paragraph -- (15)</w:t>
+        </w:br>
         <w:t>This is the second paragraph -- (16)</w:t>
+        </w:br>
       </w:pPr>
     </w:p>
   </w:body>
 </w:document>
 ```
 
+In above example, 
+
+There are two paragraphs, but here the second paragraph can not fit in the first page 
+
+and `<w:keepLine/>` is present inside second `<w:pPr>`. 
+
+Therefore, the second paragraph was moved to the beginning of the second page.
+
+###### example 19 -- combine two paragraphs in same page (if possible)
+```
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- this tag `<w:document>` omitted -->
+  <w:body>
+    <w:p>
+      <w:pPr>
+        <w:t>This is the first paragraph -- (1)</w:t>
+        </w:br>
+        <w:t>This is the first paragraph -- (2)</w:t>
+        </w:br>
+        <w:t>This is the first paragraph -- (3)</w:t>
+        </w:br>
+        <w:t>This is the first paragraph -- (4)</w:t>
+        </w:br>
+        <w:t>This is the first paragraph -- (5)</w:t>
+        </w:br>
+        <w:t>This is the first paragraph -- (6)</w:t>
+        </w:br>
+        <w:t>This is the first paragraph -- (7)</w:t>
+        </w:br>
+        <w:t>This is the first paragraph -- (8)</w:t>
+        </w:br>
+        <w:t>This is the first paragraph -- (9)</w:t>
+        </w:br>
+        <w:t>This is the first paragraph -- (10)</w:t>
+        </w:br>
+        <w:t>This is the first paragraph -- (11)</w:t>
+        </w:br>
+        <w:t>This is the first paragraph -- (12)</w:t>
+        </w:br>
+        <w:t>This is the first paragraph -- (13)</w:t>
+        </w:br>
+        <w:t>This is the first paragraph -- (14)</w:t>
+        </w:br>
+        <w:t>This is the first paragraph -- (15)</w:t>
+        </w:br>
+        <w:t>This is the first paragraph -- (16)</w:t>
+        </w:br>
+      </w:pPr>
+      <w:pPr>
+        <w:t>This is the second paragraph -- (1)</w:t>
+        </w:br>
+        <w:t>This is the second paragraph -- (2)</w:t>
+        </w:br>
+        <w:t>This is the second paragraph -- (3)</w:t>
+        </w:br>
+        <w:t>This is the second paragraph -- (4)</w:t>
+        </w:br>
+        <w:t>This is the second paragraph -- (5)</w:t>
+        </w:br>
+        <w:t>This is the second paragraph -- (6)</w:t>
+        </w:br>
+        <w:t>This is the second paragraph -- (7)</w:t>
+        </w:br>
+        <w:t>This is the second paragraph -- (8)</w:t>
+        </w:br>
+      </w:pPr>
+      <w:pPr>
+        <w:t>This is the third paragraph -- (1)</w:t>
+        </w:br>
+        <w:t>This is the third paragraph -- (2)</w:t>
+        </w:br>
+        <w:t>This is the third paragraph -- (3)</w:t>
+        </w:br>
+        <w:t>This is the third paragraph -- (4)</w:t>
+        </w:br>
+        <w:t>This is the third paragraph -- (5)</w:t>
+        </w:br>
+        <w:t>This is the third paragraph -- (6)</w:t>
+        </w:br>
+        <w:t>This is the third paragraph -- (7)</w:t>
+        </w:br>
+        <w:t>This is the third paragraph -- (8)</w:t>
+        </w:br>
+      </w:pPr>
+    </w:p>
+  </w:body>
+</w:document>
+```
+
+In above example,
+
+There are three paragraphs.
+
+`<w:keepLNext/>` is present inside second `<w:pPr>`. It combines the second paragraph and third paragraph as a group.
+
+However, the group can not fit in the first page.
+
+Therefore, the second paragraph and third paragraph were moved to the beginning of the second page.
+
+> [!TIP]
+> You can think `<w:keepNext/>` combines this paragraph and next paragraph into a group.
+>
+> So that, it is not allowed to have page section break between this paragraph and next paragraph
+>
+> (if possible, e.g. the second paragraph and third paragraph does not hold over than one page in total).
 ###### example 20 -- outline level
 ```
 <w:pPr>
