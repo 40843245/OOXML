@@ -546,8 +546,15 @@ In above example, we can know that
 | `<w:cnfStyle>` | | conflict styles | It's used to store information about how styles should be applied or resolved in situations where there might be conflicts or variations. | | |
 | `<w:contextualSpacing>` | | | determine that Word can dynamically modify the line spacing in situations | `"true"` to modify, `"false"` to not modify. default value to `"true"` | |
 | `<w:divId>`| | | speficies the div id | | | 
-
+| | | | | | |
+| `<w:keepLines>` | | | determines to keep lines or not | | | 
+| | | | | | |
 ##### attribute about `w` namespace
+###### attribute in `<w:keepLines>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | determines to keep lines or not | | It default value is `"true"`|
+
 ###### attribute in `<w:framePr>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
