@@ -39,6 +39,15 @@
 | `"view"` | | editable | indicates that the shapes are **NOT fully** editable within Office app. i.e. can only view or is ediatble but some capabilities are limited. | | |
 | `"backwardCompatible"` | | | indicates that the VML extension is intended for backward compatibility with older versions of applications. | | Newer editors should render it, and ideally, allow some level of editing, while older editors might ignore or render it in a basic way without full understanding of the extended features. |
 
+### about `a` namespace
+#### `a:blip` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"none"` | | | no compression | | |
+| `"store"` | | | store without compression | It is equivalent to `"none"`. | |
+| `"deflate"` | | deflation | compress it with deflate algorithm | | |
+| `"lzma"` | | lzma | compress it with lzma (Lempel–Ziv–Markov chain) algorithm | | |
+
 ### about `w` namespace
 #### `<w:kinsoku>` -> `w:val` attribute
 > [!WARNING]
