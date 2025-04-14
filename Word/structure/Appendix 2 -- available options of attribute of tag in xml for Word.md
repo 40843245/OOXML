@@ -40,6 +40,15 @@
 | `"backwardCompatible"` | | | indicates that the VML extension is intended for backward compatibility with older versions of applications. | | Newer editors should render it, and ideally, allow some level of editing, while older editors might ignore or render it in a basic way without full understanding of the extended features. |
 
 ### about `w` namespace
+#### `<w:kinsoku>` -> `w:val` attribute
+> [!WARNING]
+> I refers from Google Gemini's answer which may be incorrect.
+  
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"on"` | | | explicitly enable the kinsoku line-breaking rules for the paragraph. Word would then adjust line breaks to avoid having prohibited characters at the beginning or end of lines. | | |
+| `"off"` | | explicitly turns off the application of kinsoku line-breaking rules for the current paragraph. | | |
+
 #### `<w:keepLines>` -> `w:val` attribute
 > [!WARNING]
 > I refers from Google Gemini's answer which may be incorrect.
@@ -103,6 +112,15 @@
 
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
+
+#### `<w:mirrorIndents>` -> `w:val` attribute
+> [!WARNING]
+> I refers from Google Gemini's answer which may be incorrect.
+
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"true"` | | | | When this tag is present, Word will swap the left and right indent settings if the document or section is set to a right-to-left reading order.  | | 
+| `"false"` | | | | Word will swap NOT the left and right indent settings  | |
 
 #### `<w:characterSpacingControl>` -> `w:val` attribute
 > [!WARNING]
