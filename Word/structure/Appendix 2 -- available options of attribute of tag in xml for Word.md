@@ -54,11 +54,17 @@
 | `"true"` | | | inverse the alpha value of the image. | | |
 | `"false"` | | | NOT inverse the alpha value of the image. | | |
 
-#### `<a:blip>` -> `a:gray` attribute
+#### `<a:xfrm>` -> `a:flipH` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"true"` | | | the image is in grayscale. | | |
-| `"false"` | | | the image is NOT in grayscale. It may be colorful. | | |
+| `"true"` | | | flips the graphical object horizontally. | | |
+| `"false"` | | | NOT flip the graphical object horizontally. | | |
+
+#### `<a:blip>` -> `a:flipV` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"true"` | | | flips the graphical object vertically. | | |
+| `"false"` | | | NOT flip the graphical object vertically. | | |
 
 ### about `w` namespace
 #### `<w:kinsoku>` -> `w:val` attribute
