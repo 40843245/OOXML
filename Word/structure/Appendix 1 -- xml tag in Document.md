@@ -277,7 +277,7 @@ You can know which namespaces in `xmlns` namespace are declared through finding 
 | `<a:extLst>` | | | defines an extension list. | | |
 | `<a:graphic>` | | | servers a container about an actual graph. | | |
 | `<a:graphicData>` | | | configure properties about the actual graph. | | |
-
+| `<a:graphicFrameLocks>` | | | specifies the locking properties for the graphic frame | | |
 
 ##### attribute in `a` namespace
 ###### attribute in `<a:theme>`
@@ -297,6 +297,28 @@ You can know which namespaces in `xmlns` namespace are declared through finding 
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `a:uri` | | uri | specifies uri of the actual graph. | It is required. | |
+
+###### attribute in `<a:graphicFrameLocks>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `a:noChangeAspect` | | No Change Aspect Ratio | a boolean value indicating whether the aspect ratio of the graphic frame is locked and cannot be changed. | | |
+| `a:noResize` | | | a boolean value indicating whether graphic frame cannot be resized. | | |
+| `a:noMove` | | |  a boolean value indicating whether the graphic frame cannot be moved. | | |
+| `a:noRotate` | | |  a boolean value indicating whether the graphic frame cannot be rotated. | | |
+| `a:noSelect ` | | |  a boolean value indicating whether the graphic frame cannot be selected. | | |
+| `a:noChangeArrowheads` | | |  a boolean value indicating whether the arrowheads of any lines within the graphic frame can not be changed. | | |
+| `a:noEditPoints` | | |  a boolean value indicating whether the points of any shapes within the graphic frame can not be editable. | | |
+| `a:noAdjustHandles` | | |  a boolean value indicating whether the points of within the graphic frame can not be modified by adjustment handles. | | |
+| `a:noChangeShapeType` | | |  a boolean value indicating whether the type of within the graphic frame can not be changed. | | |
+
+> [!NOTE]
+> Specifying the value `"false"` or `"0"` (in attributes of `<a:graphicFrameLocks>`) means the action can be done.
+>
+> Otherwise, specifying the value `"true"` or `"1"` (in attributes of `<a:graphicFrameLocks>`) means the action can NOT be done.
+>
+> For example,
+>
+> In `<a:graphicFrameLocks noResize="true">`, the graphic frame can not be resized.
 
 ### element and its attribute in xml tag in OOXML
 #### about `o` namespace
@@ -406,10 +428,15 @@ In above example, we can know that
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `<wp:inline>` | | inline | configure it (the tag that contains `<wp:inline>`) is inline.</br>For example, a `.xml` file that contains ``<w:drawing><wp:inline> <!-- element omitted --> </wp:inline></w:drawing>``, `<wp:inline>` element signifies that the drawing object is treated as if it were a character within the text flow. | see following example. | | 
+| `<wp:extent>` | | | specifically deals with the size of a drawing object. | | |
+| `<wp:effectExtent>` | | |  specifies the additional extent that should be added to each edge (top, bottom, left, right) of a drawing object to account for any visual effects applied to it. | | |
+| `<wp:cNvGraphicFramePr>` | | *C*ommon *N*on-*V*isual *Graphic* *Frame* *Pr*operties | holds non-visual properties for a graphic frame within a drawing object in WordprocessingML. | | |
+
 
 ##### attribute about `wp` namespace
 ###### attribute in `<wp:inline>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `wp:cx` | | | specifies the width of the drawing object | Its unit is EMU. | |
 | `wp:cy` | | | specifies the height of the drawing object | Its unit is EMU. | |
 | `wp:distT` | | | specifies the distance from top of the drawing object | Its unit is EMU. | |
@@ -421,6 +448,39 @@ In above example, we can know that
 | `wp:simplePos` | | | determines it uses simple position schema | | |
 | `wp:relativeFrom ` | | | determines what the positioning of the object is relative to (e.g., page, margin). | | |
 
+###### attribute in `<wp:extent>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `wp:cx` | | | sets extent length | its unit is EMU | |
+| `wp:cy` | | | sets extent height | its unit is EMU | |
+
+###### attribute in `<wp:effectExtent>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `wp:l` | | | specifies additional length in EMUs to be added to the left edge of the drawing object to accommodate effects | its unit is EMU | |
+| `wp:t` | | | specifies additional length in EMUs to be added to the top edge of the drawing object to accommodate effects | its unit is EMU | |
+| `wp:r` | | | specifies additional length in EMUs to be added to the right edge of the drawing object to accommodate effects | its unit is EMU | |
+| `wp:b` | | | specifies additional length in EMUs to be added to the bottom edge of the drawing object to accommodate effects | its unit is EMU | |
+
+###### attribute in `<wp:cNvGraphicFramePr>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `wp:id` | | | speficies the unique identifier | | |
+
+
+##### examples
+###### example 1 -- extent
+```
+<wp:anchor relativeHeight="10" allowOverlap="true">
+  </wp:anchor>
+  <wp:extent cx="1828800" cy="1828800"/>
+</wp:anchor>
+```
+
+In this example, we can know that
+
++ In `<wp:extent cx="1828800" cy="1828800"/>`, it indicates that the drawing object has a width and height of 1,828,800 EMUs.
++ 
 #### about `w` namespace
 ##### elements in `w` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -1371,7 +1431,49 @@ In above example, we can know that
 + In `w:hAnchor="text"`, anchors the frame horizontally to the page margins.
 + In `w:x="1921"`, it positions the left side of the frame approximately 1921 twips from the left edge of the page.
 
-###### example 17 -- paragraph with frame configuration
+###### example 17 -- a drawing object
+```
+<w:drawing>
+          <wp:inline distT="0" distB="0" distL="0" distR="0" wp14:anchorId="56C264D6" wp14:editId="7AA34E44">
+            <wp:extent cx="5486400" cy="3200400" />
+            <wp:effectExtent l="0" t="0" r="0" b="0" />
+            <wp:docPr id="1" name="圖表 1" />
+            <wp:cNvGraphicFramePr />
+            <a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+              <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/chart">
+                <c:chart xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="rId4" />
+              </a:graphicData>
+            </a:graphic>
+          </wp:inline>
+</w:drawing>
+```
+
+In above example, we can know that
+
++ In `<w:drawing>`, it defines the presence of a drawing object.
++ In `<wp:inline distT="0" distB="0" distL="0" distR="0" wp14:anchorId="56C264D6" wp14:editId="7AA34E44">`, it defines an inline drawing object.
+
+    - the distance (in points) between the drawing object and the surrounding text on the top, bottom, left, and right are BOTH set to zero respectively.
+    - it is specific to WordprocessingML version 2010 and later (indicated by the wp14 namespace prefix) and sets its edit id as `7AA34E44`.
+
++ In `<wp:extent cx="5486400" cy="3200400" />`, it specifies the size ( in this order -- (width, height)) of the drawing object is (5486400,3200400) EMUs.
++ In `<wp:effectExtent l="0" t="0" r="0" b="0" />`, it indicates no additional space is needed for effects.
++ In `<wp:docPr id="1" name="圖表 1" />`, it holds document-level properties for the drawing object whose id is `1` and name is `圖表 1`.
++ In `<wp:cNvGraphicFramePr />`, it defines Common Non-Visual Graphic Frame Properties. Since it has no child, it suggest no specific locking. 
+
+> [!TIP]
+> When `<wp:cNvGraphicFramePr />` element has no child,
+>
+> it can be assumed that there is a `<a:graphicFrameLocks>` element whose value of all attributes are BOTH set to `"false."`,
+>
+> thus, the graphic frame has no specific locking.
+
++ In `<a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">`, it contains the actual graphical content.
++ In `<a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/chart">`, it specifies the type of graphic data
+
+      - In `uri="http://schemas.openxmlformats.org/drawingml/2006/chart"`, it specifies the graph data is a chart.
+
++ In `<c:chart xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="rId4" />`, it comes from the ChartML namespace (c:), references the actual chart data. And its id is `rId4`, we can found the actual chart definition according to the `r:id` whose value os `rId4`.
 
 ###### example 18 -- always keep the paragraph in same page (if possible)
 `~/word/document.xml` file under `Docx1.docx` file
@@ -1496,6 +1598,7 @@ Therefore, the second paragraph and third paragraph were moved to the beginning 
 > So that, it is not allowed to have page section break between this paragraph and next paragraph
 >
 > (if possible, e.g. the second paragraph and third paragraph does not hold over than one page in total).
+
 ###### example 20 -- outline level
 ```
 <w:pPr>
