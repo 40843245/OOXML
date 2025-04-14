@@ -278,6 +278,13 @@ You can know which namespaces in `xmlns` namespace are declared through finding 
 | `<a:graphic>` | | | servers a container about an actual graph. | | |
 | `<a:graphicData>` | | | configure properties about the actual graph. | | |
 | `<a:graphicFrameLocks>` | | | specifies the locking properties for the graphic frame | | |
+| `<a:blip>` | | blip | points to the actual image data that is stored elsewhere within the OOXML package. | | |
+
+##### namespace declaration about `a` namespace
+###### namespace declaration in `<a:blip>`
+| namespace declaration | description | notes | notice |
+| :---------- | :----------- | :----- | :--- |
+| `xmlns:r` | | | as discussed above |
 
 ##### attribute in `a` namespace
 ###### attribute in `<a:theme>`
@@ -319,6 +326,39 @@ You can know which namespaces in `xmlns` namespace are declared through finding 
 > For example,
 >
 > In `<a:graphicFrameLocks noResize="true">`, the graphic frame can not be resized.
+
+###### attribute in `<a:blip>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `r:embed` | | | specifies the relationship ID of the embedded image. | the relationship ID usually resides in `~/rel/rels.xml` file under a Word file. | |
+| | | | | | | |
+| `a:cstate` | | *c*ompression state | determines how to compress the image. | | |
+| `a:alphaBiLevel` | | alpha bi-level threshold | specifies alpha bi-level threshold | | |
+| `a:alphaCeiling` | | alpha ceiling | speficies alpha ceiling (i.e. the upper limit of alpha values) in the image | | |
+| `a:alphaFloor` | | alpha floor | speficies alpha floor (i.e. the lower limit of alpha values) in the image | | |
+| `a:alphaInverse` | | | a boolean value that determines whether the alpha value of the image is inversed. | | |
+| `a:alphaMod` | | alpha *mod*ulation (調變) | multiplies the alpha values in the image by a specified percentage. | | |
+| `a:alphaModFix` | | alpha *mod*ulation (調變) *fix*ed (修正後的結果) | sets a fixed alpha value (percentage) for the entire image | | overrides any existing alpha values. |
+| | | | | | | |
+| `a:blueOff` | | blue *off*set | offset (i.e. add additional) color blue value | | |
+| `a:blueMod` | | blue *mod*ulation (調變) | multiplies the color blue values in the image by a specified percentage. | | |
+| | | | | | | |
+| `a:greenOff` | | green *off*set | offset (i.e. add additional) color green value | | |
+| `a:greenMod` | | green *mod*ulation (調變) | multiplies the color green values in the image by a specified percentage. | | |
+| | | | | | | |
+| `a:redOff` | | red *off*set | offset (i.e. add additional) color red value | | |
+| `a:redMod` | | red *mod*ulation (調變) | multiplies the color red values in the image by a specified percentage. | | |
+| | | | | | | |
+| `a:hue` | | hue | shifts the hue of the image by a specified angle (in degrees) | its unit is degrees. | |
+| `a:hueMod` | | hue *mod*ulation (調變) | multiplies the color hue values in the image by a specified percentage. | | |
+| | | | | | | |
+| `a:brightness` | | brightness | adjusts the brightness of the image by a percentage. | | |
+| `a:contrast ` | | contrast  | adjusts the contrast of the image by a percentage. | | |
+| `a:gamma` | | gamma correction | applies the gamma correction of the image using a value represented as percentage. | | |
+| `a:saturation` | | saturation | adjusts the color saturation of the image by a percentage. | | |
+| `a:tint ` | | tint | applies a tint to the image | | |
+| | | | | | | |
+| `a:gray` | | grayscale mode | a boolean value that determines whether the image is in grayscale. | | |
 
 ###### example 1 -- a drawing object
 ```
@@ -367,17 +407,18 @@ In above example, we can know that
 ### element and its attribute in xml tag in OOXML
 #### about `c` namespace
 ##### elements in `c` namespace
-| elements in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `c:chart` | | chart | defines a chart |
 
-##### attribute about `c` namespace
+##### namespace declaration about `c` namespace
 ###### namespace declaration in `<c:chart>`
 | namespace declaration | description | notes | notice |
 | :---------- | :----------- | :----- | :--- |
 | `xmlns:c` | | | as discussed above |
 | `xmlns:r` | | | as discussed above |
 
+##### attribute about `c` namespace
 ###### attribute in `<c:chart>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
@@ -403,7 +444,7 @@ In above example, we can know that
 `o` namespace contains metadata about the Word document itself.
 
 ##### elements in `o` namespace
-| element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
+| attribute in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `<o:DocumentProperties>` | | document property | defines a property for the document itself. | | |
 | `<o:Subject>` | | document subject | configures the subject of the document itself. | | |
@@ -699,7 +740,6 @@ In this example, we can know that
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:val` | | | detemines whether if this tag is present, Word will swap the left and right indent settings if the document or section is set to a right-to-left reading order. | | |
 
-
 ###### attribute in `<w:kinsoku>`
 > [!WARNING]
 > This property only applies to Simplified Chinese, Traditional Chinese, and Japanese text in this paragraph.
@@ -731,6 +771,7 @@ In this example, we can know that
 | `w:val` | | | allows a page break to occur between the current paragraph and the following one if needed. | | It default value is `"true"` |
 
 For more details, see [OOXML docs CH117.3.1.15](https://ooxml.info/docs/17/17.3/17.3.1/17.3.1.15/)
+
 ###### attribute in `<w:framePr>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
