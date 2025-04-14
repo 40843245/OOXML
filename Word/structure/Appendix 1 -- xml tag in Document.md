@@ -451,6 +451,7 @@ In above example, we can know that
 | `<w:sig>` | | digital signature | encapsulate the digital signature of this font. | | | 
 | `<w:panose1>` | | panose | configure the panose (with highest priority) | The lower number is it, the higher priority it has. | |
 | `<w:altName>` | `alt` attribute in `<img>` tag in native html5 | alternative | use the alternative (according to the value specified in `w:val` attribute) **when** an element (such as an image) or things that used in an element (such as font) **can not be used or worked correctly**. | | |
+| `<w:noProof/>` | | | no spelling check and grammer check inside this tag. | | |
 | | | | | | | |
 | `<w:framePr>` | | frame property | configure property of frame | | |
 | | | | | | | |
@@ -537,7 +538,6 @@ In above example, we can know that
 | `<w:listSeparator/>` | | | explicitly specifies the list separator (by given value of `w:val` attribute) for list within the document. | It is used when there are many items. | |
 | | | | | | | | 
 | `<w:docDefaults>` | | | serves as a container for defining the default formatting properties for the entire document. | | |
-| `</w:br>` | `</br>` in native html5 | *br*eak *line | adds a new line. | | |
 | `<w:b/>` | `<b>` and `<b/>` in native html5 | bold | determine the text is bold | | |
 | `<w:i/>` | | italic | the text is italic | | |
 | `<w:t/>` | | text | defines the text | | |
@@ -1383,72 +1383,40 @@ In above example, we can know that
     <w:p>
       <w:pPr>
         <w:t>This is the first paragraph -- (1)</w:t>
-        </w:br>
         <w:t>This is the first paragraph -- (2)</w:t>
-        </w:br>
         <w:t>This is the first paragraph -- (3)</w:t>
-        </w:br>
         <w:t>This is the first paragraph -- (4)</w:t>
-        </w:br>
         <w:t>This is the first paragraph -- (5)</w:t>
-        </w:br>
         <w:t>This is the first paragraph -- (6)</w:t>
-        </w:br>
         <w:t>This is the first paragraph -- (7)</w:t>
-        </w:br>
         <w:t>This is the first paragraph -- (8)</w:t>
-        </w:br>
         <w:t>This is the first paragraph -- (9)</w:t>
-        </w:br>
         <w:t>This is the first paragraph -- (10)</w:t>
-        </w:br>
         <w:t>This is the first paragraph -- (11)</w:t>
-        </w:br>
         <w:t>This is the first paragraph -- (12)</w:t>
-        </w:br>
         <w:t>This is the first paragraph -- (13)</w:t>
-        </w:br>
         <w:t>This is the first paragraph -- (14)</w:t>
-        </w:br>
         <w:t>This is the first paragraph -- (15)</w:t>
-        </w:br>
         <w:t>This is the first paragraph -- (16)</w:t>
-        </w:br>
       </w:pPr>
       <w:pPr>
         <w:keepLine/>
         <w:t>This is the second paragraph -- (1)</w:t>
-        </w:br>
         <w:t>This is the second paragraph -- (2)</w:t>
-        </w:br>
         <w:t>This is the second paragraph -- (3)</w:t>
-        </w:br>
         <w:t>This is the second paragraph -- (4)</w:t>
-        </w:br>
         <w:t>This is the second paragraph -- (5)</w:t>
-        </w:br>
         <w:t>This is the second paragraph -- (6)</w:t>
-        </w:br>
         <w:t>This is the second paragraph -- (7)</w:t>
-        </w:br>
         <w:t>This is the second paragraph -- (8)</w:t>
-        </w:br>
         <w:t>This is the second paragraph -- (9)</w:t>
-        </w:br>
         <w:t>This is the second paragraph -- (10)</w:t>
-        </w:br>
         <w:t>This is the second paragraph -- (11)</w:t>
-        </w:br>
         <w:t>This is the second paragraph -- (12)</w:t>
-        </w:br>
         <w:t>This is the second paragraph -- (13)</w:t>
-        </w:br>
         <w:t>This is the second paragraph -- (14)</w:t>
-        </w:br>
         <w:t>This is the second paragraph -- (15)</w:t>
-        </w:br>
         <w:t>This is the second paragraph -- (16)</w:t>
-        </w:br>
       </w:pPr>
     </w:p>
   </w:body>
@@ -1471,73 +1439,41 @@ Therefore, the second paragraph was moved to the beginning of the second page.
     <w:p>
       <w:pPr>
         <w:t>This is the first paragraph -- (1)</w:t>
-        </w:br>
         <w:t>This is the first paragraph -- (2)</w:t>
-        </w:br>
         <w:t>This is the first paragraph -- (3)</w:t>
-        </w:br>
         <w:t>This is the first paragraph -- (4)</w:t>
-        </w:br>
         <w:t>This is the first paragraph -- (5)</w:t>
-        </w:br>
         <w:t>This is the first paragraph -- (6)</w:t>
-        </w:br>
         <w:t>This is the first paragraph -- (7)</w:t>
-        </w:br>
         <w:t>This is the first paragraph -- (8)</w:t>
-        </w:br>
         <w:t>This is the first paragraph -- (9)</w:t>
-        </w:br>
         <w:t>This is the first paragraph -- (10)</w:t>
-        </w:br>
         <w:t>This is the first paragraph -- (11)</w:t>
-        </w:br>
         <w:t>This is the first paragraph -- (12)</w:t>
-        </w:br>
         <w:t>This is the first paragraph -- (13)</w:t>
-        </w:br>
         <w:t>This is the first paragraph -- (14)</w:t>
-        </w:br>
         <w:t>This is the first paragraph -- (15)</w:t>
-        </w:br>
         <w:t>This is the first paragraph -- (16)</w:t>
-        </w:br>
       </w:pPr>
       <w:pPr>
         <w:t>This is the second paragraph -- (1)</w:t>
-        </w:br>
         <w:t>This is the second paragraph -- (2)</w:t>
-        </w:br>
         <w:t>This is the second paragraph -- (3)</w:t>
-        </w:br>
         <w:t>This is the second paragraph -- (4)</w:t>
-        </w:br>
         <w:t>This is the second paragraph -- (5)</w:t>
-        </w:br>
         <w:t>This is the second paragraph -- (6)</w:t>
-        </w:br>
         <w:t>This is the second paragraph -- (7)</w:t>
-        </w:br>
         <w:t>This is the second paragraph -- (8)</w:t>
-        </w:br>
       </w:pPr>
       <w:pPr>
         <w:t>This is the third paragraph -- (1)</w:t>
-        </w:br>
         <w:t>This is the third paragraph -- (2)</w:t>
-        </w:br>
         <w:t>This is the third paragraph -- (3)</w:t>
-        </w:br>
         <w:t>This is the third paragraph -- (4)</w:t>
-        </w:br>
         <w:t>This is the third paragraph -- (5)</w:t>
-        </w:br>
         <w:t>This is the third paragraph -- (6)</w:t>
-        </w:br>
         <w:t>This is the third paragraph -- (7)</w:t>
-        </w:br>
         <w:t>This is the third paragraph -- (8)</w:t>
-        </w:br>
       </w:pPr>
     </w:p>
   </w:body>
