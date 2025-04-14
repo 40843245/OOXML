@@ -511,9 +511,11 @@ In above example, we can know that
 | `<w:start>` | | start | configure starting value for the numbering sequence at this list level | | It's only relevant when the <w:numFmt> (number format) for this level is set to a numbering style (like decimal, upperRoman, lowerLetter, etc.). |
 | `<w:numFmt>` | | number formatting | determines whether this level uses numbers or bullets, and the specific style  | | |
 | `<w:bullet>` | | bullet formatting | same above | | |
-| `<w:numPr>` | | number property | configure the property if it7 uses number formatting.  | | |
+| `<w:numPr>` | | number property | configure the property if it uses number formatting.  | | |
+| `<w:numId>` | | numbering id | specifies the numbering id to link number formatting given the value of `w:val` attribute.  | | |
 | `<w:suff>` | | suffix | specifies what character (if any) follows the number (e.g., a period, a hyphen, or a tab) | | |
-| `<w:lvlText>` | | level text | defines the numbering format using placeholders (e.g., "%1." for first-level numbers) | | |
+| `<w:outlineLvl>` | | outline *l*e*v*e*l* | specifies the outline level which shall be associated with the current paragraph in the document. | | |
+| `<w:lvlText>` | | *l*e*v*e*l* text | defines the numbering format using placeholders (e.g., "%1." for first-level numbers) | | |
 | `<w:lvlJc>` | | level justification | configures the justification of this level | | | 
 | `<w:nfc>` | | Number Formatting Code | configures Number Formatting Code of this level | nfc stands for *N*umber *F*ormatting *C*ode | | 
 | | | | | | | | 
@@ -551,12 +553,14 @@ In above example, we can know that
 | `<w:keepNext>` | | | specifies that the contents of this paragraph are at least partly rendered on the same page as the following paragraph whenever possible. | | | 
 | | | | | | |
 | <w:kinsoku> | | Kinsoku Shori (禁則處理) | specifies whether East Asian typography and line-breaking rules shall be applied to text in this paragraph to determine which characters can begin and end each line. | | This property only applies to Simplified Chinese, Traditional Chinese, and Japanese text in this paragraph. |
+| `<w:minorIdents>` | | | detemines whether if this tag is present, Word will swap the left and right indent settings if the document or section is set to a right-to-left reading order. | | If this is omitted on a given paragraph, its value is determined by the setting previously set at any level of the style hierarchy (i.e. that previous setting remains unchanged). If this setting is never specified in the style hierarchy, then this property shall not be applied. |
 
 ##### attribute about `w` namespace
 ###### attribute in `<w:minorIdents>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:val` | | | detemines whether if this tag is present, Word will swap the left and right indent settings if the document or section is set to a right-to-left reading order. | | |
+
 
 ###### attribute in `<w:kinsoku>`
 > [!WARNING]
@@ -571,6 +575,7 @@ In above example, we can know that
 >
 > + For starting characters: Small kana characters (like っ, ゃ), opening brackets/parentheses, punctuation marks.
 > + For ending characters: Closing brackets/parentheses, certain punctuation marks.
+
 ###### attribute in `<w:keepLines>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
@@ -861,6 +866,11 @@ Way to parsing it is similar to parsing `<w:pStyle>`.
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:val` | | | assign the Guid as value to determine which template will be applied to for the list pattern type | | |
 
+###### attribute in `<w:numId>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | the value determines which numbering formatting will be linked. | | |
+
 ###### attribute in `<w:lvl>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
@@ -875,6 +885,11 @@ Way to parsing it is similar to parsing `<w:pStyle>`.
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:val` | | | assign the string as value to specify the format for this level | | |
+
+###### attribute in `<w:outlineLvl>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | specifies the outline level which shall be associated with the current paragraph in the document. | | |
 
 ###### attribute in `<w:lvlJc>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -1357,6 +1372,26 @@ In above example, we can know that
 + In `w:hAnchor="text"`, anchors the frame horizontally to the page margins.
 + In `w:x="1921"`, it positions the left side of the frame approximately 1921 twips from the left edge of the page.
 
+###### example 17 -- paragraph with frame configuration
+
+###### example 18 -- paragraph with frame configuration
+
+###### example 19 -- combine two paragraph in same page (if possible)
+```
+
+```
+
+###### example 20 -- outline level
+```
+<w:pPr>
+  <w:outlineLvl w:val="0" />
+</w:pPr>
+```
+
+In above example, we can know that
+
++ In `<w:outlineLvl w:val="0" />`, this paragraph is of outline level 1, and if a table of contents field is inserted that utilizes outlines levels, the text in this paragraph is at level one in the TOC.
+  
 #### about `m` namespace
 ##### elements in `m` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
