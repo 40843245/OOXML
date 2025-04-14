@@ -43,7 +43,7 @@
 #### `<w:keepLines>` -> `w:val` attribute
 > [!WARNING]
 > I refers from Google Gemini's answer which may be incorrect.
-
+  
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"true"` | | | keep lines. | it instructs Word to keep all lines of the paragraph together on the same page.| default value. |
