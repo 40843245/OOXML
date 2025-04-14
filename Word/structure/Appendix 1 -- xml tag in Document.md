@@ -320,6 +320,50 @@ You can know which namespaces in `xmlns` namespace are declared through finding 
 >
 > In `<a:graphicFrameLocks noResize="true">`, the graphic frame can not be resized.
 
+###### example 1 -- a drawing object
+```
+<w:drawing>
+          <wp:inline distT="0" distB="0" distL="0" distR="0" wp14:anchorId="56C264D6" wp14:editId="7AA34E44">
+            <wp:extent cx="5486400" cy="3200400" />
+            <wp:effectExtent l="0" t="0" r="0" b="0" />
+            <wp:docPr id="1" name="圖表 1" />
+            <wp:cNvGraphicFramePr />
+            <a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+              <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/chart">
+                <c:chart xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="rId4" />
+              </a:graphicData>
+            </a:graphic>
+          </wp:inline>
+</w:drawing>
+```
+
+In above example, we can know that
+
++ In `<w:drawing>`, it defines the presence of a drawing object.
++ In `<wp:inline distT="0" distB="0" distL="0" distR="0" wp14:anchorId="56C264D6" wp14:editId="7AA34E44">`, it defines an inline drawing object.
+
+    - the distance (in points) between the drawing object and the surrounding text on the top, bottom, left, and right are BOTH set to zero respectively.
+    - it is specific to WordprocessingML version 2010 and later (indicated by the wp14 namespace prefix) and sets its edit id as `7AA34E44`.
+
++ In `<wp:extent cx="5486400" cy="3200400" />`, it specifies the size ( in this order -- (width, height)) of the drawing object is (5486400,3200400) EMUs.
++ In `<wp:effectExtent l="0" t="0" r="0" b="0" />`, it indicates no additional space is needed for effects.
++ In `<wp:docPr id="1" name="圖表 1" />`, it holds document-level properties for the drawing object whose id is `1` and name is `圖表 1`.
++ In `<wp:cNvGraphicFramePr />`, it defines Common Non-Visual Graphic Frame Properties. Since it has no child, it suggest no specific locking. 
+
+> [!TIP]
+> When `<wp:cNvGraphicFramePr />` element has no child,
+>
+> it can be assumed that there is a `<a:graphicFrameLocks>` element whose value of all attributes are BOTH set to `"false."`,
+>
+> thus, the graphic frame has no specific locking.
+
++ In `<a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">`, it contains the actual graphical content.
++ In `<a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/chart">`, it specifies the type of graphic data
+
+      - In `uri="http://schemas.openxmlformats.org/drawingml/2006/chart"`, it specifies the graph data is a chart.
+
++ In `<c:chart xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="rId4" />`, it comes from the ChartML namespace (c:), references the actual chart data. And its id is `rId4`, we can found the actual chart definition according to the `r:id` whose value os `rId4`.
+  
 ### element and its attribute in xml tag in OOXML
 #### about `o` namespace
 `o` namespace contains metadata about the Word document itself.
@@ -467,7 +511,6 @@ In above example, we can know that
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `wp:id` | | | speficies the unique identifier | | |
 
-
 ##### examples
 ###### example 1 -- extent
 ```
@@ -480,7 +523,7 @@ In above example, we can know that
 In this example, we can know that
 
 + In `<wp:extent cx="1828800" cy="1828800"/>`, it indicates that the drawing object has a width and height of 1,828,800 EMUs.
-+ 
+
 #### about `w` namespace
 ##### elements in `w` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -1431,51 +1474,7 @@ In above example, we can know that
 + In `w:hAnchor="text"`, anchors the frame horizontally to the page margins.
 + In `w:x="1921"`, it positions the left side of the frame approximately 1921 twips from the left edge of the page.
 
-###### example 17 -- a drawing object
-```
-<w:drawing>
-          <wp:inline distT="0" distB="0" distL="0" distR="0" wp14:anchorId="56C264D6" wp14:editId="7AA34E44">
-            <wp:extent cx="5486400" cy="3200400" />
-            <wp:effectExtent l="0" t="0" r="0" b="0" />
-            <wp:docPr id="1" name="圖表 1" />
-            <wp:cNvGraphicFramePr />
-            <a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
-              <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/chart">
-                <c:chart xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="rId4" />
-              </a:graphicData>
-            </a:graphic>
-          </wp:inline>
-</w:drawing>
-```
-
-In above example, we can know that
-
-+ In `<w:drawing>`, it defines the presence of a drawing object.
-+ In `<wp:inline distT="0" distB="0" distL="0" distR="0" wp14:anchorId="56C264D6" wp14:editId="7AA34E44">`, it defines an inline drawing object.
-
-    - the distance (in points) between the drawing object and the surrounding text on the top, bottom, left, and right are BOTH set to zero respectively.
-    - it is specific to WordprocessingML version 2010 and later (indicated by the wp14 namespace prefix) and sets its edit id as `7AA34E44`.
-
-+ In `<wp:extent cx="5486400" cy="3200400" />`, it specifies the size ( in this order -- (width, height)) of the drawing object is (5486400,3200400) EMUs.
-+ In `<wp:effectExtent l="0" t="0" r="0" b="0" />`, it indicates no additional space is needed for effects.
-+ In `<wp:docPr id="1" name="圖表 1" />`, it holds document-level properties for the drawing object whose id is `1` and name is `圖表 1`.
-+ In `<wp:cNvGraphicFramePr />`, it defines Common Non-Visual Graphic Frame Properties. Since it has no child, it suggest no specific locking. 
-
-> [!TIP]
-> When `<wp:cNvGraphicFramePr />` element has no child,
->
-> it can be assumed that there is a `<a:graphicFrameLocks>` element whose value of all attributes are BOTH set to `"false."`,
->
-> thus, the graphic frame has no specific locking.
-
-+ In `<a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">`, it contains the actual graphical content.
-+ In `<a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/chart">`, it specifies the type of graphic data
-
-      - In `uri="http://schemas.openxmlformats.org/drawingml/2006/chart"`, it specifies the graph data is a chart.
-
-+ In `<c:chart xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="rId4" />`, it comes from the ChartML namespace (c:), references the actual chart data. And its id is `rId4`, we can found the actual chart definition according to the `r:id` whose value os `rId4`.
-
-###### example 18 -- always keep the paragraph in same page (if possible)
+###### example 17 -- always keep the paragraph in same page (if possible)
 `~/word/document.xml` file under `Docx1.docx` file
 
 ```
@@ -1533,7 +1532,7 @@ and `<w:keepLine/>` is present inside second `<w:pPr>`.
 
 Therefore, the second paragraph was moved to the beginning of the second page.
 
-###### example 19 -- combine two paragraphs in same page (if possible)
+###### example 18 -- combine two paragraphs in same page (if possible)
 ```
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- this tag `<w:document>` omitted -->
@@ -1599,7 +1598,7 @@ Therefore, the second paragraph and third paragraph were moved to the beginning 
 >
 > (if possible, e.g. the second paragraph and third paragraph does not hold over than one page in total).
 
-###### example 20 -- outline level
+###### example 19 -- outline level
 ```
 <w:pPr>
   <w:outlineLvl w:val="0" />
