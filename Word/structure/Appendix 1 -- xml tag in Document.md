@@ -616,6 +616,11 @@ The above example may output:
 | `<c:orientation>` | | orientation | controls orientation for axis | | |
 | | | | | | |
 | `<c:delete>` | | manually deleted | stores the data labels is manually deleted by users. | | |
+| `<c:axPos>` | | | specifies the defined axis should be positioned at somewhere of the chart's plot area. | somewhere is according to value of `val` attribute, see [`<c:axPos>` -> `val` attribute section in Appendix 2](https://github.com/40843245/OOXML/blob/main/Word/structure/Appendix%202%20--%20available%20options%20of%20attribute%20of%20tag%20in%20xml%20for%20Word.md#caxpos---val-attribute) for available value of `val` attribute.  | |
+| `<c:majorTickMark/>` | | major tick mark | specifies the type and placement of the major tick marks. | | |
+| `<c:minorTickMark/>` | | minor tick mark | specifies the type and placement of the minor tick marks. | | |
+| `<c:tickLblPos/>` | | position of the tick labels | controls the position of the tick labels relative to the tick marks on the axis. | | |
+| `<c:crossAx/>` | | cross *ax*is | establishes a relationship between the current axis and another axis in the chart. | The point at which they cross can be further defined by the <c:crossAt> element. | |
 
 > [!IMPORTANT]
 > How to calculate percentage that a data point takes of its total?
@@ -741,6 +746,26 @@ The above example may output:
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `val` | | | specifies the defined axis should be positioned at somewhere of the chart's plot area. | somewhere is according to value of `val` attribute, see [`<c:axPos>` -> `val` attribute section in Appendix 2](https://github.com/40843245/OOXML/blob/main/Word/structure/Appendix%202%20--%20available%20options%20of%20attribute%20of%20tag%20in%20xml%20for%20Word.md#caxpos---val-attribute) for available value of `val` attribute.  | |
+
+###### attribute in `<c:majorTickMark>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `val` | | | specifies the type and placement of the major tick marks. | | |
+
+###### attribute in `<c:minorTickMark>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `val` | | | specifies the type and placement of the minor tick marks. | | |
+
+###### attribute in `<c:tickLblPos>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `val` | | | controls the position of the tick labels relative to the tick marks on the axis. | | |
+
+###### attribute in `<c:crossAx>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `val` | | | holds the Guid of the of the axis (value of `val` attribute in `<c:axId>`) that the current axis should cross. | the relationship will cross from the current axis by its id (value of `val` attribute in `<c:crossAx>`) to the axis by its id (value of `val` attribute in `<c:axId>`)  | |
 
 ##### examples and explanations
 ###### example 1 -- chart space
