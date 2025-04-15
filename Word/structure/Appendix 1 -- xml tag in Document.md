@@ -449,8 +449,13 @@ In above example, we can know that
 + In `<c:chart xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="rId4" />`, it comes from the ChartML namespace (c:), references the actual chart data. And its id is `rId4`, we can found the actual chart definition according to the `r:id` whose value os `rId4`.
   
 ###### example 2 -- a complex drawing object
+part content of `~/word/document.xml` file under `PictureExample1.docx` file.
+
 ```
+<!-- other tags omitted -->
 <w:p>
+    <w:pPr>
+        <!-- tags inside is omitted -->
     <w:pPr/>
         <w:r>
             <w:rPr>
@@ -503,6 +508,36 @@ In above example, we can know that
 
 In above example, we can know that
 
++ In `<w:p>`, it defines a paragraph.
++ In first occurence of `<w:r>`, it defines a run.
++ In `<w:rPr>` (inside first occurence of `<w:r>`), it defines the properties of the run.
++ In `<w:lang w:val="zh-TW"/>` (inside `<w:rPr>`), it speficies the text that uses this run is in language Traditional Chinese (that used in Taiwan).
++ In `<w:t>Here is Ai</w:t>` (inside first occurence of `<w:r>`), the text `Here is Ai` is applied to this run.
++ In third occurence of `<w:r xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">`, it defines a run and its `xmlns:w` namespace targets to `http://schemas.openxmlformats.org/wordprocessingml/2006/main`, which means it uses WordPrcoessingML in Office 2006.
++ In `<w:drawing>`, it defines a drawing object.
++ In `<wp:inline xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" distT="0" distB="0" distL="0" distR="0">`,</br>it defines a inline drawing object.</br>Its `xmlns:wp` namespace targets to `http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing`,</br>which meaning that it use an extension of WordProcessing DrawingML in Office 2006.</br></br>On the other hand, the distance between the top edge of the inlined drawing object and the top edge of the drawing object (defined in `<w:drawing>`) is zero.</br>Similarly, the distance between the left edge of the inlined drawing object and the left edge of the drawing object (defined in `<w:drawing>`) is zero.</br>The distance between the bottom edge of the inlined drawing object and the bottom edge of the drawing object (defined in `<w:drawing>`) is zero.</br>Similarly, the distance between the right edge of the inlined drawing object and the right edge of the drawing object (defined in `<w:drawing>`) is zero.</br>These four attributes indicates that they are overlapped.
++ In `<wp:extent cx="5080000" cy="5080000"/>`, the inlined drawing object is set to 5080000 width (in EMUs) and 7 `5080000` height (in EMUs).
++ In `<wp:effectExtent l="0" t="0" r="0" b="0"/>`, the inlined drawing object (add additionals to any edge by zero), mean ing that it does NOT add additionals to any edge.
++ In `<wp:docPr id="1" name="" descr=""/>`, we can know the properties of inline drawing object. Its id is `1`> Its name is an empty string. Its description is also an empty string.
++ In `<wp:cNvGraphicFramePr>`, it defines the properties for the common non-visual graphic frame.
++ In `<a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/>`, it speficies the behaviour of the graphic frame lock for this inline drawing object.</br></br>Its `xmlns:a` namespace targets to `http://schemas.openxmlformats.org/drawingml/2006/main`, which means that it is applied to DrawingML in Office 2006.</br>The inlined drawing object can not change aspect ratio.
++ In `<pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">`, it defines a picture which uses DrwaingML in Office 2006.
++ In `<pic:nvPicPr>`, it defines the properties to non-visual picture.
++ In `<pic:cNvPr id="0" name=""/>`, it defines the properties of the common non-visual. It also sets its id to `0` and name to an empty string.
++ In `<pic:blipFill>`, it is the bridge between the abstract shape defined for the picture and the concrete image data that gets rendered within that shape.
++ In `<a:blip xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:embed="R530625ccf2364ebb"/>`, it defines a binary large object picture7. Its `xmlns:r` targets to `http://schemas.openxmlformats.org/officeDocument/2006/relationships` which means that it is applied to Relationships of Office 3006. It embeded id is `rR530625ccf2364ebb`.
++ In `<a:stretch>`, the child element must be strecthed to fit its content.
++ In `<a:fillRect/>`, it will stretched as a filed rectangle.
++ In `<pic:spPr>`, it defines the properties of shape.
++ In `<a:xfrm flipH="0" flipV="0">`, sets its transform, 4it will be flio horizontally and veritcally.
++ In `<a:off x="0" y="0"/>`, it sets the offest of x-coordinaate and y-coordinate is 0.
++ In `<a:ext cx="5080000" cy="5080000"/>`, the width and height is set to `5080000` and  `5080000`, respectively.
++ In <a:prstGeom prst="rect">, it sets the preset goemetry is `rectangle`.
++ In `<avLst/>`, specific preset geometry being used (in our case, a rectangle), no adjustments are being applied,
+
+The above example may output:
+
+<img width="371" alt="image" src="https://github.com/user-attachments/assets/458af2fd-4c32-4b33-aad3-69b227a17cb0" />
 
 ### element and its attribute in xml tag in OOXML
 #### about `c` namespace
