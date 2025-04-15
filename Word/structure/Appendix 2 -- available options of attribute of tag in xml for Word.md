@@ -141,6 +141,25 @@ Looks like the following figure.
 
 ![image](https://github.com/user-attachments/assets/dce5d19d-7952-4f62-b9b1-1d67e42ef639)
 
+#### `<c:overlap>` -> `val` attribute
+It's range is from `-100` to `100`.
+
+The default value is 0.
+
++ Case 1: value is 0.
+
+No overlap 
+
++ Case 2: value is greater than 0.
+
+Indicates that the bars will overlap by that percentage.
+
++ Case 3: value is less than 0.
+
+Indicate that there will be a gap in addition to the normal gap.
+
+This effectively increases the spacing between the bars.
+ 
 ### about `w` namespace
 #### `<w:kinsoku>` -> `w:val` attribute
 > [!WARNING]
