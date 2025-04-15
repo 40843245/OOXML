@@ -583,6 +583,8 @@ The above example may output:
 | `<c:showCatName/>` | | show *cat*gory name | determines whether show category name for each series | | | 
 | `<c:showSerName/>` | | show *ser*ies name | determines whether show name of data series for each series | | | 
 | `<c:showPercent/>` | | show percentage | determines whether show percentage that a data point takes of its total for each series | For more knowledgment about data point, see following `IMPORTANT` annotation. | |
+| `<c:showBubbleSize/>` | | show bubble size | determines whether show bubble size for each series. | | |
+| `<c:showLeaderLines/>` | | show header lines | determines whether show leader lines for each series. | | |
 | | | | | | |
 
 > [!IMPORTANT]
@@ -673,6 +675,16 @@ The above example may output:
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `val` | | | determines whether show percentage that a data point takes of its total for each series | | |
+
+###### attribute in `<c:showBubbleSize>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `val` | | | determines whether show bubble size for each series. | | |
+
+###### attribute in `<c:showLeaderLines>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `val` | | | determines whether show leader lines for each series. | | |
 
 ###### attribute in `<c:axId>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
