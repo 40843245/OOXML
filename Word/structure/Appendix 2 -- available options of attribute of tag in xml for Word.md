@@ -270,6 +270,12 @@ but it applies to minor tick marks.
 | `"low"` | | below | The tick labels are positioned **below** relative to the axis line | | |
 | `"nextToAxis"` | | next to axis | The tick labels are positioned **next to** the axis line | | |
 
+#### `<c:delete>` -> `val` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"true"` | | | the axis settings are automatic.| | |
+| `"false"` | | | the axis settings are manual. | | |
+
 ### about `w` namespace
 #### `<w:kinsoku>` -> `w:val` attribute
 > [!WARNING]
