@@ -276,6 +276,13 @@ but it applies to minor tick marks.
 | `"true"` | | | the axis settings are automatic.| | |
 | `"false"` | | | the axis settings are manual. | | |
 
+#### `<c:lblAlgn>` -> `val` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"l"` | | left | The text within the axis labels are left-aligned.  | | |
+| `"ctr"` | | *c*en*t*e*r* | The text within the axis labels are center-aligned. | | |
+| `"r"` | | right | The text within the axis labels are right-aligned. | | |
+
 ### about `w` namespace
 #### `<w:kinsoku>` -> `w:val` attribute
 > [!WARNING]
