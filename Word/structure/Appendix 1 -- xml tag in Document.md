@@ -621,6 +621,14 @@ The above example may output:
 | `<c:minorTickMark/>` | | minor tick mark | specifies the type and placement of the minor tick marks. | | |
 | `<c:tickLblPos/>` | | position of the tick labels | controls the position of the tick labels relative to the tick marks on the axis. | | |
 | `<c:crossAx/>` | | cross *ax*is | establishes a relationship between the current axis and another axis in the chart. | The point at which they cross can be further defined by the <c:crossAt> element. | |
+| `<c:auto/>` | | | determines the axis settings are automatic or manual by given boolean value. | | |
+| `<c:lblAlgn>` | | *l*a*b*e*l* *a**l*i*g**n*ment | determines alignment of the text within the axis labels. | | |
+| `<c:lblOffset>` | | *l*a*b*e*l* offset | specifies the offset of the axis labels from the axis line. | | |
+| `<c:noMultiLvlLbl>` | | no multi-*l*e*v*e*l* *l*a*b*e*l* | determines whether multi-level labels are disabled on the category axis. | | |
+| | | | | | |
+| `<c:valAx>` | | *val*ue *ax*is | acts like a container that defines the one or many value axes (plural of axis) | | |
+| `<c:axPos/>` | | *ax*is *pos*iton | specifies the position of the axis relative to the plot area of the chart | | |
+| `<c:numFmt/>` | | *num*ber *f*or*m*a*t*ting  | specifies the number formatting of the axis labels of the chart | | |
 
 > [!IMPORTANT]
 > How to calculate percentage that a data point takes of its total?
@@ -769,6 +777,37 @@ The above example may output:
 
 > [!IMPORTANT]
 > About `How <c:crossAx> tag establish the relationship to cross the axis`, let's see the answers from [Google Gemini](https://github.com/40843245/OOXML/blob/main/Q%26A/about%20chart/about%20axis/How%20%60%3Cc%3AcrossAx%3E%60%20tag%20establish%20the%20relationship%20to%20cross%20the%20axis%3F.md)
+
+###### attribute in `<c:auto>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `val` | | | determines the axis settings are automatic or manual by given boolean value. | | |
+
+###### attribute in `<c:lblAlgn>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `val` | | | determines alignment of the text within the axis labels. | | |
+
+###### attribute in `<c:lblAlgn>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `val` | | | specifies the offset of the axis labels from the axis line. | | It takes the percentage of the default area. |
+
+###### attribute in `<c:noMultiLvlLbl>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `val` | | | determines whether multi-level labels are disabled on the category axis. | | |
+
+###### attribute in `<c:axPos>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `val` | | | specifies the position of the axis relative to the plot area of the chart. | | |
+
+###### attribute in `<c:numFmt>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `sourceLinked` | | | specifies that source is linked. | | |
+| `formatCode` | | number formattig code | specifies number formattig code. | | |
 
 ##### examples and explanations
 ###### example 1 -- chart space
