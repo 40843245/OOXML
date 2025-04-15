@@ -159,7 +159,49 @@ Indicates that the bars will overlap by that percentage.
 Indicate that there will be a gap in addition to the normal gap.
 
 This effectively increases the spacing between the bars.
- 
+
+#### `<c:showLegendKey>` -> `val` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"true"` | | | show legend for each series. | | |
+| `"false"` | | | **NOT** show legend for each series. | | |
+
+#### `<c:showVal>` -> `val` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"true"` | | | show value for each series. | | |
+| `"false"` | | | **NOT** show value for each series. | | |
+
+#### `<c:showCatName>` -> `val` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"true"` | | | show category name for each series. | | |
+| `"false"` | | | **NOT** show category name for each series. | | |
+
+#### `<c:showSerName>` -> `val` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"true"` | | | show name of data series for each series. | | |
+| `"false"` | | | **NOT** show name of data series for each series. | | |
+
+#### `<c:showPercent>` -> `val` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"true"` | | | show percentage that a data point takes of its total for each series | | |
+| `"false"` | | | **NOT** show percentage that a data point takes of its total for each series | | |
+
+#### `<c:showBubbleSize>` -> `val` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"true"` | | | show bubble size for each series. | | |
+| `"false"` | | | **NOT** show bubble size for each series | | |
+
+#### `<c:showLeaderLines>` -> `val` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"true"` | | | show leader lines for each series. | | |
+| `"false"` | | | **NOT** show leader lines for each series | | |
+
 ### about `w` namespace
 #### `<w:kinsoku>` -> `w:val` attribute
 > [!WARNING]
