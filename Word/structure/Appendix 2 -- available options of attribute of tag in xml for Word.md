@@ -213,17 +213,34 @@ This effectively increases the spacing between the bars.
 | :---------- | :----------- | :----- | :--- |
 | double (represented as string) or constants that be represented as double | scaling by logarithm of given base | e.g. `"2"`, `"e"`, `"10"` | |
 
+#### `<c:scaling>` -> `type` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"auto"` | | | indicates axis scaling is automatic. | | It is the default value. |
+| `"manual"` | | | indicates axis scaling is manual. | the specific scaling parameters are controlled by other child elements within `<c:catAx>` (such as `<c:lblSkip>`, `<c:tickMarkSkip>`) | |
+
 #### `<c:scaling>` -> `orientation` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"minMax"` | | | indicates the normal or standard orientation, where the axis values increase from the minimum value at one end to the maximum value at the other. | <ol><li>For a vertical axis, this typically means values increase from bottom to top.</li><li>For a horizontal axis, values increase from left to right.</li></ol> | It is the default value. |
 | `"maxMin"` | | | inverts the orientation of the axis. The values will decrease from the maximum value at one end to the minimum value at the other. | It is the sematically opposite of `"minMax"` | |
 
-#### `<c:scaling>` -> `type` attribute
+#### `<c:orientation>` -> `val` attribute
+Same as `<c:scaling>` -> `orientation` attribute.
+
+#### `<c:delete>` -> `val` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"auto"` | | | indicates axis scaling is automatic. | | It is the default value. |
-| `"manual"` | | | indicates axis scaling is manual. | the specific scaling parameters are controlled by other child elements within `<c:catAx>` (such as `<c:lblSkip>`, `<c:tickMarkSkip>`) | |
+| `"true"` | | | the data labels is manually deleted by users.| | |
+| `"false"` | | | the data labels is **NOT** manually deleted by users. | | |
+
+#### `<c:axPos>` -> `val` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"b"` | | bottom | | | |
+| `"t"` | | top | | | |
+| `"l"` | | left | | | |
+| `"r"` | | right | | | |
 
 ### about `w` namespace
 #### `<w:kinsoku>` -> `w:val` attribute
