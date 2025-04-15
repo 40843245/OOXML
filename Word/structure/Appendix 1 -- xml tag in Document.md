@@ -568,8 +568,6 @@ The above example may output:
 | `<pic:blipFill>` | | | defines how the actual image data is used to fill the shape of the picture object. | it controls aspects like tiling, stretching, and the portion of the image that is visible. | |
 | `<pic:spPr>` | | *s*ha*p*e *pr*operties | defines shape properties| | |
 
-
-
 ##### attribute about `pic` namespace
 ###### attribute in `<pic:cNvPr>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
