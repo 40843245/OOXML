@@ -767,6 +767,9 @@ The above example may output:
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `val` | | | holds the Guid of the of the axis (value of `val` attribute in `<c:axId>`) that the current axis should cross. | the relationship will cross from the current axis by its id (value of `val` attribute in `<c:crossAx>`) to the axis by its id (value of `val` attribute in `<c:axId>`)  | |
 
+> [!IMPORTANT]
+> About `How <c:crossAx> tag establish the relationship to cross the axis`, let's see the answers from [Google Gemini](https://github.com/40843245/OOXML/blob/main/Q%26A/about%20chart/about%20axis/How%20%60%3Cc%3AcrossAx%3E%60%20tag%20establish%20the%20relationship%20to%20cross%20the%20axis%3F.md)
+
 ##### examples and explanations
 ###### example 1 -- chart space
 root node of `~/word/charts/chart1.xml` file under `BarChartExample.docx` file.
