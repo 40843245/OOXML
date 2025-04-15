@@ -208,6 +208,23 @@ This effectively increases the spacing between the bars.
 | `"true"` | | | the color (of bar charts or column charts) will be inverted when its value it represents is negative. | | |
 | `"false"` | | | the color (of bar charts or column charts) will be **NOT** inverted when its value it represents is negative. | | |
 
+#### `<c:scaling>` -> `logBase` attribute
+| value type of attribute in tag | description | notes | notice |
+| :---------- | :----------- | :----- | :--- |
+| double (represented as string) or constants that be represented as double | scaling by logarithm of given base | e.g. `"2"`, `"e"`, `"10"` | |
+
+#### `<c:scaling>` -> `orientation` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"minMax"` | | | indicates the normal or standard orientation, where the axis values increase from the minimum value at one end to the maximum value at the other. | <ol><li>For a vertical axis, this typically means values increase from bottom to top.</li><li>For a horizontal axis, values increase from left to right.</li></ol> | It is the default value. |
+| `"maxMin"` | | | inverts the orientation of the axis. The values will decrease from the maximum value at one end to the minimum value at the other. | It is the sematically opposite of `"minMax"` | |
+
+#### `<c:scaling>` -> `type` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"auto"` | | | indicates axis scaling is automatic. | | It is the default value. |
+| `"manual"` | | | indicates axis scaling is manual. | the specific scaling parameters are controlled by other child elements within `<c:catAx>` (such as `<c:lblSkip>`, `<c:tickMarkSkip>`) | |
+
 ### about `w` namespace
 #### `<w:kinsoku>` -> `w:val` attribute
 > [!WARNING]
