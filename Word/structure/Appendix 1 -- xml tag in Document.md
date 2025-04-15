@@ -584,7 +584,33 @@ The above example may output:
 | `<c:showSerName/>` | | show *ser*ies name | determines whether show name of data series for each series | | | 
 | `<c:showPercent/>` | | show percentage | determines whether show percentage that a data point takes of its total for each series | For more knowledgment about data point, see following `IMPORTANT` annotation. | |
 | `<c:showBubbleSize/>` | | show bubble size | determines whether show bubble size for each series. | | |
-| `<c:showLeaderLines/>` | | show header lines | determines whether show leader lines for each series. | | |
+| `<c:showLeaderLines/>` | | show leader lines | determines whether show leader lines for each series. | | |
+| | | | | | |
+| `<c:ser>` | | *ser*ies | defines a series. | | |
+| `<c:idx>` | | *i*n*d*e*x* | specifies the index of the data point. | | It is zero-based. |
+| `<c:order>` | | plotting order | specifies the plotting order of the series (inside `<c:ser>` tag). | | It is zero-based. |
+| `<c:order>` | | plotting order | specifies the plotting order of the series (inside `<c:ser>` tag). | | It is zero-based. | 
+| `<c:val>` | | value | specifies the actual data value of the series (inside `<c:ser>` tag). | | | 
+| `<c:extLst>` | | *ext*ension *l*i*st* | defines an extensibility point for future additions. | | | 
+| `<c:tx>` | | series *t*e*x*t | specifies the name of series. | it appears in the legend and</br>might be used in data labels. | |
+| `<c:errBars>` | | error bars | defines error bars for the data points in this series. | |  This is available for</br><ol><li>bar charts</li><li>column (bar) charts</li></ol> |
+| `<c:spPr>` | | *s*ha*p*e *pr*operties | specifies visual properties for the series as a whole. | | |
+| `<c:cat>` | | *cat*egory | specifies the categories or labels for the data points in this series. | | |
+| `<c:bubbleSize>` | | bubble size | specifies the size of bubbles. | | |
+| `<c:trendline>` | | trend line | defines trendlines for this specific series | | |
+| `<c:marker>` | | marker | defines the appearance of marker of data point. | | This is available for</br><ol><li>line charts</li><li>scatter charts</li></ol> |
+| `<c:invertIfNegative>` | | | determines whether the color (of bar charts or column charts) will be inverted when its value it represents is negative. | | This is available for</br><ol><li>bar charts</li><li>column charts</li></ol>  |
+| | | | | | |
+| `<c:strRef>` | | *str*ing *ref*erence | defines a reference to string data in a spreadsheet. | | |
+| `<c:f>` | | *f*ormula | contains the formula that specifies the range of cells in the spreadsheet. | | |
+| | | | | | |
+| `<c:strCache>` | | *str*ing cached | contains a cached copy of the string values from the referenced range.  | this is often included for performance reasons, so the charting application doesn't have to always access the spreadsheet to get the labels | |
+| `<c:ptCount>` | | *p*oin*t* count | the number of point in cached copy of string values or numerical values (according to the value of `val` attribute) | | |
+| `<c:pt>` | | *p*oin*t* | defines a point in cached copy of string values or numerical values | | |
+| `<c:v>` | | value | the actual data value of a point in cached copy of string values or numerical values | | |
+| | | | | | |
+| `<c:numCache>` | | *num*ber cached | contains a cached copy of the numerical values from the referenced range.  | this is often included for performance reasons, so the charting application doesn't have to always access the spreadsheet to get the labels | |
+| `<c:formatCode>` | | number formatting code | specifies the number formatting code that was applied to the original data in the spreadsheet. | |
 | | | | | | |
 
 > [!IMPORTANT]
@@ -675,6 +701,21 @@ The above example may output:
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `val` | | | specifies the axis id | | |
 
+###### attribute in `<c:ptCount>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `val` | | | stores the number of cached copy of string value or numerical values | | |
+
+###### attribute in `<c:idx>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `val` | | | specifies the index of data point | | It is zero-based |
+
+###### attribute in `<c:invertIfNegative>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `val` | | | determines whether the color (of bar charts or column charts) will be inverted when its value it represents is negative. | | |
+
 ##### examples and explanations
 ###### example 1 -- chart space
 root node of `~/word/charts/chart1.xml` file under `BarChartExample.docx` file.
@@ -689,6 +730,60 @@ In above example, we can know that
 + In `xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart"`, the namespace `xmlns:c` targets to `http://schemas.openxmlformats.org/drawingml/2006/chart`, which means that it uses DrawingML Chart Schema in Office 2006.
 + In `xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"`, the namespace `xmlns:a` targets to `http://schemas.openxmlformats.org/drawingml/2006/main`, which means that it uses DrawingML in Office 2006.
 + In `xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"`, the namespace `xmlns:r` targets to `http://schemas.openxmlformats.org/officeDocument/2006/relationships`, which means that it uses the Relationship Schema in Office 2006.
+
+###### example 2 -- cached copy of string values
+If a chart's category labels are "A", "B", and "C" pulled from a spreadsheet, 
+
+the xml content may look like this:
+
+```
+<c:strCache>
+  <c:ptCount val="3"/>
+  <c:pt>
+    <c:idx val="0"/>
+    <c:v>A</c:v>
+  </c:pt>
+  <c:pt>
+    <c:idx val="1"/>
+    <c:v>B</c:v>
+  </c:pt>
+  <c:pt>
+    <c:idx val="2"/>
+    <c:v>C</c:v>
+  </c:pt>
+</c:strCache>
+```
+
+###### example 3 -- cached copy of numerical values
+Let's say you have numerical data 10.5, 20.3, and 15.8 in cells B2 to B4 of Sheet1 in your spreadsheet, 
+
+formatted as numbers with one decimal place.
+
+It xml content may look like this:
+
+```
+<c:val>
+  <c:numRef>
+    <c:f>Sheet1!$B$2:$B$4</c:f>
+    <c:numCache>
+      <c:formatCode val="#,##0.0"/>
+      <c:ptCount val="3"/>
+      <c:pt>
+        <c:idx val="0"/>
+        <c:v>10.5</c:v>
+      </c:pt>
+      <c:pt>
+        <c:idx val="1"/>
+        <c:v>20.3</c:v>
+      </c:pt>
+      <c:pt>
+        <c:idx val="2"/>
+        <c:v>15.8</c:v>
+      </c:pt>
+    </c:numCache>
+  </c:numRef>
+</c:val>
+```
 
 #### about `pic` namespace
 ##### elements in `pic` namespace
