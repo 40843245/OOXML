@@ -5,6 +5,15 @@
 >
 > Read with caution.
 
+> [!IMPORTANT]
+> In OOXML,
+>
+> For those value of attribute that needs to be specified with a string containing a boolean value (i.e. `"true"` or `"false"`),
+>
+> + `"0"` is equivalent to `"false"`
+> 
+> + `"1"` is equivalent to `"true"`
+
 ### about `xml` namespace
 #### `xml:space` attribute
 > [!WARNING]
@@ -65,6 +74,13 @@
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"true"` | | | flips the graphical object vertically. | | |
 | `"false"` | | | NOT flip the graphical object vertically. | | |
+
+### about `c` namespace
+#### `<c:roundedCorners>` -> `val` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"true"` | | | all charts in this file should be rounded. | | |
+| `"false"` | | | all charts in this file should NOT be rounded. They should be sharp (i.e. rectangular shape) | | |
 
 ### about `w` namespace
 #### `<w:kinsoku>` -> `w:val` attribute
