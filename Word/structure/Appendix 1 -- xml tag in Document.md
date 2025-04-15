@@ -27,6 +27,15 @@ It's like a dictionary, search it when you want to know a vocabulary.
 >
 > Read with caution.
 
+> [!IMPORTANT]
+> In OOXML,
+>
+> For those value of attribute that needs to be specified with a string containing a boolean value (i.e. `"true"` or `"false"`),
+>
+> + `"0"` is equivalent to `"false"`
+> 
+> + `"1"` is equivalent to `"true"`
+
 ### processing instruction
 See `Appendix 1 -- tags in xml`[^3]
 
@@ -544,7 +553,9 @@ The above example may output:
 ##### elements in `c` namespace
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `c:chart` | | chart | defines a chart |
+| `<c:chartSpace>` | | chart space | the root tag that contains many charts and its configuration. | It usually resides in `~/word/charts/chart1.xml` file under a Word file. | |  
+| `<c:roundedCorners>` | | rounded corners | determines whether all charts in this file should be rounded shape. |
+| `<c:chart>` | | chart | defines a chart |
 
 ##### namespace declaration about `c` namespace
 ###### namespace declaration in `<c:chart>`
@@ -558,6 +569,26 @@ The above example may output:
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `style` | | | speficies the style of the chart. | | |
+
+###### attribute in `<c:roundedCorners>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `val` | | | determines whether all charts in this file should be rounded shape. | | |
+
+##### examples and explanations
+###### example 1 -- chart space
+root node of `~/word/charts/chart1.xml` file under `BarChartExample.docx` file.
+
+```
+<c:chartSpace xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+```
+
+In above example, we can know that
+
++ In `<c:chartSpace>`, it defines a chart space that containing all charts and its configurations.
++ In `xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart"`, the namespace `xmlns:c` targets to `http://schemas.openxmlformats.org/drawingml/2006/chart`, which means that it uses DrawingML Chart Schema in Office 2006.
++ In `xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"`, the namespace `xmlns:a` targets to `http://schemas.openxmlformats.org/drawingml/2006/main`, which means that it uses DrawingML in Office 2006.
++ In `xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"`, the namespace `xmlns:r` targets to `http://schemas.openxmlformats.org/officeDocument/2006/relationships`, which means that it uses the Relationship Schema in Office 2006.
 
 #### about `pic` namespace
 ##### elements in `pic` namespace
