@@ -283,6 +283,48 @@ but it applies to minor tick marks.
 | `"ctr"` | | *c*en*t*e*r* | The text within the axis labels are center-aligned. | | |
 | `"r"` | | right | The text within the axis labels are right-aligned. | | |
 
+#### `<c:noMultiLvlLbl>` -> `val` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"true"` | | | multi-level labels are disabled on the category axis. | | |
+| `"false"` | | | multi-level labels are **NOT** disabled on the category axis. | | |
+
+#### `<c:axPos>` -> `val` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"l"` | | left | specifies the position of the axis is **left** of the plot area of the chart  | | |
+| `"t"` | | top | specifies the position of the axis is **top** of the plot area of the chart | | |
+| `"r"` | | right | specifies the position of the axis is **right** of the plot area of the chart | | |
+| `"b"` | | bottom | specifies the position of the axis is **bottom** of the plot area of the chart | | |
+
+#### `<c:numFmt>` -> `sourceLinked` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"true"` | | | indicates tthat the number format for the axis labels should inherit or be linked to the number format of the source data. | | |
+| `"false"` | | | indicates that is not linked to the formatting of the source data. And the number format specified in the `formatCode` attribute is explicitly defined within this chart element. | | |
+
+#### `<c:numFmt>` -> `formatCode` attribute
+Due to there are unexhaustive available options, I just list some commonly used, helping you understand how the formatting code formats value.
+
+> [!IMPORTANT]
+> According to Google Gemini's answer,
+>
+> ```
+> The possible values are essentially the same as the number formatting codes you would use in Microsoft Excel.
+> ```
+
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"General"` | | | specifies the number format code to be applied to the axis labels.  | | |
+| `"0"` | | | specifies the number format code to be applied to integer format with no decimal places. | | |
+| `"0.00"` | | | specifies the number format code to be applied to number format with two decimal places. | | |
+| `"#,##0"` | | | specifies the number format code to be applied to number format with thousands separator and no decimal places. | | |
+| `"$#,##0.00"` | | | specifies the number format code to be applied to currency format with thousands separator and two decimal places (a dollar sign is added at the beginning) | | |
+| `"0%"` | | | specifies the number format code to be applied to percentage format with no decimal places (values are multiplied by 100 and a percentage sign is added at the end). | | |
+| `"0.00%"` | | | specifies the number format code to be applied to percentage format with two decimal places. | | |
+| `"m/d/yyyy"` | | | specifies the number format code to be applied to date format (no extra leading zero for months and days). | | |
+| `"h:mm AM/PM"` | | | specifies the number format code to be applied to time format (no extra leading zero for hours) (adopts twelve-hour clock principle, and added `AM` or `PM` at the end of the value) | | |
+
 ### about `w` namespace
 #### `<w:kinsoku>` -> `w:val` attribute
 > [!WARNING]
