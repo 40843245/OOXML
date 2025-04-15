@@ -550,12 +550,20 @@ The above example may output:
 
 ### element and its attribute in xml tag in OOXML
 #### about `c` namespace
+> [!NOTE]
+>
+> Convention about word definition:
+> 
+> For convience,
+>
+> about the word `this file`, if `this file` is not explicited discussed in this record, `this file` refers to ```~/word/charts/chart1.xml` file under a Word file.``
+
 ##### elements in `c` namespace
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `<c:chartSpace>` | | chart space | the root tag that contains many charts and its configuration. | It usually resides in `~/word/charts/chart1.xml` file under a Word file. | |  
-| `<c:roundedCorners>` | | rounded corners | determines whether all charts in this file should be rounded shape. |
-| `<c:chart>` | | chart | defines a chart |
+| `<c:roundedCorners>` | | rounded corners | determines whether all charts in this file should be rounded shape. | | |
+| `<c:chart>` | | chart | defines a chart | | | 
 
 ##### namespace declaration about `c` namespace
 ###### namespace declaration in `<c:chart>`
