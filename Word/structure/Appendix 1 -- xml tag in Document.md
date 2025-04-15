@@ -575,8 +575,6 @@ The above example may output:
 | | | | | | |
 | `<c:gapWidth>` | | gap width | specifies the gap width (i.e. the distance between two bars) | | |
 | | | | | | |
-| `<c:axId>` | | *ax*is id | specifies axis id | | |
-| | | | | | |
 | `<c:dLbls>` | | *d*ata *l*a*b*e*l**s* | a container that contains data labels. | | |
 | `<c:showLegendKey/>` | | show legend key | determines whether show legend for each series | | |
 | `<c:showVal/>` | | show *val*ue | determines whether show value for each series | | |
@@ -612,6 +610,12 @@ The above example may output:
 | `<c:numCache>` | | *num*ber cached | contains a cached copy of the numerical values from the referenced range.  | this is often included for performance reasons, so the charting application doesn't have to always access the spreadsheet to get the labels | |
 | `<c:formatCode>` | | number formatting code | specifies the number formatting code that was applied to the original data in the spreadsheet. | |
 | | | | | | |
+| `<c:catAx>` | | *cat*egory *ax*is | defining the category axis for some types of charts. | | |
+| `<c:axId>` | | *ax*is id | specifies axis id | | |
+| `<c:scaling>` | | scaling | controls scaling for axis | | |
+| `<c:orientation>` | | orientation | controls orientation for axis | | |
+| | | | | | |
+| `<c:delete>` | | manually deleted | stores the data labels is manually deleted by users. | | |
 
 > [!IMPORTANT]
 > How to calculate percentage that a data point takes of its total?
@@ -696,11 +700,6 @@ The above example may output:
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `val` | | | determines whether show leader lines for each series. | | |
 
-###### attribute in `<c:axId>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `val` | | | specifies the axis id | | |
-
 ###### attribute in `<c:ptCount>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
@@ -715,6 +714,33 @@ The above example may output:
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `val` | | | determines whether the color (of bar charts or column charts) will be inverted when its value it represents is negative. | | |
+
+###### attribute in `<c:axId>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `val` | | | specifies the axis id | | |
+
+###### attribute in `<c:scaling>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `logBase` | | | specifies the base for a logarithmic scale. If present, the axis will use a logarithmic scale with the given base. | | |
+| `orientation` | | orientation | | specifies the orientation of the value axis. | | |
+| `type` | | type | specifies the scaling type for the category axis | | | 
+
+###### attribute in `<c:orientation>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `val` | | | specifies the orientation of the value axis. | | |
+
+###### attribute in `<c:delete>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `val` | | | stores the data labels is manually deleted by users. | | |
+
+###### attribute in `<c:axPos>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `val` | | | specifies the defined axis should be positioned at somewhere of the chart's plot area. | somewhere is according to value of `val` attribute, see [`<c:axPos>` -> `val` attribute section in Appendix 2](https://github.com/40843245/OOXML/blob/main/Word/structure/Appendix%202%20--%20available%20options%20of%20attribute%20of%20tag%20in%20xml%20for%20Word.md#caxpos---val-attribute) for available value of `val` attribute.  | |
 
 ##### examples and explanations
 ###### example 1 -- chart space
@@ -785,6 +811,7 @@ It xml content may look like this:
 </c:val>
 ```
 
+###### example 3 -- cached copy of numerical values
 #### about `pic` namespace
 ##### elements in `pic` namespace
 | elements in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
