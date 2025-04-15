@@ -202,6 +202,12 @@ This effectively increases the spacing between the bars.
 | `"true"` | | | show leader lines for each series. | | |
 | `"false"` | | | **NOT** show leader lines for each series | | |
 
+#### `<c:invertIfNegative>` -> `val` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"true"` | | | the color (of bar charts or column charts) will be inverted when its value it represents is negative. | | |
+| `"false"` | | | the color (of bar charts or column charts) will be **NOT** inverted when its value it represents is negative. | | |
+
 ### about `w` namespace
 #### `<w:kinsoku>` -> `w:val` attribute
 > [!WARNING]
