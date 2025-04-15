@@ -312,18 +312,12 @@ Due to there are unexhaustive available options, I just list some commonly used,
 > ```
 > The possible values are essentially the same as the number formatting codes you would use in Microsoft Excel.
 > ```
-
-| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"General"` | | | specifies the number format code to be applied to the axis labels.  | | |
-| `"0"` | | | specifies the number format code to be applied to integer format with no decimal places. | | |
-| `"0.00"` | | | specifies the number format code to be applied to number format with two decimal places. | | |
-| `"#,##0"` | | | specifies the number format code to be applied to number format with thousands separator and no decimal places. | | |
-| `"$#,##0.00"` | | | specifies the number format code to be applied to currency format with thousands separator and two decimal places (a dollar sign is added at the beginning) | | |
-| `"0%"` | | | specifies the number format code to be applied to percentage format with no decimal places (values are multiplied by 100 and a percentage sign is added at the end). | | |
-| `"0.00%"` | | | specifies the number format code to be applied to percentage format with two decimal places. | | |
-| `"m/d/yyyy"` | | | specifies the number format code to be applied to date format (no extra leading zero for months and days). | | |
-| `"h:mm AM/PM"` | | | specifies the number format code to be applied to time format (no extra leading zero for hours) (adopts twelve-hour clock principle, and added `AM` or `PM` at the end of the value) | | |
+>
+> To search the formatting code, you can
+>
+> + see my notes [formatting code in Microsoft Office Excel](https://github.com/40843245/Microsoft_Office/blob/main/Product/Excel/formatting%20code/formatting%20code.md) which list the commonly used formatting code, or
+>
+> + refer the MSDS [Number format codes in Excel](https://support.microsoft.com/en-us/office/number-format-codes-in-excel-for-mac-5026bbd6-04bc-48cd-bf33-80f18b4eae68)
 
 ### about `w` namespace
 #### `<w:kinsoku>` -> `w:val` attribute
