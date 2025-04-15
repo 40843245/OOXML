@@ -242,6 +242,34 @@ Same as `<c:scaling>` -> `orientation` attribute.
 | `"l"` | | left | | | |
 | `"r"` | | right | | | |
 
+#### `<c:majorTickMark>` -> `val` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"none"` | | none | no major tick marks should be displayed for this axis. | | |
+| `"in"` | | inside | the major tick marks should be drawn inside the plot area, extending from the axis line inwards. | | |
+| `"out"` | | outside | the major tick marks should be drawn outside the plot area, extending from the axis line outwards. | | |
+| `"cross"` | | cross it inside and outside | the major tick marks should cross the axis line, extending both inside and outside the plot area. | | |
+
+#### `<c:majorTickMark>` -> `val` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"none"` | | none | no major tick marks should be displayed for this axis. | | |
+| `"in"` | | inside | the major tick marks should be drawn inside the plot area, extending from the axis line inwards. | | |
+| `"out"` | | outside | the major tick marks should be drawn outside the plot area, extending from the axis line outwards. | | |
+| `"cross"` | | cross it inside and outside | the major tick marks should cross the axis line, extending both inside and outside the plot area. | | |
+
+#### `<c:minorTickMark>` -> `val` attribute
+availables value in this is same as that in `<c:majorTickMark>` -> `val`, 
+
+but it applies to minor tick marks.
+
+#### `<c:tickLblPos>` -> `val` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"high"` | | above |  The tick labels are positioned **above** relative to the axis line | | |
+| `"low"` | | below | The tick labels are positioned **below** relative to the axis line | | |
+| `"nextToAxis"` | | next to axis | The tick labels are positioned **next to** the axis line | | |
+
 ### about `w` namespace
 #### `<w:kinsoku>` -> `w:val` attribute
 > [!WARNING]
