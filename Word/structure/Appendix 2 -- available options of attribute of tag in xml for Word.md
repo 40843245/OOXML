@@ -326,6 +326,67 @@ Due to there are unexhaustive available options, I just list some commonly used,
 | `"min"` | | | forces the axis to cross at the minimum value of the other axis | | |
 | `"max"` | | | forces the axis to cross at the maximum value of the other axis | | |
 
+#### `<c:crossBetween>` -> `val` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"between"` | | | indicates that the data points or labels for the categories will be positioned between the tick marks on the category axis. | It is the default value. | |
+| `"atEnd"` | | | positions the data points or labels on the tick marks themselves, effectively aligning them with the end of each category interval. | | |
+
+##### examples and explanation
+###### examples 1
+```
+<c:chart>
+  <c:plotArea>
+    <c:valAX>      
+      <c:crossBetween val="between"/>
+    </c:valAX>
+  </c:plotArea>
+</c:chart>
+```
+
+Imagine we have a bar chart showing sales for three months: January, February, and March.
+
+In this scenario, 
+
+the month labels ("January", "February", "March") would typically appear centered between the vertical gridlines 
+
+representing the tick marks for each month. The bars representing the sales for each month would also be centered in these spaces.
+
+```
+      |       |       |
+Sales |   |   |   |
+      |---|---|---|
+      | Jan | Feb | Mar |
+      -------------------
+```
+
+###### examples 2
+```
+<c:chart>
+  <c:plotArea>
+    <c:valAX>      
+      <c:crossBetween val="between"/>
+    </c:valAX>
+  </c:plotArea>
+</c:chart>
+```
+
+Imagine we have a bar chart showing sales for three months: January, February, and March.
+
+In this scenario,
+
+the month labels would align with the tick mark at the end of each category's interval. 
+
+Consequently, the bars representing the sales for each month would also be positioned to align with these tick marks.
+
+```
+      |       |       |
+Sales |    |    |    |
+      |-----|-----|-----|
+        Jan   Feb   Mar
+      -------------------
+```
+
 ### about `w` namespace
 #### `<w:kinsoku>` -> `w:val` attribute
 > [!WARNING]
