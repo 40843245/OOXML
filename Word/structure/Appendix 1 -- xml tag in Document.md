@@ -629,6 +629,16 @@ The above example may output:
 | `<c:valAx>` | | *val*ue *ax*is | acts like a container that defines the one or many value axes (plural of axis) | | |
 | `<c:axPos/>` | | *ax*is *pos*iton | specifies the position of the axis relative to the plot area of the chart | | |
 | `<c:numFmt/>` | | *num*ber *f*or*m*a*t*ting  | specifies the number formatting of the axis labels of the chart | | |
+| | | | | | |
+| `<c:majorGridlines/>` | | major grid lines | indicates the presence or formatting of major grid lines in a chart. | | |
+| `<c:minorGridlines/>` | | minor grid lines | indicates the presence or formatting of minor grid lines in a chart. | | |
+| `<c:crosses/>` | | | specifies how the axes cross each other.  | | |
+| `<c:crossBetween/>` | | | specifies how category axes are crossed by value axes in a chart.  | | |
+| | | | | | |
+| `<c:legend>` | | | acts like a container that contains all legend. | | |
+| `<c:legendPos>` | | | specifies the position of the legend. | | |
+| `<c:legendEntry>` | | | acts like a container for individual entries within the legend. | | |
+| | | | | | |
 
 > [!IMPORTANT]
 > How to calculate percentage that a data point takes of its total?
@@ -808,6 +818,21 @@ The above example may output:
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `sourceLinked` | | | specifies that source is linked. | | |
 | `formatCode` | | number formattig code | specifies number formattig code. | | |
+
+###### attribute in `<c:crosses>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `val` | | | specifies how axes crosses each other | | |
+
+###### attribute in `<c:crossBetween>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `val` | | | specifies how category axes are crossed by value axes in a chart. | | |
+
+###### attribute in `<c:legendPos>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"top"` | | | specifies how category axes are crossed by value axes in a chart. | | |
 
 ##### examples and explanations
 ###### example 1 -- chart space
