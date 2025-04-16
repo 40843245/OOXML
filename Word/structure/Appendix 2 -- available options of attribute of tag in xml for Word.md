@@ -125,7 +125,7 @@ Looks like the following figure.
 ```
 <c:barChart xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart">
   <c:barDir val="col"/>
-  <c:grouping val="clustered"/>
+  <c:grouping val="stacked"/>
 
   <!-- other tags about bar charts omitted -->
   <!-- ... -->
@@ -318,6 +318,13 @@ Due to there are unexhaustive available options, I just list some commonly used,
 > + see my notes [formatting code in Microsoft Office Excel](https://github.com/40843245/Microsoft_Office/blob/main/Product/Excel/formatting%20code/formatting%20code.md) which list the commonly used formatting code, or
 >
 > + refer the MSDS [Number format codes in Excel](https://support.microsoft.com/en-us/office/number-format-codes-in-excel-for-mac-5026bbd6-04bc-48cd-bf33-80f18b4eae68)
+
+#### `<c:crosses>` -> `val` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"autoZero"` | | | indicates that the axis will cross at the zero point of the other axis if zero is within the range of that axis.</br>If zero is not within the range, the axis will cross at either the minimum or maximum value of the other axis, whichever is closer to zero. | It is the default value. | |
+| `"min"` | | | forces the axis to cross at the minimum value of the other axis | | |
+| `"max"` | | | forces the axis to cross at the maximum value of the other axis | | |
 
 ### about `w` namespace
 #### `<w:kinsoku>` -> `w:val` attribute
