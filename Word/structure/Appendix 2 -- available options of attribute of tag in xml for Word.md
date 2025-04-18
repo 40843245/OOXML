@@ -208,6 +208,42 @@ This effectively increases the spacing between the bars.
 | `"true"` | | | the color (of bar charts or column charts) will be inverted when its value it represents is negative. | | |
 | `"false"` | | | the color (of bar charts or column charts) will be **NOT** inverted when its value it represents is negative. | | |
 
+#### `<c:delete>` -> `val` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"true"` | | | the data labels is manually deleted by users.| | |
+| `"false"` | | | the data labels is **NOT** manually deleted by users. | | |
+
+#### `<c:numFmt>` -> `sourceLinked` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"true"` | | | indicates tthat the number format for the axis labels should inherit or be linked to the number format of the source data. | | |
+| `"false"` | | | indicates that is not linked to the formatting of the source data. And the number format specified in the `formatCode` attribute is explicitly defined within this chart element. | | |
+
+#### `<c:delete>` -> `val` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"true"` | | | the axis settings are automatic.| | |
+| `"false"` | | | the axis settings are manual. | | |
+
+#### `<c:noMultiLvlLbl>` -> `val` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"true"` | | | multi-level labels are disabled on the category axis. | | |
+| `"false"` | | | multi-level labels are **NOT** disabled on the category axis. | | |
+
+#### `<c:showDLblsOverMax>` -> `val` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"true"` | | | indicates that data labels will be displayed if their value is greater than the maximum value defined for the chart's axis.| | |
+| `"false"` | | | indicates that data labels should **NOT** be displayed if their value is greater than the maximum value defined for the chart's axis. | | |
+
+#### `<c:plotVisOnly>` -> `val` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"true"` | | | indicates that only plot visible data points in the chart. | | |
+| `"false"` | | | indicates that plot all data points in the chart. | | |
+
 #### `<c:scaling>` -> `logBase` attribute
 | value type of attribute in tag | description | notes | notice |
 | :---------- | :----------- | :----- | :--- |
@@ -228,19 +264,12 @@ This effectively increases the spacing between the bars.
 #### `<c:orientation>` -> `val` attribute
 Same as `<c:scaling>` -> `orientation` attribute.
 
-#### `<c:delete>` -> `val` attribute
+#### `<c:dispBlanksAs>` -> `val` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"true"` | | | the data labels is manually deleted by users.| | |
-| `"false"` | | | the data labels is **NOT** manually deleted by users. | | |
-
-#### `<c:axPos>` -> `val` attribute
-| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"b"` | | bottom | | | |
-| `"t"` | | top | | | |
-| `"l"` | | left | | | |
-| `"r"` | | right | | | |
+| `"gap"` | | | this leaves a break or gap in the line or area connecting the data points. | visually emphasizes the missing data. | |
+| `"span"` | | | connects the data points on either side of the blank cell with a line | essentially ignores the missing data and creates a continuous line. | |
+| `"zero"` | | | treats the blank cell or missing data point as a zero value and plots it accordingly on the chart. | | |
 
 #### `<c:majorTickMark>` -> `val` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -270,24 +299,12 @@ but it applies to minor tick marks.
 | `"low"` | | below | The tick labels are positioned **below** relative to the axis line | | |
 | `"nextToAxis"` | | next to axis | The tick labels are positioned **next to** the axis line | | |
 
-#### `<c:delete>` -> `val` attribute
-| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"true"` | | | the axis settings are automatic.| | |
-| `"false"` | | | the axis settings are manual. | | |
-
 #### `<c:lblAlgn>` -> `val` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"l"` | | left | The text within the axis labels are left-aligned.  | | |
 | `"ctr"` | | *c*en*t*e*r* | The text within the axis labels are center-aligned. | | |
 | `"r"` | | right | The text within the axis labels are right-aligned. | | |
-
-#### `<c:noMultiLvlLbl>` -> `val` attribute
-| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"true"` | | | multi-level labels are disabled on the category axis. | | |
-| `"false"` | | | multi-level labels are **NOT** disabled on the category axis. | | |
 
 #### `<c:axPos>` -> `val` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -297,11 +314,14 @@ but it applies to minor tick marks.
 | `"r"` | | right | specifies the position of the axis is **right** of the plot area of the chart | | |
 | `"b"` | | bottom | specifies the position of the axis is **bottom** of the plot area of the chart | | |
 
-#### `<c:numFmt>` -> `sourceLinked` attribute
+#### `<c:lengendPos>` -> `val` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"true"` | | | indicates tthat the number format for the axis labels should inherit or be linked to the number format of the source data. | | |
-| `"false"` | | | indicates that is not linked to the formatting of the source data. And the number format specified in the `formatCode` attribute is explicitly defined within this chart element. | | |
+| `"l"` | | left | specifies the position of the legend is **left** of the plot area of the chart  | | |
+| `"t"` | | top | specifies the position of the legend is **top** of the plot area of the chart | | |
+| `"r"` | | right | specifies the position of the legend is **right** of the plot area of the chart | | |
+| `"b"` | | bottom | specifies the position of the legend is **bottom** of the plot area of the chart | | |
+| `"tr"` | | *t*op-*r*ight | specifies the position of the legend is **top-right** of the plot area of the chart | | it may overlay the plot area. |
 
 #### `<c:numFmt>` -> `formatCode` attribute
 Due to there are unexhaustive available options, I just list some commonly used, helping you understand how the formatting code formats value.
@@ -387,39 +407,14 @@ Sales |    |    |    |
       -------------------
 ```
 
-#### `<c:plotVisOnly>` -> `val` attribute
-| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"true"` | | | indicates that only the currently visible data points in the source data range for the chart should be plotted. | | |
-| `"false"` | | | indicates that only the currently visible data points in the source data range for the chart should **NOT** be plotted. | | |
-
-#### `<c:dispBlanksAs>` -> `val` attribute
-| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"gap"` | | | this leaves a break or gap in the line or area connecting the data points. | visually emphasizes the missing data. | |
-| `"span"` | | | connects the data points on either side of the blank cell with a line | essentially ignores the missing data and creates a continuous line. | |
-| `"zero"` | | | treats the blank cell or missing data point as a zero value and plots it accordingly on the chart. | | |
-
-#### `<c:showDLblsOverMax>` -> `val` attribute
-| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"true"` | | | indicates that data labels will be displayed if their value is greater than the maximum value defined for the chart's axis.| | |
-| `"false"` | | | indicates that data labels should **NOT** be displayed if their value is greater than the maximum value defined for the chart's axis. | | |
-
 ### about `w` namespace
 #### `<w:kinsoku>` -> `w:val` attribute
-> [!WARNING]
-> I refers from Google Gemini's answer which may be incorrect.
-  
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"on"` | | | explicitly enable the kinsoku line-breaking rules for the paragraph. Word would then adjust line breaks to avoid having prohibited characters at the beginning or end of lines. | | |
 | `"off"` | | explicitly turns off the application of kinsoku line-breaking rules for the current paragraph. | | |
 
-#### `<w:keepLines>` -> `w:val` attribute
-> [!WARNING]
-> I refers from Google Gemini's answer which may be incorrect.
-  
+#### `<w:keepLines>` -> `w:val` attribute  
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"true"` | | | keep lines. | it instructs Word to keep all lines of the paragraph together on the same page.| default value. |
