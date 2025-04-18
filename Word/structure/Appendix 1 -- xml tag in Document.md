@@ -1136,6 +1136,13 @@ In this example, we can know that
 | `<w:font>` | font in native css | define a font | | |
 | `<w:sig>` | | digital signature | encapsulate the digital signature of this font. | | | 
 | `<w:panose1>` | | panose | configure the panose (with highest priority) | The lower number is it, the higher priority it has. | |
+| | | | | | |
+| `<w:name/>` | | | provides a more user-friendly name (for the name defined in parent tag) | | |
+| | | | | | |
+| `<w:basedOn/>` | | | inherits a style | | |
+| | | | | | |
+| `<w:next/>` | | | specifies the style to be automatically applied to the next paragraph after a paragraph formatted with the current style. | | |
+| | | | | | |
 | `<w:altName>` | `alt` attribute in `<img>` tag in native html5 | alternative | use the alternative (according to the value specified in `w:val` attribute) **when** an element (such as an image) or things that used in an element (such as font) **can not be used or worked correctly**. | | |
 | `<w:noProof/>` | | | no spelling check and grammer check inside this tag. | | |
 | | | | | | | |
@@ -1224,8 +1231,10 @@ In this example, we can know that
 | `<w:listSeparator/>` | | | explicitly specifies the list separator (by given value of `w:val` attribute) for list within the document. | It is used when there are many items. | |
 | | | | | | | | 
 | `<w:docDefaults>` | | | serves as a container for defining the default formatting properties for the entire document. | | |
-| `<w:b/>` | `<b>` and `<b/>` in native html5 | bold | determine the text is bold | | |
-| `<w:i/>` | | italic | the text is italic | | |
+| `<w:b/>` | `<b>` and `<b/>` in native html5 | bold | determines whether the non-complex script text is bold | | |
+| `<w:bCs/>` | `<b>` and `<b/>` in native html5 | bold | determines whether the complex script text is bold | | |
+| `<w:i/>` | | italic | determines whether the non-complex script text is italic. | | |
+| `<w:iCs/>` | | italic | determines whether the complex script text is italic. | | |
 | `<w:t/>` | | text | defines the text | | |
 | `<w:bidi/>` | | text | defines the bidirectional text | | |
 | `<w:rPrDefault>` | | | defines the default formatting properties for all text runs within the document. | | |
@@ -1233,6 +1242,7 @@ In this example, we can know that
 | `<w:latentStyles>` | | | servers as a container for defining the latent styles (i.e. current unused styles). | | |
 | `<w:lsdException>` | | LSD exception | defines exceptions to the default behavior of LSD (Linked Style Definitions). | | |
 | `<w:cnfStyle>` | | conflict styles | It's used to store information about how styles should be applied or resolved in situations where there might be conflicts or variations. | | |
+| `<w:style>` | | conflict styles | defines a style | it usually resides at `~/word/style.xml` file under a Word file. | |
 | `<w:contextualSpacing>` | | | determine that Word can dynamically modify the line spacing in situations | `"true"` to modify, `"false"` to not modify. default value to `"true"` | |
 | `<w:divId>`| | | speficies the div id | | | 
 | | | | | | |
@@ -1243,6 +1253,12 @@ In this example, we can know that
 | `<w:minorIdents>` | | | detemines whether if this tag is present, Word will swap the left and right indent settings if the document or section is set to a right-to-left reading order. | | If this is omitted on a given paragraph, its value is determined by the setting previously set at any level of the style hierarchy (i.e. that previous setting remains unchanged). If this setting is never specified in the style hierarchy, then this property shall not be applied. |
 
 ##### attribute about `w` namespace
+###### attribute in `<w:style>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:type` | | | type of style that will apply to | | |
+| `w:styleId` | | | style name | | |
+
 ###### attribute in `<w:minorIdents>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
@@ -1429,11 +1445,6 @@ same as above.</br>However, it has lower preceedence than `w:first-line-chars`. 
 | `w:firstLine` | | same above | same above | | However, it is an old fashion. |
 | `w:mirrorIndents` | | mirror indentation | the indentation should be mirrored.</br>Specifying to `"false"` indicates that the indentation will not be mirrored.</br>Otherwise, specifying to `"true"` indicates that it will be indented.</br>Default value is `"false"`. | | |
 
-###### attribute in `<w:bar>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w:val` | | | style of bar | | |
-
 ###### attribute in `<w:defaultFonts>`
 Same as attribute in `<w:rFonts>`.
 
@@ -1460,6 +1471,26 @@ Same as attribute in `<w:rFonts>`.
 
 ###### attribute in `<w:defaultTabStop>`
 Same as attribute in `<w:tab>`.
+
+###### attribute in `<w:b/>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | determines whether the non-complex script text is bold. | | |
+
+###### attribute in `<w:bCs/>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | determines whether the complex script text is bold. | | |
+
+###### attribute in `<w:i/>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | determines whether the non-complex script text is italic. | | |
+
+###### attribute in `<w:iCs/>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | determines whether the complex script text is italic. | | |
 
 ###### attribute in `<w:sz>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -1491,7 +1522,14 @@ Same as attribute in `<w:tab>`.
 ###### attribute in `<w:cols>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| w:space | | space | assign an value to determine the space between columns in section (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
+| `w:space` | | space | assign an value to determine the space between columns in section (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
+
+###### attribute in `<w:spacing/>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:after`| | | specifiies how many twips for spacing after the paragraph to  | its unit is twips (twentieths of a point). | |
+| `w:line`| | |  specifiies how many twips for the line spacing to  | its unit is twips (twentieths of a point). | |
+| `w:lineRule`| | | specifiies the line rule. | | |
 
 ###### attribute in `<w:docGrid>`
 > [!WARNING]
