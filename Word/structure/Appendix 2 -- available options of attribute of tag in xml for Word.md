@@ -360,6 +360,12 @@ Sales |   |   |   |
       -------------------
 ```
 
+#### `<c:plotVisOnly>` -> `val` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"true"` | | | indicates that only the currently visible data points in the source data range for the chart should be plotted. | | |
+| `"false"` | | | indicates that only the currently visible data points in the source data range for the chart should **NOT** be plotted. | | |
+
 ###### examples 2
 ```
 <c:chart>
