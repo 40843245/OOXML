@@ -498,10 +498,14 @@ Sales |    |    |    |
 | `compressPunctuation` | | Compress Punctuation | specifies that only whitespace characters shall have whitespace compression applied to them. | | |
 | `compressPunctuationAndJapaneseKana` | Compress Punctuation and Japanese kana (日本的假名) | specifies that whitespace and Japanese kana characters shall have whitespace compression applied to them. |
 
-#### `<w:tab>` -> `w:val` attribute
-> [!WARNING]
-> I refers from Google Gemini's answer which may be incorrect.
+#### `<w:spacing>` -> `w:lineRule` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `auto` | | | automatically adjusts the line spacing based on the font size and any other formatting of the text within the lines. | | | 
+| `exact` | | | line spacing will be exactly the value specified in the w:line attribute, regardless of the font size or other elements on the line | | | 
+| `atLeast` | | | line spacing will be at least the value specified in the w:line attribute | | | 
 
+#### `<w:tab>` -> `w:val` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `left` | | left-aligned | The text that flows into the tab stop will be left-aligned at that position. | |
@@ -554,6 +558,7 @@ Sales |    |    |    |
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"1"`| | | first item at this list level will be numbered or lettered starting from 1 (or equivalent corresponding symbol with different number formatting) | | |
+| etc | | | | | |
 
 #### `<w:lvlJs>` -> `w:val` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
