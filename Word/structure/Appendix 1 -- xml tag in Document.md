@@ -1256,8 +1256,14 @@ In this example, we can know that
 ###### attribute in `<w:style>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w:type` | | | type of style that will apply to | | |
-| `w:styleId` | | | style name | | |
+| `w:type` | | | specifies what type of style that will apply to | | It is required. |
+| `w:styleId` | | | specifies style name | | It is required. |
+| `w:customStyle` | | | determines whether it is a custom style | | Its default value is `"false"` |
+| `w:default` | | | determines whether that this style is the default style for its style type | | <ol><li>Its default value is `"false"` </li><li>There can be only one default style for each type.</li></ol> |
+| `w:styleIdPrimary` | | | is used for linked styles (e.g., a character style linked to a paragraph style). It specifies the w:styleId of the primary style. | | |
+
+> [!CAUTION]
+> There can be only one default style for each type.
 
 ###### attribute in `<w:minorIdents>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
