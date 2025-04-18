@@ -408,6 +408,26 @@ Sales |    |    |    |
 ```
 
 ### about `w` namespace
+#### `<w:style>` -> `w:customStyle` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"true"` | | | indicates that it is a custom style | | |
+| `"false"` | | | indicates that it is NOT a custom style | | |
+
+#### `<w:style>` -> `w:type` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"paragraph"` | | | For paragraph-level formatting (affects the entire paragraph) | | |
+| `"character"` | | | For character-level formatting (affects selected text within a paragraph). | | |
+| `"table"` | | | For table-level formatting (affects the entire table). | | |
+| `"numbering"` | | | For numbering definition formatting. | | |
+
+#### `<w:style>` -> `w:default` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"true"` | | | indicates that this style is the default style for its style type  | | |
+| `"false"` | | | indicates that this style is NOT the default style for its style type  | | |
+
 #### `<w:kinsoku>` -> `w:val` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
