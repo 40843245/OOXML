@@ -639,6 +639,10 @@ The above example may output:
 | `<c:legendPos>` | | | specifies the position of the legend. | | |
 | `<c:legendEntry>` | | | acts like a container for individual entries within the legend. | | |
 | | | | | | |
+| `<c:plotVisOnly>` | | plot *vis*ibility only | controls whether only visible data points are plotted on a chart. | | |
+| `<c:dispBlanksAs>` | | *disp*lay blank as | specifies how blank cells should be handled when plotting data on a chart. | | | 
+| `<c:showDLblsOverMax>` | | show *d*ata *l*a*b*e*l*s when is over *max*imum | determines whether data labels should be displayed even if their value exceeds the maximum value set for the chart's axis. | | | 
+
 
 > [!IMPORTANT]
 > How to calculate percentage that a data point takes of its total?
@@ -834,6 +838,25 @@ The above example may output:
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"top"` | | | specifies how category axes are crossed by value axes in a chart. | | |
 
+###### attribute in `<c:plotVisOnly>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"val"` | | | determines whether only the currently visible data points in the source data range for the chart should be plotted.  | | |
+
+###### attribute in `<c:dispBlanksAs>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"val"` | | | specifies how blank cells should be handled when plotting data on a chart. | | |
+
+###### attribute in `<c:showDLblsOverMax>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"val"` | | | specifies whether data labels should be displayed even if their value exceeds the maximum value set for the chart's axis. | | |
+
+> [!IMPORTANT]
+> About implications of this setting,
+>
+> see my note -- [implication about charts#implication#graphics#charts](https://github.com/40843245/drawing-objects/blob/main/implication/graphics/charts/implication%20about%20charts.md#charts)
 ##### examples and explanations
 ###### example 1 -- chart space
 root node of `~/word/charts/chart1.xml` file under `BarChartExample.docx` file.
