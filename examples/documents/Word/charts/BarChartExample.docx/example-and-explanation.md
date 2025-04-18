@@ -134,7 +134,7 @@ and bar chart will looks like this.
 
 Let's partition the above example into several code snippets and breakdown them.
 
-Part 1.
+## Part 1.
 
 ```
 <c:chartSpace xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
@@ -183,7 +183,7 @@ Part 1.
 + In `<c:showBubbleSize val="0"/>`, it sets the bubble size is zero, which means that it will not shown the bubble.
 + In `<c:showLeaderLines val="1"/>`, it indicates that the leader lines for data labels will be shown.
 
-Part 2.
+## Part 2.
 
 ```
                 <c:ser>
@@ -225,7 +225,7 @@ and it holds the cached text value from the first cell of the formula (which is 
 
 + In `<c:invertIfNegative>0</c:invertIfNegative>`, it indicates that the fill color of the data markers in the series should not be inverted when the actual data value is negative.
 
-Part 3.
+## Part 3.
 
 ```
                 <c:ser>
@@ -284,7 +284,7 @@ There are four categories here (according to `<c:ptCount val="4"/>`) --
 
 `Food`, `Housing`, `Transportation`, and `Health Care` respectively.
 
-Part 4.
+## Part 4.
 
 ```
                 <c:ser>
@@ -345,3 +345,133 @@ it specifies a cached copy of numerical values.
 
 There are four numeric value (represents actual data value) -- `125`, `80`, `110`, `60`.
 
+Look at Part 3 and Part 4., we can know that the data of the chart is as follows.
+
+| index to display (from left to right) | category name | actual value |
+| :-- | :-- | :-- |
+| `1` | `Food` | `125` |
+| `2` | `Housing` | `80` |
+| `3` | `Transportation` | `110` |
+| `4` | `Health Care` | `60` |
+
+
+## Part 5.
+
+```
+                <c:catAx xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart">
+                    <c:axId val="148921728"/>
+                    <c:scaling>
+                        <c:orientation val="minMax"/>
+                    </c:scaling>
+                    <c:delete val="0"/>
+                    <c:axPos val="b"/>
+                    <c:majorTickMark val="out"/>
+                    <c:minorTickMark val="none"/>
+                    <c:tickLblPos val="nextTo"/>
+                    <c:crossAx val="154227840"/>
+                    <c:crosses val="autoZero"/>
+                    <c:auto val="1"/>
+                    <c:lblAlgn val="ctr"/>
+                    <c:lblOffset val="100"/>
+                    <c:noMultiLvlLbl val="0"/>
+                </c:catAx>
+```
+
++ In `<c:catAx xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart">`, it defines the axis for categories.
++ In `<c:axId val="148921728"/>`, it sets the axis id for category to `148921728`.
++ In
+
+```
+                    <c:scaling>
+                        <c:orientation val="minMax"/>
+                    </c:scaling>
+```
+
+it specifies configurations about scaling, and the axis should be oriented from the minimun value to the maximum value.
+
++ In `<c:delete val="0"/>`, it indicates that the axis for categories is NOT be marked for deletion and should be displayed in the chart.
++ In `<c:axPos val="b"/>`, it indicates that axis about categories is positioned at the bottom of the plotting area.
++ In `<c:majorTickMark val="out"/>, the major tick on y-axis line is outside on the chart. And thus, here it is located on the left of the y-axis line.
++ In `<c:minorTickMark val="none"/>`, it indicates the minor tick is NOT shown in this chart.
++ In `<c:tickLblPos val="nextTo"/>`, it indicates that the tick mark labels are positioned adjacent to the axis line.
++ In `<c:crossAx val="154227840"/>`, it sets ID of the axis that this axis crosses to `154227840`.
++ In `<c:crosses val="autoZero"/>`, it specifies the crossing point of an axis.
++ In `<c:auto val="1"/>`, it indicates that its settings for that property is automatic,
++ In `<c:lblAlgn val="ctr"/>`, it indicates that the text within the data labels on the chart should be horizontally
+centered. 
++ In `<c:lblOffset val="100"/>` , the offset of data lavel 100 twips.
++ In  `<c:noMultiLvlLbl val="0"/>` ,it indicates that the chart axis should allow the display of multi-level labels if the underlying category data supports it.
+
+## Part 6.
+
+```
+                <c:valAx xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart">
+                    <c:axId val="154227840"/>
+                    <c:scaling>
+                        <c:orientation val="minMax"/>
+                    </c:scaling>
+                    <c:delete val="0"/>
+                    <c:axPos val="l"/>
+                    <c:numFmt sourceLinked="0" formatCode="General"/>
+                    <c:majorGridlines/>
+                    <c:majorTickMark val="out"/>
+                    <c:minorTickMark val="none"/>
+                    <c:tickLblPos val="nextTo"/>
+                    <c:crossAx val="148921728"/>
+                    <c:crosses val="autoZero"/>
+                    <c:crossBetween val="between"/>
+                </c:valAx>
+```
+
++ In `<c:valAx xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart">`, it defines a axis for actual data value.
++ In ` <c:axId val="154227840"/>`, it sets the value axis to `154227840`.
++ In
+
+  ```
+                      <c:scaling>
+                        <c:orientation val="minMax"/>
+                      </c:scaling>
+  ```
+
+it specifies configurations about scaling, and the y-axis should be oriented from the minimun value to the maximum value.
+
++ In `<c:delete val="0"/>`, it indicates that it has NOT be marked for deletion yet.
++ In `<c:axPos val="l"/>`, it indicates the y-axis is positioned at the left of the plot area so that the major tick is displayed at left of the plotting area.
++ In `<c:numFmt sourceLinked="0" formatCode="General"/>`, it specifies the number formatting for y-axis.
+
+`sourceLinked="0"` (or false) indicates that the number format is explicitly defined by the formatCode attribute and is not inherited from the source data.
+
+`formatCode="General"` indicates that the number format is `General` which means that it is NOT unformatted.
+
++ In `<c:majorGridlines/>`, it indicates that it will show major gridlines.'
++ In `<c:majorTickMark val="out"/>`, it indicates that the major tick marks are displayed outside the plotting area.
++ In `<c:minorTickMark val="none"/>`, it indicates that the minor tick marks will NOT be displayed.
++ In `<c:tickLblPos val="nextTo"/>`, it indicates that the tick mark labels are positioned adjacent to the axis line.
++ In `<c:crossAx val="148921728"/>`, it sets the ID of the axis that this axis crosses to `148921728`.
++ In `<c:crosses val="autoZero"/>`, it indicates that this particular chart axis is set to cross the other axis</br>(specified by the corresponding <c:crossAx> tag on the other axis) at the zero point of that other axis, if zero is within its range. </br>Otherwise, it will cross at the minimum or maximum value of the other axis that is closest to zero.
++ In `<c:crossBetween val="between"/>`, it indicates that the value axis of the chart will intersect the category axis at a position between the category labels.
+
+## Part 7.
+
+```
+<c:legend>
+        <c:legendPos val="l"/>
+        <c:overlay val="0"/>
+</c:legend>
+```
+
++ In `<c:legend>`, it defines a legend for this chart.
++ In `<c:legendPos val="l"/>`, it indicates that the legend is positioned at left of the plotting area.
++ In `<c:overlay val="0"/>`, it indicates that the legend is NOT overlapped to the plotting area.
+
+## Part 8.
+
+```
+<c:plotVisOnly val="1"/>
+<c:dispBlanksAs val="gap"/>
+<c:showDLblsOverMax val="0"/>
+```
+
++ In `<c:plotVisOnly val="1"/>`, it ensures that only the visible data points in the chart's source data will be plotted. Any hidden data (due to filtering or manual hiding) will be excluded from the chart.
++ In `<c:dispBlanksAs val="gap"/>`, it indicates that it will leave a gap in the chart when either a blank cell or missing data point occurs.
++ In `<c:showDLblsOverMax val="0"/>`, it indicates that data labels whose values are higher than the axis's maximum will **NOT** be shown on the chart.
