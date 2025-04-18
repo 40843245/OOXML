@@ -333,7 +333,7 @@ Due to there are unexhaustive available options, I just list some commonly used,
 | `"atEnd"` | | | positions the data points or labels on the tick marks themselves, effectively aligning them with the end of each category interval. | | |
 
 ##### examples and explanation
-###### examples 1
+###### examples 1 -- cross between different axis
 ```
 <c:chart>
   <c:plotArea>
@@ -360,13 +360,7 @@ Sales |   |   |   |
       -------------------
 ```
 
-#### `<c:plotVisOnly>` -> `val` attribute
-| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"true"` | | | indicates that only the currently visible data points in the source data range for the chart should be plotted. | | |
-| `"false"` | | | indicates that only the currently visible data points in the source data range for the chart should **NOT** be plotted. | | |
-
-###### examples 2
+###### examples 2 -- cross between different axis
 ```
 <c:chart>
   <c:plotArea>
@@ -392,6 +386,25 @@ Sales |    |    |    |
         Jan   Feb   Mar
       -------------------
 ```
+
+#### `<c:plotVisOnly>` -> `val` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"true"` | | | indicates that only the currently visible data points in the source data range for the chart should be plotted. | | |
+| `"false"` | | | indicates that only the currently visible data points in the source data range for the chart should **NOT** be plotted. | | |
+
+#### `<c:dispBlanksAs>` -> `val` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"gap"` | | | this leaves a break or gap in the line or area connecting the data points. | visually emphasizes the missing data. | |
+| `"span"` | | | connects the data points on either side of the blank cell with a line | essentially ignores the missing data and creates a continuous line. | |
+| `"zero"` | | | treats the blank cell or missing data point as a zero value and plots it accordingly on the chart. | | |
+
+#### `<c:showDLblsOverMax>` -> `val` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"true"` | | | indicates that data labels will be displayed if their value is greater than the maximum value defined for the chart's axis.| | |
+| `"false"` | | | indicates that data labels should **NOT** be displayed if their value is greater than the maximum value defined for the chart's axis. | | |
 
 ### about `w` namespace
 #### `<w:kinsoku>` -> `w:val` attribute
