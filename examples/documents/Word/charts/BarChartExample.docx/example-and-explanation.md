@@ -138,4 +138,11 @@ Let's breakdown the above example.
 + In `<c:roundedCorners val="0"/>`, it specifies that all charts in this chart space are NOT round-shaped. They are rectangular.
 + In `<c:chart>`, it defines a chart.
 + In `<c:autoTitleDeleted val="0"/>`, it indicates that the user has NOT deleted the auto-generated title yet.
-+ In
++ In `<c:plotArea>`, it defines a plot area in the chart.
++ In `<c:layout/>`, it defines a layout in the plot area.
++ In `<c:barChart xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart">`, it specifies that it is a bar chart.
++ In `<c:barDir val="col"/>`, it sets the direction of bar is column, which specifies it is a column (bar) chart.
++ In `<c:grouping val="clustered"/>`, the series is grouped by clusters.
++ In `<c:gapWidth val="150"/>`, it specifies the gap width between two series is 150 twips.
++ In `<c:axId xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" val="148921728"/>`, it defines an axis identifier which is `148921728`.
++ In `<c:axId xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" val="154227840"/>`, it defines an axis identifier which is `154227840`.
