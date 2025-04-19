@@ -2235,7 +2235,36 @@ Therefore, the second paragraph and third paragraph were moved to the beginning 
 In above example, we can know that
 
 + In `<w:outlineLvl w:val="0" />`, this paragraph is of outline level 1, and if a table of contents field is inserted that utilizes outlines levels, the text in this paragraph is at level one in the TOC.
-  
+
+###### example 21 -- style definition
+part code of `~/word/style.xml` in a Word file.
+
+```
+<w:style w:type="paragraph" w:styleId="Heading2">
+    <w:name w:val="heading 2"/>
+    <w:basedOn w:val="Normal"/>
+    <w:next w:val="Normal"/>
+    <w:link w:val="Heading2Char"/>
+    <w:uiPriority w:val="9"/>
+    <w:unhideWhenUsed/>
+    <w:qFormat/>
+    <w:rsid w:val="00263428"/>
+    <w:pPr>
+        <!-- tags omitted -->
+    </w:pPr>
+    <w:rPr>
+        <!-- tags omitted -->
+    </w:rPr>
+</w:style>
+```
+
+In above example, we can know that
+
++ In `<w:style w:type="paragraph" w:styleId="Heading2">`, it defines a style named `Heading2` that applies to paragraph.
++ In `<w:name w:val="heading 2"/>`, it gives an alias as `heading 2`.
++ In `<w:basedOn w:val="Normal"/>`, it inherits the style named `Normal`.
++ In `<w:link w:val="Heading2Char"/>`, it defines a hyperlink that, when clicked, will jump the reader to a specific location within the same Word document where text has been formatted using a character style called "Heading2Char".
+
 #### about `m` namespace
 ##### elements in `m` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
