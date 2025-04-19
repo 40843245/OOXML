@@ -1199,6 +1199,8 @@ In this example, we can know that
 | `<w:bookmarkStart>` | | bookmark start | defines a bookmark with start point | | One `<w:bookmarkStart>` tag must match one `<w:bookmarkEnd>` tag. Otherwise, the file is corrupted. | 
 | `<w:bookmarkEnd>` | | bookmark end | defines a bookmark with end point to enclose a bookmark | | Same as above | 
 | | | | | | | | 
+| `<w:footnote>` | | footnote | defines a footnote. | | |
+| | | | | | | | 
 | `<w:lists>` | | | acts like a container of a list (`<w:list>`) | | |
 | `<w:numbering>` | | numbering | It acts as a container for numbering definitions, which are then referenced by paragraphs to apply specific list styles. | | |
 | `<w:listDef>` | | list definition | defines a list with specific id for style | | |
@@ -1241,14 +1243,20 @@ In this example, we can know that
 | `<w:iCs/>` | | italic | determines whether the complex script text is italic. | | |
 | `<w:t/>` | | text | defines the text | | |
 | `<w:bidi/>` | | text | defines the bidirectional text | | |
+| | | | | | |
 | `<w:rPrDefault>` | | | defines the default formatting properties for all text runs within the document. | | |
 | `<w:pPrDefault/>` | | | defines the default formatting properties for all paragraphs in the document. | | |
 | `<w:latentStyles>` | | | servers as a container for defining the latent styles (i.e. current unused styles). | | |
+| | | | | | |
 | `<w:lsdException>` | | LSD exception | defines exceptions to the default behavior of LSD (Linked Style Definitions). | | |
 | `<w:cnfStyle>` | | conflict styles | It's used to store information about how styles should be applied or resolved in situations where there might be conflicts or variations. | | |
-| `<w:style>` | | conflict styles | defines a style | it usually resides at `~/word/style.xml` file under a Word file. | |
+| `<w:style>` | | style | defines a style | it usually resides at `~/word/style.xml` file under a Word file. | |
+| | | | | | |
 | `<w:vertAlign/>` | | vertical alignment | specifies that which alignment the text within the current run should be formatted to | it usually resides at `~/word/style.xml` file under a Word file. | |
+| `<w:hr>` | | | defines a horizontal rule | | |
+| | | | | | |
 | `<w:contextualSpacing>` | | | determine that Word can dynamically modify the line spacing in situations | `"true"` to modify, `"false"` to not modify. default value to `"true"` | |
+| | | | | | |
 | `<w:divId>`| | | speficies the div id | | | 
 | | | | | | |
 | `<w:keepLines>` | | | determines whether keep lines to make the paragraph must be on the same page. | | | 
@@ -1327,6 +1335,7 @@ For more details, see [OOXML docs CH117.3.1.15](https://ooxml.info/docs/17/17.3/
 | `w:anchorLock` | | | specifies that the frame shall always remain in the same logical position relative to the non-frame paragraphs which precede and follow it in this document. | See [anchorLock](https://ooxml.info/docs/17/17.3/17.3.1/17.3.1.11/#anchorlock-lock-frame-anchor-to-paragraph) for more information. | | |
 | `w:dropCap` | | specifies that the current frame contains a drop cap to be located at the beginning of the next non-frame paragraph in the document. | | If this attribute is omitted, then this frame shall not be considered a drop cap frame. |
 | `w:line` | | specifies the number of lines in the non-frame paragraph to which this text frame is anchored which should be used to calculate the drop cap’s height. | | If this attribute is omitted, then it should use the default value `"1"`. |
+
 
 ###### attribute in `<w:cnfStyle>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -1464,16 +1473,16 @@ Same as attribute in `<w:rFonts>`.
 ###### attribute in `<w:p>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w:rsidR` | | revision id for run | assign the value of revision id for run  | rs stands for *r*evi*s*ion, R stands for *R*un | |
-| `w:rsidRDefault` | | revision id for run default | assign the default value of revision id for run  | rs stands for *r*evi*s*ion, R stands for *R*un | |
-| `w:rsidSect` | | revision id for section | assign the default value of revision id for section | rs stands for *r*evi*s*ion | |
+| `w:rsidR` | | *r*evision *s*ave *id*entifier for *r*un | specifies revision save id for run  | | |
+| `w:rsidRDefault` | | *r*evision *s*ave *id*entifier for *default* *r*un | specifies revision save id for run  | | |
+| `w:rsidSect` | | *r*evision *s*ave *id*entifier for *sect*ion | specifies revision save id for section | | |
 
 ##### attribute in `<w:r>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w:rsidR` | | revision id for run | assign the value of revision id for run  | rs stands for *r*evi*s*ion, R stands for *R*un | |
-| `w:rsidRDefault` | | revision id for run default | assign the default value of revision id for run  | rs stands for *r*evi*s*ion, R stands for *R*un | |
-| `w:rsidSect` | | revision id for section | assign the default value of revision id for section | rs stands for *r*evi*s*ion | |
+| `w:rsidR` | | *r*evision *s*ave *id*entifier for *r*un | specifies revision save id for run  | | |
+| `w:rsidRDefault` | | *r*evision *s*ave *id*entifier for *default* *r*un | specifies revision save id for run  | | |
+| `w:rsidSect` | | *r*evision *s*ave *id*entifier for *sect*ion | specifies revision save id for section | | |
 
 ###### attribute in `<w:tab>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -1595,6 +1604,12 @@ Way to parsing it is similar to parsing `<w:pStyle>`.
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:id` | `id` in native html5 | id of end point of bookmark | assign the id of end point of bookmark that in the tag | | | 
+
+###### attribute in `<w:footnote>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:id` | `id` in native html5 | id of footnote | assign the id of the footnote | A value of `-1` is a convention used to identify the footnote separator. | | 
+| `w:type` | | | | | |
 
 ###### attribute in `<w:listDef>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -1736,6 +1751,13 @@ For more informations and details, see [DocumentFormat.OpenXml.Wordprocessing.Co
 | `w:oddHBand` | | | odd numbered horizontal bands of applied style | | |
 | `w:oddVBand` | | | odd numbered vertical bands of applied style | | |
 | `w:evenVBand` | | | even numbered vertical bands of applied style | | |
+
+###### attribute in `<w:hr>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | specifies the line style of the horizontal rule | | |
+| `w:sz` | | *s*i*z*e | height or thickness of the horizontal rule | | Its unit is half-point. |
+| `w:space` | | | vertical spacing above and below the horizontal rule | | Its unit is half-point. |
 
 ##### examples and explanations
 ###### example 1 -- fonts
