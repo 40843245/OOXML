@@ -1160,6 +1160,7 @@ In this example, we can know that
 | `<w:autoSpaceDN>` | | | controls whether Word should automatically adjust the spacing between Asian characters and adjacent numbers (0-9) within a paragraph. | | |
 | | | | | | | | 
 | `<w:bar>` | | | insert a vertical line | | | | 
+| `<w:ftr>` | | | icongigure the footer | | | | 
 | | | | | | | | 
 | `<w:spacing>` | spacing | settings about spacing between paragraphs | | |
 | `<w:jc>` | | justification | settings about justification (alignment) of the paragraph | jc stands for *j*ustifi*c*ation | |
@@ -1243,6 +1244,7 @@ In this example, we can know that
 | `<w:lsdException>` | | LSD exception | defines exceptions to the default behavior of LSD (Linked Style Definitions). | | |
 | `<w:cnfStyle>` | | conflict styles | It's used to store information about how styles should be applied or resolved in situations where there might be conflicts or variations. | | |
 | `<w:style>` | | conflict styles | defines a style | it usually resides at `~/word/style.xml` file under a Word file. | |
+| `<w:vertAlign/>` | | vertical alignment | specifies that which alignment the text within the current run should be formatted to | it usually resides at `~/word/style.xml` file under a Word file. | |
 | `<w:contextualSpacing>` | | | determine that Word can dynamically modify the line spacing in situations | `"true"` to modify, `"false"` to not modify. default value to `"true"` | |
 | `<w:divId>`| | | speficies the div id | | | 
 | | | | | | |
@@ -2265,6 +2267,85 @@ In above example, we can know that
 + In `<w:basedOn w:val="Normal"/>`, it inherits the style named `Normal`.
 + In `<w:link w:val="Heading2Char"/>`, it defines a hyperlink that, when clicked, will jump the reader to a specific location within the same Word document where text has been formatted using a character style called "Heading2Char".
 
+###### example 22 -- formatted as superscript
+```
+<w:r>
+  <w:rPr>
+    <w:vertAlign w:val="superscript"/>
+  </w:rPr>
+  <w:t>2</w:t>
+</w:r>
+```
+
+In above example, we can know that
+
++ In `<w:vertAlign w:val="superscript"/>`, indicates that the text within the current run should be formatted as superscript.
+
+It would represent the number "2" formatted as a superscript.
+
+###### example 23 -- defines a footer
+```
+<w:ftr w:type="default">
+  <w:p w:rsidR="602E0000" w:rsidRDefault="602E0000">
+    <w:r>
+      <w:fldChar w:fldCharType="begin"/>
+    </w:r>
+    <w:r>
+      <w:instrText xml:space="preserve"> PAGE   \* MERGEFORMAT </w:instrText>
+    </w:r>
+    <w:r>
+      <w:fldChar w:fldCharType="separate"/>
+    </w:r>
+    <w:r>
+      <w:rPr>
+        <w:noProof/>
+      </w:rPr>
+      <w:t>1</w:t>
+    </w:r>
+    <w:r>
+      <w:fldChar w:fldCharType="end"/>
+    </w:r>
+  </w:p>
+</w:ftr>
+```
+
+In above example, we can know that
+
++ In `<w:ftr w:type="default">`, it defines a footer with default type.</br>That is, the content in this footer should be displayed as the regular footer for all pages in that section, unless there are specific first-page or even/odd page footers defined for the same section.
+
++ In `<w:p w:rsidR="602E0000" w:rsidRDefault="602E0000">`, it defines a paragraph. It specifies the revision save identifier for the run as `602E0000`, and the revision save identifier for the default run as `602E0000`.
++ In
+
+```
+    <w:r>
+      <w:fldChar w:fldCharType="begin"/>
+    </w:r>
+```
+
+it defines a run. In the run, it defines a field character which is marked as the start of the field.
+
++ In
+
+```
+    <w:r>
+      <w:instrText xml:space="preserve"> PAGE   \* MERGEFORMAT </w:instrText>
+    </w:r>
+```
+
+it defines a run. In the run, it defines an instruction text
+
+which will display the current page number, and the formatting of the displayed page number should be maintained, even if the field is refreshed.
+
+Let's dive into this tag -- `<w:instrText xml:space="preserve"> PAGE   \* MERGEFORMAT </w:instrText>`.
+
+    - `<w:instrText>`: it specifically holds the instruction text for a field. It tells Word what kind of dynamic content to display.
+    - `xml:space="preserve"`: This attribute indicates that any whitespace within the enclosed text should be preserved exactly as it is.
+    - `PAGE \* MERGEFORMAT`: This is the actual field code.
+        1. `PAGE`: it tells Word to display the current page number.
+        2. `\*`: it is a field switch, introducing a formatting instruction.
+        3. `MERGEFORMAT`: It specific switch instructs Word to preserve the formatting of the field result if the field is updated.
+        
+    
 #### about `m` namespace
 ##### elements in `m` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
