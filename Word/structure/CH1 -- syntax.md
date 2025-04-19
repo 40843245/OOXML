@@ -47,4 +47,4 @@ where
 
 Meaning: it MUST be one of `begin`,`seperator`, and `end`.
 
-About `{fieldInstruction}`, it is described in [syntax of `field instruction` in `<w:instrText>` tag section]()
+About `{fieldInstruction}`, it is described in [syntax of `field instruction` in `<w:instrText>` tag section](https://github.com/40843245/OOXML/blob/main/Word/structure/CH1%20--%20syntax.md#syntax-of-field-instruction-in-winstrtext-tag)
