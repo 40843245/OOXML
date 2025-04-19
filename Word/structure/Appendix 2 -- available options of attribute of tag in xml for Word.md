@@ -558,10 +558,70 @@ Sales |    |    |    |
 | `underscore` | | underscore | underscore (i.e. `_`) as leader character | | |
 | `middleDot` | | middle dot | middle dot (i.e. `·`) as leader character | | |
 
-#### `<w:docGrid>` -> `w:linePitch` attribute
-> [!WARNING]
-> I refers from Google Gemini's answer which may be incorrect.
+#### `<w:instrText>` -> `xml:space` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"default"` | | | The XML processor handles whitespace according to the default rules (collapsing sequences of whitespace characters into a single space, removing leading and trailing whitespace). | | |
+| `"preserve"` | | | All whitespace characters within the element are preserved exactly as they appear in the XML. This is crucial for field instructions because the spaces and formatting within the instruction text often have semantic meaning. | | |
 
+#### field instruction in `<w:instrText>`
+| available field instruction in tag | description | notes | notice |
+| :---------- | :----------- | :----- | :--- |
+| About `Page Numbers` | | | |
+| `PAGE` | Displays the current page number. | | |
+| `NUMPAGES` | Displays the total number of pages in the document. | | |
+| `SECTIONPAGES` | Displays the total number of pages in the current section. | | |
+| `PAGE \* MERGEFORMAT` | preserves formatting applied to the field result, even if it is refreshed. | | |
+| About `Dates and Times` | | | |
+| `DATE` | Displays the current date. | | |
+| `TIME` | Displays the current time. | | |
+| `DATE \@ "MMMM d, yyyy"` | Displays the date in a specific format (e.g., "April 19, 2025"). | The `\@` switch controls the formatting. | |
+| About `Document Information` | | | |
+| `TITLE` | Displays the document title (from File > Info). | | |
+| `AUTHOR` | Displays the document author. | | |
+| `FILENAME` | Displays the document's file name. | | |
+| About `Table of Contents` | | | |
+| `TOC \o "1-3" \h \z \u` |  A complex instruction that generates a table of contents based on heading styles 1 through 3. | The `\o`, `\h`, `\z`, `\u` switches control various aspects of the TOC generation. | |
+| About `Cross-references` | | | |
+| `REF _RefID \h` | Creates a hyperlink to the element with the bookmark `_RefID` | The `\h` switch makes it a hyperlink. | |
+| About `Mail Merge Fields` | | | |
+| `MERGEFIELD FirstName` | Inserts the data from the "FirstName" column of the mail merge data source. | | |
+| About `Mail Merge Fields` | | | |
+
+> [!IMPORTANT]
+> It is better to understand the syntax and field instruction about `<w:instrText>`.
+
+Syntax:
+
+With [RE (regular expression)](https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference),
+
+```
+<w:instrText xmlns:space={spacing}>{fieldInstruction}</w:instrText>
+```
+
+where
+
+```
+{fieldInstruction}:= {fieldIdentifier} {switches}? {arguments}?
+```
+
+```
+{spacing}:= ("default"|"preserve")
+```
+
+Meaning: The value of `xmlns:space` MUST be either `"default"` or `"preserve"` 
+
+```
+{switches}:= (\\@{uppercaseLetters}|\\\*{uppercaseLetters})
+
+{uppercaseLetters}:={uppercaseLetter}+
+
+{uppercaseLetter}:= [A-Z]
+```
+
+Meaning: The switch MUST start with `\@` or `\*`, followed by a word that consist of uppercase alphabet.
+
+#### `<w:docGrid>` -> `w:linePitch` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `lines` | | | The grid controls the vertical spacing of lines. | | |
