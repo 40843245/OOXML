@@ -42,9 +42,9 @@ With [RE (regular expression)](https://learn.microsoft.com/en-us/dotnet/standard
 where
 
 ```
-{fieldCharacterType}:= ("begin"|"seperator"|"end")
+{fieldCharacterType}:= ("begin"|"seperate"|"end")
 ```
 
-Meaning: it MUST be one of `begin`,`seperator`, and `end`.
+Meaning: it MUST be one of `begin`,`seperate`, and `end`.
 
 About `{fieldInstruction}`, it is described in [syntax of `field instruction` in `<w:instrText>` tag section](https://github.com/40843245/OOXML/blob/main/Word/structure/CH1%20--%20syntax.md#syntax-of-field-instruction-in-winstrtext-tag)
