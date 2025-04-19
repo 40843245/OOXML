@@ -590,36 +590,8 @@ Sales |    |    |    |
 
 > [!IMPORTANT]
 > It is better to understand the syntax and field instruction about `<w:instrText>`.
-
-Syntax:
-
-With [RE (regular expression)](https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference),
-
-```
-<w:instrText xmlns:space={spacing}>{fieldInstruction}</w:instrText>
-```
-
-where
-
-```
-{fieldInstruction}:= {fieldIdentifier} {switches}? {arguments}?
-```
-
-```
-{spacing}:= ("default"|"preserve")
-```
-
-Meaning: The value of `xmlns:space` MUST be either `"default"` or `"preserve"` 
-
-```
-{switches}:= (\\@{uppercaseLetters}|\\\*{uppercaseLetters})
-
-{uppercaseLetters}:={uppercaseLetter}+
-
-{uppercaseLetter}:= [A-Z]
-```
-
-Meaning: The switch MUST start with `\@` or `\*`, followed by a word that consist of uppercase alphabet.
+>
+> For more details, see [syntax of `field instruction` in `<w:instrText>` tag](https://github.com/40843245/OOXML/blob/main/Word/structure/CH1%20--%20syntax.md#syntax-of-field-instruction-in-winstrtext-tag)
 
 #### `<w:docGrid>` -> `w:linePitch` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
