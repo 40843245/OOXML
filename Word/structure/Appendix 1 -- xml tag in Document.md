@@ -1144,7 +1144,7 @@ In this example, we can know that
 | `<w:next/>` | | | specifies the style to be automatically applied to the next paragraph after a paragraph formatted with the current style. | | |
 | | | | | | |
 | `<w:altName>` | `alt` attribute in `<img>` tag in native html5 | alternative | use the alternative (according to the value specified in `w:val` attribute) **when** an element (such as an image) or things that used in an element (such as font) **can not be used or worked correctly**. | | |
-| `<w:noProof/>` | | | no spelling check and grammer check inside this tag. | | |
+| `<w:noProof/>` | | no proofing tool used | no spelling check and grammer check inside this tag. | | |
 | | | | | | | |
 | `<w:framePr>` | | frame property | configure property of frame | | |
 | | | | | | | |
@@ -1184,6 +1184,8 @@ In this example, we can know that
 | `<w:tblStyle>` | | table style | applies style (according to value of `w:val` attribute) to paragraph (that is inside `<w:tbl>` tag) | the style to apply is defined in `~/word/style.xml` file | |
 | | | | | | | | 
 | `<w:instrText>` | | *instr*uction text | it defines an instruction text for a field | | |
+| `<w:fldChar>` | | *f*ie*ld* *char*acter | it defines a field character. | | |  
+| | | | | | | | 
 | `<w:sectPr>` | | sect property | configure property of a sect | sect stands for section | |
 | `<w:pgSz>` | | page size | configures a page size (that is inside `<w:sectPr>` tag) | pg stands for *p*a*g*e | |
 | `<w:pgMar>` | | page margin | configures a page margin (that is inside `<w:sectPr>` tag) | Mar stands for *Mar*gin | |
@@ -1334,10 +1336,12 @@ For more details, see [OOXML docs CH117.3.1.15](https://ooxml.info/docs/17/17.3/
 ###### attribute in `<w:background>`
 [!WARNING]
 > If the background specifies the use of a theme color via the themeColor attribute, this value is ignored.
+>
 > Thus, Applications are discouraged from specifying both the color and themeColor attributes on the same parent element.
 
 [!WARNING]
 > If neither the color nor themeColor attributes are present,
+>
 > the parent page shall be treated as though it has no background defined.
 
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -1545,6 +1549,11 @@ Same as attribute in `<w:tab>`.
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `xml:space` | | | specifies how whitespace should be handled within the text content of the `<w:instrText>` element. | | |
 
+###### attribute in `<w:fldChar>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:fldCharType` | | | specifies how whitespace should be handled within the text content of the `<w:instrText>` element. | | |
+
 ###### attribute in `<w:docGrid>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
@@ -1556,25 +1565,25 @@ Same as attribute in `<w:tab>`.
 ###### attribute in `<w:tbW>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| w:w | | width | assign an value to determine the width of the cell (that is inside `<w:tc>` tag) | NOTES that its unit is not necessary twips (its unit is according to value of `w:type` attribute. See next record | |
-| w:type | | type | assign an value to determine its unit | | |
+| `w:w` | | width | assign an value to determine the width of the cell (that is inside `<w:tc>` tag) | NOTES that its unit is not necessary twips (its unit is according to value of `w:type` attribute. See next record | |
+| `w:type` | | type | assign an value to determine its unit | | |
 
 ###### attribute in `<w:pStyle>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| w:val | `value` in native html5 | assign an Guid as value that determines what style of 7the paragraph (that is inside `<w:p>` tag) will apply to | | |
+| `w:val` | `value` in native html5 | assign an Guid as value that determines what style of 7the paragraph (that is inside `<w:p>` tag) will apply to | | |
 
 ###### attribute in `<w:tblStyle>`
 Way to parsing it is similar to parsing `<w:pStyle>`.
 
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| w:val | `value` in native html5 | assign an Guid as value that determines what style of the table (that is inside `<w:tbl>` tag) will apply to | | |
+| `w:val` | `value` in native html5 | assign an Guid as value that determines what style of the table (that is inside `<w:tbl>` tag) will apply to | | |
 
 ###### attribute in `<w:lsid>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| w:val | `value` in native html5 | assign an Guid as value that determines what style of the list (that is inside `<w:listDef>` tag) will apply to | | |
+| `w:val` | `value` in native html5 | assign an Guid as value that determines what style of the list (that is inside `<w:listDef>` tag) will apply to | | |
 
 ###### attribute in `<w:bookmarkStart>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -2325,7 +2334,7 @@ In above example, we can know that
     </w:r>
 ```
 
-it defines a run. In the run, it defines a field character which is marked as the start of the field.
+it defines a run. It acts as the marker that divides the "how to calculate/display" part of the field from the "currently displayed value" part.
 
 + In
 
@@ -2348,7 +2357,43 @@ Let's dive into this tag -- `<w:instrText xml:space="preserve"> PAGE   \* MERGEF
         2. `\*`: it is a field switch, introducing a formatting instruction.
         3. `MERGEFORMAT`: It specific switch instructs Word to preserve the formatting of the field result if the field is updated.
         
-    
++ In
+   
+```
+    <w:r>
+      <w:fldChar w:fldCharType="separate"/>
+    </w:r>
+```
+
+it defines a run. In the run, it defines a field character that represents the point where the field instructions end and the field result (the displayed value) begins.
+
++ In
+
+```
+    <w:r>
+      <w:rPr>
+        <w:noProof/>
+      </w:rPr>
+      <w:t>1</w:t>
+    </w:r>
+```
+
+it defines a run with these properties:
+
+    - the text in this run should be ignored by Word's spell and grammar checkers.
+
+And there are only a text `1` in the run (according by `<w:t>1</w:t>`).
+
++ In
+
+```
+    <w:r>
+      <w:fldChar w:fldCharType="end"/>
+    </w:r>
+```
+
+it marks the end of a field in the Word document.
+
 #### about `m` namespace
 ##### elements in `m` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
