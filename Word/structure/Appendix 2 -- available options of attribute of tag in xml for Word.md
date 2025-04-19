@@ -16,9 +16,6 @@
 
 ### about `xml` namespace
 #### `xml:space` attribute
-> [!WARNING]
-> I refers from Google Gemini's answer which may be incorrect.
-
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"preserve"` | | preserve | whitespace (i.e. ` `, `\t`, and `\n`) within the element's content should be preserved exactly as it appears in the XML source. The application processing the XML should not normalize or remove any of this whitespace. | | | 
@@ -441,18 +438,12 @@ Sales |    |    |    |
 | `"false"` | | | NOT keep lines. | it allows Word to break the paragraph across page breaks if necessary to fit the content. | When `<w:keepLines>` tag is not used, we can think that it will NOT keep lines. (same effect of `<w:keepLines w:val="false">`) |
 
 #### `<w:keepNext>` -> `w:val` attribute
-> [!WARNING]
-> I refers from Google Gemini's answer which may be incorrect.
-  
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"true"` | | | to prevent a page break from occurring between the current paragraph and the one immediately after it. | If the two paragraphs together cannot fit on the current page, both will be moved to the next page. | default value. |
 | `"false"` | | | NOT keep lines. | it allows Word to break the paragraph across page breaks if necessary to fit the content. | When `<w:keepLines>` tag is not used, we can think that it will NOT keep lines. (same effect of `<w:keepLines w:val="false">`) |
 
 #### `<w:adjustRightInd>` -> `w:val` attribute
-> [!WARNING]
-> I refers from Google Gemini's answer which may be incorrect.
-
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"true"` | | | adjust right indentation due to different windows size. | | |
@@ -468,9 +459,6 @@ Sales |    |    |    |
 | `"false"` | | | NOT adjust left indentation due to different windows size. |
 
 #### `<w:framePr>` -> `w:hRule` attribute
-> [!WARNING]
-> I refers from Google Gemini's answer which may be incorrect.
-
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"auto"` | | | determined based on the height of its contents. | | The value of `w:h` is ignored. |
@@ -478,9 +466,6 @@ Sales |    |    |    |
 | `"atLeast"` | | | height of frame must be at least the value of `w:h` attribute. height of frame is the max of value of `w:h` attribute and height of its content. | | |
 
 #### `<w:framePr>` -> `w:hAnchor` attribute
-> [!WARNING]
-> I refers from Google Gemini's answer which may be incorrect.
-
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"page"` | | | anchors the frame horizontally to the page margins (with absolute position). | | |
@@ -489,25 +474,16 @@ Sales |    |    |    |
 | `"column"` | | | anchors the frame horizontally to the column boundaries in a multicolumn layout (with relative position)| | |
 
 #### `<w:tab>` -> `w:val` attribute
-> [!WARNING]
-> I refers from Google Gemini's answer which may be incorrect.
-
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 
 #### `<w:mirrorIndents>` -> `w:val` attribute
-> [!WARNING]
-> I refers from Google Gemini's answer which may be incorrect.
-
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"true"` | | | | When this tag is present, Word will swap the left and right indent settings if the document or section is set to a right-to-left reading order.  | | 
 | `"false"` | | | | Word will swap NOT the left and right indent settings  | |
 
 #### `<w:characterSpacingControl>` -> `w:val` attribute
-> [!WARNING]
-> I refers from Google Gemini's answer which may be incorrect.
-
 > [!IMPORTANT]
 > The available value of `w:val` attribute in `<w:characterSpacingControl>` is defined in `ST_CharacterSpacing` simple type, possible value listed in [Character-Level Whitespace Compression Settings](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_CharacterSpacing_topic_ID0E6AK2.html)
 
@@ -536,9 +512,6 @@ Sales |    |    |    |
 | `clear` | | clear | Removes a previously defined tab stop at the specified position. | |
 
 #### `<w:tcW>` -> `w:type` attribute
-> [!WARNING]
-> I refers from Google Gemini's answer which may be incorrect.
-
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `dxa` | | dxa | its unit is dxa equivalent to twips (i.e. twentieth of a point) | | |
@@ -547,9 +520,6 @@ Sales |    |    |    |
 | `nil` | | nil | the value is explicitly set to zero (even if the `w:w` is not set to zero) | | |
 
 #### `<w:tab>` -> `w:leader` attribute
-> [!WARNING]
-> I refers from Google Gemini's answer which may be incorrect.
-
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `none` | | nothing | No leader character | default value when not specified | |
@@ -592,6 +562,13 @@ Sales |    |    |    |
 > It is better to understand the syntax and field instruction about `<w:instrText>`.
 >
 > For more details, see [syntax of `field instruction` in `<w:instrText>` tag](https://github.com/40843245/OOXML/blob/main/Word/structure/CH1%20--%20syntax.md#syntax-of-field-instruction-in-winstrtext-tag)
+
+#### `<w:fldChar>` -> `w:fldCharType` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `begin` | | | It marks the beginning of the field's instructions and result. | | |
+| `separate` | | | It divides the field's instructions (the code that tells Word what to do) from the field's result (the currently displayed output). | | Not all fields have a `separate` character.|
+| `end` | | | It marks the end of a field, concluding both the instructions and the result (if present). | | |
 
 #### `<w:docGrid>` -> `w:linePitch` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
