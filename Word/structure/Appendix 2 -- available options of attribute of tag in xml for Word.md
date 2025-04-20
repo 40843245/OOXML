@@ -583,6 +583,40 @@ Sales |    |    |    |
 | `"SingleLevel"`| | single-level | says that it is a single-level list | | |
 | `"MultiLevel"`| | multi-level | says that it is a multi-level list | | |
 
+#### `<w:footnote>` -> `w:id` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| positive integer | | | Used for regular footnotes. | | |
+| `"-1"` | | | used to identify the footnote separator. | | |
+| `"0"` | | | used to identify the footnote continuation separator (the separator shown when footnotes span multiple pages). | | |
+| (sometimes `"1"`) or another negative number  | | | (sometimes) or another negative number  | | |
+
+#### `<w:footnote>` -> `w:type` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"normal"` | | |  Indicates a regular footnote containing content. | | |
+| `"separator"` | | |  Indicates a footnote separator line. | | |
+| `"continuationSeparator"` | | | Indicates a footnote continuation separator line. | | |
+| `"continuationNotice"` | | |  Indicates the footnote continuation notice text. | | |
+
+#### `<w:footnote>` -> `w:numFmt` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"decimal"` | | | (1, 2, 3, ...) | | |
+| `"upperRoman"` | | | (I, II, III, ...) | | |
+| `"lowerRoman"` | | | (i, ii, iii, ...) | | |
+| `"upperLetter"` | | | (A, B, C, ...) | | |
+| `"lowerLetter"` | | | (a, b, c, ...) | | |
+| `"ordinal"` | | | (1st, 2nd, 3rd, ...) | | |
+| `"cardinalText"` | | | (One, Two, Three, ...) | | |
+| `"ordinalText"` | | | (First, Second, Third, ...) | | |
+
+#### `<w:footnote>` -> `w:restart` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"true"` | | | Footnote numbering continues from the previous section. | | |
+| `"false"` | | | Footnote numbering restarts at the beginning of the current section. | | |
+
 #### `<w:start>` -> `w:val` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
@@ -855,40 +889,60 @@ But the value indicates its theme shade.
 | `"true"` or `"1"` | | | | indicates new latent styles are locked by default and harder to be modified. | | |
 
 #### `<w:latentStyles>` -> `w:defUnhideWhenUsed` attribute
-> [!WARNING]
-> I refers from Google Gemini's answer which may be incorrect.
-
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"false"` or `"0"` | | | | indicates that if a latent style is actually used in the document content, it will NOT become visible in the user interface. | | |
-| `"true"` or `"1"` | | | | indicates that if a latent style is actually used in the document content, it will become visible in the user interface. | This allows styles that are relevant to the content to appear when needed. | |
+| `"true"`| | | | indicates that if a latent style is actually used in the document content, it will become visible in the user interface. | This allows styles that are relevant to the content to appear when needed. | |
+| `"false"` | | | | indicates that if a latent style is actually used in the document content, it will **NOT** become visible in the user interface. | | |
 
 #### `<w:latentStyles>` -> `w:defQFormat` attribute
-> [!WARNING]
-> I refers from Google Gemini's answer which may be incorrect.
-
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"false"` or `"0"` | | | | indicates that new latent styles will NOT appear in the Quick Styles gallery by default. | | |
-| `"true"` or `"1"` | | | | indicates that new latent styles will appear in the Quick Styles gallery by default. |  | |
+| `"true"` | | | | indicates that new latent styles will appear in the Quick Styles gallery by default. |  | |
+| `"false"`| | | | indicates that new latent styles will **NOT** appear in the Quick Styles gallery by default. | | |
 
 #### `<w:lsdException>` -> `w:name` attribute
-> [!WARNING]
-> I refers from Google Gemini's answer which may be incorrect.
-
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"false"` or `"0"` | | | | indicates that new latent styles will NOT appear in the Quick Styles gallery by default. | | |
-| `"true"` or `"1"` | | | | indicates that new latent styles will appear in the Quick Styles gallery by default. |  | |
+| `"No List"` | | | | | |
+| `"Title"` | | | | | |
+| `"Subtitle"` | | | | | |
+| `"Normal"` | | | | | |
+| `"Outline List 1"` | | | | | |
+| `"Outline List 2"` | | | | | |
+| `"Outline List 3"` | | | | | |
+| `"Outline List 4"` | | | | | |
+| `"Outline List 5"` | | | | | |
+| `"Outline List 6"` | | | | | |
+| `"Outline List 7"` | | | | | |
+| `"Outline List 8"` | | | | | |
+| `"Outline List 9"` | | | | | |
+| `"Heading 1"` | | | | | |
+| `"Heading 2"` | | | | | |
+| `"Heading 3"` | | | | | |
+| `"Heading 4"` | | | | | |
+| `"Heading 5"` | | | | | |
+| `Heading 6"` | | | | | |
+| `"Heading 7"` | | | | | |
+| `"Heading 8"` | | | | | |
+| `"Heading 9"` | | | | | |
+| `"Numbering 1"` | | | | | |
+| `"Numbering 2"` | | | | | |
+| `"Numbering 3"` | | | | | |
+| `"Numbering 4"` | | | | | |
+| `"Numbering 5"` | | | | | |
+| `Numbering 6"` | | | | | |
+| `"Bullet 1"` | | | | | |
+| `"Bullet 2"` | | | | | |
+| `"Bullet 3"` | | | | | |
+| `"Bullet 4"` | | | | | |
+| `"Bullet 5"` | | | | | |
+| `Bullet 6"` | | | | | |
 
 #### `<w:lsdException>` -> `w:semiHidden` attribute
-> [!WARNING]
-> I refers from Google Gemini's answer which may be incorrect.
-
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"false"` or `"0"` | | | | indicates that the style is not semi-hidden and will be visible in the Styles pane. | | |
-| `"true"` or `"1"` | | | | indicates that the style is semi-hidden. it will be invisible unless it's actively in use in the document. | | |
+| `"true"` | | | | indicates that the style is semi-hidden. it will be invisible unless it's actively in use in the document. | | |
+| `"false"` | | | | indicates that the style is **NOT** semi-hidden and will be visible in the Styles pane. | | |
 
 ### about `m` namespace
 #### `<m:brkBin>` -> `m:val` attribute
