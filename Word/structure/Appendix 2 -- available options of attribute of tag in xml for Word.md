@@ -570,6 +570,12 @@ Sales |    |    |    |
 | `separate` | | | It divides the field's instructions (the code that tells Word what to do) from the field's result (the currently displayed output). | | Not all fields have a `separate` character.|
 | `end` | | | It marks the end of a field, concluding both the instructions and the result (if present). | | |
 
+#### `<w:hyperlink>` -> `w:history` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"true"` | | | the hyperlink has been visited. | | |
+| `"false"` | | | the hyperlink has **NOT** been visited. | | |
+
 #### `<w:docGrid>` -> `w:linePitch` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
@@ -646,9 +652,6 @@ Sales |    |    |    |
 | `"none"` | | nothing | the item in the list level will be listed without use of number, lettering, bullet character etc.  | | |
 
 #### `<w:lvl>` -> `w:ilvl` attribute
-> [!WARNING]
-> I refers from Google Gemini's answer which may be incorrect.
-
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"0"` | | | defines the formatting for the first level of the list.  | zero-based | | 
@@ -656,9 +659,6 @@ Sales |    |    |    |
 | etc | | | | | | 
 
 #### `<w:bdr>` -> `w:val` attribute
-> [!WARNING]
-> I refers from Google Gemini's answer which may be incorrect.
-
 > [!IMPORTANT]
 > About `Art Border Styles`, they can always be used in `w:val` attribute inside page border elements (`<w:top>`,`<w:left>`,`<w:bottom>`,`<w:right>`).
 >
@@ -836,18 +836,15 @@ But the value indicates its theme shade.
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"true"` | | true | should have frame effect | | |
-| `"false"` | | false | should not have frame effect | default value | |
+| `"false"` | | false | should **NOT** have frame effect | default value | |
 
 #### `<w:bdr>` -> `w:shadow` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"true"` | | true | should have shadow effect | | |
-| `"false"` | | false | should not have shadow effect | default value | |
+| `"false"` | | false | should **NOT** have shadow effect | default value | |
 
 #### `<w:pgBorders>` -> `w:display` attribute
-> [!WARNING]
-> I refers from Google Gemini's answer which may be incorrect.
-
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"allPages"` | | all pages | the page borders defined for the section should be displayed on every page within that section. | default value | |
@@ -855,9 +852,6 @@ But the value indicates its theme shade.
 | `"notFirstPage"` | | not first pages | the page borders defined for the section should be displayed on every page (except first page) within that section. | | |
 
 #### `<w:pgBorders>` -> `w:offsetFrom` attribute
-> [!WARNING]
-> I refers from Google Gemini's answer which may be incorrect.
-
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"page"` | | page | the `w:space` attribute of the individual border elements (`<w:top>`, `<w:left>`, `<w:bottom>`, `<w:right>`) is interpreted as the distance from the **edge of the page** to the beginning of the border.  | | |
@@ -871,22 +865,16 @@ But the value indicates its theme shade.
 > While choosing `text` makes it relative to the document's text boundaries, which are defined by the page margins.
 
 #### `<w:pgBorders>` -> `w:zOrder` attribute
-> [!WARNING]
-> I refers from Google Gemini's answer which may be incorrect.
-
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"front"` | | |  the page border should be rendered **above** any intersecting text and other objects on the page. | default value | |
 | `"back"` | | |  the page border should be rendered **below** any intersecting text and other objects on the page. | | |
 
 #### `<w:latentStyles>` -> `w:defLockedState` attribute
-> [!WARNING]
-> I refers from Google Gemini's answer which may be incorrect.
-
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"false"` or `"0"` | | | | indicates new latent styles are not locked by default and can be modified. | | |
-| `"true"` or `"1"` | | | | indicates new latent styles are locked by default and harder to be modified. | | |
+| `"true"` | | | | indicates new latent styles are locked by default and harder to be modified. | | |
+| `"false"` | | | | indicates new latent styles are **NOT** locked by default and can be modified. | | |
 
 #### `<w:latentStyles>` -> `w:defUnhideWhenUsed` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
