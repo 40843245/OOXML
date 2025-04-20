@@ -1160,7 +1160,9 @@ In this example, we can know that
 | `<w:autoSpaceDN>` | | | controls whether Word should automatically adjust the spacing between Asian characters and adjacent numbers (0-9) within a paragraph. | | |
 | | | | | | | | 
 | `<w:bar>` | | | insert a vertical line | | | | 
-| `<w:ftr>` | | | icongigure the footer | | | | 
+| `<w:ftr>` | | | configure the footer | | | | 
+| `<w:footnotes>` | | | acts like a container that contains one or more footnotes | | | | 
+| `<w:footnote>` | | | defines a footnote | | | | 
 | | | | | | | | 
 | `<w:spacing>` | spacing | settings about spacing between paragraphs | | |
 | `<w:jc>` | | justification | settings about justification (alignment) of the paragraph | jc stands for *j*ustifi*c*ation | |
@@ -1198,8 +1200,6 @@ In this example, we can know that
 | | | | | | | | 
 | `<w:bookmarkStart>` | | bookmark start | defines a bookmark with start point | | One `<w:bookmarkStart>` tag must match one `<w:bookmarkEnd>` tag. Otherwise, the file is corrupted. | 
 | `<w:bookmarkEnd>` | | bookmark end | defines a bookmark with end point to enclose a bookmark | | Same as above | 
-| | | | | | | | 
-| `<w:footnote>` | | footnote | defines a footnote. | | |
 | | | | | | | | 
 | `<w:lists>` | | | acts like a container of a list (`<w:list>`) | | |
 | `<w:numbering>` | | numbering | It acts as a container for numbering definitions, which are then referenced by paragraphs to apply specific list styles. | | |
@@ -1609,7 +1609,7 @@ Way to parsing it is similar to parsing `<w:pStyle>`.
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:id` | `id` in native html5 | id of footnote | assign the id of the footnote | A value of `-1` is a convention used to identify the footnote separator. | | 
-| `w:type` | | | | | |
+| `w:type` | | | specifies the type of footnote. | | |
 
 ###### attribute in `<w:listDef>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
