@@ -1610,6 +1610,8 @@ Way to parsing it is similar to parsing `<w:pStyle>`.
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:id` | `id` in native html5 | id of footnote | assign the id of the footnote | A value of `-1` is a convention used to identify the footnote separator. | | 
 | `w:type` | | | specifies the type of footnote. | | |
+| `w:numFmt` | | | specifies the number formatting of footnote. | | |
+| `w:restart` | | | determines whether footnote numbering should restart at the beginning of a section. | | |
 
 ###### attribute in `<w:listDef>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
