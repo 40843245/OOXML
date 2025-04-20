@@ -1258,6 +1258,7 @@ In this example, we can know that
 | `<w:contextualSpacing>` | | | determine that Word can dynamically modify the line spacing in situations | `"true"` to modify, `"false"` to not modify. default value to `"true"` | |
 | | | | | | |
 | `<w:divId>`| | | speficies the div id | | | 
+| `<w:separator/>`| | | defines a seperator (maybe section break) | | | 
 | | | | | | |
 | `<w:keepLines>` | | | determines whether keep lines to make the paragraph must be on the same page. | | | 
 | `<w:keepNext>` | | | specifies that the contents of this paragraph are at least partly rendered on the same page as the following paragraph whenever possible. | | | 
