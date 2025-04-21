@@ -2430,7 +2430,7 @@ And there are only a text `1` in the run (according by `<w:t>1</w:t>`).
 it marks the end of a field in the Word document.
 
 ###### example 24 -- defines a footernote
-part of content in `~/word/footernote1.xml` in `FootNoteExample1.docx`
+part of content in `~/word/footernotes.xml` in `FootNoteExample1.docx`
 
 ```
 <w:footnotes xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
@@ -2477,7 +2477,7 @@ it defines the property of paragraph, and setting the amount of vertical space b
 it is the instance of that separator being placed within the flow of the document, specifically within a paragraph.
 
 ###### example 25 -- defines a footernote
-other part of content in `~/word/footernote1.xml` in `FootNoteExample1.docx`
+other part of content in `~/word/footernotes.xml` in `FootNoteExample1.docx`
 
 ```
 <w:footnotes xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
@@ -2551,7 +2551,18 @@ it defines a run that contains text -- a single space ` `.
 
 it defines a run that contains text -- `This is a footnote.`, but Word will handle whitespace according to its default rules (collapsing multiple spaces into one, etc.) since `xmlns:space` attribute is NOT explicitly specified.
 
+###### example 26 -- field simple
 
+```
+<w:fldSimple w:instr=" NUMPAGES \* MERGEFORMAT ">
+    <w:r xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" w:rsidR="001D0226">
+        <w:rPr xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+            <w:lang w:val="zh-TW"/>
+        </w:rPr>
+        <w:t>1</w:t>
+    </w:r>
+</w:fldSimple>
+```
 
 #### about `m` namespace
 ##### elements in `m` namespace
