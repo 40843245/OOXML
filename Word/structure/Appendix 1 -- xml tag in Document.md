@@ -2429,6 +2429,70 @@ And there are only a text `1` in the run (according by `<w:t>1</w:t>`).
 
 it marks the end of a field in the Word document.
 
+###### example 24 -- defines a footernote
+part of content in `~/word/footernote1.xml` in `FootNoteExample1.docx`
+
+```
+<w:footnotes xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+    <w:footnote w:id="0" w:type="continuationSeparator">
+        <w:p>
+            <w:pPr>
+                <w:spacing w:lineRule="auto" w:line="240" w:after="0"/>
+            </w:pPr>
+            <w:r>
+                <w:continuationSeparator/>
+            </w:r>
+        </w:p>
+    </w:footnote>
+</w:footnotes>
+```
+
+In above example, we can know that
+
++ In `<w:footnotes xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">`, it acts like a container that defines the footnotes, and it refers to Word Office 2006 (according to `xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"`).
++ In `<w:footnote w:id="0" w:type="continuationSeparator">`, it defines a footnote and encapsulate the properties inside this tag.
++ In `<w:p>`, it defines a paragraph in the footnote.
++ In
+
+```
+            <w:pPr>
+                <w:spacing w:lineRule="auto" w:line="240" w:after="0"/>
+            </w:pPr>
+```
+
+it defines the property of paragraph, and setting the amount of vertical space before, within, and after a paragraph or run as follows.
+
+    - w:lineRule="auto": Word automatically adjusts the vertical line spacing to accommodate the size of the font and any other inline elements on the line.
+    - w:line="240": it instructs Word to apply single line spacing as 240 twips, which is 240/20 = 12 points. Thus, the base of vertical line spacing is set to the equivalent of 12 points.
+    - 
+
+
+###### example 25 -- defines a footernote
+other part of content in `~/word/footernote1.xml` in `FootNoteExample1.docx`
+
+```
+<w:footnotes xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+    <w:footnote xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" w:id="1">
+        <w:p xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+            <w:pPr>
+                <w:pStyle w:val="FootnoteText"/>
+            </w:pPr>
+            <w:r>
+                <w:rPr>
+                    <w:rStyle w:val="FootnoteReference"/>
+                </w:rPr>
+            <w:footnoteRef/>
+            </w:r>
+            <w:r>
+                <w:t xml:space="preserve"> </w:t>
+            </w:r>
+            <w:r>
+                <w:t>This is a footnote.</w:t>
+            </w:r>
+        </w:p>
+    </w:footnote>
+</w:footnotes>
+```
 #### about `m` namespace
 ##### elements in `m` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
