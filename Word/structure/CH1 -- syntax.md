@@ -12,8 +12,19 @@ With [RE (regular expression)](https://learn.microsoft.com/en-us/dotnet/standard
 where
 
 ```
-{fieldInstruction}:= {fieldIdentifier} {switches}? {arguments}?
+{fieldInstruction}:= {whitespaces}{fieldIdentifier}{whitespaces}{switches}?{whitespaces}{arguments}?{whitespaces}
 ```
+
+```
+{whitespaces}:= {whitespace}+
+
+{whitespace}:= ({space}|{tab})
+
+{space}:= ` `
+
+{tab}:= \t
+```
+
 
 ```
 {spacing}:= ("default"|"preserve")
