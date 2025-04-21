@@ -2464,8 +2464,17 @@ it defines the property of paragraph, and setting the amount of vertical space b
 
     - w:lineRule="auto": Word automatically adjusts the vertical line spacing to accommodate the size of the font and any other inline elements on the line.
     - w:line="240": it instructs Word to apply single line spacing as 240 twips, which is 240/20 = 12 points. Thus, the base of vertical line spacing is set to the equivalent of 12 points.
-    - 
+    - w:after="0": spacing 0 twips after the paragraph, meaning that it has no extra space after paragraph.
 
++ In
+
+```
+            <w:r>
+                <w:continuationSeparator/>
+            </w:r>
+```
+    
+it is the instance of that separator being placed within the flow of the document, specifically within a paragraph.
 
 ###### example 25 -- defines a footernote
 other part of content in `~/word/footernote1.xml` in `FootNoteExample1.docx`
@@ -2493,6 +2502,57 @@ other part of content in `~/word/footernote1.xml` in `FootNoteExample1.docx`
     </w:footnote>
 </w:footnotes>
 ```
+
+In above example, we can know that
+
++ In `<w:footnotes xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">`, it acts like a container that defines the footnotes, and it refers to Word Office 2006 (according to `xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"`).
++ In
+
+```
+            <w:pPr>
+                <w:pStyle w:val="FootnoteText"/>
+            </w:pPr>
+```
+
+it defines the style paragraph whose name is `FootnoteText`.
+
++ In
+
+```
+            <w:r>
+                <w:rPr>
+                    <w:rStyle w:val="FootnoteReference"/>
+                </w:rPr>
+            <w:footnoteRef/>
+            </w:r>
+```
+
+it defines a run in the paragraph. In the run, it defines a style of the run whose name is `FootnoteReference`.
+
+And it represents the actual in-text marker that signals the presence of a footnote.
+
++ In
+
+```
+            <w:r>
+                <w:t xml:space="preserve"> </w:t>
+            </w:r>
+```
+
+it defines a run that contains text -- a single space ` `.
+
++ In
+
+```
+            <w:r>
+                <w:t>This is a footnote.</w:t>
+            </w:r>
+```
+
+it defines a run that contains text -- `This is a footnote.`, but Word will handle whitespace according to its default rules (collapsing multiple spaces into one, etc.) since `xmlns:space` attribute is NOT explicitly specified.
+
+
+
 #### about `m` namespace
 ##### elements in `m` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
