@@ -643,7 +643,6 @@ The above example may output:
 | `<c:dispBlanksAs>` | | *disp*lay blank as | specifies how blank cells should be handled when plotting data on a chart. | | | 
 | `<c:showDLblsOverMax>` | | show *d*ata *l*a*b*e*l*s when is over *max*imum | determines whether data labels should be displayed even if their value exceeds the maximum value set for the chart's axis. | | | 
 
-
 > [!IMPORTANT]
 > How to calculate percentage that a data point takes of its total?
 >
