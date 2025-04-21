@@ -2572,6 +2572,48 @@ part of content in `~/word/document.xml` in `InsertPageCountExample1.docx`.
 </w:fldSimple>
 ```
 
+In above example, we can know that
+
++ In `<w:fldSimple w:instr=" NUMPAGES \* MERGEFORMAT ">`, it defines a simple field where its field instruction is `NUMPAGES \* MERGEFORMAT`.
+
+As my notes -- [syntax of field instruction in `<w:instrText>` tag section](https://github.com/40843245/OOXML/blob/main/Word/structure/CH1%20--%20syntax.md#syntax-of-field-instruction-in-winstrtext-tag) said, 
+
+```
+{fieldInstruction}:= {whitespaces}{fieldIdentifier}{whitespaces}{switches}?{whitespaces}{arguments}?{whitespaces}
+```
+
+```
+{whitespaces}:= {whitespace}+
+
+{whitespace}:= ({space}|{tab})
+
+{space}:= ` `
+
+{tab}:= \t
+```
+
+We can know 
+
+    - its field identifier is `NUMPAGES`, meaning that Word will display the total number of pages in the document.
+    - its switch control is `\* MERGEFORMAT`, meaning that Word will preserve the formatting that is applied to the field result.  After the field is updated, Word will recompose (updates it using the preserved formatting).
+
+In summary, it represents a field in the Word document that will display the total number of pages in the document and will try to maintain its formatting upon updates.
+
++ In
+
+```
+    <w:r xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" w:rsidR="001D0226">
+        <w:rPr xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+            <w:lang w:val="zh-TW"/>
+        </w:rPr>
+        <w:t>1</w:t>
+    </w:r>
+```
+
+it defines a run which is specific to Office Word 2006.
+
+In the run, it specifies the language as Tradition Chinese and there is a text `1`.
+
 ###### example 27 -- simple field
 other part of content in `~/word/document.xml` in `InsertPageCountExample1.docx`.
 
@@ -2585,6 +2627,49 @@ other part of content in `~/word/document.xml` in `InsertPageCountExample1.docx`
     </w:r>
 </w:fldSimple>
 ```
+
+In above example, we can know that
+
++ In `<w:fldSimple w:instr=" NUMPAGES \* MERGEFORMAT ">`, it defines a simple field where its field instruction is `NUMPAGES \* MERGEFORMAT`.
+
+As my notes -- [syntax of field instruction in `<w:instrText>` tag section](https://github.com/40843245/OOXML/blob/main/Word/structure/CH1%20--%20syntax.md#syntax-of-field-instruction-in-winstrtext-tag) said, 
+
+```
+{fieldInstruction}:= {whitespaces}{fieldIdentifier}{whitespaces}{switches}?{whitespaces}{arguments}?{whitespaces}
+```
+
+```
+{whitespaces}:= {whitespace}+
+
+{whitespace}:= ({space}|{tab})
+
+{space}:= ` `
+
+{tab}:= \t
+```
+
+We can know 
+
+    - its field identifier is `SECTIONPAGES`, meaning that Word will display the total number of pages in the current section of the document.
+    - its switch control is `\* MERGEFORMAT`, meaning that Word will preserve the formatting that is applied to the field result.  After the field is updated, Word will recompose (updates it using the preserved formatting).
+
+In summary, it represents a field in the Word document that will display the total number of pages in current section of the document and will try to maintain its formatting upon updates.
+
++ In
+
+```
+    <w:r xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" w:rsidR="001D0226">
+        <w:rPr xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+            <w:lang w:val="zh-TW"/>
+        </w:rPr>
+        <w:t>1</w:t>
+    </w:r>
+```
+
+it defines a run which is specific to Office Word 2006.
+
+In the run, it specifies the language as Tradition Chinese and there is a text `1`.
+
 #### about `m` namespace
 ##### elements in `m` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
