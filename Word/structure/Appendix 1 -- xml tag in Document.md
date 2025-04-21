@@ -1185,7 +1185,9 @@ In this example, we can know that
 | `<w:tblStyle>` | | table style | applies style (according to value of `w:val` attribute) to paragraph (that is inside `<w:tbl>` tag) | the style to apply is defined in `~/word/style.xml` file | |
 | | | | | | | | 
 | `<w:instrText>` | | *instr*uction text | it defines an instruction text for a field | | |
-| `<w:fldChar>` | | *f*ie*ld* *char*acter | it defines a field character. | | |  
+| `<w:fldChar>` | | *f*ie*ld* *char*acter | it defines a field character. | | | 
+| | | | | | | | 
+| `<w:fldSimple>` | | simple *f*ie*ld* | defines a simple field and acts like a container that contains its' setting (inside this tag). | | | 
 | | | | | | | | 
 | `<w:sectPr>` | | sect property | configure property of a sect | sect stands for section | |
 | `<w:pgSz>` | | page size | configures a page size (that is inside `<w:sectPr>` tag) | pg stands for *p*a*g*e | |
@@ -1234,11 +1236,11 @@ In this example, we can know that
 | `<w:clrSchemeMapping/>` | | | clear the settings of scheme mapping table, then configures the properties of scheme mapping table for document role. | | |
 | | | | | | | | 
 | `<w:shapeDefaults>` | | | acts like an container containing default properties for newly created drawing shapes within a Microsoft Word document. | It usually resides in `~/word/settings.xml` under a Word file. | |
+| `<w:docDefaults>` | | | serves as a container for defining the default formatting properties for the entire document. | | |
 | | | | | | | | 
 | `<w:decimalSymbol/>` | | | explicitly specifies the decimal separator (by given value of `w:val` attribute) for numbers within the document. | | |
 | `<w:listSeparator/>` | | | explicitly specifies the list separator (by given value of `w:val` attribute) for list within the document. | It is used when there are many items. | |
 | | | | | | | | 
-| `<w:docDefaults>` | | | serves as a container for defining the default formatting properties for the entire document. | | |
 | `<w:b/>` | `<b>` and `<b/>` in native html5 | bold | determines whether the non-complex script text is bold | | |
 | `<w:bCs/>` | `<b>` and `<b/>` in native html5 | bold | determines whether the complex script text is bold | | |
 | `<w:i/>` | | italic | determines whether the non-complex script text is italic. | | |
@@ -1567,6 +1569,11 @@ Same as attribute in `<w:tab>`.
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:fldCharType` | | | specifies how whitespace should be handled within the text content of the `<w:instrText>` element. | | |
 
+###### attribute in `<w:fldSimple>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:instrText` | | | specifies field instruction. | Recall about field instruction (i.e. content in `<w:instrText>` tag), they have same concepts.</br> For more details, see my notes -- [syntax of field instruction in `<w:instrText>` tag section](https://github.com/40843245/OOXML/blob/main/Word/structure/CH1%20--%20syntax.md#syntax-of-field-instruction-in-winstrtext-tag)| |
+
 ###### attribute in `<w:hyperlink>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
@@ -1855,7 +1862,7 @@ it also configure the default size is 52 for **complex script characters** (like
 > [APPRECIATION]
 > Thanks to Google Gemini, it refers from Google Gemini's answer.
 
-###### example 3 -- table
+###### example 3 -- a table in Office Word
 ```
 <!-- other elements omitted -->
 
@@ -2551,7 +2558,8 @@ it defines a run that contains text -- a single space ` `.
 
 it defines a run that contains text -- `This is a footnote.`, but Word will handle whitespace according to its default rules (collapsing multiple spaces into one, etc.) since `xmlns:space` attribute is NOT explicitly specified.
 
-###### example 26 -- field simple
+###### example 26 -- simple field
+part of content in `~/word/document.xml` in `InsertPageCountExample1.docx`.
 
 ```
 <w:fldSimple w:instr=" NUMPAGES \* MERGEFORMAT ">
@@ -2564,6 +2572,19 @@ it defines a run that contains text -- `This is a footnote.`, but Word will hand
 </w:fldSimple>
 ```
 
+###### example 27 -- simple field
+other part of content in `~/word/document.xml` in `InsertPageCountExample1.docx`.
+
+```
+<w:fldSimple w:instr=" SECTIONPAGES \* MERGEFORMAT ">
+    <w:r xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" w:rsidR="001D0226">
+        <w:rPr xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+            <w:lang w:val="zh-TW"/>
+        </w:rPr>
+        <w:t>1</w:t>
+    </w:r>
+</w:fldSimple>
+```
 #### about `m` namespace
 ##### elements in `m` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
