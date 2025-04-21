@@ -1218,7 +1218,10 @@ In this example, we can know that
 | `<w:lvlText>` | | *l*e*v*e*l* text | defines the numbering format using placeholders (e.g., "%1." for first-level numbers) | | |
 | `<w:lvlJc>` | | level justification | configures the justification of this level | | | 
 | `<w:nfc>` | | Number Formatting Code | configures Number Formatting Code of this level | nfc stands for *N*umber *F*ormatting *C*ode | | 
-| | | | | | | | 
+| | | | | | | |
+| `<w:hyperlink>` | | hyperlink | defines a hyperlink | | |
+| | | | | | | |
+| `<w:hdr>` | | header | configures properties of the header. | | |
 | `<w:bdr>` | `border` in css | border | configures properties of the border. | | |
 | `<w:pBdr>` | | paragraph border | configure paragraph border | | |
 | `<w:between>` | | | border that appears between consecutive paragraphs | | |
@@ -1259,6 +1262,7 @@ In this example, we can know that
 | | | | | | |
 | `<w:divId>`| | | speficies the div id | | | 
 | `<w:separator/>`| | | defines a seperator (maybe section break) | | | 
+| `<w:continuationSeparator/>`| | | defines that the continuation separator for footnotes.) | | | 
 | | | | | | |
 | `<w:keepLines>` | | | determines whether keep lines to make the paragraph must be on the same page. | | | 
 | `<w:keepNext>` | | | specifies that the contents of this paragraph are at least partly rendered on the same page as the following paragraph whenever possible. | | | 
@@ -1563,6 +1567,13 @@ Same as attribute in `<w:tab>`.
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:fldCharType` | | | specifies how whitespace should be handled within the text content of the `<w:instrText>` element. | | |
+
+###### attribute in `<w:hyperlink>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `r:id` | | | defines a relationship | | |
+| `w:history` | | | indicates whether the hyperlink has been visited. | | |
+
 
 ###### attribute in `<w:docGrid>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
