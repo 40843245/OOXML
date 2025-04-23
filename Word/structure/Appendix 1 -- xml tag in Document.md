@@ -1144,7 +1144,7 @@ In this example, we can know that
 | | | | | | |
 | `<w:altName>` | `alt` attribute in `<img>` tag in native html5 | alternative | use the alternative (according to the value specified in `w:val` attribute) **when** an element (such as an image) or things that used in an element (such as font) **can not be used or worked correctly**. | | |
 | `<w:noProof/>` | | no proofing tool used | no spelling check and grammer check inside this tag. | | |
-| | | | | | | |
+| | | | | | |
 | `<w:framePr>` | | frame property | configure property of frame | | |
 | | | | | | | |
 | `<w:p>` | `<p>` | paragraph | A paragraph | notice that if an end-user only inputs an whitespace in .docx file, it will have `<w:p>` tag, the article `docx格式文档详解：xml解析并用html还原`[^4] says this situation. | 
@@ -2670,6 +2670,33 @@ it defines a run which is specific to Office Word 2006.
 
 In the run, it specifies the language as Tradition Chinese and there is a text `1`.
 
+###### example 28 -- field simple
+```
+<w:p>
+    <w:fldSimple w:instr=" PAGE \* MERGEFORMAT ">
+        <w:r xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" w:rsidR="001D0226">
+            <w:rPr xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+                <w:lang w:val="zh-TW"/>
+            </w:rPr>
+            <w:t>1</w:t>
+        </w:r>
+    </w:fldSimple>
+    <w:pPr/>
+    <w:r>
+        <w:rPr>
+            <w:lang w:val="zh-TW"/>
+        </w:rPr>
+        <w:t>This is the 1th paragraph.</w:t>
+    </w:r>
+</w:p>
+```
+
+In above example, we can know that
+
++ In `<w:p>`, it defines a paragraph.
++ In `<w:fldSimple w:instr=" PAGE \* MERGEFORMAT ">`, it defines a simple field</br>which is for current page (according to `field identifier` is set to `PAGE`) and maintain formatting upon updating the field (according to `switch controller` is set to `\* MERGEFORMAT`.
++ In `<w:r xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" w:rsidR="001D0226">`, it defines a run in the paragraph, wh
+  
 #### about `m` namespace
 ##### elements in `m` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
