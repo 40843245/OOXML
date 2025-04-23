@@ -1159,9 +1159,11 @@ In this example, we can know that
 | `<w:autoSpaceDN>` | | | controls whether Word should automatically adjust the spacing between Asian characters and adjacent numbers (0-9) within a paragraph. | | |
 | | | | | | | | 
 | `<w:bar>` | | | insert a vertical line | | | | 
-| `<w:ftr>` | | | configure the footer | | | | 
 | `<w:footnotes>` | | | acts like a container that contains one or more footnotes | | | | 
-| `<w:footnote>` | | | defines a footnote | | | | 
+| `<w:footnote>` | | | defines a footnote | | | |
+| | | | | | | | 
+| `<w:ftr>` | | | configure the footer | | | | 
+| `<w:footerReference>` | | | indicates that the parent element refers the footer with specific type. | | | | 
 | | | | | | | | 
 | `<w:spacing>` | spacing | settings about spacing between paragraphs | | |
 | `<w:jc>` | | justification | settings about justification (alignment) of the paragraph | jc stands for *j*ustifi*c*ation | |
@@ -1573,6 +1575,18 @@ Same as attribute in `<w:tab>`.
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:instrText` | | | specifies field instruction. | Recall about field instruction (i.e. content in `<w:instrText>` tag), they have same concepts.</br> For more details, see my notes -- [syntax of field instruction in `<w:instrText>` tag section](https://github.com/40843245/OOXML/blob/main/Word/structure/CH1%20--%20syntax.md#syntax-of-field-instruction-in-winstrtext-tag)| |
+
+###### attribute in `<w:footnote>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `w:id` | | | A positive integer that uniquely identifies this specific footnote within the footnotes part of the document. | These IDs are typically sequential. | |
+| `w:type` | | | specifies the type of the footnote. | | |
+
+###### attribute in `<w:footerReference>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `r:id` | | | specifies the id that links to the footer. | It usually resides in `~/word/_rels/document.xml.rels` file under a Word file. | |
+| `w:type` | | | specifies the type of the footer that the parent element refers, determining that the footer will be applied to. | | |
 
 ###### attribute in `<w:hyperlink>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
