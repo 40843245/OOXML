@@ -570,6 +570,21 @@ Sales |    |    |    |
 | `separate` | | | It divides the field's instructions (the code that tells Word what to do) from the field's result (the currently displayed output). | | Not all fields have a `separate` character.|
 | `end` | | | It marks the end of a field, concluding both the instructions and the result (if present). | | |
 
+#### `<w:footnote>` -> `w:type` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"normal"` | | | indicates a standard footnote | | it is default value. |
+| `"separator"` | | | specifies a footnote separator | | there MUST be at most one `"separator"` in `footnotes` part (inside parent element `<w:footnotes>`). |
+| `"continuationSeparator"` | | | specifies a footnote continuation separator | | same as above. |
+| `"continuationNotice"` | | | specifies a footnote continuation notice | | same as above. |
+
+#### `<w:footerReference>` -> `w:type` attribute
+| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `"default"` | | | applies the footer to any pages (first page, odd-numbered pages, and even-numbered pages) | | it is default value. |
+| `"first"` | | | applies the footer to first page  | | |
+| `"even"` | | | applies the footer to even-numbered pages | | |
+
 #### `<w:hyperlink>` -> `w:history` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
