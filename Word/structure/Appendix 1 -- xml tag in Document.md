@@ -2671,6 +2671,8 @@ it defines a run which is specific to Office Word 2006.
 In the run, it specifies the language as Tradition Chinese and there is a text `1`.
 
 ###### example 28 -- field simple
+part of content of `~/word/document.xml` file under `InsertPageCountExample2.docx` file.
+
 ```
 <w:p>
     <w:fldSimple w:instr=" PAGE \* MERGEFORMAT ">
@@ -2691,12 +2693,44 @@ In the run, it specifies the language as Tradition Chinese and there is a text `
 </w:p>
 ```
 
+Thus, the 
 In above example, we can know that
 
 + In `<w:p>`, it defines a paragraph.
 + In `<w:fldSimple w:instr=" PAGE \* MERGEFORMAT ">`, it defines a simple field</br>which is for current page (according to `field identifier` is set to `PAGE`) and maintain formatting upon updating the field (according to `switch controller` is set to `\* MERGEFORMAT`.
-+ In `<w:r xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" w:rsidR="001D0226">`, it defines a run in the paragraph, wh
-  
++ In `<w:r xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" w:rsidR="001D0226">`, it defines a run in the paragraph, which targets on Office Word 2006, and its revision save identifier for the run is `001D0226`.
++ In
+
+```
+            <w:rPr xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+                <w:lang w:val="zh-TW"/>
+            </w:rPr>
+```
+
+it defines properties of the run where it is opened with Office Word 2006. 
+
+It set the language of the run (in Word Office 2006) is Traditional Chinese.
+
++ In `<w:t>1</w:t>`, it defines a text -- `1`.
++ In `<w:pPr/>`, it defines properties of the paragraph, with no configurations, meaning that the paragraph will use the default settings.
+
+```
+    <w:r>
+        <w:rPr>
+            <w:lang w:val="zh-TW"/>
+        </w:rPr>
+        <w:t>This is the 1th paragraph.</w:t>
+    </w:r>
+```
+
+it defines a run whose language is in Traditional Chineses and contains text -- `This is the 1th paragraph.`
+
+It will output like this:
+
+<img width="776" alt="image" src="https://github.com/user-attachments/assets/9eebe2ec-73e0-42a2-adbb-22ccf618721b" />
+
+![image](https://github.com/user-attachments/assets/60bca40e-ed57-42d5-932f-656b8dba428c)
+
 #### about `m` namespace
 ##### elements in `m` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
