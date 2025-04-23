@@ -1165,6 +1165,8 @@ In this example, we can know that
 | `<w:ftr>` | | | configure the footer | | | | 
 | `<w:footerReference>` | | | indicates that the parent element refers the footer with specific type. | | | | 
 | | | | | | | | 
+| `<w:titlePg>` | | title *p*a*g*e | defines a title page. | | | 
+| | | | | | | | 
 | `<w:spacing>` | spacing | settings about spacing between paragraphs | | |
 | `<w:jc>` | | justification | settings about justification (alignment) of the paragraph | jc stands for *j*ustifi*c*ation | |
 | | | | | | | | 
@@ -2497,7 +2499,7 @@ it defines the property of paragraph, and setting the amount of vertical space b
     
 it is the instance of that separator being placed within the flow of the document, specifically within a paragraph.
 
-###### example 25 -- defines a footernote
+###### example 25 -- defines a footnote
 other part of content in `~/word/footernotes.xml` in `FootNoteExample1.docx`
 
 ```
@@ -2572,7 +2574,39 @@ it defines a run that contains text -- a single space ` `.
 
 it defines a run that contains text -- `This is a footnote.`, but Word will handle whitespace according to its default rules (collapsing multiple spaces into one, etc.) since `xmlns:space` attribute is NOT explicitly specified.
 
-###### example 26 -- simple field
+###### example 26 -- refers footers
+part of content in `~/word/document.xml` in `InsertSectionExample.docx`.
+
+```
+<w:p>
+    <w:pPr>
+        <w:sectPr w:rsidR="003E25F4" w:rsidSect="00FC3028">
+            <w:pgSz w:w="11906" w:h="16838"/>
+            <w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="1440" w:header="708" w:footer="708" w:gutter="0"/>
+            <w:cols w:space="708"/>
+            <w:docGrid w:linePitch="360"/>
+            <w:footerReference w:type="even" r:id="R3d26812d683949a8"/>
+            <w:footerReference w:type="first" r:id="R1a4d6aee14a84bf5"/>
+            <w:footerReference w:type="default" r:id="R812e7120657b4c46"/>
+            <w:titlePg/>
+        </w:sectPr>
+    </w:pPr>
+</w:p>
+```
+
+In above example, we can know that
+
++ It defines a paragraph.
++ In the paragraph, it defines a section whose revision save identifier for run is `003E25F4` and that for section is `00FC3028`.
++ In the section, it sets the page width to `11906` twips and its height to `16838` twips.
++ In the section, it sets top-margin right-margin, bottom-margin, left-margin of the page to `1440` twips, </br>distance from the top to the header is `708` twips,</br>distance from the bottom to the footer is `708` twips, and</br> gutter margin to zero twips.
++ In the section, if there are has multiple columns, there will be a spacing of 708 twips between them.
++ In the section, it sets the vertical spacing between lines of text within the grid to 360 twips.
++ In `<w:footerReference w:type="even" r:id="R3d26812d683949a8"/>`, in the section, it refers a footer for even-numbered pages. Its id that links the footer is `R3d26812d683949a8`.
++ Similarly, in `<w:footerReference w:type="first" r:id="R1a4d6aee14a84bf5"/>`, in the section, it refers a footer for first page. Its id that links the footer is `R1a4d6aee14a84bf5`.
++ While, in `<w:footerReference w:type="default" r:id="R812e7120657b4c46"/>`, in the section, it refers a footer for all pages. Its id that links the footer is `R812e7120657b4c46`.
+  
+###### example 27 -- simple field
 part of content in `~/word/document.xml` in `InsertPageCountExample1.docx`.
 
 ```
@@ -2628,7 +2662,7 @@ it defines a run which is specific to Office Word 2006.
 
 In the run, it specifies the language as Tradition Chinese and there is a text `1`.
 
-###### example 27 -- simple field
+###### example 28 -- simple field
 other part of content in `~/word/document.xml` in `InsertPageCountExample1.docx`.
 
 ```
@@ -2684,7 +2718,7 @@ it defines a run which is specific to Office Word 2006.
 
 In the run, it specifies the language as Tradition Chinese and there is a text `1`.
 
-###### example 28 -- field simple
+###### example 29 -- field simple
 part of content of `~/word/document.xml` file under `InsertPageCountExample2.docx` file.
 
 ```
