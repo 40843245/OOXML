@@ -1274,6 +1274,16 @@ In this example, we can know that
 | | | | | | |
 | <w:kinsoku> | | Kinsoku Shori (禁則處理) | specifies whether East Asian typography and line-breaking rules shall be applied to text in this paragraph to determine which characters can begin and end each line. | | This property only applies to Simplified Chinese, Traditional Chinese, and Japanese text in this paragraph. |
 | `<w:minorIdents>` | | | detemines whether if this tag is present, Word will swap the left and right indent settings if the document or section is set to a right-to-left reading order. | | If this is omitted on a given paragraph, its value is determined by the setting previously set at any level of the style hierarchy (i.e. that previous setting remains unchanged). If this setting is never specified in the style hierarchy, then this property shall not be applied. |
+| | | | | | |
+| `<w:sdt>` | | | | | |
+| `<w:sdtContent>` | | | | | |
+| `<w:sdtPr>` | | | | | |
+| `<w:sdtEndPr>` | | | | | |
+| | | | | | |
+| `<w:docPartObj>` | | | | | |
+| `<w:docPartGallery>` | | | | | |
+| `<w:docPartUnique/>` | | | | | |
+| | | | | | |
 
 ##### attribute about `w` namespace
 ###### attribute in `<w:style>`
@@ -2779,6 +2789,67 @@ It will output like this:
 
 ![image](https://github.com/user-attachments/assets/60bca40e-ed57-42d5-932f-656b8dba428c)
 
+###### example 30 -- TOC (table of contents)
+part of content in `~/word/document.xml` under `InsertTableOfContentExample.docx` file.
+
+```
+<w:sdt xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+    <w:sdtPr>
+        <w:docPartObj>
+            <w:docPartGallery w:val="Table of Contents"/>
+            <w:docPartUnique/>
+        </w:docPartObj>
+        \
+    </w:sdtPr>
+    <w:sdtEndPr>
+        <w:rPr>
+            <!-- tags omitted -->    
+        </w:rPr>
+    </w:sdtEndPr>
+    <w:sdtContent>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="TOCHeading"/>
+            </w:pPr>
+            <w:r>
+                <w:t>Teams</w:t>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="TOC1"/>
+                <w:tabs>
+                    <w:tab w:val="right" w:leader="dot" w:pos="9010"/>
+                </w:tabs>
+                <w:rPr>
+                    <w:noProof/>
+                </w:rPr>
+            </w:pPr>
+            <w:r>
+                <w:fldChar w:fldCharType="begin" w:dirty="true"/>
+            </w:r>
+            <w:r>
+                <w:instrText xml:space="preserve"> TOC \o "1-3" \u \z \h </w:instrText>
+            </w:r>
+            <w:r>
+                <w:fldChar w:fldCharType="separate"/>
+            </w:r>
+        </w:p>
+        <w:p>
+            <w:r>
+                <w:rPr>
+                    <w:b/>
+                    <w:bCs/>
+                    <w:noProof/>
+                </w:rPr>
+                <w:fldChar w:fldCharType="end"/>
+            </w:r>
+        </w:p>
+    </w:sdtContent>
+</w:sdt>
+```
+
+In above example, we can know that
 #### about `m` namespace
 ##### elements in `m` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
