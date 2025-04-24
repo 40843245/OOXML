@@ -1125,8 +1125,8 @@ In this example, we can know that
 | `<w:document>` | `<html>` | root node | the root node of **`~/word/document.xml`** file under a Microsoft Word file. | | |
 | | | | | | |
 | `<w:sdt>` | | *s*tructured *d*ocument *t*ag  | acts like a containers for various types of content (e.g. TOC). | | |
-| `<w:sdtPr>` | | *s*tructured *d*ocument *t*ag *pr*operties | defines the properties of structured document tag (`<w:sdt>` tag). | | |
-| `<w:sdt>` | | *s*tructured *d*ocument *t*ag  | acts like a containers for various types of content (e.g. TOC). | | |
+| `<w:sdtPr>` | | *s*tructured *d*ocument *t*ag *pr*operties | defines the properties of structured document tag (`<w:sdt>` tag). | About characterist of structured tag, see [here](https://github.com/40843245/Microsoft_Office/blob/main/Product/Word/terms/terms%20list.md#characteristics) | |
+| `<w:docPartObj>` | | *doc*ument part *obj*ect | defines an object for document part. The main advantage is to more easily embed it to a document and make it reusable (which is the core concept of OO design). | | |
 | `<w:sdt>` | | *s*tructured *d*ocument *t*ag  | acts like a containers for various types of content (e.g. TOC). | | |
 
 | | | | | | |
