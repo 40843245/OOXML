@@ -1123,6 +1123,13 @@ In this example, we can know that
 | | | | | | |
 | `<w:wordDocument>` | `<html>` | root node | the root node of a Microsoft Word file. | | |
 | `<w:document>` | `<html>` | root node | the root node of **`~/word/document.xml`** file under a Microsoft Word file. | | |
+| | | | | | |
+| `<w:sdt>` | | *s*tructured *d*ocument *t*ag  | acts like a containers for various types of content (e.g. TOC). | | |
+| `<w:sdtPr>` | | *s*tructured *d*ocument *t*ag *pr*operties | defines the properties of structured document tag (`<w:sdt>` tag). | | |
+| `<w:sdt>` | | *s*tructured *d*ocument *t*ag  | acts like a containers for various types of content (e.g. TOC). | | |
+| `<w:sdt>` | | *s*tructured *d*ocument *t*ag  | acts like a containers for various types of content (e.g. TOC). | | |
+
+| | | | | | |
 | `<w:background>` |  | background | deals with background settings. | | |
 | `<w:drawing>` |  | drawing | defines a drawing. | | |
 | `<w:ignoreSubtree>` | | ignore a specific subtree | it instructs the Word processor to ignore a specific subtree of the XML document (according to the value of `w:val` attribute) during processing. | | | 
