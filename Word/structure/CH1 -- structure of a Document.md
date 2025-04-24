@@ -39,9 +39,11 @@ You can write code snippets in C# with these assemblies to fetch xml content.
 You can see xml content of Office file through these steps.
 
 Step 1:
+
 Copy the file.
 
 Step 2:
+
 Rename the copied file to original file name but with file extension to `.7z`.
 
 > [!NOTE]
@@ -52,10 +54,30 @@ Rename the copied file to original file name but with file extension to `.7z`.
 > we can NOT open the file.
 >
 > Doing so is my habit.
-   
+
+Step 3:
+
+Under the `.7z`, file, you can found lots of `.xml` file.
+
+> [!NOTE]
+> About zip file knowledgement.
+>
+> For a zip file, you can directly see the children and open it.
+>
+> But you can NOT move, rename, or delete the children or edit its content without unzipping.
+>
+> Before doing that, you have to unzip the file.
+
 ## CH1.3 -- basic structure of an Office file
 Since Office 2013, it supports OOXML for files with file extension that ends with `x` (such as `*.docx`, `*.pptx`,`*.xlsx`)
 
+Here, `x` stands for `xml`.
+
+### Word (`*.docx`)
 
 
+
+### reference
++ [Office File Formats (MSDS)](https://learn.microsoft.com/en-us/openspecs/office_file_formats/ms-offfflp/8aea05e3-8c1e-4a9a-9614-31f71e679456)
++ 
 ## CH1.4 -- root node about Document in OOXML
