@@ -153,6 +153,40 @@ It must a child of `<w:document>` tag,
 ##### `<w:sectPr>`
 defines properties for a section in the document.
 
+### about page
+#### about header
+##### `<w:hdr>`
+specifies the header.
+
+##### `<w:ftr>`
+specifies the footer.
+
+##### `<w:fldChar>`
+defines a field character for page.
+
+> [!IMPORTANT]
+> In a non-corrupted Office Word file,
+>
+> It must follow if it defines a field character in a paragraph.
+>
+> + the first ocurrence of `<w:fldChar>` tag must be set its type to `begin` (i.e. `w:fldCharType="begin"`). Thus, look like this: `<w:fldChar w:fldCharType="begin"/>`
+> + the second ocurrence of `<w:fldChar>` tag must be set its type to `separate` (i.e. `w:fldCharType="separate"`). Thus, look like this: `<w:fldChar w:fldCharType="separate"/>`
+> + the third ocurrence of `<w:fldChar>` tag must be set its type to `end` (i.e. `w:fldCharType="end"`). Thus, look like this: `<w:fldChar w:fldCharType="end"/>`
+> + the `<w:instrText>` tag must be between the first occurence and the second occurence of `<w:fldChar>` tag.
+>
+> For fully understanding, see an example in [`example 23 -- defines a footer` in `Appendix 1 -- xml tag in Document`](https://github.com/40843245/OOXML/blob/main/Word/structure/Appendix%201%20--%20xml%20tag%20in%20Document.md#example-23----defines-a-footer)
+
+##### `<w:instrText>`
+sets the field instruction of the field character.
+
+> [!NOTE]
+> It's usually inside `<w:fldChar>` tag.
+
+> [!IMPORTANT]
+> To set the field instruction in the field character.
+>
+> See [`example 23 -- defines a footer` in `Appendix 1 -- xml tag in Document`](https://github.com/40843245/OOXML/blob/main/Word/structure/Appendix%201%20--%20xml%20tag%20in%20Document.md#example-23----defines-a-footer)
+
 ### about paragraph
 #### `<w:p>`
 defines a new paragraph.
@@ -255,3 +289,15 @@ defines a footnote.
 ##### `<w:endnote>`
 defines a endnote.
 
+### about revision tracking elements
+#### `<w:ins>`
+represents inserted content.
+
+#### `<w:del>`
+represents deleted content.
+
+#### `<w:moveFrom>`
+represents moved content. It indicates the content is moved from. 
+
+#### `<w:moveTo>`
+represents moved content. It indicates the content is moved to.
