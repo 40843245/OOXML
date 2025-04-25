@@ -142,6 +142,15 @@ defines a document.
 
 It must reside at the root node of `~/word/document.xml`
 
+#### `<w:glossaryDocument>`
+is the root element of a Glossary document part within a WordprocessingML package.
+
+> [!IMPORTANT]
+> A Glossary document part stores AutoText entries.
+
+> [!IMPORTANT]
+> AutoText entries are reusable pieces of content, such as formatted text, graphics, and tables, that users can quickly insert into their documents.
+
 ### about main body
 #### `<w:body>`
 defines the main body.
