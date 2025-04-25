@@ -104,8 +104,14 @@ a node with light gray background: the relationship file (`*.rels`)
 >
 > Similarly, some Office Word files may contain
 >
-> + `chart1.xml`, and may have `chart2.xml` etc. (for chart graph)
+> + `theme1.xml`, and may have `theme1.xml` etc. (for theme definition)
 >
+> under the directory `~/word/theme` when specific theme is specified in Office Word.
+>
+> Similarly, some Office Word files may contain
+>
+> + `chart1.xml`, and may have `chart2.xml` etc. (for chart graph)
+>   
 > under the directory `~/word/charts` when there are charts in Office Word.
 >
 > And more. (I will NOT discuss here)
