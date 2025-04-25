@@ -1149,12 +1149,6 @@ In this example, we can know that
 | `<w:wordDocument>` | `<html>` | root node | the root node of a Microsoft Word file. | | |
 | `<w:document>` | `<html>` | root node | the root node of **`~/word/document.xml`** file under a Microsoft Word file. | | |
 | | | | | | |
-| `<w:sdt>` | | *s*tructured *d*ocument *t*ag  | acts like a containers for various types of content (e.g. TOC). | | |
-| `<w:sdtPr>` | | *s*tructured *d*ocument *t*ag *pr*operties | defines the properties of structured document tag (`<w:sdt>` tag). | About characterist of structured tag, see [here](https://github.com/40843245/Microsoft_Office/blob/main/Product/Word/terms/terms%20list.md#characteristics) | |
-| `<w:docPartObj>` | | *doc*ument part *obj*ect | defines an object for document part. The main advantage is to more easily embed it to a document and make it reusable (which is the core concept of OO design). | | |
-| `<w:sdt>` | | *s*tructured *d*ocument *t*ag  | acts like a containers for various types of content (e.g. TOC). | | |
-
-| | | | | | |
 | `<w:background>` |  | background | deals with background settings. | | |
 | `<w:drawing>` |  | drawing | defines a drawing. | | |
 | `<w:ignoreSubtree>` | | ignore a specific subtree | it instructs the Word processor to ignore a specific subtree of the XML document (according to the value of `w:val` attribute) during processing. | | | 
@@ -1174,51 +1168,75 @@ In this example, we can know that
 | | | | | | |
 | `<w:next/>` | | | specifies the style to be automatically applied to the next paragraph after a paragraph formatted with the current style. | | |
 | | | | | | |
-| `<w:altName>` | `alt` attribute in `<img>` tag in native html5 | alternative | use the alternative (according to the value specified in `w:val` attribute) **when** an element (such as an image) or things that used in an element (such as font) **can not be used or worked correctly**. | | |
+| `<w:altName>` | `alt` attribute in `<img>` tag in native html5 | *alt*ernative | use the alternative (according to the value specified in `w:val` attribute) **when** an element (such as an image) or things that used in an element (such as font) **can not be used or worked correctly**. | | |
 | `<w:noProof/>` | | no proofing tool used | no spelling check and grammer check inside this tag. | | |
 | | | | | | |
-| `<w:framePr>` | | frame property | configure property of frame | | |
+| `<w:framePr>` | | frame *pr(operty | configure property of frame | | |
 | | | | | | | |
-| `<w:p>` | `<p>` | paragraph | A paragraph | notice that if an end-user only inputs an whitespace in .docx file, it will have `<w:p>` tag, the article `docx格式文档详解：xml解析并用html还原`[^4] says this situation. | 
-| `<w:pStyle>` | | paragraph style | applies style (according to value of `w:val` attribute) to paragraph (that is inside `<w:p>` tag) | the style to apply is defined in `~/word/style.xml` file | |
-| `<w:pPr>` | | paragraph property | property of a paragraph (that is inside `<w:p>` tag) in Microsoft Word file | Pr stands for *Pr*operty | |
+| `<w:p>` | `<p>` | *p*aragraph | defines a paragraph | notice that if an end-user only inputs an whitespace in .docx file, it will have `<w:p>` tag, the article `docx格式文档详解：xml解析并用html还原`[^4] says this situation. | 
+| `<w:pStyle>` | | *p*aragraph style | applies style (according to value of `w:val` attribute) to paragraph (that is inside `<w:p>` tag) | the style to apply is defined in `~/word/style.xml` file | |
+| `<w:pPr>` | | *p*aragraph *pr*operty | property of a paragraph (that is inside `<w:p>` tag) in Microsoft Word file | | |
 | | | | | | | | 
-| `<w:ind>` | | paragraph indentation | configure the indentation for this paragraph. | ind stands for *ind*entation | |
-| `<w:adjusLeftind>` | | adust left indentation | configure the left indentation will be adjusted due to different window size. | | |
-| `<w:adjusRightind>` | | adust right indentation | configure the right indentation will be adjusted due to different window size. | | |
+| `<w:r>` | | *r*un | defines a run in Word | | |
+| `<w:rPr>` | | *r*un *pr*operty | configure property of a run (that is inside `<w:r>` tag) | | |
+| `<w:rFonts>`| | *r*un fonts | configure fonts of a run (that is inside `<w:rPr>` tag) | | |
+| | | | | | | | 
+| `<w:b/>` | `<b>` and `<b/>` in native html5 | bold | determines whether the non-complex script text is bold | | |
+| `<w:bCs/>` | `<b>` and `<b/>` in native html5 | bold | determines whether the complex script text is bold | | |
+| `<w:i/>` | | italic | determines whether the non-complex script text is italic. | | |
+| `<w:iCs/>` | | italic | determines whether the complex script text is italic. | | |
+| `<w:t/>` | | text | defines the text | | |
+| `<w:bidi/>` | | text | defines the bidirectional text | | |
+| | | | | | |
+| `<w:rPrDefault>` | | | defines the default formatting properties for all text runs within the document. | | |
+| `<w:pPrDefault/>` | | | defines the default formatting properties for all paragraphs in the document. | | |
+| `<w:latentStyles>` | | | servers as a container for defining the latent styles (i.e. current unused styles). | | |
+| | | | | | |
+| `<w:ind>` | | paragraph *ind*entation | configure the indentation for this paragraph. | | |
+| `<w:adjusLeftind>` | | adjust left *ind*entation | configure the left indentation will be adjusted due to different window size. | | |
+| `<w:adjusRightind>` | | adjust right *ind*entation | configure the right indentation will be adjusted due to different window size. | | |
+| | | | | | | | 
+| `<w:jc>` | | *j*ustifi*c*ation | settings about justification (alignment) of the paragraph | | |
+| `<w:spacing>` | spacing | settings about spacing between paragraphs | | |
 | | | | | | | | 
 | `<w:autoSpaceDE>` | | | controls whether Word should automatically adjust the spacing between Asian characters and Latin text (like English) within a paragraph. | | |
 | `<w:autoSpaceDN>` | | | controls whether Word should automatically adjust the spacing between Asian characters and adjacent numbers (0-9) within a paragraph. | | |
 | | | | | | | | 
 | `<w:bar>` | | | insert a vertical line | | | | 
-| `<w:footnotes>` | | | acts like a container that contains one or more footnotes | | | | 
-| `<w:footnote>` | | | defines a footnote | | | |
 | | | | | | | | 
-| `<w:ftr>` | | | configure the footer | | | | 
+| `<w:footnotes>` | | footnotes | acts like a container containing footnotes | | | | 
+| `<w:footnote>` | | footnote | defines a footnote | | | |
+| `<w:footnotePr>` | | footnote *pr*operty | defines properties of the footnote | | | |
+| | | | | | | |
+| `<w:endnotes>` | | endnotes | acts like a container that containing endnotes | | | | 
+| `<w:endnote>` | | endnote | defines a endnotes | | | |
+| `<w:endnotePr>` | | endnote *pr*operty | defines properties of the endnote | | | |
+| | | | | | | | 
+| `<w:hdr>` | | *h*ea*d*e*r* | configures the header | | | | 
+| `<w:headerReference>` | | | indicates that the parent element refers the header with specific type. | | | | 
+| | | | | | | | 
+| `<w:ftr>` | | *f*oo*t*e*r* | configure the footer | | | | 
 | `<w:footerReference>` | | | indicates that the parent element refers the footer with specific type. | | | | 
-| | | | | | | | 
+| | | | | | | |
+| `<w:comments>` | | | acts like a container containing comments | | | | 
+| `<w:comment>` | | | defines a comment | | | |
+| `<w:commentPr>` | | | defines properties of the comment | | | |
+| | | | | | | |
 | `<w:titlePg>` | | title *p*a*g*e | defines a title page. | | | 
 | | | | | | | | 
-| `<w:spacing>` | spacing | settings about spacing between paragraphs | | |
-| `<w:jc>` | | justification | settings about justification (alignment) of the paragraph | jc stands for *j*ustifi*c*ation | |
+| `<w:sz>` | | *s*i*z*e for non-Complex script | defines a font size for standard characters (that is inside `<w:rPr>` tag) | | |
+| `<w:szCs>` | | *s*i*z*e for *C*omplex *s*cript | defines a font size for complex script characters (that is inside `<w:rPr>` tag) | | |
 | | | | | | | | 
-| `<w:r>` | | run | defines a run in Word | r stands for run | |
-| | | | | | | | 
-| `<w:rPr>` | | run property | configure property of a run (that is inside `<w:r>` tag) | | |
-| `<w:rFonts>`| | run fonts | configure fonts of a run (that is inside `<w:rPr>` tag) | |
-| | | | | | | | 
-| `<w:sz>` | | size | defines a font size for standard characters (that is inside `<w:rPr>` tag) |  |
-| `<w:szCs>` | | size | defines a font size for complex script characters (that is inside `<w:rPr>` tag) | Cs stands for *C*omplex *s*cript | |
-| | | | | | | | 
-| `<w:tbl>` | `<table>` | table | a table in Microsoft Word file | tbl stands for table | |
-| `<w:tblPr>` | | table property | configure property (such as style and appearance) of a table (that is inside `<w:tbl>` tag) in Microsoft Word file | | |
-| `<w:tblGrid>` | `<tr>` (first occurence) | table grid | defines a grid (header) of a table in Microsoft Word file | you can think of a grid like a header row ( consists of lots of columns ) in table | |
+| `<w:tbl>` | `<table>` | *t*a*bl*e | a table in Microsoft Word file | | |
+| `<w:tblPr>` | | *t*a*bl*e *pr*operty | configure property (such as style and appearance) of a table (that is inside `<w:tbl>` tag) in Microsoft Word file | | |
+| `<w:tblGrid>` | `<tr>` (first occurence) | *t*a*bl*e grid | defines a grid (header) of a table in Microsoft Word file | you can think of a grid like a header row ( consists of lots of columns ) in table | |
 | `<w:gridCol>` | `<th>` | table grid column | defines a cell in a grid of a table in Microsoft Word file | | it must be inside `<w:tblGrid>` tag. Otherwise, the Word file is corrupted. |
 | `<w:tr>`| `<tr>` | table row | a row of a table | t stands for *t*able, r stands *r*ow | |
 | `<w:tc>` | `<td>` | table cell | an cell of a table | c stands for *c*ell | |
 | `<w:tcW>` | | table cell width | determines the width of the cell of a table | W stands for *w*idth | |
 | `<w:tcPr>` | | table cell property | configure property of a table cell (that is inside `<w:tc>` tag) | including width and grid span | |
 | `<w:tblStyle>` | | table style | applies style (according to value of `w:val` attribute) to paragraph (that is inside `<w:tbl>` tag) | the style to apply is defined in `~/word/style.xml` file | |
+| `<w:tblBorders>` | | table borders | specifies the table borders. | | |
 | | | | | | | | 
 | `<w:instrText>` | | *instr*uction text | it defines an instruction text for a field | | |
 | `<w:fldChar>` | | *f*ie*ld* *char*acter | it defines a field character. | | | 
@@ -1240,33 +1258,36 @@ In this example, we can know that
 | | | | | | | | 
 | `<w:lists>` | | | acts like a container of a list (`<w:list>`) | | |
 | `<w:numbering>` | | numbering | It acts as a container for numbering definitions, which are then referenced by paragraphs to apply specific list styles. | | |
-| `<w:listDef>` | | list definition | defines a list with specific id for style | | |
-| `<w:lsid>` | | list style id | assign the value of `w:val` attribute to id of list style to determine which style will be used | the id is defined in `~/word/style.xml` | |
-| `<w:lvl>` | | list level | defines a level of list | lvl stands for *l*e*v*e*l* | |
-| `<w:plt>` | | picture list type (exactly to say, list pattern type in modern version of Word) | it describes the complexity or structure of the list definition | | |   
-| `<w:tmpl>` | | template | it configure the what template will be used | <ol><li>tmpl stands for *t*e*mpl*ate</li><li>It accords to value of `W:val` attribute.</li><li>The template that will be used must be prefined (usually is predefined in `~/word/style.xml` or `~/word/template.xml`</li></ol> | | 
+| `<w:listDef>` | | list *def*inition | defines a list with specific id for style | | |
+| `<w:lsid>` | | *l*ist *s*tyle *id*entifier | assign the value of `w:val` attribute to id of list style to determine which style will be used | the id is defined in `~/word/style.xml` | |
+| `<w:lvl>` | | list *l*e*v*e*l* | defines a level of list | lvl stands for *l*e*v*e*l* | |
+| `<w:plt>` | | *p*icture *l*ist *t*ype (exactly to say, list pattern type in modern version of Word) | it describes the complexity or structure of the list definition | | |   
+| `<w:tmpl>` | | *t*e*mpl*ate | it configure the what template will be used | <ol><li>tmpl stands for *t*e*mpl*ate</li><li>It accords to value of `W:val` attribute.</li><li>The template that will be used must be prefined (usually is predefined in `~/word/style.xml` or `~/word/template.xml`</li></ol> | | 
 | `<w:start>` | | start | configure starting value for the numbering sequence at this list level | | It's only relevant when the <w:numFmt> (number format) for this level is set to a numbering style (like decimal, upperRoman, lowerLetter, etc.). |
-| `<w:numFmt>` | | number formatting | determines whether this level uses numbers or bullets, and the specific style  | | |
+| `<w:numFmt>` | | number *f*or*m*a*t*ting | determines whether this level uses numbers or bullets, and the specific style  | | |
 | `<w:bullet>` | | bullet formatting | same above | | |
-| `<w:numPr>` | | number property | configure the property if it uses number formatting.  | | |
+| `<w:numPr>` | | number *property | configure the property if it uses number formatting.  | | |
 | `<w:numId>` | | numbering id | specifies the numbering id to link number formatting given the value of `w:val` attribute.  | | |
 | `<w:suff>` | | suffix | specifies what character (if any) follows the number (e.g., a period, a hyphen, or a tab) | | |
 | `<w:outlineLvl>` | | outline *l*e*v*e*l* | specifies the outline level which shall be associated with the current paragraph in the document. | | |
 | `<w:lvlText>` | | *l*e*v*e*l* text | defines the numbering format using placeholders (e.g., "%1." for first-level numbers) | | |
-| `<w:lvlJc>` | | level justification | configures the justification of this level | | | 
-| `<w:nfc>` | | Number Formatting Code | configures Number Formatting Code of this level | nfc stands for *N*umber *F*ormatting *C*ode | | 
+| `<w:lvlJc>` | | *l*e*v*e*l* *j*ustifi*c*ation | configures the justification of this level | | | 
+| `<w:nfc>` | | *N*umber *F*ormatting *C*ode | configures Number Formatting Code of this level | | | 
 | | | | | | | |
 | `<w:hyperlink>` | | hyperlink | defines a hyperlink | | |
 | | | | | | | |
-| `<w:hdr>` | | header | configures properties of the header. | | |
-| `<w:bdr>` | `border` in css | border | configures properties of the border. | | |
-| `<w:pBdr>` | | paragraph border | configure paragraph border | | |
+| `<w:bdr>` | `border` in css | *b*or*d*e*r* | configures properties of the border. | | |
+| `<w:pBdr>` | | *p*aragraph *b*or*d*e*r* | configure paragraph border | | |
 | `<w:between>` | | | border that appears between consecutive paragraphs | | |
-| `<w:pgBorders>` | | page border | configures properties of the borders of page. | | |
+| `<w:pgBorders>` | | *p*a*g*e borders | configures properties of the borders of page. | | |
+| | | | | | | |
 | `<w:top>` | | top | configures properties of top borders of some elements (according to this tag is inside what tag). | | |
 | `<w:left>` | | left | configures properties of left borders of some elements (according to this tag is inside what tag). | | |
 | `<w:bottom>` | | bottom | configures properties of bottom borders of some elements (according to this tag is inside what tag). | | |
 | `<w:right>` | | right | configures properties of right borders of some elements (according to this tag is inside what tag). | | |
+| `<w:insideH>` | | inside *H*orizontal | specifies internal horizontal border. i.e. specifies horizontal border between rows (within a paragraph or table etc). | | |
+| `<w:insideV>` | | inside *V*ertical | specifies vertical border between columns within a table. | | |
+| | | | | | | |
 | `<w:displayBackgroundShape/>` | | | determines if the background shape is display or not | | | 
 | `<w:themeFontLang/>`| | | specifies the language settings for the theme fonts used in a Microsoft Word document. | | | 
 | `<w:clrSchemeMapping/>` | | | clear the settings of scheme mapping table, then configures the properties of scheme mapping table for document role. | | |
@@ -1276,21 +1297,10 @@ In this example, we can know that
 | | | | | | | | 
 | `<w:decimalSymbol/>` | | | explicitly specifies the decimal separator (by given value of `w:val` attribute) for numbers within the document. | | |
 | `<w:listSeparator/>` | | | explicitly specifies the list separator (by given value of `w:val` attribute) for list within the document. | It is used when there are many items. | |
-| | | | | | | | 
-| `<w:b/>` | `<b>` and `<b/>` in native html5 | bold | determines whether the non-complex script text is bold | | |
-| `<w:bCs/>` | `<b>` and `<b/>` in native html5 | bold | determines whether the complex script text is bold | | |
-| `<w:i/>` | | italic | determines whether the non-complex script text is italic. | | |
-| `<w:iCs/>` | | italic | determines whether the complex script text is italic. | | |
-| `<w:t/>` | | text | defines the text | | |
-| `<w:bidi/>` | | text | defines the bidirectional text | | |
 | | | | | | |
-| `<w:rPrDefault>` | | | defines the default formatting properties for all text runs within the document. | | |
-| `<w:pPrDefault/>` | | | defines the default formatting properties for all paragraphs in the document. | | |
-| `<w:latentStyles>` | | | servers as a container for defining the latent styles (i.e. current unused styles). | | |
-| | | | | | |
+| `<w:style>` | | style | defines a style | it usually resides at `~/word/style.xml` file under a Word file. | |
 | `<w:lsdException>` | | LSD exception | defines exceptions to the default behavior of LSD (Linked Style Definitions). | | |
 | `<w:cnfStyle>` | | conflict styles | It's used to store information about how styles should be applied or resolved in situations where there might be conflicts or variations. | | |
-| `<w:style>` | | style | defines a style | it usually resides at `~/word/style.xml` file under a Word file. | |
 | | | | | | |
 | `<w:vertAlign/>` | | vertical alignment | specifies that which alignment the text within the current run should be formatted to | it usually resides at `~/word/style.xml` file under a Word file. | |
 | `<w:hr>` | | | defines a horizontal rule | | |
@@ -1307,14 +1317,14 @@ In this example, we can know that
 | <w:kinsoku> | | Kinsoku Shori (禁則處理) | specifies whether East Asian typography and line-breaking rules shall be applied to text in this paragraph to determine which characters can begin and end each line. | | This property only applies to Simplified Chinese, Traditional Chinese, and Japanese text in this paragraph. |
 | `<w:minorIdents>` | | | detemines whether if this tag is present, Word will swap the left and right indent settings if the document or section is set to a right-to-left reading order. | | If this is omitted on a given paragraph, its value is determined by the setting previously set at any level of the style hierarchy (i.e. that previous setting remains unchanged). If this setting is never specified in the style hierarchy, then this property shall not be applied. |
 | | | | | | |
-| `<w:sdt>` | | | | | |
-| `<w:sdtContent>` | | | | | |
-| `<w:sdtPr>` | | | | | |
-| `<w:sdtEndPr>` | | | | | |
+| `<w:sdt>` | | *s*tructured *d*ocument *t*ag  | acts like a container for a specific piece content (e.g. TOC). | | |
+| `<w:sdtContent>` | | *s*tructured *d*ocument *t*ag content |  acts like a container for the actual content that is displayed within a Structured Document Tag | | |
+| `<w:sdtPr>` | | *s*tructured *d*ocument *t*ag *pr*operties | defines the properties of structured document tag (`<w:sdt>` tag). | About characterist of structured tag, see [here](https://github.com/40843245/Microsoft_Office/blob/main/Product/Word/terms/terms%20list.md#characteristics) | |
+| `<w:sdtEndPr>` | | *s*tructured *d*ocument *t*ag end *pr*operties | specifies properties that are applied to the end delimiter of the content control in the document. | | |
 | | | | | | |
-| `<w:docPartObj>` | | | | | |
-| `<w:docPartGallery>` | | | | | |
-| `<w:docPartUnique/>` | | | | | |
+| `<w:docPartObj>` | | *doc*ument part *obj*ect | defines an object for document part. The main advantage is to more easily embed it to a document and make it reusable (which is the core concept of OO design). | | |
+| `<w:docPartGallery>` | | *doc*ument part gallery filter | specifies the document part gallery filter | | |
+| `<w:docPartUnique/>` | | | ensures that only one instance of a selected building block from the gallery can exist within the scope of the content control. | | |
 | | | | | | |
 
 ##### attribute about `w` namespace
@@ -1387,7 +1397,6 @@ For more details, see [OOXML docs CH117.3.1.15](https://ooxml.info/docs/17/17.3/
 | `w:anchorLock` | | | specifies that the frame shall always remain in the same logical position relative to the non-frame paragraphs which precede and follow it in this document. | See [anchorLock](https://ooxml.info/docs/17/17.3/17.3.1/17.3.1.11/#anchorlock-lock-frame-anchor-to-paragraph) for more information. | | |
 | `w:dropCap` | | specifies that the current frame contains a drop cap to be located at the beginning of the next non-frame paragraph in the document. | | If this attribute is omitted, then this frame shall not be considered a drop cap frame. |
 | `w:line` | | specifies the number of lines in the non-frame paragraph to which this text frame is anchored which should be used to calculate the drop cap’s height. | | If this attribute is omitted, then it should use the default value `"1"`. |
-
 
 ###### attribute in `<w:cnfStyle>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -1920,7 +1929,7 @@ it also configure the default size is 52 for **complex script characters** (like
 > [APPRECIATION]
 > Thanks to Google Gemini, it refers from Google Gemini's answer.
 
-###### example 3 -- a table in Office Word
+###### example 3.1 -- a table
 ```
 <!-- other elements omitted -->
 
@@ -1983,7 +1992,39 @@ In the above example, we can know that
 + In `<w:b/>`, it configures the text that uses the run is bold.
 + In `<w:t>text 1</w:t>` (inside `<w:r>`), it adds a text with content`text 1` in the run which is used by the paragraph. 
 
-###### example 4 -- list
+###### example 3.2 -- table borderss
+```
+<w:tbl>
+    <w:tblPr>
+      <w:tblBorders>
+        </w:top>
+        </w:left>
+        </w:bottom>
+        </w:right>
+        <w:insideH w:val="single" w:sz="4" w:color="000000"/>
+        <w:insideV/>
+      </w:tblBorders>
+    </w:tblPr>
+</w:tbl>
+```
+
+In above example, we can know that
+
++ In `<w:tblBorders>`, it specifies the table borders.
++ In `</w:top>`, it specifies the top border of table borders (defined in `<w:tblBorders>`). However, it is empty, meaning that it uses default settings.
++ In `</w:left>`, it specifies the left border of table borders (defined in `<w:tblBorders>`). However, it is empty, meaning that it uses default settings.
++ In `</w:bottom>`, it specifies the bottom border of table borders (defined in `<w:tblBorders>`). However, it is empty, meaning that it uses default settings.
++ In `</w:right>`, it specifies the right border of table borders (defined in `<w:tblBorders>`). However, it is empty, meaning that it uses default settings.
++ In `<w:insideH w:val="single" w:sz="4" w:color="000000"/>`, it specifies the horizontal border within the table. It sets the horizontal border to be single solid line.  And it sets the thickness of border to 4 in quarter points (which is equivalent to 1 point), meaning that horizontal border is a 1-point line). Additionally, the color of horizontal border is set to `000000` (in rgb hex value).
++ In <w:insideV/>, it specifies the vertical border within the table. However, it is empty, meaning that it uses default settings.
+
+###### example 4.1 -- outline level
+```
+<w:pPr>
+  <w:outlineLvl w:val="0" />
+</w:pPr>
+```
+###### example 4.2 -- list
 ```
 <w:lists>
    <w:listDef w:listDefId="0">
@@ -2026,7 +2067,7 @@ In above example, we can know that
 >
 > Similarly, the `w:left` attributes usually takes precedence over than `w:left-chars`.
 
-###### example 5 -- line border
+###### example 5.1 -- line border
 ```
 <w:rPr>
    <!-- other tags omitted -->
@@ -2047,7 +2088,7 @@ In above example, we can know that
 + In `w:space="0"`, it sets the spacing (from the border to its inner element) to zero.
 + In `w:color="auto"`, the border color is determined by the XML preprocessor.
 
-###### example 6 -- page border
+###### example 5.2 -- page border
 ```
 <w:sectPr>
   <w:pgBorders w:display="notFirstPage" w:offsetFrom="text" w:zOrder="back">
@@ -2064,7 +2105,7 @@ In above example, we can know that
 + In `<w:sectPr>`, it defines properties of the section.
 + In `<w:pgBorders w:display="notFirstPage" w:offsetFrom="text" w:zOrder="back">`, <ol><li>`w:display="notFirstPage"` indicates all pages (except for first page) should be display the page border within the section.</li><li>`w:offsetFrom="text"` indicates the values of `w:space` attribute (inside this tag) will be measured from the text margins of the page.</li><li>`w:zOrder="back"` specifies that the page borders should be rendered behind the document content.</li></ol>
 
-###### example 7 -- display background shape
+###### example 6.1 -- display background shape
 ```
 <w:displayBackgroundShape w:val="true"/>
 ```
@@ -2073,7 +2114,23 @@ In above example, we can know that
 
 + In `<w:displayBackgroundShape w:val="true"/>`, it will display background shape when a user open a Word file with Microsoft Office Word.
 
-###### example 8 -- theme font language
+###### example 6.2 -- default shape
+```
+<w:shapeDefaults>
+    <o:shapedefaults v:ext="edit" spidmax="2050"/>
+    <o:shapelayout v:ext="edit">
+        <o:idmap v:ext="edit" data="1"/>
+    </o:shapelayout>
+</w:shapeDefaults>
+```
+
+In above example, we can know that
+
++ In `<w:shapeDefaults>`, it defines a container containing default shapes.
++ In `<o:shapedefaults v:ext="edit" spidmax="2050"/>`, it specifies that id of newly created shape must be less than or equal to 2050 (according from `spidmax="2050"`).</br>Additionally,it specifies that newly created shape is fully editable in Office app (according from `v:ext="edit"`).
++ In `<o:idmap v:ext="edit" data="1"/>`, it sets the current id of newly created shape to one. Thus, the next id of newly created shape will be set to two. And it is current newly created shape is fully editable.
+
+###### example 7.1 -- theme font language
 ```
 <w:themeFontLang w:val="zh-TW" w:bidi="ar-SA"/>
 ```
@@ -2083,7 +2140,7 @@ In above example, we can know that
 + In `w:val="zh-TW"`, when applying theme fonts to text that is marked as **Traditional Chinese (Taiwan)**, use language-specific rendering rules appropriate for `zh-TW`.
 + In `w:bidi="ar-SA"`, When applying theme fonts to text that is marked as **Arabic (Saudi Arabia)** (a right-to-left language), use language-specific rendering rules appropriate for `ar-SA`.
 
-###### example 9 -- color scheme
+###### example 7.2 -- color scheme
 ```
 <w:clrSchemeMapping w:bg1="light1" w:t1="dark1" w:bg2="light2" w:t2="dark2" w:accent1="accent1" w:accent2="accent2" w:accent3="accent3" w:accent4="accent4" w:accent5="accent5" w:accent6="accent6" w:hyperlink="hyperlink" w:followedHyperlink="followedHyperlink"/>
 ```
@@ -2103,24 +2160,8 @@ In above example, we can know that
 + In `w:accent6`, in the scheme mapping table, the property -- accent color 6 is set to `accent6`.
 + In `w:hyperlink`, in the scheme mapping table, the property -- hyperlink is set to `hyperlink`.
 + In `w:followedHyperlink`, in the scheme mapping table, the property -- followed hyperlink 1 is set to `followedHyperlink`.
-
-###### example 10 -- default shape
-```
-<w:shapeDefaults>
-    <o:shapedefaults v:ext="edit" spidmax="2050"/>
-    <o:shapelayout v:ext="edit">
-        <o:idmap v:ext="edit" data="1"/>
-    </o:shapelayout>
-</w:shapeDefaults>
-```
-
-In above example, we can know that
-
-+ In `<w:shapeDefaults>`, it defines a container containing default shapes.
-+ In `<o:shapedefaults v:ext="edit" spidmax="2050"/>`, it specifies that id of newly created shape must be less than or equal to 2050 (according from `spidmax="2050"`).</br>Additionally,it specifies that newly created shape is fully editable in Office app (according from `v:ext="edit"`).
-+ In `<o:idmap v:ext="edit" data="1"/>`, it sets the current id of newly created shape to one. Thus, the next id of newly created shape will be set to two. And it is current newly created shape is fully editable.
   
-###### example 11 -- separator for number symbol
+###### example 8.1 -- separator for number symbol
 ```
 <w:decimalSymbol w:val="."/>
 ```
@@ -2129,7 +2170,7 @@ In above example, we can know that
 
 + In `<w:decimalSymbol w:val="."/>`, it specifies the separator of decimal symbol is `.`.
 
-###### example 12 -- separator for list
+###### example 8.2 -- separator for list
 ```
 <w:listSeparator w:val=","/>
 ```
@@ -2138,7 +2179,7 @@ In above example, we can know that
 
 + In `<w:listSeparator w:val=","/>`, it specifies the separator of list is `,`.
 
-###### example 13 -- default setting for entire document
+###### example 9 -- default setting for entire document
 ```
 <w:docDefaults>
     <w:rPrDefault>
@@ -2159,7 +2200,7 @@ In above example, we can know that
 + In `<w:rPrDefault>`, it configures default property of text run.
 + In `<w:rPr>`, it defines properties of text run.
 
-###### example 14 -- default latent style
+###### example 10.1 -- default latent style
 ```
 <w:latentStyles w:defLockedState="0" w:defUIPriority="99" w:defSemiHidden="1" w:defUnhideWhenUsed="1" w:defQFormat="0" w:count="267">
 ```
@@ -2174,7 +2215,7 @@ In above example, we can know that
 + In `w:defQFormat`, it sets the quick format style to `false`, meaning that latent styles are not included in the Quick Styles gallery, by default.
 + In `w:count="267"`, we can know there are 267 latent styles defined in the Word file.
 
-###### example 15 -- LSD and latent style
+###### example 10.2 -- LSD and latent style
 ```
 <w:lsdException w:name="Normal" w:semiHidden="0" w:uiPriority="0" w:unhideWhenUsed="0" w:qFormat="1"/>
 ```
@@ -2215,7 +2256,7 @@ In above example, we can know that
 + In `w:hAnchor="text"`, anchors the frame horizontally to the page margins.
 + In `w:x="1921"`, it positions the left side of the frame approximately 1921 twips from the left edge of the page.
 
-###### example 17 -- always keep the paragraph in same page (if possible)
+###### example 11.1 -- always keep the paragraph in same page (if possible)
 `~/word/document.xml` file under `Docx1.docx` file
 
 ```
@@ -2273,7 +2314,7 @@ and `<w:keepLine/>` is present inside second `<w:pPr>`.
 
 Therefore, the second paragraph was moved to the beginning of the second page.
 
-###### example 18 -- combine two paragraphs in same page (if possible)
+###### example 11.2 -- combine two paragraphs in same page (if possible)
 ```
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- this tag `<w:document>` omitted -->
@@ -2339,18 +2380,11 @@ Therefore, the second paragraph and third paragraph were moved to the beginning 
 >
 > (if possible, e.g. the second paragraph and third paragraph does not hold over than one page in total).
 
-###### example 19 -- outline level
-```
-<w:pPr>
-  <w:outlineLvl w:val="0" />
-</w:pPr>
-```
-
 In above example, we can know that
 
 + In `<w:outlineLvl w:val="0" />`, this paragraph is of outline level 1, and if a table of contents field is inserted that utilizes outlines levels, the text in this paragraph is at level one in the TOC.
 
-###### example 21 -- style definition
+###### example 12 -- style definition
 part code of `~/word/style.xml` in a Word file.
 
 ```
@@ -2379,7 +2413,7 @@ In above example, we can know that
 + In `<w:basedOn w:val="Normal"/>`, it inherits the style named `Normal`.
 + In `<w:link w:val="Heading2Char"/>`, it defines a hyperlink that, when clicked, will jump the reader to a specific location within the same Word document where text has been formatted using a character style called "Heading2Char".
 
-###### example 22 -- formatted as superscript
+###### example 13 -- formatted as superscript
 ```
 <w:r>
   <w:rPr>
@@ -2395,7 +2429,7 @@ In above example, we can know that
 
 It would represent the number "2" formatted as a superscript.
 
-###### example 23 -- defines a footer
+###### example 14.1 -- defines a footer
 ```
 <w:ftr w:type="default">
   <w:p w:rsidR="602E0000" w:rsidRDefault="602E0000">
@@ -2494,7 +2528,7 @@ And there are only a text `1` in the run (according by `<w:t>1</w:t>`).
 
 it marks the end of a field in the Word document.
 
-###### example 24 -- defines a footnote
+###### example 14.2 -- defines a footnote
 part of content in `~/word/footernotes.xml` in `FootNoteExample1.docx`
 
 ```
@@ -2541,7 +2575,7 @@ it defines the property of paragraph, and setting the amount of vertical space b
     
 it is the instance of that separator being placed within the flow of the document, specifically within a paragraph.
 
-###### example 25 -- defines a footnote
+###### example 15 -- defines a footnote
 other part of content in `~/word/footernotes.xml` in `FootNoteExample1.docx`
 
 ```
@@ -2616,7 +2650,7 @@ it defines a run that contains text -- a single space ` `.
 
 it defines a run that contains text -- `This is a footnote.`, but Word will handle whitespace according to its default rules (collapsing multiple spaces into one, etc.) since `xmlns:space` attribute is NOT explicitly specified.
 
-###### example 26 -- refers footers
+###### example 16 -- refers footers
 part of content in `~/word/document.xml` in `InsertSectionExample.docx`.
 
 ```
@@ -2648,7 +2682,7 @@ In above example, we can know that
 + Similarly, in `<w:footerReference w:type="first" r:id="R1a4d6aee14a84bf5"/>`, in the section, it refers a footer for first page. Its id that links the footer is `R1a4d6aee14a84bf5`.
 + While, in `<w:footerReference w:type="default" r:id="R812e7120657b4c46"/>`, in the section, it refers a footer for all pages. Its id that links the footer is `R812e7120657b4c46`.
   
-###### example 27 -- simple field
+###### example 17.1 -- simple field
 part of content in `~/word/document.xml` in `InsertPageCountExample1.docx`.
 
 ```
@@ -2704,7 +2738,7 @@ it defines a run which is specific to Office Word 2006.
 
 In the run, it specifies the language as Tradition Chinese and there is a text `1`.
 
-###### example 28 -- simple field
+###### example 17.2 -- simple field
 other part of content in `~/word/document.xml` in `InsertPageCountExample1.docx`.
 
 ```
@@ -2760,7 +2794,7 @@ it defines a run which is specific to Office Word 2006.
 
 In the run, it specifies the language as Tradition Chinese and there is a text `1`.
 
-###### example 29 -- field simple
+###### example 17.3 -- field simple
 part of content of `~/word/document.xml` file under `InsertPageCountExample2.docx` file.
 
 ```
@@ -2821,7 +2855,27 @@ It will output like this:
 
 ![image](https://github.com/user-attachments/assets/60bca40e-ed57-42d5-932f-656b8dba428c)
 
-###### example 30 -- TOC (table of contents)
+###### example 18.1 -- content controls
+```
+<w:sdt>
+  <w:sdtPr>
+    <w:id w:val="-1234567890"/>
+    <w:docPartObj>
+      <w:docPartGallery w:val="Cover Pages"/>
+    </w:docPartObj>
+  </w:sdtPr>
+  <w:sdtContent>
+    </w:sdtContent>
+</w:sdt>
+```
+
+In above example, we can know that
+
++ In `<w:sdt>`, it acts like a container for the structured document tag.
++ In `<w:sdtPr>`, it defines properties of the structured document tag.
++ In `<w:id w:val="-1234567890"/>`, it sets the identifier of the structured document tag to `-1234567890`.
+
+###### example 18.2 -- TOC (table of contents)
 part of content in `~/word/document.xml` under `InsertTableOfContentExample.docx` file.
 
 ```
@@ -2882,6 +2936,7 @@ part of content in `~/word/document.xml` under `InsertTableOfContentExample.docx
 ```
 
 In above example, we can know that
+
 #### about `m` namespace
 ##### elements in `m` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
