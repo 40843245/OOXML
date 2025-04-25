@@ -5,6 +5,7 @@ In this chapter, you will learn
 + introduction of OOXML
 + how to look at xml content in an Office file
 + basic structure of an Office file
++ typical structure of a Document
 
 ## CH1.1 -- introduction of OOXML
 `OOXML` (stands for `Office Open Xml`) is a zipped, XML-based file format developed by Microsoft.
@@ -118,3 +119,13 @@ a node with light gray background: the relationship file (`*.rels`)
 
 ### reference
 + [Office File Formats (MSDS)](https://learn.microsoft.com/en-us/openspecs/office_file_formats/ms-offfflp/8aea05e3-8c1e-4a9a-9614-31f71e679456)
+
+### CH1.4 -- typical structure of a Document
+![image](https://github.com/user-attachments/assets/08332380-e0b7-4a88-8d11-0abcce1a44b2)
+
+refered to last section [Typical Document Scenario](https://learn.microsoft.com/en-us/office/open-xml/word/structure-of-a-wordprocessingml-document?tabs=cs#typical-document-scenario)
+
+which provided by MSDS.
+
+### reference
+[Structure of a WordprocessingML document (MSDS)](https://learn.microsoft.com/en-us/office/open-xml/word/structure-of-a-wordprocessingml-document?tabs=cs)
