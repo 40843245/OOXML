@@ -164,6 +164,9 @@ specifies the footer.
 ##### `<w:fldChar>`
 defines a field character for page.
 
+> [!NOTE]
+> a field character is usually used for the header or footer.
+
 > [!IMPORTANT]
 > In a non-corrupted Office Word file,
 >
