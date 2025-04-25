@@ -268,12 +268,33 @@ You can know which namespaces in `xmlns` namespace are declared through finding 
 ##### elements in `a` namespace
 | elements in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
+| | | | | | |
+| `<a:ln>` | | *l*i*n*e | defines the properties of a line. | | |
+| `<a:prstDash>` | | *pr*e*s*e*t* dash | specifies a preset dash pattern. | | |
+| `<a:custDash>` | | *cust*om dash | defines a custom dash pattern. | | |
+| | | | | | |
+| `<a:round>` | | | indicates that the join between these lines should be rounded. | | |
+| `<a:bevel>` | | | specifies how the edges of a 3D shape or table cell should be rounded or angled, creating a visual depth effect. | | |
+| | | | | | |
+| `<a:txBody>` | | *t*e*x*t body | adds and formats text within a graphical object. | | |
+| | | | | | |
+| | | | | | |
+| | | | | | |
+| | | | | | |
+| | | | | | |
+| | | | | | |
+| | | | | | |
+| | | | | | |
+| | | | | | |
+| | | | | | |
+| | | | | | |
 | `<a:theme>` | | | defines the theme. | It is usually in `~/word/theme/theme1.xml` file. | |
 | `<a:themeElements>` | | | acts a container that defines theme elements. | | |
 | `<a:clrScheme>` | | | clear the color scheme and defines the color palette for the theme. | | |
+| | | | | | |
 | `<a:dk1>` | | dark 1 | dark 1. | | |
 | `<a:lt1>` | | light 1 | light 1. | | |
-| `<a:sysClr>` | | system color | configure something to system color.7 | | | 
+| `<a:sysClr>` | | system color | configure something to system color. | | | 
 | `<a:srgbClr>` | | *s*econdary *RGB* *c*olor | set's secondary RGB color. | | |
 | `<a:accent1>` | | accent color 1 | defines the accent color 1.
 | `<a:hlink>` | | *h*yper*link* | defines the properties of hyperlink. | | |
@@ -284,17 +305,21 @@ You can know which namespaces in `xmlns` namespace are declared through finding 
 | `<a:objectDefaults>` | | | default settings for objects. | | |
 | `<a:extraClrSchemeLst/>` | | | would contain definitions for additional color schemes beyond the main "Office" scheme. | | |
 | `<a:extLst>` | | | defines an extension list. | | |
+| | | | | | |
 | `<a:graphic>` | | | servers a container about an actual graph. | | |
 | `<a:graphicData>` | | | configure properties about the actual graph. | | |
 | `<a:graphicFrameLocks>` | | | specifies the locking properties for the graphic frame | | |
 | `<a:blip>` | | blip | points to the actual image data that is stored elsewhere within the OOXML package. | | |
 | `<a:stretch>` | | stretch | acts as a container whose child will be stretched to fit its content. | | It can have exactly one child. |
 | `<a:fillRect>` | | fill *rect*angle | fills the rectangle | | It can have exactly one child. |
+| | | | | | |
 | `<a:xfrm>` | | transform | transforms the graphical object. | | |
 | `<a:off>` | | *off*set | offsets the graphical object | | |
 | `<a:ext>` | | *ext*ent | defines the width and height of the object's bounding box. | | |
 | `<a:prstGeom>` | | *pr*e*s*e*t* *geom*etry | configures preset geometry, is used in DrawingML to define the basic shape of an object by referencing a predefined geometric form. | |
+| `<a:custGeom>` | | *cust*om *geom*etry | defines your own custom geometry. | |
 | `a:avLst` | | *a*djustment *v*alue *l*i*st* | specifies adjustment values for preset shapes that have adjustable parameters. | | |
+| | | | | | |
 
 ##### namespace declaration about `a` namespace
 ###### namespace declaration in `<a:blip>`
