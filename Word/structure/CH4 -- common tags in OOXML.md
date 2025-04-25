@@ -19,7 +19,7 @@ references of graphic data.
 ### about picture
 #### `<a:pic>`
 represents a picture object.
- 
+
 ### about shape
 #### `<a:shape>`
 defines a basic geometric shapes and more complex predefined shape.
@@ -65,3 +65,12 @@ specifies how the edges of a 3D shape or table cell should be rounded or angled,
 ### about text body
 #### `<a:txBody>`
 adds and formats text within a graphical object.
+
+### about reference
+#### about reference of chart
+##### `<a:chart>`
+references a chart which is actual defined in `<c:chart>` tag.
+
+<img width="864" alt="image" src="https://github.com/user-attachments/assets/f33787d4-b429-489c-9c2d-d7b1009dff69" />
+
+<img width="544" alt="image" src="https://github.com/user-attachments/assets/c798d7ac-318b-4054-a6ba-c29def1f6d33" />
