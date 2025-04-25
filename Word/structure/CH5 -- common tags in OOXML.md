@@ -265,13 +265,25 @@ defines properties of a cell in a table.
 ##### `<w:numPr>`
 defines numbering properties for lists.
 
-##### about indentation
+##### about level
+###### `<w:lvl>`
+defines the formatting for a specific numbering level in an abstract number.
+
 ###### `<w:ilvl>`
 specifies the indentation level of a list item.
 
-#### about number id
+###### `<w:lvlOverride>`
+overrides properties for a specific numbering level.
+
+#### about number
 ##### `<w:numId>`
 references a specific numbering definition.
+
+##### `<w:num>`
+defines a numbering instance.
+
+##### `<w:abstractNum>`
+defines an abstract numbering scheme.
 
 ### about style
 #### `<w:styles>`
@@ -280,12 +292,22 @@ acts like an container containing all definitions of lists.
 #### `<w:style>`
 defines a specific style.
 
+#### `<w:name>`
+specifies the name of style.
+
+#### `<w:next>`
+specifies the style to apply after a paragraph with the current style.
+
 #### about reference of style
 ##### `<w:pStyle>`
 references a paragraph style.
 
 ##### `<w:rStyle>`
 references a run style.
+
+#### OO design pattern in Style package part
+##### `<w:basedOn>`
+inherits the specific defined style.
 
 ### about drawing objects
 #### `<w:drawing>`
@@ -331,3 +353,24 @@ represents moved content. It indicates the content is moved from.
 
 #### `<w:moveTo>`
 represents moved content. It indicates the content is moved to.
+
+### about theme
+#### about theme font
+##### `<w:themeFont>`
+defines theme fonts.
+
+#### about theme color
+##### `<w:colorScheme>`
+defines a color scheme.
+
+Here, color scheme means the palette of colors available within a theme.
+
+##### `<w:themeColor>`
+references a specific color defined in the active color scheme (defined by `<w:colorScheme>`).
+
+> [!IMPORTANT]
+> What is the different between `<w:colorScheme>` and `<w:themeColor>`?
+>
+> <img width="533" alt="image" src="https://github.com/user-attachments/assets/4f55c074-9198-4401-9210-cebc930412a2" />
+>
+> provided by Google Gemini.
