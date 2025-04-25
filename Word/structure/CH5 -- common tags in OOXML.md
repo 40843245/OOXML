@@ -167,8 +167,21 @@ defines properties for a section in the document.
 ##### `<w:hdr>`
 specifies the header.
 
+##### `<w:evenAndOddHeaders>`
+specifies different headers for even and odd pages.
+
+##### `<w:firstPageHeader>`
+specifies a different header for the first page.
+
+#### about footer
 ##### `<w:ftr>`
 specifies the footer.
+
+##### `<w:evenAndOddFooters>`
+specifies different footers for even and odd pages.
+
+##### `<w:firstPageFooter>`
+specifies a different footer for the first page.
 
 ##### `<w:fldChar>`
 defines a field character for page.
@@ -198,6 +211,9 @@ sets the field instruction of the field character.
 > To set the field instruction in the field character.
 >
 > See [`example 23 -- defines a footer` in `Appendix 1 -- xml tag in Document`](https://github.com/40843245/OOXML/blob/main/Word/structure/Appendix%201%20--%20xml%20tag%20in%20Document.md#example-23----defines-a-footer)
+
+##### `<w:fldSimple>`
+defines a simple field.
 
 ### about paragraph
 #### `<w:p>`
@@ -230,6 +246,10 @@ defines a table.
 #### about properties of table
 ##### `<w:tblPr>`
 defines the properties of a table.
+
+##### about table borders
+###### `<w:tblBorders>`
+defines the table borders.
 
 #### about columns in table
 ##### `<w:tblGrid>`
@@ -377,12 +397,26 @@ defines a end point of a bookmark.
 
 ### about notes
 #### about footnotes
+##### `<w:footnotes>`
+acts like a container containing many footnotes.
+
 ##### `<w:footnote>`
 defines a footnote.
 
+##### about properties of a footnote
+###### `<w:footnotePr>`
+defines the properties of the footnote.
+
 #### about endnotes
+##### `<w:endnotes>`
+acts like a container containing many endnotes.
+
 ##### `<w:endnote>`
 defines a endnote.
+
+##### about properties of a endnote
+###### `<w:endnotePr>`
+defines the properties of the endnote.
 
 ### about revision tracking elements
 #### `<w:ins>`
@@ -407,6 +441,17 @@ defines theme fonts.
 defines a color scheme.
 
 Here, color scheme means the palette of colors available within a theme.
+
+### about comments
+#### `<w:comments>`
+acts like a container containing lots of comments.
+
+#### `<w:comment>`
+defines a comment.
+
+#### about properties of a comment
+##### `<w:commentPr>`
+defines properties of the comment.
 
 ##### `<w:themeColor>`
 references a specific color defined in the active color scheme (defined by `<w:colorScheme>`).
