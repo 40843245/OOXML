@@ -17,6 +17,7 @@ Let's dive into each files.
 | file name | under which directory | description | required</br>(MUST exist) | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `xxx.docx` | root node | the Office Word file | required | |
+| `document.xml` | `~/glossary` | main content of glossary that will be used in `~/word/document.xml` | optional | |
 | `document.xml` | `~/word` | main content of the Office Word file -- `xxx.docx` | required | |
 | `numbering.xml` | `~/word` | defines the numbering format that will be used in `~/word/document.xml`| required | |
 | `styles.xml` | `~/word` | defines the styles that will be used in `~/word/document.xml` | required | |
