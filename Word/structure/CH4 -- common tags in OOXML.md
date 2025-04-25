@@ -132,3 +132,126 @@ references a chart which is actual defined in `<c:chart>` tag.
 <img width="864" alt="image" src="https://github.com/user-attachments/assets/f33787d4-b429-489c-9c2d-d7b1009dff69" />
 
 <img width="544" alt="image" src="https://github.com/user-attachments/assets/c798d7ac-318b-4054-a6ba-c29def1f6d33" />
+
+## CH4.2 -- tags about WordprocessingML
+The namespace `w` refers to WordprocessingML.
+
+### about entire document
+#### `<w:document>`
+defines a document. 
+
+It must reside at the root node of `~/word/document.xml`
+
+### about main body
+#### `<w:body>`
+defines the main body.
+
+It must a child of `<w:document>` tag,
+
+### about section
+#### about properties of section 
+##### `<w:sectPr>`
+defines properties for a section in the document.
+
+### about paragraph
+#### `<w:p>`
+defines a new paragraph.
+
+#### about properties of paragraph
+##### `<w:pPr>`
+defines properties of the paragraph.
+
+### about run
+#### `<w:r>`
+defines a run.
+
+#### about properties of run
+##### `<w:rPr>`
+defines the properties of a run (e.g., font, size, bold, italic).
+
+### about text
+#### `<w:t>`
+represents the actual text content within a run.
+
+### about break line
+#### `<w:br>`
+defines a break line (i.e. `\n`)
+
+### about table
+#### `<w:tbl>`
+defines a table.
+
+#### about properties of table
+##### `<w:tblPr>`
+defines the properties of a table.
+
+#### about row in table
+##### `<w:tr>`
+defines a row in a table.
+
+#### about a cell in table
+##### `<w:tc>`
+defines a cell in a table.
+
+##### about properties of a cell in table
+###### `<w:tcPr>`
+defines properties of a cell in a table.
+
+### about list
+#### about properties of list
+##### `<w:numPr>`
+defines numbering properties for lists.
+##### about indentation
+###### `<w:ilvl>`
+specifies the indentation level of a list item.
+
+#### about number id
+##### `<w:numId>`
+references a specific numbering definition.
+
+### about style
+#### `<w:styles>`
+acts like an container containing all definitions of lists.
+
+#### `<w:style>`
+defines a specific style.
+
+#### about reference of style
+##### `<w:pStyle>`
+references a paragraph style.
+
+##### `<w:rStyle>`
+references a run style.
+
+### about drawing objects
+#### `<w:drawing>`
+acts like an container containing all definitions of drawing objects.
+
+#### about embedded objects
+##### `<w:object>`
+represents an embedded object (e.g., OLE object).
+
+#### about picture
+##### `<w:pict>`
+represents a picture.
+
+### about hyperlink
+#### `<w:hyperlink>`
+defines a hyperlink.
+
+### about bookmark
+#### `<w:bookmarkStart>`
+defines a start point of a bookmark.
+
+#### `<w:bookmarkEnd>`
+defines a end point of a bookmark.
+
+### about notes
+#### about footnotes
+##### `<w:footnote>`
+defines a footnote.
+
+#### about endnotes
+##### `<w:endnote>`
+defines a endnote.
+
