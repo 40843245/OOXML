@@ -1,10 +1,10 @@
-# CH4 -- common tags in OOXML
+# CH5 -- common tags in OOXML
 ## objectives
 In this chapter, you will learn
 
 + common tags in OOXML
 
-## CH4.1 -- tags about DrawingML
+## CH5.1 -- tags about DrawingML
 In OOXML, the namespace `a` is used for DrawingML.
 
 ### about graphics
