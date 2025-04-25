@@ -1,4 +1,4 @@
-# CH2 -- syntax
+# CH3 -- syntax
 ## content of tag in OOXML
 ### `field instruction`
 #### syntax of `field instruction` in `<w:instrText>` tag
