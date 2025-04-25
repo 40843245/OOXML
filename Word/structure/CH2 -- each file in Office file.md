@@ -14,7 +14,7 @@ we have discussed basic structure of an Office Word file, illustrated with a str
 
 Let's dive into each files.
 
-| file name | under which directory | description | required</br>(MUST exists) | notice |
+| file name | under which directory | description | required</br>(MUST exist) | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `xxx.docx` | root node | the Office Word file | required | |
 | `document.xml` | `~/word` | main content of the Office Word file -- `xxx.docx` | required | |
@@ -29,6 +29,3 @@ Let's dive into each files.
 | `chart1.xml` | `~/word/charts` | defines the chart that will be used in `~/word/document.xml` | optional | |
 | `.rels` | `~/rels` | is a package-level relationship file, which may contains<ol><li>The nature of the relationship (e.g., the main document, core properties). These types are defined by XML namespaces.</li><li>Target: The location of the target part within the ZIP archive</li></ol> | required | |
 | `document.xml.rels` | `~/word/rels` | defines the relationship between `~/word/document.xml` and other parts of the document package. The relationship can include<ol><li>Images</li><li>Headers</li><li>Footers</li><li>Footnotes</li><li>Endnotes</li><li>Hyperlinks</li><li>Theme</li><li>Styles</li><li>External Resources</li></ol> | required | |
-
-
-
