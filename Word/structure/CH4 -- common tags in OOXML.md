@@ -56,12 +56,6 @@ acts like an container containing a list of style for filling.
 ##### `<a:lnStyleLst>`
 acts like an container containing a list of line style.
 
-##### `<a:effectLst>`
-acts like an container containing a list of shape effects.
-
-##### `<a:effectDag>`
-defines a diagram-specific effect.
-
 ##### `<a:sp3d>`
 defines 3D shape properties.
 
@@ -97,6 +91,38 @@ adds and formats text within a graphical object.
 #### about properties of text body
 ##### `<a:bodyPr>`
 defines the overall properties of the text body.
+
+### about effects
+#### about shadow effects
+##### `<a:outerShdw>`
+defines an outer shadow effect.
+
+##### `<a:innerShdw>`
+defines an inner shadow effect.
+
+#### about shape effects
+##### `<a:effectLst>`
+acts like an container containing a list of shape effects.
+
+#### about glow effects
+##### `<a:glow>`
+specifies a glow effect.
+
+#### about reflection effects
+##### `<a:reflection>`
+defines a reflection effect.
+
+#### about blur effects
+##### `<a:blur>`
+specifies a Gaussian blur effect.
+
+#### about fill overlay effects
+##### `<a:fillOverlay>`
+defines a fill overlay effect.
+
+#### about diagram-specific effects
+##### `<a:effectDag>`
+defines a diagram-specific effect.
 
 ### about reference
 #### about reference of chart
