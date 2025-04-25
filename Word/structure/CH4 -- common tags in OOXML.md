@@ -30,7 +30,7 @@ defines a group of shape.
 #### `<a:cxnSp>`
 defines a connector shape.
 
-#### about shape property
+#### about properies of shape 
 #### `<a:style>`
 defines shape style
 
@@ -42,6 +42,34 @@ specifies a preset shape geometry.
 
 ##### `<a:custGeom>`
 defines a custom shape geometry.
+
+##### `<a:pathLst>`
+acts like an container containing a list of paths for a custom geometry.
+
+##### `<a:path>`
+defines a single path within a custom geometry.
+
+#### anout shape style
+##### `<a:fillStyleLst>`
+acts like an container containing a list of style for filling.
+
+##### `<a:lnStyleLst>`
+acts like an container containing a list of line style.
+
+##### `<a:effectLst>`
+acts like an container containing a list of shape effects.
+
+##### `<a:effectDag>`
+defines a diagram-specific effect.
+
+##### `<a:sp3d>`
+defines 3D shape properties.
+
+##### `<a:scene3d>`
+defines 3D scene properties.
+
+##### `<a:txXfrm>`
+defines the transform for text within a shape.
 
 ### about line
 #### `<a:ln>`
@@ -65,6 +93,10 @@ specifies how the edges of a 3D shape or table cell should be rounded or angled,
 ### about text body
 #### `<a:txBody>`
 adds and formats text within a graphical object.
+
+#### about properties of text body
+##### `<a:bodyPr>`
+defines the overall properties of the text body.
 
 ### about reference
 #### about reference of chart
