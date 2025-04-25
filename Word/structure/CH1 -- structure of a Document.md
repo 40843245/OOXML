@@ -5,7 +5,6 @@ In this chapter, you will learn
 + introduction of OOXML
 + how to look at xml content in an Office file
 + basic structure of an Office file
-+ root node about Document in OOXML
 
 ## CH1.1 -- introduction of OOXML
 `OOXML` (stands for `Office Open Xml`) is a zipped, XML-based file format developed by Microsoft.
@@ -74,8 +73,42 @@ Since Office 2013, it supports OOXML for files with file extension that ends wit
 Here, `x` stands for `xml`.
 
 ### Word (`*.docx`)
+The basic structure of an Office Word file:
 
+<img width="530" alt="image" src="https://github.com/user-attachments/assets/1fb8455f-143b-4712-8da8-fbec5cce5b18" />
 
+P.S.
+
+About background of node, it indicates the type of file, as follows:
+
+a node with dark blue background: the Office Word file (`*.docx`)
+
+a node with light yellow background: the directory
+
+a node with light blue background: the xml file (`*.xml`)
+
+a node with light gray background: the relationship file (`*.rels`)
+
+> [!IMPORTANT]
+> All Office Word files must have these structure.
+>
+> However, some Office Word files may contain
+>
+> + `footnote.xml` (for footnote)
+> + `footer1.xml`, and may have `footer2.xml` etc. (for footer)
+> + `endnote.xml` (for endnote)
+> + `header1.xml`, and may have `header2.xml` etc. (for header)
+> + and more
+>
+> under the directory `~/word` when there are some special elements in Office Word.
+>
+> Similarly, some Office Word files may contain
+>
+> + `chart1.xml`, and may have `chart2.xml` etc. (for chart graph)
+>
+> under the directory `~/word/chart` when there are charts in Office Word.
+>
+> And more. (I will NOT discuss here)
 
 ### reference
 + [Office File Formats (MSDS)](https://learn.microsoft.com/en-us/openspecs/office_file_formats/ms-offfflp/8aea05e3-8c1e-4a9a-9614-31f71e679456)
