@@ -1,4 +1,4 @@
-# Appendix 1 -- xml tag in Document.md
+# Appendix 1 -- xml tag in Document
 ## Prequisite
 To have a better understanding of a list of tags in OOXML, it's better to be familiar with these basic knowledgement or concepts before looking at these articles.
 
@@ -2494,7 +2494,7 @@ And there are only a text `1` in the run (according by `<w:t>1</w:t>`).
 
 it marks the end of a field in the Word document.
 
-###### example 24 -- defines a footernote
+###### example 24 -- defines a footnote
 part of content in `~/word/footernotes.xml` in `FootNoteExample1.docx`
 
 ```
