@@ -1,5 +1,10 @@
 # CH3 -- syntax
-## content of tag in OOXML
+## objectives
+In this chapter, you will learn
+
++ meaning of content of some tag in OOXML
+
+## CH3.1 -- meaning of content of some tag in OOXML
 ### `field instruction`
 #### syntax of `field instruction` in `<w:instrText>` tag
 
