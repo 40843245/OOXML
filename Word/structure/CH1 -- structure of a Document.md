@@ -94,9 +94,9 @@ a node with light gray background: the relationship file (`*.rels`)
 >
 > However, some Office Word files may contain
 >
-> + `footnote.xml` (for footnote)
+> + `footnotes.xml` (for footnote)
 > + `footer1.xml`, and may have `footer2.xml` etc. (for footer)
-> + `endnote.xml` (for endnote)
+> + `endnotes.xml` (for endnote)
 > + `header1.xml`, and may have `header2.xml` etc. (for header)
 > + and more
 >
@@ -106,11 +106,9 @@ a node with light gray background: the relationship file (`*.rels`)
 >
 > + `chart1.xml`, and may have `chart2.xml` etc. (for chart graph)
 >
-> under the directory `~/word/chart` when there are charts in Office Word.
+> under the directory `~/word/charts` when there are charts in Office Word.
 >
 > And more. (I will NOT discuss here)
 
 ### reference
 + [Office File Formats (MSDS)](https://learn.microsoft.com/en-us/openspecs/office_file_formats/ms-offfflp/8aea05e3-8c1e-4a9a-9614-31f71e679456)
-+ 
-## CH1.4 -- root node about Document in OOXML
