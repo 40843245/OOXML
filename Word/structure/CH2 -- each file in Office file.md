@@ -24,8 +24,9 @@ Let's dive into each files.
 | `footnotes.xml` | `~/word` | defines the footnotes that will be used in `~/word/document.xml` | optional | |
 | `footer1.xml` | `~/word` | defines the footer that will be used in `~/word/document.xml` | optional | |
 | `endnotes.xml` | `~/word` | defines the endnotes that will be used in `~/word/document.xml` | optional | |
-| `header1.xml` | `~/word` | defines the header that will be used in `~/word/document.xml` | optional | |4
-| `chart.xml` | `~/word/chart` | defines the properties of charts that will be used in `~/word/document.xml` | optional | |
+| `header1.xml` | `~/word` | defines the header that will be used in `~/word/document.xml` | optional | |
+| `chart1.xml` | `~/word/charts` | defines the chart that will be used in `~/word/document.xml` | optional | |
+| `.rels` | `~/rel` | is a package-level relationship file, which may contains<ol><li>The nature of the relationship (e.g., the main document, core properties). These types are defined by XML namespaces.</li><li>Target: The location of the target part within the ZIP archive</li></ol> | required | |
 
 
 
