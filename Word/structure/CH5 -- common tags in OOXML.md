@@ -231,6 +231,23 @@ defines a table.
 ##### `<w:tblPr>`
 defines the properties of a table.
 
+#### about columns in table
+##### `<w:tblGrid>`
+defines the header with an array of field name in a table.
+
+> [!TIP]
+> Think:
+>
+> you can think it acts like a header in a table and in native html5, it is `<thead>` tag.
+
+##### about grid in header
+###### `<w:gridCol>`
+defines a grid in the header (`<w:tblGrid>).
+
+> [!TIP]
+> Think:
+>
+> you can think header acts like an array while grid acts like an element of the header. in native html5, it is `<th>` tag.
 #### about row in table
 ##### `<w:tr>`
 defines a row in a table.
@@ -247,6 +264,7 @@ defines properties of a cell in a table.
 #### about properties of list
 ##### `<w:numPr>`
 defines numbering properties for lists.
+
 ##### about indentation
 ###### `<w:ilvl>`
 specifies the indentation level of a list item.
