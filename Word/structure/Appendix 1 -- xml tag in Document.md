@@ -2865,7 +2865,7 @@ It will output like this:
     </w:docPartObj>
   </w:sdtPr>
   <w:sdtContent>
-    </w:sdtContent>
+  </w:sdtContent>
 </w:sdt>
 ```
 
@@ -2874,6 +2874,9 @@ In above example, we can know that
 + In `<w:sdt>`, it acts like a container for the structured document tag.
 + In `<w:sdtPr>`, it defines properties of the structured document tag.
 + In `<w:id w:val="-1234567890"/>`, it sets the identifier of the structured document tag to `-1234567890`.
++ In `<w:docPartObj>`, it signifies that this SDT is designed to host a document part, which in this context refers to a building block.
++ In `<w:docPartGallery w:val="Cover Pages"/>`, it defines the type of building blocks that will be displayed in this content control.
++ In `<w:sdtContent>`, it is empty, which indicates that there are no actual content that is currently present within the content control.
 
 ###### example 18.2 -- TOC (table of contents)
 part of content in `~/word/document.xml` under `InsertTableOfContentExample.docx` file.
@@ -2937,6 +2940,15 @@ part of content in `~/word/document.xml` under `InsertTableOfContentExample.docx
 
 In above example, we can know that
 
++ In `<w:sdt xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">`, it acts a container for SDT, but it uses Office 2006.
++ In `<w:sdtPr>`, it defines the properties of the SDT.
++ In `<w:docPartObj>`, it indicates that the SDT is related to a document part (building block).
++ In `<w:docPartGallery w:val="Table of Contents"/>`, it specifies that the building block gallery associated with this content control</br>should display items related to TOC.</br>This allows users to choose from different styles for TOC.
++ In `<w:docPartUnique/>`, it ensures that there is exactly one document part in the SDT. The reason why we do so is that we always want to exactly one TOC in a document.
++ In `<w:sdtEndPr>`, it defines properties for the end of the SDT.
++ In `<w:sdtContent>`, it contain the markup for a dynamically generated TOC.
++ 
+  
 #### about `m` namespace
 ##### elements in `m` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
