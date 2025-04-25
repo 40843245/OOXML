@@ -21,8 +21,15 @@ In this chapter, you will learn
 | `Relationship` | used for relationships between these package parts in an Office Word file | required | |
 | `Math` | is used for math calculation | required | |
 
-
-
-
 ## CH4.2 -- package parts in an Office Word file
 ### about WordprocessingML
+<img width="440" alt="image" src="https://github.com/user-attachments/assets/0bd0c0be-44a5-4803-8590-8f37f7fd98f0" />
+
+<img width="443" alt="image" src="https://github.com/user-attachments/assets/01582c76-2155-43b0-b695-6779a122909c" />
+
+refered to [Important WordprocessingML Parts](https://learn.microsoft.com/en-us/office/open-xml/word/structure-of-a-wordprocessingml-document?tabs=cs#important-wordprocessingml-parts)
+
+provided by MSDS
+
+#### reference
+[Structure of a WordprocessingML document](https://learn.microsoft.com/en-us/office/open-xml/word/structure-of-a-wordprocessingml-document?tabs=cs#important-wordprocessingml-parts)
