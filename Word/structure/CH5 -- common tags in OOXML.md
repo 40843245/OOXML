@@ -298,6 +298,49 @@ specifies the name of style.
 #### `<w:next>`
 specifies the style to apply after a paragraph with the current style.
 
+#### about configuring properties of style
+##### `<w:color>`
+specifies the color of font.
+
+##### `<w:shd>`
+specifies the shadow of font.
+
+##### `<w:b>`
+specifies whether the font is bold.
+
+##### `<w:i>`
+specifies whether the font is italic.
+
+##### `<w:u>`
+specifies whether the font is underlined.
+
+##### `<w:strike>`
+specifies whether the font is strikethrough.
+
+##### `<w:vertAlign>`
+specifies the vertical alignment of the font.
+
+##### `<w:borders>`
+specifies the borders.
+
+##### `<w:top>`
+specifies the top border of the borders.
+
+##### `<w:left>`
+specifies the left border of the borders.
+
+##### `<w:bottom>`
+specifies the bottom border of the borders.
+
+##### `<w:right>`
+specifies the right border of the borders.
+
+##### `<w:insideH>`
+specifies internal horizontal border. i.e. specifies horizontal border between rows (within a paragraph or table etc).
+
+##### `<w:insideV>`
+specifies vertical border between columns within a table.
+
 #### about reference of style
 ##### `<w:pStyle>`
 references a paragraph style.
