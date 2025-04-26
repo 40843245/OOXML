@@ -1,6 +1,5 @@
-# app.xml
-## examples
-### example 1
+# examples
+## example 1
 ```
 <Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties" xmlns:vt="http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes">
   <Template>Normal.dotm</Template>
