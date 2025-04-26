@@ -2,24 +2,4 @@
 ## default namespace
 ### examples
 #### example 1.1
-
-```
-<Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties" xmlns:vt="http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes">
-<Template>Normal.dotm</Template>
-<TotalTime>1</TotalTime>
-<Pages>1</Pages>
-<Words>0</Words>
-<Characters>1</Characters>
-<Application>Microsoft Office Word</Application>
-<DocSecurity>0</DocSecurity>
-<Lines>1</Lines>
-<Paragraphs>1</Paragraphs>
-<ScaleCrop>false</ScaleCrop>
-<Company/>
-<LinksUpToDate>false</LinksUpToDate>
-<CharactersWithSpaces>1</CharactersWithSpaces>
-<SharedDoc>false</SharedDoc>
-<HyperlinksChanged>false</HyperlinksChanged>
-<AppVersion>16.0000</AppVersion>
-</Properties>
-```
+see [`~/docProps/app.xml` file under `OnlyWithOneFigureExample` and its explanation](https://github.com/40843245/OOXML/blob/main/examples/documents/Word/figure/OnlyWithOneFigureExample1.docx/app.xml/app.xml.md)
