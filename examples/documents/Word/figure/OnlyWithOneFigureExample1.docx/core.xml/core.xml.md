@@ -22,9 +22,11 @@ In above example, we can know that
 <cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dcmitype="http://purl.org/dc/dcmitype/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 ```
 
-it defines a core properties.
+it defines a core properties within OPC.
 
-The core properties targets to Office Word 2006 (according to `xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties"`).
+The core properties within OPC is targeted to the URI `http://schemas.openxmlformats.org/package/2006/metadata/core-properties`, 
+
+meaning that it uses Open Xml format in version 2006 (according to `xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties"`).
 
 The Dublin Core Metadata Element Set is in version id 1.1 (according to `xmlns:dc="http://purl.org/dc/elements/1.1/"`).
 
