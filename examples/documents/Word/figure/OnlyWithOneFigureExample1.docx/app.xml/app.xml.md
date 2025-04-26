@@ -24,7 +24,7 @@
 In above example, we can know that
 
 + In `<Template>Normal.dotm</Template>`, it indicates that the document is based on the "Normal.dotm" template.
-+ In `<TotalTime>1</TotalTime>`, total time is in one unit.
++ In `<TotalTime>1</TotalTime>`, editing the document spent on one unit in total. One unit usually refers one minute.
 + In `<Pages>1</Pages>`, there are 1 page.
 + In `<Words>0</Words>`, there are zero word count in total.
 + In `<Characters>1</Characters>`, there are one characters (exclusive space) in total.
