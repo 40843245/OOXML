@@ -1,4 +1,4 @@
-# Appendix 1 -- xml tag in Document
+# Appendix 1.1 -- xml tag in Document
 ## Prequisite
 To have a better understanding of a list of tags in OOXML, it's better to be familiar with these basic knowledgement or concepts before looking at these articles.
 
