@@ -594,6 +594,8 @@ The above example may output:
 | `<c:plotArea>` | | plot area | defines a plot area | | |
 | `<c:layout/>`| | layout | defines a layout for the plot area | | |
 | `<c:barChart>` | | bar chart | configure the chart is bar chart | | |
+| `<c:pieChart>` | | pie chart | configure the chart is pie chart | | |
+| | | | | | |
 | `<c:barDir>` | | bar *dir*ection | configure the orientation of bars. | This tag must be defined inside a bar chart (i.e. `<c:barChart>` tag) | |
 | `<c:grouping>` | | grouping | specifies how multiple data series within the same category should be grouped together visually. | | |
 | `<c:overlap>` | | overlap | specifies, for different data series that belong to the same category, the degree that it will overlap each other. | It is relevant when you have multiple data series in a bar chart (or column chart) and the value of the attribute `val` in `<c:grouping>` tag is set to something other than `stacked` or `percentStacked`. | |
