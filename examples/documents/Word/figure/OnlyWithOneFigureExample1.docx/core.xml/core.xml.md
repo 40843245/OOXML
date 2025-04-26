@@ -63,7 +63,7 @@ Within the Dublin Core standard, description is defined as
 ```
 
 + In `<cp:lastModifiedBy>Jay Huang (黃奕捷)</cp:lastModifiedBy>`, it indicates that the resource (likely a document or some other packaged content) was last modified by an individual named Jay Huang (黃奕捷).
-+ In ` <cp:revision>1</cp:revision>`, it store the revision id (the number of revision is it ) to 1.
++ In `<cp:revision>1</cp:revision>`, it store the revision id to 1, meaning that it is changed or updated 1 time.
 + In `<dcterms:created xsi:type="dcterms:W3CDTF">2025-04-07T08:50:00Z</dcterms:created>`
 is commonly associated with the Dublin Core Metadata Initiative's terms vocabulary. This vocabulary extends the basic Dublin Core with more specific element refinements and encoding schemes. The local name created clearly indicates that this element specifies the date and time when the resource was created.
 
