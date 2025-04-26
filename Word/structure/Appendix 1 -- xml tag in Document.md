@@ -896,7 +896,7 @@ In above example, we can know that
 + In `xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"`, the namespace `xmlns:a` targets to `http://schemas.openxmlformats.org/drawingml/2006/main`, which means that it uses DrawingML in Office 2006.
 + In `xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"`, the namespace `xmlns:r` targets to `http://schemas.openxmlformats.org/officeDocument/2006/relationships`, which means that it uses the Relationship Schema in Office 2006.
 
-###### example 2 -- cached copy of string values
+###### example 2.1 -- cached copy of string values
 If a chart's category labels are "A", "B", and "C" pulled from a spreadsheet, 
 
 the xml content may look like this:
@@ -919,7 +919,7 @@ the xml content may look like this:
 </c:strCache>
 ```
 
-###### example 3 -- cached copy of numerical values
+###### example 2.2 -- cached copy of numerical values
 Let's say you have numerical data 10.5, 20.3, and 15.8 in cells B2 to B4 of Sheet1 in your spreadsheet, 
 
 formatted as numbers with one decimal place.
@@ -950,20 +950,24 @@ It xml content may look like this:
 </c:val>
 ```
 
-###### example 3 -- cached copy of numerical values
-#### about `pic` namespace
-##### elements in `pic` namespace
-| elements in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `<pic:nvPicPr>` | | *N*on-*v*isual *Pic*ture *Pr*operties | acts as a container that contains Non-Visual Picture Properties | | |
-| `<pic:cNvPr>` | | *C*ommon *N*on-*v*isual Picture *Pr*operties | defines Common Non-visual Picture Pr*operties | | |
-| `<pic:blipFill>` | | | defines how the actual image data is used to fill the shape of the picture object. | it controls aspects like tiling, stretching, and the portion of the image that is visible. | |
-| `<pic:spPr>` | | *s*ha*p*e *pr*operties | defines shape properties| | |
-
 ###### example 4 -- a full chart
 The original files are placed at [BarChartExample.docx](https://github.com/40843245/OOXML/tree/main/examples/documents/Word/charts/BarChartExample.docx)
 
 The explanation is available at [example-and-explanation.md](https://github.com/40843245/OOXML/blob/main/examples/documents/Word/charts/BarChartExample.docx/example-and-explanation.md)
+
+#### about `pic` namespace
+##### namespace in `pic` namespace
+| namespace | description | notes | notice |
+| :---------- | :----------- | :----- | :--- |
+| `pic:pic` | | | |
+
+##### elements in `pic` namespace
+| elements in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `<pic:nvPicPr>` | | *N*on-*v*isual *Pic*ture *Pr*operties | acts as a container that contains Non-Visual Picture Properties | | |
+| `<pic:cNvPr>` | | *C*ommon *N*on-*v*isual Picture *Pr*operties | defines Common Non-visual Picture Properties | | |
+| `<pic:blipFill>` | | | defines how the actual image data is used to fill the shape of the picture object. | it controls aspects like tiling, stretching, and the portion of the image that is visible. | |
+| `<pic:spPr>` | | *s*ha*p*e *pr*operties | defines shape properties| | |
 
 ##### attribute about `pic` namespace
 ###### attribute in `<pic:cNvPr>`
@@ -1081,6 +1085,7 @@ In above example, we can know that
 | `<wp:inline>` | | inline | configure it (the tag that contains `<wp:inline>`) is inline.</br>For example, a `.xml` file that contains ``<w:drawing><wp:inline> <!-- element omitted --> </wp:inline></w:drawing>``, `<wp:inline>` element signifies that the drawing object is treated as if it were a character within the text flow. | see following example. | | 
 | `<wp:extent>` | | | specifically deals with the size of a drawing object. | | |
 | `<wp:effectExtent>` | | |  specifies the additional extent that should be added to each edge (top, bottom, left, right) of a drawing object to account for any visual effects applied to it. | | |
+| `<wp:docPr/>` | | *d*rawing *o*bje*ct *pr*operties | | |  
 | `<wp:cNvGraphicFramePr>` | | *C*ommon *N*on-*V*isual *Graphic* *Frame* *Pr*operties | holds non-visual properties for a graphic frame within a drawing object in WordprocessingML. | | |
 
 
@@ -1113,13 +1118,29 @@ In above example, we can know that
 | `wp:r` | | | specifies additional length in EMUs to be added to the right edge of the drawing object to accommodate effects | its unit is EMU | |
 | `wp:b` | | | specifies additional length in EMUs to be added to the bottom edge of the drawing object to accommodate effects | its unit is EMU | |
 
+###### attribute in `<wp:docPr>`
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `id` | | | the id of the drawing object | | |
+| `name` | | | the name of the drawing object | | |
+| `descr` | | *descr*iption | the description of the drawing object | | |
+
 ###### attribute in `<wp:cNvGraphicFramePr>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `wp:id` | | | speficies the unique identifier | | |
 
 ##### examples
-###### example 1 -- extent
+###### example 1 -- an drawing object with description
+```
+<wp:docPr id="1" name="" descr="Midori"/>
+```
+
+In above example, we can know that
+
++ an drawing object with id `1`, no name, and description `Midori`.
+
+###### example 2 -- extent
 ```
 <wp:anchor relativeHeight="10" allowOverlap="true">
   </wp:anchor>
