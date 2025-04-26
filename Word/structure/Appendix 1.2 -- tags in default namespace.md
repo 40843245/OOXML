@@ -1,0 +1,25 @@
+# Appendix 1.2 -- tags in default namespace
+## default namespace
+### examples
+#### example 1.1
+
+```
+<Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties" xmlns:vt="http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes">
+<Template>Normal.dotm</Template>
+<TotalTime>1</TotalTime>
+<Pages>1</Pages>
+<Words>0</Words>
+<Characters>1</Characters>
+<Application>Microsoft Office Word</Application>
+<DocSecurity>0</DocSecurity>
+<Lines>1</Lines>
+<Paragraphs>1</Paragraphs>
+<ScaleCrop>false</ScaleCrop>
+<Company/>
+<LinksUpToDate>false</LinksUpToDate>
+<CharactersWithSpaces>1</CharactersWithSpaces>
+<SharedDoc>false</SharedDoc>
+<HyperlinksChanged>false</HyperlinksChanged>
+<AppVersion>16.0000</AppVersion>
+</Properties>
+```
