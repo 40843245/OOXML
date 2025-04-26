@@ -1,5 +1,5 @@
 # examples
-## exampl 1
+## example 1
 ```
 <cp:coreProperties
 xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties"
