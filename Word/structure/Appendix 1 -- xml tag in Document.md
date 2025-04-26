@@ -1207,10 +1207,12 @@ In this example, we can know that
 | `<w:footnotes>` | | footnotes | acts like a container containing footnotes | | | | 
 | `<w:footnote>` | | footnote | defines a footnote | | | |
 | `<w:footnotePr>` | | footnote *pr*operty | defines properties of the footnote | | | |
+| `<w:footnoteRef>` | | footnote *ref*erence | references of the footnote | | | |
 | | | | | | | |
 | `<w:endnotes>` | | endnotes | acts like a container that containing endnotes | | | | 
 | `<w:endnote>` | | endnote | defines a endnotes | | | |
 | `<w:endnotePr>` | | endnote *pr*operty | defines properties of the endnote | | | |
+| `<w:endnoteRef/>` | | endnote *ref*erence | references of the endnote | | | |
 | | | | | | | | 
 | `<w:hdr>` | | *h*ea*d*e*r* | configures the header | | | | 
 | `<w:headerReference>` | | | indicates that the parent element refers the header with specific type. | | | | 
@@ -2429,7 +2431,7 @@ In above example, we can know that
 
 It would represent the number "2" formatted as a superscript.
 
-###### example 14.1 -- defines a footer
+###### example 14 -- defines a footer
 ```
 <w:ftr w:type="default">
   <w:p w:rsidR="602E0000" w:rsidRDefault="602E0000">
@@ -2528,7 +2530,39 @@ And there are only a text `1` in the run (according by `<w:t>1</w:t>`).
 
 it marks the end of a field in the Word document.
 
-###### example 14.2 -- defines a footnote
+###### example 15 -- refers footers
+part of content in `~/word/document.xml` in `InsertSectionExample.docx`.
+
+```
+<w:p>
+    <w:pPr>
+        <w:sectPr w:rsidR="003E25F4" w:rsidSect="00FC3028">
+            <w:pgSz w:w="11906" w:h="16838"/>
+            <w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="1440" w:header="708" w:footer="708" w:gutter="0"/>
+            <w:cols w:space="708"/>
+            <w:docGrid w:linePitch="360"/>
+            <w:footerReference w:type="even" r:id="R3d26812d683949a8"/>
+            <w:footerReference w:type="first" r:id="R1a4d6aee14a84bf5"/>
+            <w:footerReference w:type="default" r:id="R812e7120657b4c46"/>
+            <w:titlePg/>
+        </w:sectPr>
+    </w:pPr>
+</w:p>
+```
+
+In above example, we can know that
+
++ It defines a paragraph.
++ In the paragraph, it defines a section whose revision save identifier for run is `003E25F4` and that for section is `00FC3028`.
++ In the section, it sets the page width to `11906` twips and its height to `16838` twips.
++ In the section, it sets top-margin right-margin, bottom-margin, left-margin of the page to `1440` twips, </br>distance from the top to the header is `708` twips,</br>distance from the bottom to the footer is `708` twips, and</br> gutter margin to zero twips.
++ In the section, if there are has multiple columns, there will be a spacing of 708 twips between them.
++ In the section, it sets the vertical spacing between lines of text within the grid to 360 twips.
++ In `<w:footerReference w:type="even" r:id="R3d26812d683949a8"/>`, in the section, it refers a footer for even-numbered pages. Its id that links the footer is `R3d26812d683949a8`.
++ Similarly, in `<w:footerReference w:type="first" r:id="R1a4d6aee14a84bf5"/>`, in the section, it refers a footer for first page. Its id that links the footer is `R1a4d6aee14a84bf5`.
++ While, in `<w:footerReference w:type="default" r:id="R812e7120657b4c46"/>`, in the section, it refers a footer for all pages. Its id that links the footer is `R812e7120657b4c46`.
+  
+###### example 16.1 -- defines a footnote
 part of content in `~/word/footernotes.xml` in `FootNoteExample1.docx`
 
 ```
@@ -2575,7 +2609,7 @@ it defines the property of paragraph, and setting the amount of vertical space b
     
 it is the instance of that separator being placed within the flow of the document, specifically within a paragraph.
 
-###### example 15 -- defines a footnote
+###### example 15.2 -- defines a footnote
 other part of content in `~/word/footernotes.xml` in `FootNoteExample1.docx`
 
 ```
@@ -2650,38 +2684,81 @@ it defines a run that contains text -- a single space ` `.
 
 it defines a run that contains text -- `This is a footnote.`, but Word will handle whitespace according to its default rules (collapsing multiple spaces into one, etc.) since `xmlns:space` attribute is NOT explicitly specified.
 
-###### example 16 -- refers footers
-part of content in `~/word/document.xml` in `InsertSectionExample.docx`.
+###### example 16.2 -- refers an endnote
+part of content in `~/word/endnotes.xml` in `ModifyParagraphsExample1.docx`
 
 ```
-<w:p>
-    <w:pPr>
-        <w:sectPr w:rsidR="003E25F4" w:rsidSect="00FC3028">
-            <w:pgSz w:w="11906" w:h="16838"/>
-            <w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="1440" w:header="708" w:footer="708" w:gutter="0"/>
-            <w:cols w:space="708"/>
-            <w:docGrid w:linePitch="360"/>
-            <w:footerReference w:type="even" r:id="R3d26812d683949a8"/>
-            <w:footerReference w:type="first" r:id="R1a4d6aee14a84bf5"/>
-            <w:footerReference w:type="default" r:id="R812e7120657b4c46"/>
-            <w:titlePg/>
-        </w:sectPr>
-    </w:pPr>
-</w:p>
+<w:endnote xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" w:id="2">
+    <w:p xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+        <w:pPr>
+            <w:pStyle w:val="EndnoteText"/>
+        </w:pPr>
+        <w:r>
+            <w:rPr>
+                <w:rStyle w:val="EndnoteReference"/>
+            </w:rPr>
+            <w:endnoteRef/>
+        </w:r>
+        <w:r>
+            <w:t xml:space="preserve"> </w:t>
+        </w:r>
+        <w:r>
+            <w:t>This is an endNote.</w:t>
+        </w:r>
+    </w:p>
+</w:endnote>
 ```
 
 In above example, we can know that
 
-+ It defines a paragraph.
-+ In the paragraph, it defines a section whose revision save identifier for run is `003E25F4` and that for section is `00FC3028`.
-+ In the section, it sets the page width to `11906` twips and its height to `16838` twips.
-+ In the section, it sets top-margin right-margin, bottom-margin, left-margin of the page to `1440` twips, </br>distance from the top to the header is `708` twips,</br>distance from the bottom to the footer is `708` twips, and</br> gutter margin to zero twips.
-+ In the section, if there are has multiple columns, there will be a spacing of 708 twips between them.
-+ In the section, it sets the vertical spacing between lines of text within the grid to 360 twips.
-+ In `<w:footerReference w:type="even" r:id="R3d26812d683949a8"/>`, in the section, it refers a footer for even-numbered pages. Its id that links the footer is `R3d26812d683949a8`.
-+ Similarly, in `<w:footerReference w:type="first" r:id="R1a4d6aee14a84bf5"/>`, in the section, it refers a footer for first page. Its id that links the footer is `R1a4d6aee14a84bf5`.
-+ While, in `<w:footerReference w:type="default" r:id="R812e7120657b4c46"/>`, in the section, it refers a footer for all pages. Its id that links the footer is `R812e7120657b4c46`.
-  
++ In `<w:endnote xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" w:id="2">`, it defines a footnote with id `2`. And it uses Office Word 2006.
++ In
+
+```
+        <w:pPr>
+            <w:pStyle w:val="EndnoteText"/>
+        </w:pPr>
+```
+
+it sets the style name of the paragraph to `EndnoteText`.
+
++ In
+
+```
+        <w:r>
+            <w:rPr>
+                <w:rStyle w:val="EndnoteReference"/>
+            </w:rPr>
+            <w:endnoteRef/>
+        </w:r>
+```
+
+In the paragraph, it defines a run whose style name is `EndnoteReference` 
+
+and defines an endnote reference character.
+
++ In
+
+```
+        <w:r>
+            <w:t xml:space="preserve"> </w:t>
+        </w:r>
+```
+
+In the paragraph, it defines a run. 
+
+In the run, it defines a text -- one space (` `). And the text is preserved any whitespace characters exactly as they appear within the `<w:t>` tag.
+
++ In
+
+```
+        <w:r>
+            <w:t>This is an endNote.</w:t>
+        </w:r>
+```
+
+In the run, it defines a text -- `This is an endNote.`.
+
 ###### example 17.1 -- simple field
 part of content in `~/word/document.xml` in `InsertPageCountExample1.docx`.
 
