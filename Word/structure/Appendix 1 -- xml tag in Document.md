@@ -2947,8 +2947,96 @@ In above example, we can know that
 + In `<w:docPartUnique/>`, it ensures that there is exactly one document part in the SDT. The reason why we do so is that we always want to exactly one TOC in a document.
 + In `<w:sdtEndPr>`, it defines properties for the end of the SDT.
 + In `<w:sdtContent>`, it contain the markup for a dynamically generated TOC.
-+ 
-  
++ In
+
+```
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="TOCHeading"/>
+            </w:pPr>
+            <w:r>
+                <w:t>Teams</w:t>
+            </w:r>
+        </w:p>
+```
+
+it defines a paragraph with run of text `Teams`. It also sets the style name of the paragraph to `TOCHeading`.
+
++ In
+
+```
+        <w:p>
+            <w:pPr>
+                <w:pStyle w:val="TOC1"/>
+                <w:tabs>
+                    <w:tab w:val="right" w:leader="dot" w:pos="9010"/>
+                </w:tabs>
+                <w:rPr>
+                    <w:noProof/>
+                </w:rPr>
+            </w:pPr>
+            <!-- tags omitted -->
+        </w:p>
+```
+
+it defines a paragraph whose style name is `TOC1`.
+
+And it defines a tab stop at the end of the paragraph with `9010` twips and filled with `dot` for spacing.
+
+For the run of the paragraph, it will NOT use proofing tool, meaning that it will NOT check the spelling.
+
++ In
+
+```
+        <w:p>
+            <!-- tags omitted -->
+            <w:r>
+                <w:fldChar w:fldCharType="begin" w:dirty="true"/>
+            </w:r>
+            <w:r>
+                <w:instrText xml:space="preserve"> TOC \o "1-3" \u \z \h </w:instrText>
+            </w:r>
+            <w:r>
+                <w:fldChar w:fldCharType="separate"/>
+            </w:r>
+        </w:p>
+```
+
+In the paragraph, `w:fldCharType="begin"` attribute clearly marks this as the starting point of a field.
+
+While, `w:dirty="true"` attribute suggests that the field's result might be outdated and needs to be recalculated or updated.
+
+And add separator in the simple field.
+
+And the format should be 
+
+```
+[BEGIN FIELD] [INSTRUCTIONS] [SEPARATOR] [FIELD RESULT AREA] [END FIELD]
+```
+
++ In 
+
+```
+        <w:p>
+            <w:r>
+                <w:rPr>
+                    <w:b/>
+                    <w:bCs/>
+                    <w:noProof/>
+                </w:rPr>
+                <w:fldChar w:fldCharType="end"/>
+            </w:r>
+        </w:p>
+```
+
+It defines a paragraph.
+
+It defines a run in the paragraph.
+
+In the run, it sets font of the run is bold for all text and NOT use the proofing tool.
+
+It defines field character which marks the end of a field.
+
 #### about `m` namespace
 ##### elements in `m` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
