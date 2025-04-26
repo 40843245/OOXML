@@ -28,7 +28,7 @@ The core properties within OPC is targeted to the URI `http://schemas.openxmlfor
 
 meaning that it uses Open Xml format in version 2006 (according to `xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties"`).
 
-The Dublin Core Metadata Element Set is in version id 1.1 (according to `xmlns:dc="http://purl.org/dc/elements/1.1/"`).
+The set of Dublin Core Metadata Element is in version id 1.1 (according to `xmlns:dc="http://purl.org/dc/elements/1.1/"`).
 
 The Dublin Core Metadata Terms is targeted to the URI `http://purl.org/dc/terms/` (according to `xmlns:dcterms="http://purl.org/dc/terms/"`).
 
