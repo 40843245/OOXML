@@ -32,4 +32,37 @@ The Dublin Core Metadata Terms is targeted to the URI `http://purl.org/dc/terms/
 
 The DCMI (Dublin Core Metadata Initiative) Type is targeted to the URI `http://purl.org/dc/dcmitype/` (according to `xmlns:dcmitype="http://purl.org/dc/dcmitype/"`).
 
-is targeted to the URI `http://www.w3.org/2001/XMLSchema-instance` (according to `xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"`)
+The XML Schema instance is targeted to the URI `http://www.w3.org/2001/XMLSchema-instance` (according to `xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"`)
+
++ In `<dc:title/>`, it specifies the title of Dublin Core to empty.
+
+Within the Dublin Core standard, title is defined as
+
+```
+a name given to the resource.
+```
+
++ In `<dc:subject/>`, it specifies the subject Dublin Core to empty.
+
+Within the Dublin Core standard, subject is defined as
+
+```
+topic of the content of the resource
+```
+
++ In `<dc:creator>Jay Huang (黃奕捷)</dc:creator>`, it indicates that "Jay Huang" (with his Chinese name "黃奕捷" in parentheses) is the creator of the resource being described by this metadata.
++ In `<cp:keywords/>`, no keywords have been entered.
++ In `<dc:description/>`, there is no description in Dublin Core Metadata.
+
+Within the Dublin Core standard, description is defined as
+
+```
+ an account of the content of the resource.
+```
+
++ In `<cp:lastModifiedBy>Jay Huang (黃奕捷)</cp:lastModifiedBy>`, it indicates that the resource (likely a document or some other packaged content) was last modified by an individual named Jay Huang (黃奕捷).
++ In ` <cp:revision>1</cp:revision>`, it store the revision id (the number of revision is it ) to 1.
++ In `<dcterms:created xsi:type="dcterms:W3CDTF">2025-04-07T08:50:00Z</dcterms:created>`
+is commonly associated with the Dublin Core Metadata Initiative's terms vocabulary. This vocabulary extends the basic Dublin Core with more specific element refinements and encoding schemes. The local name created clearly indicates that this element specifies the date and time when the resource was created.
+
++ In `<dcterms:modified xsi:type="dcterms:W3CDTF">2025-04-07T08:51:00Z</dcterms:modified>`    
