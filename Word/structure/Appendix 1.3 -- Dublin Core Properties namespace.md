@@ -23,3 +23,8 @@ The `Dublin Core Properties` is usually declared in `cp` namespace
 > You'll often see the `cp` namespace declared alongside other namespaces like `dc` (Dublin Core), `dcterms` (Dublin Core Terms), `dcmitype` (Dublin Core Metadata Initiative Type Vocabulary), and `xsi` (XML Schema Instance)
 >
 > because the core properties often utilize elements and attributes from these related vocabularies.
+
+## further reading
+For more information about Dublin Core,
+
+see [Dublin Core Properties metadata](https://github.com/40843245/OOXML/blob/main/Word/structure/Appendix%206.1%20--%20Dublin%20Core%20Properties%20metadata.md)
