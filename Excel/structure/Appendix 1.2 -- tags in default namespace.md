@@ -2,7 +2,8 @@
 ## default namespace
 ### elements in default namespace
 Required elements in `~/DocProps/app.xml` under a `.xlsx` file.
-| namespace under default namespace | meaning description | notes | notice |
+
+| elements under default namespace | meaning description | notes | notice |
 | :-- | :-- | :-- | :-- |
 | `<Properties>` | | acts like a container containing all properties in Metadata. | | |
 | `<Application>` | | the application used when the document is created. | | |
@@ -12,4 +13,14 @@ Required elements in `~/DocProps/app.xml` under a `.xlsx` file.
 | `<LinksUpToDate>` | | determines whether the link in the document is up to date. | | |
 | `<SharedDoc>` | | determines whether the document can be shared. | | |
 | `<HyperlinksChanged>` | | determines whether hyperlink in the document has been changed. | | |
-| `<AppVersion>` | | the application version id when the document is created. | | |
+| `<HeadingPairs>` | | defines pairs of headings and the count of parts under those headings. | | |
+| `<TitlesOfParts>` | | ists the titles of the individual parts of the document, in this case, worksheets. | | |
+
+#### elements inside `<HeadingPairs>` element
+
+| elements inside `<HeadingPairs>` element | meaning description | notes | notice |
+| :-- | :-- | :-- | :-- |
+
+#### elements inside `<TitlesOfParts>` element
+
+
