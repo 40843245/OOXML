@@ -1,9 +1,9 @@
 # Appendix 1.2 -- tags in default namespace
 ## default namespace
-### elements in default namespace
+### elements under default namespace
 Required elements in `~/DocProps/app.xml` under a `.docx` file.
 
-| namespace under default namespace | meaning | description | notes | notice |
+| elements under default namespace | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- |
 | `<Properties>` | | acts like a container containing all properties in Metadata. | | |
 | `<Application>` | | the application used when the document is created. | | |
