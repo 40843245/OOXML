@@ -15,7 +15,7 @@
 | `xmlns:dc` | `http://purl.org/dc/terms/` | | |
 | `xmlns:dcterms` | `http://purl.org/dc/terms/` | | |
 | `xmlns:dcmitype` | `http://purl.org/dc/dcmitype` | | |
-| `xmlns:xsi` | `http://www.w3.org/2001/XMLSchema-instance` | See | |
+| `xmlns:xsi` | `http://www.w3.org/2001/XMLSchema-instance` | | |
 
 ## reference
 About the namespace and URI that is usually targeted, see [DCMI Metadata Terms](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/)
