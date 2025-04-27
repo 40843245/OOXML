@@ -1,15 +1,19 @@
 # Appendix 1.2 -- tags in default namespace
 ## default namespace
 ### elements in default namespace
-Required elements in `~/DocProps/app.xml`.
+Required elements in `~/DocProps/app.xml` under a `.docx` file.
 
 | namespace under default namespace | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- |
 | `<Properties>` | | acts like a container containing all properties in Metadata. | | |
 | `<Template>` | | specifies whether the template is used when the document is created. | | |
-| `<TotalTime>` | | determines whether the document has security policies. | | |
-| `<DocSecurity>` | | determines whether the document has security policies. | | |
-| `<DocSecurity>` | | determines whether the document has security policies. | | |
+| `<TotalTime>` | | time spent on editing the document in total | | |
+| `<Pages>` | | number of pages in the document. | | |
+| `<Words>` | | number of words in the document. | | |
+| `<Characters>` | | number of characters (exclusive space) in the document. | | |
+| `<CharactersWithSpaces>` | | number of characters (inclusive space) in the document. | | |
+| `<Paragraphs>` | | number of paragraphs in the document. | | |
+| `<Lines>` | | number of lines in the document. | | |
 | `<Application>` | | the application used when the document is created. | | |
 | `<DocSecurity>` | | determines whether the document has security policies. | | |
 | `<ScaleCrop>` | | determines whether the drawing object in the document can be scaled or cropped. | | |
