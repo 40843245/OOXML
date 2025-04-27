@@ -1,5 +1,7 @@
-# Appendix 1.3 -- cp namespace
-## element in `cp` namespace
+# Appendix 1.3 -- Dublin Core Properties namespace
+The `Dublin Core Properties` is usually declared in `cp` namespace
+## `cp` namespace
+### element in `cp` namespace
 | element | meaning | description | note | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `<cp:coreProperties>` | | acts like a container containing all core properties. | | |
