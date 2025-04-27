@@ -74,21 +74,23 @@ Since Office 2013, it supports OOXML for files with file extension that ends wit
 Here, `x` stands for `xml`.
 
 ### Word (`*.docx`)
-The basic structure of an Office Word file:
+Let's look at the basic structure of an Office Word file
+
+A newly created `*.docx` file that only several non-complex script characters without specific font, style, background color must contains these directories and files. Shown as following hierarchy tree.
 
 ![Structure of Document](https://github.com/user-attachments/assets/a897da80-eb62-429b-8547-ee2568c226da)
 
-P.S.
-
-About background of node, it indicates the type of file, as follows:
-
-a node with dark blue background: the Office Word file (`*.docx`)
-
-a node with light yellow background: the directory
-
-a node with light blue background: the xml file (`*.xml`)
-
-a node with light gray background: the relationship file (`*.rels`)
+> [P.S.]
+> 
+> About background of node, it indicates the type of file, as follows:
+> 
+> a node with dark blue background: the Office Word file (`*.docx`)
+> 
+> a node with light yellow background: the directory
+>
+> a node with light blue background: the xml file (`*.xml`)
+> 
+> a node with light gray background: the relationship file (`*.rels`)
 
 > [!IMPORTANT]
 > All Office Word files must have these structure.
