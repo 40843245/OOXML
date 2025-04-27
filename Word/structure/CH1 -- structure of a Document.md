@@ -76,7 +76,7 @@ Here, `x` stands for `xml`.
 ### Word (`*.docx`)
 The basic structure of an Office Word file:
 
-<img width="530" alt="image" src="https://github.com/user-attachments/assets/1fb8455f-143b-4712-8da8-fbec5cce5b18" />
+![Structure of Document](https://github.com/user-attachments/assets/a897da80-eb62-429b-8547-ee2568c226da)
 
 P.S.
 
