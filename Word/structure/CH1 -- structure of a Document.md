@@ -76,7 +76,7 @@ Here, `x` stands for `xml`.
 ### Word (`*.docx`)
 Let's look at the basic structure of an Office Word file
 
-A newly created `*.docx` file that only several non-complex script characters without specific font, style, background color must contains these directories and files. Shown as following hierarchy tree.
+A newly created `*.docx` file that contain only several non-complex script characters without specific font, style, background color must contain these directories and files. Shown as following hierarchy tree.
 
 ![Structure of Document](https://github.com/user-attachments/assets/a897da80-eb62-429b-8547-ee2568c226da)
 
