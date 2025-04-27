@@ -6,6 +6,10 @@ Required elements in `~/DocProps/app.xml`.
 | namespace under default namespace | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- |
 | `<Properties>` | | acts like a container containing all properties in Metadata. | | |
+| `<Template>` | | specifies whether the template is used when the document is created. | | |
+| `<TotalTime>` | | determines whether the document has security policies. | | |
+| `<DocSecurity>` | | determines whether the document has security policies. | | |
+| `<DocSecurity>` | | determines whether the document has security policies. | | |
 | `<Application>` | | the application used when the document is created. | | |
 | `<DocSecurity>` | | determines whether the document has security policies. | | |
 | `<ScaleCrop>` | | determines whether the drawing object in the document can be scaled or cropped. | | |
