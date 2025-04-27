@@ -93,7 +93,7 @@ A newly created `*.docx` file that contain only several non-complex script chara
 > a node with light gray background: the relationship file (`*.rels`)
 
 > [!IMPORTANT]
-> All Office Word files must have these structure.
+> All Office Word files must contain at least directories and files, shown as above hierarchy tree.
 >
 > However, some Office Word files may contain
 >
