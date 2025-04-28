@@ -15,7 +15,7 @@ where `{fileExtension}` is the file extension of the image that you inserted, an
 
 For example, 
 
-I insert an image named `五十嵐雙葉.png` from local device, the image will be named as `image1.png` and be copied under `~/xl/embeddings` directory.
+I insert an image named `五十嵐雙葉.png` from local device, the image will be named as `image1.png` and be copied under `~/xl/media` directory.
 
 then I insert an image named `死神娜娜.jpeg` from local device, the image will be named as `image2.jpeg` and be copied under `~/xl/media` directory.
 
