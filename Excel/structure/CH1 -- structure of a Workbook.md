@@ -72,3 +72,59 @@ Under the `.7z`, file, you can found lots of `.xml` file.
 Since Office 2013, it supports OOXML for files with file extension that ends with `x` (such as `*.docx`, `*.pptx`,`*.xlsx`)
 
 Here, `x` stands for `xml`.
+
+### Excel file (`*.xlsx`)
+Let's look at the basic structure of an Office Excel file
+
+A newly created `*.xlsx` file that contains only one worksheet with no data in the workbook must contain these directories and files. Shown as following hierarchy tree.
+
+![Structure of Excel](https://github.com/user-attachments/assets/8a068784-9c2a-416a-aa5c-e1a9984c3978)
+
+> [P.S.]
+> 
+> About background of node, it indicates the type of file, as follows:
+> 
+> a node with dark green background: the Office Word file (`*.xlsx`)
+> 
+> a node with light yellow background: the directory
+>
+> a node with light blue background: the xml file (`*.xml`)
+> 
+> a node with light gray background: the relationship file (`*.rels`)
+>
+> a node with white background: the relationship file (`*.dat`)
+
+> [!IMPORTANT]
+> All Office Excel files must contain at least directories and files, shown as above hierarchy tree.
+>
+> However, some Office Excel files may contain
+>
+> + `sheet2.xml` , and more (for worksheets) 
+>
+> under the directory `~/xl/worksheets` when there are worksheets in the workbook. How many worksheets in the workbook are there, how many files are there under the directory `~/xl/worksheets`. 
+>
+>
+> Similarly, some Office Excel files may contain
+>
+> + `image1.png`, and more (for image) 
+>   
+> under the directory `~/xl/media` when there are images in the workbook. How many images in the workbook are there, how many files are there under the directory `~/xl/media`. 
+>
+> And more.
+>
+> I will NOT discuss it here.
+>
+> I will discuss it in
+
+### reference
++ [Office File Formats (MSDS)](https://learn.microsoft.com/en-us/openspecs/office_file_formats/ms-offfflp/8aea05e3-8c1e-4a9a-9614-31f71e679456)
+
+### CH1.4 -- typical structure of a Document
+![image](https://github.com/user-attachments/assets/08332380-e0b7-4a88-8d11-0abcce1a44b2)
+
+refered to last section [Typical Document Scenario](https://learn.microsoft.com/en-us/office/open-xml/word/structure-of-a-wordprocessingml-document?tabs=cs#typical-document-scenario)
+
+which provided by MSDS.
+
+### reference
+[Structure of a WordprocessingML document (MSDS)](https://learn.microsoft.com/en-us/office/open-xml/word/structure-of-a-wordprocessingml-document?tabs=cs)
