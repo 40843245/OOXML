@@ -13,7 +13,11 @@ In ziparchive, the image will be copied under `~/xl/media` directory, and be nam
 
 where `{fileExtension}` is the file extension of the image that you inserted, and so on.
 
-4
+For example, 
+
+I insert an image named `五十嵐雙葉.png` from local device, the image will be named as `image1.png` and be copied under `~/xl/embeddings` directory.
+
+then I insert an image named `死神娜娜.jpeg` from local device, the image will be named as `image2.jpeg` and be copied under `~/xl/media` directory.
 
 ### circustimance 2 -- when a video is embedded from local device
 When a video is embedded from local device, you will see an hyperlink of an image in the worksheet.
@@ -37,7 +41,7 @@ For example,
 
 I insert an image named `五十嵐雙葉.png` from local device, the image will be named as `image1.png` and be copied under `~/xl/embeddings` directory.
 
-then I insert an image named `死神娜娜.jpeg` from local device, the image will be named as `image2.peg` and be copied under `~/xl/media` directory.
+then I insert an image named `死神娜娜.jpeg` from local device, the image will be named as `image2.jpeg` and be copied under `~/xl/media` directory.
 
 next, I insert an embedded video named `アノーイングさんさんウィーク.mp4` from local device, 
 
