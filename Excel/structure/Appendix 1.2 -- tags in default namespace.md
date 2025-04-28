@@ -167,7 +167,10 @@ Optional elements in `~/xl/worksheets/sheet1.xml` under a `.xlsx` file.
 | attributes | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `revIDLastSave` | *rev*ision *id*entifier one saved at last time.| indicates the revision identifier at the time the document was last saved.  | | |
-| `documentId` | | unique identifier for the document. | | |
+| `documentId` | | unique identifier for the document. | For more details, see [Appendix 2.1 -- What's the design of documentId attribute of `<xr:revisionPtr>` tag?](https://github.com/40843245/OOXML/blob/main/Excel/structure/Appendix%202.1%20--%20What's%20the%20design%20of%20documentId%20attribute%20of%20%60%3Cxr%3ArevisionPtr%3E%60%20tag%3F.md) | |
+| `xr6:coauthVersionLast` | version of document that is edited by last *co*-*auth*or.  | indicates the version of document that is edit by last co-author.  | | |
+| `xr6:coauthVersionMax` | the *max*imum number of version of document among all *co*-*auth*ors' edit.  | indicates the maximum number of version of document among all co-authors' edit.  | | |
+| `xr10:uidLastSave` | user identifier of last saved operation.  | indicates the user identifier of last saved operation.  | | |
 
 ##### elements under `<vt:sheetViews>` element
 ###### children in `<sheetViews>` element
