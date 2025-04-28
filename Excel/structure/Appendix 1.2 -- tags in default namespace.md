@@ -163,6 +163,12 @@ Optional elements in `~/xl/worksheets/sheet1.xml` under a `.xlsx` file.
 | `"true"` | |  Performs a compatibility check. | | |
 | `"false"` | | NOT compatibility check. | | |
 
+##### attributes of `<revisionPtr/>` element
+| attributes | meaning | description | notes | notice |
+| :-- | :-- | :-- | :-- | :-- |
+| `revIDLastSave` | *rev*ision *id*entifier one saved at last time.| indicates the revision identifier at the time the document was last saved.  | | |
+| `documentId` | | unique identifier for the document. | | |
+
 ##### elements under `<vt:sheetViews>` element
 ###### children in `<sheetViews>` element
 | elements | meaning | description | notes | notice |
