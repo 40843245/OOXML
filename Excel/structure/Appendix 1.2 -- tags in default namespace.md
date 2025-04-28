@@ -25,15 +25,12 @@ Required elements in `~/xl/worksheets/sheet1.xml` under a `.xlsx` file.
 | elements | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `<worksheet>` | | The root element in `sheet1.xml` | | |
-| `<sheetData>` | | a cell table that holds the actual data displayed in the spreadsheet. | | |
 
 Optional elements in `~/xl/worksheets/sheet1.xml` under a `.xlsx` file.
 | elements | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `<sheetViews>` | | acts like a container that stores the information about these different viewing configurations for a single sheet. | a collection of `<sheetView>` | |
-| `<sheetView>` | | defines a view for a single sheet | | |
 
-#### /
 ### elements under `<HeadingPairs>` element
 #### children in `<HeadingPairs>` element
 | children in `<HeadingPairs>` element | meaning | description | notes | notice |
@@ -182,12 +179,19 @@ Optional elements in `~/xl/worksheets/sheet1.xml` under a `.xlsx` file.
 ##### attributes of `<pane/>` element
 | attributes | meaning | description | notes | notice |
 | `xSplit` | | secifies the horizontal position of the split (in twips of point). A value of 0 indicates no horizontal split. If the pane is frozen, this attribute indicates the number of columns visible in the top pane.  |  | It is optional | 
-| `ySplit`| | specifies the vertical position of the split (in a twips of a point). A value of 0 indicates no vertical split. If the pane is frozen, this attribute indicates the number of rows visible in the left pane. | | It is optional 
-###### `<pane>` -> `checkCompatibility`
+| `ySplit`| | specifies the vertical position of the split (in a twips of a point). A value of 0 indicates no vertical split. If the pane is frozen, this attribute indicates the number of rows visible in the left pane. | | It is optional |
+| `topLeftCell` | | specifies the location of the top-left visible cell in the bottom-right pane (when in left-to-right mode). | | It is optional |
+| `activePane` | | specifies which pane is active. | | It is optional |
+| `state` | | specifies the state of the pane | | It is optional |
+
+###### `<pane/>` -> `activePane`
 | values | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
-| `"true"` | |  Performs a compatibility check. | | |
-| `"false"` | | NOT compatibility check. | | |
+| `"bottomLeft"` | | indicates the bottom-left pane is active (when both horizontal and vertical splits are applied). This value is also used when only a horizontal split is applied, dividing the pane into upper and lower regions, in that case, it specifies the bottom pane. | | |
+| `"bottomRight"` | | indicates the bottom-right pane is active (when both horizontal and vertical splits are applied). | | |
+| `"topLeft"` | | indicates the top-left pane is active (when both horizontal and vertical splits are applied). This value is also used when only a horizontal split is applied, dividing the pane into upper and lower regions; in that case, it specifies the top pane. Additionally, it's used when only a vertical split is applied, dividing the pane into right and left regions; in that case, it specifies the left pane. | | |
+| `"topRight"` | | indicates the bottom-right pane is active (when both horizontal and vertical splits are applied). | | |
+| `"bottomRight"` | | indicates the top-right pane is active (when both horizontal and vertical splits are applied). This value is also used when only a vertical split is applied, dividing the pane into right and left regions; in that case, it specifies the right pane. | | |
 
 ### examples and explanation
 #### exaple 1 -- workbook properties
