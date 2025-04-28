@@ -579,7 +579,7 @@ The above example may output:
 > about the phrase `this file`, if `this file` is not explicited discussed in this record, `this file` refers to `~/word/charts/chart1.xml file under a Word file.`
 
 ##### elements in `c` namespace
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| elements | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `<c:chartSpace>` | | chart space | the root tag that contains many charts and its configuration. | It usually resides in `~/word/charts/chart1.xml` file under a Word file. | |  
 | `<c:roundedCorners>` | | rounded corners | determines whether all charts in this file should be rounded shape. | | |
