@@ -74,6 +74,7 @@ Optional elements in `~/xl/worksheets/sheet1.xml` under a `.xlsx` file.
 | :-- | :-- | :-- | :-- | :-- |
 | `<fileVersion/>` | | indicates the file version in the workbook. | | It is required |
 | `<workbookPr/>` | workbook *pr*operties | specifies various document-level settings and properties that apply to the entire workbook. | | It is optional |
+| `<xr:revisionPtr>` | revision *p*oin*t*e*r* | a pointer that relates to document revisions.  | | It is optional |
 
 ##### attributes of `<fileVersion/>` element
 | attributes | meaning | description | notes | notice |
