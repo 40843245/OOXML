@@ -66,11 +66,6 @@ In above example, we can know that
 + it is a Document.
 + Thus, it targets to Microsoft Office Word and you can open it with Microsoft Office Word.
 
-### namespace declaration in xml tag 
-| namespace in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `xmlns` | | xml namespace | declare a namespace in xml. Or configure the property in xml (such as `xmlns:aml`) | | |
-
 ### namespace under `xmlns` namespace
 | namespace under `xmlns` namespace | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- |
