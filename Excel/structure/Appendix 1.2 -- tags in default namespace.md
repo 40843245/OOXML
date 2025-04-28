@@ -33,6 +33,7 @@ Optional elements in `~/xl/worksheets/sheet1.xml` under a `.xlsx` file.
 | `<sheetViews>` | | acts like a container that stores the information about these different viewing configurations for a single sheet. | a collection of `<sheetView>` | |
 | `<sheetView>` | | defines a view for a single sheet | | |
 
+#### /
 ### elements under `<HeadingPairs>` element
 #### children in `<HeadingPairs>` element
 | children in `<HeadingPairs>` element | meaning | description | notes | notice |
@@ -164,8 +165,32 @@ Optional elements in `~/xl/worksheets/sheet1.xml` under a `.xlsx` file.
 | `"true"` | |  Performs a compatibility check. | | |
 | `"false"` | | NOT compatibility check. | | |
 
+##### elements under `<vt:sheetViews>` element
+###### children in `<sheetViews>` element
+| elements | meaning | description | notes | notice |
+| :-- | :-- | :-- | :-- | :-- |
+| `<sheetView>` | | usually contains the string value representing the title text. | | |
+
+#### children in `<sheetView>` element
+| elements | meaning | description | notes | notice |
+| :-- | :-- | :-- | :-- | :-- |
+| `<pane>` | | defines the visual splitting of the worksheet. | | |
+| `<selection>` | | specifies the selected cell or range of cells. There can be up to four <selection> elements, each corresponding to a pane in a split view | | |
+| `<pivotSelection>` | | defines the selection within a PivotTable. | | |
+| `<extLst>` | | acts like a container a container for future extensions to the <sheetView> element. | | |
+
+##### attributes of `<pane/>` element
+| attributes | meaning | description | notes | notice |
+| `xSplit` | | secifies the horizontal position of the split (in twips of point). A value of 0 indicates no horizontal split. If the pane is frozen, this attribute indicates the number of columns visible in the top pane.  |  | It is optional | 
+| `ySplit`| | specifies the vertical position of the split (in a twips of a point). A value of 0 indicates no vertical split. If the pane is frozen, this attribute indicates the number of rows visible in the left pane. | | It is optional 
+###### `<pane>` -> `checkCompatibility`
+| values | meaning | description | notes | notice |
+| :-- | :-- | :-- | :-- | :-- |
+| `"true"` | |  Performs a compatibility check. | | |
+| `"false"` | | NOT compatibility check. | | |
+
 ### examples and explanation
-#### exaple 1
+#### exaple 1 -- workbook properties
 ```
 <workbookPr date1904="1" showObjects="all" saveExternalLinkValues="1" codeName="ThisWorkbook"/>
 ```
