@@ -22,3 +22,23 @@ After all, it only lists some tags and its attribute in OOXML.
 It's like a dictionary, search it when you want to know a vocabulary.
 
 ## tables
+> [!WARNING]
+> Most content of these table are refered from Google Gemini's answer or from non-official website, which BOTH may be incorrect.
+>
+> Read with caution.
+
+> [!IMPORTANT]
+> In OOXML,
+>
+> For those value of attribute that needs to be specified with a string containing a boolean value (i.e. `"true"` or `"false"`),
+>
+> + `"0"` is equivalent to `"false"`
+> 
+> + `"1"` is equivalent to `"true"`
+
+### processing instruction
+See `Appendix 1 -- tags in xml`[^3]
+
+But in OOXML, there are many ways added to process a file that will be parse with OOXML preprocessor.
+
+I just list some of them that commonly seen in Excel file.
