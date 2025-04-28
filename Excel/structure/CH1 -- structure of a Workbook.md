@@ -78,7 +78,7 @@ Let's look at the basic structure of an Office Excel file
 
 A newly created `*.xlsx` file that contains only one worksheet with no data in the workbook must contain these directories and files. Shown as following hierarchy tree.
 
-![Structure of Excel](https://github.com/user-attachments/assets/8a068784-9c2a-416a-aa5c-e1a9984c3978)
+![Structure of Excel (1)](https://github.com/user-attachments/assets/6e932070-6866-44c6-91a4-2364b4539314)
 
 > [P.S.]
 > 
