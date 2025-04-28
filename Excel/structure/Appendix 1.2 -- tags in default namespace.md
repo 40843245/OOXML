@@ -1,4 +1,4 @@
-.# Appendix 1.2 -- tags in default namespace
+# Appendix 1.2 -- tags in default namespace
 ## default namespace
 ### elements that are children in default namespace
 Required elements in `~/DocProps/app.xml` under a `.xlsx` file.
@@ -97,7 +97,7 @@ Optional elements in `~/xl/worksheets/sheet1.xml` under a `.xlsx` file.
 | `refreshAllConnections ` | | indicates whether all data connections in the workbook should be refreshed when the workbook is opened. | | |
 | `defaultThemeVersion` | | specifies the version of the default theme applied to the workbook.  | | The default value is `"false"` |
 | `checkCompatibility ` | | determines whether a compatibility check is performed when saving the workbook to older file formats.  | | The default value is `"false"` |
-| `filterPrivacy` | |Indicates whether personally identifiable information (PII) should be removed when the workbook is saved. | | The default value is `"false"` |
+| `filterPrivacy` | | indicates whether personally identifiable information (PII) should be removed when the workbook is saved. | | The default value is `"false"` |
 
 ###### `<workbookPr/>` -> `date1904`
 | values | meaning | description | notes | notice |
@@ -180,7 +180,7 @@ Optional elements in `~/xl/worksheets/sheet1.xml` under a `.xlsx` file.
 | attributes | meaning | description | notes | notice |
 | `xSplit` | | secifies the horizontal position of the split (in twips of point). A value of 0 indicates no horizontal split. If the pane is frozen, this attribute indicates the number of columns visible in the top pane.  |  | It is optional | 
 | `ySplit`| | specifies the vertical position of the split (in a twips of a point). A value of 0 indicates no vertical split. If the pane is frozen, this attribute indicates the number of rows visible in the left pane. | | It is optional |
-| `topLeftCell` | | specifies the location of the top-left visible cell in the bottom-right pane (when in left-to-right mode). | | It is optional |
+| `topLeftCell` | | specifies the location of the top-left visible cell in the bottom-right pane (when in left-to-right mode). | | <ol><li>It is optional</li><li>Its value MUST be in `A1` Annotation</li></ol> |
 | `activePane` | | specifies which pane is active. | | It is optional |
 | `state` | | specifies the state of the pane | | It is optional |
 
@@ -193,17 +193,22 @@ Optional elements in `~/xl/worksheets/sheet1.xml` under a `.xlsx` file.
 | `"topRight"` | | indicates the bottom-right pane is active (when both horizontal and vertical splits are applied). | | |
 | `"bottomRight"` | | indicates the top-right pane is active (when both horizontal and vertical splits are applied). This value is also used when only a vertical split is applied, dividing the pane into right and left regions; in that case, it specifies the right pane. | | |
 
+###### `<pane/>` -> `state`
+| values | meaning | description | notes | notice |
+| :-- | :-- | :-- | :-- | :-- |
+| `<frozen>` | | specifies that the panes are frozen, but they were not split before being frozen. This means the split lines are at the edges of the visible area. | | |
+| `<frozenSplit>` | | specifies that the panes are both split and frozen. | | |
+| `<split>` | | specifies that the panes are split, but not frozen. The user can still adjust the split lines. | | |
+
 ### examples and explanation
 #### exaple 1 -- workbook properties
 ```
 <workbookPr date1904="1" showObjects="all" saveExternalLinkValues="1" codeName="ThisWorkbook"/>
 ```
 
+In above example, we can know that
+
 + The workbook uses the 1904 date system.
 + All objects are displayed
 + External link values are saved.
 + The VBA codename for the workbook is "ThisWorkbook".
-  
-### elements under `<worksheet>` element
-### elements under `<workbook>` element
-### elements under `<workbook>` element
