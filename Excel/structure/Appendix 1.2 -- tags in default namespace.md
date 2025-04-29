@@ -175,12 +175,6 @@ Optional elements in `~/xl/worksheets/sheet1.xml` under a `.xlsx` file.
 | `xr6:coauthVersionMax` | the *max*imum number of version of document among all *co*-*auth*ors' edit.  | indicates the maximum number of version of document among all co-authors' edit.  | | |
 | `xr10:uidLastSave` | user identifier of last saved operation.  | indicates the user identifier of last saved operation.  | | |
 
-### elements under `<sheets>` element
-#### children in `<sheets>` element
-| elements | meaning | description | notes | notice |
-| :-- | :-- | :-- | :-- | :-- |
-| `<sheet/>` | | info of a sheet | | |
-
 ##### attributes of `<sheet/>` element
 | attributes | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
@@ -235,7 +229,8 @@ none
 | `<pivotSelection>` | | defines the selection within a PivotTable. | | |
 | `<extLst>` | | acts like a container a container for future extensions to the <sheetView> element. | | |
 
-##### attributes of `<pane/>` element
+### elements under `<pane/>` element
+#### attributes of `<pane/>` element
 | attributes | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `xSplit` | | secifies the horizontal position of the split (in twips of point). A value of 0 indicates no horizontal split. If the pane is frozen, this attribute indicates the number of columns visible in the top pane.  |  | It is optional | 
@@ -244,7 +239,7 @@ none
 | `activePane` | | specifies which pane is active. | | It is optional |
 | `state` | | specifies the state of the pane | | It is optional |
 
-###### `<pane/>` -> `activePane`
+##### `<pane/>` -> `activePane`
 | values | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `"bottomLeft"` | | indicates the bottom-left pane is active (when both horizontal and vertical splits are applied). This value is also used when only a horizontal split is applied, dividing the pane into upper and lower regions, in that case, it specifies the bottom pane. | | |
@@ -253,12 +248,119 @@ none
 | `"topRight"` | | indicates the bottom-right pane is active (when both horizontal and vertical splits are applied). | | |
 | `"bottomRight"` | | indicates the top-right pane is active (when both horizontal and vertical splits are applied). This value is also used when only a vertical split is applied, dividing the pane into right and left regions; in that case, it specifies the right pane. | | |
 
-###### `<pane/>` -> `state`
+##### `<pane/>` -> `state`
 | values | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `<frozen>` | | specifies that the panes are frozen, but they were not split before being frozen. This means the split lines are at the edges of the visible area. | | |
 | `<frozenSplit>` | | specifies that the panes are both split and frozen. | | |
 | `<split>` | | specifies that the panes are split, but not frozen. The user can still adjust the split lines. | | |
+
+### elements under `<worksheet>` element
+#### children in `<worksheet>` element
+| elements | meaning | description | notes | notice |
+| :-- | :-- | :-- | :-- | :-- |
+| `<dimension>` | | dimension. | |
+| `<sheetViews>` | | defines views for sheets. | |
+| `<cols>` | | acts as a container containing all columns | |
+| `<sheetData>` | | serves like a container containing all the row and cell data within a worksheet. | |
+
+### elements under `<dimension/>` element
+#### attributes of `<dimension/>` element
+| attributes | meaning | description | notes | notice 
+| :-- | :-- | :-- | :-- | :-- |
+| `ref` | | the reference of the used range (in A1 annotation) | | |
+
+### elements under `<cols>` element
+#### children in `<cols>` element
+| elements | meaning | description | notes | notice 
+| :-- | :-- | :-- | :-- | :-- |
+| `<col>` | | defines the properties for a range of columns that will apply to the column containing the data (`<c>` tag of `<row>` children) | | |
+
+### elements under `<col>` element
+#### attributes in `<col>` element
+| attributes | meaning | description | notes | notice 
+| :-- | :-- | :-- | :-- | :-- |
+| `min` | | starting column number | | |
+| `max` | | ending column number | | |
+| `customWidth` | | determines that the width is custom (i.e. should NOT be automatically adjusted ) | | |
+| `bestFit` | | determines that to do best fit for width (i.e. should automatically adjust the width of the column to fit the widest content within them.) | | |
+| `width` | | explicity specifies the width of the column | | |
+
+##### `<col>`->`customWidth`
+| values | meaning | description | notes | notice |
+| :-- | :-- | :-- | :-- | :-- |
+| `"true"` | | the column should NOT be automatically adjusted | | |
+| `"false"` | | the column should be automatically adjusted | | |
+
+##### `<col>`->`bestFit`
+| values | meaning | description | notes | notice |
+| :-- | :-- | :-- | :-- | :-- |
+| `"true"` | | should automatically adjust the width of the column to fit the widest content within them. | | |
+| `"false"` | | should NOT automatically adjust the width of the column to fit the widest content within them | | |
+
+### elements under `<sheetData>` element
+#### children in `<sheetData>` element
+| elements | meaning | description | notes | notice 
+| :-- | :-- | :-- | :-- | :-- |
+| `<row>` | | defines a row and configures its properties. | | |
+
+### elements under `<row>` element
+#### children in `<row>` element
+| elements | meaning | description | notes | notice 
+| :-- | :-- | :-- | :-- | :-- |
+| `<c>` | | defines a column in the row. | | |
+
+#### attributes in `<row>` element
+| attributes | meaning | description | notes | notice 
+| :-- | :-- | :-- | :-- | :-- |
+| `r` | | specifies row index | first-index based | |
+| `spans` | | specifies spans (i.e. the range of non-empty columns for the block of rows to which the current row belongs) | seperated by `:`. | |
+| `s` | | specifies style index to refes to a style defined in the `<styleSheet>` part | zero-based index | The default value is `"0"`|
+| `customFormat` | | determines whether some formatting has been applied directly to the row, overriding the default style. | | The default value is `"false"` |
+| `ht` | row *h*eigh*t* | specifies the height of the row in points. | | There's no margin padding on row height. |
+| `hidden` | | determines whether the row is hidden | This could be due to a collapsed outline or manual hiding | The default value is `"false"` |
+| `customHeight` | | determines whether the row height has been explicitly set and should NOT be automatically adjusted. | | The default value is `"false"` |
+| `outlineLevel` | | specifies the outline level of the row when outlining is enabled. | | The default value is `"0"` |
+| `collapsed` | | determines whether rows with an outline level one greater than the current row should be in a collapsed state and thus hidden by the outline. | | The default value is `"false"` |
+| `thickTop` | | <ul><li>When specified to `"true"` and the attribute `customHeight` is also specified to `"false"`,</br>it implies that the row height might have been adjusted higher by 0.75 points</br>due to a thick top border on any cell in the row or a thick bottom border on any cell in the row above.</li><li>Otherwise, the row height MUST NOT been adjusted.</li></ul> | | The default value is `"false"` |
+| `thickBot` | thick *bot*tom | <ul><li>When specified to `"true"`,</br>it indicates that at least one cell in the row has a medium or thick bottom border, or any cell in the row directly below has a thick top border.</br>This can also influence the automatic row height adjustment when the attribute `customHeight` is specified to `"false"`.</li><li></li></ul>| | The default value is `"false"` |
+| `ph` | show *ph*onetic | determines whether phonetic information associated with the cells in this row should be displayed (if available). | | The default value is `"false"` |
+
+##### `<row>`->`customFormat`
+| values | meaning | description | notes | notice |
+| :-- | :-- | :-- | :-- | :-- |
+| `"true"` | | rows with an outline level one greater than the current row should be in a collapsed state | | |
+| `"false"` | | rows with an outline level one greater than the current row should NOT be in a collapsed state | | |
+
+##### `<row>`->`hidden`
+| values | meaning | description | notes | notice |
+| :-- | :-- | :-- | :-- | :-- |
+| `"true"` | | the row is hidden. | | |
+| `"false"` | | the row is NOT hidden. | | |
+
+##### `<row>`->`customHeight`
+| values | meaning | description | notes | notice |
+| :-- | :-- | :-- | :-- | :-- |
+| `"true"` | | the row height should NOT be automatically adjusted | | |
+| `"false"` | | the row height should be automatically adjusted | | |
+
+##### `<row>`->`collapsed`
+| values | meaning | description | notes | notice |
+| :-- | :-- | :-- | :-- | :-- |
+| `"true"` | | the row height should NOT be automatically adjusted | | |
+| `"false"` | | the row height should be automatically adjusted | | |
+
+##### `<row>`->`thickTop`
+See description above.
+
+##### `<row>`->`thickBot`
+See description above.
+
+##### `<row>`->`ph`
+| values | meaning | description | notes | notice |
+| :-- | :-- | :-- | :-- | :-- |
+| `"true"` | | phonetic information associated with the cells in this row should be displayed (if available) | | |
+| `"false"` | | phonetic information associated with the cells in this row should NOT be displayed. | | |
 
 ### examples and explanation
 #### example 1.1 -- workbook tag as root node in `~/xl/workbook.xml`
