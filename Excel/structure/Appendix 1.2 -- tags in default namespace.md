@@ -467,12 +467,13 @@ See description above.
 | elements | meaning | description | notes | notice 
 | :-- | :-- | :-- | :-- | :-- |
 | `<fonts>` | | acts like a container containing all fonts. | | |
+| `<fills>` | | acts like a container containing all fillings. | | |
 
 ### elements under `<fonts>` element
 #### children in `<fonts>` element
 | elements | meaning | description | notes | notice 
 | :-- | :-- | :-- | :-- | :-- |
-| `<font>` | | defines a font and specifies the properties inside this tag. | | |
+| `<font>` | | defines a font and servers as a container that specifies the properties inside this tag. | | |
 
 #### attributes in `<fonts>` element
 | attributes | meaning | description | notes | notice
@@ -545,13 +546,13 @@ See description above.
 | `"minor"` | | Minor font (typically used for body text) | | |
 
 ### elements under `<b/>` element
-presence of `</b>`  signifies bold formatting.
+presence of `</b>` signifies bold formatting.
 
 ### elements under `<i/>` element
-presence of `<i/>`  signifies italic formatting.
+presence of `<i/>` signifies italic formatting.
 
 ### elements under `<u/>` element
-presence of `<u/>`  signifies underline formatting.
+presence of `<u/>` signifies underline formatting.
 
 ### `<u/>`->`val`
 | values | meaning | description | notes | notice
@@ -572,6 +573,72 @@ Its presence signifies shadow formatting.
 
 ### elements under `<extend/>` element
 Its presence signifies extend formatting.
+
+### elements under `<fills>` element
+#### children in `<fills>` element
+| elements | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `<fill>` | | defines a filling and servers as a container that specifies the properties in this tag. | | |
+
+#### attributes in `<fills>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `count` | | specifies the number of fillings | | |
+
+### elements under `<fill>` element
+#### children in `<fill>` element
+| elements | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `<patternFill>` | | defines the pattern to fill | | |
+
+#### attributes in `<fill>` element
+none
+
+### elements under `<patternFill>` element
+#### children in `<patternFill>` element
+none
+
+#### attributes in `<patternFill>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `patternType` | | specifies the type of pattern for filling | | |
+
+##### `<patternFill>`->`patternType`
+| values | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `"none"` | |  No pattern fill. | The shape will be transparent (unless another fill is applied). | |
+| `"solid"` | |  A solid color fill. | The color is determined by the `<fgColor>` element. | |
+| `"pct5"` | |  5% pattern fill. | | |
+| `"pct10"` | |  10% pattern fill. | | |
+| `"pct20"` | |  20% pattern fill. | | |
+| `"pct25"` | |  25% pattern fill. | | |
+| `"pct30"` | |  30% pattern fill. | | |
+| `"pct40"` | |  40% pattern fill. | | |
+| `"pct50"` | |  50% pattern fill. | | |
+| `"pct60"` | |  60% pattern fill. | | |
+| `"pct70"` | |  70% pattern fill. | | |
+| `"pct75"` | |  75% pattern fill. | | |
+| `"pct80"` | |  80% pattern fill. | | |
+| `"pct90"` | |  90% pattern fill. | | |
+| `"horz"` | |  horzitonal line pattern. | | |
+| `"vert"` | |  vertical line pattern. | | |
+| `"diagCross"` | | diagonal crosshatch fill. | | |
+| `"diagStripe"` | | diagonal stripe fill. | | |
+| `"thinHorz"` | |  thin horizontal line pattern | | |
+| `"thinVert"` | |  thin vertical line pattern | | |
+| `"thinDiagCross"` | | thin diagonal crosshatch pattern | | |
+| `"thinDiagStripe"` | | thin diagonal stripe  pattern | | |
+| `"dot5x5"` | |   5x5 dot pattern | | |
+| `"dot10x10"` | | 10x10 dot pattern | | |
+| `"smCheck"` | | Small checkerboard pattern | | |
+| `"lgCheck"` | | Large checkerboard pattern | | |
+| `"smGrid"` | | Small grid  pattern | | |
+| `"lgGrid"` | |  Large grid  pattern | | |
+| `"divot"` | | divot pattern | | |
+| `"brick"` | | brick pattern | | |
+| `"weave"` | | weave pattern | | |
+| `"plaid"` | | plaid pattern | | |
+| `"dither"` | | dither pattern | | |
 
 ### examples and explanation
 #### example 1.1 -- workbook tag as root node in `~/xl/workbook.xml`
