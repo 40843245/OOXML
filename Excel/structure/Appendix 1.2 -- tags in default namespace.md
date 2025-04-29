@@ -6,15 +6,6 @@
 | elements | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `<Properties>` | | acts like a container containing all properties in Metadata. | | |
-| `<Application>` | | the application used when the document is created. | | |
-| `<DocSecurity>` | | determines whether the document has security policies. | | |
-| `<ScaleCrop>` | | determines whether the drawing object in the document can be scaled or cropped. | | |
-| `<Company/>` | | compnay or organization when the document is created. | | |
-| `<LinksUpToDate>` | | determines whether the link in the document is up to date. | | |
-| `<SharedDoc>` | | determines whether the document can be shared. | | |
-| `<HyperlinksChanged>` | | determines whether hyperlink in the document has been changed. | | |
-| `<HeadingPairs>` | | defines pairs of headings and the count of parts under those headings. | | |
-| `<TitlesOfParts>` | | ists the titles of the individual parts of the document, in this case, worksheets. | | |
 
 + Required elements in `~/xl/workbook.xml` under a `.xlsx` file.
 
@@ -22,7 +13,7 @@
 | :-- | :-- | :-- | :-- | :-- |
 | `<workbook>` | | The root element in `workbook`.xml | | |
 
-Required elements in `~/xl/worksheets/sheet1.xml` under a `.xlsx` file.
++ Required elements in `~/xl/worksheets/sheet1.xml` under a `.xlsx` file.
 
 | elements | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
@@ -34,34 +25,59 @@ Required elements in `~/xl/worksheets/sheet1.xml` under a `.xlsx` file.
 | :-- | :-- | :-- | :-- | :-- |
 | `<sst>` | *s*hared *s*tring *t*ext | The root element in `~/xl/sharedStrings.xml` | | |
 
++ Required elements in `~/xl/styles.xml` under a `.xlsx` file.
+
+| elements | meaning | description | notes | notice |
+| :-- | :-- | :-- | :-- | :-- |
+| `<styleSheet>` | *s*hared *s*tring *t*ext | The root element in `~/xl/styles.xml` | | |
+
+## Required elements in `~/DocProps/app.xml` under a `.xlsx` file.
+### elements under `<Properties>` element
+| elements | meaning | description | notes | notice |
+| :-- | :-- | :-- | :-- | :-- |
+| `<Properties>` | | acts like a container containing all properties in Metadata. | | |
+
+#### children in `<Properties>` element
+| elements | meaning | description | notes | notice |
+| :-- | :-- | :-- | :-- | :-- |
+| `<Application>` | | the application used when the document is created. | | |
+| `<DocSecurity>` | | determines whether the document has security policies. | | |
+| `<ScaleCrop>` | | determines whether the drawing object in the document can be scaled or cropped. | | |
+| `<Company/>` | | compnay or organization when the document is created. | | |
+| `<LinksUpToDate>` | | determines whether the link in the document is up to date. | | |
+| `<SharedDoc>` | | determines whether the document can be shared. | | |
+| `<HyperlinksChanged>` | | determines whether hyperlink in the document has been changed. | | |
+| `<HeadingPairs>` | | defines pairs of headings and the count of parts under those headings. | | |
+| `<TitlesOfParts>` | | ists the titles of the individual parts of the document, in this case, worksheets. | | |
+
 ### elements under `<HeadingPairs>` element
 #### children in `<HeadingPairs>` element
-| children in `<HeadingPairs>` element | meaning | description | notes | notice |
+| elements | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `<vt:vector>` | | defines a vector for the heading of the Worksheet and acts like a container containing all properties about the vector. | | |
 
 #### elements under `<vt:vector>` element
 ##### children in `<vt:vector>` element
-| children in `<vt:vector>` element | meaning | description | notes | notice |
+| elements | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `<vt:variant>` | | acts like a container containing a single value within the vector. | | |
 
 ##### elements under `<vt:variant>` element
 ###### children in `<vt:variant>` element
-| children in `<vt:variant>` element | meaning | description | notes | notice |
+| elements | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `<vt:lpwstr>` | | usually contains the string value representing the heading text. | | |
 | `<vt:i4>` | | typically holds the integer value representing the count associated with the heading. | | |
 
 ### elements under `<TitlesOfParts>` element
 #### children in `<TitlesOfParts>` element
-| children in `<TitlesOfParts>` element | meaning | description | notes | notice |
+| elements | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `<vt:vector>` | | defines a vector for the title of the Worksheet and acts like a container containing all properties about the vector. | | |
 
 #### elements under `<vt:vector>` element
 ##### children in `<vt:vector>` element
-| children in `<vt:vector>` element | meaning | description | notes | notice |
+| elements | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `<vt:variant>` | | acts like a container containing a single value within the vector. | | |
 
@@ -71,6 +87,7 @@ Required elements in `~/xl/worksheets/sheet1.xml` under a `.xlsx` file.
 | :-- | :-- | :-- | :-- | :-- |
 | `<vt:lpwstr>` | | usually contains the string value representing the title text. | | |
 
+## Required elements in `~/xl/workbook.xml` under a `.xlsx` file.
 ### elements under `<workbook>` element
 #### children in `<workbook>` element
 | elements | meaning | description | notes | notice |
@@ -258,6 +275,7 @@ none
 | `<frozenSplit>` | | specifies that the panes are both split and frozen. | | |
 | `<split>` | | specifies that the panes are split, but not frozen. The user can still adjust the split lines. | | |
 
+## Required elements in `~/xl/worksheets/sheet1.xml` under a `.xlsx` file.
 ### elements under `<worksheet>` element
 #### children in `<worksheet>` element
 | elements | meaning | description | notes | notice |
@@ -430,6 +448,7 @@ See description above.
 | `r` | *r*eference | indicates the cell references which cell in worksheet. | in A1 annotation | |
 | `t` | *t*ype | stores type of actual data | NOT type of displayed text. | |
 
+## Required elements in `~/xl/sharedStrings.xml` under a `.xlsx` file.
 ### elements under `<sst>` element
 #### children in `<sst>` element
 | elements | meaning | description | notes | notice 
@@ -441,6 +460,13 @@ See description above.
 | elements | meaning | description | notes | notice 
 | :-- | :-- | :-- | :-- | :-- |
 | `<t>` | *t*ext | the plain text | | |
+
+## Required elements in `~/xl/styles.xml` under a `.xlsx` file
+### elements under `<styleSheet>` element
+#### children in `<styleSheet>` element
+| elements | meaning | description | notes | notice 
+| :-- | :-- | :-- | :-- | :-- |
+| `<fonts>` | *t*ext | the plain text | | |
 
 ### examples and explanation
 #### example 1.1 -- workbook tag as root node in `~/xl/workbook.xml`
@@ -461,16 +487,15 @@ mc:Ignorable="x15 xr xr6 xr10 xr2">
 
 In above example, we can know that
 
-+ the `xmlns` namespace targets to `http://schemas.openxmlformats.org/spreadsheetml/2006/main`, meaning that the default namespace uses Office Excel 2006 (according to `xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"`).
++ the `xmlns` namespace targets to `http://schemas.openxmlformats.org/spreadsheetml/2006/main`, meaning that the default SpreadSheetML schema in Office Excel 2006 (according to `xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"`).
 + the `xmlns:r` namespace targets to `http://schemas.openxmlformats.org/officeDocument/2006/relationships`, meaning that the relationship uses Office Excel 2006 (according to `xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"`).
-+ the markup will be compatible to Office Excel 2006 (according to `xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"`).
++ the markup will be compatible to Office Excel 2006 version (or above) (according to `xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"`).
 + specifies extensions version. The extensions that introduced in relates to Office Excel 2013 (according to `xmlns:x15="http://schemas.microsoft.com/office/spreadsheetml/2010/11/main"`).
 + specifies extensions version. The extension that relates to revision tracking features introduced in or around Excel 2016 (according to `xmlns:xr="http://schemas.microsoft.com/office/spreadsheetml/2014/revision"`).
 + for further revision tracking enhancements introduced in a later update of Excel 2016 or a subsequent version. (according to `xmlns:xr6="http://schemas.microsoft.com/office/spreadsheetml/2016/revision6")`.
 + for yet another set of revision tracking features, likely introduced in a later update of Excel 2016 or a subsequent version (according to `xmlns:xr10="http://schemas.microsoft.com/office/spreadsheetml/2016/revision10"`)
-+ for revision tracking features introduced around Excel 2016. (according to `xmlns:xr2="http://schemas.microsoft.com/office/spreadsheetml/2015/revision2"
-`).
-+ it indicates that the xml preprocessor will ignores them.
++ for revision tracking features introduced around Excel 2016. (according to `xmlns:xr2="http://schemas.microsoft.com/office/spreadsheetml/2015/revision2"`).
++ it indicates that the xml preprocessor will ignores these namespace
     - x15
     - xr
     - xr6
@@ -478,6 +503,32 @@ In above example, we can know that
     - xr2
 
 (according to `mc:Ignorable="x15 xr xr6 xr10 xr2"`).
+
+#### example 1.2 -- styleSheet tag as root node in `~/xl/styles.xml`
+```
+<styleSheet
+xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+xmlns:x14ac="http://schemas.microsoft.com/office/spreadsheetml/2009/9/ac"
+xmlns:x16r2="http://schemas.microsoft.com/office/spreadsheetml/2015/02/main"
+xmlns:xr="http://schemas.microsoft.com/office/spreadsheetml/2014/revision"
+mc:Ignorable="x14ac x16r2 xr">
+```
+
+In above example, we can know that
+
++ In `xmlns` namespace, it uses the SpreadsheetML Schema in version 2006.
++ In `xmlns:mc` namespace, the markup is compatible with SpreadsheetML Schema in version 2006 (or above).
++ In `xmlns:x14ac` namespace, the application is compatible with Office Excel 2009.9 (released at Sep, 2009) version (or above).
+
+> [!NOTE]
+> However, the closest version of Office Excel, but at least of version 2009.9 is version 2010.
+
++ In `xmlns:x16r2` namespace, for Office Excel in version 2016 (or above), the SpreadsheetML Schema in version 2015.02 (released at Feb, 2015) applies for revision.
+
++ In `xmlns:xr` namespace, the SpreadsheetML Schema in version 2014 applies for revision tracking (tracking for revision changes).
+
++ In `mc:Ignorable`, it ignore these namespace `x14ac`,`x16r2`,`xr`.
 
 #### exaple 2.1 -- sheets
 a part of xml content of `~/xl/worbook.xml` under an Excel file.
