@@ -466,7 +466,112 @@ See description above.
 #### children in `<styleSheet>` element
 | elements | meaning | description | notes | notice 
 | :-- | :-- | :-- | :-- | :-- |
-| `<fonts>` | *t*ext | the plain text | | |
+| `<fonts>` | | acts like a container containing all fonts. | | |
+
+### elements under `<fonts>` element
+#### children in `<fonts>` element
+| elements | meaning | description | notes | notice 
+| :-- | :-- | :-- | :-- | :-- |
+| `<font>` | | defines a font and specifies the properties inside this tag. | | |
+
+#### attributes in `<fonts>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `count` | | indicates the number of direct children do we have in this tag. | | |
+| `x14ac:knownFonts` | known fonts | suggests that how many are there the defined fonts that is `known` or standard font that the application might handle more efficiently | | |
+
+### elements under `<font>` element
+#### children in `<font>` element
+| elements | meaning | description | notes | notice 
+| :-- | :-- | :-- | :-- | :-- |
+| `<name>` | | gives the font the name | | |
+| `<sz>` | *s*i*z*e | specifies font size for non-complex script characters | | |
+| `<color>` | | specifies the color of font | | |
+| `<family>` | | specifies the family of the font | | |
+| `<scheme>` | | specifies the font scheme | | |
+| `<b/>` | | specifies the font is bold | | |
+| `<i/>` | | specifies the font is italic | | |
+| `<u/>` | | specifies the font is underlined | | |
+| `<strike/>` | | specifies the font is strikethrough | | |
+| `<outline/>` | | specifies the font is displayed as an outline | | |
+| `<shadow/>` | | specifies the font should have a shadow effect | | |
+| `<condense/>` | | specifies the font should be condensed ( narrower). | | |
+| `<extend/>` | | specifies the font should be extended (wider).  | | |
+
+### elements under `<name>` element
+#### attributes in `<name>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `val` | | gives the font the name | | |
+
+### elements under `<sz>` element
+#### attributes in `<sz>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `val` | | specifies font size for non-complex script characters | | |
+
+### elements under `<color>` element
+#### attributes in `<color>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `val` | | specifies color of font | | |
+
+### elements under `<family>` element
+#### attributes in `<family>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `val` | | specifies font family | | |
+
+##### `<family>`->`val`
+| values | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `"0"` | | Unknown or default | | |
+| `"1"` | | serif | | |
+| `"2"` | | sans-serif | | |
+| `"3"` | | fixed-pitch | | |
+| `"4"` | | Script | | |
+| `"5"` | | Decorative | | |
+
+### elements under `<scheme>` element
+#### attributes in `<scheme>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `val` | | specifies font scheme | | |
+
+##### `<scheme>`->`val`
+| values | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `"major"` | | Major font (typically used for headings) | | |
+| `"minor"` | | Minor font (typically used for body text) | | |
+
+### elements under `<b/>` element
+presence of `</b>`  signifies bold formatting.
+
+### elements under `<i/>` element
+presence of `<i/>`  signifies italic formatting.
+
+### elements under `<u/>` element
+presence of `<u/>`  signifies underline formatting.
+
+### `<u/>`->`val`
+| values | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `"single` | | Major font (typically used for headings) | | |
+| `"double"` | | Minor font (typically used for body text) | | |
+| `"singleAccounting"` | | Minor font (typically used for body text) | | |
+| `"doubleAccounting."` | | Minor font (typically used for body text) | | |
+
+### elements under `<i>` element
+presence of `<u/>`  signifies underline formatting
+
+### elements under `<strike/>` element
+that indicates the font should be displayed as an outline. Its presence signifies outline formatting
+
+### elements under `<shadow/>` element
+Its presence signifies shadow formatting.
+
+### elements under `<extend/>` element
+Its presence signifies extend formatting.
 
 ### examples and explanation
 #### example 1.1 -- workbook tag as root node in `~/xl/workbook.xml`
