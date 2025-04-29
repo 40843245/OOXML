@@ -225,9 +225,9 @@ none
 | elements | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `<pane>` | | defines the visual splitting of the worksheet. | | |
-| `<selection>` | | specifies the selected cell or range of cells. There can be up to four <selection> elements, each corresponding to a pane in a split view | | |
-| `<pivotSelection>` | | defines the selection within a PivotTable. | | |
-| `<extLst>` | | acts like a container a container for future extensions to the <sheetView> element. | | |
+| `<selection>` | | specifies the selected cell or range of cells. There can be up to four `<selection>` elements, each corresponding to a pane in a split view | | |
+| `<pivotSelection>` | | defines the selection within a `PivotTable`. | | |
+| `<extLst>` | | acts like a container a container for future extensions to the `<sheetView>` element. | | |
 
 ### elements under `<pane/>` element
 #### attributes of `<pane/>` element
@@ -260,7 +260,7 @@ none
 | elements | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `<dimension>` | | dimension. | |
-| `<sheetViews>` | | defines views for sheets. | |
+| `<sheetViews>` | | serves as a container containg views for sheets. | |
 | `<cols>` | | acts as a container containing all columns | |
 | `<sheetData>` | | serves like a container containing all the row and cell data within a worksheet. | |
 
@@ -270,11 +270,32 @@ none
 | :-- | :-- | :-- | :-- | :-- |
 | `ref` | | the reference of the used range (in A1 annotation) | | |
 
-### elements under `<cols>` element
-#### children in `<cols>` element
+### elements under `<sheetViews>` element
+#### children in `<sheetViews>` element
 | elements | meaning | description | notes | notice 
 | :-- | :-- | :-- | :-- | :-- |
-| `<col>` | | defines the properties for a range of columns that will apply to the column containing the data (`<c>` tag of `<row>` children) | | |
+| `<sheetView>` | | acts as a container containing a view for a sheet and configures the view. | | |
+
+### elements under `<sheetView>` element
+#### attributes of `<sheetView>` element
+| attributes | meaning | description | notes | notice 
+| :-- | :-- | :-- | :-- | :-- |
+| `topLeftCell` | | specifies the cell that should appear in the top-left corner of the visible portion of the worksheet when it's opened. | | |
+| `workbookViewId` | | links this specific sheet view to a workbook view setting. | zero-based index | A workbook can have multiple view settings (e.g. for different window sizes, zoom levels, etc.) |
+
+### elements under `<workbookViewId>` element
+#### children in `<workbookViewId>` element
+| `<pane>` | | defines the visual splitting of the worksheet. | | |
+| `<selection>` | | specifies the selected cell or range of cells. | | <ul><li>A `<sheetView>` can have multiple `<selection>` elements, especially in collaborative scenarios or if multiple ranges were selected.</li><li>Attributes include the active cell, the selected range, and the pane it applies to.</li></ul>|
+| `<pivotSelection>` | | is specific to `PivotTable` views | | It stores information about the selected areas within a `PivotTable`. |
+| `<viewPr>` | view *pr*operties | contains view properties for the sheet, such as whether gridlines are visible, whether row and column headers are displayed, and the state of outline symbols. | | |
+| `<extLst>` | | acts like a container containing one or more `<ext>` | It allows applications to add custom elements to the `<sheetView>` element without breaking compatibility with applications that don't understand these extensions. | |
+
+### elements under `<dimension/>` element
+#### attributes of `<dimension/>` element
+| attributes | meaning | description | notes | notice 
+| :-- | :-- | :-- | :-- | :-- |
+| `ref` | | the reference of the used range (in A1 annotation) | | |
 
 ### elements under `<col>` element
 #### attributes in `<col>` element
