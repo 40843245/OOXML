@@ -292,8 +292,8 @@ In above example, we can know that
     - x15
     - xr
     - xr6
-    -x10
-    -xr2
+    - x10
+    - xr2
 
 (according to `mc:Ignorable="x15 xr xr6 xr10 xr2"`).
 
