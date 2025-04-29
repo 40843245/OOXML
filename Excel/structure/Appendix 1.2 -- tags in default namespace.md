@@ -220,8 +220,8 @@ none
 | :-- | :-- | :-- | :-- | :-- |
 | `<sheetView>` | | usually contains the string value representing the title text. | | |
 
-#### elements under `<sheetView>` element
-#### children in `<sheetView>` element
+### elements under `<vt:sheetViews>`->`<sheetView>` element
+#### children in `<vt:sheetViews>`->`<sheetView>` element
 | elements | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `<pane>` | | defines the visual splitting of the worksheet. | | |
@@ -261,8 +261,10 @@ none
 | :-- | :-- | :-- | :-- | :-- |
 | `<dimension>` | | dimension. | |
 | `<sheetViews>` | | serves as a container containg views for sheets. | |
+| `<sheetFormatPr>` | sheet *format*ting *pr*operties | configures sheet formatting properties | |
 | `<cols>` | | acts as a container containing all columns | |
 | `<sheetData>` | | serves like a container containing all the row and cell data within a worksheet. | |
+ defaultRowHeight="14.5" x14ac:dyDescent="0.35"/>
 
 ### elements under `<dimension/>` element
 #### attributes of `<dimension/>` element
@@ -270,8 +272,8 @@ none
 | :-- | :-- | :-- | :-- | :-- |
 | `ref` | | the reference of the used range (in A1 annotation) | | |
 
-### elements under `<sheetViews>` element
-#### children in `<sheetViews>` element
+### elements under `<worksheet>`->`<sheetViews>` element
+#### children in `<worksheet>`->`<sheetViews>` element
 | elements | meaning | description | notes | notice 
 | :-- | :-- | :-- | :-- | :-- |
 | `<sheetView>` | | acts as a container containing a view for a sheet and configures the view. | | |
@@ -318,6 +320,13 @@ none
 | :-- | :-- | :-- | :-- | :-- |
 | `"true"` | | should automatically adjust the width of the column to fit the widest content within them. | | |
 | `"false"` | | should NOT automatically adjust the width of the column to fit the widest content within them | | |
+
+### elements under `<sheetFormatPr/>` element
+#### attributes of `<sheetFormatPr/>` element
+| attributes | meaning | description | notes | notice 
+| :-- | :-- | :-- | :-- | :-- |
+| `defaultRowHeight` | default row height | specifies default row height for all rows. | | |
+| `x14ac:dyDescent` | default row height | relates to the vertical descent of text within a cell. | | |
 
 ### elements under `<sheetData>` element
 #### children in `<sheetData>` element
