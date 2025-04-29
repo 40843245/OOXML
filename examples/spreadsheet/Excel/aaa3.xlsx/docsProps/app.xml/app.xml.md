@@ -119,3 +119,9 @@ The xmlns declares the vt namespace and targets to `http://schemas.openxmlformat
   - In `<vt:lpstr>動漫或動畫等介紹</vt:lpstr>`, its long pointer points to a string -- `動漫或動畫等介紹`
   
     (likely indicates the title of third worksheet is `動漫或動畫等介紹`)
+
++ In `<Company/>`, it is NOT created by any companies.
++ In `<LinksUpToDate>false</LinksUpToDate>`, the links is NOT up to date.
++ In `<SharedDoc>false</SharedDoc>`, the document can NOT be shared.
++ In `<HyperlinksChanged>false</HyperlinksChanged>`, the hyperlink has NOT been changed.
++ In `<AppVersion>16.0300</AppVersion>`, the document is created with Microsoft Office Excel with version id `16.0300`.
