@@ -76,7 +76,8 @@ Optional elements in `~/xl/worksheets/sheet1.xml` under a `.xlsx` file.
 | `<workbookPr/>` | workbook *pr*operties | specifies various document-level settings and properties that apply to the entire workbook. | | It is optional |
 | `<xr:revisionPtr>` | revision *p*oin*t*e*r* | a pointer that relates to document revisions.  | | It is optional |
 | `<sheets>` | | acts like a container containing all info about worksheet in the workbook.  | | It is required |
-| `<calcPr/>` | | *calc*ulation *pr*operties  | | It is required |
+| `<calcPr/>` | *calc*ulation *pr*operties | defines and configures calculation properties  | | It is required |
+| `<extLst>` | *ext*ensibility *l*i*st* | acts like a container containing all extensions | | It is required |
 
 ##### attributes of `<fileVersion/>` element
 | attributes | meaning | description | notes | notice |
@@ -193,6 +194,32 @@ Optional elements in `~/xl/worksheets/sheet1.xml` under a `.xlsx` file.
 | :-- | :-- | :-- | :-- | :-- |
 | `calcId` | *calc*ulation id | specifies calculation id for revision tracking. | | |
 
+### elements under `<extLst>` element
+#### children in `<extLst>` element
+| elements | meaning | description | notes | notice |
+| :-- | :-- | :-- | :-- | :-- |
+| `ext` | *ext*ensibility | specifies a single extension. | | |
+
+### elements under `<ext>` element
+#### children in `<ext>` element
+| elements | meaning | description | notes | notice |
+| :-- | :-- | :-- | :-- | :-- |
+| `x15:workbookPr` | workbook *pr*operties | defines and configures workbook properties | | |
+
+##### attributes of `<ext>` element
+| attributes | meaning | description | notes | notice |
+| :-- | :-- | :-- | :-- | :-- |
+| `uri` | URI | 128-bit guid of the single extension | | |
+
+### elements under `<x15:workbookPr/>` element
+#### children in `<x15:workbookPr/>` element
+none
+
+#### attributes of `<x15:workbookPr/>` element
+| attributes | meaning | description | notes | notice |
+| :-- | :-- | :-- | :-- | :-- |
+| `chartTrackingRefBase` | chart tracking *ref*erence base | determines whether enables a specific mode or feature for tracking the base of chart. | | |
+
 ### elements under `<vt:sheetViews>` element
 #### children in `<vt:sheetViews>` element
 | elements | meaning | description | notes | notice |
@@ -234,7 +261,68 @@ Optional elements in `~/xl/worksheets/sheet1.xml` under a `.xlsx` file.
 | `<split>` | | specifies that the panes are split, but not frozen. The user can still adjust the split lines. | | |
 
 ### examples and explanation
-#### exaple 1 -- workbook properties
+#### example 1.1 -- workbook tag as root node in `~/xl/workbook.xml`
+the root node of `~/xl/worbook.xml` under an Excel file.
+
+```
+<workbook
+xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"
+xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+xmlns:x15="http://schemas.microsoft.com/office/spreadsheetml/2010/11/main"
+xmlns:xr="http://schemas.microsoft.com/office/spreadsheetml/2014/revision"
+xmlns:xr6="http://schemas.microsoft.com/office/spreadsheetml/2016/revision6"
+xmlns:xr10="http://schemas.microsoft.com/office/spreadsheetml/2016/revision10"
+xmlns:xr2="http://schemas.microsoft.com/office/spreadsheetml/2015/revision2"
+mc:Ignorable="x15 xr xr6 xr10 xr2">
+```
+
+In above example, we can know that
+
++ the `xmlns` namespace targets to `http://schemas.openxmlformats.org/spreadsheetml/2006/main`, meaning that the default namespace uses Office Excel 2006 (according to `xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"`).
++ the `xmlns:r` namespace targets to `http://schemas.openxmlformats.org/officeDocument/2006/relationships`, meaning that the relationship uses Office Excel 2006 (according to `xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"`).
++ the markup will be compatible to Office Excel 2006 (according to `xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"`).
++ specifies extensions version. The extensions that introduced in relates to Office Excel 2013 (according to `xmlns:x15="http://schemas.microsoft.com/office/spreadsheetml/2010/11/main"`).
++ specifies extensions version. The extension that relates to revision tracking features introduced in or around Excel 2016 (according to `xmlns:xr="http://schemas.microsoft.com/office/spreadsheetml/2014/revision"`).
++ for further revision tracking enhancements introduced in a later update of Excel 2016 or a subsequent version. (according to `xmlns:xr6="http://schemas.microsoft.com/office/spreadsheetml/2016/revision6")`.
++ for yet another set of revision tracking features, likely introduced in a later update of Excel 2016 or a subsequent version (according to `xmlns:xr10="http://schemas.microsoft.com/office/spreadsheetml/2016/revision10"`)
++ for revision tracking features introduced around Excel 2016. (according to `xmlns:xr2="http://schemas.microsoft.com/office/spreadsheetml/2015/revision2"
+`).
++ it indicates that the xml preprocessor will ignores them.
+    - x15
+    - xr
+    - xr6
+    -x10
+    -xr2
+
+(according to `mc:Ignorable="x15 xr xr6 xr10 xr2"`).
+
+
+
+#### exaple 1.1 -- sheets
+a part of xml content of `~/xl/worbook.xml` under an Excel file.
+
+```
+<sheets>
+  <sheet name="工作表1" sheetId="1" r:id="rId1"/>
+  <sheet name="動漫或動畫等角色介紹" sheetId="2" r:id="rId2"/>
+  <sheet name="動漫或動畫等介紹" sheetId="3" r:id="rId3"/>
+</sheets>
+```
+
+In above example, we can know that
+
++ there are three worksheets in the workbook at current.
+
+Respectively named `工作表1`, `動漫或動畫等角色介紹`, `動漫或動畫等介紹`.
+
+The first worksheet named `工作表1` refers to `~/xl/worksheets/sheet1.xml` by default.
+
+While the second worksheet named `動漫或動畫等角色介紹` refers to `~/xl/worksheets/sheet2.xml` by default.
+
+Similarly the third worksheet named `動漫或動畫等介紹` refers to `~/xl/worksheets/sheet3.xml` by default.
+
+#### exaple 3.1 -- workbook properties
 ```
 <workbookPr date1904="1" showObjects="all" saveExternalLinkValues="1" codeName="ThisWorkbook"/>
 ```
