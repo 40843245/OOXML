@@ -297,9 +297,7 @@ In above example, we can know that
 
 (according to `mc:Ignorable="x15 xr xr6 xr10 xr2"`).
 
-
-
-#### exaple 1.1 -- sheets
+#### exaple 2.1 -- sheets
 a part of xml content of `~/xl/worbook.xml` under an Excel file.
 
 ```
@@ -322,7 +320,23 @@ While the second worksheet named `動漫或動畫等角色介紹` refers to `~/x
 
 Similarly the third worksheet named `動漫或動畫等介紹` refers to `~/xl/worksheets/sheet3.xml` by default.
 
-#### exaple 3.1 -- workbook properties
+#### exaple 3.1 -- view of workbook
+```
+<bookViews>
+    <workbookView xWindow="0" yWindow="0" windowWidth="22260" windowHeight="C" activeTab="2" xr2:uid="{00000000-000D-0000-FFFF-FFFF00000000}"/>
+</bookViews>
+```
+
+In above example, we can know that
+
++ there is exactly one workbook.
++ the first workbook's window is at the top-most point (relative to its parent window or screen (if it has no parent).
++ the width of the first workbook's window is `22260` twips of the point.
++ the height of the first workbook's window is `width` twips of the point.
++ The third tab (or said, worksheet) is in active. due to zero-based.
++ its guid is `00000000-000D-0000-FFFF-FFFF00000000`.
+  
+#### exaple 4.1 -- workbook properties
 ```
 <workbookPr date1904="1" showObjects="all" saveExternalLinkValues="1" codeName="ThisWorkbook"/>
 ```
@@ -333,3 +347,29 @@ In above example, we can know that
 + All objects are displayed
 + External link values are saved.
 + The VBA codename for the workbook is "ThisWorkbook".
+
+#### exaple 5.1 -- file version
+```
+<fileVersion appName="xl" lastEdited="7" lowestEdited="6" rupBuild="20417"/>
+```
+
+In above example, we can know that
+
++ the last edit is in Office Excel.
++ the last edit id is `7`.
++ the earlieast edit id is `6`.
++ the rollup build id is `20417`.
+
+#### exaple 6.1 -- extensibility list
+```
+<extLst>
+    <ext xmlns:x15="http://schemas.microsoft.com/office/spreadsheetml/2010/11/main" uri="{140A7094-0E35-4892-8432-C4D2E57EDEB5}">
+        <x15:workbookPr chartTrackingRefBase="1"/>
+    </ext>
+</extLst>
+```
+
+In above example, we can know that
+
++ there is a defined extension which targets `xml:x15` namepsace to `http://schemas.microsoft.com/office/spreadsheetml/2010/11/main`.
++ And it guid is `140A7094-0E35-4892-8432-C4D2E57EDEB5`.
