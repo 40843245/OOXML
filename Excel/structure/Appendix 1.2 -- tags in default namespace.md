@@ -683,7 +683,7 @@ In above example, we can know that
 + the earlieast edit id is `6`.
 + the rollup build id is `20417`.
 
-#### exaple 9.1 -- extensibility list
+#### exaple 9.2 -- extensibility list
 ```
 <extLst>
     <ext xmlns:x15="http://schemas.microsoft.com/office/spreadsheetml/2010/11/main" uri="{140A7094-0E35-4892-8432-C4D2E57EDEB5}">
@@ -696,3 +696,6 @@ In above example, we can know that
 
 + there is a defined extension which targets `xml:x15` namepsace to `http://schemas.microsoft.com/office/spreadsheetml/2010/11/main`.
 + And it guid is `140A7094-0E35-4892-8432-C4D2E57EDEB5`.
+
+#### exaple 10.1 -- metadata of the Excel
+See [explanation of xml content in `~/docProps/app.xml` file under `aaa3.xlsx` file](https://github.com/40843245/OOXML/blob/main/examples/spreadsheet/Excel/aaa3.xlsx/docsProps/app.xml/app.xml.md)
