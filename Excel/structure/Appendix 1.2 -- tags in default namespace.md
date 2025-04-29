@@ -75,6 +75,8 @@ Optional elements in `~/xl/worksheets/sheet1.xml` under a `.xlsx` file.
 | `<fileVersion/>` | | indicates the file version in the workbook. | | It is required |
 | `<workbookPr/>` | workbook *pr*operties | specifies various document-level settings and properties that apply to the entire workbook. | | It is optional |
 | `<xr:revisionPtr>` | revision *p*oin*t*e*r* | a pointer that relates to document revisions.  | | It is optional |
+| `<sheets>` | | acts like a container containing all info about worksheet in the workbook.  | | It is required |
+| `<calcPr/>` | | *calc*ulation *pr*operties  | | It is required |
 
 ##### attributes of `<fileVersion/>` element
 | attributes | meaning | description | notes | notice |
@@ -172,12 +174,32 @@ Optional elements in `~/xl/worksheets/sheet1.xml` under a `.xlsx` file.
 | `xr6:coauthVersionMax` | the *max*imum number of version of document among all *co*-*auth*ors' edit.  | indicates the maximum number of version of document among all co-authors' edit.  | | |
 | `xr10:uidLastSave` | user identifier of last saved operation.  | indicates the user identifier of last saved operation.  | | |
 
-##### elements under `<vt:sheetViews>` element
-###### children in `<sheetViews>` element
+### elements under `<sheets>` element
+#### children in `<sheets>` element
+| elements | meaning | description | notes | notice |
+| :-- | :-- | :-- | :-- | :-- |
+| `<sheet/>` | | info of a sheet | | |
+
+##### attributes of `<sheet/>` element
+| attributes | meaning | description | notes | notice |
+| :-- | :-- | :-- | :-- | :-- |
+| `name` | | name of the sheet | | |
+| `id` | | id of the sheet | | |
+| `r:id` | *r*elationship of id | specifies relationship of id | It usually refers to a xml file under `~/xl/worksheets` directory | |
+
+### elements under `<calcPr/>` element
+#### attributes of `<calcPr/>` element
+| attributes | meaning | description | notes | notice |
+| :-- | :-- | :-- | :-- | :-- |
+| `calcId` | *calc*ulation id | specifies calculation id for revision tracking. | | |
+
+### elements under `<vt:sheetViews>` element
+#### children in `<vt:sheetViews>` element
 | elements | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `<sheetView>` | | usually contains the string value representing the title text. | | |
 
+#### elements under `<sheetView>` element
 #### children in `<sheetView>` element
 | elements | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
@@ -188,6 +210,7 @@ Optional elements in `~/xl/worksheets/sheet1.xml` under a `.xlsx` file.
 
 ##### attributes of `<pane/>` element
 | attributes | meaning | description | notes | notice |
+| :-- | :-- | :-- | :-- | :-- |
 | `xSplit` | | secifies the horizontal position of the split (in twips of point). A value of 0 indicates no horizontal split. If the pane is frozen, this attribute indicates the number of columns visible in the top pane.  |  | It is optional | 
 | `ySplit`| | specifies the vertical position of the split (in a twips of a point). A value of 0 indicates no vertical split. If the pane is frozen, this attribute indicates the number of rows visible in the left pane. | | It is optional |
 | `topLeftCell` | | specifies the location of the top-left visible cell in the bottom-right pane (when in left-to-right mode). | | <ol><li>It is optional</li><li>Its value MUST be in `A1` Annotation</li></ol> |
