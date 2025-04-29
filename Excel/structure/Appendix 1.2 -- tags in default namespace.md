@@ -279,11 +279,33 @@ none
 | `<sheetView>` | | acts as a container containing a view for a sheet and configures the view. | | |
 
 ### elements under `<sheetView>` element
+#### children in `<sheetView>` element
+| elements | meaning | description | notes | notice 
+| :-- | :-- | :-- | :-- | :-- |
+| `<selection>` | | stores information about selection | | |
+
 #### attributes of `<sheetView>` element
 | attributes | meaning | description | notes | notice 
 | :-- | :-- | :-- | :-- | :-- |
 | `topLeftCell` | | specifies the cell that should appear in the top-left corner of the visible portion of the worksheet when it's opened. | | |
 | `workbookViewId` | | links this specific sheet view to a workbook view setting. | zero-based index | A workbook can have multiple view settings (e.g. for different window sizes, zoom levels, etc.) |
+
+### elements under `<selection>` element
+#### attributes of `<selection>` element
+| attributes | meaning | description | notes | notice 
+| :-- | :-- | :-- | :-- | :-- |
+| `activeCell` | | stores active cell within the current selection. | | |
+| `sqref` | *s*e*q*uence of *ref*erence | specifies a sequence of cell or range references. | This allows for non-contiguous selections or multiple distinct areas to be targeted by a single element within the OOXML structure. | |
+
+> [!CAUTION]
+> `sqref` does NOT stand for `single-range reference`.
+>
+> It stands for `sequence of references`.
+
+> [!IMPORTANT]
+> However, `sequence of references` can contain `single-range reference`.
+
+See [Google Gemini's answer -- What does `sqref` attribute stand for in OOXML?](https://github.com/40843245/OOXML/blob/main/Excel/tags/abbreviation/sqref/What%20does%20%60sqref%60%20attribute%20stand%20for%20in%20OOXML%3F.md) for more explanation.
 
 ### elements under `<workbookViewId>` element
 #### children in `<workbookViewId>` element
@@ -326,7 +348,7 @@ none
 | attributes | meaning | description | notes | notice 
 | :-- | :-- | :-- | :-- | :-- |
 | `defaultRowHeight` | default row height | specifies default row height for all rows. | | |
-| `x14ac:dyDescent` | default row height | relates to the vertical descent of text within a cell. | | |
+| `x14ac:dyDescent` | *dy*namic descent | specifies a dynamic descent of how many pixels for bottom-aligned text in the rows of the sheet. | Its unit is in pixels.| |
 
 ### elements under `<sheetData>` element
 #### children in `<sheetData>` element
@@ -338,7 +360,7 @@ none
 #### children in `<row>` element
 | elements | meaning | description | notes | notice 
 | :-- | :-- | :-- | :-- | :-- |
-| `<c>` | | defines a column in the row. | | |
+| `<c>` | *c*ell | specifies a cell in the row. | | |
 
 #### attributes in `<row>` element
 | attributes | meaning | description | notes | notice 
@@ -391,6 +413,17 @@ See description above.
 | :-- | :-- | :-- | :-- | :-- |
 | `"true"` | | phonetic information associated with the cells in this row should be displayed (if available) | | |
 | `"false"` | | phonetic information associated with the cells in this row should NOT be displayed. | | |
+
+### elements under `<c>` element
+#### children in `<c>` element
+| elements | meaning | description | notes | notice 
+| :-- | :-- | :-- | :-- | :-- |
+
+#### attributes in `<c>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `r` | *r*eference | indicates the cell references which cell in worksheet. | in A1 annotation | |
+| `t` | *t*ext | stores the actual text (string value) | NOT display text (string value) | |
 
 ### examples and explanation
 #### example 1.1 -- workbook tag as root node in `~/xl/workbook.xml`
@@ -480,7 +513,148 @@ In above example, we can know that
 + External link values are saved.
 + The VBA codename for the workbook is "ThisWorkbook".
 
-#### exaple 5.1 -- file version
+#### exaple 5.1 -- views of sheets 
+a part of xml content of `~/xl/sheets/sheet1.xml` under an Excel file.
+
+```
+<sheetViews>
+  <sheetView topLeftCell="A10" workbookViewId="0">
+    <selection activeCell="E1" sqref="E1"/>
+  </sheetView>
+</sheetViews>
+```
+
+In above example, we can know that
+
++ There are one sheet view that references to the id of workbook view equals to `0`.</br>Additionally, when it is opened, it will navigate to the cell `A10` (here, the cell `A10` is on the top-left corner).
++ In the sheet view, it references the selection `E1` and the active cell is `E1` in current section.
+
+#### exaple 6.1 -- columns of views of sheets 
+a part of xml content of `~/xl/sheets/sheet1.xml` under an Excel file.
+
+```
+<sheetViews>
+  <sheetView topLeftCell="A10" workbookViewId="0">
+    <selection activeCell="E1" sqref="E1"/>
+  </sheetView>
+</sheetViews>
+<sheetFormatPr defaultRowHeight="14.5" x14ac:dyDescent="0.35"/>
+<cols>
+  <col min="1" max="1" width="9.1796875" bestFit="1" customWidth="1"/>
+  <col min="2" max="2" width="18.36328125" bestFit="1" customWidth="1"/>
+  <col min="3" max="3" width="12.90625" bestFit="1" customWidth="1"/>
+</cols>
+```
+
+In above example, we can know that
+
++ In the sheet view that references to id of workbook view equals to `0`, there are three columns that are used or their formatting are specified.
+
+  - In `A` column, the width is `9.1796875` points.</br>And the width can be customized, meaning that the width is NOT automatically adjusted to the the value specified in `width` attribute.</br>Additionally, it should be best fit, meaning that the app should always adjust the column width so that it exactly fits to the content of the column. (i.e. The column width is automatically adjusted to the maximum of width the content holds for each cell in the column).   
+  - In `B` column, the width is `18.36328125` points.</br>And the width can be customized, meaning that the width is NOT automatically adjusted to the the value specified in `width` attribute.</br>Additionally, it should be best fit, meaning that the app should always adjust the column width so that it exactly fits to the content of the column.
+  - In `C` column, the width is `12.90625` points.</br>And the width can be customized, meaning that the width is NOT automatically adjusted to the the value specified in `width` attribute.</br>Additionally, it should be best fit, meaning that the app should always adjust the column width so that it exactly fits to the content of the column.
+
+#### exaple 7.1 -- default sheet format
+a part of xml content of `~/xl/sheets/sheet1.xml` under an Excel file.
+
+```
+<sheetFormatPr defaultRowHeight="14.5" x14ac:dyDescent="0.35"/>
+```
+
+In above example, we can know that
+
++ The default row height of the sheet is `14.5` point and specifies a dynamic descent of 0.35 pixels for bottom-aligned text in the rows of this sheet.
+
+#### exaple 8.1 -- data within a worksheet
+xml content of `~/xl/sheets/sheet1.xml` under an Excel file.
+
+```
+<worksheet
+ <!-- namespace declarations and attributes omitted -->
+>
+ <dimension ref="A1:C2"/>
+ <sheetViews>
+  <sheetView topLeftCell="A10" workbookViewId="0">
+   <selection activeCell="E1" sqref="E1"/>
+  </sheetView>
+ </sheetViews>
+ <sheetFormatPr defaultRowHeight="14.5" x14ac:dyDescent="0.35"/>
+ <cols>
+  <col min="1" max="1" width="9.1796875" bestFit="1" customWidth="1"/>
+  <col min="2" max="2" width="18.36328125" bestFit="1" customWidth="1"/>
+  <col min="3" max="3" width="12.90625" bestFit="1" customWidth="1"/>
+ </cols>
+ <sheetData>
+  <row r="1" spans="1:3" x14ac:dyDescent="0.35">
+    <c r="A1" t="s">
+     <v>0</v>
+    </c>
+    <c r="B1" t="s">
+     <v>2</v>
+    </c>
+    <c r="C1" t="s">
+     <v>1</v>
+    </c>
+   </row>
+   <row r="2" spans="1:3" x14ac:dyDescent="0.35">
+    <c r="A2" t="s">
+     <v>3</v>
+    </c>
+    <c r="B2" t="s">
+     <v>4</v>
+    </c>
+    <c r="C2" t="s">
+     <v>5</v>
+    </c>
+   </row>
+ </sheetData>
+ <!-- tags omitted -->
+</worksheet>
+```
+
+In above example, we can know that
+
++ In `<dimension ref="A1:C2"/>`, the range `A1:C2` is referenced.
++ There are one sheet view that references to the id of workbook view equals to `0`.</br>Additionally, when it is opened, it will navigate to the cell `A10` (here, the cell `A10` is on the top-left corner).
++ In the sheet view, it references the selection `E1` and the active cell is `E1` in current section.
++ The default row height of the sheet is `14.5` point and specifies a dynamic descent of 0.35 pixels for bottom-aligned text in the rows of this sheet.
++ In the sheet view that references to id of workbook view equals to `0`, there are three columns that are used or their formatting are specified.
+
+  - In `A` column, the width is `9.1796875` points.</br>And the width can be customized, meaning that the width is NOT automatically adjusted to the the value specified in `width` attribute.</br>Additionally, it should be best fit, meaning that the app should always adjust the column width so that it exactly fits to the content of the column. (i.e. The column width is automatically adjusted to the maximum of width the content holds for each cell in the column).   
+  - In `B` column, the width is `18.36328125` points.</br>And the width can be customized, meaning that the width is NOT automatically adjusted to the the value specified in `width` attribute.</br>Additionally, it should be best fit, meaning that the app should always adjust the column width so that it exactly fits to the content of the column.
+  - In `C` column, the width is `12.90625` points.</br>And the width can be customized, meaning that the width is NOT automatically adjusted to the the value specified in `width` attribute.</br>Additionally, it should be best fit, meaning that the app should always adjust the column width so that it exactly fits to the content of the column.
+
++ About the sheet data (defined under `<sheetData>` tag)
+   
+   - there are two rows here (we can know it from the clue, there are two `<row>` tag under `<sheetData>` tag)
+   - In the first row (`<row r="1" spans="1:3" x14ac:dyDescent="0.35">`),
+
+      + it spins from column `A` to `C`, then it overrides the `x14ac:dyDescent` attribute (inside `<sheetFormatPr defaultRowHeight="14.5" x14ac:dyDescent="0.35"/>`) to `0.35`, which is accidentally same.
+
+      + there are three cells (we can know it from the clue, there are three `<c>` tag under `<row>` tag)
+
+          - In the first cell (`<c r="A1" t="s">`), it refers to the cell `A1` in the worksheet. And indicates that it contains a string value which its actual value is the 0th index (from the clue, `<v>0</v>`) in the shared string table (which resides in `~/xl/sharedStrings.xml`), which is `plain text` here.
+          - In the second cell (`<c r="B1" t="s">`), it refers to the cell `B1` in the worksheet. And indicates that it contains a string value which its actual value is the 2th index (from the clue, `<v>2</v>`) in the shared string table (which resides in `~/xl/sharedStrings.xml`), which is `encryption alogrithm` here.
+          - In the third cell (`<c r="C1" t="s">`), it refers to the cell `C1` in the worksheet. And indicates that it contains a string value which its actual value is the 1th index (from the clue, `<v>1</v>`) in the shared string table (which resides in `~/xl/sharedStrings.xml`), which is `encrypted text` here.
+    
+   - In the second row (`<row r="2" spans="1:3" x14ac:dyDescent="0.35">`),
+
+      + it spins from column `A` to `C`, then it overrides the `x14ac:dyDescent` attribute (inside `<sheetFormatPr defaultRowHeight="14.5" x14ac:dyDescent="0.35"/>`) to `0.35`, which is accidentally same.
+
+        - In the first cell (`<c r="A2" t="s">`), it refers to the cell `A2` in the worksheet. And indicates that it contains a string value which its actual value is the 0th index (from the clue, `<v>3</v>`) in the shared string table (which resides in `~/xl/sharedStrings.xml`), which is `I Love you` here.
+        - In the second cell (`<c r="B2" t="s">`), it refers to the cell `B2` in the worksheet. And indicates that it contains a string value which its actual value is the 2th index (from the clue, `<v>4</v>`) in the shared string table (which resides in `~/xl/sharedStrings.xml`), which is `unknown` here.
+        - In the third cell (`<c r="C2" t="s">`), it refers to the cell `C2` in the worksheet. And indicates that it contains a string value which its actual value is the 1th index (from the clue, `<v>5</v>`) in the shared string table (which resides in `~/xl/sharedStrings.xml`), which is `I Hate you` here.
+
+And thus, you will see a worksheet like this.
+
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/b9e68667-3ed9-4f1a-b33b-25e8a6077a6e" />
+
+Here is, the part of xml content of `~/xl/sharedString.xml` file:
+
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/f10bf490-690b-4d6a-bafa-6af30af7ea00" />
+
+ 
+#### exaple 9.1 -- file version
 ```
 <fileVersion appName="xl" lastEdited="7" lowestEdited="6" rupBuild="20417"/>
 ```
@@ -492,7 +666,7 @@ In above example, we can know that
 + the earlieast edit id is `6`.
 + the rollup build id is `20417`.
 
-#### exaple 6.1 -- extensibility list
+#### exaple 9.1 -- extensibility list
 ```
 <extLst>
     <ext xmlns:x15="http://schemas.microsoft.com/office/spreadsheetml/2010/11/main" uri="{140A7094-0E35-4892-8432-C4D2E57EDEB5}">
