@@ -263,8 +263,7 @@ none
 | `<sheetViews>` | | serves as a container containg views for sheets. | |
 | `<sheetFormatPr>` | sheet *format*ting *pr*operties | configures sheet formatting properties | |
 | `<cols>` | | acts as a container containing all columns | |
-| `<sheetData>` | | serves like a container containing all the row and cell data within a worksheet. | |
- defaultRowHeight="14.5" x14ac:dyDescent="0.35"/>
+| `<sheetData>` | | serves like a container containing all the row and cell data within a worksheet. | | defaultRowHeight="14.5" x14ac:dyDescent="0.35"/> |
 
 ### elements under `<dimension/>` element
 #### attributes of `<dimension/>` element
@@ -309,6 +308,8 @@ See [Google Gemini's answer -- What does `sqref` attribute stand for in OOXML?](
 
 ### elements under `<workbookViewId>` element
 #### children in `<workbookViewId>` element
+| elements | meaning | description | notes | notice 
+| :-- | :-- | :-- | :-- | :-- |
 | `<pane>` | | defines the visual splitting of the worksheet. | | |
 | `<selection>` | | specifies the selected cell or range of cells. | | <ul><li>A `<sheetView>` can have multiple `<selection>` elements, especially in collaborative scenarios or if multiple ranges were selected.</li><li>Attributes include the active cell, the selected range, and the pane it applies to.</li></ul>|
 | `<pivotSelection>` | | is specific to `PivotTable` views | | It stores information about the selected areas within a `PivotTable`. |
