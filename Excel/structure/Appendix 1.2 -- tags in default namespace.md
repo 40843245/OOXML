@@ -1,7 +1,7 @@
 # Appendix 1.2 -- tags in default namespace
 ## default namespace
 ### elements that are children in default namespace
-Required elements in `~/DocProps/app.xml` under a `.xlsx` file.
++ Required elements in `~/DocProps/app.xml` under a `.xlsx` file.
 
 | elements | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
@@ -16,20 +16,23 @@ Required elements in `~/DocProps/app.xml` under a `.xlsx` file.
 | `<HeadingPairs>` | | defines pairs of headings and the count of parts under those headings. | | |
 | `<TitlesOfParts>` | | ists the titles of the individual parts of the document, in this case, worksheets. | | |
 
-Required elements in `~/xl/workbook.xml` under a `.xlsx` file.
++ Required elements in `~/xl/workbook.xml` under a `.xlsx` file.
+
 | elements | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `<workbook>` | | The root element in `workbook`.xml | | |
 
 Required elements in `~/xl/worksheets/sheet1.xml` under a `.xlsx` file.
-| elements | meaning | description | notes | notice |
-| :-- | :-- | :-- | :-- | :-- |
-| `<worksheet>` | | The root element in `sheet1.xml` | | |
 
-Optional elements in `~/xl/worksheets/sheet1.xml` under a `.xlsx` file.
 | elements | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
-| `<sheetViews>` | | acts like a container that stores the information about these different viewing configurations for a single sheet. | a collection of `<sheetView>` | |
+| `<worksheet>` | | The root element in `~/xl/worksheets/sheet1.xml | | |
+
++ Required elements in `~/xl/sharedStrings.xml` under a `.xlsx` file.
+
+| elements | meaning | description | notes | notice |
+| :-- | :-- | :-- | :-- | :-- |
+| `<sst>` | *s*hared *s*tring *t*ext | The root element in `~/xl/sharedStrings.xml` | | |
 
 ### elements under `<HeadingPairs>` element
 #### children in `<HeadingPairs>` element
@@ -419,12 +422,25 @@ See description above.
 #### children in `<c>` element
 | elements | meaning | description | notes | notice 
 | :-- | :-- | :-- | :-- | :-- |
+| `v` | *v*alue | given index, the value found (by index) in shared string table.  |  |  |
 
 #### attributes in `<c>` element
 | attributes | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `r` | *r*eference | indicates the cell references which cell in worksheet. | in A1 annotation | |
-| `t` | *t*ext | stores the actual text (string value) | NOT display text (string value) | |
+| `t` | *t*ype | stores type of actual data | NOT type of displayed text. | |
+
+### elements under `<sst>` element
+#### children in `<sst>` element
+| elements | meaning | description | notes | notice 
+| :-- | :-- | :-- | :-- | :-- |
+| `<si>` | *s*tring *i*ndex | contains an `innerHTML` value that is mapped by the given index (the number between `<v>` and `</v>` tag). | | |
+
+### elements under `<si>` element
+#### children in `<si>` element
+| elements | meaning | description | notes | notice 
+| :-- | :-- | :-- | :-- | :-- |
+| `<t>` | *t*ext | the plain text | | |
 
 ### examples and explanation
 #### example 1.1 -- workbook tag as root node in `~/xl/workbook.xml`
