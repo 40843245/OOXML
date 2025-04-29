@@ -468,6 +468,13 @@ See description above.
 | :-- | :-- | :-- | :-- | :-- |
 | `<fonts>` | | acts like a container containing all fonts. | | |
 | `<fills>` | | acts like a container containing all fillings. | | |
+| `<borders>` | | acts like a container containing all borders. | | |
+| `<cellStyleXfs>` | | acts like a container containing all cell style formats. | defines named styles. | |
+| `<cellXfs>` | | acts like a container containing all all cell style formats. | deals with the specific formatting of each cell. | |
+| `<extLst>` | | acts like a container containing all extensions. | | |
+
+> [!IMPORTANT]
+> DON'T be confused with `<cellStyleXfs>` and `<cellXfs>`.
 
 ### elements under `<fonts>` element
 #### children in `<fonts>` element
@@ -604,6 +611,10 @@ none
 | `patternType` | | specifies the type of pattern for filling | | |
 
 ##### `<patternFill>`->`patternType`
+All values `patternType` attribute in `<patternFill>` tag in **Standard OOXML**.
+
+There may be more values in `Spreadsheet`.
+
 | values | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `"none"` | |  No pattern fill. | The shape will be transparent (unless another fill is applied). | |
