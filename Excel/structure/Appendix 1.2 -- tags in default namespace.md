@@ -263,7 +263,7 @@ none
 | `<sheetViews>` | | serves as a container containg views for sheets. | |
 | `<sheetFormatPr>` | sheet *format*ting *pr*operties | configures sheet formatting properties | |
 | `<cols>` | | acts as a container containing all columns | |
-| `<sheetData>` | | serves like a container containing all the row and cell data within a worksheet. | | defaultRowHeight="14.5" x14ac:dyDescent="0.35"/> |
+| `<sheetData>` | | serves like a container containing all the row and cell data within a worksheet. | | |
 
 ### elements under `<dimension/>` element
 #### attributes of `<dimension/>` element
