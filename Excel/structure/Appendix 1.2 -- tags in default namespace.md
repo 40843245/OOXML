@@ -31,6 +31,12 @@
 | :-- | :-- | :-- | :-- | :-- |
 | `<styleSheet>` | *s*hared *s*tring *t*ext | The root element in `~/xl/styles.xml` | | |
 
++ Required elements in `~/xl/calcChain.xml` under a `.xlsx` file.
+
+| elements | meaning | description | notes | notice |
+| :-- | :-- | :-- | :-- | :-- |
+| `<calcChain>` | *calc*ulation chain | The root element in `~/xl/calcChain.xml` | | |
+
 ## Required elements in `~/DocProps/app.xml` under a `.xlsx` file.
 ### elements under `<Properties>` element
 | elements | meaning | description | notes | notice |
@@ -398,7 +404,7 @@ See [Google Gemini's answer -- What does `sqref` attribute stand for in OOXML?](
 | `collapsed` | | determines whether rows with an outline level one greater than the current row should be in a collapsed state and thus hidden by the outline. | | The default value is `"false"` |
 | `thickTop` | | <ul><li>When specified to `"true"` and the attribute `customHeight` is also specified to `"false"`,</br>it implies that the row height might have been adjusted higher by 0.75 points</br>due to a thick top border on any cell in the row or a thick bottom border on any cell in the row above.</li><li>Otherwise, the row height MUST NOT been adjusted.</li></ul> | | The default value is `"false"` |
 | `thickBot` | thick *bot*tom | <ul><li>When specified to `"true"`,</br>it indicates that at least one cell in the row has a medium or thick bottom border, or any cell in the row directly below has a thick top border.</br>This can also influence the automatic row height adjustment when the attribute `customHeight` is specified to `"false"`.</li><li></li></ul>| | The default value is `"false"` |
-| `ph` | show *ph*onetic | determines whether phonetic information associated with the cells in this row should be displayed (if available). | | The default value is `"false"` |
+| `ph` | *ph*onetic hint | determines whether phonetic information associated with the cells in this row should be displayed (if available). | | The default value is `"false"` |
 
 ##### `<row>`->`customFormat`
 | values | meaning | description | notes | notice |
@@ -440,20 +446,61 @@ See description above.
 #### children in `<c>` element
 | elements | meaning | description | notes | notice 
 | :-- | :-- | :-- | :-- | :-- |
-| `v` | *v*alue | given index, the value found (by index) in shared string table.  |  |  |
+| `<v>` | *v*alue | given index, the value found (by index) in shared string table.  |  |  |
+| `<is>` | *i*nline *s*tring | specifies the inline string as displayed text. |  |  |
+
+> [!CAUTION]
+> `<c>`->`<is>` element MUST be used iff the `<c>`->`t` attribute is specified to `inlineStr`.
+>
+> In other words,
+>
+> + When `<c>`->`t` attribute is specified to `inlineStr`, `<c>`->`<is>` element MUST be used.
+> + When `<c>`->`t` attribute is NOT specified to `inlineStr`, it is NOT allowed to use `<c>`->`<is>` element.
 
 #### attributes in `<c>` element
 | attributes | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `r` | *r*eference | indicates the cell references which cell in worksheet. | in A1 annotation | |
-| `t` | *t*ype | stores type of actual data | NOT type of displayed text. | |
+| `t` | *t*ype | stores type of actual data | NOT type of displayed text. | The default value is `n`|
+| `cm` | *c*o*m*ment id | references the comment by id. | | |
+| `vm` | *v*ertical *m*erge | indicates that this cell is part of a vertical merge | | |
+| `hm` | *h*orizontal *m*erge | indicates that this cell is part of a horizontal merge | | |
+| `ph ` | *ph*onetic hint | similar to `<row>`->`ph` | | |
+| `si` | *s*hared *i*ndex | is used in conjunction with the t="s" type and specifies the index of the string in the shared strings table. | zero-based-index | |
+
+> [!CAUTION]
+> `<c>`->`si` attribute MUST be specified iff the `<c>`->`t` attribute is specified to `s`.
+>
+> In other words,
+>
+> + When the `<c>`->`t` attribute is specified to `s`, `<c>`->`si` attribute MUST be specified.
+> + When the `<c>`->`t` attribute is NOT specified to `s`, `<c>`->`si` attribute MUST be absent.
+
+##### `<row>`->`<c>`->`t`
+| values | meaning | description | notes | notice 
+| :-- | :-- | :-- | :-- | :-- |
+| `s` | *s*hared string | The cell's value is an index into the shared strings table. | | |
+| `str` | *str*ing | The cell contains a literal string value. | | |
+| `n` | *n*umber | The cell contains a numeric value. | | |
+| `b` | *b*oolean | The cell contains a boolean value. | | |
+| `e` | *e*rror | The cell contains an error value. | | |
+| `inlineStr` | inline *str*ing | The cell contains a string value directly within an `<is>` (inline string) child element. | | |
+
+### elements under `<is>` element
+#### children in `<is>` element
+| elements | meaning | description | notes | notice 
+| :-- | :-- | :-- | :-- | :-- |
+| `<t>` | *t*ext | a plain text | | |
+
+#### attributes in `<is>` element
+none
 
 ## Required elements in `~/xl/sharedStrings.xml` under a `.xlsx` file.
 ### elements under `<sst>` element
 #### children in `<sst>` element
 | elements | meaning | description | notes | notice 
 | :-- | :-- | :-- | :-- | :-- |
-| `<si>` | *s*tring *i*ndex | contains an `innerHTML` value that is mapped by the given index (the number between `<v>` and `</v>` tag). | | |
+| `<si>` | *s*hared *i*ndex | contains an `innerHTML` value that is mapped by the given index (the number between `<v>` and `</v>` tag). | | |
 
 ### elements under `<si>` element
 #### children in `<si>` element
@@ -974,6 +1021,16 @@ Same as `<dxfs>`->`<dxf>`->`<fill>`
 #### attributes in `<tableStyleElement>`->`<fill>` element
 Same as `<dxfs>`->`<dxf>`->`<fill>`
 
+##  Required elements in `~/xl/calcChain.xml` under a `.xlsx` file.
+### elements under `<calcChain>` element
+#### children in `<calcChain>` element
+| elements | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `<c>` | *c*ell | defines an cell | | |
+
+#### attributes in `<calcChain>` element
+none
+
 ### examples and explanation
 #### example 1.1 -- workbook tag as root node in `~/xl/workbook.xml`
 the root node of `~/xl/worbook.xml` under an Excel file.
@@ -1139,7 +1196,32 @@ In above example, we can know that
 
 + The default row height of the sheet is `14.5` point and specifies a dynamic descent of 0.35 pixels for bottom-aligned text in the rows of this sheet.
 
-#### example 8.1 -- data within a worksheet
+#### example 8.1 -- an inline string within a worksheet
+```
+<row r="1">
+  <c r="A1" t="inlineStr">
+    <is>
+      <t>This is an inline string.</t>
+    </is>
+  </c>
+</row>
+```
+
+In above example, we can know that
+
++ In `<row r="1">`, there is one row.
++ In `<c r="A1" t="inlineStr">`, it specifies a cell that references to `A1` cell which has inline string.
++ In
+
+```
+    <is>
+      <t>This is an inline string.</t>
+    </is>
+```
+
+the inline string is `This is an inline string.`
+
+#### example 8.2 -- data within a worksheet
 xml content of `~/xl/sheets/sheet1.xml` under an Excel file.
 
 ```
