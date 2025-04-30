@@ -737,6 +737,43 @@ none
 | `tint` | | specifies the tint/shade applied to the theme color. Negative values darken, positive values lighten. | | <ul><li>MUST be a real number between -1.0 and 1.0</li><li>Negative values darken, positive values lighten</li><li>If either `rgb` or `indexed` is specified, `tint` attribute will be ignored.</li><li>It is optional.</br>If it is not specified, it is determined by some other attribute</br>`rgb`,`indexed`.</li></ul>|
 | `shade` | | specifies the percentage of shading applied to the theme color. | | <ul><li>MUST be an integer between 0 and 255</li><li>If either `rgb` or `indexed` is specified, `shade` attribute will be ignored.</li><li>It is optional.</br>But it can be omitted if either `rgb` or `indexed` is specified.</li></ul> |
 
+### elements under `<cellStyleXfs>` element
+#### children under `<cellStyleXfs>` element
+| elements | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `<xf>` | *f*ormat e*x*tensions | defines the formatting properties for a cell style. | | |
+
+#### attributes in `<cellStyleXfs>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `count` | | the number of direct children | | |
+
+### elements under `<xf>` element
+#### children under `<xf>` element
+| elements | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `<alignment>` | | defines the alignment properties | | If the `<alignment>` element is absent, the default alignment is typically bottom and left with no text rotation, wrap text set to false, and no indentation. |
+| `<protection>` | | specifies the protection settings | | If the `<protection>` element is absent, the default protection is not locked and not hidden.|
+| `<borderId>` | | references a border definition from the `<borders>` collection by id. | | The default value is `"0"`, meaning that referencing first border definition. |
+| `<fillId>` | | references a fill definition from the `<fills>` collection by id. | | The default value is `"0"`, meaning that referencing first fill definition. |
+| `<fontId>` | | references a font definition from the `<font>` collection by id. | | The default value is `"0"`, meaning that referencing first font definition. |
+| `<numFmtId>` | | references a number format definition from the `<numFmts>` collection by id. | | The default value is `"0"`, meaning that referencing first number format definition (typically, it is general number format)   |
+| `<xfId>` | | references other format extension (defined by `<xf>`) by id and inherit it. | | <ul><li>No default value.</li><li>If not specified, it doesn't inherit other `<xf>`s.</li></ul> |
+| `<extLst>` | *ext*ension *l*i*st* | for future extension | | It is optional. |
+
+#### attributes in `<cellStyleXfs>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- | 
+| `<applyAlignment>` | | determines whether the alignment (children `<alignment>`) should be applied. | | The default value is `"false"` |
+| `<applyBorder>` | | determines whether the border (children `<borderId>`) should be applied. | | The default value is `"false"` |
+| `<applyFill>` | | determines whether the fill (children `<fillId>`) should be applied.  | | The default value is `"false"` |
+| `<applyNumberFormat>` | | determines whether the number format (children `<numFmts>`) should be applied.  | | The default value is `"false"` |
+| `<applyProtection>` | | determines whether the protection (children `<protection>`) should be applied. | | The default value is `"false"`|
+| `<quotePrefix>` | | determines whether a single quote prefix should be displayed. | | The default value is `"false"` |
+| `<pivotButton>` | | determines whether the cell is a pivot table button. | | The default value is `"false"` |
+| `<hidden>` | | determines whether the cell's formula should be hidden | | The default value is `"false"` |
+| `<locked>` | | determines whether the cell should be locked. | | The default value is `"true"` |
+
 ### examples and explanation
 #### example 1.1 -- workbook tag as root node in `~/xl/workbook.xml`
 the root node of `~/xl/worbook.xml` under an Excel file.
