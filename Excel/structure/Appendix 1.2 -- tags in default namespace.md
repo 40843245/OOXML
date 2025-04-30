@@ -442,11 +442,13 @@ See description above.
 | `"true"` | | phonetic information associated with the cells in this row should be displayed (if available) | | |
 | `"false"` | | phonetic information associated with the cells in this row should NOT be displayed. | | |
 
-### elements under `<c>` element
-#### children in `<c>` element
+### elements under `<row>`->`<c>` element
+#### children in `<row>`->`<c>` element
 | elements | meaning | description | notes | notice 
 | :-- | :-- | :-- | :-- | :-- |
-| `<v>` | *v*alue | given index, the value found (by index) in shared string table.  |  |  |
+| `<f>` | *f*ormula | the formula stored as string | the element is appeared iff one has input the formula in the cell. |  |
+| `<v>` | *v*alue | given index, the value found (by index) in shared string table and then store in a cache.  | The use case is when the cell references to a shared string from the shared string table (i.e. `<row>`->`<c>`->`t` attribute is specified to `s`).</br>See example 8.3. |  |
+| `<v>` | cached *v*alue | cached  | The use case is when the cell references to a shared string from the shared string table (i.e. `<row>`->`<c>`->`t` attribute is specified to `n` or NOT specified).</br>See example 8.2. |  |
 | `<is>` | *i*nline *s*tring | specifies the inline string as displayed text. |  |  |
 
 > [!CAUTION]
@@ -1031,6 +1033,17 @@ Same as `<dxfs>`->`<dxf>`->`<fill>`
 #### attributes in `<calcChain>` element
 none
 
+### elements under `<calcChain>`->`<c>` element
+#### children in `<calcChain>`->`<c>` element
+none
+
+#### attributes in `<calcChain>`->`<c>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `r` | *r*eference | references to which cell | in A1 annotation | |
+| `i` | *i*ndex | specifies the order index for calculation dependencies.  | A lower value generally indicates that the cell should be calculated earlier in the chain. | |
+| `l` | *l*ast | determines whether this cell is the last in a sequence of cells that depend on each other for calculation. | This can help optimize the calculation process. | |
+
 ### examples and explanation
 #### example 1.1 -- workbook tag as root node in `~/xl/workbook.xml`
 the root node of `~/xl/worbook.xml` under an Excel file.
@@ -1092,6 +1105,16 @@ In above example, we can know that
 + In `xmlns:xr` namespace, the SpreadsheetML Schema in version 2014 applies for revision tracking (tracking for revision changes).
 
 + In `mc:Ignorable`, it ignore these namespace `x14ac`,`x16r2`,`xr`.
+
+#### example 1.3 -- calcChain tag as root node in `~/xl/calcChain.xml`
+```
+<calcChain
+xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
+```
+
+In above example, we can know that
+
++ The `xmlns` namespace targets to SpreadSheetML in version 2006.
 
 #### example 2.1 -- sheets
 a part of xml content of `~/xl/worbook.xml` under an Excel file.
@@ -1221,7 +1244,21 @@ In above example, we can know that
 
 the inline string is `This is an inline string.`
 
-#### example 8.2 -- data within a worksheet
+#### example 8.2 -- cell with formula within a worksheet
+part of xml content of `~/xl/sheets/sheet1.xml` under `formula.xlsx` file.
+
+```
+<c r="J4">
+ <f>SUM(A4:I4)</f>
+ <v>31</v>
+</c>
+```
+
+In above example, we can know that
+
++ In cell `J4`, the formula is `SUM(A4:I4)`, meaning that one inputs `=SUM(A4:I4)` in the cell `J4` and the result with value `31` is stored in a cache.
+
+#### example 8.3 -- entire data within a worksheet
 xml content of `~/xl/sheets/sheet1.xml` under an Excel file.
 
 ```
@@ -1540,7 +1577,54 @@ In above example, we can know that
 + there is a defined extension which targets `xml:x15` namepsace to `http://schemas.microsoft.com/office/spreadsheetml/2010/11/main`.
 + And it guid is `140A7094-0E35-4892-8432-C4D2E57EDEB5`.
 
-#### example 11.1 -- file version
+#### example 11.1 -- calculation in a worksheet
+part of xml content of `~/xl/calcChain.xml` file under the worksheet `formula1` in `formula.xlsx` file.
+
+```
+<calcChain
+xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
+  <c r="J7" i="1" l="1"/>
+  <c r="J6" i="1"/>
+  <c r="J5" i="1"/>
+  <c r="J4" i="1"/>
+  <c r="J3" i="1"/>
+</calcChain>
+```
+
+In above example, we can know that
+
++ In `<calcChain xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">`, it defines a calculation chain for easier to do some calculation.
++ In `<c r="J7" i="1" l="1"/>`
+
+    - it references to the cell `J7` in the worksheet, meaning that the formula in `J7` needs to be calculated.
+    - its order index is `1`
+    - it might be the last in a sequence of related calculations, probably meaning that it might be last calculated.
+
++ In `<c r="J6" i="1"/>`
+
+    - it references to the cell `J6` in the worksheet, meaning that the formula in `J6` needs to be calculated.
+    - its order index is `1`
+
++ In `<c r="J5" i="1"/>`
+
+    - it references to the cell `J5` in the worksheet, meaning that the formula in `J5` needs to be calculated.
+    - its order index is `1`
+
++ In `<c r="J4" i="1"/>`
+
+    - it references to the cell `J4` in the worksheet, meaning that the formula in `J4` needs to be calculated.
+    - its order index is `1`
+
++ In `<c r="J3" i="1"/>`
+
+    - it references to the cell `J3` in the worksheet, meaning that the formula in `J3` needs to be calculated.
+    - its order index is `1`
+
+The above code snippets represents that the range of `J3:J7` needs to calculated.
+
+<img width="692" alt="image" src="https://github.com/user-attachments/assets/38f579aa-57f5-4a62-af61-884f30cd8ff2" />
+
+#### example 12.1 -- file version
 ```
 <fileVersion appName="xl" lastEdited="7" lowestEdited="6" rupBuild="20417"/>
 ```
@@ -1552,7 +1636,7 @@ In above example, we can know that
 + the earlieast edit id is `6`.
 + the rollup build id is `20417`.
 
-#### exaple 10.1 -- metadata of the Excel
+#### exaple 13.1 -- metadata of the Excel
 See [explanation of xml content in `~/docProps/app.xml` file under `aaa3.xlsx` file](https://github.com/40843245/OOXML/blob/main/examples/spreadsheet/Excel/aaa3.xlsx/docsProps/app.xml/app.xml.md)
 
 See [explanation of xml content in `~/docProps/core.xml` file under `aaa3.xlsx` file](https://github.com/40843245/OOXML/blob/main/examples/spreadsheet/Excel/aaa3.xlsx/docsProps/core.xml/core.xml.md)
