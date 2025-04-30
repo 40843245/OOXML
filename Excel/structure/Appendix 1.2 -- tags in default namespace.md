@@ -470,7 +470,9 @@ See description above.
 | `<fills>` | | acts like a container containing all fillings. | | |
 | `<borders>` | | acts like a container containing all borders. | | |
 | `<cellStyleXfs>` | | acts like a container containing all cell style formats. | defines named styles. | |
-| `<cellXfs>` | | acts like a container containing all all cell style formats. | deals with the specific formatting of each cell. | |
+| `<cellXfs>` | | acts like a container containing all all cell formats. | deals with the specific formatting of each cell. | |
+| `<dxfs>` | | acts like a container containing a sequence of differential formatting records. in Drawing Exchange File System. | | |
+| `<tableStyles>` | | acts like a container containing all all table styles. | | |
 | `<extLst>` | | acts like a container containing all extensions. | | |
 
 > [!IMPORTANT]
@@ -570,7 +572,7 @@ presence of `<u/>` signifies underline formatting.
 | `"doubleAccounting."` | | Minor font (typically used for body text) | | |
 
 ### elements under `<i>` element
-presence of `<u/>`  signifies underline formatting
+presence of `<u/>` signifies underline formatting
 
 ### elements under `<strike/>` element
 that indicates the font should be displayed as an outline. Its presence signifies outline formatting
@@ -662,8 +664,8 @@ There may be more values in `Spreadsheet`.
 | :-- | :-- | :-- | :-- | :-- |
 | `count` | | the number of direct children in `<borders>`  | | |
 
-### elements under `<border>` element
-#### children in `<border>` element
+### elements under `<borders>`->`<border>` element
+#### children in `<borders>`->`<border>` element
 | elements | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `<left/>` | | specifies the left line border | | |
@@ -724,7 +726,7 @@ Same as `<left/>`.
 | `w:style` | | specifies the style of the diagonal line. | | |
 
 ### elements under `<diagonal/>`->`<color>` element
-#### children under `<diagonal/>`->`<color>` element
+#### children in `<diagonal/>`->`<color>` element
 none
 
 #### attributes in `<diagonal/>`->`<color>` element
@@ -749,7 +751,7 @@ none
 | `count` | | the number of direct children | | |
 
 ### elements under `<cellStyleXfs>`->`<xf>` element
-#### children under `<cellStyleXfs>`->`<xf>` element
+#### children in `<cellStyleXfs>`->`<xf>` element
 | elements | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `<alignment>` | | defines the alignment properties | | If the `<alignment>` element is absent, the default alignment is typically bottom and left with no text rotation, wrap text set to false, and no indentation. |
@@ -760,6 +762,48 @@ none
 | `<numFmtId>` | | references a number format definition from the `<numFmts>` collection by id. | | The default value is `"0"`, meaning that referencing first number format definition (typically, it is general number format)   |
 | `<xfId>` | | references other format extension (defined by `<xf>`) by id and inherit it. | | <ul><li>No default value.</li><li>If not specified, it doesn't inherit other `<xf>`s.</li></ul> |
 | `<extLst>` | *ext*ension *l*i*st* | for future extension | | It is optional. |
+
+### elements under `<cellStyleXfs>`->`<alignment>` element
+#### children under `<cellStyleXfs>`->`<alignment>` element
+none
+
+#### attributes in `<cellStyleXfs>`->`<alignment>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `horizontal` | | specifies the horizontal alignment of text within the cell.  | | The default value is `"general"` (for most data types) |
+| `vertical` | | specifies the vertical alignment of text within the cell.  | | The default value is `"bottom"` |
+| `textRotation` | | specifies the rotation of text within the cell.  | in degrees (0 to 180, 255 for vertical text) | |
+| `wrapText` | | determines whether the text should be wrapped in the cell. | | The default value is `"false"` |
+| `indent` | | an integer that specifies the indentation level of the text in the cell. | | The default value is `"0"` |
+| `shrinkToFit` | | determines whether the text should be shrunk to fit within the cell width. | | The default value is `"false"` |
+| `readingOrder` | | specifies the reading order of the text for languages that read right-to-left. | | The default value is `"contextDependent"` |
+
+##### `<cellStyleXfs>`->`<alignment>`->`horizontal`
+| values | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `general` | | specifies the horizontal alignment of text within the cell in general way | | |
+| `left` | | specifies the horizontal alignment of text within the cell as left-aligned | | |
+| `center` | | specifies the horizontal alignment of text within the cell as center-aligned | | |
+| `right` | | specifies the horizontal alignment of text within the cell as right-aligned | | |
+| `justify` | | justifies the text (both left and right edges). | | |
+| `distributed` | | distributes the text evenly across the width of the cell. | | |
+| `centerContinuous` | | centers the text across the selected cells without merging them. | | |
+
+##### `<cellStyleXfs>`->`<alignment>`->`vertical`
+| values | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `top` | | specifies the horizontal alignment of text within the cell as top-aligned | | |
+| `center` | | specifies the horizontal alignment of text within the cell as center-aligned | | |
+| `bottom` | | specifies the horizontal alignment of text within the cell as bottom-aligned | | |
+| `justify` | | justifies the text vertically, distributing it evenly between the top and bottom of the cell. | | |
+| `distributed` | | distributes the text across all available lines, even if it means adding space between individual characters within a line (depending on the application's rendering). | | |
+
+##### `<cellStyleXfs>`->`<alignment>`->`readingOrder`
+| values | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `contextDependent` | | The reading order is determined by scanning the text for the first non-whitespace character. If it's a strong right-to-left character, the reading order is right-to-left; otherwise, it's left-to-right. | | |
+| `leftToRight ` | | The reading order is explicitly set to left-to-right within the cell, regardless of the content. | | |
+| `rightToLeft` | | The reading order is explicitly set to right-to-left within the cell, regardless of the content.. | | |
 
 ### elements under `<cellXfs>` element
 #### children under `<cellXfs>` element
@@ -773,14 +817,14 @@ none
 | `count` | | the number of direct children | | |
 
 ### elements under `<cellXfs>`->`<xf>` element
-#### children under `<cellXfs>`->`<xf>` element
+#### children in `<cellXfs>`->`<xf>` element
 Same as children of `<cellStyleXfs>`->`<xf>`
 
 #### attributes in `<cellStyleXfs>`->`<xf>` element
 Same as attributes of `<cellStyleXfs>`->`<xf>`
 
 ### elements under `<cellStyles>` element
-#### children under `<cellStyles>` element
+#### children in `<cellStyles>` element
 | elements | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `<cellStyle/>` | | defines the cell style. | | |
@@ -791,7 +835,7 @@ Same as attributes of `<cellStyleXfs>`->`<xf>`
 | `count` | | the number of direct children | | |
 
 ### elements under `<cellStyle/>` element
-#### children under `<cellStyle/>` element
+#### children in `<cellStyle/>` element
 none
 
 #### attributes in `<cellStyle/>` element
@@ -802,6 +846,37 @@ none
 | `builtinId` | | indicates the built-in id. | The value of `builtinId` are standardized | <ol><li>If `builtinId` attribute is present, it takes precedence over the `name` attribute for identifying the standard style.</li><li>There is no default value.</br>If it is absent, the specific built-in style is automatically assumed.</li></ol> |
 | `customBuiltin` | | determines whether the built-in id (defined by `builtinid`) is customized | | The default value is `"false"` |
 | `hidden` | | determines whether the cell style should be hidden. | | The default value is `"false"` |
+
+### elements under `<dxfs>` element
+#### children in `<dxfs>` element
+| elements | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `<dxf>` | *d*ifferential *f*ormatting e*x*tension | defines the differential formatting properties. | | |
+
+#### attributes in `<dxfs>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `count` | | the number of direct children | | |
+
+### elements under `<dxfs>`->`<dxf>` element
+#### children in `<dxfs>`->`<dxf>` element
+| elements | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `<alignment>` | | defines the alignment properties | | If the `<alignment>` element is absent, the default alignment is typically bottom and left with no text rotation, wrap text set to false, and no indentation. |
+| `<protection>` | | specifies the protection settings | | If the `<protection>` element is absent, the default protection is locked and not hidden.|
+| `<font>` | | defines the font properties | | If omitted, the font properties will typically inherit from the default theme or the cell's base style.  |
+| `<border>` | | defines the border properties | | The default value is none, meaning no border. |
+| `<numFmt>` | |  specifies the number formatting code | | If omitted, typically, the `General` number formatting will be used. |
+
+#### attributes in `<dxf>` element
+none
+
+### elements under `<dxfs>`->`<dxf>`->`<border>` element
+#### children in `<dxfs>`->`<dxf>`->`<border>` element
+Same as `<borders>`-> `<border>`
+
+#### attributes in `<dxfs>`->`<dxf>`->`<border>` element
+Same as `<borders>`-> `<border>`
 
 ### examples and explanation
 #### example 1.1 -- workbook tag as root node in `~/xl/workbook.xml`
