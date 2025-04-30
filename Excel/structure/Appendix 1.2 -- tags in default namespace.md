@@ -1289,8 +1289,160 @@ it defines a fill style with no fill pattern.
 
 it defines a fill style with 12.5% gray pattern.
 
-#### exaple 9.1 -- font styles in `~/xl/styles.xml`
+#### exaple 9.3 -- borders styles in `~/xl/styles.xml`
+other part of xml content of `~/xl/styles.xml` file under an Office Excel file.
 
+```
+<borders count="1">
+ <border>
+  <left/>
+  <right/>
+  <top/>
+  <bottom/>
+  <diagonal/>
+ </border>
+</borders>
+```
+
+In above example, we can know that
+
++ In `<borders count="1">`, it acts like a container that contains only 1 border style definition.
++ In
+
+```
+ <border>
+  <left/>
+  <right/>
+  <top/>
+  <bottom/>
+  <diagonal/>
+ </border>
+```
+
+it defines a border style whose left, right, top, bottom, diagonal line border uses default style.
+
+#### exaple 9.4 -- cell styles format extension in `~/xl/styles.xml`
+other part of xml content of `~/xl/styles.xml` file under an Office Excel file.
+
+```
+<cellStyleXfs count="1">
+  <xf numFmtId="0" fontId="0" fillId="0" borderId="0"/>
+</cellStyleXfs>
+```
+
+In above example, we can know that
+
++ In `<cellStyleXfs count="1">`, it acts like a container that contains defines one format extension style.
++ In `<xf numFmtId="0" fontId="0" fillId="0" borderId="0"/>`, it defines a cell format extension style
+
+   - which references the number formatting id `0`, meaning that the `General` number formatting will be used.
+   - And it references the font id `0`. Here, from previous example -- exaple 9.1 -- font styles in `~/xl/styles.xml`, it uses `新細明體` font.
+   - Additionally, it references the fill id `0`. Here, again, from previous example -- exaple 9.2 -- font styles in `~/xl/styles.xml`, it uses a fill with no fill pattern and it may be transparent.
+   - On top of that, it references the border id `0`. Here, again, from previous example -- exaple 9.3 -- borders styles in `~/xl/styles.xml`, it uses a border with default left, right, top, bottom line border.
+
+#### exaple 9.5 -- cell format extension  in `~/xl/styles.xml`
+other part of xml content of `~/xl/styles.xml` file under an Office Excel file.
+
+```
+<cellXfs count="1">
+ <xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0"/>
+</cellXfs>
+```
+
+In above example, we can know that
+
++ In `<cellXfs count="1">`, it acts like a container that defines only one cell format extension.
++ In ` <xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0"/>`, defines a cell format extension
+
+   - which references the number formatting id `0`, meaning that the `General` number formatting will be used.
+   - And it references the font id `0`. Here, from previous example -- exaple 9.1 -- font styles in `~/xl/styles.xml`, it uses `新細明體` font.
+   - Additionally, it references the fill id `0`. Here, again, from previous example -- exaple 9.2 -- font styles in `~/xl/styles.xml`, it uses a fill with no fill pattern and it may be transparent.
+   - On top of that, it references the border id `0`. Here, again, from previous example -- exaple 9.3 -- borders styles in `~/xl/styles.xml`, it uses a border with default left, right, top, bottom line border.
+   - On the other hand, it links to a specific cell style defined in the first of `<cellStyleXfs> collection`.
+
+#### exaple 9.6 -- cell styles  in `~/xl/styles.xml`
+other part of xml content of `~/xl/styles.xml` file under an Office Excel file.
+
+```
+<cellStyles count="1">
+ <cellStyle name="Normal" xfId="0" builtinId="0"/>
+</cellStyles>
+```
+
+In above example, we can know that
+
++ In `<cellStyles count="1">`, it acts like a container that defines only one cell style.
++ In `<cellStyle name="Normal" xfId="0" builtinId="0"/>`, it defines a cell style named `Normal` and it links to the first to a specific cell style defined in the first of `<cellStyleXfs> collection`.
+
+#### exaple 9.7 -- diffential format extension in `~/xl/styles.xml`
+other part of xml content of `~/xl/styles.xml` file under an Office Excel file.
+
+```
+<dxfs count="0"/>
+```
+
+In above example, we can know that
+
++ In `<dxfs count="0"/>`, there are no definition about diffential format extensions.
+
+#### exaple 9.8 -- table styles in `~/xl/styles.xml`
+other part of xml content of `~/xl/styles.xml` file under an Office Excel file.
+
+```
+<tableStyles count="0" defaultTableStyle="TableStyleMedium2" defaultPivotStyle="PivotStyleLight16"/>
+```
+
+In above example, we can know that
+
++ In `<tableStyles count="0" defaultTableStyle="TableStyleMedium2" defaultPivotStyle="PivotStyleLight16"/>`, one does NOT define the table styles. However,
+
+   - it uses the default table style `TableStyleMedium2` (which is predefined in SpreadSheetML) when creating a new table.
+   - And it uses the default pivot table style `PivotStyleLight16` (which is also predefined in SpreadSheetML) when creating a new pivot table.
+
+#### exaple 9.9 -- extension list in `~/xl/styles.xml`
+other part of xml content of `~/xl/styles.xml` file under an Office Excel file.
+
+```
+<extLst>
+  <ext xmlns:x14="http://schemas.microsoft.com/office/spreadsheetml/2009/9/main" uri="{EB79DEF2-80B8-43e5-95BD-54CBDDF9020C}">
+    <x14:slicerStyles defaultSlicerStyle="SlicerStyleLight1"/>
+  </ext>
+  <ext xmlns:x15="http://schemas.microsoft.com/office/spreadsheetml/2010/11/main" uri="{9260A510-F301-46a8-8635-F512D64BE5F5}">
+    <x15:timelineStyles defaultTimelineStyle="TimeSlicerStyleLight1"/>
+  </ext>
+</extLst>
+```
+
+In above example, we can know that
+
++ In `<extLst>`, it acts like a container that defines many extension.
++ In
+
+```
+  <ext xmlns:x14="http://schemas.microsoft.com/office/spreadsheetml/2009/9/main" uri="{EB79DEF2-80B8-43e5-95BD-54CBDDF9020C}">
+    <x14:slicerStyles defaultSlicerStyle="SlicerStyleLight1"/>
+  </ext>
+```
+
+it defines first extension. In the first extension, 
+
+  - it declares `x14` namespace which targets to Office SpreadSheetML Schema in version 2009.9 (released at Sep, 2009).
+  - And it's uuid is in 128-bit -- `EB79DEF2-80B8-43e5-95BD-54CBDDF9020C`.
+  - In `<x14:slicerStyles defaultSlicerStyle="SlicerStyleLight1"/>`, it specifies the default slicer style to "SlicerStyleLight1".
+  
++ In
+
+```
+  <ext xmlns:x15="http://schemas.microsoft.com/office/spreadsheetml/2010/11/main" uri="{9260A510-F301-46a8-8635-F512D64BE5F5}">
+    <x15:timelineStyles defaultTimelineStyle="TimeSlicerStyleLight1"/>
+  </ext>
+```
+
+it defines second extension. In the second extension, 
+
+  - it declares `x14` namespace which targets to Office SpreadSheetML Schema in version 2010.11 (released at Nov, 2010).
+  - And it's uuid is in 128-bit -- `9260A510-F301-46a8-8635-F512D64BE5F5`.
+  - In `<x15:timelineStyles defaultTimelineStyle="TimeSlicerStyleLight1"/>`, it sets the default time line styles to `TimeSlicerStyleLight1`.
 
 #### exaple 9.1 -- file version
 ```
