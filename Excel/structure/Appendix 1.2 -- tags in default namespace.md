@@ -37,6 +37,12 @@
 | :-- | :-- | :-- | :-- | :-- |
 | `<calcChain>` | *calc*ulation chain | The root element in `~/xl/calcChain.xml` | | |
 
++ Required elements in `~/xl/queryTables/queryTable1.xml` under a `.xlsx` file.
+
+| elements | meaning | description | notes | notice |
+| :-- | :-- | :-- | :-- | :-- |
+| `<queryTable>` | | The root element in `~/xl/queryTables/queryTable1.xml` | | |
+
 ## Required elements in `~/DocProps/app.xml` under a `.xlsx` file.
 ### elements under `<Properties>` element
 | elements | meaning | description | notes | notice |
@@ -1044,6 +1050,61 @@ none
 | `r` | *r*eference | references to which cell | in A1 annotation | |
 | `i` | *i*ndex | specifies the order index for calculation dependencies.  | A lower value generally indicates that the cell should be calculated earlier in the chain. | |
 | `l` | *l*ast | determines whether this cell is the last in a sequence of cells that depend on each other for calculation. | This can help optimize the calculation process. | |
+
+## Required elements in `~/xl/queryTables/queryTable1.xml` under a `.xlsx` file.
+### elements under `<queryTable>` element
+#### children in `<queryTable>` element
+| elements | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `<queryTableRefresh>` | | serves as a container containing all field in the queryTable will be auto-refreshed (if possible) and specifies the refresh info. | | |
+| `<extLst>` | *ext*ension *l*i*st* | has been discussed before | | |
+
+#### attributes in `<queryTable>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `name` | | the file name (without file extension) of source data that import into the queryTable. |  | |
+| `connectionId` | | connection id |  | |
+| `autoFormatId` | | auto formatting id |  | |
+| `backgroundRefresh` | | determines whether refreshing the queryTable on the background is enabled. |  | |
+| `applyAlignmentFormats` | | determines whether apply the alignment for formatting of the queryTable. |  | |
+| `applyWidthHeightFormats` | | determines whether apply the width and height for formatting of the queryTable. |  | |
+| `applyNumberFormats` | | determines whether apply the number formatting of the queryTable. |  | |
+| `applyBorderFormats` | | determines whether apply the border for formatting of the queryTable. |  | |
+| `applyPatternFormats` | | determines whether apply the pattern for formatting of the queryTable. |  | |
+| `applyFontFormats` | | determines whether apply the fonts for formatting of the queryTable. |  | |
+
+### elements under `<queryTableRefresh>` element
+#### children in `<queryTableRefresh>` element
+| elements | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `<queryTableFields>` | | acts like a container containing all field in the queryTable. | | |
+
+#### attributes in `<queryTableRefresh>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `nextId` | | next available ID for refresh of the queryTable. |  | |
+
+### elements under `<queryTableFields>` element
+#### children in `<queryTableFields>` element
+| elements | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `<queryTableField>` | | defines a field in the queryTable and configures it. | | |
+
+#### attributes in `<queryTableFields>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `count` | | the number of direct children |  | |
+
+### elements under `<queryTableField>` element
+#### children in `<queryTableField>` element
+typically, none.
+
+#### attributes in `<queryTableField>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `id` | | the id (as primary key) of the field. |  | |
+| `name` | | the name of the field. |  | |
+| `tableColumnId` | | the id of the table column that the field corresponds to. |  | |
 
 ### examples and explanation
 #### example 1.1 -- workbook tag as root node in `~/xl/workbook.xml`
