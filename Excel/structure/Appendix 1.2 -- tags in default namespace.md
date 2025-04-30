@@ -447,8 +447,9 @@ See description above.
 | elements | meaning | description | notes | notice 
 | :-- | :-- | :-- | :-- | :-- |
 | `<f>` | *f*ormula | the formula stored as string | the element is appeared iff one has input the formula in the cell. |  |
-| `<v>` | *v*alue | given index, the value found (by index) in shared string table and then store in a cache.  | The use case is when the cell references to a shared string from the shared string table (i.e. `<row>`->`<c>`->`t` attribute is specified to `s`).</br>See example 8.3. |  |
-| `<v>` | cached *v*alue | cached  | The use case is when the cell references to a shared string from the shared string table (i.e. `<row>`->`<c>`->`t` attribute is specified to `n` or NOT specified).</br>See example 8.2. |  |
+| `<v>` | *v*alue | given index, the value found (by index) in shared string table and then store in a cache.  | The use case is when the cell references to a shared string from the shared string table (i.e. `<row>`->`<c>`->`t` attribute is specified to `s`).</br>See example 8.4. |  |
+| `<v>` | cached *v*alue | value stored in a cache | The use case is when the cell stores a number (i.e. `<row>`->`<c>`->`t` attribute is specified to `n` or NOT specified).</br>See example 8.2. |  |
+| `<v>` | cached *v*alue | value stored in a cache | The use case is when the cell stores a boolean (i.e. `<row>`->`<c>`->`t` attribute is specified to `b`).</br>See example 8.3. |  |
 | `<is>` | *i*nline *s*tring | specifies the inline string as displayed text. |  |  |
 
 > [!CAUTION]
@@ -1245,7 +1246,7 @@ In above example, we can know that
 the inline string is `This is an inline string.`
 
 #### example 8.2 -- cell with formula within a worksheet
-part of xml content of `~/xl/sheets/sheet1.xml` under `formula.xlsx` file.
+part of xml content of `~/xl/sheets/sheet1.xml` under `formula1.xlsx` file.
 
 ```
 <c r="J4">
@@ -1258,7 +1259,26 @@ In above example, we can know that
 
 + In cell `J4`, the formula is `SUM(A4:I4)`, meaning that one inputs `=SUM(A4:I4)` in the cell `J4` and the result with value `31` is stored in a cache.
 
-#### example 8.3 -- entire data within a worksheet
+#### example 8.3 -- boolean values within a worksheet
+part of xml content of `~/xl/sheets/sheet1.xml` under `formula1.xlsx` file.
+
+```
+ <c r="D7" t="b">
+   <v>1</v>
+ </c>
+```
+
+the cell `D7` stores the boolean `TRUE`.
+
+```
+ <c r="E7" t="b">
+  <v>0</v>
+ </c>
+```
+
+the cell `E7` stores the boolean `FALSE`.
+
+#### example 8.4 -- entire data within a worksheet
 xml content of `~/xl/sheets/sheet1.xml` under an Excel file.
 
 ```
