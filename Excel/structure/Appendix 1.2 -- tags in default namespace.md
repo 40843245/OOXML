@@ -748,8 +748,8 @@ none
 | :-- | :-- | :-- | :-- | :-- |
 | `count` | | the number of direct children | | |
 
-### elements under `<xf>` element
-#### children under `<xf>` element
+### elements under `<cellStyleXfs>`->`<xf>` element
+#### children under `<cellStyleXfs>`->`<xf>` element
 | elements | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `<alignment>` | | defines the alignment properties | | If the `<alignment>` element is absent, the default alignment is typically bottom and left with no text rotation, wrap text set to false, and no indentation. |
@@ -761,18 +761,47 @@ none
 | `<xfId>` | | references other format extension (defined by `<xf>`) by id and inherit it. | | <ul><li>No default value.</li><li>If not specified, it doesn't inherit other `<xf>`s.</li></ul> |
 | `<extLst>` | *ext*ension *l*i*st* | for future extension | | It is optional. |
 
-#### attributes in `<cellStyleXfs>` element
+### elements under `<cellXfs>` element
+#### children under `<cellXfs>` element
+| elements | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `<xf>` | *f*ormat e*x*tensions | defines the formatting properties for a cell style. | | |
+
+#### attributes in `<cellXfs>` element
 | attributes | meaning | description | notes | notice
-| :-- | :-- | :-- | :-- | :-- | 
-| `<applyAlignment>` | | determines whether the alignment (children `<alignment>`) should be applied. | | The default value is `"false"` |
-| `<applyBorder>` | | determines whether the border (children `<borderId>`) should be applied. | | The default value is `"false"` |
-| `<applyFill>` | | determines whether the fill (children `<fillId>`) should be applied.  | | The default value is `"false"` |
-| `<applyNumberFormat>` | | determines whether the number format (children `<numFmts>`) should be applied.  | | The default value is `"false"` |
-| `<applyProtection>` | | determines whether the protection (children `<protection>`) should be applied. | | The default value is `"false"`|
-| `<quotePrefix>` | | determines whether a single quote prefix should be displayed. | | The default value is `"false"` |
-| `<pivotButton>` | | determines whether the cell is a pivot table button. | | The default value is `"false"` |
-| `<hidden>` | | determines whether the cell's formula should be hidden | | The default value is `"false"` |
-| `<locked>` | | determines whether the cell should be locked. | | The default value is `"true"` |
+| :-- | :-- | :-- | :-- | :-- |
+| `count` | | the number of direct children | | |
+
+### elements under `<cellXfs>`->`<xf>` element
+#### children under `<cellXfs>`->`<xf>` element
+Same as children of `<cellStyleXfs>`->`<xf>`
+
+#### attributes in `<cellStyleXfs>`->`<xf>` element
+Same as attributes of `<cellStyleXfs>`->`<xf>`
+
+### elements under `<cellStyles>` element
+#### children under `<cellStyles>` element
+| elements | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `<cellStyle/>` | | defines the cell style. | | |
+
+#### attributes in `<cellStyles>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `count` | | the number of direct children | | |
+
+### elements under `<cellStyle/>` element
+#### children under `<cellStyle/>` element
+none
+
+#### attributes in `<cellStyle/>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `name` | | give a name to the cell style. | | It is required |
+| `xfId` | | references the format extension (defined by `<xf>`) by id. | | It is required. |
+| `builtinId` | | indicates the built-in id. | The value of `builtinId` are standardized | <ol><li>If `builtinId` attribute is present, it takes precedence over the `name` attribute for identifying the standard style.</li><li>There is no default value.</br>If it is absent, the specific built-in style is automatically assumed.</li></ol> |
+| `customBuiltin` | | determines whether the built-in id (defined by `builtinid`) is customized | | The default value is `"false"` |
+| `hidden` | | determines whether the cell style should be hidden. | | The default value is `"false"` |
 
 ### examples and explanation
 #### example 1.1 -- workbook tag as root node in `~/xl/workbook.xml`
