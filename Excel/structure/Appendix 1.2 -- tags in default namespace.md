@@ -555,15 +555,21 @@ See description above.
 | `"minor"` | | Minor font (typically used for body text) | | |
 
 ### elements under `<b/>` element
-presence of `</b>` signifies bold formatting.
+See `<b/>` in definition of WordProcessML, available at [Appendix 2 -- available options of attribute of tag in xml for Word](https://github.com/40843245/OOXML/blob/main/Word/structure/Appendix%202%20--%20available%20options%20of%20attribute%20of%20tag%20in%20xml%20for%20Word.md).
 
 ### elements under `<i/>` element
-presence of `<i/>` signifies italic formatting.
-
+See `<i/>` in definition of WordProcessML, available at [Appendix 2 -- available options of attribute of tag in xml for Word](https://github.com/40843245/OOXML/blob/main/Word/structure/Appendix%202%20--%20available%20options%20of%20attribute%20of%20tag%20in%20xml%20for%20Word.md).
+ 
 ### elements under `<u/>` element
-presence of `<u/>` signifies underline formatting.
+#### children in `<u/>`element
+none
 
-### `<u/>`->`val`
+#### attributes in `<u/>`element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `val` | | determines whether to underline the text. | | |
+
+##### `<u/>`->`val`
 | values | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `"single` | | Major font (typically used for headings) | | |
@@ -571,17 +577,14 @@ presence of `<u/>` signifies underline formatting.
 | `"singleAccounting"` | | Minor font (typically used for body text) | | |
 | `"doubleAccounting."` | | Minor font (typically used for body text) | | |
 
-### elements under `<i>` element
-presence of `<u/>` signifies underline formatting
-
 ### elements under `<strike/>` element
-that indicates the font should be displayed as an outline. Its presence signifies outline formatting
+See `<strike/>` in definition of WordProcessML, available at [Appendix 2 -- available options of attribute of tag in xml for Word](https://github.com/40843245/OOXML/blob/main/Word/structure/Appendix%202%20--%20available%20options%20of%20attribute%20of%20tag%20in%20xml%20for%20Word.md).
 
 ### elements under `<shadow/>` element
-Its presence signifies shadow formatting.
+See `<shadow/>` in definition of WordProcessML, available at [Appendix 2 -- available options of attribute of tag in xml for Word](https://github.com/40843245/OOXML/blob/main/Word/structure/Appendix%202%20--%20available%20options%20of%20attribute%20of%20tag%20in%20xml%20for%20Word.md).
 
 ### elements under `<extend/>` element
-Its presence signifies extend formatting.
+See `<extend/>` in definition of WordProcessML, available at [Appendix 2 -- available options of attribute of tag in xml for Word](https://github.com/40843245/OOXML/blob/main/Word/structure/Appendix%202%20--%20available%20options%20of%20attribute%20of%20tag%20in%20xml%20for%20Word.md).
 
 ### elements under `<fills>` element
 #### children in `<fills>` element
@@ -866,6 +869,7 @@ none
 | `<protection>` | | specifies the protection settings | | If the `<protection>` element is absent, the default protection is locked and not hidden.|
 | `<font>` | | defines the font properties | | If omitted, the font properties will typically inherit from the default theme or the cell's base style.  |
 | `<border>` | | defines the border properties | | The default value is none, meaning no border. |
+| `<fill>` | | defines the fill properties | | The default value is none, meaning no fill. |
 | `<numFmt>` | |  specifies the number formatting code | | If omitted, typically, the `General` number formatting will be used. |
 
 #### attributes in `<dxf>` element
@@ -873,10 +877,86 @@ none
 
 ### elements under `<dxfs>`->`<dxf>`->`<border>` element
 #### children in `<dxfs>`->`<dxf>`->`<border>` element
-Same as `<borders>`-> `<border>`
+Same as `<borders>`->`<border>`
 
 #### attributes in `<dxfs>`->`<dxf>`->`<border>` element
-Same as `<borders>`-> `<border>`
+Same as `<borders>`->`<border>`
+
+### elements under `<dxfs>`->`<dxf>`->`<fill>` element
+#### children in `<dxfs>`->`<dxf>`->`<fill>` element
+Same as `<fills>`->`<fill>`
+
+#### attributes in `<dxfs>`->`<dxf>`->`<border>` element
+Same as `<fills>`->`<fill>
+
+### elements under `<tableStyles>` element
+#### children in `<tableStyles>` element
+| elements | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `<tableStyle>` | | defines a table style and servers a container containing lots of parts of the table style. | | |
+
+#### attributes in `<tableStyles>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `count` | | the number of direct children | | |
+| `defaultTableStyle` | | specifies the default table style that is used when a user inserts a new table without explicitly choosing a style. | | |
+| `defaultPivotStyle` | | tspecifies the default pivot table style that is used when a user inserts a new pivot table without explicitly choosing a style. | | |
+
+### elements under `<tableStyle>` element
+#### children in `<tableStyle>` element
+| elements | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `<tableStyleElement>` | | defines an element (part) of the table style. | | |
+| `<extLst>` | *ext*ension *l*i*st* | has been discussed before | | |
+
+#### attributes in `<tableStyles>` element
+none
+
+### elements under `<tableStyleElement>` element
+#### children in `<tableStyleElement>` element
+| elements | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `<alignment>` | | defines the alignment properties | | If the `<alignment>` element is absent, the default alignment is typically bottom and left with no text rotation, wrap text set to false, and no indentation. |
+| `<protection>` | | specifies the protection settings | | If the `<protection>` element is absent, the default protection is locked and not hidden.|
+| `<font>` | | defines the font properties | | If omitted, the font properties will typically inherit from the default theme or the cell's base style.  |
+| `<border>` | | defines the border properties | | The default value is none, meaning no border. |
+| `<fill>` | | defines the fill properties | | The default value is none, meaning no fill. |
+| `<extLst>` | *ext*ension *l*i*st* | has been discussed before | | |
+
+### elements under `<tableStyleElement>`->`<alignment>` element
+#### children in `<tableStyleElement>`->`<alignment>` element
+Same as `<dxfs>`->`<dxf>`->`<alignment>`
+
+#### attributes in `<tableStyleElement>`->`<alignment>` element
+Same as `<dxfs>`->`<dxf>`->`<alignment>`
+
+### elements under `<tableStyleElement>`->`<protection>` element
+#### children in `<tableStyleElement>`->`<protection>` element
+Same as `<dxfs>`->`<dxf>`->`<protection>`
+
+#### attributes in `<tableStyleElement>`->`<protection>` element
+Same as `<dxfs>`->`<dxf>`->`<protection>`
+
+### elements under `<tableStyleElement>`->`<font>` element
+#### children in `<tableStyleElement>`->`<font>` element
+Same as `<dxfs>`->`<dxf>`->`<font>`
+
+#### attributes in `<tableStyleElement>`->`<font>` element
+Same as `<dxfs>`->`<dxf>`->`<font>`
+
+### elements under `<tableStyleElement>`->`<border>` element
+#### children in `<tableStyleElement>`->`<border>` element
+Same as `<dxfs>`->`<dxf>`->`<border>`
+
+#### attributes in `<tableStyleElement>`->`<border>` element
+Same as `<dxfs>`->`<dxf>`->`<border>`
+
+### elements under `<tableStyleElement>`->`<fill>` element
+#### children in `<tableStyleElement>`->`<fill>` element
+Same as `<dxfs>`->`<dxf>`->`<fill>`
+
+#### attributes in `<tableStyleElement>`->`<fill>` element
+Same as `<dxfs>`->`<dxf>`->`<fill>`
 
 ### examples and explanation
 #### example 1.1 -- workbook tag as root node in `~/xl/workbook.xml`
