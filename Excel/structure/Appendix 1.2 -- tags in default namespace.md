@@ -543,7 +543,7 @@ See description above.
 ### elements under `<scheme>` element
 #### attributes in `<scheme>` element
 | attributes | meaning | description | notes | notice
-| :-- | :-- | :-- | :-- | :-- |
+| :-- | :-- | :-- | :-- | :-- |3
 | `val` | | specifies font scheme | | |
 
 ##### `<scheme>`->`val`
@@ -671,6 +671,8 @@ There may be more values in `Spreadsheet`.
 | `<top/>` | | specifies the top line border  | | |
 | `<bottom/>` | | specifies the bottom line border  | | |
 | `<diagonal/>` | | specifies the diagonal line border  | | |
+| `<diagonalUp/>` | | determines whether the diagonal border from the bottom-left to the top-right of the cell is enabled. | | The default value is `"false"` |
+| `<diagonalDown/>` | | determines whether the diagonal border from the top-right to the bottom-left of the cell is enabled. | | The default value is `"false"` |
 
 #### attributes in `<border>` element
 none
@@ -710,10 +712,30 @@ Same as `<left/>`.
 ### elements under `<bottom/>` element
 Same as `<left/>`.
 
-### elements under `<left/>` element
+### elements under `<diagonal/>` element
+#### children in `<diagonal/>` element
+| elements | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `<color>` | | specifies the color of the diagonal line. | | |
 
-### elements under `<left/>` element
+#### attributes in `<diagonal/>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `w:style` | | specifies the style of the diagonal line. | | |
 
+### elements under `<diagonal/>`->`<color>` element
+#### children under `<diagonal/>`->`<color>` element
+none
+
+#### attributes in `<diagonal/>`->`<color>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `auto` | | specifies the color of the diagonal line automatically. | | |
+| `rgb` | | specifies the color of the diagonal line by rgb color. | | |
+| `indexed` | | specifies the color of the diagonal line by referencing the color in the color palette. | | |
+| `theme` | | specifies the color of the diagonal line by referencing the theme color. | | |
+| `tint` | | specifies the tint/shade applied to the theme color. Negative values darken, positive values lighten. | | <ul><li>MUST be a real number between -1.0 and 1.0</li><li>Negative values darken, positive values lighten</li><li>If either `rgb` or `indexed` is specified, `tint` attribute will be ignored.</li><li>It is optional.</br>If it is not specified, it is determined by some other attribute</br>`rgb`,`indexed`.</li></ul>|
+| `shade` | | specifies the percentage of shading applied to the theme color. | | <ul><li>MUST be an integer between 0 and 255</li><li>If either `rgb` or `indexed` is specified, `shade` attribute will be ignored.</li><li>It is optional.</br>But it can be omitted if either `rgb` or `indexed` is specified.</li></ul> |
 
 ### examples and explanation
 #### example 1.1 -- workbook tag as root node in `~/xl/workbook.xml`
