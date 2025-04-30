@@ -1178,6 +1178,32 @@ In above example, we can know that
 
 + The `xmlns` namespace targets to SpreadSheetML in version 2006.
 
+#### example 1.4 -- queryTable tag as root node in `~/xl/queryTables/queryTable1.xml`
+The root node of xml content in `~/xl/queryTables/queryTable1.xml` under `stocking data.xlsx` file.
+
+```
+<queryTable
+xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+xmlns:xr16="http://schemas.microsoft.com/office/spreadsheetml/2017/revision16"
+mc:Ignorable="xr16"
+name="MI_INDEX_0099P_20250430"
+backgroundRefresh="0"
+connectionId="2"
+xr16:uid="{704382A8-1CEA-4F39-99DA-E058186CA88A}"
+autoFormatId="16"
+applyNumberFormats="0"
+applyBorderFormats="0"
+applyFontFormats="0"
+applyPatternFormats="0"
+applyAlignmentFormats="0"
+applyWidthHeightFormats="0">
+```
+
+In the above example, we can know that
+
++ it targets the SpreadSheetML in version 2006.
++ the markup is compatible with the SpreadSheetML in 2006 (or above).
 #### example 2.1 -- sheets
 a part of xml content of `~/xl/worbook.xml` under an Excel file.
 
