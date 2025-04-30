@@ -616,9 +616,10 @@ none
 | `patternType` | | specifies the type of pattern for filling | | |
 
 ##### `<patternFill>`->`patternType`
-All values `patternType` attribute in `<patternFill>` tag in **Standard OOXML**.
++ Some values of `patternType` attribute in `<patternFill>` tag in **Standard OOXML**.
 
-There may be more values in `Spreadsheet`.
+> [!IMPORTANT]
+> The values are defined by [`ST_PatternType`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_PatternType_topic_ID0EBYQFB.html) simple type.
 
 | values | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
@@ -655,6 +656,21 @@ There may be more values in `Spreadsheet`.
 | `"weave"` | | weave pattern | | |
 | `"plaid"` | | plaid pattern | | |
 | `"dither"` | | dither pattern | | |
+
++ Some values of `patternType` attribute in `<patternFill>` tag in **SpreadSheetML** (which is based on **Standard OOXML**).
+
+> [!IMPORTANT]
+> The values are defined by [DocumentFormat.OpenXml.Spreadsheet.PatternFill.PatternType](https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.spreadsheet.patternfill.patterntype?view=openxml-3.0.1)
+
+| values | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `"gray0625"` | |  6.25% gray pattern | | |
+| `"ltGray"` | |  same as `"gray0625"`  | | |
+| `"gray125"` | |  12.50% gray pattern | | |
+| `"gray25"` | |  25.00% gray pattern | | |
+| `"gray50"` | |  50.00% gray pattern | | |
+| `"medGray"` | |  same as `"gray50"` | | |
+| `"gray75"` | |  75.00% gray pattern | | |
 
 ### elements under `<borders>` element
 #### children in `<borders>` element
@@ -1211,7 +1227,71 @@ Here is, the part of xml content of `~/xl/sharedString.xml` file:
 
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/f10bf490-690b-4d6a-bafa-6af30af7ea00" />
 
- 
+#### exaple 9.1 -- font styles in `~/xl/styles.xml`
+a part of xml content of `~/xl/styles.xml` file under an Office Excel file.
+
+```
+<fonts count="1" x14ac:knownFonts="1">
+ <font>
+   <sz val="11"/>
+   <color theme="1"/>
+   <name val="新細明體"/>
+   <family val="2"/>
+   <scheme val="minor"/>
+ </font>
+</fonts>
+```
+
+In above example, we can know that
+
++ In `<fonts count="1" x14ac:knownFonts="1">`, it acts like a container that only contains 1 font style definition and the fonts defined within this container are considered `known fonts` by the application.
++ In `<font>`, it defines a font.
++ In `<sz val="11"/>`, it specifies the font size is 11 for non-complex script characters.
++ In `<color theme="1"/>`, it specifies the theme color references the first index that is defined in the document theme.
++ In `<name val="新細明體"/>`, the font is named as `新細明體`.
++ In `<family val="2"/>`, it specifies the font family is `sans-serif` (looking at the table in `<family>`->`val` section).
++ In `<scheme val="minor"/>`, it specifies the font is a part of minor font scheme defined in the document theme.
+
+#### exaple 9.2 -- fill styles in `~/xl/styles.xml`
+other part of xml content of `~/xl/styles.xml` file under an Office Excel file.
+
+```
+<fills count="2">
+ <fill>
+   <patternFill patternType="none"/>
+ </fill>
+ <fill>
+   <patternFill patternType="gray125"/>
+ </fill>
+</fills>
+```
+
+In above example, we can know that
+
++ In `<fills count="2">`, it acts like a container that contains two fill style definition.
++ In
+
+```
+ <fill>
+   <patternFill patternType="none"/>
+ </fill>
+```
+
+it defines a fill style with no fill pattern.
+
++ In
+
+```
+ <fill>
+   <patternFill patternType="gray125"/>
+ </fill>
+```
+
+it defines a fill style with 12.5% gray pattern.
+
+#### exaple 9.1 -- font styles in `~/xl/styles.xml`
+
+
 #### exaple 9.1 -- file version
 ```
 <fileVersion appName="xl" lastEdited="7" lowestEdited="6" rupBuild="20417"/>
