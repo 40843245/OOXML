@@ -1036,7 +1036,7 @@ In above example, we can know that
 
 + In `mc:Ignorable`, it ignore these namespace `x14ac`,`x16r2`,`xr`.
 
-#### exaple 2.1 -- sheets
+#### example 2.1 -- sheets
 a part of xml content of `~/xl/worbook.xml` under an Excel file.
 
 ```
@@ -1059,7 +1059,7 @@ While the second worksheet named `動漫或動畫等角色介紹` refers to `~/x
 
 Similarly the third worksheet named `動漫或動畫等介紹` refers to `~/xl/worksheets/sheet3.xml` by default.
 
-#### exaple 3.1 -- view of workbook
+#### example 3.1 -- view of workbook
 ```
 <bookViews>
     <workbookView xWindow="0" yWindow="0" windowWidth="22260" windowHeight="C" activeTab="2" xr2:uid="{00000000-000D-0000-FFFF-FFFF00000000}"/>
@@ -1075,7 +1075,7 @@ In above example, we can know that
 + The third tab (or said, worksheet) is in active. due to zero-based.
 + its guid is `00000000-000D-0000-FFFF-FFFF00000000`.
   
-#### exaple 4.1 -- workbook properties
+#### example 4.1 -- workbook properties
 ```
 <workbookPr date1904="1" showObjects="all" saveExternalLinkValues="1" codeName="ThisWorkbook"/>
 ```
@@ -1087,7 +1087,7 @@ In above example, we can know that
 + External link values are saved.
 + The VBA codename for the workbook is "ThisWorkbook".
 
-#### exaple 5.1 -- views of sheets 
+#### example 5.1 -- views of sheets 
 a part of xml content of `~/xl/sheets/sheet1.xml` under an Excel file.
 
 ```
@@ -1103,7 +1103,7 @@ In above example, we can know that
 + There are one sheet view that references to the id of workbook view equals to `0`.</br>Additionally, when it is opened, it will navigate to the cell `A10` (here, the cell `A10` is on the top-left corner).
 + In the sheet view, it references the selection `E1` and the active cell is `E1` in current section.
 
-#### exaple 6.1 -- columns of views of sheets 
+#### example 6.1 -- columns of views of sheets 
 a part of xml content of `~/xl/sheets/sheet1.xml` under an Excel file.
 
 ```
@@ -1128,7 +1128,7 @@ In above example, we can know that
   - In `B` column, the width is `18.36328125` points.</br>And the width can be customized, meaning that the width is NOT automatically adjusted to the the value specified in `width` attribute.</br>Additionally, it should be best fit, meaning that the app should always adjust the column width so that it exactly fits to the content of the column.
   - In `C` column, the width is `12.90625` points.</br>And the width can be customized, meaning that the width is NOT automatically adjusted to the the value specified in `width` attribute.</br>Additionally, it should be best fit, meaning that the app should always adjust the column width so that it exactly fits to the content of the column.
 
-#### exaple 7.1 -- default sheet format
+#### example 7.1 -- default sheet format
 a part of xml content of `~/xl/sheets/sheet1.xml` under an Excel file.
 
 ```
@@ -1139,7 +1139,7 @@ In above example, we can know that
 
 + The default row height of the sheet is `14.5` point and specifies a dynamic descent of 0.35 pixels for bottom-aligned text in the rows of this sheet.
 
-#### exaple 8.1 -- data within a worksheet
+#### example 8.1 -- data within a worksheet
 xml content of `~/xl/sheets/sheet1.xml` under an Excel file.
 
 ```
@@ -1227,7 +1227,7 @@ Here is, the part of xml content of `~/xl/sharedString.xml` file:
 
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/f10bf490-690b-4d6a-bafa-6af30af7ea00" />
 
-#### exaple 9.1 -- font styles in `~/xl/styles.xml`
+#### example 9.1 -- font styles in `~/xl/styles.xml`
 a part of xml content of `~/xl/styles.xml` file under an Office Excel file.
 
 ```
@@ -1252,7 +1252,7 @@ In above example, we can know that
 + In `<family val="2"/>`, it specifies the font family is `sans-serif` (looking at the table in `<family>`->`val` section).
 + In `<scheme val="minor"/>`, it specifies the font is a part of minor font scheme defined in the document theme.
 
-#### exaple 9.2 -- fill styles in `~/xl/styles.xml`
+#### example 9.2 -- fill styles in `~/xl/styles.xml`
 other part of xml content of `~/xl/styles.xml` file under an Office Excel file.
 
 ```
@@ -1289,7 +1289,7 @@ it defines a fill style with no fill pattern.
 
 it defines a fill style with 12.5% gray pattern.
 
-#### exaple 9.3 -- borders styles in `~/xl/styles.xml`
+#### example 9.3 -- borders styles in `~/xl/styles.xml`
 other part of xml content of `~/xl/styles.xml` file under an Office Excel file.
 
 ```
@@ -1321,7 +1321,7 @@ In above example, we can know that
 
 it defines a border style whose left, right, top, bottom, diagonal line border uses default style.
 
-#### exaple 9.4 -- cell styles format extension in `~/xl/styles.xml`
+#### example 9.4 -- cell styles format extension in `~/xl/styles.xml`
 other part of xml content of `~/xl/styles.xml` file under an Office Excel file.
 
 ```
@@ -1340,7 +1340,7 @@ In above example, we can know that
    - Additionally, it references the fill id `0`. Here, again, from previous example -- exaple 9.2 -- font styles in `~/xl/styles.xml`, it uses a fill with no fill pattern and it may be transparent.
    - On top of that, it references the border id `0`. Here, again, from previous example -- exaple 9.3 -- borders styles in `~/xl/styles.xml`, it uses a border with default left, right, top, bottom line border.
 
-#### exaple 9.5 -- cell format extension  in `~/xl/styles.xml`
+#### example 9.5 -- cell format extension  in `~/xl/styles.xml`
 other part of xml content of `~/xl/styles.xml` file under an Office Excel file.
 
 ```
@@ -1360,7 +1360,7 @@ In above example, we can know that
    - On top of that, it references the border id `0`. Here, again, from previous example -- exaple 9.3 -- borders styles in `~/xl/styles.xml`, it uses a border with default left, right, top, bottom line border.
    - On the other hand, it links to a specific cell style defined in the first of `<cellStyleXfs> collection`.
 
-#### exaple 9.6 -- cell styles  in `~/xl/styles.xml`
+#### example 9.6 -- cell styles in `~/xl/styles.xml`
 other part of xml content of `~/xl/styles.xml` file under an Office Excel file.
 
 ```
@@ -1374,7 +1374,7 @@ In above example, we can know that
 + In `<cellStyles count="1">`, it acts like a container that defines only one cell style.
 + In `<cellStyle name="Normal" xfId="0" builtinId="0"/>`, it defines a cell style named `Normal` and it links to the first to a specific cell style defined in the first of `<cellStyleXfs> collection`.
 
-#### exaple 9.7 -- diffential format extension in `~/xl/styles.xml`
+#### example 9.7 -- diffential format extension in `~/xl/styles.xml`
 other part of xml content of `~/xl/styles.xml` file under an Office Excel file.
 
 ```
@@ -1385,7 +1385,7 @@ In above example, we can know that
 
 + In `<dxfs count="0"/>`, there are no definition about diffential format extensions.
 
-#### exaple 9.8 -- table styles in `~/xl/styles.xml`
+#### example 9.8 -- table styles in `~/xl/styles.xml`
 other part of xml content of `~/xl/styles.xml` file under an Office Excel file.
 
 ```
@@ -1444,19 +1444,7 @@ it defines second extension. In the second extension,
   - And it's uuid is in 128-bit -- `9260A510-F301-46a8-8635-F512D64BE5F5`.
   - In `<x15:timelineStyles defaultTimelineStyle="TimeSlicerStyleLight1"/>`, it sets the default time line styles to `TimeSlicerStyleLight1`.
 
-#### exaple 9.1 -- file version
-```
-<fileVersion appName="xl" lastEdited="7" lowestEdited="6" rupBuild="20417"/>
-```
-
-In above example, we can know that
-
-+ the last edit is in Office Excel.
-+ the last edit id is `7`.
-+ the earlieast edit id is `6`.
-+ the rollup build id is `20417`.
-
-#### exaple 9.2 -- extensibility list
+#### example 10.1 -- extensibility list
 ```
 <extLst>
     <ext xmlns:x15="http://schemas.microsoft.com/office/spreadsheetml/2010/11/main" uri="{140A7094-0E35-4892-8432-C4D2E57EDEB5}">
@@ -1469,6 +1457,18 @@ In above example, we can know that
 
 + there is a defined extension which targets `xml:x15` namepsace to `http://schemas.microsoft.com/office/spreadsheetml/2010/11/main`.
 + And it guid is `140A7094-0E35-4892-8432-C4D2E57EDEB5`.
+
+#### example 11.1 -- file version
+```
+<fileVersion appName="xl" lastEdited="7" lowestEdited="6" rupBuild="20417"/>
+```
+
+In above example, we can know that
+
++ the last edit is in Office Excel.
++ the last edit id is `7`.
++ the earlieast edit id is `6`.
++ the rollup build id is `20417`.
 
 #### exaple 10.1 -- metadata of the Excel
 See [explanation of xml content in `~/docProps/app.xml` file under `aaa3.xlsx` file](https://github.com/40843245/OOXML/blob/main/examples/spreadsheet/Excel/aaa3.xlsx/docsProps/app.xml/app.xml.md)
