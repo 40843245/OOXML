@@ -651,6 +651,70 @@ There may be more values in `Spreadsheet`.
 | `"plaid"` | | plaid pattern | | |
 | `"dither"` | | dither pattern | | |
 
+### elements under `<borders>` element
+#### children in `<borders>` element
+| elements | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `<border>` | | defines a border and serves as a container that configures the border. | | |
+
+#### attributes in `<borders>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `count` | | the number of direct children in `<borders>`  | | |
+
+### elements under `<border>` element
+#### children in `<border>` element
+| elements | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `<left/>` | | specifies the left line border | | |
+| `<right/>` | | specifies the right line border  | | |
+| `<top/>` | | specifies the top line border  | | |
+| `<bottom/>` | | specifies the bottom line border  | | |
+| `<diagonal/>` | | specifies the diagonal line border  | | |
+
+#### attributes in `<border>` element
+none
+
+### elements under `<left/>` element
+#### children in `<left/>` element
+none
+
+#### attributes in `<left/>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `w:val` | | specifies the style of the border line. | | |
+| `w:sz` | | specifies the thickness of the border line. | in eighths of a point | |
+| `w:color` | | specifies the color of the border line. | | |
+| `w:themeColor` | | specifies the theme color of the border line. | | |
+| `w:themeTint` | | specifies the theme tint (lightness) of the border line. | | |
+| `w:themeShade` | | specifies the theme shade (darkness) of the border line. | | |
+| `w:spacing` | | specifies the spacing of the border line. | in a point | |
+| `w:shadow` | | determines the shadow effect of the border line. | | |
+| `w:frame` | | determines the frame effect of the border line. | | |
+
+##### `<left/>`->`w:val`
+See available values on `w:val` attribute at [Appendix 2 -- available options of attribute of tag in xml for Word](https://github.com/40843245/OOXML/blob/main/Word/structure/Appendix%202%20--%20available%20options%20of%20attribute%20of%20tag%20in%20xml%20for%20Word.md).
+
+##### `<left/>`->`w:color`
+See available values on `w:color` attribute at [Appendix 2 -- available options of attribute of tag in xml for Word](https://github.com/40843245/OOXML/blob/main/Word/structure/Appendix%202%20--%20available%20options%20of%20attribute%20of%20tag%20in%20xml%20for%20Word.md).
+
+##### `<left/>`->`w:themeColor`
+See available values on `w:themeColor` attribute at [Appendix 2 -- available options of attribute of tag in xml for Word](https://github.com/40843245/OOXML/blob/main/Word/structure/Appendix%202%20--%20available%20options%20of%20attribute%20of%20tag%20in%20xml%20for%20Word.md).
+
+### elements under `<right/>` element
+Same as `<left/>`.
+
+### elements under `<top/>` element
+Same as `<left/>`.
+
+### elements under `<bottom/>` element
+Same as `<left/>`.
+
+### elements under `<left/>` element
+
+### elements under `<left/>` element
+
+
 ### examples and explanation
 #### example 1.1 -- workbook tag as root node in `~/xl/workbook.xml`
 the root node of `~/xl/worbook.xml` under an Excel file.
