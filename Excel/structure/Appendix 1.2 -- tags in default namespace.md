@@ -1221,6 +1221,14 @@ none
 | `treatAsEmpty` | | specifies a value that, when `NULL` is encountered in this field, should be treated as an empty cell in Excel. | | |
 | `index` | | specifies index of the text field | | It is optional |
 
+##### `<textFlied>`->`type`
+| value | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| "General" | | automatic detection. | | |
+| "Text" | | specifies treats the data as text. | | |
+| "Date" (date format) | | specifies date values | | |
+| `"Boolean"` | | specifies a bolean value. | | |
+
 ### elements under `<dbPr/>` element
 #### children in `<dbPr/>` element
 none
