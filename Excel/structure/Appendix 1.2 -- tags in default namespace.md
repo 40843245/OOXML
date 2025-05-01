@@ -576,6 +576,9 @@ none
 | `<condense/>` | | specifies the font should be condensed ( narrower). | | |
 | `<extend/>` | | specifies the font should be extended (wider).  | | |
 
+> [!NOTE]
+> For introduction of shadow effect, see [shadow effect.md](https://github.com/40843245/CSS/blob/main/terms/shadow%20effect.md)
+
 ### elements under `<name>` element
 #### attributes in `<name>` element
 | attributes | meaning | description | notes | notice
