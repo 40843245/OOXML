@@ -1127,15 +1127,23 @@ none
 | elements | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `<extLst>` | *ext*ension *l*i*st* | acts like a container containing all extensions.| | |
+| `<dbPr/>` | *d*ata*b*ase *pr*operties | configures the database properties. | | |
+| `<olapPr/>` | OLAP *pr*operties | configures the OLAP properties.| | |
 
 #### attributes in `<connection>` element
 | attributes | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
-| `id` | | the id (as primary key) of the field. |  | |
+| `id` | | the id (as primary key) of the field. |  | It is required but it can be an empty string. |
 | `name` | | the name of the connections. |  | |
+| `description` | | the description of the connections. |  | It is optional |
 | `type` | | the id of the table column that the field corresponds to. |  | |
 | `refreshedVersion` | | the id of the table column that the field corresponds to. |  | |
 | `minRefreshableVersion` | | the id of the table column that the field corresponds to. |  | |
+| `keepAlive` | | determines whether the connection from Excel and data source should be always active (if possible). |  | |
+| `minRefreshableVersion` | | the id of the table column that the field corresponds to. |  | |
+| `minRefreshableVersion` | | the id of the table column that the field corresponds to. |  | |
+| `minRefreshableVersion` | | the id of the table column that the field corresponds to. |  | |
+
 
 ### elements under `<extLst>` element
 #### children in `<extLst>` element
@@ -1168,16 +1176,105 @@ none
 | `autoDelete` | | determines whether it is auto deleted. |  | |
 
 ### elements under `<x15:textPr>` element
-#### children in `<x15:connection>` element
+#### children in `<x15:textPr>` element
 | elements | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
-| `<x15:textPr>` | | defines the text properties. | | |
+| `<textFields>` | | acts like a container containing text fields for import. | | |
 
-#### attributes in `<x15:connection>` element
+#### attributes in `<x15:textPr>` element
 | attributes | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
-| `id` | | the connection id, probably indicates the file name of source file that imported from. |  | |
-| `autoDelete` | | determines whether it is auto deleted. |  | |
+| `codePage` | | code page used to encode |  | |
+| `sourceFile` | | full path of source data that import data from | | |
+| `tab` | | determines whether tab is used as delimiter. | | |
+| `comma` | | determines whether comma is used as delimiter. | | |
+
+### elements under `<textFields>` element
+#### children in `<textFields>` element
+| elements | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `<textField>` | | define a text field. | | |
+
+#### attributes in `<textFields>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `count` | | the number of direct children |  | |
+
+### elements under `<textField>` element
+#### children in `<textField>` element
+none
+
+#### attributes in `<textField>` element
+> [!IMPORTANT]
+> In different version of SpreadSheetML, the attribute might be different.
+>
+> To see available attributes, see the [DocumentFormat.OpenXml.Spreadsheet (MSDS)](https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.spreadsheet?view=openxml-3.0.1)
+
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `type` | | data type of te text field | | |
+| `format` | | specifies the particular format of the data within the field, especially for dates and numbers | | |
+| `name` | | specifies the name of the texe field | | |
+| `decimal` | | specifies the separator for decimal | | it must be specified iff the `type` is specified to `Number` |
+| `thousands` | | specifies the separator for thousands | | it must be specified iff the `type` is specified to `Number` |
+| `width` | | specifies fixed-width for the field | | It is optional |
+| `treatAsEmpty` | | specifies a value that, when `NULL` is encountered in this field, should be treated as an empty cell in Excel. | | |
+| `index` | | specifies index of the text field | | It is optional |
+
+### elements under `<dbPr/>` element
+#### children in `<dbPr/>` element
+none
+
+#### attributes in `<dbPr/>` element
+> [!IMPORTANT]
+> In different version of SpreadSheetML, the attribute might be different.
+>
+> To see available attributes, see the [DocumentFormat.OpenXml.Spreadsheet (MSDS)](https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.spreadsheet?view=openxml-3.0.1)
+
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `connection` | |  a descriptive name of the connection to the external database | | |
+| `command` | | command will be executed. | | |
+| `commandType` | | type of command  | | |
+| `backgroundQuery` | | determines whether the query to the database should be executed in the background, | | |
+| `optimize` | | determines whether the app should optimize the query. | | |
+| `cacheData` | | determines whether the result of query should be cached within the app, | | |
+| `disableEdit` | | determines whether the result of query can NOT be editted directly in the app. | | |
+| `credentials` | | specifies he type of credentials used to connect to the database  | | |
+| `reconnectionRetryCount` | | specifies how many times should it retries to reconnect. | | |
+| `reconnectionRetryDelay` | | determines how long should it take to reconnection.  | In seconds. | |
+
+##### `<dbPr/>`->`commandType`
+| values | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `Text` (or `"0"`) | | indicates that it is a text-based command, like an SQL query. | | |
+| `Table` (or `"1"`) | | indicates that it is a table. | | |
+| `StoredProc` (or `"2"`) | | indicates that it is a stored proceedure. | | |
+| `"3"` | | indicates that it is a Excel Data Model. | | |
+
+### elements under `<olapPr/>` element
+#### children in `<olapPr/>` element
+none
+
+#### attributes in `<olapPr/>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `sendLocale` | | determines whether Excel sends the user's locale information to the OLAP server. | | |
+| `rowDrillCount` | | specifies the maximum number of rows retrieved during a drill-down operation in an OLAP-based PivotTable. | | |
+| `colDrillCount` | | specifies the maximum number of columns retrieved during a drill-down operation in an OLAP-based PivotTable. | | |
+| `fillDownLimit` | | specifies the limit on how many rows Excel attempts to fill down labels or values in an OLAP PivotTable. | | |
+| `mdxSubqueries` | | controls whether Excel uses MDX subqueries for certain OLAP operations, which can sometimes affect performance.| | |
+| `showEmptyRowGrandTotals` | | determines whether grand totals for rows are displayed even if there are no values in the detail rows. | | |
+| `showEmptyColGrandTotals` | | determines whether calculated members defined within the OLAP cube are displayed with an indicator of where they are calculated. | | |
+| `showKPIs` | | determines whether KPIs defined in the OLAP cube are displayed in the PivotTable. | | |
+| `showHierarchyDefault` | | determines whether the default member of a hierarchy is displayed when the hierarchy is added to a PivotTable. | | |
+| `drillOnChange` | | determines whether the OLAP server handles the filling of empty cells in the PivotTable. | | |
+| `nonEmptyRows` | | determines whether only rows containing data are displayed in the PivotTable. | | |
+| `nonEmptyCols` | | determines whether only columns containing data are displayed in the PivotTable. | | |
+| `axisSteps` | | specifies how levels within OLAP hierarchies are displayed on PivotTable axes. | | |
+| `getVisibleOnly` | | determines whether Excel only retrieves visible members from the OLAP cube. | | |
+| `cubeFields` | | contains a reference or an index to a collection of cube fields associated with this OLAP connection. | | |
+| `measures` | | could similarly reference the measures available in the OLAP cube. | | |
 
 ### examples and explanation
 #### example 1.1 -- workbook tag as root node in `~/xl/workbook.xml`
