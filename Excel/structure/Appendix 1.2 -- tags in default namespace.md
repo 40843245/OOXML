@@ -1996,6 +1996,8 @@ In above example, we can know that
 + the rollup build id is `20417`.
 
 #### exaple 13.1 -- connections in Excel
+part of xml content of `~/xl/connections.xml` file under `stocking data.xlsx` file.
+
 ```
 <connections
  <!-- attrs omitted -->
@@ -2029,6 +2031,7 @@ In above example, we can know that
     </ext>
   </extLst>
  </connection>
+ <!-- tags omitted -->
 </connections>
 ```
 
@@ -2053,7 +2056,96 @@ In above example, we can know that
 + In `<textFields count="17">`, it defines 17 text fields.
 + In `<textField type="YMD"/>`, about the first text field, its format is `Year-Month-Day` date.
 + In `<textField/>`, about the second text field, the Excel will detect its format.
-  
+
+#### exaple 13.2 -- connections in Excel
+other part of xml content of `~/xl/connections.xml` file under `stocking data.xlsx` file.
+
+```
+<connections
+ <!-- attrs omitted -->
+>
+ <!-- tags omitted -->
+ <connection id="2" xr16:uid="{1F08C1C2-3D0C-4729-8E08-02B842287180}" keepAlive="1" name="ModelConnection_MI_INDEX_0099P_20250430" description="資料模型" type="5" refreshedVersion="6" minRefreshableVersion="5" saveData="1">
+ <dbPr connection="Data Model Connection" command="MI_INDEX_0099P_20250430" commandType="3"/>
+ <extLst>
+  <ext xmlns:x15="http://schemas.microsoft.com/office/spreadsheetml/2010/11/main" uri="{DE250136-89BD-433C-8126-D09CA5730AF9}">
+    <x15:connection id="" model="1"/>
+   </ext>
+ </extLst>
+ </connection>
+ <!-- tags omitted -->
+</connections>
+```
+
+In above example, we can know that
+
++ In `<connection id="2" xr16:uid="{1F08C1C2-3D0C-4729-8E08-02B842287180}" keepAlive="1" name="ModelConnection_MI_INDEX_0099P_20250430" description="資料模型" type="5" refreshedVersion="6" minRefreshableVersion="5" saveData="1">`,
+
+    - it has an user-friendly name `ModelConnection_MI_INDEX_0099P_20250430`, indicating that its a connection about model.
+    - its connection is about `Excel Data Model` since its description is `資料模型`, translated to `Data Model`.
+    - the connection id is `2`
+    - its uuid is `1F08C1C2-3D0C-4729-8E08-02B842287180`
+    - Excel should try to maintain an active connection.
+    - the data from this connection is saved within the workbook.
+    - the version of the connection after the last refresh is `6`
+    - the minimum version of Excel required to refresh this connection is `5`
+
++ In `<dbPr connection="Data Model Connection" command="MI_INDEX_0099P_20250430" commandType="3"/>`, it defines the database properties
+
+    - its conntection is about `Data Model`
+    - the command will be executed which refers to the table `MI_INDEX_0099P_20250430`
+
++ In `<ext xmlns:x15="http://schemas.microsoft.com/office/spreadsheetml/2010/11/main" uri="{DE250136-89BD-433C-8126-D09CA5730AF9}">`, it defines an extension
+
+    - it targets to SpreadSheetML in version 2010.11 (released at Nov,2010)
+    - it targets to uri `DE250136-89BD-433C-8126-D09CA5730AF9`
+
++ In `<x15:connection id="" model="1"/>`, it confirms that the connection is part of the Excel Data Model.
+
+#### exaple 13.3 -- connections in Excel
+other part of xml content of `~/xl/connections.xml` file under `stocking data.xlsx` file.
+
+```
+<connections
+ <!-- attrs omitted -->
+>
+ <!-- tags omitted -->
+ <connection id="3" xr16:uid="{DBF4EAA8-BA18-4E98-89FA-28FF06008E40}" keepAlive="1" name="ThisWorkbookDataModel" description="資料模型" type="5" refreshedVersion="6" minRefreshableVersion="5" background="1">
+ <dbPr connection="Data Model Connection" command="Model" commandType="1"/>
+ <olapPr sendLocale="1" rowDrillCount="1000"/>
+  <extLst>
+   <ext xmlns:x15="http://schemas.microsoft.com/office/spreadsheetml/2010/11/main" uri="{DE250136-89BD-433C-8126-D09CA5730AF9}">
+    <x15:connection id="" model="1"/>
+   </ext>
+  </extLst>
+ </connection>
+</connections>
+```
+
+In above example, we can know that
+
++ In `<connection id="3" xr16:uid="{DBF4EAA8-BA18-4E98-89FA-28FF06008E40}" keepAlive="1" name="ThisWorkbookDataModel" description="資料模型" type="5" refreshedVersion="6" minRefreshableVersion="5" background="1">`,
+
+    - it has an user-friendly name `ThisWorkbookDataModel`, indicating that its a connection about data model.
+    - its connection is about `Data Model` since its description is `資料模型`, translated to `Data Model`.
+    - its connection is about OLB DB.   
+    - its connection id is `3`
+    - the version of the connection after the last refresh is `6`
+    - the minimum version of Excel required to refresh this connection is `5`
+
++ In `<dbPr connection="Data Model Connection" command="Model" commandType="1"/>`, it defines a database properties.
+
+    - its connection is about `Data Model Connection`.
+    - the command will be executed which refers to the entire Data Model.
+    - it likely refers to the overall "Model" itself, encompassing all tables and relationships within the Data Model.
+
++ In `<olapPr sendLocale="1" rowDrillCount="1000"/>`, it defines an OLAP properties.
+
+    - it indicates that it will send the user's locale information.
+    - it limits drill-down operations to 1000 rows.
+
+Omitted the following breakdown of `<extLst>`.
+
 #### exaple 14.1 -- metadata of the Excel
 See [explanation of xml content in `~/docProps/app.xml` file under `aaa3.xlsx` file](https://github.com/40843245/OOXML/blob/main/examples/spreadsheet/Excel/aaa3.xlsx/docsProps/app.xml/app.xml.md)
 
