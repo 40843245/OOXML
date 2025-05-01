@@ -31,13 +31,16 @@ I just list some of them that commonly seen in Word file.
 | :---------- | :----------- | :----- | :--- | :-- |
 | `mso-application` | | targets Microsoft Office applications. | | |
 
+#### children in `mso-application`
+none
+
 #### attributes in `mso-application`
 | attributes name | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- |
 | `progid` | *Pr*ogrammatic *Id*entifier | It's a string that uniquely identifies a COM (Component Object Model) component or application. | | |
 
 #### examples and explanation
-##### example 1
+##### example 1.1 -- processing instruction
 `Docx1.docx` file
 
 ```
@@ -105,11 +108,27 @@ In above example, we can know that
 > and more sharable.
 
 #### examples and explanation
-##### example 1
-`Docx1.docx` file.
+##### example 1.1 -- wordDocument tag as root node in `~/word/document.xml`
+root node of `~/word/document.xml` file under `Docx1.docx` file.
 
 ```
-<w:wordDocument xmlns:aml="http://schemas.microsoft.com/aml/2001/core" xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.microsoft.com/office/word/2003/wordml" xmlns:wx="http://schemas.microsoft.com/office/word/2003/auxHint" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wsp="http://schemas.microsoft.com/office/word/2003/wordml/sp2" xmlns:sl="http://schemas.microsoft.com/schemaLibrary/2003/core" w:macrosPresent="no" w:embeddedObjPresent="no" w:ocxPresent="no" xml:space="preserve">
+<w:wordDocument
+xmlns:aml="http://schemas.microsoft.com/aml/2001/core"
+xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:w10="urn:schemas-microsoft-com:office:word"
+xmlns:w="http://schemas.microsoft.com/office/word/2003/wordml"
+xmlns:wx="http://schemas.microsoft.com/office/word/2003/auxHint"
+xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+xmlns:wsp="http://schemas.microsoft.com/office/word/2003/wordml/sp2"
+xmlns:sl="http://schemas.microsoft.com/schemaLibrary/2003/core"
+w:macrosPresent="no"
+w:embeddedObjPresent="no"
+w:ocxPresent="no"
+xml:space="preserve">
 ```
 
 In above example, we can know that
@@ -132,8 +151,8 @@ In above example, we can know that
 + In `w:ocxPresent="no"`, the Word file does NOT use Active Control.
 + In `xml:space="preserve"`, the Word file does fully preserve the space.
 
-##### example 2
-`~/word/document.xml` file under `Docx1.docx` file.
+##### example 1.2 -- document tag as root node in `~/word/document.xml`
+root node of `~/word/document.xml` file under `Docx1.docx` file.
 
 ```
 <w:document
@@ -256,16 +275,6 @@ You can know which namespaces in `xmlns` namespace are declared through finding 
 | `<a:bevel>` | | | specifies how the edges of a 3D shape or table cell should be rounded or angled, creating a visual depth effect. | | |
 | | | | | | |
 | `<a:txBody>` | | *t*e*x*t body | adds and formats text within a graphical object. | | |
-| | | | | | |
-| | | | | | |
-| | | | | | |
-| | | | | | |
-| | | | | | |
-| | | | | | |
-| | | | | | |
-| | | | | | |
-| | | | | | |
-| | | | | | |
 | | | | | | |
 | `<a:theme>` | | | defines the theme. | It is usually in `~/word/theme/theme1.xml` file. | |
 | `<a:themeElements>` | | | acts a container that defines theme elements. | | |
@@ -417,7 +426,7 @@ You can know which namespaces in `xmlns` namespace are declared through finding 
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `a:prst` | | *pr*e*s*e*t* | specific predefined shape  | | It is required |
 
-###### example 1 -- a simple drawing object
+###### example 1.1 -- a simple drawing object
 ```
 <w:drawing>
           <wp:inline distT="0" distB="0" distL="0" distR="0" wp14:anchorId="56C264D6" wp14:editId="7AA34E44">
@@ -461,7 +470,7 @@ In above example, we can know that
 
 + In `<c:chart xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="rId4" />`, it comes from the ChartML namespace (c:), references the actual chart data. And its id is `rId4`, we can found the actual chart definition according to the `r:id` whose value os `rId4`.
   
-###### example 2 -- a complex drawing object
+###### example 1.2 -- a complex drawing object
 part content of `~/word/document.xml` file under `PictureExample1.docx` file.
 
 ```
@@ -862,8 +871,9 @@ The above example may output:
 > About implications of this setting,
 >
 > see my note -- [implication about charts#implication#graphics#charts](https://github.com/40843245/drawing-objects/blob/main/implication/graphics/charts/implication%20about%20charts.md#charts)
+
 ##### examples and explanations
-###### example 1 -- chart space
+###### example 1.1 -- chart space
 root node of `~/word/charts/chart1.xml` file under `BarChartExample.docx` file.
 
 ```
@@ -931,7 +941,7 @@ It xml content may look like this:
 </c:val>
 ```
 
-###### example 4 -- a full chart
+###### example 3 -- a full chart
 The original files are placed at [BarChartExample.docx](https://github.com/40843245/OOXML/tree/main/examples/documents/Word/charts/BarChartExample.docx)
 
 The explanation is available at [example-and-explanation.md](https://github.com/40843245/OOXML/blob/main/examples/documents/Word/charts/BarChartExample.docx/example-and-explanation.md)
@@ -1015,8 +1025,8 @@ The explanation is available at [example-and-explanation.md](https://github.com/
 | `data` | | | specifies the current shape ID. | The id of newly create shape will be value of `data` attribute plus one. | |
 
 ##### examples and explanation
-###### example 1
-`Docx1.docx` file.
+###### example 1.1 -- xml content of metadata file
+the xml content of metadata file in `Docx1.docx` file.
 
 ```
 <o:DocumentProperties>
@@ -1069,7 +1079,6 @@ In above example, we can know that
 | `<wp:docPr/>` | | *d*rawing *o*bje*ct *pr*operties | | |  
 | `<wp:cNvGraphicFramePr>` | | *C*ommon *N*on-*V*isual *Graphic* *Frame* *Pr*operties | holds non-visual properties for a graphic frame within a drawing object in WordprocessingML. | | |
 
-
 ##### attribute about `wp` namespace
 ###### attribute in `<wp:inline>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -1112,7 +1121,7 @@ In above example, we can know that
 | `wp:id` | | | speficies the unique identifier | | |
 
 ##### examples
-###### example 1 -- an drawing object with description
+###### example 1.1 -- an drawing object with description
 ```
 <wp:docPr id="1" name="" descr="Midori"/>
 ```
@@ -1121,7 +1130,7 @@ In above example, we can know that
 
 + an drawing object with id `1`, no name, and description `Midori`.
 
-###### example 2 -- extent
+###### example 2.1 -- extent
 ```
 <wp:anchor relativeHeight="10" allowOverlap="true">
   </wp:anchor>
@@ -1651,7 +1660,6 @@ Same as attribute in `<w:tab>`.
 | `r:id` | | | defines a relationship | | |
 | `w:history` | | | indicates whether the hyperlink has been visited. | | |
 
-
 ###### attribute in `<w:docGrid>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
@@ -1851,7 +1859,7 @@ For more informations and details, see [DocumentFormat.OpenXml.Wordprocessing.Co
 | `w:space` | | | vertical spacing above and below the horizontal rule | | Its unit is half-point. |
 
 ##### examples and explanations
-###### example 1 -- fonts
+###### example 1.1 -- fonts
 ```
 <w:fonts>
    <w:defaultFonts w:ascii="Times New Roman" w:fareast="新細明體" w:h-ansi="Times New Roman" w:cs="Times New Roman"/>
@@ -1896,7 +1904,7 @@ In above example, we can know that
 > 9.  **Midline**: 03 = Continuous
 > 10. **X-height**: 04 = Medium
 
-###### example 2 -- run
+###### example 2.1 -- run
 ```
 <w:r>
   <w:rPr>
@@ -2233,7 +2241,7 @@ In above example, we can know that
 + In `w:unhideWhenUsed="0"`, the latent style is NOT unhide (i.e. become visible) when it is actually used.
 + In `w:qFormat="1"`, the latent style will be placed in Quick Style pane.
 
-###### example 16 -- paragraph with frame configuration
+###### example 11.1 -- paragraph with frame configuration
 ```
 <w:p>
   <w:pPr>
@@ -2260,7 +2268,7 @@ In above example, we can know that
 + In `w:hAnchor="text"`, anchors the frame horizontally to the page margins.
 + In `w:x="1921"`, it positions the left side of the frame approximately 1921 twips from the left edge of the page.
 
-###### example 11.1 -- always keep the paragraph in same page (if possible)
+###### example 12.1 -- always keep the paragraph in same page (if possible)
 `~/word/document.xml` file under `Docx1.docx` file
 
 ```
@@ -2318,7 +2326,7 @@ and `<w:keepLine/>` is present inside second `<w:pPr>`.
 
 Therefore, the second paragraph was moved to the beginning of the second page.
 
-###### example 11.2 -- combine two paragraphs in same page (if possible)
+###### example 12.2 -- combine two paragraphs in same page (if possible)
 ```
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- this tag `<w:document>` omitted -->
@@ -2388,7 +2396,7 @@ In above example, we can know that
 
 + In `<w:outlineLvl w:val="0" />`, this paragraph is of outline level 1, and if a table of contents field is inserted that utilizes outlines levels, the text in this paragraph is at level one in the TOC.
 
-###### example 12 -- style definition
+###### example 13.1 -- style definition
 part code of `~/word/style.xml` in a Word file.
 
 ```
@@ -2433,7 +2441,7 @@ In above example, we can know that
 
 It would represent the number "2" formatted as a superscript.
 
-###### example 14 -- defines a footer
+###### example 14.1 -- defines a footer
 ```
 <w:ftr w:type="default">
   <w:p w:rsidR="602E0000" w:rsidRDefault="602E0000">
@@ -2532,7 +2540,7 @@ And there are only a text `1` in the run (according by `<w:t>1</w:t>`).
 
 it marks the end of a field in the Word document.
 
-###### example 15 -- refers footers
+###### example 14.2 -- refers footers
 part of content in `~/word/document.xml` in `InsertSectionExample.docx`.
 
 ```
@@ -2611,7 +2619,7 @@ it defines the property of paragraph, and setting the amount of vertical space b
     
 it is the instance of that separator being placed within the flow of the document, specifically within a paragraph.
 
-###### example 15.2 -- defines a footnote
+###### example 15.1 -- defines a footnote
 other part of content in `~/word/footernotes.xml` in `FootNoteExample1.docx`
 
 ```
@@ -2686,7 +2694,7 @@ it defines a run that contains text -- a single space ` `.
 
 it defines a run that contains text -- `This is a footnote.`, but Word will handle whitespace according to its default rules (collapsing multiple spaces into one, etc.) since `xmlns:space` attribute is NOT explicitly specified.
 
-###### example 16.2 -- refers an endnote
+###### example 16.1 -- refers an endnote
 part of content in `~/word/endnotes.xml` in `ModifyParagraphsExample1.docx`
 
 ```
@@ -3215,7 +3223,7 @@ It defines field character which marks the end of a field.
 > <img width="547" alt="image" src="https://github.com/user-attachments/assets/1149ce2c-8790-4579-b1ff-f0a43c03c835" />
 
 ##### examples and explanations
-###### example 1 -- configuration about math equation
+###### example 1.1 -- configuration about math equation
 ```
 <m:mathPr>
     <m:mathFont m:val="Cambria Math"/>
