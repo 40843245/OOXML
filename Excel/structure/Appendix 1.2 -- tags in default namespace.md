@@ -43,6 +43,12 @@
 | :-- | :-- | :-- | :-- | :-- |
 | `<queryTable>` | | The root element in `~/xl/queryTables/queryTable1.xml` | | |
 
++ Required elements in `~/xl/connections.xml` under a `.xlsx` file.
+
+| elements | meaning | description | notes | notice |
+| :-- | :-- | :-- | :-- | :-- |
+| `<connections>` | | The root element in `~/xl/connections.xml` | | |
+
 ## Required elements in `~/DocProps/app.xml` under a `.xlsx` file.
 ### elements under `<Properties>` element
 | elements | meaning | description | notes | notice |
@@ -1105,6 +1111,73 @@ typically, none.
 | `id` | | the id (as primary key) of the field. |  | |
 | `name` | | the name of the field. |  | |
 | `tableColumnId` | | the id of the table column that the field corresponds to. |  | |
+
+## Required elements in `~/xl/connections.xml` under a `.xlsx` file.
+### elements under `<connections>` element
+#### children in `<connections>` element
+| elements | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `<connection>` | | defines a connection. |  | |
+
+#### attributes in `<connections>` element
+none
+
+### elements under `<connection>` element
+#### children in `<connection>` element
+| elements | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `<extLst>` | *ext*ension *l*i*st* | acts like a container containing all extensions.| | |
+
+#### attributes in `<connection>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `id` | | the id (as primary key) of the field. |  | |
+| `name` | | the name of the connections. |  | |
+| `type` | | the id of the table column that the field corresponds to. |  | |
+| `refreshedVersion` | | the id of the table column that the field corresponds to. |  | |
+| `minRefreshableVersion` | | the id of the table column that the field corresponds to. |  | |
+
+### elements under `<extLst>` element
+#### children in `<extLst>` element
+| elements | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `<ext>` | *ext*ension | defines an extension | | |
+
+#### attributes in `<extLst>` element
+none
+
+### elements under `<ext>` element
+#### children in `<ext>` element
+| elements | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `<x15:connection>` | | defines a connection. | | |
+
+#### attributes in `<ext>` element
+none
+
+### elements under `<x15:connection>` element
+#### children in `<x15:connection>` element
+| elements | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `<x15:textPr>` | | defines the text properties. | | |
+
+#### attributes in `<x15:connection>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `id` | | the connection id, probably indicates the file name of source file that imported from. |  | |
+| `autoDelete` | | determines whether it is auto deleted. |  | |
+
+### elements under `<x15:textPr>` element
+#### children in `<x15:connection>` element
+| elements | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `<x15:textPr>` | | defines the text properties. | | |
+
+#### attributes in `<x15:connection>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `id` | | the connection id, probably indicates the file name of source file that imported from. |  | |
+| `autoDelete` | | determines whether it is auto deleted. |  | |
 
 ### examples and explanation
 #### example 1.1 -- workbook tag as root node in `~/xl/workbook.xml`
