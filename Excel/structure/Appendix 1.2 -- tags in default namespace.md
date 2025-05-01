@@ -1204,6 +1204,20 @@ In the above example, we can know that
 
 + it targets the SpreadSheetML in version 2006.
 + the markup is compatible with the SpreadSheetML in 2006 (or above).
++ the revision for SpreadSheetML in version 2006 (or above) targets SpreadSheetML in version 2007.
++ the namespace `xr16` is ignored.
++ `name="MI_INDEX_0099P_20250430"`, it indicates the file name of data source is `MI_INDEX_0099P_20250430`.
++ `backgroundRefresh="0"`, the auto background refresh is enabled.
++ `connectionId="2"`, the connection id is `2`.
++ `xr16:uid="{704382A8-1CEA-4F39-99DA-E058186CA88A}"`, the uuid of revision in version 2016 is `704382A8-1CEA-4F39-99DA-E058186CA88A`.
++ `autoFormatId="16"`, the auto format if is `16`.
++ `applyNumberFormats="0"`, it will apply number formats.
++ applyBorderFormats="0", it will apply border formats.
++ applyFontFormats="0", it will apply font formats.
++ applyPatternFormats="0", it will apply pattern formats.
++ applyAlignmentFormats="0", it will apply alignment formats.
++ applyWidthHeightFormats="0", it will apply width and height formats.
+
 #### example 2.1 -- sheets
 a part of xml content of `~/xl/worbook.xml` under an Excel file.
 
@@ -1671,6 +1685,46 @@ it defines second extension. In the second extension,
   - In `<x15:timelineStyles defaultTimelineStyle="TimeSlicerStyleLight1"/>`, it sets the default time line styles to `TimeSlicerStyleLight1`.
 
 #### example 10.1 -- extensibility list
+```
+<queryTable
+<!-- other attr omitted -->
+>
+  <queryTableRefresh nextId="18">
+    <queryTableFields count="17">
+      <queryTableField id="1" name="欄1" tableColumnId="1"/>
+      <queryTableField id="2" name="欄2" tableColumnId="2"/>
+      <queryTableField id="3" name="欄3" tableColumnId="3"/>
+      <queryTableField id="4" name="欄4" tableColumnId="4"/>
+      <queryTableField id="5" name="欄5" tableColumnId="5"/>
+      <queryTableField id="6" name="欄6" tableColumnId="6"/>
+      <queryTableField id="7" name="欄7" tableColumnId="7"/>
+      <queryTableField id="8" name="欄8" tableColumnId="8"/>
+      <queryTableField id="9" name="欄9" tableColumnId="9"/>
+      <queryTableField id="10" name="欄10" tableColumnId="10"/>
+      <queryTableField id="11" name="欄11" tableColumnId="11"/>
+      <queryTableField id="12" name="欄12" tableColumnId="12"/>
+      <queryTableField id="13" name="欄13" tableColumnId="13"/>
+      <queryTableField id="14" name="欄14" tableColumnId="14"/>
+      <queryTableField id="15" name="欄15" tableColumnId="15"/>
+      <queryTableField id="16" name="欄16" tableColumnId="16"/>
+      <queryTableField id="17" name="欄17" tableColumnId="17"/>
+    </queryTableFields>
+  </queryTableRefresh>
+  <extLst>
+    <ext xmlns:x15="http://schemas.microsoft.com/office/spreadsheetml/2010/11/main" uri="{883FBD77-0823-4a55-B5E3-86C4891E6966}">
+      <x15:queryTable sourceDataName="MI_INDEX_0099P_20250430"/>
+    </ext>
+  </extLst>
+</queryTable>
+```
+
+In above example, we can know that
+
++ There is an queryTable.
++ The next id for next fresh is `18`.
++ There are 17 fields, repsective, named `欄1` to `欄17`.
+
+#### example 11.1 -- extensibility list
 ```
 <extLst>
     <ext xmlns:x15="http://schemas.microsoft.com/office/spreadsheetml/2010/11/main" uri="{140A7094-0E35-4892-8432-C4D2E57EDEB5}">
