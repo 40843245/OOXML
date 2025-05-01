@@ -1108,7 +1108,7 @@ typically, none.
 #### attributes in `<queryTableField>` element
 | attributes | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
-| `id` | | the id (as primary key) of the field. |  | |
+| `id` | | the id (as primary key) of the field. |  | |/
 | `name` | | the name of the field. |  | |
 | `tableColumnId` | | the id of the table column that the field corresponds to. |  | |
 
@@ -1228,6 +1228,9 @@ none
 | "Text" | | specifies treats the data as text. | | |
 | "Date" (date format) | | specifies date values | | |
 | `"Boolean"` | | specifies a bolean value. | | |
+
+##### `<textFlied>`->`format`
+See Excel code pages.
 
 ### elements under `<dbPr/>` element
 #### children in `<dbPr/>` element
@@ -1395,6 +1398,23 @@ In the above example, we can know that
 + applyPatternFormats="0", it will apply pattern formats.
 + applyAlignmentFormats="0", it will apply alignment formats.
 + applyWidthHeightFormats="0", it will apply width and height formats.
+
+#### example 1.5 -- connections tag as root node in `~/xl/connections.xml`
+The root node of xml content in `~/xl/connections.xml` under `stocking data.xlsx` file.
+
+```
+<connections
+xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:xr16="http://schemas.microsoft.com/office/spreadsheetml/2017/revision16"
+mc:Ignorable="xr16">
+```
+
+In the above example, we can know that
+
++ The connections targets to SpreadSheetML schema in version 2006.
++ The markup is compatible with SpreadSheetML schema in version 2006 (or above).
++ The revision extension targets to SpreadSheetML schema in version 2017.
++ It ignores these namespace -- `xr16`.
 
 #### example 2.1 -- sheets
 a part of xml content of `~/xl/worbook.xml` under an Excel file.
@@ -1975,7 +1995,66 @@ In above example, we can know that
 + the earlieast edit id is `6`.
 + the rollup build id is `20417`.
 
-#### exaple 13.1 -- metadata of the Excel
+#### exaple 13.1 -- connections in Excel
+```
+<connections
+ <!-- attrs omitted -->
+>
+ <connection id="1" xr16:uid="{4B7537B0-7427-4A9E-A6FE-25D715314150}" name="MI_INDEX_0099P_20250430" type="103" refreshedVersion="6" minRefreshableVersion="5">
+  <extLst>
+   <ext xmlns:x15="http://schemas.microsoft.com/office/spreadsheetml/2010/11/main" uri="{DE250136-89BD-433C-8126-D09CA5730AF9}">
+    <x15:connection id="MI_INDEX_0099P_20250430" autoDelete="1">
+     <x15:textPr codePage="950" sourceFile="D:\solventoSOFT\test folder\test files\office excel\MI_INDEX_0099P_20250430.csv" tab="0" comma="1">
+       <textFields count="17">
+        <textField type="YMD"/>
+        <textField/>
+        <textField/>
+        <textField/>
+        <textField/>
+        <textField/>
+        <textField/>
+        <textField/>
+        <textField/>
+        <textField/>
+        <textField/>
+        <textField/>
+        <textField/>
+        <textField/>
+        <textField/>
+        <textField/>
+        <textField/>
+       </textFields>
+       </x15:textPr>
+      </x15:connection>
+    </ext>
+  </extLst>
+ </connection>
+</connections>
+```
+
+In above example, we can know that
+
++ In `<connection id="1" xr16:uid="{4B7537B0-7427-4A9E-A6FE-25D715314150}" name="MI_INDEX_0099P_20250430" type="103" refreshedVersion="6" minRefreshableVersion="5">`, it establishes a connection whose id is `1`.
+
+    - uuid is `4B7537B0-7427-4A9E-A6FE-25D715314150`
+    - the file name of source data is `MI_INDEX_0099P_20250430`
+    - it's Text File connection
+    - the version of the connection after the last refresh is `6`
+    - the minimum version of Excel required to refresh this connection is `5`
+
++ In `<ext xmlns:x15="http://schemas.microsoft.com/office/spreadsheetml/2010/11/main" uri="{DE250136-89BD-433C-8126-D09CA5730AF9}">`, it defines an extension, its namespace targets to SpreadSheetML Schema in version 2010.11 (released at Nov, 2010) and its uuid is `DE250136-89BD-433C-8126-D09CA5730AF9`.
++ In `<x15:connection id="MI_INDEX_0099P_20250430" autoDelete="1">`, id (`MI_INDEX_0099P_20250430`) matches the file name (without the extension) and is set to be automatically deleted under certain circumstances.
++ In `<x15:textPr codePage="950" sourceFile="D:\solventoSOFT\test folder\test files\office excel\MI_INDEX_0099P_20250430.csv" tab="0" comma="1">`, it defines text properties
+
+   - code page is `950`, meaning that encoded with `Big-5`
+   - the full path of source data is `D:\solventoSOFT\test folder\test files\office excel\MI_INDEX_0099P_20250430.csv`
+   - the file content is separated by comma instead of tab.
+
++ In `<textFields count="17">`, it defines 17 text fields.
++ In `<textField type="YMD"/>`, about the first text field, its format is `Year-Month-Day` date.
++ In `<textField/>`, about the second text field, the Excel will detect its format.
+  
+#### exaple 14.1 -- metadata of the Excel
 See [explanation of xml content in `~/docProps/app.xml` file under `aaa3.xlsx` file](https://github.com/40843245/OOXML/blob/main/examples/spreadsheet/Excel/aaa3.xlsx/docsProps/app.xml/app.xml.md)
 
 See [explanation of xml content in `~/docProps/core.xml` file under `aaa3.xlsx` file](https://github.com/40843245/OOXML/blob/main/examples/spreadsheet/Excel/aaa3.xlsx/docsProps/core.xml/core.xml.md)
