@@ -1399,7 +1399,40 @@ In the above example, we can know that
 + applyAlignmentFormats="0", it will apply alignment formats.
 + applyWidthHeightFormats="0", it will apply width and height formats.
 
-#### example 1.5 -- connections tag as root node in `~/xl/connections.xml`
+#### example 1.5 -- table tag as root node in `~/xl/tables/tables1.xml`
+The root node of xml content in `~/xl/tables/tables1.xml` under `stocking data.xlsx` file.
+
+```
+<table
+xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+xmlns:xr="http://schemas.microsoft.com/office/spreadsheetml/2014/revision"
+xmlns:xr3="http://schemas.microsoft.com/office/spreadsheetml/2016/revision3"
+mc:Ignorable="xr xr3"
+id="1"
+xr:uid="{22D0ADF6-D5DA-4FBD-BE07-CAE1922EFAAF}"
+name="表格_MI_INDEX_0099P_20250430"
+displayName="表格_MI_INDEX_0099P_20250430"
+ref="A1:Q196"
+tableType="queryTable"
+totalsRowShown="0">
+```
+
+In the above example, we can know that
+
++ it targets to SpreadSheetML Schema in version 2006.
++ the markup is compatible with SpreadSheetML Schema in version 2006 (or above).
++ the namespace about revision targets to SpreadSheetML Schema in version 2014.
++ the other namespace about revision targets to SpreadSheetML Schema in version 2016.
++ it ignores these namespace -- `xr`,`xr3`.
++ id of table for this worksheet is `1`.
++ its uuid of namespace about revision is `22D0ADF6-D5DA-4FBD-BE07-CAE1922EFAAF`.
++ the user-friendly display name of the table is `表格_MI_INDEX_0099P_20250430`.
++ the table recovers the range `A1:Q196`.
++ it's a query table.
++ a totals row will NOT be displayed at the bottom of the table.
+
+#### example 1.6 -- connections tag as root node in `~/xl/connections.xml`
 The root node of xml content in `~/xl/connections.xml` under `stocking data.xlsx` file.
 
 ```
@@ -1882,10 +1915,12 @@ it defines second extension. In the second extension,
   - And it's uuid is in 128-bit -- `9260A510-F301-46a8-8635-F512D64BE5F5`.
   - In `<x15:timelineStyles defaultTimelineStyle="TimeSlicerStyleLight1"/>`, it sets the default time line styles to `TimeSlicerStyleLight1`.
 
-#### example 10.1 -- extensibility list
+#### example 10.1 -- query table
+other part of xml content of `~/xl/queryTable/queryTable1.xml` file under `stocking data.xlsx` file.
+
 ```
 <queryTable
-<!-- other attr omitted -->
+  <!-- other attr omitted -->
 >
   <queryTableRefresh nextId="18">
     <queryTableFields count="17">
@@ -1922,6 +1957,56 @@ In above example, we can know that
 + The next id for next fresh is `18`.
 + There are 17 fields, repsective, named `欄1` to `欄17`.
 
+#### example 10.1 -- table
+other part of xml content of `~/xl/table/table1.xml` file under `stocking data.xlsx` file.
+
+```
+<table
+   <!-- other attr omitted -->
+>
+  <autoFilter ref="A1:Q196" xr:uid="{D01C9870-237C-4FDA-A0FB-306634807FD9}"/>
+  <tableColumns count="17">
+   <tableColumn id="1" xr3:uid="{DB6DE633-4A07-426A-8897-AA0539069547}" uniqueName="1" name="欄1" queryTableFieldId="1"/>
+   <tableColumn id="2" xr3:uid="{D1A3C576-E6D9-417B-900F-3073702E9953}" uniqueName="2" name="欄2" queryTableFieldId="2"/>
+   <tableColumn id="3" xr3:uid="{E1001A49-06E8-4048-A64D-B7670E58BFAE}" uniqueName="3" name="欄3" queryTableFieldId="3"/>
+   <tableColumn id="4" xr3:uid="{BE361DDD-A822-433D-BD8F-91DC7693DA54}" uniqueName="4" name="欄4" queryTableFieldId="4"/>
+   <tableColumn id="5" xr3:uid="{131E1C6B-6219-4890-8652-0F68513D8A40}" uniqueName="5" name="欄5" queryTableFieldId="5"/>
+   <tableColumn id="6" xr3:uid="{CCF7DA62-5DD7-4356-98D8-A25D50645276}" uniqueName="6" name="欄6" queryTableFieldId="6"/>
+   <tableColumn id="7" xr3:uid="{0B1C02B2-A2D8-4764-B912-94727387D21A}" uniqueName="7" name="欄7" queryTableFieldId="7"/>
+   <tableColumn id="8" xr3:uid="{DF698B03-AD69-492D-95E8-CB42E13C1FA4}" uniqueName="8" name="欄8" queryTableFieldId="8"/>
+   <tableColumn id="9" xr3:uid="{D5FE81FF-9255-4773-A588-938CBDB33049}" uniqueName="9" name="欄9" queryTableFieldId="9"/>
+   <tableColumn id="10" xr3:uid="{640733A3-2644-4BA0-9FBF-FA3AB99060B1}" uniqueName="10" name="欄10" queryTableFieldId="10"/>
+   <tableColumn id="11" xr3:uid="{F16586E1-24F3-4294-98EE-7617DDE41207}" uniqueName="11" name="欄11" queryTableFieldId="11"/>
+   <tableColumn id="12" xr3:uid="{6C77B9C4-DB32-4AC3-944A-91B6756EB4C0}" uniqueName="12" name="欄12" queryTableFieldId="12"/>
+   <tableColumn id="13" xr3:uid="{15FA8663-8944-4410-AD5F-404E51CA52B6}" uniqueName="13" name="欄13" queryTableFieldId="13"/>
+   <tableColumn id="14" xr3:uid="{6FBA09BF-D300-45B0-A997-89B63F20B63A}" uniqueName="14" name="欄14" queryTableFieldId="14"/>
+   <tableColumn id="15" xr3:uid="{5F6AF94D-11B7-436A-95AA-AB82D9A0DA8C}" uniqueName="15" name="欄15" queryTableFieldId="15"/>
+   <tableColumn id="16" xr3:uid="{D9CFC239-294B-4D5A-A0C9-018DEEE93150}" uniqueName="16" name="欄16" queryTableFieldId="16"/>
+   <tableColumn id="17" xr3:uid="{D34F31DA-5782-4349-9FC2-7CCC5C03039A}" uniqueName="17" name="欄17" queryTableFieldId="17"/>
+  </tableColumns>
+  <tableStyleInfo name="TableStyleMedium2" showFirstColumn="0" showLastColumn="0" showRowStripes="1" showColumnStripes="0"/>
+</table>
+```
+
+In above example, we can know that
+
++ In `<autoFilter ref="A1:Q196" xr:uid="{D01C9870-237C-4FDA-A0FB-306634807FD9}"/>`, this enables AutoFilter for the table range `A1:Q196` and the uuid of namespace about revision `D01C9870-237C-4FDA-A0FB-306634807FD9`.
++ In `<tableColumns count="17">`, it defines 17 table columns.
++ In `<tableColumn id="1" xr3:uid="{DB6DE633-4A07-426A-8897-AA0539069547}" uniqueName="1" name="欄1" queryTableFieldId="1"/>`,
+
+     - the id of table column is `1`.
+     - the unique name is `1`.
+     - the name for display row of header column in table is `欄1`.
+     - it matches the id `1` of table field in the query table.
+
+ + In `<tableStyleInfo name="TableStyleMedium2" showFirstColumn="0" showLastColumn="0" showRowStripes="1" showColumnStripes="0"/>`,
+
+      - it specifies the table style.
+      - it uses `TableStyleMedium2`.
+      - it will NOT show first coluumn.
+      - it will NOT show last column.
+      - it will show row stripes.
+      - it will NOT show column stripes.
 #### example 11.1 -- extensibility list
 ```
 <extLst>
