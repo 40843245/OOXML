@@ -43,6 +43,12 @@
 | :-- | :-- | :-- | :-- | :-- |
 | `<queryTable>` | | The root element in `~/xl/queryTables/queryTable1.xml` | | |
 
++ Required elements in `~/xl/tables/table1.xml` under a `.xlsx` file.
+
+| elements | meaning | description | notes | notice |
+| :-- | :-- | :-- | :-- | :-- |
+| `<table>` | | The root element in `~/xl/tables/table1.xml` | | |
+
 + Required elements in `~/xl/connections.xml` under a `.xlsx` file.
 
 | elements | meaning | description | notes | notice |
@@ -1108,9 +1114,73 @@ typically, none.
 #### attributes in `<queryTableField>` element
 | attributes | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
-| `id` | | the id (as primary key) of the field. |  | |/
+| `id` | | the id (as primary key) of the field. |  | |
 | `name` | | the name of the field. |  | |
 | `tableColumnId` | | the id of the table column that the field corresponds to. |  | |
+
+## Required elements in `~/xl/tables/table1.xml`5 under a `.xlsx` file.
+### elements under `<table>` element
+#### children in `<table>` element
+| elements | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `<autoFilter/>` | | defines the AutoFilter and specifies it. |  | |
+| `<tableColumns>` | | acts like a container containing all t7able columns. |  | |
+| `<1tableStyleInfo/>` | | stores the info about table style. |  | |
+
+#### attributes in `<table>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `displayName` | | the name for table displaying. |  | |
+| `id` | | the id of the table. |  | |
+| `name` | | the name of table |  | |
+| `ref` | | the reference of the range of the table |  | |
+| `tableType` | | the type of table | | |
+| `totalsRowShown` | | determines whether the a total row will show on the bottom of the table. | | |
+
+### elements under `<autoFilter/>` element
+#### children in `<autoFilter/>` element
+none
+
+#### attributes in `<autoFilter/>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `ref` | | the AutoFilter's reference |  | |
+
+### elements under `<tableColumns>` element
+#### children in `<tableColumns>` element
+| elements | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `<tableColumn/>` | | defines a table column and specifies it. |  | |
+
+#### attributes in `<tableColumns>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `count` | | the number of direct children |  | |
+
+### elements under `<tableColumn/>` element
+#### children in `<tableColumn/>` element
+none
+
+#### attributes in `<tableColumn/>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `id` | | the id of the table column | | |
+| `uniqueName` | | the unique name of the table column | | |
+| `name` | | the name of the table column | | |
+| `queryTableFieldId` | | the id that matches the field in the query table. | | |
+
+### elements under `<tableStyleInfo/>` element
+#### children in `<tableStyleInfo/>` element
+none
+
+#### attributes in `<tableStyleInfo/>` element
+| attributes | meaning | description | notes | notice
+| :-- | :-- | :-- | :-- | :-- |
+| `name` | | the name of the style that the table will be used. | | |
+| `showFirstColumn` | | determines whether it should show the first colu1mn | | |
+| `showLastColumn` | | determines whether it should show the last colu1mn | | |
+| `showRowStripes` | | determines whether it should show the row stripes | | |
+| `showColumnStripes` | | determines whether it should show the column stripes | | |
 
 ## Required elements in `~/xl/connections.xml` under a `.xlsx` file.
 ### elements under `<connections>` element
