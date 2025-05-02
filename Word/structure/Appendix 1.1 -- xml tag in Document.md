@@ -243,23 +243,10 @@ In above example, we can know that
 ## `a` namespace
 ### elements in `a` namespace
 | elements | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `<a:objectDefaults>` | | | default settings for objects. | | |
-| | | | | | |
-| `<a:graphic>` | | | servers a container about an actual graph. | | |
-| `<a:graphicData>` | | | configure properties about the actual graph. | | |
-| `<a:graphicFrameLocks>` | | | specifies the locking properties for the graphic frame | | |
-| `<a:blip>` | | blip | points to the actual image data that is stored elsewhere within the OOXML package. | | |
 | `<a:stretch>` | | stretch | acts as a container whose child will be stretched to fit its content. | | It can have exactly one child. |
 | `<a:fillRect>` | | fill *rect*angle | fills the rectangle | | It can have exactly one child. |
 | | | | | | |
-| `<a:xfrm>` | | transform | transforms the graphical object. | | |
-| `<a:off>` | | *off*set | offsets the graphical object | | |
-| `<a:ext>` | | *ext*ent | defines the width and height of the object's bounding box. | | |
-| `<a:prstGeom>` | | *pr*e*s*e*t* *geom*etry | configures preset geometry, is used in DrawingML to define the basic shape of an object by referencing a predefined geometric form. | |
 | `<a:custGeom>` | | *cust*om *geom*etry | defines your own custom geometry. | |
-| `a:avLst` | | *a*djustment *v*alue *l*i*st* | specifies adjustment values for preset shapes that have adjustable parameters. | | |
-| | | | | | |
 
 ### elements under `<a:ln>`
 #### direct children of `<a:ln>`
@@ -1109,15 +1096,6 @@ In `<a:graphicFrameLocks noResize="true">`, the graphic frame can not be resized
 | `<a:clrChange` | *c*o*l*o*r* change effect | specifies a blur effect. | | |
 | `<a:clrRepl>` | solid *c*o*l*o*r* *repl*ace | replace solid color | | |
 | `<a:duotone>` | duotone effect | | | |
-| `a:greenMod` | green *mod*ulation (調變) | multiplies the color green values in the image by a specified percentage. | | |
-| `a:redOff` | red *off*set | offset (i.e. add additional) color red value | | |
-| `a:redMod` | red *mod*ulation (調變) | multiplies the color red values in the image by a specified percentage. | | |
-| `a:hue` | hue | shifts the hue of the image by a specified angle (in degrees) | its unit is degrees. | |
-| `a:hueMod` | hue *mod*ulation (調變) | multiplies the color hue values in the image by a specified percentage. | | |
-| `a:brightness` | brightness | adjusts the brightness of the image by a percentage. | | |
-| `a:contrast` | contrast  | adjusts the contrast of the image by a percentage. | | |
-| `a:gamma` | gamma correction | applies the gamma correction of the image using a value represented as percentage. | | |
-| `a:saturation` | saturation | adjusts the color saturation of the image by a percentage. | | |
 | `<a:fillOverlay>` | fill overlay effect | | | |
 | `<a:hsl>` | hsl effect | | | |
 | `<a:lum>` | *lum*inence effect | | | |
@@ -1132,42 +1110,78 @@ In `<a:graphicFrameLocks noResize="true">`, the graphic frame can not be resized
 | `a:cstate` | *c*ompression state | determines how to compress the image. | | |
 | `r:link`| | specifies the identification information for a linked picture. | it is used to specify an image that does not reside within this file. | |
 
-###### attribute in `<a:fillRect>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `a:l` | | left | specifies the position of the **left** edge of the rectangle within the original fill, as a percentage. | For example, a value of "10%" means the left edge of the stretching region starts at 10% of the original fill's width from the left. | |
-| `a:t` | | top | specifies the position of the **top** edge of the rectangle within the original fill, as a percentage. | For example, "20%" means the top edge starts at 20% of the original fill's height from the top. | |
-| `a:r` | | right | specifies the position of the **right** edge of the rectangle within the original fill, as a percentage. | For instance, "90%" means the right edge of the stretching region is at 90% of the original fill's width from the left (or 10% from the right edge). | |
-| `a:b` | | bottom | specifies the position of the **bottom** edge of the rectangle within the original fill, as a percentage. | For example, "80%" means the bottom edge is at 80% of the original fill's height from the top (or 20% from the bottom edge).| |
+| `<a:stretch>` | | stretch | acts as a container whose child will be stretched to fit its content. | | It can have exactly one child. |
+
+### element under `<a:stretch>` element
+#### direct children of `<a:stretch>` element
+| elements | meaning | description | notes | notice |
+| :------ | :----- | :---- | :----- | :----|
+| `<a:fillRect>` | fill *rect*angle | specifies a fill rectangle | | |
+
+#### attributes in `<a:stretch>` element
+none
+
+### element under `<a:fillRect>` element
+#### direct children of `<a:fillRect>` element
+none
+
+#### attributes in `<a:fillRect>` element
+| attributes | meaning | description | notes | notice |
+| :------ | :----- | :---- | :----- | :----|
+| `a:l` | *l*eft | specifies the position of the **left** edge of the rectangle within the original fill, as a percentage. | For example, a value of "10%" means the left edge of the stretching region starts at 10% of the original fill's width from the left. | |
+| `a:t` | *t*op | specifies the position of the **top** edge of the rectangle within the original fill, as a percentage. | For example, "20%" means the top edge starts at 20% of the original fill's height from the top. | |
+| `a:r` | *r*ight | specifies the position of the **right** edge of the rectangle within the original fill, as a percentage. | For instance, "90%" means the right edge of the stretching region is at 90% of the original fill's width from the left (or 10% from the right edge). | |
+| `a:b` | *b*ottom | specifies the position of the **bottom** edge of the rectangle within the original fill, as a percentage. | For example, "80%" means the bottom edge is at 80% of the original fill's height from the top (or 20% from the bottom edge).| |
 
 > [!IMPORTANT]
 > If any of these attributes are omitted, the corresponding edge of the fill rectangle defaults to the edge of the original fill
 >
 > (i.e., l and t default to 0%, and r and b default to 100%).
 
-###### attribute in `<a:xfrm>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `a:flipH` | | flip *h*orizontally | a boolean value to determine whether flips horizontally a graphical object | | |
-| `a:flipV` | | flip *v*ertically | a boolean value to determine whether flips vertically a graphical object | | |
-| `rot` | | rotation | rotates the graphical object clockwisely in degrees. | <ol><li>its unit is in sixtieths of a degree.</li><li>positive values indicate clockwise rotation, and negative values indicate counter-clockwise rotation.</li></ol> | The default value is `"0"`. |
+### element under `<a:xfrm>` element
+#### direct children of `<a:xfrm>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<a:ext>` | *ext*ents | | | NOT be confused with extension (`<a:ext>`) |
+| `<a:off>` | *off*set | | | |
 
-###### attribute in `<a:off>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `a:x` | | horizontal offset | sets horizontal offset | its unit is EMU. | coordinates of the top-left corner of a graphical object's bounding box relative to its parent. |
-| `a:y` | | vertical offset | sets vertical offset | its unit is EMU. | coordinates of the top-left corner of a graphical object's bounding box relative to its parent. |
+#### attributes in `<a:xfrm>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `a:flipH` | flip *h*orizontally | a boolean value to determine whether flips horizontally a graphical object | | |
+| `a:flipV` | flip *v*ertically | a boolean value to determine whether flips vertically a graphical object | | |
+| `rot` | *rot*ation | rotates the graphical object clockwisely in degrees. | <ol><li>its unit is in sixtieths of a degree.</li><li>positive values indicate clockwise rotation, and negative values indicate counter-clockwise rotation.</li></ol> | The default value is `"0"`. |
 
-###### attribute in `<a:ext>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `a:cx` | | *c*oordinate *X* | sets width of the bounding box | its unit is EMU. | |
-| `a:cy` | | *c*oordinate *Y* | sets height of the bounding box | its unit is EMU. | |
+### element under `<a:off>` element
+#### direct children of `<a:off>` element
+none
 
-###### attribute in `<a:prstGeom>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `a:prst` | | *pr*e*s*e*t* | specific predefined shape  | | It is required |
+#### attributes in `<a:off>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `a:x` | horizontal offset | sets horizontal offset | its unit is EMU. | coordinates of the top-left corner of a graphical object's bounding box relative to its parent. |
+| `a:y` | vertical offset | sets vertical offset | its unit is EMU. | coordinates of the top-left corner of a graphical object's bounding box relative to its parent. |
+
+### element under `<a:ext>` element
+#### direct children of `<a:ext>` element
+none
+
+#### attributes in `<a:ext>` element
+| attributes  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `a:cx` | *c*oordinate *X* | sets width of the bounding box | its unit is EMU. | |
+| `a:cy` | *c*oordinate *Y* | sets height of the bounding box | its unit is EMU. | |
+
+### element under `<a:prstGeom>` element
+#### direct children of `<a:prstGeom>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<a:avLst>` | | has been discussed before. | | It is required |
+
+#### attributes in `<a:prstGeom>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `a:prst` | *pr*e*s*e*t* | specific predefined shape | | It is required |
 
 ###### example 1.1 -- a simple drawing object
 ```
@@ -1695,13 +1709,22 @@ The explanation is available at [example-and-explanation.md](https://github.com/
 | :---------- | :----------- | :----- | :--- |
 | `pic:pic` | | | |
 
-##### elements in `pic` namespace
-| elements in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `<pic:nvPicPr>` | | *N*on-*v*isual *Pic*ture *Pr*operties | acts as a container that contains Non-Visual Picture Properties | | |
-| `<pic:cNvPr>` | | *C*ommon *N*on-*v*isual Picture *Pr*operties | defines Common Non-visual Picture Properties | | |
-| `<pic:blipFill>` | | | defines how the actual image data is used to fill the shape of the picture object. | it controls aspects like tiling, stretching, and the portion of the image that is visible. | |
-| `<pic:spPr>` | | *s*ha*p*e *pr*operties | defines shape properties| | |
+## elements in `p` namespace
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<pic:nvPicPr>` | *N*on-*v*isual *Pic*ture *Pr*operties | acts as a container that contains Non-Visual Picture Properties | | |
+| `<pic:cNvPr>` | *C*ommon *N*on-*v*isual Picture *Pr*operties | defines Common Non-visual Picture Properties | | |
+| `<p:blipFill>` | | defines how the actual image data is used to fill the shape of the picture object. | it controls aspects like tiling, stretching, and the portion of the image that is visible. | |
+| `<pic:spPr>` | *s*ha*p*e *pr*operties | defines shape properties| | |
+
+### element under `<p:blipFill>` element
+#### direct children of `<p:blipFill>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<a:stretch>` |  |  specifies that a BLIP should be stretched to fill the target rectangle. | |  |
+
+#### attributes in `<p:blipFill>` element
+none
 
 ##### attribute about `pic` namespace
 ###### attribute in `<pic:cNvPr>`
