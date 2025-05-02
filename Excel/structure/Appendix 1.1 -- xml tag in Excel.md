@@ -1,24 +1,15 @@
 # Appendix 1.1 -- xml tag in Excel
 ## Prequisite
-See [Prequisite.md](https://github.com/40843245/OOXML/blob/main/Prequisite/Prequisite.md)
+See [`Prequisite.md`](https://github.com/40843245/OOXML/blob/main/Prequisite/Prequisite.md)
 
 ## Suggestion
-See [Suggestion.md](https://github.com/40843245/OOXML/blob/main/Suggestion/Suggestion.md)
+See [`Suggestion.md`](https://github.com/40843245/OOXML/blob/main/Suggestion/Suggestion.md)
 
-## tables
-> [!WARNING]
-> Most content of these table are refered from Google Gemini's answer or from non-official website, which BOTH may be incorrect.
->
-> Read with caution.
+## NOTICE
+See [`NOTICE.md`](https://github.com/40843245/OOXML/blob/main/NOTICE/NOTICE.md)
 
-> [!IMPORTANT]
-> In OOXML,
->
-> For those value of attribute that needs to be specified with a string containing a boolean value (i.e. `"true"` or `"false"`),
->
-> + `"0"` is equivalent to `"false"`
-> 
-> + `"1"` is equivalent to `"true"`
+## Important concept
+See [`important concept.md`](https://github.com/40843245/OOXML/blob/main/concept/important%20concept.md)
 
 ### processing instruction
 See `Appendix 1 -- tags in xml`[^3]
