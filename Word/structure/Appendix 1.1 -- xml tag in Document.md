@@ -244,8 +244,6 @@ In above example, we can know that
 ### elements in `a` namespace
 | elements | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `<a:sysClr>` | | system color | configure something to system color. | | | 
-| `<a:srgbClr>` | | *s*econdary *RGB* *c*olor | set's secondary RGB color. | | |
 | `<a:objectDefaults>` | | | default settings for objects. | | |
 | | | | | | |
 | `<a:graphic>` | | | servers a container about an actual graph. | | |
@@ -319,9 +317,15 @@ none
 #### direct children of `<a:solidFill>`
 | elements in xml tag | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- |
-| `<a:srgbClr>` | | *s*econdary *RGB* *c*o*l*o*r* | specifies secondary RGB color. | | |
+| `<a:srgbClr>` | | *s*econdary *RGB* *c*o*l*o*r* (hexidecimal number) | specifies secondary RGB color. | hexidecimal number | |
+| `<a:scrgbClr>` | | *s*econdary *RGB* *c*o*l*o*r* (percentage variant) | specifies secondary RGB color. | percentage variant | |
+| `<a:hslClr>` | | HSL *c*o*l*o*r* | specifies hsl color. | | | 
 | `<a:sysClr>` | | *sys*tem *c*o*l*o*r* | specifies system color. | | | 
 | `<a:schemeClr>` | | scheme *c*o*l*o*r* | specifies theme color from the document's theme color scheme. | | | 
+| `<a:prstClr>` | | *pr*e*s*e*t* *c*o*l*o*r* | specifies preset color from the document's theme color scheme. | | | 
+
+> [!IMPORTANT]
+> See [`<solidFill>`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_solidFill_topic_ID0ETLANB.html#topic_ID0ETLANB) for more details.
 
 #### attributes in `<a:solidFill>` element
 none
@@ -337,6 +341,37 @@ none
 
 ##### `<a:srgbClr>`->`val`
 should be a hexadecimal number for rgb color.
+
+### elements under `<a:scrgbClr>`
+#### direct children of `<a:scrgbClr>`
+none
+
+#### attributes in `<a:scrgbClr>` element
+| elements in xml tag | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `r` | | | red color in percentage value | in percentage value | |
+| `g` | | | green color in percentage value | in percentage value | |
+| `b` | | | blue color in percentage value | in percentage value | |
+
+### elements under `<a:hslClr>`
+#### direct children of `<a:hslClr>`
+none
+
+#### attributes in `<a:hslClr>` element
+| elements in xml tag | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `hue` | hue | hue | in 1/6000ths of a degree. | |
+| `sat` | *sat*uration | specifies the saturation referring to the purity of the hue | <ul><li>in percentage value</li><li>0% referring to grey,</br>100% referring to the purest form of the hue.</li></ul> | |
+| `lum` | *lum*inance  | specifies the luminance referring to the lightness or darkness of the color.  | <ul><li>in percentage value</li><li>0% referring to black,</br>100% referring to the purest white.</li></ul> | |
+
+##### `<a:hslClr>`->`hue`
+should be a predefined string with data type [`<ST_PositiveFixedAngle>`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_PositiveFixedAngl_topic_ID0ECJ1NB.html#topic_ID0ECJ1NB)
+
+##### `<a:hslClr>`->`sat`
+should be a predefined string with data type [`<ST_Percentage>`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_Percentage_topic_ID0EY3XNB.html#topic_ID0EY3XNB)
+
+##### `<a:hslClr>`->`lum`
+should be a predefined string with data type [`<ST_Percentage>`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_Percentage_topic_ID0EY3XNB.html#topic_ID0EY3XNB)
 
 ### elements under `<a:sysClr>`
 #### direct children of `<a:sysClr>`
@@ -365,6 +400,47 @@ should be a predefined string for system color with data type [`ST_SystemColorVa
 | attributes in xml tag | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- |
 | `val` | | | a string for theme color | | |
+
+### elements under `<a:prstClr>`
+#### direct children of `<a:prstClr>`
+> [!IMPORTANT]
+> About its direct children, listed in [`<prstClr>`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_prstClr_topic_ID0EB6JJB.html#topic_ID0EB6JJB)
+
+#### attributes in `<a:prstClr>` element
+| attributes in xml tag | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `val` | | | a string value of preset color. | | |
+
+### elements under `<a:gradFill>`
+#### direct children of `<a:gradFill>`
+| elements in xml tag | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<a:gsLst>` | | *g*radient *s*top *l*i*st*| acts like a container containing a list of gradient stop | | This is required. |
+| `<a:tileRect>` | | tile *rect*angle | determines whether gradient is tiled across the shape. | | This is optional. | 
+| `<a:lin>` | | *lin*ear gradient | defines a linear gradient. | | This is optional.  | 
+| `<a:path>` | | path gradient | defines a path gradient. | | This is optional.  | 
+| `<a:relativeRect>` | | relative *rect*angle | is used in conjunction with path gradients to define the bounding box of the gradient falloff relative to the shape. | | This is optional. | 
+
+#### attributes in `<a:gradFill>` element
+none
+
+### elements under `<a:gsLst>`
+#### direct children of `<a:gsLst>`
+| elements in xml tag | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<a:gs>` | | *g*radient *s*top | defines a gradient stop | | This is required. |
+
+#### attributes in `<a:gsLst>` element
+none
+
+### elements under `<a:gs>`
+#### direct children of `<a:gs>`
+| elements in xml tag | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<a:gs>` | | *g*radient *s*top | defines a gradient stop | | This is required. |
+
+#### attributes in `<a:gs>` element
+none
 
 ### elements under `<a:txBody>`
 #### direct children of `<a:txBody>`
@@ -726,10 +802,13 @@ See `<a:majorFont>` element.
 | :---------- | :----------- | :----- | :--- | :-- |
 | `<a:spDef>` | *def*ault *s*ha*p*e properties | specifies the default shape properties. | | | 
 | `<a:lnDef>` | *def*ault *l*i*n*e properties | specifies the default line properties. | | | 
-| `<a:style>` | *def*ault *l*i*n*e properties | specifies the default style properties. | | | 
+| `<a:style>` | style properties | specifies the default style properties. | | | 
 
 #### attributes in `<a:objectDefaults>` element
-none
+| attributes | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `spidmax` | | max *s*ha*p*e *id* | sets the maximum Shape ID that can be assigned to new shapes created within the current drawing canvas. | 
+| `w:styleId` | | | specifies uid of style that matches the predefined style. | | It is required. |
 
 ### elements under `<a:spDef>` element
 #### direct children of `<a:spDef>` element
