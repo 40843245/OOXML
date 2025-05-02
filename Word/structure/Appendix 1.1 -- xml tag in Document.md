@@ -308,6 +308,64 @@ In above example, we can know that
 | `"ctr"` | *c*en*t*e*r* | center-aligned | | |
 | `"r"` | *r*ight | right-aligned | | |
 
+### elements under `<a:noFill>`
+#### direct children of `<a:noFill>`
+none
+
+#### attributes in `<a:noFill>` element
+none
+
+### elements under `<a:solidFill>`
+#### direct children of `<a:solidFill>`
+| elements in xml tag | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<a:srgbClr>` | | *s*econdary *RGB* *c*o*l*o*r* | specifies secondary RGB color. | | |
+| `<a:sysClr>` | | *sys*tem *c*o*l*o*r* | specifies system color. | | | 
+| `<a:schemeClr>` | | scheme *c*o*l*o*r* | specifies theme color from the document's theme color scheme. | | | 
+
+#### attributes in `<a:solidFill>` element
+none
+
+### elements under `<a:srgbClr>`
+#### direct children of `<a:srgbClr>`
+none
+
+#### attributes in `<a:srgbClr>` element
+| elements in xml tag | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `val` | | | a hexadecimal number for rgb color | | |
+
+##### `<a:srgbClr>`->`val`
+should be a hexadecimal number for rgb color.
+
+### elements under `<a:sysClr>`
+#### direct children of `<a:sysClr>`
+> [!IMPORTANT]
+> About its direct children, not only there are items listed in following table, but also there are items listed in [`<sysClr>`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_sysClr_topic_ID0E2VTJB.html?hl=sysclr)
+
+| elements in xml tag | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<a:extLst>` | | | has been discussed before.| | |
+
+#### attributes in `<a:sysClr>` element
+| attributes in xml tag | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `val` | | | a string for system color | | |
+| `lastClr` | last *c*o*l*o*r* | | specifies the last static color value for this system color. | | It is optional |
+
+##### `<a:sysClr>`->`val`
+should be a predefined string for system color with data type [`ST_SystemColorVal`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_SystemColorVal_topic_ID0EL1MOB.html#topic_ID0EL1MOB). 
+
+### elements under `<a:schemeClr>`
+#### direct children of `<a:schemeClr>`
+> [!IMPORTANT]
+> About its direct children, listed in [`<schemeClr>`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_schemeClr_topic_ID0EBRNJB.html?hl=schemeclr)
+
+#### attributes in `<a:schemeClr>` element
+| attributes in xml tag | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `val` | | | a string for theme color | | |
+
 ### elements under `<a:txBody>`
 #### direct children of `<a:txBody>`
 | elements | meaning | description | notes | notice |
@@ -319,7 +377,6 @@ In above example, we can know that
 | :---------- | :----------- | :----- | :--- | :-- |
 | `w14:anchor` | | specifies how the text frame is anchored relative to the shape. | | It is required |
 | `w14:anchorCtr` | | determines whether to center the text horizontally within the text frame. | regardless of the `anchor` setting. | The default value is `"false"` |
-| `a:bodyPr` | body *pr*operties | specifies the compound line type for double or triple lines. | | The default value is `sng`. |
 | `algn` | *a**l*i*g**n*ment | specifies the pen alignment | | The default value is `ctr`. |
 
 ##### `<a:txBody>`->`w14:anchor`
@@ -438,7 +495,7 @@ Values should be in data type [`ST_PresetTextEffect`](https://learn.microsoft.co
 #### direct children of `<a:avLst>`
 | elements | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- |
-| `<a:gd>` | *g*ui*d*e | represents a single adjustable property. | | |
+| `<a:gd>` | | discussed below | | |
 
 #### attributes in `<a:avLst>` element
 none
