@@ -22,6 +22,7 @@ I just list some of them that commonly seen in Word file.
 | :---------- | :----------- | :----- | :--- | :-- |
 | `mso-application` | | targets Microsoft Office applications. | | |
 
+### `mso-application` in processing instruction
 #### children in `mso-application`
 none
 
@@ -44,7 +45,7 @@ In above example, we can know that
 + it is a Document.
 + Thus, it targets to Microsoft Office Word and you can open it with Microsoft Office Word.
 
-### namespace under `xmlns` namespace
+## namespace under `xmlns` namespace
 | namespace under `xmlns` namespace | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- |
 | `aml` | *A*nnotation *M*arkup *L*anguage | used for comments and revisions. | | |
@@ -98,8 +99,14 @@ In above example, we can know that
 >
 > and more sharable.
 
-#### examples and explanation
-##### example 1.1 -- wordDocument tag as root node in `~/word/document.xml`
+### attribute in `xml` namespace
+| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- | :-- |
+| `xml:space` | | space | assign a value to determine how to deal with whitespace (i.e. ` `, `\t`,`\n`). | | |
+| `xmlns:a` | | | specifies the namespace of `a` for DrawingML. | It usually in `<a:theme>`. | |
+
+### examples and explanation
+#### example 1.1 -- wordDocument tag as root node in `~/word/document.xml`
 root node of `~/word/document.xml` file under `Docx1.docx` file.
 
 ```
@@ -142,7 +149,7 @@ In above example, we can know that
 + In `w:ocxPresent="no"`, the Word file does NOT use Active Control.
 + In `xml:space="preserve"`, the Word file does fully preserve the space.
 
-##### example 1.2 -- document tag as root node in `~/word/document.xml`
+#### example 1.2 -- document tag as root node in `~/word/document.xml`
 root node of `~/word/document.xml` file under `Docx1.docx` file.
 
 ```
@@ -220,53 +227,25 @@ In above example, we can know that
 + In `xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"`, `wpi` is an old alternative name of `aink`. But it has lower preceedence.
 + In `xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"`,  it targets to `http://schemas.microsoft.com/office/word/2010/wordprocessingShape`, indicating that WordProcessingML Shapes refers that in version Office 2010.
 + In `mc:Ignorable="w14 w15 w16se w16cid wp14"`, it ignores the following namespace in this tag.</br>`xmlns:w14`</br>`xmlns:w15`</br>`xmlns:w16se`</br>`xmlns:w16cid`</br>`xmlns:wp14`.
-  
-### namespace in xml tag in OOXML
-| namespace in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w` | | Microsoft Word | indicates that it describes xml content of a Microsoft Word file.| w stands for Microsoft *W*ord | |
 
-### namespace declared in `<w:wordDocument>`
-You can know which namespaces in `xmlns` namespace are declared through finding `xmlns` in `<w:wordDocument>`.
-
-| namespace in xml tag | meaning | description | notes | notice |
+## `w` namespace
+### namespaces declared in `<w:wordDocument>`
+| namespaces | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- |
 | `o` | *O*ffice-specific namespace | it contains metadata about the Word document itself. | | |
 
-### namespace and its attribute in OOXML
-#### about `xmlns` namespace
-##### attribute in `xmlns` namespace
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `xmlns:space` | | space | assign a value to determine how to deal with whitespace (i.e. ` `, `\t`,`\n`). | | |
-| `xmlns:a` | | | specifies the namespace of `a` for DrawingML. | It usually in `<a:theme>`. | |
-
-#### about `xml` namespace
-##### attribute in `xml` namespace
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `xml:space` | | space | assign a value to determine how to deal with whitespace (i.e. ` `, `\t`,`\n`).
-
-#### about `v` namespace
-##### attribute in `v` namespace
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+## `v` namespace
+### namespaces in `v` namespace
+| attribute | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `v:ext` | | | specifies editing behavior for shapes created with these defaults. | | |
 
-#### about `a` namespace
-##### elements in `a` namespace
-| elements in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+## `a` namespace
+### elements in `a` namespace
+| elements | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | | | | | | |
-| `<a:ln>` | | *l*i*n*e | defines the properties of a line. | | |
-| `<a:prstDash>` | | *pr*e*s*e*t* dash | specifies a preset dash pattern. | | |
-| `<a:custDash>` | | *cust*om dash | defines a custom dash pattern. | | |
-| | | | | | |
-| `<a:round>` | | | indicates that the join between these lines should be rounded. | | |
-| `<a:bevel>` | | | specifies how the edges of a 3D shape or table cell should be rounded or angled, creating a visual depth effect. | | |
-| | | | | | |
 | `<a:txBody>` | | *t*e*x*t body | adds and formats text within a graphical object. | | |
-| | | | | | |
 | `<a:theme>` | | | defines the theme. | It is usually in `~/word/theme/theme1.xml` file. | |
 | `<a:themeElements>` | | | acts a container that defines theme elements. | | |
 | `<a:clrScheme>` | | | clear the color scheme and defines the color palette for the theme. | | |
@@ -283,7 +262,6 @@ You can know which namespaces in `xmlns` namespace are declared through finding 
 | `<a:fmtScheme>` | | *f*or*m*a scheme | defines the properties of format scheme. | | |
 | `<a:objectDefaults>` | | | default settings for objects. | | |
 | `<a:extraClrSchemeLst/>` | | | would contain definitions for additional color schemes beyond the main "Office" scheme. | | |
-| `<a:extLst>` | | | defines an extension list. | | |
 | | | | | | |
 | `<a:graphic>` | | | servers a container about an actual graph. | | |
 | `<a:graphicData>` | | | configure properties about the actual graph. | | |
@@ -300,16 +278,157 @@ You can know which namespaces in `xmlns` namespace are declared through finding 
 | `a:avLst` | | *a*djustment *v*alue *l*i*st* | specifies adjustment values for preset shapes that have adjustable parameters. | | |
 | | | | | | |
 
-### elements
-##### namespace declaration about `a` namespace
-###### namespace declaration in `<a:blip>`
-| namespace declaration | description | notes | notice |
-| :---------- | :----------- | :----- | :--- |
-| `xmlns:r` | | | as discussed above |
+### elements under `<a:ln>`
+#### direct children of `<a:ln>`
+| elements in xml tag | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<a:noFill>` | | specifies that the line has no fill. | | |
+| `<a:solidFill>` | | specifies that the line has a solid color fill. | | |
+| `<a:gradFill>` | | specifies that the line has a gradient fill. | | |
+| `<a:prstDash>` | *pr*e*s*e*t* dash | specifies that the line has a preset dash pattern. | | |
+| `<a:custDash>` | *cust*om dash | specifies the line has a custom dash pattern. | | |
+| `<a:round>` | | specifies the round line, indicating that the join between these lines should be rounded. | | |
+| `<a:bevel>` | | specifies the bevel line joins (how the edges of a 3D shape or table cell should be rounded or angled, creating a visual depth effect) | | |
+| `<a:miter>` | | specifies the miter line joins. | | |
+| `<a:extLst>` | *ext*ension *l*i*st* | acts like a container containing all extensions about DrawingML. | | |
+
+#### attributes in `<a:ln>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `w` | *w*idth | specifies the line width. | in EMUs | It is optional |
+| `cap` | | specifies the line ending cap type. | | It is optional |
+| `cmpd` | *c*o*m**p*oun*d* | specifies the compound line type for double or triple lines. | | The default value is `sng`. |
+| `algn` | *a**l*i*g**n*ment | specifies the pen alignment | | The default value is `ctr`. |
+
+##### `<a:ln>`->`cap`
+| values | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `rnd` | *r*ou*nd* | | | |
+| `sq` | *sq*uare | | | |
+| `flat` | flat | | | |
+
+##### `<a:ln>`->`cmpd`
+| values | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `sng` | *s*i*n**g*le | single line | | |
+| `dbl` | *d*ou*b**l*e | double lines | | |
+| `thickThin` | thick then thin | lines with thick, thin respectively | | |
+| `thinThick` | thin then thick | lines with thin, thick respectively | | |
+| `tri` | *tri*ple | lines with thin, thick, thin respectively | | |
+
+##### `<a:ln>`->`algn`
+| values | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `"l"` | *l*eft | left-aligned | | |
+| `"ctr"` | *c*en*t*e*r* | center-aligned | | |
+| `"r"` | *r*ight | right-aligned | | |
+
+### elements under `<a:txBody>`
+#### direct children of `<a:txBody>`
+| elements | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<a:bodyPr>` | | defines properties about `<a:txBody>` | | It is required |
+
+#### attributes in `<a:txBody>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `w14:anchor` | | specifies how the text frame is anchored relative to the shape. | | It is required |
+| `w14:anchorCtr` | | determines whether to center the text horizontally within the text frame. | regardless of the `anchor` setting. | The default value is `"false"` |
+| `a:bodyPr` | body *pr*operties | specifies the compound line type for double or triple lines. | | The default value is `sng`. |
+| `algn` | *a**l*i*g**n*ment | specifies the pen alignment | | The default value is `ctr`. |
+
+##### `<a:txBody>`->`w14:anchor`
+| values | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `t` | *t*op | | | |
+| `b` | *b*ottom | | | |
+| `l` | *l*eft | | | |
+| `r` | *r*ight | | | |
+| `mid` | *mid*dle | | | |
+| `ctr` | *c*en*t*e*r* | | | |
+| `horz` | *hor*i*z*tonal | | | |
+| `vert` | *vert*ical | | | |
+| `dist` | *dist*ributed | | | |
+| `just` | *just*ified | | | |
+| `justLow` | low *just*ified | | | |
+
+### elements under `<a:bodyPr>`
+#### direct children of `<a:bodyPr/>`
+none
+
+#### attributes in `<a:bodyPr/>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `rot` | *rot*ation | specifies the rotation angle of the text within the shape | in 60,000ths of a degree | The default values is `"0"` |
+| `spcFirstLastPara` | *sp*a*c*e before *first* *para*graph and after *last* *para*graph | determines whether to add extra space before the first paragraph and after the last paragraph. | | The default values is `"false"` |
+| `vertOverflow` | *vert*ical overflow | specifies how veritcally overflowing  text is handled | | The default values is `"overflow"` |
+| `horzOverflow ` | *hor*i*z*otnal overflow | specifies how horizontally overflowing text is handled | | The default values is `"overflow"` |
+| `vert` | *vert*ical | specifies the vertical flow direction of the text | | The default values is `"horz"` |
+| `wrap` | | specifies how text wraps around other objects. | | The default values is `"square"` |
+| `lIns` | *l*eft *ins*et | specifies the left inset (padding) of the text bounding box | in EMUs | The default values is `"91440"` |
+| `tIns` | *t*op *ins*et | specifies the top inset (padding) of the text bounding box. | in EMUs | The default values is `"45720"` |
+| `rIns` | *r*ight *ins*et | specifies the right inset (padding) of the text bounding box. | in EMUs | The default values is `"91440"` |
+| `bIns` | *b*ottom *ins*et | specifies the bottom inset (padding) of the text bounding box. | in EMUs | The default values is `"45720"` |
+| `numCol` | *num*ber of *col*umn | specifies the number of columns for the text within the bounding box. | | The default values is `"1"` |
+| `spcCol` | *sp*a*c*ing between *col*umn | specifies the spacing between columns. | in EMUs | The default values is `"91440"` |
+| `rtlCol` | *r*ight-*t*o-*l*eft, *col*umn | determines whether the columns should be laid out right-to-left. | | The default values is `"false"` |
+| `anchor` | | specifies the anchor point of the text bounding box relative to the shape. | | The default values is `"t"` |
+| `anchorCtr` | | determines whether the anchor point should be interpreted as the center of the bounding box. | regardless of the `anchor` setting. | The default value is `"false"` |
+| `forceAA` | force *a*nti-*a*liasing | determines whether anti-aliasing should be forced for the text. |  | The default value is `"false"` |
+| `upright` | | determines whether all characters should be upright, even in vertical text. |  | The default value is `"false"` |
+| `compatLnSpc` | *compat*ible, *l*i*n*e *sp*a*c*ing | determines whether line spacing should be handled in a way that is compatible with older versions of Microsoft Office. |  | The default value is `"false"` |
+
+##### `<a:bodyPr/>`->`vertOverflow`
+| values | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `clip` | | | text is clipped at the boundary. | |
+| `overflow` | | text overflows the boundary. | | |
+| `ellipsis` | | an ellipsis (`...`) is displayed to indicate overflow. | | |
+
+##### `<a:bodyPr/>`->`horzverflow`
+| values | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `clip` | | | text is clipped at the boundary. | |
+| `overflow` | | text overflows the boundary. | | |
+
+##### `<a:bodyPr/>`->`vert`
+| values | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `horz` | *hor*i*z*otnal | horizontal text flow, letters oriented normally. | | |
+| `vert` | *vert*ically | vertical text flow, letters oriented normally. | | |
+| `vert270` | | vertical text flow, letters rotated 270 degrees. | | |
+| `wordArtVert` |  WordArt, *vert*ically | vertical text flow, optimized by WordArt | | |
+| `wordArtVertRtl` | WordArt, *vert*ically, *R*ight-*t*o-*l*eft | vertical text flow, right-to-left, optimized by WordArt | | |
+
+##### `<a:bodyPr/>`->`wrap`
+| values | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `none` | | no wrap | | |
+| `square` | | text wraps in a square | | |
+| `byLine` | | text wraps line by line | | |
+
+##### `<a:bodyPr/>`->`anchor`
+| values | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `t` | *t*op | | | |
+| `b` | *b*ottom | | | |
+| `l` | *l*eft | | | |
+| `r` | *r*ight | | | |
+| `mid` | *mid*dle | | | 
+| `ctr` | *c*en*t*e*r* | | | |
+| `tl` | *t*op-*l*eft | | | 
+| `tc` | *t*op-*c*enter | | | 
+| `tr` | *t*op-*r*ight | | | 
+| `ml` | *m*iddle-*l*eft | | | 
+| `mc` | *m*iddle-*c*enter | | | 
+| `mr` | *m*iddle-*r*ight | | |
+| `bl` | *b*ottom-*l*eft | | | 
+| `bc` | *b*ottom-*c*enter | | | 
+| `br` | *b*ottom-*r*ight | | |
 
 ##### attribute in `a` namespace
 ###### attribute in `<a:theme>`
-| elements in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
+| elements | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `name` | | | specifies the name of theme. | | |
 
