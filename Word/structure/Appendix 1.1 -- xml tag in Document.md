@@ -355,10 +355,38 @@ none
 
 ### elements under `<a:hslClr>`
 #### direct children of `<a:hslClr>`
-none
+| elements | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<a:green>` | green | color green value | | |
+| `<a:greenOff>` | green *off*set | offset (i.e. add additional) color green value | | |
+| `<a:greenMod>` | green *mod*ulation (調變) | multiplies the color green values in the image by a specified percentage. | | |
+| `<a:red>` | red | color red value | | |
+| `<a:redOff>` | red *off*set | offset (i.e. add additional) color red value | | |
+| `<a:redMod>` | red *mod*ulation (調變) | multiplies the color red values in the image by a specified percentage. | | |
+| `<a:blue>` | blue | color blue value | | |
+| `<a:blueOff>` | blue *off*set | offset (i.e. add additional) color blue value | | |
+| `<a:blueMod>` | blue *mod*ulation (調變) | multiplies the color blue values in the image by a specified percentage. | | |
+| `<a:alpha>` | alpha | specifies the alpha of the image | |
+| `<a:alphaOff>` | alpha *off*set | shifts the alpha of the image by a specified angle (in degrees) | its unit is degrees. | |
+| `<a:alphaMod>` | alpha *mod*ulation (調變) | multiplies the color alpha values in the image by a specified percentage. | | |
+| `<a:hue>` | hue | specifies the hue of the image | |
+| `<a:hueOff>` | hue *off*set | shifts the hue of the image by a specified angle (in degrees) | its unit is degrees. | |
+| `<a:hueMod>` | hue *mod*ulation (調變) | multiplies the color hue values in the image by a specified percentage. | | |
+| `<a:sat>` | *sat*uration | adjusts the color saturation of the image by a percentage. | | |
+| `<a:satOff>` | *sat*uration *off*set | shifts the sat of the image by a specified angle (in degrees) | its unit is degrees. | |
+| `<a:satMod>` | *sat*uration *mod*ulation (調變) | multiplies the color sat values in the image by a specified percentage. | | |
+| `<a:lum>` | *sat*uration | adjusts the color luminence of the image by a percentage. | | |
+| `<a:lumOff>` | *lum*inence *off*set | shifts the luminence of the image by a specified angle (in degrees) | its unit is degrees. | |
+| `<a:lumMod>` | *lum*inence *mod*ulation (調變) | multiplies the color luminence values in the image by a specified percentage. | | |
+| `<a:gray>` | gray | color gray value | | |
+| `<a:comp>` | *comp*lement | complements the color. | | |
+| `<a:gamma>` | gamma correction | applies the gamma correction of the image using a value represented as percentage. | | |
+| `<a:invGamma>` | *inv*erse gamma correction | applies the inverse gamma correction of the image using a value represented as percentage. | | |
+| `<a:shade>` | shade | applies shade to the image | | |
+| `<a:tint>` | tint | applies tint to the image | | |
 
 #### attributes in `<a:hslClr>` element
-| elements in xml tag | meaning | description | notes | notice |
+| attributes | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- |
 | `hue` | hue | hue | in 1/6000ths of a degree. | |
 | `sat` | *sat*uration | specifies the saturation referring to the purity of the hue | <ul><li>in percentage value</li><li>0% referring to grey,</br>100% referring to the purest form of the hue.</li></ul> | |
@@ -759,7 +787,7 @@ none
 #### attributes in `<a:theme>` element
 none
 
-### elements under `<a:themeElements>`
+### elements under `<a:themeElements>` element
 #### direct children of `<a:themeElements>`
 | elements | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- |
@@ -770,7 +798,7 @@ none
 #### attributes in `<a:themeElements>` element
 none
 
-### elements under `<a:clrScheme>`
+### elements under `<a:clrScheme>` element
 #### direct children of `<a:clrScheme>`
 | elements | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- |
@@ -1021,73 +1049,88 @@ none
 | `x` | | specifies x-coordinates of the position. | | |
 | `y` | | specifies y-coordinates of the position. | | |
 
-###### attribute in `<a:graphic>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `a:spid` | | *s*ha*p*e *id*entifier | specifies shape identifier of the actual graph. | It is required. | |
+### elements under `<a:graphic>` element
+#### direct children of `<a:graphic>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<a:graphicData>` | | configure properties about the actual graph. | | |
 
-###### attribute in `<a:graphicData>`
+#### attributes in `<a:graphic>` element
+none
+
+### elements under `<a:graphicData>` element
+#### direct children of `<a:graphicData>` element
+none
+
+#### attributes in `<a:graphicData>` element
 > [!NOTE]
 > there are extensibility attributes (which is optional) in `<a:graphicData>` tag.
 
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `a:uri` | | uri | specifies uri of the actual graph. | It is required. | |
+| attributes | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `a:uri` | uri | specifies uri of the actual graph. |  | It is required. |
 
-###### attribute in `<a:graphicFrameLocks>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `a:noChangeAspect` | | No Change Aspect Ratio | a boolean value indicating whether the aspect ratio of the graphic frame is locked and cannot be changed. | | |
-| `a:noResize` | | | a boolean value indicating whether graphic frame cannot be resized. | | |
-| `a:noMove` | | |  a boolean value indicating whether the graphic frame cannot be moved. | | |
-| `a:noRotate` | | |  a boolean value indicating whether the graphic frame cannot be rotated. | | |
-| `a:noSelect ` | | |  a boolean value indicating whether the graphic frame cannot be selected. | | |
-| `a:noChangeArrowheads` | | |  a boolean value indicating whether the arrowheads of any lines within the graphic frame can not be changed. | | |
-| `a:noEditPoints` | | |  a boolean value indicating whether the points of any shapes within the graphic frame can not be editable. | | |
-| `a:noAdjustHandles` | | |  a boolean value indicating whether the points of within the graphic frame can not be modified by adjustment handles. | | |
-| `a:noChangeShapeType` | | |  a boolean value indicating whether the type of within the graphic frame can not be changed. | | |
+### elements under `<a:graphicFrameLocks>` element
+#### direct children of `<a:graphicFrameLocks>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<a:extLst>` | | has been discussed before | | |
 
-> [!NOTE]
-> Specifying the value `"false"` or `"0"` (in attributes of `<a:graphicFrameLocks>`) means the action can be done.
->
-> Otherwise, specifying the value `"true"` or `"1"` (in attributes of `<a:graphicFrameLocks>`) means the action can NOT be done.
->
-> For example,
->
-> In `<a:graphicFrameLocks noResize="true">`, the graphic frame can not be resized.
+#### attributes in `<a:graphicFrameLocks>` element
+| attributes |  meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `a:noChangeAspect` | No Change Aspect Ratio | a boolean value indicating whether the aspect ratio of the graphic frame is locked and cannot be changed. | | |
+| `a:noResize` | | a boolean value indicating whether graphic frame cannot be resized. | | |
+| `a:noMove` | |  a boolean value indicating whether the graphic frame cannot be moved. | | |
+| `a:noRotate` | |  a boolean value indicating whether the graphic frame cannot be rotated. | | |
+| `a:noSelect ` | |  a boolean value indicating whether the graphic frame cannot be selected. | | |
+| `a:noChangeArrowheads` | |  a boolean value indicating whether the arrowheads of any lines within the graphic frame can not be changed. | | |
+| `a:noEditPoints` | |  a boolean value indicating whether the points of any shapes within the graphic frame can not be editable. | | |
+| `a:noAdjustHandles` | |  a boolean value indicating whether the points of within the graphic frame can not be modified by adjustment handles. | | |
+| `a:noChangeShapeType` | |  a boolean value indicating whether the type of within the graphic frame can not be changed. | | |
 
-###### attribute in `<a:blip>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `r:embed` | | | specifies the relationship ID of the embedded image. | the relationship ID usually resides in `~/rel/rels.xml` file under a Word file. | |
-| | | | | | | |
-| `a:cstate` | | *c*ompression state | determines how to compress the image. | | |
-| `a:alphaBiLevel` | | alpha bi-level threshold | specifies alpha bi-level threshold | | |
-| `a:alphaCeiling` | | alpha ceiling | speficies alpha ceiling (i.e. the upper limit of alpha values) in the image | | |
-| `a:alphaFloor` | | alpha floor | speficies alpha floor (i.e. the lower limit of alpha values) in the image | | |
-| `a:alphaInverse` | | | a boolean value that determines whether the alpha value of the image is inversed. | | |
-| `a:alphaMod` | | alpha *mod*ulation (調變) | multiplies the alpha values in the image by a specified percentage. | | |
-| `a:alphaModFix` | | alpha *mod*ulation (調變) *fix*ed (修正後的結果) | sets a fixed alpha value (percentage) for the entire image | | overrides any existing alpha values. |
-| | | | | | | |
-| `a:blueOff` | | blue *off*set | offset (i.e. add additional) color blue value | | |
-| `a:blueMod` | | blue *mod*ulation (調變) | multiplies the color blue values in the image by a specified percentage. | | |
-| | | | | | | |
-| `a:greenOff` | | green *off*set | offset (i.e. add additional) color green value | | |
-| `a:greenMod` | | green *mod*ulation (調變) | multiplies the color green values in the image by a specified percentage. | | |
-| | | | | | | |
-| `a:redOff` | | red *off*set | offset (i.e. add additional) color red value | | |
-| `a:redMod` | | red *mod*ulation (調變) | multiplies the color red values in the image by a specified percentage. | | |
-| | | | | | | |
-| `a:hue` | | hue | shifts the hue of the image by a specified angle (in degrees) | its unit is degrees. | |
-| `a:hueMod` | | hue *mod*ulation (調變) | multiplies the color hue values in the image by a specified percentage. | | |
-| | | | | | | |
-| `a:brightness` | | brightness | adjusts the brightness of the image by a percentage. | | |
-| `a:contrast ` | | contrast  | adjusts the contrast of the image by a percentage. | | |
-| `a:gamma` | | gamma correction | applies the gamma correction of the image using a value represented as percentage. | | |
-| `a:saturation` | | saturation | adjusts the color saturation of the image by a percentage. | | |
-| `a:tint ` | | tint | applies a tint to the image | | |
-| | | | | | | |
-| `a:gray` | | grayscale mode | a boolean value that determines whether the image is in grayscale. | | |
+For example,
+
+In `<a:graphicFrameLocks noResize="true">`, the graphic frame can not be resized.
+
+### elements under `<a:blip>` element
+#### direct children of `<a:blip>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<a:alphaBiLevel>` | alpha bi-level effect | specifies alpha bi-level effect | | |
+| `<a:alphaCeiling>` | alpha ceiling effect | speficies alpha ceiling (i.e. the upper limit of alpha values) in the image | | |
+| `<a:alphaFloor>` | alpha floor effect | speficies alpha floor (i.e. the lower limit of alpha values) in the image | | |
+| `<a:alphaInv>` | alpha inverse effect | a boolean value that determines whether the alpha value of the image is inversed. | | |
+| `<a:alphaMod>` | alpha *mod*ulation (調變) effect | multiplies the alpha values in the image by a specified percentage. | | |
+| `<a:alphaModFix>` | alpha *mod*ulation (調變) *fix*ed (修正後的結果) effect | sets a fixed alpha value (percentage) for the entire image | | overrides any existing alpha values. |
+| `<a:alphaRepl>` | alpha *repl*ace (替代) effect | specifies an alpha replace effect. | | |
+| `<a:biLevel>` | bi-level effect | specifies a bi-level effect. | | |
+| `<a:blur>` | blur effect | specifies a blur effect. | | |
+| `<a:clrChange` | *c*o*l*o*r* change effect | specifies a blur effect. | | |
+| `<a:clrRepl>` | solid *c*o*l*o*r* *repl*ace | replace solid color | | |
+| `<a:duotone>` | duotone effect | | | |
+| `a:greenMod` | green *mod*ulation (調變) | multiplies the color green values in the image by a specified percentage. | | |
+| `a:redOff` | red *off*set | offset (i.e. add additional) color red value | | |
+| `a:redMod` | red *mod*ulation (調變) | multiplies the color red values in the image by a specified percentage. | | |
+| `a:hue` | hue | shifts the hue of the image by a specified angle (in degrees) | its unit is degrees. | |
+| `a:hueMod` | hue *mod*ulation (調變) | multiplies the color hue values in the image by a specified percentage. | | |
+| `a:brightness` | brightness | adjusts the brightness of the image by a percentage. | | |
+| `a:contrast` | contrast  | adjusts the contrast of the image by a percentage. | | |
+| `a:gamma` | gamma correction | applies the gamma correction of the image using a value represented as percentage. | | |
+| `a:saturation` | saturation | adjusts the color saturation of the image by a percentage. | | |
+| `<a:fillOverlay>` | fill overlay effect | | | |
+| `<a:hsl>` | hsl effect | | | |
+| `<a:lum>` | *lum*inence effect | | | |
+| `<a:tint>` | tint | applies a tint to the image | | |
+| `<a:grayscl>` | gray*sc*a*l*e effect | a boolean value that determines whether the image is in grayscale. | | |
+| `<a:extLst>` | | has been discussed before. | | |
+
+#### attributes in `<a:blip>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `r:embed` | | specifies the relationship ID of the embedded image. | the relationship ID usually resides in `~/rel/rels.xml` file under a Word file. | |
+| `a:cstate` | *c*ompression state | determines how to compress the image. | | |
+| `r:link`| | specifies the identification information for a linked picture. | it is used to specify an image that does not reside within this file. | |
 
 ###### attribute in `<a:fillRect>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
