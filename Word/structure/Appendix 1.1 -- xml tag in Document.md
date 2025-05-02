@@ -632,8 +632,58 @@ none
 | :---------- | :----------- | :----- | :--- | :-- |
 | `name` | | | give an user-friendly name | | |
 
-##### attribute in `a` namespace
+#### elements under `<a:majorFont>` element
+#### direct children of `<a:majorFont>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<a:latin>` | | specifies the font used for Latin script | | | 
+| `<a:ea>` | *E*ast *A*sian | specifies the font used for East Asian scripts | | | 
+| `<a:cs>` | *C*omplex *S*cript | specifies the font used for Complex script | | | 
+| `<a:font>` | | a repeating element that allows you to specify fonts for specific language scripts using the script attribute | this element can be appear zero or more times as childre `<a:majorFont>` element. | | 
+| `<a:extLst>` | | has been discussed before. | | | 
 
+#### elements under `<a:majorFont>` element
+none
+
+#### elements under `<a:latin>` element
+#### direct children of `<a:latin>` element
+none
+
+#### attributes in `<a:latin>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `typeface` | | specifies the name of the font typeface. | | | 
+
+#### elements under `<a:ea>` element
+#### direct children of `<a:ea>` element
+See `<a:latin>` element
+
+#### attributes in `<a:ea>` element
+See `<a:latin>` element
+
+#### elements under `<a:cs>` element
+#### direct children of `<a:cs>` element
+See `<a:latin>` element
+
+#### attributes in `<a:ea>` element
+See `<a:latin>` element
+
+#### elements under `<a:font>` element
+#### direct children of `<a:font>` element
+none
+
+#### attributes in `<a:font>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `typeface` | | specifies the name of the font typeface. | | | 
+| `script` | | specifies the language script for which this font applies. | | | 
+
+#### elements under `<a:minorFont>` element
+#### direct children of `<a:minorFont>` element
+See `<a:majorFont>` element.
+
+#### attributes in `<a:minorFont>` element
+See `<a:majorFont>` element.
 
 ###### attribute in `<a:graphic>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
