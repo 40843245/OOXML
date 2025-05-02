@@ -246,9 +246,7 @@ In above example, we can know that
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `<a:sysClr>` | | system color | configure something to system color. | | | 
 | `<a:srgbClr>` | | *s*econdary *RGB* *c*olor | set's secondary RGB color. | | |
-| `<a:fmtScheme>` | | *f*or*m*a scheme | defines the properties of format scheme. | | |
 | `<a:objectDefaults>` | | | default settings for objects. | | |
-| `<a:extraClrSchemeLst/>` | | | would contain definitions for additional color schemes beyond the main "Office" scheme. | | |
 | | | | | | |
 | `<a:graphic>` | | | servers a container about an actual graph. | | |
 | `<a:graphicData>` | | | configure properties about the actual graph. | | |
@@ -611,7 +609,7 @@ none
 | :---------- | :----------- | :----- | :--- | :-- |
 | `name` | | | give an user-friendly name | | |
 
-#### elements under `<a:clrScheme>`->`<a:name>` element
+### elements under `<a:clrScheme>`->`<a:name>` element
 #### direct children of `<a:clrScheme>`->`<a:name>` element
 none
 
@@ -620,7 +618,7 @@ none
 | :---------- | :----------- | :----- | :--- | :-- |
 | `val` | | | holds the name of the color scheme.| | |
 
-#### elements under `<a:fontScheme>` element
+### elements under `<a:fontScheme>` element
 #### direct children of `<a:fontScheme>` element
 | elements | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- |
@@ -632,7 +630,7 @@ none
 | :---------- | :----------- | :----- | :--- | :-- |
 | `name` | | | give an user-friendly name | | |
 
-#### elements under `<a:majorFont>` element
+### elements under `<a:majorFont>` element
 #### direct children of `<a:majorFont>` element
 | elements | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- |
@@ -645,7 +643,7 @@ none
 #### elements under `<a:majorFont>` element
 none
 
-#### elements under `<a:latin>` element
+### elements under `<a:latin>` element
 #### direct children of `<a:latin>` element
 none
 
@@ -654,21 +652,21 @@ none
 | :---------- | :----------- | :----- | :--- | :-- |
 | `typeface` | | specifies the name of the font typeface. | | | 
 
-#### elements under `<a:ea>` element
+### elements under `<a:ea>` element
 #### direct children of `<a:ea>` element
 See `<a:latin>` element
 
 #### attributes in `<a:ea>` element
 See `<a:latin>` element
 
-#### elements under `<a:cs>` element
+### elements under `<a:cs>` element
 #### direct children of `<a:cs>` element
 See `<a:latin>` element
 
 #### attributes in `<a:ea>` element
 See `<a:latin>` element
 
-#### elements under `<a:font>` element
+### elements under `<a:font>` element
 #### direct children of `<a:font>` element
 none
 
@@ -678,12 +676,101 @@ none
 | `typeface` | | specifies the name of the font typeface. | | | 
 | `script` | | specifies the language script for which this font applies. | | | 
 
-#### elements under `<a:minorFont>` element
+### elements under `<a:minorFont>` element
 #### direct children of `<a:minorFont>` element
 See `<a:majorFont>` element.
 
 #### attributes in `<a:minorFont>` element
 See `<a:majorFont>` element.
+
+### elements under `<a:objectDefaults>` element
+#### direct children of `<a:objectDefaults>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<a:spDef>` | *def*ault *s*ha*p*e properties | specifies the default shape properties. | | | 
+| `<a:lnDef>` | *def*ault *l*i*n*e properties | specifies the default line properties. | | | 
+| `<a:style>` | *def*ault *l*i*n*e properties | specifies the default style properties. | | | 
+
+#### attributes in `<a:objectDefaults>` element
+none
+
+### elements under `<a:spDef>` element
+#### direct children of `<a:spDef>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<a:gdLst>` | *g*ui*d*e *l*i*st* | acts like a container containing guides. | | | 
+| `<a:ahLst>` | *a*djustment *h*andles *l*i*st* | acts like a container containing adjustment handles. | | | 
+| `<a:cxnLst>` | *c*onne*ct*io*n* site *l*i*st* | acts like a container containing connection sites. | | | 
+| `<a:pathLst>` | path *l*i*st* | acts like an container containing a list of path. | | | 
+| `<a:rect>` | *rect*angle | defines the bounding box of the shape. | | | 
+
+#### attributes in `<a:spDef>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `spdN` | *s*hape *p*reset *d*efinition's *n*ame | specifies the name or identifier of the shape preset definition. | | | 
+
+##### `<a:spDef>`->`spdN`
+The value is one of data type [`<ST_ShapeType>`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_ShapeType_topic_ID0EBTFOB.html?hl=predefined%2Cshape%2Ctypes) (predefined shape type) in the `DrawingML` schema.
+
+### elements under `<a:gdLst>` element
+#### direct children of `<a:gdLst>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<a:gd>` | *g*ui*d*e | has been discussed before. | | | 
+
+#### attributes in `<a:gdLst>` element
+none
+
+### elements under `<a:ahList>` element
+#### direct children of `<a:ahList>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<a:ah>` | *a*djustment *h*andles | defines adjustment handle | | | 
+
+#### attributes in `<a:ahList>` element
+none
+
+### elements under `<a:ah>` element
+#### direct children of `<a:ah>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<a:ah>` | *a*djustment *h*andles | defines adjustment handle | | | 
+
+#### attributes in `<a:ah>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `pos` | *pos*ition | specifies position of adjustment handle | | | 
+| `idx` | *i*n*d*e*x* | specifies a unique index or identifier for the adjustment handle | | | 
+
+##### `<a:ah>`->`pos`
+It takes a string value that can be either:
+
++ A coordinate pair:
+
+Represented as "x,y" where 'x' and 'y' are expressions that evaluate to the x and y coordinates in EMUs relative to the shape's origin.
+
+These expressions can involve 
+
+    - fixed numbers
+    - references to other shape properties (using prefixes like `w` for width, `h` for height, `l` for left, `t` for top, `r` for right, `b` for bottom)
+    - simple arithmetic operations.
+
+For examples: 
+
+    - `"w/2,h/2"` (center) 
+    - `"l,t"` (top-left) 
+    - `"r,b"` (bottom-right)
+    - `"w*.2,h*.8"`
+
++ A named guide reference:
+
+A string that refers to a predefined guide within the `<a:gdLst>` (guide list) of the custom shape. 
+
+This allows the handle's position to be dynamically linked to a guide. 
+
+For examples: 
+
+    - `"@guide1"`
 
 ###### attribute in `<a:graphic>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
