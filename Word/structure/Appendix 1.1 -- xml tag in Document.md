@@ -244,21 +244,8 @@ In above example, we can know that
 ### elements in `a` namespace
 | elements | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| | | | | | |
-| `<a:txBody>` | | *t*e*x*t body | adds and formats text within a graphical object. | | |
-| `<a:theme>` | | | defines the theme. | It is usually in `~/word/theme/theme1.xml` file. | |
-| `<a:themeElements>` | | | acts a container that defines theme elements. | | |
-| `<a:clrScheme>` | | | clear the color scheme and defines the color palette for the theme. | | |
-| | | | | | |
-| `<a:dk1>` | | dark 1 | dark 1. | | |
-| `<a:lt1>` | | light 1 | light 1. | | |
 | `<a:sysClr>` | | system color | configure something to system color. | | | 
 | `<a:srgbClr>` | | *s*econdary *RGB* *c*olor | set's secondary RGB color. | | |
-| `<a:accent1>` | | accent color 1 | defines the accent color 1.
-| `<a:hlink>` | | *h*yper*link* | defines the properties of hyperlink. | | |
-| `<a:folHlink>` | | *fol*lowed *h*yper*link* | defines the properties of followed hyperlink. | | |
-| `<a:majorFont>` | | major font | defines the properties of major font. | | |
-| `<a:minorFont>` | | *fol*lowed *h*yper*link* | defines the properties of minor font. | | |
 | `<a:fmtScheme>` | | *f*or*m*a scheme | defines the properties of format scheme. | | |
 | `<a:objectDefaults>` | | | default settings for objects. | | |
 | `<a:extraClrSchemeLst/>` | | | would contain definitions for additional color schemes beyond the main "Office" scheme. | | |
