@@ -5,12 +5,13 @@ See [`Prequisite.md`](https://github.com/40843245/OOXML/blob/main/Prequisite/Pre
 ## Suggestion
 See [`Suggestion.md`](https://github.com/40843245/OOXML/blob/main/Suggestion/Suggestion.md)
 
-## tables
+## NOTICE
 > [!WARNING]
 > Most content of these table are refered from Google Gemini's answer or from non-official website, which BOTH may be incorrect.
 >
 > Read with caution.
 
+## Important concept
 > [!IMPORTANT]
 > In OOXML,
 >
@@ -20,7 +21,7 @@ See [`Suggestion.md`](https://github.com/40843245/OOXML/blob/main/Suggestion/Sug
 > 
 > + `"1"` is equivalent to `"true"`
 
-### processing instruction
+## processing instruction
 See `Appendix 1 -- tags in xml`[^3]
 
 But in OOXML, there are many ways added to process a file that will be parse with OOXML preprocessor.
@@ -309,6 +310,7 @@ You can know which namespaces in `xmlns` namespace are declared through finding 
 | `a:avLst` | | *a*djustment *v*alue *l*i*st* | specifies adjustment values for preset shapes that have adjustable parameters. | | |
 | | | | | | |
 
+### elements
 ##### namespace declaration about `a` namespace
 ###### namespace declaration in `<a:blip>`
 | namespace declaration | description | notes | notice |
