@@ -353,10 +353,19 @@ In above example, we can know that
 | `justLow` | low *just*ified | | | |
 
 ### elements under `<a:bodyPr>`
-#### direct children of `<a:bodyPr/>`
-none
+#### direct children of `<a:bodyPr>`
+| elements | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<a:sp3d>` | *3D* *s*hape *p*roperties | defines 3D shape properties. | | |
+| `<a:scene3d>` | *3D* scene *p*roperties | defines 3D scene properties. | | |
+| `<a:prstTxWarp>` | *pr*e*s*e*t* *t*e*x*t wrap | specifies a preset text warp effect. | | |
+| `<a:flatTx>` | flat *t*e*x*t | specifies that the text should not have any 3D effects applied. | | |
+| `<a:noAutofit>` | no auto fit | determines whether the text should not be automatically resized to fit the bounding box. | | |
+| `<a:normAutofit>` | *nor*mal auto fit | specifies that standard automatic resizing of the text to fit the bounding box. | | |
+| `<a:spAutoFit>` | *s*ha*p*e auto fit | determines that the shape itself should be resized to fit the text. | | |
+| `<a:extLst>` | | has been discussed above. | | |
 
-#### attributes in `<a:bodyPr/>` element
+#### attributes in `<a:bodyPr>` element
 | attributes | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- |
 | `rot` | *rot*ation | specifies the rotation angle of the text within the shape | in 60,000ths of a degree | The default values is `"0"` |
@@ -378,20 +387,20 @@ none
 | `upright` | | determines whether all characters should be upright, even in vertical text. |  | The default value is `"false"` |
 | `compatLnSpc` | *compat*ible, *l*i*n*e *sp*a*c*ing | determines whether line spacing should be handled in a way that is compatible with older versions of Microsoft Office. |  | The default value is `"false"` |
 
-##### `<a:bodyPr/>`->`vertOverflow`
+##### `<a:bodyPr>`->`vertOverflow`
 | values | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- |
 | `clip` | | | text is clipped at the boundary. | |
 | `overflow` | | text overflows the boundary. | | |
 | `ellipsis` | | an ellipsis (`...`) is displayed to indicate overflow. | | |
 
-##### `<a:bodyPr/>`->`horzverflow`
+##### `<a:bodyPr>`->`horzverflow`
 | values | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- |
 | `clip` | | | text is clipped at the boundary. | |
 | `overflow` | | text overflows the boundary. | | |
 
-##### `<a:bodyPr/>`->`vert`
+##### `<a:bodyPr>`->`vert`
 | values | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- |
 | `horz` | *hor*i*z*otnal | horizontal text flow, letters oriented normally. | | |
@@ -400,14 +409,14 @@ none
 | `wordArtVert` |  WordArt, *vert*ically | vertical text flow, optimized by WordArt | | |
 | `wordArtVertRtl` | WordArt, *vert*ically, *R*ight-*t*o-*l*eft | vertical text flow, right-to-left, optimized by WordArt | | |
 
-##### `<a:bodyPr/>`->`wrap`
+##### `<a:bodyPr>`->`wrap`
 | values | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- |
 | `none` | | no wrap | | |
 | `square` | | text wraps in a square | | |
 | `byLine` | | text wraps line by line | | |
 
-##### `<a:bodyPr/>`->`anchor`
+##### `<a:bodyPr>`->`anchor`
 | values | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- |
 | `t` | *t*op | | | |
@@ -425,6 +434,119 @@ none
 | `bl` | *b*ottom-*l*eft | | | 
 | `bc` | *b*ottom-*c*enter | | | 
 | `br` | *b*ottom-*r*ight | | |
+
+### elements under `<a:prstTxWarp>`
+#### direct children of `<a:prstTxWarp>`
+| elements | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<a:avLst>` | *a*djustment *v*alue *l*i*st* | acts like a container for a list of adjustment values that customize the parameters of the preset text warp. | | |
+
+#### attributes in `<a:prstTxWarp>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `a:prst` | | *pr*e*s*e*t* | specific predefined shape  | | It is required |
+
+##### `<a:prstTxWarp>`->`a:prst`
+Values should be in data type [`ST_PresetTextEffect`](https://learn.microsoft.com/en-us/office/vba/api/word.texteffectformat.presettexteffect).
+
+### elements under `<a:avLst>`
+#### direct children of `<a:avLst>`
+| elements | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<a:gd>` | *g*ui*d*e | represents a single adjustable property. | | |
+
+#### attributes in `<a:avLst>` element
+none
+
+### elements under `<a:gd>`
+#### direct children of `<a:gd>`
+none
+
+#### attributes in `<a:gd>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `name` | | specifies the name or identifier of the guide. | | |
+| `fmla` | *f*or*mu*la* | contains the formula that determines the value of the guide. | | |
+
+##### `<a:gd>`->`fmla`
+Value in `<a:gd>`->`fmla` attribute should be a string representing a valid DrawingML formula.
+
+Common formula components include:
+
+| components | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `operators` | | `+`, `-`, `*`, `/`, `abs`, `max`, `min`, `mod`, `pin`, `sqrt`, `val`, `?:`  | | |
+| `constants` | | `wdth` (shape width), `hght` (shape height), `l`, `t`, `r`, ``b (left, top, right, bottom of the shape's bounding box), `vc` (vertical center), `hc` (horizontal center). | | |
+
+### elements under `<a:flatTx>`
+#### direct children of `<a:flatTx>`
+none
+
+#### attributes in `<a:flatTx>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `a:extrusionOk` | | determines whether extrusion effects are allowed on the text.  | | The default value is `"true"` |
+
+### elements under `<a:noAutofit>`
+#### direct children of `<a:noAutofit>`
+none
+
+#### attributes in `<a:noAutofit>` element
+none
+
+### elements under `<a:normAutofit>`
+#### direct children of `<a:normAutofit>`
+| elements | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<a:lnSpc>` | *l*i*n*e *sp*a*c*ing | specifies the line spacing adjustment applied during normal autofit. | | |
+| `<a:spcAmt>` | *sp*a*c*ing *am*oun*t*| specifies the percentage by which the text should be scaled down to fit within the bounding box during normal autofit. | a percentage value |
+
+#### attributes in `<a:normAutofit>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `a:fontScale` | | specifies the scaling factor applied to the font size to fit the text within the bounding box. | a percentage value | The default value is `"true"` |
+| `a:lnSpcReduction` | *l*i*n*e *sp*a*c*ing reduction | specifies  the percentage by which line spacing is reduced to fit the text within the bounding box. | a percentage value | The default value is `"true"` |
+
+### elements under `<a:lnSpc>`
+#### direct children of `<a:lnSpc>`
+| elements | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<a:spcPct>` | *sp*a*c*ing *p*er*c*en*t*age | specifies the line spacing as a percentage of the normal line height. | | |
+| `<a:spcAmt>` | *sp*a*c*ing *am*oun*t* | specifies the line spacing as an absolute amount. | | |
+
+#### attributes in `<a:lnSpc>` element
+none
+
+### elements under `<a:spcPct>`
+#### direct children of `<a:spcPct>`
+none
+
+#### attributes in `<a:spcPct>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `val` | | a percentage value  | a percentage value | |
+
+### elements under `<a:spcAmt>`
+#### direct children of `<a:spcAmt>`
+none
+
+#### attributes in `<a:spcAmt>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `val` | | a percentage value  | <ul><li>a percentage value</li><li>in EMUs</li></ul> | |
+
+### elements under `<a:spAutoFit>`
+#### direct children of `<a:spAutoFit>`
+| elements | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<a:normAutofit>` | | has been discussed before. | | |
+| `<a:lnSpcAutofit>` | | has been discussed before. | | |
+
+#### attributes in `<a:spAutoFit>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `a:lnSpcReduction` | | has been discussed before. | | |
+| `a:fontScale` | | has been discussed before. | | |
 
 ##### attribute in `a` namespace
 ###### attribute in `<a:theme>`
