@@ -270,9 +270,9 @@ In above example, we can know that
 | `<a:gradFill>` | | specifies that the line has a gradient fill. | | |
 | `<a:prstDash>` | *pr*e*s*e*t* dash | specifies that the line has a preset dash pattern. | | |
 | `<a:custDash>` | *cust*om dash | specifies the line has a custom dash pattern. | | |
-| `<a:round>` | | specifies the round line, indicating that the join between these lines should be rounded. | | |
-| `<a:bevel>` | | specifies the bevel line joins (how the edges of a 3D shape or table cell should be rounded or angled, creating a visual depth effect) | | |
-| `<a:miter>` | | specifies the miter line joins. | | |
+| `<a:round/>` | | specifies the round line, indicating that the join between these lines should be rounded. | | |
+| `<a:bevel/>` | | specifies the bevel line joins (how the edges of a 3D shape or table cell should be rounded or angled, creating a visual depth effect) | | |
+| `<a:miter/>` | | specifies the miter line joins. | | |
 | `<a:extLst>` | *ext*ension *l*i*st* | acts like a container containing all extensions about DrawingML. | | |
 
 #### attributes in `<a:ln>` element
@@ -422,31 +422,103 @@ should be a predefined string for system color with data type [`ST_SystemColorVa
 | `<a:relativeRect>` | | relative *rect*angle | is used in conjunction with path gradients to define the bounding box of the gradient falloff relative to the shape. | | This is optional. | 
 
 #### attributes in `<a:gradFill>` element
-none
+| attributes in xml tag | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `a:flip` | | | specifies the directions in which to flip the gradient while tiling | | This is required. |
+| `a:rotWithShape` | | *rot*ate with shape | determines whether a fill will rotate along with a shape when the shape is rotated. | | The default value is `"false"`. | 
+
+##### `<a:gradFill>`->`a:flip`
+should be one of values with data type [`<ST_TileFlipMode>`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_TileFlipMode_topic_ID0EUAWOB.html#topic_ID0EUAWOB)
 
 ### elements under `<a:gsLst>`
 #### direct children of `<a:gsLst>`
 | elements in xml tag | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- |
-| `<a:gs>` | | *g*radient *s*top | defines a gradient stop | | This is required. |
+| `<a:gs>` | *g*radient *s*top | defines a gradient stop | | This is required. |
 
 #### attributes in `<a:gsLst>` element
 none
 
 ### elements under `<a:gs>`
 #### direct children of `<a:gs>`
-| elements in xml tag | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- |
-| `<a:gs>` | | *g*radient *s*top | defines a gradient stop | | This is required. |
+See `<a:solidFill>` element.
 
 #### attributes in `<a:gs>` element
-none
+| attributes in xml tag | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `pos` | | specifies where this gradient stop should appear in the color band. This position is , | MUST be specified between `0%` and `100%` | This is required. |
+
+##### `<a:gs>`->`pos`
+MUST be with data type [`<ST_PositiveFixedPercentage>`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_gs_topic_ID0EFLZMB.html?hl=gs), which defines a range from `0%` to `100%`.
 
 ### elements under `<a:txBody>`
 #### direct children of `<a:txBody>`
 | elements | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- |
 | `<a:bodyPr>` | | defines properties about `<a:txBody>` | | It is required |
+
+### elements under `<a:prstDash>`
+#### direct children of `<a:prstDash>`
+none
+
+#### attributes in `<a:prstDash>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `val` | | specifies which preset dashing scheme is to be used. | | It is required |
+
+##### `<a:prstDash>`->`val`
+MUST be one of values with data type [`<ST_PresetLineDashVal>`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_prstDash_topic_ID0ELH5MB.html?hl=prstdash)
+
+### elements under `<a:custDash>`
+#### direct children of `<a:custDash>`
+| elements | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<ds>` | *d*ash *s*top | specifies the dash stop | | It is required |
+
+#### attributes in `<a:custDash>` element
+none
+
+### elements under `<a:ds>`
+#### direct children of `<a:ds>`
+none
+
+#### attributes in `<a:ds>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `d` | *d*ash length | specifies the length of the dash relative to the line width. | | It is required |
+| `sp` | *sp*ace length | specifies the length of the space  relative to the line width. | | It is required |
+
+##### `<a:ds>`->`d`
+MUST be one of values with data type [`<ST_PositivePercentage>`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_PositivePercentag_topic_ID0ECE2NB.html#topic_ID0ECE2NB)
+
+##### `<a:ds>`->`sp`
+MUST be one of values with data type [`<ST_PositivePercentage>`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_PositivePercentag_topic_ID0ECE2NB.html#topic_ID0ECE2NB)
+
+### elements under `<a:round/>`
+#### direct children of `<a:round/>`
+none
+
+#### attributes in `<a:round/>` element
+none
+
+### elements under `<a:bevel/>`
+#### direct children of `<a:bevel/>`
+none
+
+#### attributes in `<a:bevel/>` element
+none
+
+### elements under `<a:miter/>`
+#### direct children of `<a:miter/>`
+none
+
+#### attributes in `<a:miter/>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `lim` | miter join *lim*it | specifies the amount by which lines will be extended to form a miter join - otherwise miter joins can extend infinitely far (for lines which are almost parallel). | | It is required |
+
+##### `<a:miter/>`->`lim`
+MUST be one of values with data type [`<ST_PositivePercentage>`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_PositivePercentag_topic_ID0ECE2NB.html#topic_ID0ECE2NB)
 
 #### attributes in `<a:txBody>` element
 | attributes | meaning | description | notes | notice |
