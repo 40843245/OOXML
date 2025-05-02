@@ -1146,7 +1146,7 @@ typically, none.
 | :-- | :-- | :-- | :-- | :-- |
 | `<autoFilter/>` | | defines the AutoFilter and specifies it. |  | |
 | `<tableColumns>` | | acts like a container containing all t7able columns. |  | |
-| `<1tableStyleInfo/>` | | stores the info about table style. |  | |
+| `<tableStyleInfo/>` | | stores the info about table style. |  | |
 
 #### attributes in `<table>` element
 | attributes | meaning | description | notes | notice
