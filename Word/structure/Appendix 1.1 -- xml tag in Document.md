@@ -1346,11 +1346,10 @@ The above example may output:
 | `<lang>` | *lang*uage | specifies the primary editing language which was use when this chart was last modified. | | |
 | `<pivotSource>` | pivot source | specifies the source pivot table for a pivot chart. | | |
 | `<printSettings>` | | specifies the print settings for the chart. | | |
-| `<externalData>` | external data | specifies the relationship to the data for this chart. | | |
-| `<externalData>` | external data | specifies the relationship to the data for this chart. | | |
-| `<externalData>` | external data | specifies the relationship to the data for this chart. | | |
-
-| `<c:chart>` | chart | defines a chart | | |
+| `<protection>` | | specifies the protection. | | |
+| `<txPr>` | *t*e*x*t *pr*operties | specifies text formatting | | |
+| `<userShapes>` | | specifies the relationship id for the relationship for this Chart, Chart Drawing, or VML Drawing part. | | |
+| `<extLst>` | | has been discussed before. | | |
 
 #### attributes in `<c:chartSpace>` element
 none
@@ -1482,7 +1481,11 @@ none
 | `<oddFooter>` | | only applies on the odd-numbered footers. | | |
 
 #### attributes in `<c:headerFooter>` element
-none
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<alignWithMargins>` | | determine whether the header and footer should align with the left and right margins of the chart. | | The default value is `"true"` |
+| `<differentFirst>` | | determine whether the header and footer are different for the first page. | | The default value is `"true"` |
+| `<differentOddEven>` | | determine whether the header and footer are different for the odd-numbered pages and even-numbered pages. | | The default value is `"true"` |
 
 ### element under `<c:firstHeader>` element
 #### direct children of `<c:firstHeader>` element
@@ -1544,9 +1547,123 @@ See `<c:firstHeader>` element
 ##### innerHTML in `<c:oddFooter>`
 See `<c:firstHeader>` element
 
+### element under `<c:legacyDrawingHF>` element
+#### direct children of `<c:legacyDrawingHF>` element
+none
+
+#### attributes in `<c:legacyDrawingHF>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `id` | | specifies the relationship ID for the relationship for this Chart, Chart Drawing, or VML Drawing part.  | | |
+
+##### `<c:legacyDrawingHF>`->`id`
+MUST be one of values with data type [`ST_RelationshipId`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_RelationshipId_topic_ID0E4JV2B.html#topic_ID0E4JV2B)
+
+### element under `<c:pageMargins>` element
+#### direct children of `<c:pageMargins>` element
+none
+
+#### attributes in `<c:pageMargins>` element
+See `<w:pgMar>` element.
+
+### element under `<c:protection>` element
+#### direct children of `<c:protection>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
-| `<c:chartSpace>` | | chart space | the root tag that contains many charts and its configuration. | It usually resides in `~/word/charts/chart1.xml` file under a Word file. | |  
+| `<c:chartObject>` | | determines whether the chart cannot be edited by the user | | |
+| `<c:data>` | | determines whether the data cannot be edited by the user | | |
+| `<c:formatting>` | | determines whether the formatting cannot be edited by the user | | |
+| `<c:selection>` | | determines whether the chart elements are protected from selection. | | |
+| `<c:userInterface>` | | determines whether the protection applies to the user interface only, and not to changes made through the object model. | | |
+
+#### attributes in `<c:protection>` element
+none
+
+### element under `<c:chartObject>` element
+#### direct children of `<c:chartObject>` element
+none
+
+#### attributes in `<c:chartObject>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | determines whether the chart cannot be edited by the user | | |
+
+##### `<c:chartObject>`->`val`
+MUST be a boolean.
+
+### element under `<c:data>` element
+#### direct children of `<c:data>` element
+none
+
+#### attributes in `<c:data>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | determines whether the data cannot be edited by the user | | |
+
+##### `<c:data>`->`val`
+MUST be a boolean.
+
+### element under `<c:formatting>` element
+#### direct children of `<c:formatting>` element
+none
+
+#### attributes in `<c:formatting>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | determines whether the formatting cannot be edited by the user | | |
+
+##### `<c:formatting>`->`val`
+MUST be a boolean.
+
+### element under `<c:selection>` element
+#### direct children of `<c:selection>` element
+none
+
+#### attributes in `<c:selection>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | determines whether the chart elements are protected from selection | | |
+
+##### `<c:selection>`->`val`
+MUST be a boolean.
+
+### element under `<c:userInterface>` element
+#### direct children of `<c:userInterface>` element
+none
+
+#### attributes in `<c:userInterface>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | determines whether protection applies to the user interface only, and not to changes made through the object model. | | |
+
+##### `<c:userInterface>`->`val`
+MUST be a boolean.
+
+### element under `<c:txPr>` element
+#### direct children of `<c:txPr>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<a:bodyPr>`  | | has been discussed before | | |
+| `<lstStyle>`  | text *l*i*st* styles | specifies the list of styles associated with this body of text. | | It's not support at current. |
+| `<p>`  | | has been discussed before | | |
+
+#### attributes in `<c:txPr>` element
+none
+
+### element under `<c:userShapes>` element
+#### direct children of `<c:userShapes>` element
+none
+
+#### attributes in `<c:userShapes>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `id`  | | specifies the relationship id for the relationship for this Chart, Chart Drawing, or VML Drawing part. | | |
+
+##### `<c:userShapes>`->`id`
+MUST be one of values with data type [`ST_RelationshipId `](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_RelationshipId_topic_ID0E4JV2B.html#topic_ID0E4JV2B)
+
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- | 
 | `<c:autoTitleDeleted>` | | auto-generated deleted title | indicates whether the user has deleted the auto-generated title.  | | |
 | `<c:plotArea>` | | plot area | defines a plot area | | |
 | `<c:layout/>`| | layout | defines a layout for the plot area | | |
