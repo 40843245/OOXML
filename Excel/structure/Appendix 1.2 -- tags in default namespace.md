@@ -80,11 +80,17 @@
 | :-- | :-- | :-- | :-- | :-- |
 | `<vt:vector>` | | defines a vector for the heading of the Worksheet and acts like a container containing all properties about the vector. | | |
 
+#### attributes in `<HeadingPairs>` element
+none
+
 #### elements under `<vt:vector>` element
 ##### children in `<vt:vector>` element
 | elements | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `<vt:variant>` | | acts like a container containing a single value within the vector. | | |
+
+#### attributes in `<vt:vector>` element
+none
 
 ##### elements under `<vt:variant>` element
 ###### children in `<vt:variant>` element
@@ -93,11 +99,17 @@
 | `<vt:lpwstr>` | | usually contains the string value representing the heading text. | | |
 | `<vt:i4>` | | typically holds the integer value representing the count associated with the heading. | | |
 
+#### attributes in `<vt:variant>` element
+none
+
 ### elements under `<TitlesOfParts>` element
 #### children in `<TitlesOfParts>` element
 | elements | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `<vt:vector>` | | defines a vector for the title of the Worksheet and acts like a container containing all properties about the vector. | | |
+
+#### attributes in `<TitlesOfParts>` element
+none
 
 #### elements under `<vt:vector>` element
 ##### children in `<vt:vector>` element
@@ -105,11 +117,17 @@
 | :-- | :-- | :-- | :-- | :-- |
 | `<vt:variant>` | | acts like a container containing a single value within the vector. | | |
 
+#### attributes in `<vt:vector>` element
+none
+
 ##### elements under `<vt:variant>` element
 ###### children in `<vt:variant>` element
 | elements | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `<vt:lpwstr>` | | usually contains the string value representing the title text. | | |
+
+#### attributes in `<vt:variant>` element
+none
 
 ## Required elements in `~/xl/workbook.xml` under a `.xlsx` file.
 ### elements under `<workbook>` element
