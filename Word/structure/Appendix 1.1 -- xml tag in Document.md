@@ -443,26 +443,6 @@ Values should be in data type [`ST_PresetTextEffect`](https://learn.microsoft.co
 #### attributes in `<a:avLst>` element
 none
 
-### elements under `<a:gd>`
-#### direct children of `<a:gd>`
-none
-
-#### attributes in `<a:gd>` element
-| attributes | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- |
-| `name` | | specifies the name or identifier of the guide. | | |
-| `fmla` | *f*or*mu*la* | contains the formula that determines the value of the guide. | | |
-
-##### `<a:gd>`->`fmla`
-Value in `<a:gd>`->`fmla` attribute should be a string representing a valid DrawingML formula.
-
-Common formula components include:
-
-| components | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- |
-| `operators` | | `+`, `-`, `*`, `/`, `abs`, `max`, `min`, `mod`, `pin`, `sqrt`, `val`, `?:`  | | |
-| `constants` | | `wdth` (shape width), `hght` (shape height), `l`, `t`, `r`, ``b (left, top, right, bottom of the shape's bounding box), `vc` (vertical center), `hc` (horizontal center). | | |
-
 ### elements under `<a:flatTx>`
 #### direct children of `<a:flatTx>`
 none
@@ -698,9 +678,9 @@ none
 #### direct children of `<a:spDef>` element
 | elements | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- |
-| `<a:gdLst>` | *g*ui*d*e *l*i*st* | acts like a container containing guides. | | | 
-| `<a:ahLst>` | *a*djustment *h*andles *l*i*st* | acts like a container containing adjustment handles. | | | 
-| `<a:cxnLst>` | *c*onne*ct*io*n* site *l*i*st* | acts like a container containing connection sites. | | | 
+| `<a:gdLst>` | *g*eometric gui*d*e *l*i*st* | acts like a container containing a list of geometric guide. | | | 
+| `<a:ahLst>` | *a*djustment *h*andles *l*i*st* | acts like a container containing a list of adjustment handles. | | | 
+| `<a:cxnLst>` | *c*onne*ct*io*n* *l*i*st* | acts like a container containing a list of connection. | | | 
 | `<a:pathLst>` | path *l*i*st* | acts like an container containing a list of path. | | | 
 | `<a:rect>` | *rect*angle | defines the bounding box of the shape. | | | 
 
@@ -716,10 +696,31 @@ The value is one of data type [`<ST_ShapeType>`](https://c-rex.net/samples/ooxml
 #### direct children of `<a:gdLst>` element
 | elements | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- |
-| `<a:gd>` | *g*ui*d*e | has been discussed before. | | | 
+| `<a:gd>` | *g*eometric gui*d*e | has been discussed before. | | | 
 
 #### attributes in `<a:gdLst>` element
 none
+
+### elements under `<a:gd>`
+#### direct children of `<a:gd>`
+none
+
+#### attributes in `<a:gd>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `name` | | specifies the name or identifier of the guide. | | |
+| `fmla` | *f*or*mu*la* | contains the formula that determines the value of the guide. | | |
+
+##### `<a:gd>`->`fmla`
+Value in `<a:gd>`->`fmla` attribute should be a string representing a valid geometric formula in DrawingML.
+
+Common formula components include:
+
+| components | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `operators` | | `+`, `-`, `*`, `/`, `?:`  | | |
+| `functions` in excel | |`abs`, `max`, `min`, `mod`, `pin`, `sqrt`, `val` | | |
+| `constants` | | `wdth` (shape width), `hght` (shape height), `l`, `t`, `r`, ``b (left, top, right, bottom of the shape's bounding box), `vc` (vertical center), `hc` (horizontal center). | | |
 
 ### elements under `<a:ahList>` element
 #### direct children of `<a:ahList>` element
@@ -732,9 +733,7 @@ none
 
 ### elements under `<a:ah>` element
 #### direct children of `<a:ah>` element
-| elements | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- |
-| `<a:ah>` | *a*djustment *h*andles | defines adjustment handle | | | 
+none 
 
 #### attributes in `<a:ah>` element
 | attributes | meaning | description | notes | notice |
@@ -771,6 +770,48 @@ This allows the handle's position to be dynamically linked to a guide.
 For examples: 
 
     - `"@guide1"`
+
+### elements under `<a:cxnLst>` element
+#### direct children of `<a:cxnLst>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<a:cxn>` | *a*djustment *h*andles | defines adjustment handle | | | 
+
+#### attributes in `<a:cxnLst>` element
+none 
+
+### elements under `<a:cxn>` element
+#### direct children of `<a:cxn>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `pos` | *pos*ition | defines adjustment handle | | | 
+
+#### attributes in `<a:cxn>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `pos` | *pos*ition | specifies the position of the connection site relative to the shape's bounding box. This position is defined using an `<a:gd>` (guide) element, which in turn uses attributes to define its coordinates. | | | 
+| `id` | | specifies a uid for this connection site. | | | 
+
+##### `<a:cxn>`->`pos`
+It takes a string value that matches the `name` attribute of a `<a:gd>` element defined within the `<a:shape>`'s `<a:geom>` element. 
+
+This guide essentially provides the (x, y) coordinates for the connection point.
+
+> [!IMPORTANT]
+> the position of the connection (`<a:cxn>`) can be specified by two approaches.
+>
+> 1. add `<pos>` as the child of `<a:cxn>`, then specifies the `x` and `y` attribute in `<pos>` element. It can directly specifies the coordinates.
+> 2. specifies the `pos` attribute in `<a:cxn>`. It will reference the `<a:gd>` element and the explicit definition of the connection point's coordinates is done through the `<a:pos>` child element of the `<a:gd>` element.
+
+### elements under `<pos>` element
+#### direct children of `<pos>` element
+none
+
+#### attributes in `<pos>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `x` | | specifies x-coordinates of the position. | | |
+| `y` | | specifies y-coordinates of the position. | | |
 
 ###### attribute in `<a:graphic>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
