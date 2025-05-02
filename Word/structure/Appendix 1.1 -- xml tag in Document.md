@@ -31,8 +31,8 @@ none
 | :---------- | :----------- | :----- | :--- | :-- |
 | `progid` | *Pr*ogrammatic *Id*entifier | It's a string that uniquely identifies a COM (Component Object Model) component or application. | | |
 
-#### examples and explanation
-##### example 1.1 -- processing instruction
+### examples and explanation
+#### example 1.1 -- processing instruction
 `Docx1.docx` file
 
 ```
@@ -1183,7 +1183,7 @@ none
 | :---------- | :----------- | :----- | :--- | :-- |
 | `a:prst` | *pr*e*s*e*t* | specific predefined shape | | It is required |
 
-###### example 1.1 -- a simple drawing object
+#### example 1.1 -- a simple drawing object
 ```
 <w:drawing>
           <wp:inline distT="0" distB="0" distL="0" distR="0" wp14:anchorId="56C264D6" wp14:editId="7AA34E44">
@@ -1227,7 +1227,7 @@ In above example, we can know that
 
 + In `<c:chart xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="rId4" />`, it comes from the ChartML namespace (c:), references the actual chart data. And its id is `rId4`, we can found the actual chart definition according to the `r:id` whose value os `rId4`.
   
-###### example 1.2 -- a complex drawing object
+#### example 1.2 -- a complex drawing object
 part content of `~/word/document.xml` file under `PictureExample1.docx` file.
 
 ```
@@ -1318,8 +1318,7 @@ The above example may output:
 
 <img width="371" alt="image" src="https://github.com/user-attachments/assets/458af2fd-4c32-4b33-aad3-69b227a17cb0" />
 
-### element and its attribute in xml tag in OOXML
-#### about `c` namespace
+## `c` namespace
 > [!NOTE]
 >
 > Convention about phrase definition:
@@ -1328,13 +1327,226 @@ The above example may output:
 >
 > about the phrase `this file`, if `this file` is not explicited discussed in this record, `this file` refers to `~/word/charts/chart1.xml file under a Word file.`
 
-##### elements in `c` namespace
-| elements | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
+### root node
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:chartSpace>` | chart space | the root tag that contains many charts and its configuration. | It usually resides in `~/word/charts/chart1.xml` file under a Word file. | |  
+
+### element under `<c:chartSpace>` element
+#### direct children of `<c:chartSpace>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:chart>` | chart | defines a chart | | |
+| `<c:style>` | style | specifies the chart style | | |
+| `<spPr>` | | has been discussed above | | |
+| `<c:roundedCorners>` | rounded corners | determines whether all charts in this file should be rounded shape. | | |
+| `<date1904>` | | determines that uses 1904 date system | | The default value is `"false"` |
+| `<externalData>` | external data | specifies the relationship to the data for this chart. | | |
+| `<clrMapOvr>` | *c*o*l*o*r* map *ov*e*r*ride | overrides the applications color mapping if the user has selected keep source formatting after a copy-paste. | | |
+| `<lang>` | *lang*uage | specifies the primary editing language which was use when this chart was last modified. | | |
+| `<pivotSource>` | pivot source | specifies the source pivot table for a pivot chart. | | |
+| `<printSettings>` | | specifies the print settings for the chart. | | |
+| `<externalData>` | external data | specifies the relationship to the data for this chart. | | |
+| `<externalData>` | external data | specifies the relationship to the data for this chart. | | |
+| `<externalData>` | external data | specifies the relationship to the data for this chart. | | |
+
+| `<c:chart>` | chart | defines a chart | | |
+
+#### attributes in `<c:chartSpace>` element
+none
+
+### element under `<c:style>` element
+#### direct children of `<c:style>` element
+none
+
+#### attributes in `<c:style>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | chart | specifies the chart style. | | |
+
+##### `<c:style>`->`val`
+MUST be one of the predefined styles whose data type is [`<ST_Style>`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_style_topic_ID0EYMGRB.html#topic_ID0EYMGRB)
+
+### element under `<c:roundedCorners>` element
+#### direct children of `<c:roundedCorners>` element
+none
+
+#### attributes in `<c:roundedCorners>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | chart | determines whether all charts in this file should be rounded shape. | | |
+
+##### `<c:roundedCorners>`->`val`
+MUST be a boolean.
+
+### element under `<c:date1904>` element
+#### direct children of `<c:date1904>` element
+none
+
+#### attributes in `<c:date1904>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | determines whether date 1904 system is used. | | |
+
+##### `<c:date1904>`->`val`
+MUST be a boolean.
+
+### element under `<c:externalData>` element
+#### direct children of `<c:externalData>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<autoUpdate>` | | determines whether update automatically | | |
+
+#### attributes in `<c:externalData>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `id` | | specifies the relationship id for the relationship for this chart. | | |
+
+### element under `<c:autoUpdate>` element
+#### direct children of `<c:autoUpdate>` element
+none
+
+#### attributes in `<c:autoUpdate>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | determines whether update automatically | | |
+
+##### `<c:autoUpdate>`->`val`
+MUST be a boolean.
+
+### element under `<c:clrMapOvr>` element
+#### direct children of `<c:clrMapOvr>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<extLst>` | | has been discussed before | | |
+
+#### attributes in `<c:clrMapOvr>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `accent1` | | has been discussed before | | |
+| `accent2` | | has been discussed before | | |
+| `accent3` | | has been discussed before | | |
+| `accent4` | | has been discussed before | | |
+| `accent5` | | has been discussed before | | |
+| `accent6` | | has been discussed before | | |
+| `bg1` | *b*ack*g*round color 1 | | | |
+| `bg2` | *b*ack*g*round color 1 | | | |
+| `tx1` | | has been discussed before | | |
+| `tx2` | | has been discussed before | | |
+| `hlink` | | has been discussed before | | |
+| `folHlink` | | has been discussed before | | |
+
+### element under `<c:lang>` element
+#### direct children of `<c:lang>` element
+none
+
+#### attributes in `<c:lang>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | specifies the primary editing language which was use when this chart was last modified. | | |
+
+##### `<c:lang>`->`val`
+MUST be one of the values with data type [`<ST_TextLanguageID>`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_TextLanguageID_topic_ID0ET31RB.html#topic_ID0ET31RB)
+
+### element under `<c:pivotSource>` element
+#### direct children of `<c:pivotSource>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<name>` | | specifies a name for pivot source. | | |
+| `<fmtId>` | | has been discussed before. | | |
+| `<extLst>` | | has been discussed before. | | |
+
+#### attributes in `<c:pivotSource>` element
+none
+
+### element under `<c:printSettings>` element
+#### direct children of `<c:printSettings>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<headerFooter>` | | specifies the headers and footers. | | |
+| `<legacyDrawingHF>` | legacy Drawing for *H*eader and *F*ooter | specifies the VML Drawing part (which is legacy now) containing any pictures used in the header or footer of the chart. | | |
+| `<pageMargins>` | | specifies page margins for charts. | | |
+
+#### attributes in `<c:printSettings>` element
+none
+
+### element under `<c:headerFooter>` element
+#### direct children of `<c:headerFooter>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<firstHeader>` | | only applies on the first header. | | |
+| `<firstFooter>` | | only applies on the first footer. | | |
+| `<evenHeader>` | | only applies on the even-numbered headers. | | |
+| `<evenFooter>` | | only applies on the even-numbered footers. | | |
+| `<oddHeader>` | | only applies on the odd-numbered headers. | | |
+| `<oddFooter>` | | only applies on the odd-numbered footers. | | |
+
+#### attributes in `<c:headerFooter>` element
+none
+
+### element under `<c:firstHeader>` element
+#### direct children of `<c:firstHeader>` element
+none
+
+#### attributes in `<c:firstHeader>` element
+none
+
+##### innerHTML in `<c:firstHeader>`
+MUST be [`ST_Xstring`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_Xstring_topic_ID0EZ32RB.html#topic_ID0EZ32RB) type
+
+### element under `<c:firstFooter>` element
+#### direct children of `<c:firstFooter>` element
+See `<c:firstHeader>` element
+
+#### attributes in `<c:firstFooter>` element
+See `<c:firstHeader>` element
+
+##### innerHTML in `<c:firstFooter>`
+See `<c:firstHeader>` element
+
+### element under `<c:evenHeader>` element
+#### direct children of `<c:evenHeader>` element
+See `<c:firstHeader>` element
+
+#### attributes in `<c:evenHeader>` element
+See `<c:firstHeader>` element
+
+##### innerHTML in `<c:evenHeader>`
+See `<c:firstHeader>` element
+
+### element under `<c:evenFooter>` element
+#### direct children of `<c:evenFooter>` element
+See `<c:firstHeader>` element
+
+#### attributes in `<c:evenFooter>` element
+See `<c:firstHeader>` element
+
+##### innerHTML in `<c:evenFooter>`
+See `<c:firstHeader>` element
+
+### element under `<c:oddHeader>` element
+#### direct children of `<c:oddHeader>` element
+See `<c:firstHeader>` element
+
+#### attributes in `<c:oddHeader>` element
+See `<c:firstHeader>` element
+
+##### innerHTML in `<c:oddHeader>`
+See `<c:firstHeader>` element
+
+### element under `<c:oddFooter>` element
+#### direct children of `<c:oddFooter>` element
+See `<c:firstHeader>` element
+
+#### attributes in `<c:oddFooter>` element
+See `<c:firstHeader>` element
+
+##### innerHTML in `<c:oddFooter>`
+See `<c:firstHeader>` element
+
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
 | `<c:chartSpace>` | | chart space | the root tag that contains many charts and its configuration. | It usually resides in `~/word/charts/chart1.xml` file under a Word file. | |  
-| `<c:roundedCorners>` | | rounded corners | determines whether all charts in this file should be rounded shape. | | |
-| | | | | | |  
-| `<c:chart>` | | chart | defines a chart | | | 
 | `<c:autoTitleDeleted>` | | auto-generated deleted title | indicates whether the user has deleted the auto-generated title.  | | |
 | `<c:plotArea>` | | plot area | defines a plot area | | |
 | `<c:layout/>`| | layout | defines a layout for the plot area | | |
