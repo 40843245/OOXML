@@ -517,8 +517,8 @@ none
 #### attributes in `<a:lnSpc>` element
 none
 
-### elements under `<a:spcPct>`
-#### direct children of `<a:spcPct>`
+### elements under `<a:spcPct/>`
+#### direct children of `<a:spcPct/>`
 none
 
 #### attributes in `<a:spcPct>` element
@@ -540,7 +540,7 @@ none
 | elements | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- |
 | `<a:normAutofit>` | | has been discussed before. | | |
-| `<a:lnSpcAutofit>` | | has been discussed before. | | |
+| `<a:lnSpcAutofit>` | *l*i*n*e *sp*a*c*ing auto fit | determines that the line spacing should be adjusted to fit the text within the bounding box (if the element is present).  | | |
 
 #### attributes in `<a:spAutoFit>` element
 | attributes | meaning | description | notes | notice |
@@ -548,11 +548,105 @@ none
 | `a:lnSpcReduction` | | has been discussed before. | | |
 | `a:fontScale` | | has been discussed before. | | |
 
+### elements under `<a:lnSpcAutofit/>`
+When it is present, the line spacing should be adjusted to fit the text within the bounding box.
+
+#### direct children of `<a:lnSpcAutofit/>`
+none
+
+#### attributes in `<a:lnSpcAutofit/>` element
+none
+
+### elements under `<a:spAutoFit>`
+#### direct children of `<a:spAutoFit>`
+| elements | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<a:noAutofit>` | | has been discussed before. | | |
+| `<a:normAutofit>` | | has been discussed before. | | |
+| `<a:lnSpcAutoFit>` | | has been discussed before. | | |
+
+#### attributes in `<a:spAutoFit>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `type` | | specifies the type of automatic fitting to apply | | |
+
+##### `<a:spAutoFit>`->`type`
+| values | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `none` | | no automatic fitting is applied. | | |
+| `norm` | | normal automatic fitting is applied. | | |
+| `spc` | *sp*e*c*ial | special automatic fitting is applied. | | |
+| `ln` | *l*i*n*e | automatic fitting by adjusting line spacing. | | |
+
+### elements under `<a:theme>`
+#### direct children of `<a:theme>`
+| elements | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<a:themeElements>` | | acts a container that defines theme elements. | | |
+| `<a:objectStyleLst>` | | acts a container that defines object styles. | | |
+| `<a:extraClrSchemeLst/>`| | acts a container containing definitions for additional color schemes beyond the main `Office` scheme. | | |
+
+#### attributes in `<a:theme>` element
+none
+
+### elements under `<a:themeElements>`
+#### direct children of `<a:themeElements>`
+| elements | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<a:clrScheme>` | | defines a color scheme (something like a color palette) | | |
+| `<a:fontScheme>` | | defines the font scheme for the theme. | | |
+| `<a:fmtScheme>` | *f*or*m*at scheme | defines the properties of format scheme. | | |
+
+#### attributes in `<a:themeElements>` element
+none
+
+### elements under `<a:clrScheme>`
+#### direct children of `<a:clrScheme>`
+| elements | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<a:name>` | | defines the name of this color scheme | | |
+| `<a:dk1>` | *d*ar*k* 1 | dark 1 | | |
+| `<a:lt1>` | | *l*igh*t* 1 | light 1 | | |
+| `<a:dk2>` | *d*ar*k* 2 | dark 2 | | |
+| `<a:lt2>` | | *l*igh*t* 2 | light 2 | | |
+| `<a:accent1>` | accent color 1 | defines the accent color 1 | | |
+| `<a:accent2>` | accent color 2 | defines the accent color 2 | | |
+| `<a:accent3>` | accent color 3 | defines the accent color 3 | | |
+| `<a:accent4>` | accent color 4 | defines the accent color 4 | | |
+| `<a:accent5>` | accent color 5 | defines the accent color 5 | | |
+| `<a:accent6>` | accent color 6 | defines the accent color 6 | | |
+| `<a:hlink>` | *h*yper*link* | defines the properties of hyperlink. | | |
+| `<a:folHlink>` | *fol*lowed *h*yper*link* | defines the properties of followed hyperlink. | | |
+| `<a:extLst>` | | has been discussed before. | | |
+
+#### attributes in `<a:clrScheme>` element
+| attributes  | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `name` | | | give an user-friendly name | | |
+
+#### elements under `<a:clrScheme>`->`<a:name>` element
+#### direct children of `<a:clrScheme>`->`<a:name>` element
+none
+
+#### attributes in `<a:clrScheme>`->`<a:name>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `val` | | | holds the name of the color scheme.| | |
+
+#### elements under `<a:fontScheme>` element
+#### direct children of `<a:fontScheme>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<a:majorFont>` | major font | defines the properties of major font. | | | 
+| `<a:minorFont>` | minor font | defines the properties of minor font. | | |
+
+#### attributes in `<a:fontScheme>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `name` | | | give an user-friendly name | | |
+
 ##### attribute in `a` namespace
-###### attribute in `<a:theme>`
-| elements | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `name` | | | specifies the name of theme. | | |
+
 
 ###### attribute in `<a:graphic>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
