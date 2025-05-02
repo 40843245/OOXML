@@ -6,20 +6,10 @@ See [`Prequisite.md`](https://github.com/40843245/OOXML/blob/main/Prequisite/Pre
 See [`Suggestion.md`](https://github.com/40843245/OOXML/blob/main/Suggestion/Suggestion.md)
 
 ## NOTICE
-> [!WARNING]
-> Most content of these table are refered from Google Gemini's answer or from non-official website, which BOTH may be incorrect.
->
-> Read with caution.
+See [`NOTICE.md`](https://github.com/40843245/OOXML/blob/main/NOTICE/NOTICE.md)
 
 ## Important concept
-> [!IMPORTANT]
-> In OOXML,
->
-> For those value of attribute that needs to be specified with a string containing a boolean value (i.e. `"true"` or `"false"`),
->
-> + `"0"` is equivalent to `"false"`
-> 
-> + `"1"` is equivalent to `"true"`
+See [`important concept.md`](https://github.com/40843245/OOXML/blob/main/concept/important%20concept.md)
 
 ## processing instruction
 See `Appendix 1 -- tags in xml`[^3]
