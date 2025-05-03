@@ -1,4 +1,4 @@
-# Appendix 1.1 -- xml tag in Document
+3# Appendix 1.1 -- xml tag in Document
 ## Prequisite
 See [`Prequisite.md`](https://github.com/40843245/OOXML/blob/main/Prequisite/Prequisite.md)
 
@@ -314,7 +314,7 @@ none
 > [!IMPORTANT]
 > See [`<solidFill>`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_solidFill_topic_ID0ETLANB.html#topic_ID0ETLANB) for more details.
 
-#### attributes in `<a:solidFill>` element
+#### attributes in `<a:solidFill>` element333333333
 none
 
 ### elements under `<a:srgbClr>`
@@ -1662,38 +1662,218 @@ none
 ##### `<c:userShapes>`->`id`
 MUST be one of values with data type [`ST_RelationshipId `](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_RelationshipId_topic_ID0E4JV2B.html#topic_ID0E4JV2B)
 
+### element under `<c:chart>` element
+#### direct children of `<c:chart>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:autoTitleDeleted>`  | | indicates whether the user has deleted the auto-generated title. | | |
+| `<c:title>`  | | specifies tht title | | |
+| `<c:plotArea>` | plot area | defines a plot area | | |
+| `<c:legend>` | | | acts like a container that contains all legend. | | |
+| `<c:plotVisOnly>` | plot *vis*ibile data points only | controls whether only visible data points are plotted on a chart. | | |
+| `<c:showDLblsOverMax>` | show *d*ata *l*a*b*e*l*s when is over *max*imum | determines whether data labels should be displayed even if their value exceeds the maximum value set for the chart's axis. | | |
+| `<c:dispBlanksAs>` | *disp*lay blank as | specifies how blank cells should be handled when plotting data on a chart. | | | 
+| `<c:sideWall>` | | specifies the side wall. | | |
+| `<c:backWall>` | | specifies the back wall. | | |
+| `<c:view3D>` | | specifies the view 3D. | | |
+| `<c:pivotFmts>` | pivot *f*or*m*a*t*s | specifies the pivot formats. | | |
+| `<c:floor>` | |  specifies the floor of a 3D chart. | | |
+| `<c:extLst>` | *ext*ension *l*i*st* | defines an extensibility point for future additions. | | | 
+
+#### attributes in `<c:chart>` element
+none
+
+### element under `<c:autoTitleDeleted>` element
+#### direct children of `<c:autoTitleDeleted>` element
+none
+
+#### attributes in `<c:autoTitleDeleted>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val`  | | indicates whether the user has deleted the auto-generated title. | | |
+
+##### `<c:autoTitleDeleted>`->`val`
+MUST be a boolean.
+
+### element under `<c:title>` element
+#### direct children of `<c:title>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:layout>`| layout | defines a layout for the plot area | | |
+| `<c:overlay>`| overlay | determines whether other chart elements shall be allowed to overlap | | |
+| `<c:spPr>` | *s*ha*p*e *pr*operties | specifies visual properties for the series as a whole. | | |
+| `<c:tx>` | series *t*e*x*t | specifies the name of series. | it appears in the legend and</br>might be used in data labels. | |
+| `<c:txPr>`| | has been discussed before. | | |
+
+#### attributes in `<c:title>` element
+none
+
+### element under `<c:plotArea>` element
+#### direct children of `<c:plotArea>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:barChart>` | bar chart | configure the chart is bar chart | | |
+| `<c:bar3DChart>` | bar chart 3D | configure the chart is bar chart 3D | | |
+| `<c:pieChart>` | pie chart | configure the chart is pie chart | | |
+| `<c:pie3DChart>` | pie chart 3D | configure the chart is pie chart 3D | | |
+| `<c:lineChart>` | line chart | configure the chart is line chart | | |
+| `<c:line3DChart>` | line chart 3D | configure the chart is line chart 3D | | |
+| `<c:surfaceChart>` | surface chart | configure the chart is surface chart | | |
+| `<c:surface3DChart>` | surface chart 3D | configure the chart is surface chart 3D | | |
+| `<c:areaChart>` | area chart | configure the chart is area chart | | |
+| `<c:area3DChart>` | area chart 3D | configure the chart is area chart 3D | | |
+| `<c:doughnutChart>` | doughnut chart | configure the chart is doughnut chart | | |
+| `<c:radarChart>` | radar chart | configure the chart is radar chart | | |
+| `<c:scatterChart>` | scatter chart | configure the chart is scatter chart | | |
+| `<c:stockChart>` | stock chart | configure the chart is stock chart | | |
+| `<c:ofPieChart>` | pie (or bar) of pie chart | configure the chart is pie (or bar) of pie chart | | |
+| `<c:valAx>` | *val*ue *ax*is | acts like a container that defines the one or many value axes (plural of axis) | | |
+| `<c:serAx>` | *ser*ies *ax*is | acts like a container that defines the one or many series axes (plural of axis) | | |
+| `<c:spPr>` | | has been discussed before. | | |
+
+#### attributes in `<c:autoTitleDeleted>` element
+none
+
+### element under `<c:area3DChart>` element
+#### direct children of `<c:area3DChart>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:axId>` | *ax*is id | specifies axis id | | |
+| `<c:dLbls>` | *d*ata *l*a*b*e*l**s* | a container that contains data labels. | | |
+| `<c:grouping>` | grouping | specifies how multiple data series within the same category should be grouped together visually. | | |
+| `<c:ser>` | *ser*ies | defines a series. | | |
+| `<c:gapDepth>` | gap depth | specifies the gap amount. | | |
+
+#### attributes in `<c:area3DChart>` element
+none
+
+### element under `<c:axId>` element
+#### direct children of `<c:axId>` element
+none
+
+#### attributes in `<c:axId>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:axId>`->`val`
+MUST be an integer.
+
+### element under `<c:dLbls>` element
+#### direct children of `<c:dLbls>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:dLbl>` | *d*ata *l*a*b*e*l* | defines a data label. | | |
+| `<c:delete>` | manually deleted | stores the data labels is manually deleted by users. | | |
+| `<c:dLblPos>` | *d*ata *l*a*b*e*l* *pos*ition | specifies the position of the data label. | | |
+| `<c:leaderLines>` |  | specifies the leader lines for data labels. | | |
+| `<c:numFmt/>` | *num*ber *f*or*m*a*t*ting  | specifies the number formatting of the axis labels of the chart | | |
+| `<c:separator/>` | | specifies text that shall be used to separate the parts of a data label. | | The default value is `","` |
+| `<c:showBubbleSize/>` | show bubble size | determines whether show bubble size for each series. | | |
+| `<c:showCatName/>` | show *cat*gory name | determines whether show category name for each series | | | 
+| `<c:showLeaderLines/>` | show leader lines | determines whether show leader lines for each series. | | |
+| `<c:showLegendKey/>` | show legend key | determines whether show legend for each series | | |
+| `<c:showPercent/>` | show percentage | determines whether show percentage that a data point takes of its total for each series | For more knowledgment about data point, see following `IMPORTANT` annotation. | |
+| `<c:showSerName/>` | show *ser*ies name | determines whether show name of data series for each series | | | 
+| `<c:showVal/>` | show *val*ue | determines whether show value for each series | | |
+| `<c:spPr>` | | has been discussed before. | | |
+| `<c:txPr>` | | has been discussed before. | | |
+
+#### attributes in `<c:dLbls>` element
+none
+
+### element under `<c:dLbl>` element
+#### direct children of `<c:dLbl>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:idx>` | *i*n*d*e*x* | specifies the index of the collection. | It is zero-based. | |
+| `<c:layout>` | |  specifies how the chart element is placed on the chart. | | |
+| `<c:delete>` | manually deleted | stores the data labels is manually deleted by users. | | |
+| `<c:dLblPos>` | *d*ata *l*a*b*e*l* *pos*ition | specifies the position of the data label. | | |
+| `<c:numFmt/>` | *num*ber *f*or*m*a*t*ting  | specifies the number formatting of the axis labels of the chart | | |
+| `<c:separator/>` | | specifies text that shall be used to separate the parts of a data label. | | The default value is `","` |
+| `<c:showBubbleSize/>` | show bubble size | determines whether show bubble size for each series. | | |
+| `<c:showCatName/>` | show *cat*gory name | determines whether show category name for each series | | | 
+| `<c:showLegendKey/>` | show legend key | determines whether show legend for each series | | |
+| `<c:showPercent/>` | show percentage | determines whether show percentage that a data point takes of its total for each series | For more knowledgment about data point, see following `IMPORTANT` annotation. | |
+| `<c:showSerName/>` | show *ser*ies name | determines whether show name of data series for each series | | | 
+| `<c:showVal/>` | show *val*ue | determines whether show value for each series | | |
+| `<c:spPr>` | | has been discussed before. | | |
+| `<c:txPr>` | | has been discussed before. | | |
+| `<c:tx>` | | has been discussed before. | | |
+| `<c:extLst>` | | has been discussed before. | | |
+
+#### attributes in `<c:dLbl>` element
+none
+
+### element under `<c:layout>` element
+#### direct children of `<c:layout>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:manualLayout>` | | specifies the exact position of a chart element. | | |
+| `<c:extLst>` | | has been discussed before. | | |
+
+#### attributes in `<c:layout>` element
+none
+
+### element under `<c:manualLayout>` element
+#### direct children of `<c:manualLayout>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<x>` | | specifies x-coordinate | | |
+| `<y>` | | specifies y-coordinate | | |
+| `<w>` | *w*idth | specifies the width | | |
+| `<h>` | *h*eight | specifies the height | | |
+| `<xMode>` | | specifies mode for x-coordinate | | |
+| `<yMode>` | | specifies mode for y-coordinate | | |
+| `<wMode>` | *w*idth mode | specifies mode for the width | | |
+| `<hMode>` | *h*eight mode | specifies mode for the height | | |
+| `<layoutTarget>` | | specifies the layout target value. | | |
+| `<c:extLst>` | | has been discussed before. | | |
+
+#### attributes in `<c:manualLayout>` element
+none
+
+### element under `<c:delete>` element
+#### direct children of `<c:delete>` element
+none
+
+#### attributes in `<c:delete>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:delete>`->`val`
+MUST be a boolean.
+
+
+### element under `<c:gapDepth>` element
+#### direct children of `<c:gapDepth>` element
+none
+
+#### attributes in `<c:gapDepth>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:gapDepth>`->`val`
+MUST be one of values with data type [`ST_GapAmount`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_GapAmount_topic_ID0ES3RRB.html#topic_ID0ES3RRB)
+
+> [!IMPORTANT]
+> `ST_GapAmount` is predefined as unsigned short between 0 and 500 (BOTH inclusive).
+
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- | 
-| `<c:autoTitleDeleted>` | | auto-generated deleted title | indicates whether the user has deleted the auto-generated title.  | | |
-| `<c:plotArea>` | | plot area | defines a plot area | | |
-| `<c:layout/>`| | layout | defines a layout for the plot area | | |
-| `<c:barChart>` | | bar chart | configure the chart is bar chart | | |
-| `<c:pieChart>` | | pie chart | configure the chart is pie chart | | |
-| | | | | | |
 | `<c:barDir>` | | bar *dir*ection | configure the orientation of bars. | This tag must be defined inside a bar chart (i.e. `<c:barChart>` tag) | |
-| `<c:grouping>` | | grouping | specifies how multiple data series within the same category should be grouped together visually. | | |
-| `<c:overlap>` | | overlap | specifies, for different data series that belong to the same category, the degree that it will overlap each other. | It is relevant when you have multiple data series in a bar chart (or column chart) and the value of the attribute `val` in `<c:grouping>` tag is set to something other than `stacked` or `percentStacked`. | |
+| `<c:overlap>` | | overlap | specifies, for different data series that belong to the same category, the degree that it will overlap each other. | It is relevant when you 5have multiple data series in a bar chart (or column chart) and the value of the attribute `val` in `<c:grouping>` tag is set to something other than `stacked` or `percentStacked`. | |
 | | | | | | |
 | `<c:gapWidth>` | | gap width | specifies the gap width (i.e. the distance between two bars) | | |
 | | | | | | |
-| `<c:dLbls>` | | *d*ata *l*a*b*e*l**s* | a container that contains data labels. | | |
-| `<c:showLegendKey/>` | | show legend key | determines whether show legend for each series | | |
-| `<c:showVal/>` | | show *val*ue | determines whether show value for each series | | |
-| `<c:showCatName/>` | | show *cat*gory name | determines whether show category name for each series | | | 
-| `<c:showSerName/>` | | show *ser*ies name | determines whether show name of data series for each series | | | 
-| `<c:showPercent/>` | | show percentage | determines whether show percentage that a data point takes of its total for each series | For more knowledgment about data point, see following `IMPORTANT` annotation. | |
-| `<c:showBubbleSize/>` | | show bubble size | determines whether show bubble size for each series. | | |
-| `<c:showLeaderLines/>` | | show leader lines | determines whether show leader lines for each series. | | |
 | | | | | | |
-| `<c:ser>` | | *ser*ies | defines a series. | | |
-| `<c:idx>` | | *i*n*d*e*x* | specifies the index of the data point. | | It is zero-based. |
 | `<c:order>` | | plotting order | specifies the plotting order of the series (inside `<c:ser>` tag). | | It is zero-based. |
 | `<c:order>` | | plotting order | specifies the plotting order of the series (inside `<c:ser>` tag). | | It is zero-based. | 
 | `<c:val>` | | value | specifies the actual data value of the series (inside `<c:ser>` tag). | | | 
-| `<c:extLst>` | | *ext*ension *l*i*st* | defines an extensibility point for future additions. | | | 
-| `<c:tx>` | | series *t*e*x*t | specifies the name of series. | it appears in the legend and</br>might be used in data labels. | |
 | `<c:errBars>` | | error bars | defines error bars for the data points in this series. | |  This is available for</br><ol><li>bar charts</li><li>column (bar) charts</li></ol> |
-| `<c:spPr>` | | *s*ha*p*e *pr*operties | specifies visual properties for the series as a whole. | | |
 | `<c:cat>` | | *cat*egory | specifies the categories or labels for the data points in this series. | | |
 | `<c:bubbleSize>` | | bubble size | specifies the size of bubbles. | | |
 | `<c:trendline>` | | trend line | defines trendlines for this specific series | | |
@@ -1712,11 +1892,9 @@ MUST be one of values with data type [`ST_RelationshipId `](https://c-rex.net/sa
 | `<c:formatCode>` | | number formatting code | specifies the number formatting code that was applied to the original data in the spreadsheet. | |
 | | | | | | |
 | `<c:catAx>` | | *cat*egory *ax*is | defining the category axis for some types of charts. | | |
-| `<c:axId>` | | *ax*is id | specifies axis id | | |
 | `<c:scaling>` | | scaling | controls scaling for axis | | |
 | `<c:orientation>` | | orientation | controls orientation for axis | | |
 | | | | | | |
-| `<c:delete>` | | manually deleted | stores the data labels is manually deleted by users. | | |
 | `<c:axPos>` | | | specifies the defined axis should be positioned at somewhere of the chart's plot area. | somewhere is according to value of `val` attribute, see [`<c:axPos>` -> `val` attribute section in Appendix 2](https://github.com/40843245/OOXML/blob/main/Word/structure/Appendix%202%20--%20available%20options%20of%20attribute%20of%20tag%20in%20xml%20for%20Word.md#caxpos---val-attribute) for available value of `val` attribute.  | |
 | `<c:majorTickMark/>` | | major tick mark | specifies the type and placement of the major tick marks. | | |
 | `<c:minorTickMark/>` | | minor tick mark | specifies the type and placement of the minor tick marks. | | |
@@ -1727,22 +1905,17 @@ MUST be one of values with data type [`ST_RelationshipId `](https://c-rex.net/sa
 | `<c:lblOffset>` | | *l*a*b*e*l* offset | specifies the offset of the axis labels from the axis line. | | |
 | `<c:noMultiLvlLbl>` | | no multi-*l*e*v*e*l* *l*a*b*e*l* | determines whether multi-level labels are disabled on the category axis. | | |
 | | | | | | |
-| `<c:valAx>` | | *val*ue *ax*is | acts like a container that defines the one or many value axes (plural of axis) | | |
 | `<c:axPos/>` | | *ax*is *pos*iton | specifies the position of the axis relative to the plot area of the chart | | |
-| `<c:numFmt/>` | | *num*ber *f*or*m*a*t*ting  | specifies the number formatting of the axis labels of the chart | | |
 | | | | | | |
 | `<c:majorGridlines/>` | | major grid lines | indicates the presence or formatting of major grid lines in a chart. | | |
 | `<c:minorGridlines/>` | | minor grid lines | indicates the presence or formatting of minor grid lines in a chart. | | |
 | `<c:crosses/>` | | | specifies how the axes cross each other.  | | |
 | `<c:crossBetween/>` | | | specifies how category axes are crossed by value axes in a chart.  | | |
 | | | | | | |
-| `<c:legend>` | | | acts like a container that contains all legend. | | |
 | `<c:legendPos>` | | | specifies the position of the legend. | | |
 | `<c:legendEntry>` | | | acts like a container for individual entries within the legend. | | |
 | | | | | | |
-| `<c:plotVisOnly>` | | plot *vis*ibile data points only | controls whether only visible data points are plotted on a chart. | | |
-| `<c:dispBlanksAs>` | | *disp*lay blank as | specifies how blank cells should be handled when plotting data on a chart. | | | 
-| `<c:showDLblsOverMax>` | | show *d*ata *l*a*b*e*l*s when is over *max*imum | determines whether data labels should be displayed even if their value exceeds the maximum value set for the chart's axis. | | | 
+
 
 > [!IMPORTANT]
 > How to calculate percentage that a data point takes of its total?
