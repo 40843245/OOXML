@@ -1,4 +1,4 @@
-3# Appendix 1.1 -- xml tag in Document
+# Appendix 1.1 -- xml tag in Document
 ## Prequisite
 See [`Prequisite.md`](https://github.com/40843245/OOXML/blob/main/Prequisite/Prequisite.md)
 
@@ -1741,8 +1741,9 @@ none
 | `<c:axId>` | *ax*is id | specifies axis id | | |
 | `<c:dLbls>` | *d*ata *l*a*b*e*l**s* | a container that contains data labels. | | |
 | `<c:grouping>` | grouping | specifies how multiple data series within the same category should be grouped together visually. | | |
-| `<c:ser>` | *ser*ies | defines a series. | | |
 | `<c:gapDepth>` | gap depth | specifies the gap amount. | | |
+| `<c:ser>` | *ser*ies | defines a series. | | |
+| `<c:varyColors>` | specifies that each data marker in the series shall have a different color. | defines a series. | | |
 
 #### attributes in `<c:area3DChart>` element
 none
@@ -1828,11 +1829,119 @@ none
 | `<yMode>` | | specifies mode for y-coordinate | | |
 | `<wMode>` | *w*idth mode | specifies mode for the width | | |
 | `<hMode>` | *h*eight mode | specifies mode for the height | | |
-| `<layoutTarget>` | | specifies the layout target value. | | |
+| `<c:layoutTarget>` | | specifies the layout target value. | | |
 | `<c:extLst>` | | has been discussed before. | | |
 
-#### attributes in `<c:manualLayout>` element
+#### attributes in `<manualLayout>` element
 none
+
+### element under `<x>` element
+#### direct children of `<x>` element
+none
+
+#### attributes in `<x>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<x>`->`val`
+MUST be a floating number.
+
+### element under `<y>` element
+#### direct children of `<y>` element
+none
+
+#### attributes in `<y>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<y>`->`val`
+MUST be a floating number.
+
+### element under `<w>` element
+#### direct children of `<w>` element
+none
+
+#### attributes in `<w>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<w>`->`val`
+MUST be a floating number.
+
+### element under `<h>` element
+#### direct children of `<h>` element
+none
+
+#### attributes in `<h>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<h>`->`val`
+MUST be a floating number.
+
+### element under `<xMode>` element
+#### direct children of `<xMode>` element
+none
+
+#### attributes in `<xMode>` element
+| attributes | meaning | description | notes | notice 
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<xMode>`->`val`
+MUST be a predefied value with data type [`ST_LayoutMode`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_LayoutMode_topic_ID0EUPSRB.html#topic_ID0EUPSRB)
+
+### element under `<yMode>` element
+#### direct children of `<yMode>` element
+none
+
+#### attributes in `<yMode>` element
+| attributes | meaning | description | notes | notice 
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<yMode>`->`val`
+MUST be a predefied value with data type [`ST_LayoutMode`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_LayoutMode_topic_ID0EUPSRB.html#topic_ID0EUPSRB)
+
+### element under `<wMode>` element
+#### direct children of `<wMode>` element
+none
+
+#### attributes in `<wMode>` element
+| attributes | meaning | description | notes | notice 
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<wMode>`->`val`
+MUST be a predefied value with data type [`ST_LayoutMode`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_LayoutMode_topic_ID0EUPSRB.html#topic_ID0EUPSRB)
+
+### element under `<hMode>` element
+#### direct children of `<hMode>` element
+none
+
+#### attributes in `<hMode>` element
+| attributes | meaning | description | notes | notice 
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<hMode>`->`val`
+MUST be a predefied value with data type [`ST_LayoutMode`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_LayoutMode_topic_ID0EUPSRB.html#topic_ID0EUPSRB)
+
+### element under `<c:layoutTarget>` element
+#### direct children of `<c:layoutTarget>` element
+none
+
+#### attributes in `<c:layoutTarget>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:layoutTarget>`->`val`
+MUST be a predefied value with data type [`ST_LayoutTarget`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_LayoutTarget_topic_ID0EXWSRB.html#topic_ID0EXWSRB)
 
 ### element under `<c:delete>` element
 #### direct children of `<c:delete>` element
@@ -1846,6 +1955,26 @@ none
 ##### `<c:delete>`->`val`
 MUST be a boolean.
 
+### element under `<c:dLblPos>` element
+#### direct children of `<c:dLblPos>` element
+none
+
+#### attributes in `<c:dLblPos>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:dLblPos>`->`val`
+MUST be one of predefined values in data type [`ST_DLblPos`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_dLblPos_topic_ID0E2M4PB.html#topic_ID0E2M4PB) 
+
+### element under `<c:dropLines>` element
+#### direct children of `<c:dropLines>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:spPr>` | | has been discussed before. | | |
+
+#### attributes in `<c:dropLines>` element
+none
 
 ### element under `<c:gapDepth>` element
 #### direct children of `<c:gapDepth>` element
@@ -1862,6 +1991,108 @@ MUST be one of values with data type [`ST_GapAmount`](https://c-rex.net/samples/
 > [!IMPORTANT]
 > `ST_GapAmount` is predefined as unsigned short between 0 and 500 (BOTH inclusive).
 
+### element under `<c:ser>` element
+#### direct children of `<c:ser>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:idx>` | | has been discussed above | | |
+| `<c:order>` | | specifies the order of the series in the collection. | It's zero-based | |
+| `<c:dLbls>` | | has been discussed above | | |
+| `<c:cat>` | | has been discussed above | | |
+| `<c:errBars>` | *err*or bars | defines error bars for the data points in this series. | |  This is available for</br><ol><li>bar charts</li><li>column (bar) charts</li></ol> |
+| `<c:pictureOptions>` | | specifies the picture to be used on the data point, series, wall, or floor. | | |
+
+#### attributes in `<c:ser>` element
+none
+
+### element under `<c:errBars>` element
+#### direct children of `<c:errBars>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:errDir>` | | specifies direction of error bar | | |
+| `<c:errBarType>` | | specifies error type in error bar | | |
+| `<c:errValType>` | | specifies error type of value in error bar | | |
+| `<c:minus>` | | specifies the error bar value in the negative direction.  | | It should be used iff the value of attr `val` in `<c:errValType>` |
+| `<c:plus>` | | specifies the error bar value in the positive direction. | | same as above. |
+| `<c:noEndCap>` | | determines whether an end cap is not drawn on the error bars. | | |
+| `<c:spPr>` | | has been discussed above. | | |
+| `<c:val>` | | specifies error bar value. | | |
+| `<extLst>` | | has been discussed above. | | |
+
+#### attributes in `<c:errBars>` element
+none
+
+### element under `<c:errDir>` element
+#### direct children of `<c:errDir>` element
+none
+
+#### attributes in `<c:errDir>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:errDir>`->`val`
+MUST be one of predefined value in data type [`ST_ErrDir`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_ErrDir_topic_ID0E6LRRB.html#topic_ID0E6LRRB)
+
+### element under `<c:errBarType>` element
+#### direct children of `<c:errBarType>` element
+none
+
+#### attributes in `<c:errBarType>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:errBarType>`->`val`
+MUST be one of predefined value in data type [`ST_ErrBarType`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_ErrBarType_topic_ID0EDGRRB.html#topic_ID0EDGRRB)
+
+### element under `<c:errValType>` element
+#### direct children of `<c:errValType>` element
+none
+
+#### attributes in `<c:errValType>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:errValType>`->`val`
+MUST be one of predefined value in data type [`ST_ErrValType`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_ErrValType_topic_ID0EGRRRB.html#topic_ID0EGRRRB)
+
+### element under `<c:minus>` element
+#### direct children of `<c:minus>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:numLit>` | *num*ber *lit*eral | | | |
+| `<c:numRef>` | | *num*ber *ref*erence | | |
+
+#### attributes in `<c:minus>` element
+none
+
+### element under `<c:numLit>` element
+#### direct children of `<c:numLit>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:ptCount>` | *p*oin*t* count | number of point | | |
+| `<c:pt>` | *p*oin*t* | | | |
+| `<c:formatCode>` | | | | |
+| `<extLst>` | | has been discussed above. | | |
+
+#### attributes in `<c:numLit>` element
+none
+
+### element under `<c:ptCount>` element
+#### direct children of `<c:ptCount>` element
+none
+
+#### attributes in `<c:ptCount>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:ptCount>`->`val`
+MUST be a non-negative integer.
+
+
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- | 
 | `<c:barDir>` | | bar *dir*ection | configure the orientation of bars. | This tag must be defined inside a bar chart (i.e. `<c:barChart>` tag) | |
@@ -1870,11 +2101,7 @@ MUST be one of values with data type [`ST_GapAmount`](https://c-rex.net/samples/
 | `<c:gapWidth>` | | gap width | specifies the gap width (i.e. the distance between two bars) | | |
 | | | | | | |
 | | | | | | |
-| `<c:order>` | | plotting order | specifies the plotting order of the series (inside `<c:ser>` tag). | | It is zero-based. |
-| `<c:order>` | | plotting order | specifies the plotting order of the series (inside `<c:ser>` tag). | | It is zero-based. | 
 | `<c:val>` | | value | specifies the actual data value of the series (inside `<c:ser>` tag). | | | 
-| `<c:errBars>` | | error bars | defines error bars for the data points in this series. | |  This is available for</br><ol><li>bar charts</li><li>column (bar) charts</li></ol> |
-| `<c:cat>` | | *cat*egory | specifies the categories or labels for the data points in this series. | | |
 | `<c:bubbleSize>` | | bubble size | specifies the size of bubbles. | | |
 | `<c:trendline>` | | trend line | defines trendlines for this specific series | | |
 | `<c:marker>` | | marker | defines the appearance of marker of data point. | | This is available for</br><ol><li>line charts</li><li>scatter charts</li></ol> |
