@@ -162,41 +162,17 @@ This effectively increases the spacing between the bars.
 | `"true"` | | | show percentage that a data point takes of its total for each series | | |
 | `"false"` | | | **NOT** show percentage that a data point takes of its total for each series | | |
 
-#### `<c:showBubbleSize>` -> `val` attribute
-| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"true"` | | | show bubble size for each series. | | |
-| `"false"` | | | **NOT** show bubble size for each series | | |
-
-#### `<c:showLeaderLines>` -> `val` attribute
-| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"true"` | | | show leader lines for each series. | | |
-| `"false"` | | | **NOT** show leader lines for each series | | |
-
 #### `<c:invertIfNegative>` -> `val` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"true"` | | | the color (of bar charts or column charts) will be inverted when its value it represents is negative. | | |
 | `"false"` | | | the color (of bar charts or column charts) will be **NOT** inverted when its value it represents is negative. | | |
 
-#### `<c:delete>` -> `val` attribute
-| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"true"` | | | the data labels is manually deleted by users.| | |
-| `"false"` | | | the data labels is **NOT** manually deleted by users. | | |
-
 #### `<c:numFmt>` -> `sourceLinked` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"true"` | | | indicates tthat the number format for the axis labels should inherit or be linked to the number format of the source data. | | |
 | `"false"` | | | indicates that is not linked to the formatting of the source data. And the number format specified in the `formatCode` attribute is explicitly defined within this chart element. | | |
-
-#### `<c:delete>` -> `val` attribute
-| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"true"` | | | the axis settings are automatic.| | |
-| `"false"` | | | the axis settings are manual. | | |
 
 #### `<c:noMultiLvlLbl>` -> `val` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -220,12 +196,6 @@ This effectively increases the spacing between the bars.
 | value type of attribute in tag | description | notes | notice |
 | :---------- | :----------- | :----- | :--- |
 | double (represented as string) or constants that be represented as double | scaling by logarithm of given base | e.g. `"2"`, `"e"`, `"10"` | |
-
-#### `<c:scaling>` -> `type` attribute
-| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"auto"` | | | indicates axis scaling is automatic. | | It is the default value. |
-| `"manual"` | | | indicates axis scaling is manual. | the specific scaling parameters are controlled by other child elements within `<c:catAx>` (such as `<c:lblSkip>`, `<c:tickMarkSkip>`) | |
 
 #### `<c:scaling>` -> `orientation` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -278,13 +248,7 @@ but it applies to minor tick marks.
 | `"ctr"` | | *c*en*t*e*r* | The text within the axis labels are center-aligned. | | |
 | `"r"` | | right | The text within the axis labels are right-aligned. | | |
 
-#### `<c:axPos>` -> `val` attribute
-| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"l"` | | left | specifies the position of the axis is **left** of the plot area of the chart  | | |
-| `"t"` | | top | specifies the position of the axis is **top** of the plot area of the chart | | |
-| `"r"` | | right | specifies the position of the axis is **right** of the plot area of the chart | | |
-| `"b"` | | bottom | specifies the position of the axis is **bottom** of the plot area of the chart | | |
+
 
 #### `<c:lengendPos>` -> `val` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -311,12 +275,7 @@ Due to there are unexhaustive available options, I just list some commonly used,
 >
 > + refer the MSDS [Number format codes in Excel](https://support.microsoft.com/en-us/office/number-format-codes-in-excel-for-mac-5026bbd6-04bc-48cd-bf33-80f18b4eae68)
 
-#### `<c:crosses>` -> `val` attribute
-| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"autoZero"` | | | indicates that the axis will cross at the zero point of the other axis if zero is within the range of that axis.</br>If zero is not within the range, the axis will cross at either the minimum or maximum value of the other axis, whichever is closer to zero. | It is the default value. | |
-| `"min"` | | | forces the axis to cross at the minimum value of the other axis | | |
-| `"max"` | | | forces the axis to cross at the maximum value of the other axis | | |
+
 
 #### `<c:crossBetween>` -> `val` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
