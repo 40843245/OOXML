@@ -2240,13 +2240,126 @@ MUST be with data type [`ST_Shape`](https://c-rex.net/samples/ooxml/e1/Part4/OOX
 | `<c:overlap>` | overlap | specifies, for different data series that belong to the same category, the degree that it will overlap each other. | It is relevant when you 5have multiple data series in a bar chart (or column chart) and the value of the attribute `val` in `<c:grouping>` tag is set to something other than `stacked` or `percentStacked`. | |
 | `<c:gapWidth>` | | has been discussed before | | |
 | `<c:ser>` | *ser*ies | has been discussed before | | |
-| `<c:serLines>` | *ser*ies lines |  | | |
+| `<c:serLines>` | *ser*ies lines | specifies series lines for the chart. | | |
 | `<c:shape>` |  | | | |
 | `<c:varyColors>` | | has been discussed before | | |
 | `<extLst>` | | has been discussed before | | |
 
 #### attributes in `<c:barChart>` element
 none
+
+### element under `<c:overlap>` element
+#### direct children of `<c:overlap>` element
+none
+
+#### attributes in `<c:overlap>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:overlap>`->`val`
+MUST be with data type [`ST_Overlap`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_Overlap_topic_ID0EUPURB.html#topic_ID0EUPURB)
+
+### element under `<c:serLines>` element
+#### direct children of `<c:serLines>` element
+| element | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<spPr>` | | has been discussed before. | | |
+
+#### attributes in `<c:serLines>` element
+none
+
+### element under `<c:bubbleChart>` element
+#### direct children of `<c:bubbleChart>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:axId>` | | has been discussed before | | |
+| `<c:dLbls>` | | has been discussed before | | |
+| `<c:bubble3D>` | | determines that the bubbles have a 3-D effect applied to them. | | |
+| `<c:bubbleScale>` | | specifies the scale factor for the bubble chart.  | | |
+| `<c:showNegBubbles>` | | determines that negative sized bubbles shall be shown on a bubble chart. | | |
+| `<c:sizeRepresents>` | | specifies how the bubble size values are represented on the chart. | | |
+| `<c:ser>` | *ser*ies | has been discussed before | | |
+| `<c:varyColors>` | | has been discussed before | | |
+| `<extLst>` | | has been discussed before | | |
+
+#### attributes in `<c:bubbleChart>` element
+none
+
+### element under `<c:bubble3D>` element
+#### direct children of `<c:bubble3D>` element
+none
+
+#### attributes in `<c:bubble3D>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:bubble3D>`->`val`
+MUST be a boolean.
+
+### element under `<c:bubbleScale>` element
+#### direct children of `<c:bubbleScale>` element
+none
+
+#### attributes in `<c:bubbleScale>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:bubbleScale>`->`val`
+MUST be with data type [`ST_BubbleScale`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_BubbleScale_topic_ID0EEZPRB.html#topic_ID0EEZPRB)
+
+### element under `<c:showNegBubbles>` element
+#### direct children of `<c:showNegBubbles>` element
+none
+
+#### attributes in `<c:showNegBubbles>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:showNegBubbles>`->`val`
+MUST be a boolean.
+
+### element under `<c:sizeRepresents>` element
+#### direct children of `<c:sizeRepresents>` element
+none
+
+#### attributes in `<c:sizeRepresents>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:sizeRepresents>`->`val`
+MUST be with data type [`ST_SizeRepresents`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_SizeRepresents_topic_ID0E4NWRB.html#topic_ID0E4NWRB)
+
+### element under `<c:area3DChart>` element
+#### direct children of `<c:area3DChart>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:dLbls>` | *d*ata *l*a*b*e*l**s* | a container that contains data labels. | | |
+| `<c:grouping>` | grouping | specifies how multiple data series within the same category should be grouped together visually. | | |
+| `<c:firstSliceAng>` | first slice *ang*le | specifies the angle of the first pie or doughnut chart slice | in degrees (clockwise from up) | |
+| `<c:holeSize>` | gap depth | specifies the gap amount. | | |
+| `<c:ser>` | *ser*ies | defines a series. | | |
+| `<c:varyColors>` | | specifies that each data marker in the series shall have a different color. | | |
+| `<extLst>` | | has been discussed before. | | |
+
+#### attributes in `<c:area3DChart>` element
+none
+
+### element under `<c:firstSliceAng>` element
+#### direct children of `<c:firstSliceAng>` element
+none
+
+#### attributes in `<c:firstSliceAng>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:firstSliceAng>`->`val`
+MUST be with data type [`ST_FirstSliceAng`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_FirstSliceAng_topic_ID0EMYRRB.html#topic_ID0EMYRRB)
 
 elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- | 
