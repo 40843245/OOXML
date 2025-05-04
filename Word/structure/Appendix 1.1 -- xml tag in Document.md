@@ -2059,7 +2059,7 @@ none
 MUST be one of predefined value in data type [`ST_ErrValType`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_ErrValType_topic_ID0EGRRRB.html#topic_ID0EGRRRB)
 
 ### element under `<c:minus>` element
-#### direct children of `<c:minus>` element
+#### direct children of `<2c:minus>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:numLit>` | *num*ber *lit*eral | | | |
@@ -2085,15 +2085,90 @@ none
 none
 
 #### attributes in `<c:ptCount>` element
-| elements | meaning | description | notes | notice |
+| attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
 ##### `<c:ptCount>`->`val`
 MUST be a non-negative integer.
 
-
+### element under `<c:pt>` element
+#### direct children of `<c:pt>` element
 | elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<v>` | | | | |
+
+#### attributes in `<c:pt>` element
+none
+
+### element under `<c:v>` element
+#### direct children of `<c:v>` element
+none
+
+#### attributes in `<c:v>` element
+none
+
+#### innerHTML of `<c:v>`
+MUST be data type [`ST_Xstring`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_Xstring_topic_ID0EZ32RB.html#topic_ID0EZ32RB)
+
+### element under `<c:formatCode>` element
+#### direct children of `<c:formatCode>` element
+none
+
+#### attributes in `<c:formatCode>` element
+none
+
+#### innerHTML of `<c:formatCode>`
+MUST be data type [`ST_Xstring`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_Xstring_topic_ID0EZ32RB.html#topic_ID0EZ32RB)
+
+### element under `<c:numRef>` element
+#### direct children of `<c:numRef>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<numCache>` | | | | |
+| `<f>` | | | | |
+| `<extLst>` | | | | |
+
+### attributes in `<c:numCache>` element
+none
+
+### element under `<c:numCache>` element
+#### direct children of `<c:numCache>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:ptCount>` | | has been discussed before | | |
+| `<c:pt>` | 5|  has been discussed before | | |
+| `<c:formatCode>` | |  has been discussed before | | |
+| `<extLst>` | | has been discussed above. | | |
+
+#### attributes in `<c:numCache>` element5
+none
+
+### element under `<c:varyColors>` element
+#### direct children of `<c:varyColors>` element
+none
+
+#### attributes in `<c:varyColors>` element5
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:val>` | |dicussed above.| | |
+
+##### `<c:varyColors>`->`val`
+MUST be a beolean.
+
+### element under `<c:grouping>` element
+#### direct children of `<c:varyCologrouping rs>` element
+none
+
+#### attributes in `<c:grouping>` element5
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:val>` | | dicussed above.| | |
+
+##### `<c:grouping>`->`val`
+MUST be a datatype [`grouping`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_Grouping_topic_ID0EMBSRB.html#topic_ID0EMBSRB) 3avalieb= atST_Groupi.
+
+elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- | 
 | `<c:barDir>` | | bar *dir*ection | configure the orientation of bars. | This tag must be defined inside a bar chart (i.e. `<c:barChart>` tag) | |
 | `<c:overlap>` | | overlap | specifies, for different data series that belong to the same category, the degree that it will overlap each other. | It is relevant when you 5have multiple data series in a bar chart (or column chart) and the value of the attribute `val` in `<c:grouping>` tag is set to something other than `stacked` or `percentStacked`. | |
