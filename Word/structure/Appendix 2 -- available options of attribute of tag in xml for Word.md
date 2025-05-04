@@ -213,27 +213,6 @@ Same as `<c:scaling>` -> `orientation` attribute.
 | `"span"` | | | connects the data points on either side of the blank cell with a line | essentially ignores the missing data and creates a continuous line. | |
 | `"zero"` | | | treats the blank cell or missing data point as a zero value and plots it accordingly on the chart. | | |
 
-#### `<c:majorTickMark>` -> `val` attribute
-| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"none"` | | none | no major tick marks should be displayed for this axis. | | |
-| `"in"` | | inside | the major tick marks should be drawn inside the plot area, extending from the axis line inwards. | | |
-| `"out"` | | outside | the major tick marks should be drawn outside the plot area, extending from the axis line outwards. | | |
-| `"cross"` | | cross it inside and outside | the major tick marks should cross the axis line, extending both inside and outside the plot area. | | |
-
-#### `<c:majorTickMark>` -> `val` attribute
-| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"none"` | | none | no major tick marks should be displayed for this axis. | | |
-| `"in"` | | inside | the major tick marks should be drawn inside the plot area, extending from the axis line inwards. | | |
-| `"out"` | | outside | the major tick marks should be drawn outside the plot area, extending from the axis line outwards. | | |
-| `"cross"` | | cross it inside and outside | the major tick marks should cross the axis line, extending both inside and outside the plot area. | | |
-
-#### `<c:minorTickMark>` -> `val` attribute
-availables value in this is same as that in `<c:majorTickMark>` -> `val`, 
-
-but it applies to minor tick marks.
-
 #### `<c:tickLblPos>` -> `val` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
