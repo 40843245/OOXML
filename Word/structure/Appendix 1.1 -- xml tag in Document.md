@@ -2161,12 +2161,12 @@ MUST be a beolean.
 #### direct children of `<c:areaChart>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
-| `<c:axId>` | *ax*is id | specifies axis id | | |
-| `<c:dLbls>` | *d*ata *l*a*b*e*l**s* | a container that contains data labels. | | |
-| `<c:grouping>` | grouping | specifies how multiple data series within the same category should be grouped together visually. | | |
-| `<c:dropLines>` | | specifies drop lines. | | |
-| `<c:ser>` | *ser*ies | defines a series. | | |
-| `<c:varyColors>` | | specifies that each data marker in the series shall have a different color. | | |
+| `<c:axId>` | | has been discussed before | | |
+| `<c:dLbls>` | | has been discussed before | | |
+| `<c:grouping>` | | has been discussed before | | |
+| `<c:dropLines>` | | has been discussed before | | |
+| `<c:ser>` | | has been discussed before | | |
+| `<c:varyColors>` | | has been discussed before | | |
 | `<extLst>` | | has been discussed before. | | |
 
 #### attributes in `<c:areaChart>` element
@@ -2176,33 +2176,35 @@ none
 #### direct children of `<c:bar3DChart>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
-| `<c:axId>` | *ax*is id | specifies axis id | | |
-| `<c:dLbls>` | *d*ata *l*a*b*e*l**s* | a container that contains data labels. | | |
-| `<c:grouping>` | grouping | specifies how multiple data series within the same category should be grouped together visually. | | |
-| `<c:gapDepth>` | gap depth | specifies the gap amount. | | |
+| `<c:axId>` | | has been discussed before| | |
+| `<c:dLbls>` | | has been discussed before | | |
+| `<c:grouping>` | | has been discussed before | | |
+| `<c:gapDepth>` | | has been discussed before | | |
 | `<c:gapWidth>` | | specifies the gap width. | | |
-| `<c:ser>` | *ser*ies | defines a series. | | |
-| `<c:shape>` |  | | | |
-| `<c:varyColors>` | specifies that each data marker in the series shall have a different color. | defines a series. | | |
+| `<c:ser>` | | has been discussed before | | |
+| `<c:shape>` | | has been discussed before | | |
+| `<c:varyColors>` | | has been discussed before | | |
+| `<extLst>` | | has been discussed before | | |
 
 #### attributes in `<c:bar3DChart>` element
 none
 
-### element under `<c:bar3DChart>` element
-#### direct children of `<c:bar3DChart>` element
+### element under `<c:barChart>` element
+#### direct children of `<c:barChart>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
-| `<c:axId>` | *ax*is id | specifies axis id | | |
-| `<c:dLbls>` | *d*ata *l*a*b*e*l**s* | a container that contains data labels. | | |
+| `<c:axId>` | | has been discussed before | | |
+| `<c:dLbls>` | | has been discussed before | | |
 | `<c:barDir>` | bar *dir*ection | specifies whether the series form a bar (horizontal) chart or a column (vertical) chart | | |
-| `<c:grouping>` | grouping | specifies how multiple data series within the same category should be grouped together visually. | | |
-| `<c:gapDepth>` | gap depth | specifies the gap amount. | | |
-| `<c:gapWidth>` | | specifies the gap width. | | |
-| `<c:ser>` | *ser*ies | defines a series. | | |
-| `<c:shape>` |  | | | |
-| `<c:varyColors>` | specifies that each data marker in the series shall have a different color. | defines a series. | | |
+| `<c:grouping>` | | has been discussed before | | |
+| `<c:gapDepth>` | | has been discussed before | | |
+| `<c:gapWidth>` | | has been discussed before | | |
+| `<c:ser>` | | has been discussed before | | |
+| `<c:shape>` |  | has been discussed before | | |
+| `<c:varyColors>` | | has been discussed before | | |
+| `<extLst>` | | has been discussed before | | |
 
-#### attributes in `<c:bar3DChart>` element
+#### attributes in `<c:barChart>` element
 none
 
 ### element under `<c:barDir>` element
@@ -2239,9 +2241,9 @@ MUST be with data type [`ST_Shape`](https://c-rex.net/samples/ooxml/e1/Part4/OOX
 | `<c:grouping>` | | has been discussed before | | |
 | `<c:overlap>` | overlap | specifies, for different data series that belong to the same category, the degree that it will overlap each other. | It is relevant when you 5have multiple data series in a bar chart (or column chart) and the value of the attribute `val` in `<c:grouping>` tag is set to something other than `stacked` or `percentStacked`. | |
 | `<c:gapWidth>` | | has been discussed before | | |
-| `<c:ser>` | *ser*ies | has been discussed before | | |
+| `<c:ser>` | | has been discussed before | | |
 | `<c:serLines>` | *ser*ies lines | specifies series lines for the chart. | | |
-| `<c:shape>` |  | | | |
+| `<c:shape>` | | has been discussed before | | |
 | `<c:varyColors>` | | has been discussed before | | |
 | `<extLst>` | | has been discussed before | | |
 
@@ -2269,6 +2271,183 @@ MUST be with data type [`ST_Overlap`](https://c-rex.net/samples/ooxml/e1/Part4/O
 #### attributes in `<c:serLines>` element
 none
 
+### element under `<c:line3DChart>` element
+#### direct children of `<c:line3DChart>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:axId>` |  | has been discussed before | | |
+| `<c:dLbls>` | | has been discussed before | | |
+| `<c:grouping>` | | has been discussed before | | |
+| `<c:gapDepth>` | | has been discussed before | | |
+| `<c:ser>` |  | has been discussed before | | |
+| `<c:dropLines>` |  | has been discussed before | | |
+| `<c:varyColors>` | | has been discussed before | | |
+| `<extLst>` | | has been discussed before | | |
+
+#### attributes in `<c:line3DChart>` element
+none
+
+### element under `<c:lineChart>` element
+#### direct children of `<c:lineChart>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:axId>` |  | has been discussed before | | |
+| `<c:dLbls>` | | has been discussed before | | |
+| `<c:grouping>` | | has been discussed before | | |
+| `<c:ser>` |  | has been discussed before | | |
+| `<c:dropLines>` |  | has been discussed before | | |
+| `<c:hiLowLines>` |  | specifies the high-low lines for the series. | | |
+| `<c:hiLowLines>` | *hi*gh low lines | specifies the up and down bars. | | |
+| `<c:upDownBars>` |  | has been discussed before | | |
+| `<c:marker>` | marker | defines the appearance of marker of data point. | | This is available for</br><ol><li>line charts</li><li>scatter charts</li></ol> |
+| `<c:smooth>` | smoothing | determines whether the line connecting the points on the chart shall be smoothed using Catmull-Rom splines. | | |
+| `<c:varyColors>` | | has been discussed before | | |
+| `<extLst>` | | has been discussed before | | |
+
+#### attributes in `<c:lineChart>` element
+none
+
+### element under `<c:hiLowLines>` element
+#### direct children of `<c:hiLowLines>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<spPr>` | | has been discussed before | | |
+
+#### attributes in `<c:hiLowLines>` element
+none
+
+### element under `<c:hiLowLines>` element
+#### direct children of `<c:hiLowLines>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:upBars>` | | specifies the up bars. | | |
+| `<c:downBars>` | | specifies the down bars. | | |
+| `<c:gapWidth>` | | has been discussed before | | |
+| `<extLst>` | | has been discussed before | | |
+
+#### attributes in `<c:hiLowLines>` element
+none
+
+### element under `<c:upBars>` element
+#### direct children of `<c:upBars>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<spPr>` | | has been discussed before | | |
+
+#### attributes in `<c:upBars>` element
+none
+
+### element under `<c:downBars>` element
+#### direct children of `<c:downBars>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<spPr>` | | has been discussed before | | |
+
+#### attributes in `<c:downBars>` element
+none
+
+### element under `<c:marker>` element
+#### direct children of `<c:marker>` element
+none
+
+#### attributes in `<c:marker>` element
+none
+
+##### `<c:marker>`->`val`
+MUST be a boolean.
+
+### element under `<c:smooth>` element
+#### direct children of `<c:smooth>` element
+none
+
+#### attributes in `<c:smooth>` element
+none
+
+##### `<c:smooth>`->`val`
+MUST be a boolean.
+
+### element under `<c:pie3DChart>` element
+#### direct children of `<c:pie3DChart>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:dLbls>` | | has been discussed before | | |
+| `<c:ser>` |  | has been discussed before | | |
+| `<c:varyColors>` | | has been discussed before | | |
+| `<extLst>` | | has been discussed before | | |
+
+#### attributes in `<c:pie3DChart>` element
+none
+
+### element under `<c:pieChart>` element
+#### direct children of `<c:pieChart>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:dLbls>` | | has been discussed before | | |
+| `<c:ser>` |  | has been discussed before | | |
+| `<c:firstSliceAng>` | | has been discussed before | | |
+| `<c:varyColors>` | | has been discussed before | | |
+| `<extLst>` | | has been discussed before | | |
+
+#### attributes in `<c:pieChart>` element
+none
+
+### element under `<c:surface3DChart>` element
+#### direct children of `<c:surface3DChart>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:dLbls>` | | has been discussed before | | |
+| `<c:ser>` |  | has been discussed before | | |
+| `<c:bandFmts>` | band *f*or*m*a*t**s* | acts like an container containing a collection of formatting bands for a surface chart indexed from low to high. | | |
+| `<c:wireframe>` | | determines whether the surface chart is drawn as a wireframe. | | |
+| `<extLst>` | | has been discussed before | | |
+
+#### attributes in `<c:surface3DChart>` element
+none
+
+### element under `<c:bandFmts>` element
+#### direct children of `<c:bandFmts>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:bandFmt>` | band *f*or*m*a*t* | specifies the formatting band of a surface chart. | | |
+
+#### attributes in `<c:bandFmts>` element
+none
+
+### element under `<c:bandFmt>` element
+#### direct children of `<c:bandFmt>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<idx>` | | has been discussed before | | |
+| `<spPr>` | | has been discussed before | | |
+
+#### attributes in `<c:bandFmt>` element
+none
+
+### element under `<c:wireframe>` element
+#### direct children of `<c:wireframe>` element
+none
+
+#### attributes in `<c:wireframe>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:wireframe>`->`val`
+MUST be a boolean.
+
+## element under `<c:surfaceChart>` element
+#### direct children of `<c:surfaceChart>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:dLbls>` | | has been discussed before | | |
+| `<c:ser>` |  | has been discussed before | | |
+| `<c:bandFmts>` | | has been discussed before | | |
+| `<c:wireframe>` | | has been discussed before | | |
+| `<extLst>` | | has been discussed before | | |
+
+#### attributes in `<c:surfaceChart>` element
+none
+
 ### element under `<c:bubbleChart>` element
 #### direct children of `<c:bubbleChart>` element
 | elements | meaning | description | notes | notice |
@@ -2279,7 +2458,7 @@ none
 | `<c:bubbleScale>` | | specifies the scale factor for the bubble chart.  | | |
 | `<c:showNegBubbles>` | | determines that negative sized bubbles shall be shown on a bubble chart. | | |
 | `<c:sizeRepresents>` | | specifies how the bubble size values are represented on the chart. | | |
-| `<c:ser>` | *ser*ies | has been discussed before | | |
+| `<c:ser>` | | has been discussed before | | |
 | `<c:varyColors>` | | has been discussed before | | |
 | `<extLst>` | | has been discussed before | | |
 
@@ -2334,19 +2513,19 @@ none
 ##### `<c:sizeRepresents>`->`val`
 MUST be with data type [`ST_SizeRepresents`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_SizeRepresents_topic_ID0E4NWRB.html#topic_ID0E4NWRB)
 
-### element under `<c:area3DChart>` element
-#### direct children of `<c:area3DChart>` element
+### element under `<c:doughnutChart>` element
+#### direct children of `<c:doughnutChart>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
-| `<c:dLbls>` | *d*ata *l*a*b*e*l**s* | a container that contains data labels. | | |
-| `<c:grouping>` | grouping | specifies how multiple data series within the same category should be grouped together visually. | | |
+| `<c:dLbls>` | | has been discussed before | | |
+| `<c:grouping>` | | has been discussed before | | |
 | `<c:firstSliceAng>` | first slice *ang*le | specifies the angle of the first pie or doughnut chart slice | in degrees (clockwise from up) | |
-| `<c:holeSize>` | gap depth | specifies the gap amount. | | |
-| `<c:ser>` | *ser*ies | defines a series. | | |
-| `<c:varyColors>` | | specifies that each data marker in the series shall have a different color. | | |
+| `<c:holeSize>` | | specifies the size of the hole in a doughnut chart group. | | |
+| `<c:ser>` | | has been discussed before | | |
+| `<c:varyColors>` | | has been discussed before | | |
 | `<extLst>` | | has been discussed before. | | |
 
-#### attributes in `<c:area3DChart>` element
+#### attributes in `<c:doughnutChart>` element
 none
 
 ### element under `<c:firstSliceAng>` element
@@ -2361,11 +2540,210 @@ none
 ##### `<c:firstSliceAng>`->`val`
 MUST be with data type [`ST_FirstSliceAng`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_FirstSliceAng_topic_ID0EMYRRB.html#topic_ID0EMYRRB)
 
+### element under `<c:holeSize>` element
+#### direct children of `<c:holeSize>` element
+none
+
+#### attributes in `<c:holeSize>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:holeSize>`->`val`
+MUST be with data type [`ST_HoleSize`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_HoleSize_topic_ID0EIHSRB.html#topic_ID0EIHSRB)
+
+### element under `<c:radarChart>` element
+#### direct children of `<c:radarChart>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:axId>` | | has been discussed before | | |
+| `<c:dLbls>` | | has been discussed before | | |
+| `<c:radarStyle>` | | specifies what type of radar chart shall be drawn. | | |
+| `<c:ser>` | | has been discussed before | | |
+| `<c:varyColors>` | | has been discussed before | | |
+| `<extLst>` | | has been discussed before | | |
+
+#### attributes in `<c:radarChart>` element
+none
+
+### element under `<c:radarStyle>` element
+#### direct children of `<c:radarStyle>` element
+none
+
+#### attributes in `<c:radarStyle>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:radarStyle>`->`val`
+MUST be with data type [`ST_RadarStyle`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_RadarStyle_topic_ID0EZLVRB.html#topic_ID0EZLVRB)
+
+### element under `<c:scatterChart>` element
+#### direct children of `<c:scatterChart>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:axId>` | | has been discussed before | | |
+| `<c:dLbls>` | | has been discussed before | | |
+| `<c:scatterStyle>` | | specifies the type of lines for the scatter chart. | | |
+| `<c:ser>` | | has been discussed before | | |
+| `<c:varyColors>` | | has been discussed before | | |
+| `<extLst>` | | has been discussed before | | |
+
+#### attributes in `<c:scatterChart>` element
+none
+
+### element under `<c:scatterStyle>` element
+#### direct children of `<c:scatterStyle>` element
+none
+
+#### attributes in `<c:scatterStyle>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:scatterStyle>`->`val`
+MUST be with data type [`ST_ScatterStyle`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_ScatterStyle_topic_ID0EB1VRB.html#topic_ID0EB1VRB)
+
+## element under `<c:stockChart>` element
+#### direct children of `<c:stockChart>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:axId>` | | has been discussed before | | |
+| `<c:dLbls>` | | has been discussed before | | |
+| `<c:ser>` |  | has been discussed before | | |
+| `<c:dropLines>` | | has been discussed before | | |
+| `<c:hiLowLines>` | | has been discussed before | | |
+| `<c:upDownBars>` | | has been discussed before | | |
+| `<extLst>` | | has been discussed before | | |
+
+#### attributes in `<c:stockChart>` element
+none
+
+## element under `<c:ofPieChart>` element
+#### direct children of `<c:ofPieChart>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:dLbls>` | | has been discussed before | | |
+| `<c:ser>` |  | has been discussed before | | |
+| `<c:serLines>` |  | has been discussed before | | |
+| `<c:gapWidth>` |  | has been discussed before | | |
+| `<c:custSplit>` | *cust*om split | acts like an container containing the custom split information for a pie-of-pie or bar-of-pie chart with a custom split type. | | |
+| `<c:ofPieType>` | | specifies whether this chart is pie of pie or bar of pie. | | |
+| `<c:secondPieSize>` | | specifies the size of the second pie or bar of a pie of pie chart or a bar of pie chart, as a percentage of the size of the first pie. | | |
+| `<c:splitType>` | |  specifies a value that shall be used to determine which data points are in the second pie or bar on a pie of pie or bar of pie chart. | | |
+| `<c:splitPos>` | split *pos*ition | specifies the size of the second pie or bar of a pie of pie chart or a bar of pie chart, as a percentage of the size of the first pie. | | |
+| `<extLst>` | | has been discussed before | | |
+
+#### attributes in `<c:ofPieChart>` element
+none
+
+### element under `<c:custSplit>` element
+#### direct children of `<c:custSplit>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:secondPiePt>` |  | specifies a data point that shall be drawn in the second pie or bar in a pie of pie or bar of pie chart. | | |
+
+#### attributes in `<c:custSplit>` element
+none
+
+### element under `<c:secondPiePt>` element
+#### direct children of `<c:secondPiePt>` element
+none
+
+#### attributes in `<c:secondPiePt>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:secondPiePt>`->`val`
+MUST be an unsigned integer (which takes 8-bits, ranging from `-128` to `127`).
+
+### element under `<c:ofPieType>` element
+#### direct children of `<c:ofPieType>` element
+none
+
+#### attributes in `<c:ofPieType>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:ofPieType>`->`val`
+MUST be one of predefined values in data type [`ST_OfPieType`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_OfPieType_topic_ID0EABURB.html#topic_ID0EABURB) 
+
+which is `bar`, or `pie`.
+
+### element under `<c:secondPieSize>` element
+#### direct children of `<c:secondPieSize>` element
+none
+
+#### attributes in `<c:secondPieSize>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:secondPieSize>`->`val`
+MUST be one of predefined values in data type [`ST_SecondPieSize`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_SecondPieSize_topic_ID0E3BWRB.html#topic_ID0E3BWRB) 
+
+### element under `<c:splitType>` element
+#### direct children of `<c:splitType>` element
+none
+
+#### attributes in `<c:splitType>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:splitType>`->`val`
+MUST be one of predefined values in data type [`ST_SplitType`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_SplitType_topic_ID0EOXWRB.html#topic_ID0EOXWRB) 
+
+### element under `<c:plotArea>`->`<c:dateAx>` element
+#### direct children of `<c:plotArea>`->`<c:splitType>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:axId>` | | has been discussed before | | |
+| `<c:delete/>` | | has been discussed before | | |
+| `<c:axPos>` | specifies the defined axis should be positioned at somewhere of the chart's plot area. | somewhere is according to value of `val` attribute, see [`<c:axPos>` -> `val` attribute section in Appendix 2](https://github.com/40843245/OOXML/blob/main/Word/structure/Appendix%202%20--%20available%20options%20of%20attribute%20of%20tag%20in%20xml%20for%20Word.md#caxpos---val-attribute) for available value of `val` attribute.  | |
+| `<c:baseTimeUnit>` | | specifies the smallest time unit that is represented on the date axis. | | |
+| `<c:crossAx/>` | cross *ax*is | establishes a relationship between the current axis and another axis in the chart. | The point at which they cross can be further defined by the `<c:crossAt>` element. | |
+| `<c:crosses/>` | | specifies how the axes cross each other.  | | |
+| `<c:crossesAt/>` | | specifies where on the axis the perpendicular axis crosses. | The units are dependent on the type of axis. | |
+| `<c:auto/>` | | determines the axis settings are automatic or manual by given boolean value. | | |
+| `<c:majorGridlines/>` | major grid lines | indicates the presence or formatting of major grid lines in a chart. | | |
+| `<c:majorTickMark/>` | major tick mark | specifies the type and placement of the major tick marks. | | |
+| `<c:majorUnit/>` | | specifies the distance between major ticks. | | |
+| `<c:majorTimeUnit/>` | major time unit | specifies the time unit for the major tick marks. | | |
+| `<c:minorGridlines/>` | minor grid lines | indicates the presence or formatting of minor grid lines in a chart. | | |
+| `<c:minorTickMark/>` | minor tick mark | specifies the type and placement of the minor tick marks. | | |
+| `<c:minorTimeUnit/>` | minor time unit | specifies the time unit for the minor tick marks. | | |
+| `<c:minorUnit/>` | | specifies the distance between minor ticks. | | |
+| `<c:tickLblPos/>` | *pos*ition of the tick *l*a*b*e*l*s | controls the position of the tick labels relative to the tick marks on the axis. | | |
+| `<c:lblOffset>` | *l*a*b*e*l* offset | specifies the offset of the axis labels from the axis line. | | |
+| `<c:scaling>` | scaling | controls scaling for axis | | |
+| `<c:numFmt/>` | | has been discussed before | | |
+| `<c:title>` | | has been discussed before | | |
+| `<c:spPr>` | | has been discussed before | | |
+| `<c:txPr>` | | has been discussed before | | |
+| `<extLst>` | | has been discussed before | | |
+
+#### attributes in `<c:plotArea>`->`<c:dateAx>` element
+none
+
+### element under `<c:splitPos>` element
+#### direct children of `<c:splitPos>` element
+none
+
+#### attributes in `<c:splitPos>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:splitPos>`->`val`
+MUST be a double floating number.
+
 elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- | 
 | `<c:bubbleSize>` | | bubble size | specifies the size of bubbles. | | |
 | `<c:trendline>` | | trend line | defines trendlines for this specific series | | |
-| `<c:marker>` | | marker | defines the appearance of marker of data point. | | This is available for</br><ol><li>line charts</li><li>scatter charts</li></ol> |
 | `<c:invertIfNegative>` | | | determines whether the color (of bar charts or column charts) will be inverted when its value it represents is negative. | | This is available for</br><ol><li>bar charts</li><li>column charts</li></ol>  |
 | | | | | | |
 | `<c:strRef>` | | *str*ing *ref*erence | defines a reference to string data in a spreadsheet. | | |
@@ -2373,24 +2751,14 @@ elements | meaning | description | notes | notice |
 | | | | | | |
 | `<c:strCache>` | | *str*ing cached | contains a cached copy of the string values from the referenced range.  | this is often included for performance reasons, so the charting application doesn't have to always access the spreadsheet to get the labels | |
 | `<c:catAx>` | | *cat*egory *ax*is | defining the category axis for some types of charts. | | |
-| `<c:scaling>` | | scaling | controls scaling for axis | | |
 | `<c:orientation>` | | orientation | controls orientation for axis | | |
 | | | | | | |
-| `<c:axPos>` | | | specifies the defined axis should be positioned at somewhere of the chart's plot area. | somewhere is according to value of `val` attribute, see [`<c:axPos>` -> `val` attribute section in Appendix 2](https://github.com/40843245/OOXML/blob/main/Word/structure/Appendix%202%20--%20available%20options%20of%20attribute%20of%20tag%20in%20xml%20for%20Word.md#caxpos---val-attribute) for available value of `val` attribute.  | |
-| `<c:majorTickMark/>` | | major tick mark | specifies the type and placement of the major tick marks. | | |
-| `<c:minorTickMark/>` | | minor tick mark | specifies the type and placement of the minor tick marks. | | |
-| `<c:tickLblPos/>` | | position of the tick labels | controls the position of the tick labels relative to the tick marks on the axis. | | |
-| `<c:crossAx/>` | | cross *ax*is | establishes a relationship between the current axis and another axis in the chart. | The point at which they cross can be further defined by the <c:crossAt> element. | |
-| `<c:auto/>` | | | determines the axis settings are automatic or manual by given boolean value. | | |
+
 | `<c:lblAlgn>` | | *l*a*b*e*l* *a**l*i*g**n*ment | determines alignment of the text within the axis labels. | | |
-| `<c:lblOffset>` | | *l*a*b*e*l* offset | specifies the offset of the axis labels from the axis line. | | |
 | `<c:noMultiLvlLbl>` | | no multi-*l*e*v*e*l* *l*a*b*e*l* | determines whether multi-level labels are disabled on the category axis. | | |
 | | | | | | |
 | `<c:axPos/>` | | *ax*is *pos*iton | specifies the position of the axis relative to the plot area of the chart | | |
 | | | | | | |
-| `<c:majorGridlines/>` | | major grid lines | indicates the presence or formatting of major grid lines in a chart. | | |
-| `<c:minorGridlines/>` | | minor grid lines | indicates the presence or formatting of minor grid lines in a chart. | | |
-| `<c:crosses/>` | | | specifies how the axes cross each other.  | | |
 | `<c:crossBetween/>` | | | specifies how category axes are crossed by value axes in a chart.  | | |
 | | | | | | |
 | `<c:legendPos>` | | | specifies the position of the legend. | | |
