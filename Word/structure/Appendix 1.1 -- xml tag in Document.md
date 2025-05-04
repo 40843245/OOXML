@@ -1697,7 +1697,7 @@ MUST be a boolean.
 
 ### element under `<c:title>` element
 #### direct children of `<c:title>` element
-| attributes | meaning | description | notes | notice |
+| elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:layout>`| layout | defines a layout for the plot area | | |
 | `<c:overlay>`| overlay | determines whether other chart elements shall be allowed to overlap | | |
@@ -1749,6 +1749,25 @@ none
 
 #### attributes in `<c:area3DChart>` element
 none
+
+### element under `<c:area3DChart>`->`<c:grouping>` element
+#### direct children of `<c:area3DChart>`->`<c:grouping>` element
+none
+
+#### attributes in `<c:area3DChart>`->`<c:grouping>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:area3DChart>`->`<c:grouping>`->`val`
+MUST be within data type [`ST_Grouping`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_grouping_topic_ID0ET2EQB.html#topic_ID0ET2EQB)
+
+| values | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `"standard"` | standard | specifies that the chart series are drawn next to each other on the depth axis.| | |
+| `"percentStacked"` | 100% stacked | specifies that the chart series are drawn next to each other along the value axis and scaled to total 100%. | The total height (or length) of the stack represents the sum of the values for that category which must be 100%. | |
+| `"clustered"` | clustered | bars (or columns) representing different series within the same category are placed side-by-side. | | |
+| `"stacked"` | stacked | the values from different series within the same category are stacked on top of each other. | The total height (or length) of the stack represents the sum of the values for that category. | |
 
 ### element under `<c:axId>` element
 #### direct children of `<c:axId>` element
@@ -1971,7 +1990,7 @@ MUST be one of predefined values in data type [`ST_DLblPos`](https://c-rex.net/s
 
 ### element under `<c:dropLines>` element
 #### direct children of `<c:dropLines>` element
-| attributes | meaning | description | notes | notice |
+| elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:spPr>` | | has been discussed before. | | |
 
@@ -2172,13 +2191,25 @@ MUST be a beolean.
 #### attributes in `<c:areaChart>` element
 none
 
+### element under `<c:areaChart>`->`<c:grouping>` element
+#### direct children of `<c:areaChart>`->`<c:grouping>` element
+none
+
+#### attributes in `<c:areaChart>`->`<c:grouping>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:areaChart>`->`<c:grouping>`->`val`
+MUST be within data type [`ST_Grouping`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_grouping_topic_ID0ET2EQB.html#topic_ID0ET2EQB)
+
 ### element under `<c:bar3DChart>` element
 #### direct children of `<c:bar3DChart>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:axId>` | | has been discussed before| | |
 | `<c:dLbls>` | | has been discussed before | | |
-| `<c:grouping>` | | has been discussed before | | |
+| `<c:grouping>` | | see below | | |
 | `<c:gapDepth>` | | has been discussed before | | |
 | `<c:gapWidth>` | | specifies the gap width. | | |
 | `<c:ser>` | | has been discussed before | | |
@@ -2188,6 +2219,25 @@ none
 
 #### attributes in `<c:bar3DChart>` element
 none
+
+### element under `<c:bar3DChart>`->`<c:grouping>` element
+#### direct children of `<c:bar3DChart>`->`<c:grouping>` element
+none
+
+#### attributes in `<c:bar3DChart>`->`<c:grouping>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:bar3DChart>`->`<c:grouping>`->`val`
+MUST be within data type [`ST_BarGrouping`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_BarGrouping_topic_ID0ETSPRB.html#topic_ID0ETSPRB)
+
+| values | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `"standard"` | standard | specifies that the chart series are drawn next to each other on the depth axis.| | |
+| `"percentStacked"` | 100% stacked | specifies that the chart series are drawn next to each other along the value axis and scaled to total 100%. | The total height (or length) of the stack represents the sum of the values for that category which must be 100%. | |
+| `"clustered"` | clustered | bars (or columns) representing different series within the same category are placed side-by-side. | | |
+| `"stacked"` | stacked | the values from different series within the same category are stacked on top of each other. | The total height (or length) of the stack represents the sum of the values for that category. | |
 
 ### element under `<c:barChart>` element
 #### direct children of `<c:barChart>` element
@@ -2207,6 +2257,25 @@ none
 #### attributes in `<c:barChart>` element
 none
 
+### element under `<c:barChart>`->`<c:grouping>` element
+#### direct children of `<c:barChart>`->`<c:grouping>` element
+none
+
+#### attributes in `<c:barChart>`->`<c:grouping>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:barChart>`->`<c:grouping>`->`val`
+MUST be within data type [`ST_BarGrouping`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_BarGrouping_topic_ID0ETSPRB.html#topic_ID0ETSPRB)
+
+| values | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `"standard"` | standard | specifies that the chart series are drawn next to each other on the depth axis.| | |
+| `"percentStacked"` | 100% stacked | specifies that the chart series are drawn next to each other along the value axis and scaled to total 100%. | The total height (or length) of the stack represents the sum of the values for that category which must be 100%. | |
+| `"clustered"` | clustered | bars (or columns) representing different series within the same category are placed side-by-side. | | |
+| `"stacked"` | stacked | the values from different series within the same category are stacked on top of each other. | The total height (or length) of the stack represents the sum of the values for that category. | |
+
 ### element under `<c:barDir>` element
 #### direct children of `<c:barDir>` element
 none
@@ -2219,6 +2288,13 @@ none
 ##### `<c:barDir>`->`val`
 MUST be with data type [`ST_BarDir`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_BarDir_topic_ID0EMNPRB.html#topic_ID0EMNPRB)
 
+which listed in following table.
+
+| values | meaning | description | notes | notice |
+| :---------- |  :----- | :--- | :-- | :-- |
+| `"col"` | *col*umn | The bars will be oriented vertically. | | |
+| `"bar"` | bar | The bars will be oriented horizontally. | | |
+
 ### element under `<c:shape>` element
 #### direct children of `<c:shape>` element
 none
@@ -2230,25 +2306,6 @@ none
 
 ##### `<c:shape>`->`val`
 MUST be with data type [`ST_Shape`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_Shape_topic_ID0ECGWRB.html#topic_ID0ECGWRB)
-
-### element under `<c:barChart>` element
-#### direct children of `<c:barChart>` element
-| elements | meaning | description | notes | notice |
-| :----------  | :----- | :--- | :-- | :-- |
-| `<c:axId>` | | has been discussed before | | |
-| `<c:dLbls>` | | has been discussed before | | |
-| `<c:barDir>` | | has been discussed before | | |
-| `<c:grouping>` | | has been discussed before | | |
-| `<c:overlap>` | overlap | specifies, for different data series that belong to the same category, the degree that it will overlap each other. | It is relevant when you 5have multiple data series in a bar chart (or column chart) and the value of the attribute `val` in `<c:grouping>` tag is set to something other than `stacked` or `percentStacked`. | |
-| `<c:gapWidth>` | | has been discussed before | | |
-| `<c:ser>` | | has been discussed before | | |
-| `<c:serLines>` | *ser*ies lines | specifies series lines for the chart. | | |
-| `<c:shape>` | | has been discussed before | | |
-| `<c:varyColors>` | | has been discussed before | | |
-| `<extLst>` | | has been discussed before | | |
-
-#### attributes in `<c:barChart>` element
-none
 
 ### element under `<c:overlap>` element
 #### direct children of `<c:overlap>` element
@@ -2287,6 +2344,18 @@ none
 #### attributes in `<c:line3DChart>` element
 none
 
+### element under `<c:line3DChart>`->`<c:grouping>` element
+#### direct children of `<c:line3DChart>`->`<c:grouping>` element
+none
+
+#### attributes in `<c:line3DChart>`->`<c:grouping>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:line3DChart>`->`<c:grouping>`->`val`
+MUST be within data type [`ST_Grouping`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_grouping_topic_ID0ET2EQB.html#topic_ID0ET2EQB)
+
 ### element under `<c:lineChart>` element
 #### direct children of `<c:lineChart>` element
 | elements | meaning | description | notes | notice |
@@ -2306,6 +2375,18 @@ none
 
 #### attributes in `<c:lineChart>` element
 none
+
+### element under `<c:lineChart>`->`<c:grouping>` element
+#### direct children of `<c:lineChart>`->`<c:grouping>` element
+none
+
+#### attributes in `<c:lineChart>`->`<c:grouping>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:lineChart>`->`<c:grouping>`->`val`
+MUST be within data type [`ST_Grouping`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_grouping_topic_ID0ET2EQB.html#topic_ID0ET2EQB)
 
 ### element under `<c:hiLowLines>` element
 #### direct children of `<c:hiLowLines>` element
@@ -2870,6 +2951,175 @@ availables value in this is same as that in `<c:majorTickMark>`->`val`,
 
 but it applies to minor tick marks.
 
+### element under `<c:plotArea>`->`<c:dateAx>`->`<c:tickLblPos>` element
+#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:tickLblPos>` element
+none
+
+#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:tickLblPos>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:plotArea>`->`<c:dateAx>`->`<c:tickLblPos>`->`val`
+| values | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `"high"` | above |  The tick labels are positioned **above** relative to the axis line | | |
+| `"low"` | below | The tick labels are positioned **below** relative to the axis line | | |
+| `"nextToAxis"` | next to axis | The tick labels are positioned **next to** the axis line | | |
+
+### element under `<c:plotArea>`->`<c:dateAx>`->`<c:lblOffset>` element
+#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:lblOffset>` element
+none
+
+#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:lblOffset>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:plotArea>`->`<c:dateAx>`->`<c:lblOffset>`->`val`
+MUST be within data type [`ST_LblOffset`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_LblOffset_topic_ID0E1BTRB.html#topic_ID0E1BTRB)
+
+which ranging from `0` to `1000`.
+
+### element under `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>` element
+#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:orientation>` | | specifies the orientation of the value axis. | | |
+| `<c:max>` | | specifies the maximum value of the axis. | | |
+| `<c:min>` | | specifies the minimum value of the axis. | | |
+| `<c:logBase>` | | specifies the base for a logarithmic scale. | If present, the axis will use a logarithmic scale with the given base.  | |
+| `<extLst>` | | has been discussed before. | | |
+
+#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>` element
+none
+
+### element under `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:orientation>` element
+#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:orientation>` element
+none
+
+#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:orientation>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:plotArea>`->`<c:dateAx>`->`<c:plotArea>`->`<c:scaling>`->`<c:orientation>`->`val`
+| values | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `"minMax"` | | | indicates the normal or standard orientation, where the axis values increase from the minimum value at one end to the maximum value at the other. | <ol><li>For a vertical axis, this typically means values increase from bottom to top.</li><li>For a horizontal axis, values increase from left to right.</li></ol> | It is the default value. |
+| `"maxMin"` | | | inverts the orientation of the axis. The values will decrease from the maximum value at one end to the minimum value at the other. | It is the sematically opposite of `"minMax"` | |
+
+### element under `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:max>` element
+#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:max>` element
+none
+
+#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:max>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:max>`->`val`
+MUST be a positive double floating number.
+
+### element under `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:min>` element
+#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:min>` element
+none
+
+#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:min>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:min>`->`val`
+MUST be a positive double floating number.
+
+### element under `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:logBase>` element
+#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:logBase>` element
+none
+
+#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:logBase>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:logBase>`->`val`
+MUST be a positive double floating number.
+
+It will scale by logarithm of given base 
+
+e.g. `"2"`, `"e"`, `"10"`.
+
+### element under `<c:plotArea>`->`<c:dateAx>`->`<c:numFmt>` element
+#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:numFmt>` element
+none
+
+#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:numFmt>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `c:sourceLinked` | | specifies that source is linked. | | |
+| `c:formatCode` | number formattig code | specifies number formattig code. | | 
+
+##### `<c:plotArea>`->`<c:dateAx>`->`<c:numFmt>`->`formatCode`
+In standard OOXML, MUST be a format code listed in the field of `formatCode` in [mapping table](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_numFmt_topic_ID0EHDH6.html#topic_ID0EHDH6).
+
+<img width="587" alt="image" src="https://github.com/user-attachments/assets/16e63cdb-93cc-4c33-b84a-9f2679ca3a8b" />
+
+> [!IMPORTANT]
+>
+> In SpreadSheetML, it can be one of [formatting code in Microsoft Office Excel](https://github.com/40843245/Microsoft_Office/blob/main/Product/Excel/formatting%20code/formatting%20code.md) 
+> 
+> According to Google Gemini's answer,
+>
+> ```
+> The possible values are essentially the same as the number formatting codes you would use in Microsoft Excel.
+> ```
+>
+
+> [!NOTE]
+> To search the formatting code, you can
+> 
+> + see my notes [formatting code in Microsoft Office Excel](https://github.com/40843245/Microsoft_Office/blob/main/Product/Excel/formatting%20code/formatting%20code.md) which list the commonly used formatting code, or
+>
+> + refer the MSDS [Number format codes in Excel](https://support.microsoft.com/en-us/office/number-format-codes-in-excel-for-mac-5026bbd6-04bc-48cd-bf33-80f18b4eae68)
+
+
+##### `<c:plotArea>`->`<c:dateAx>`->`<c:numFmt>`->`sourceLinked`
+MUST be a boolean.
+
+### element under <c:plotArea>`->`<c:dateAx>`->`<c:title>` element
+#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:title>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:layout>` | | has been discussed before. | | |
+| `<c:overlay>` | determines whether other chart elements shall be allowed to overlap this chart element. | | | |
+| `<c:spPr>` | | has been discussed before. | | |
+| `<c:tx>` | | has been discussed before. | | |
+| `<c:txPr>` | | has been discussed before. | | |
+| `<extLst>` | | has been discussed before. | | |
+
+#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:title>` element
+none
+
+### element under `<c:plotArea>`->`<c:dateAx>`->`<c:title>`->`<c:overlay>` element
+#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:title>`->`<c:overlay>` element
+none
+
+#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:title>`->`<c:overlay>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:plotArea>`->`<c:dateAx>`->`<c:title>`->`<c:overlay>`->`val`
+MUST be a boolean.
+
+### element under <c:plotArea>`->`<c:dateAx>`->`<c:title>` element
+#### direct children of `<c:autoTitleDeleted>` element
+none
+
+
+##### `<c:autoTitleDeleted>`->`val`
+MUST be a boolean.
+
 elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- | 
 | `<c:bubbleSize>` | | bubble size | specifies the size of bubbles. | | |
@@ -2921,11 +3171,6 @@ elements | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `val` | | | determines whether a chart title is automatically generated by the charting application (e.g. Excel or PowerPoint) if it has been manually deleted by the user. | | |
 
-###### attribute in `<c:barDir>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `val` | | | determines the orientation of bars. | | |
-
 ###### attribute in `<c:grouping>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
@@ -2976,16 +3221,6 @@ elements | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `val` | | | determines whether show leader lines for each series. | | |
 
-###### attribute in `<c:ptCount>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `val` | | | stores the number of cached copy of string value or numerical values | | |
-
-###### attribute in `<c:idx>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `val` | | | specifies the index of data point | | It is zero-based |
-
 ###### attribute in `<c:invertIfNegative>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
@@ -2995,13 +3230,6 @@ elements | meaning | description | notes | notice |
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `val` | | | specifies the axis id | | |
-
-###### attribute in `<c:scaling>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `logBase` | | | specifies the base for a logarithmic scale. If present, the axis will use a logarithmic scale with the given base. | | |
-| `orientation` | | orientation | | specifies the orientation of the value axis. | | |
-| `type` | | type | specifies the scaling type for the category axis | | | 
 
 ###### attribute in `<c:orientation>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -3066,11 +3294,7 @@ elements | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `val` | | | specifies the position of the axis relative to the plot area of the chart. | | |
 
-###### attribute in `<c:numFmt>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `sourceLinked` | | | specifies that source is linked. | | |
-| `formatCode` | | number formattig code | specifies number formattig code. | | |
+|
 
 ###### attribute in `<c:crosses>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
