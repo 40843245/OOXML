@@ -1741,9 +1741,11 @@ none
 | `<c:axId>` | *ax*is id | specifies axis id | | |
 | `<c:dLbls>` | *d*ata *l*a*b*e*l**s* | a container that contains data labels. | | |
 | `<c:grouping>` | grouping | specifies how multiple data series within the same category should be grouped together visually. | | |
+| `<c:dropLines>` | | specifies drop lines | | |
 | `<c:gapDepth>` | gap depth | specifies the gap amount. | | |
 | `<c:ser>` | *ser*ies | defines a series. | | |
-| `<c:varyColors>` | specifies that each data marker in the series shall have a different color. | defines a series. | | |
+| `<c:varyColors>` | | specifies that each data marker in the series shall have a different color. | | |
+| `<extLst>` | | has been discussed before. | | |
 
 #### attributes in `<c:area3DChart>` element
 none
@@ -2073,7 +2075,7 @@ none
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:ptCount>` | *p*oin*t* count | number of point | | |
-| `<c:pt>` | *p*oin*t* | | | |
+| `<c:pt>` | *p*oin*t* | specifies a data point | | |
 | `<c:formatCode>` | | | | |
 | `<extLst>` | | has been discussed above. | | |
 
@@ -2096,7 +2098,7 @@ MUST be a non-negative integer.
 #### direct children of `<c:pt>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
-| `<v>` | | | | |
+| `<c:v>` | | the actual data value of a point in cached copy of string values or numerical values | | |
 
 #### attributes in `<c:pt>` element
 none
@@ -2126,7 +2128,7 @@ MUST be data type [`ST_Xstring`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<numCache>` | | | | |
-| `<f>` | | | | |
+| `<c:f>` | f*ormula | contains the formula that specifies the range of cells in the spreadsheet. | | |
 | `<extLst>` | | | | |
 
 ### attributes in `<c:numCache>` element
@@ -2137,8 +2139,8 @@ none
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:ptCount>` | | has been discussed before | | |
-| `<c:pt>` | 5|  has been discussed before | | |
-| `<c:formatCode>` | |  has been discussed before | | |
+| `<c:pt>` | |  has been discussed before | | |
+| `<c:formatCode>` | | has been discussed before | | |
 | `<extLst>` | | has been discussed above. | | |
 
 #### attributes in `<c:numCache>` element5
@@ -2156,20 +2158,18 @@ none
 ##### `<c:varyColors>`->`val`
 MUST be a beolean.
 
-### element under `<c:bar3DChart>` element
-#### direct children of `<c:bar3DChart>` element
+#### direct children of `<c:areaChart>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:axId>` | *ax*is id | specifies axis id | | |
 | `<c:dLbls>` | *d*ata *l*a*b*e*l**s* | a container that contains data labels. | | |
 | `<c:grouping>` | grouping | specifies how multiple data series within the same category should be grouped together visually. | | |
-| `<c:gapDepth>` | gap depth | specifies the gap amount. | | |
-| `<c:gapWidth>` | | specifies the gap width. | | |
+| `<c:dropLines>` | | specifies drop lines. | | |
 | `<c:ser>` | *ser*ies | defines a series. | | |
-| `<c:shape>` |  | | | |
-| `<c:varyColors>` | specifies that each data marker in the series shall have a different color. | defines a series. | | |
+| `<c:varyColors>` | | specifies that each data marker in the series shall have a different color. | | |
+| `<extLst>` | | has been discussed before. | | |
 
-#### attributes in `<c:bar3DChart>` element
+#### attributes in `<c:areaChart>` element
 none
 
 ### element under `<c:bar3DChart>` element
@@ -2187,6 +2187,35 @@ none
 
 #### attributes in `<c:bar3DChart>` element
 none
+
+### element under `<c:bar3DChart>` element
+#### direct children of `<c:bar3DChart>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:axId>` | *ax*is id | specifies axis id | | |
+| `<c:dLbls>` | *d*ata *l*a*b*e*l**s* | a container that contains data labels. | | |
+| `<c:barDir>` | bar *dir*ection | specifies whether the series form a bar (horizontal) chart or a column (vertical) chart | | |
+| `<c:grouping>` | grouping | specifies how multiple data series within the same category should be grouped together visually. | | |
+| `<c:gapDepth>` | gap depth | specifies the gap amount. | | |
+| `<c:gapWidth>` | | specifies the gap width. | | |
+| `<c:ser>` | *ser*ies | defines a series. | | |
+| `<c:shape>` |  | | | |
+| `<c:varyColors>` | specifies that each data marker in the series shall have a different color. | defines a series. | | |
+
+#### attributes in `<c:bar3DChart>` element
+none
+
+### element under `<c:barDir>` element
+#### direct children of `<c:barDir>` element
+none
+
+#### attributes in `<c:barDir>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:barDir>`->`val`
+MUST be with data type [`ST_BarDir`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_BarDir_topic_ID0EMNPRB.html#topic_ID0EMNPRB)
 
 ### element under `<c:shape>` element
 #### direct children of `<c:shape>` element
@@ -2200,15 +2229,27 @@ none
 ##### `<c:shape>`->`val`
 MUST be with data type [`ST_Shape`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_Shape_topic_ID0ECGWRB.html#topic_ID0ECGWRB)
 
+### element under `<c:barChart>` element
+#### direct children of `<c:barChart>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:axId>` | | has been discussed before | | |
+| `<c:dLbls>` | | has been discussed before | | |
+| `<c:barDir>` | | has been discussed before | | |
+| `<c:grouping>` | | has been discussed before | | |
+| `<c:overlap>` | overlap | specifies, for different data series that belong to the same category, the degree that it will overlap each other. | It is relevant when you 5have multiple data series in a bar chart (or column chart) and the value of the attribute `val` in `<c:grouping>` tag is set to something other than `stacked` or `percentStacked`. | |
+| `<c:gapWidth>` | | has been discussed before | | |
+| `<c:ser>` | *ser*ies | has been discussed before | | |
+| `<c:serLines>` | *ser*ies lines |  | | |
+| `<c:shape>` |  | | | |
+| `<c:varyColors>` | | has been discussed before | | |
+| `<extLst>` | | has been discussed before | | |
+
+#### attributes in `<c:barChart>` element
+none
+
 elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- | 
-| `<c:barDir>` | | bar *dir*ection | configure the orientation of bars. | This tag must be defined inside a bar chart (i.e. `<c:barChart>` tag) | |
-| `<c:overlap>` | | overlap | specifies, for different data series that belong to the same category, the degree that it will overlap each other. | It is relevant when you 5have multiple data series in a bar chart (or column chart) and the value of the attribute `val` in `<c:grouping>` tag is set to something other than `stacked` or `percentStacked`. | |
-| | | | | | |
-| `<c:gapWidth>` | | gap width | specifies the gap width (i.e. the distance between two bars) | | |
-| | | | | | |
-| | | | | | |
-| `<c:val>` | | value | specifies the actual data value of the series (inside `<c:ser>` tag). | | | 
 | `<c:bubbleSize>` | | bubble size | specifies the size of bubbles. | | |
 | `<c:trendline>` | | trend line | defines trendlines for this specific series | | |
 | `<c:marker>` | | marker | defines the appearance of marker of data point. | | This is available for</br><ol><li>line charts</li><li>scatter charts</li></ol> |
@@ -2218,13 +2259,6 @@ elements | meaning | description | notes | notice |
 | `<c:f>` | | *f*ormula | contains the formula that specifies the range of cells in the spreadsheet. | | |
 | | | | | | |
 | `<c:strCache>` | | *str*ing cached | contains a cached copy of the string values from the referenced range.  | this is often included for performance reasons, so the charting application doesn't have to always access the spreadsheet to get the labels | |
-| `<c:ptCount>` | | *p*oin*t* count | the number of point in cached copy of string values or numerical values (according to the value of `val` attribute) | | |
-| `<c:pt>` | | *p*oin*t* | defines a point in cached copy of string values or numerical values | | |
-| `<c:v>` | | value | the actual data value of a point in cached copy of string values or numerical values | | |
-| | | | | | |
-| `<c:numCache>` | | *num*ber cached | contains a cached copy of the numerical values from the referenced range.  | this is often included for performance reasons, so the charting application doesn't have to always access the spreadsheet to get the labels | |
-| `<c:formatCode>` | | number formatting code | specifies the number formatting code that was applied to the original data in the spreadsheet. | |
-| | | | | | |
 | `<c:catAx>` | | *cat*egory *ax*is | defining the category axis for some types of charts. | | |
 | `<c:scaling>` | | scaling | controls scaling for axis | | |
 | `<c:orientation>` | | orientation | controls orientation for axis | | |
