@@ -2728,17 +2728,147 @@ MUST be one of predefined values in data type [`ST_SplitType`](https://c-rex.net
 #### attributes in `<c:plotArea>`->`<c:dateAx>` element
 none
 
-### element under `<c:splitPos>` element
-#### direct children of `<c:splitPos>` element
+### element under `<c:plotArea>`->`<c:dateAx>`->`<c:axPos>` element
+#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:axPos>` element
 none
 
-#### attributes in `<c:splitPos>` element
-| elements | meaning | description | notes | notice |
+#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:axPos>` element
+| attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:splitPos>`->`val`
-MUST be a double floating number.
+##### `<c:plotArea>`->`<c:dateAx>`->`<c:axPos>`->`val`
+| values | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `"l"` | *l*eft | specifies the position of the axis is **left** of the plot area of the chart  | | |
+| `"t"` | *t*op | specifies the position of the axis is **top** of the plot area of the chart | | |
+| `"r"` | *r*ight | specifies the position of the axis is **right** of the plot area of the chart | | |
+| `"b"` | *b*ottom | specifies the position of the axis is **bottom** of the plot area of the chart | | |
+
+### element under `<c:plotArea>`->`<c:dateAx>`->`<c:baseTimeUnit>` element
+#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:baseTimeUnit>` element
+none
+
+#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:baseTimeUnit>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:plotArea>`->`<c:dateAx>`->`<c:baseTimeUnit>`->`val`
+MUST be within data type [`ST_TimeUnit`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_TimeUnit_topic_ID0E1N2RB.html#topic_ID0E1N2RB)
+
+### element under `<c:plotArea>`->`<c:dateAx>`->`<c:majorTimeUnit>` element
+#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:majorTimeUnit>` element
+none
+
+#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:majorTimeUnit>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:plotArea>`->`<c:dateAx>`->`<c:majorTimeUnit>`->`val`
+MUST be within data type [`ST_TimeUnit`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_TimeUnit_topic_ID0E1N2RB.html#topic_ID0E1N2RB)
+
+### element under `<c:plotArea>`->`<c:dateAx>`->`<c:minorTimeUnit>` element
+#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:minorTimeUnit>` element
+none
+
+#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:minorTimeUnit>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:plotArea>`->`<c:dateAx>`->`<c:minorTimeUnit>`->`val`
+MUST be within data type [`ST_TimeUnit`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_TimeUnit_topic_ID0E1N2RB.html#topic_ID0E1N2RB)
+
+### element under `<c:plotArea>`->`<c:dateAx>`->`<c:majorUnit>` element
+#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:majorUnit>` element
+none
+
+#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:majorUnit>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:plotArea>`->`<c:dateAx>`->`<c:majorUnit>`->`val`
+MUST be within data type [`ST_AxisUnit`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_AxisUnit_topic_ID0ERCPRB.html#topic_ID0ERCPRB)
+
+### element under `<c:plotArea>`->`<c:dateAx>`->`<c:minorUnit>` element
+#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:minorUnit>` element
+none
+
+#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:minorUnit>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:plotArea>`->`<c:dateAx>`->`<c:minorUnit>`->`val`
+MUST be within data type [`ST_AxisUnit`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_AxisUnit_topic_ID0ERCPRB.html#topic_ID0ERCPRB)
+
+### element under `<c:plotArea>`->`<c:dateAx>`->`<c:crosses>` element
+#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:crosses>` element
+none
+
+#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:crosses>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:plotArea>`->`<c:dateAx>`->`<c:crosses>`->`val`
+| values | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `"autoZero"` | | | indicates that the axis will cross at the zero point of the other axis if zero is within the range of that axis.</br>If zero is not within the range, the axis will cross at either the minimum or maximum value of the other axis, whichever is closer to zero. | It is the default value. | |
+| `"min"` | | | forces the axis to cross at the minimum value of the other axis | | |
+| `"max"` | | | forces the axis to cross at the maximum value of the other axis | | |
+
+### element under `<c:plotArea>`->`<c:dateAx>`->`<c:majorGridlines>` element
+#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:majorGridlines>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<spPr>` | | has beeb discussed before. | | |
+
+#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:majorGridlines>` element
+none
+
+### element under `<c:plotArea>`->`<c:dateAx>`->`<c:minorGridlines>` element
+#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:minorGridlines>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<spPr>` | | has beeb discussed before. | | |
+
+#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:minorGridlines>` element
+none
+
+### element under `<c:plotArea>`->`<c:dateAx>`->`<c:majorTickMark>` element
+#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:majorTickMark>` element
+none
+
+#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:majorTickMark>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:plotArea>`->`<c:dateAx>`->`<c:majorTickMark>`->`val`
+| values | meaning | description | notes | notice |
+| :--------- | :----- | :--- | :-- | :-- |
+| `"none"` | none | no major tick marks should be displayed for this axis. | | |
+| `"in"` | *in*side | the major tick marks should be drawn inside the plot area, extending from the axis line inwards. | | |
+| `"out"` | *out*side | the major tick marks should be drawn outside the plot area, extending from the axis line outwards. | | |
+| `"cross"` | cross it inside and outside | the major tick marks should cross the axis line, extending both inside and outside the plot area. | | |
+
+### element under `<c:plotArea>`->`<c:dateAx>`->`<c:minorTickMark>` element
+#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:minorTickMark>` element
+none
+
+#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:minorTickMark>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:plotArea>`->`<c:dateAx>`->`<c:minorTickMark>`->`val`
+availables value in this is same as that in `<c:majorTickMark>`->`val`, 
+
+but it applies to minor tick marks.
 
 elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- | 
@@ -2756,9 +2886,6 @@ elements | meaning | description | notes | notice |
 
 | `<c:lblAlgn>` | | *l*a*b*e*l* *a**l*i*g**n*ment | determines alignment of the text within the axis labels. | | |
 | `<c:noMultiLvlLbl>` | | no multi-*l*e*v*e*l* *l*a*b*e*l* | determines whether multi-level labels are disabled on the category axis. | | |
-| | | | | | |
-| `<c:axPos/>` | | *ax*is *pos*iton | specifies the position of the axis relative to the plot area of the chart | | |
-| | | | | | |
 | `<c:crossBetween/>` | | | specifies how category axes are crossed by value axes in a chart.  | | |
 | | | | | | |
 | `<c:legendPos>` | | | specifies the position of the legend. | | |
