@@ -2156,17 +2156,49 @@ none
 ##### `<c:varyColors>`->`val`
 MUST be a beolean.
 
-### element under `<c:grouping>` element
-#### direct children of `<c:varyCologrouping rs>` element
+### element under `<c:bar3DChart>` element
+#### direct children of `<c:bar3DChart>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:axId>` | *ax*is id | specifies axis id | | |
+| `<c:dLbls>` | *d*ata *l*a*b*e*l**s* | a container that contains data labels. | | |
+| `<c:grouping>` | grouping | specifies how multiple data series within the same category should be grouped together visually. | | |
+| `<c:gapDepth>` | gap depth | specifies the gap amount. | | |
+| `<c:gapWidth>` | | specifies the gap width. | | |
+| `<c:ser>` | *ser*ies | defines a series. | | |
+| `<c:shape>` |  | | | |
+| `<c:varyColors>` | specifies that each data marker in the series shall have a different color. | defines a series. | | |
+
+#### attributes in `<c:bar3DChart>` element
 none
 
-#### attributes in `<c:grouping>` element5
+### element under `<c:bar3DChart>` element
+#### direct children of `<c:bar3DChart>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:axId>` | *ax*is id | specifies axis id | | |
+| `<c:dLbls>` | *d*ata *l*a*b*e*l**s* | a container that contains data labels. | | |
+| `<c:grouping>` | grouping | specifies how multiple data series within the same category should be grouped together visually. | | |
+| `<c:gapDepth>` | gap depth | specifies the gap amount. | | |
+| `<c:gapWidth>` | | specifies the gap width. | | |
+| `<c:ser>` | *ser*ies | defines a series. | | |
+| `<c:shape>` |  | | | |
+| `<c:varyColors>` | specifies that each data marker in the series shall have a different color. | defines a series. | | |
+
+#### attributes in `<c:bar3DChart>` element
+none
+
+### element under `<c:shape>` element
+#### direct children of `<c:shape>` element
+none
+
+#### attributes in `<c:shape>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
-| `<c:val>` | | dicussed above.| | |
+| `val` | | | | |
 
-##### `<c:grouping>`->`val`
-MUST be a datatype [`grouping`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_Grouping_topic_ID0EMBSRB.html#topic_ID0EMBSRB) 3avalieb= atST_Groupi.
+##### `<c:shape>`->`val`
+MUST be with data type [`ST_Shape`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_Shape_topic_ID0ECGWRB.html#topic_ID0ECGWRB)
 
 elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- | 
