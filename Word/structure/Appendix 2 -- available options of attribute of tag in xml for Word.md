@@ -60,17 +60,7 @@ See [`important concept.md`](https://github.com/40843245/OOXML/blob/main/concept
 | `"true"` | | | the auto-generated title has been deleted by user. | | |
 | `"false"` | | | the auto-generated title has been **NOT** deleted by user.  | | |
 
-#### `<c:barDir>` -> `val` attribute
-| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"col"` | | *col*umn | The bars will be oriented vertically. | | |
-| `"bar"` | | bar | The bars will be oriented horizontally. | | |
 
-#### `<c:grouping>` -> `val` attribute
-| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"clustered"` | | clustered | bars (or columns) representing different series within the same category are placed side-by-side. | | |
-| `"stacked"` | | stacked | the values from different series within the same category are stacked on top of each other. | The total height (or length) of the stack represents the sum of the values for that category. | |
 
 ##### examples and explanations
 ###### example 1 -- grouping lots of series in a chart
@@ -168,12 +158,6 @@ This effectively increases the spacing between the bars.
 | `"true"` | | | the color (of bar charts or column charts) will be inverted when its value it represents is negative. | | |
 | `"false"` | | | the color (of bar charts or column charts) will be **NOT** inverted when its value it represents is negative. | | |
 
-#### `<c:numFmt>` -> `sourceLinked` attribute
-| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"true"` | | | indicates tthat the number format for the axis labels should inherit or be linked to the number format of the source data. | | |
-| `"false"` | | | indicates that is not linked to the formatting of the source data. And the number format specified in the `formatCode` attribute is explicitly defined within this chart element. | | |
-
 #### `<c:noMultiLvlLbl>` -> `val` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
@@ -192,33 +176,12 @@ This effectively increases the spacing between the bars.
 | `"true"` | | | indicates that only plot visible data points in the chart. | | |
 | `"false"` | | | indicates that plot all data points in the chart. | | |
 
-#### `<c:scaling>` -> `logBase` attribute
-| value type of attribute in tag | description | notes | notice |
-| :---------- | :----------- | :----- | :--- |
-| double (represented as string) or constants that be represented as double | scaling by logarithm of given base | e.g. `"2"`, `"e"`, `"10"` | |
-
-#### `<c:scaling>` -> `orientation` attribute
-| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"minMax"` | | | indicates the normal or standard orientation, where the axis values increase from the minimum value at one end to the maximum value at the other. | <ol><li>For a vertical axis, this typically means values increase from bottom to top.</li><li>For a horizontal axis, values increase from left to right.</li></ol> | It is the default value. |
-| `"maxMin"` | | | inverts the orientation of the axis. The values will decrease from the maximum value at one end to the minimum value at the other. | It is the sematically opposite of `"minMax"` | |
-
-#### `<c:orientation>` -> `val` attribute
-Same as `<c:scaling>` -> `orientation` attribute.
-
 #### `<c:dispBlanksAs>` -> `val` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `"gap"` | | | this leaves a break or gap in the line or area connecting the data points. | visually emphasizes the missing data. | |
 | `"span"` | | | connects the data points on either side of the blank cell with a line | essentially ignores the missing data and creates a continuous line. | |
 | `"zero"` | | | treats the blank cell or missing data point as a zero value and plots it accordingly on the chart. | | |
-
-#### `<c:tickLblPos>` -> `val` attribute
-| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"high"` | | above |  The tick labels are positioned **above** relative to the axis line | | |
-| `"low"` | | below | The tick labels are positioned **below** relative to the axis line | | |
-| `"nextToAxis"` | | next to axis | The tick labels are positioned **next to** the axis line | | |
 
 #### `<c:lblAlgn>` -> `val` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -238,21 +201,6 @@ Same as `<c:scaling>` -> `orientation` attribute.
 | `"b"` | | bottom | specifies the position of the legend is **bottom** of the plot area of the chart | | |
 | `"tr"` | | *t*op-*r*ight | specifies the position of the legend is **top-right** of the plot area of the chart | | it may overlay the plot area. |
 
-#### `<c:numFmt>` -> `formatCode` attribute
-Due to there are unexhaustive available options, I just list some commonly used, helping you understand how the formatting code formats value.
-
-> [!IMPORTANT]
-> According to Google Gemini's answer,
->
-> ```
-> The possible values are essentially the same as the number formatting codes you would use in Microsoft Excel.
-> ```
->
-> To search the formatting code, you can
->
-> + see my notes [formatting code in Microsoft Office Excel](https://github.com/40843245/Microsoft_Office/blob/main/Product/Excel/formatting%20code/formatting%20code.md) which list the commonly used formatting code, or
->
-> + refer the MSDS [Number format codes in Excel](https://support.microsoft.com/en-us/office/number-format-codes-in-excel-for-mac-5026bbd6-04bc-48cd-bf33-80f18b4eae68)
 
 
 
