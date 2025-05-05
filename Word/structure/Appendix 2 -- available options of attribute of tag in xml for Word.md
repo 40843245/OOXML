@@ -29,39 +29,6 @@ See [`important concept.md`](https://github.com/40843245/OOXML/blob/main/concept
 | `"deflate"` | | deflation | compress it with deflate algorithm | | |
 | `"lzma"` | | lzma | compress it with lzma (Lempel–Ziv–Markov chain) algorithm | | |
 
-#### `<a:blip>` -> `a:alphaInverse` attribute
-| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"true"` | | | inverse the alpha value of the image. | | |
-| `"false"` | | | NOT inverse the alpha value of the image. | | |
-
-#### `<a:xfrm>` -> `a:flipH` attribute
-| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"true"` | | | flips the graphical object horizontally. | | |
-| `"false"` | | | NOT flip the graphical object horizontally. | | |
-
-#### `<a:blip>` -> `a:flipV` attribute
-| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"true"` | | | flips the graphical object vertically. | | |
-| `"false"` | | | NOT flip the graphical object vertically. | | |
-
-### about `c` namespace
-#### `<c:roundedCorners>` -> `val` attribute
-| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"true"` | | | all charts in this file should be rounded. | | |
-| `"false"` | | | all charts in this file should NOT be rounded. They should be sharp (i.e. rectangular shape) | | |
-
-#### `<c:autoTitleDeleted>` -> `val` attribute
-| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `"true"` | | | the auto-generated title has been deleted by user. | | |
-| `"false"` | | | the auto-generated title has been **NOT** deleted by user.  | | |
-
-
-
 ##### examples and explanations
 ###### example 1 -- grouping lots of series in a chart
 ```
