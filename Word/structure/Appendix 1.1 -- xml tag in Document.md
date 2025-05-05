@@ -1,4 +1,4 @@
-# Appendix 1.1 -- xml tag in Document
++# Appendix 1.1 -- xml tag in Document
 ## Prequisite
 See [`Prequisite.md`](https://github.com/40843245/OOXML/blob/main/Prequisite/Prequisite.md)
 
@@ -4201,62 +4201,77 @@ MUST be a boolean.
 ## `o` namespace
 `o` namespace contains metadata about the Word document itself.
 
-##### elements in `o` namespace
-| attribute in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `<o:DocumentProperties>` | | document property | defines a property for the document itself. | | |
-| `<o:Subject>` | | document subject | configures the subject of the document itself. | | |
-| `<o:Author>` | | document author | configures the author of the document itself. | | |
-| `<o:Keywords>` | | document keywords | configures keywords or tags associated with the document itself. | | |
-| `<o:Description>` | | document description | configures the description of the document itself. | | |
-| `<o:LastAuthor>` | | last saved author | configures the author who saved the document itself recently. | | |
-| `<o:Revision>` | | document revision number | configures the revision number of the document itself recently. | | |
-| `<o:TotalTime>` | | total time | stores the total time spent on the document itself. | | |
-| `<o:LastPrinted>` | | last printed date and time | stores the date and time of last print to the document itself. | | |
-| `<o:Created>` | | created date and time | stores the date and time the document was created. | | |
-| `<o:LastSaved>` | | last saved date and time | stores the date and time the document was last saved. | | |
-| `<o:Company>` | | company | stores the company or organization associated with the document. | | |
-| `<o:Manager>` | | manager | stores the manager or responsible person for the document. | | |
-| `<o:Category>` | | category | stores the category of the document. | | |
-| `<o:PresentationFormat>` | | Presentation Format | The format used when saving as a presentation. | | |
-| `<o:Bytes>` | | bytes | estimated of the document size in bytes. | | |
-| `<o:Words>` | | words | estimated of the number of words in the document. | | |
-| `<o:Characters>` | | characters | estimated of the number of characters in the document. | excluding spaces. | |
-| `<o:CharactersWithSpaces>` | | characters | estimated of the number of characters in the document. | including spaces. | |
-| `<o:Lines>` | | lines | estimated of the number of lines in the document. | | |
-| `<o:Paragraphs>` | | paragraphs | estimated of the number of paragraphs in the document. | | |
-| `<o:Version>` | | version | The version number of the application that created the document. | | |
-| `<o:GUID>` | | Guid | Guid of the document. | | |
-| `<o:HyperlinkBase>` | | base of hyperlink | The base path or URL for hyperlinks within the document. | | |
-| `<o:Slides>` | | slides | estimated of the number of slides in the Slide. | (Potentially for PowerPoint documents etc embedded in Word) | |
-| `<o:HiddenSlides>` | | notes | estimated of the number of hidden slides in the document. | (Potentially for PowerPoint documents etc embedded in Word) | |
-| `<o:Notes>` | | notes | estimated of the number of notes in the document. | (Potentially for notes in the document). | |
-| `<o:MMClips>` | | *M*utli*m*edia clips | estimated of the number of mutlimedia clips in the document. | (Potentially for embededded mutlimedia in the document). | |
-| | | | | | |
+### root node
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<o:DocumentProperties>` | document properties | acts like a container containing document properties. | | |
+
+### element under `<o:DocumentProperties>` element
+#### direct children of `<o:DocumentProperties>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<o:Subject>` | document subject | configures the subject of the document itself. | | |
+| `<o:Author>` | document author | configures the author of the document itself. | | |
+| `<o:Keywords>` | document keywords | configures keywords or tags associated with the document itself. | | |
+| `<o:Description>` | document description | configures the description of the document itself. | | |
+| `<o:LastAuthor>` | last saved author | configures the author who saved the document itself recently. | | |
+| `<o:Revision>` | document revision number | configures the revision number of the document itself recently. | | |
+| `<o:TotalTime>` | total time | stores the total time spent on the document itself. | | |
+| `<o:LastPrinted>` | last printed date and time | stores the date and time of last print to the document itself. | | |
+| `<o:Created>` | created date and time | stores the date and time the document was created. | | |
+| `<o:LastSaved>` | last saved date and time | stores the date and time the document was last saved. | | |
+| `<o:Company>` | company | stores the company or organization associated with the document. | | |
+| `<o:Manager>` | manager | stores the manager or responsible person for the document. | | |
+| `<o:Category>` | category | stores the category of the document. | | |
+| `<o:PresentationFormat>` | Presentation Format | The format used when saving as a presentation. | | |
+| `<o:Bytes>` | bytes | estimated of the document size in bytes. | | |
+| `<o:Words>` | words | estimated of the number of words in the document. | | |
+| `<o:Characters>` | characters | estimated of the number of characters in the document. | excluding spaces. | |
+| `<o:CharactersWithSpaces>`  | characters | estimated of the number of characters in the document. | including spaces. | |
+| `<o:Lines>` | lines | estimated of the number of lines in the document. | | |
+| `<o:Paragraphs>` | paragraphs | estimated of the number of paragraphs in the document. | | |
+| `<o:Version>` | version | The version number of the application that created the document. | | |
+| `<o:GUID>` | Guid | Guid of the document. | | |
+| `<o:HyperlinkBase>` | base of hyperlink | The base path or URL for hyperlinks within the document. | | |
+| `<o:Slides>` | slides | estimated of the number of slides in the Slide. | (Potentially for PowerPoint documents etc embedded in Word) | |
+| `<o:HiddenSlides>` | notes | estimated of the number of hidden slides in the document. | (Potentially for PowerPoint documents etc embedded in Word) | |
+| `<o:Notes>` | notes | estimated of the number of notes in the document. | (Potentially for notes in the document). | |
+| `<o:MMClips>` | *M*utli*m*edia clips | estimated of the number of mutlimedia clips in the document. | (Potentially for embededded mutlimedia in the document). | |
 | `<o:shapedefaults/>` | | | specifies the default properties for newly created shapes within a drawing canvas. | | |
-| `<o:shapelayout>`| | | acts a container that holds information about how shapes are laid out and interact with the surrounding text. | | |
-| `<o:idmap/>` | | | defines the map id. | | |
+| `<o:shapelayout>`| | acts a container that holds information about how shapes are laid out and interact with the surrounding text. | | |
+| `<o:idmap/>` | | defines the map id. | | |
 
-##### attribute about `o` namespace
-###### attribute in `<o:shapedefaults>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `v:ext` | | | | explained in ``attribute in `v` namespace`` section | |
-| `spidmax` | | max *s*ha*p*e *id* | sets the maximum Shape ID that can be assigned to new shapes created within the current drawing canvas. | 
+### elements under `<o:shapedefaults>`
+#### direct children of `<o:shapedefaults>` element
+none
 
-###### attribute in `<o:shapelayout>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `v:ext` | | | | explained in ``attribute in `v` namespace`` section | |
+#### attributes in `<o:shapedefaults>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `v:ext` | | | explained in ``attribute in `v` namespace`` section | |
+| `spidmax` | max *s*ha*p*e *id* | sets the maximum Shape ID that can be assigned to new shapes created within the current drawing canvas. | 
 
-###### attribute in `<o:idmap>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `v:ext` | | | | explained in ``attribute in `v` namespace`` section | |
-| `data` | | | specifies the current shape ID. | The id of newly create shape will be value of `data` attribute plus one. | |
+### elements under `<o:shapelayout>`
+#### direct children of `<o:shapelayout>` element
+none
 
-##### examples and explanation
-###### example 1.1 -- xml content of metadata file
+#### attributes in `<o:shapelayout>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `v:ext` | | | explained in ``attribute in `v` namespace`` section | |
+
+### elements under `<o:idmap>`
+#### direct children of `<o:idmap>` element
+none
+
+#### attributes in `<o:idmap>`
+| attributes | meaning | description | notes | notice |
+| :----------| :----- | :--- | :-- | :-- |
+| `v:ext` | | explained in ``attribute in `v` namespace`` section | |
+| `data` | | specifies the current shape ID. | The id of newly create shape will be value of `data` attribute plus one. | |
+
+### examples and explanation
+#### example 1.1 -- xml content of metadata file
 the xml content of metadata file in `Docx1.docx` file.
 
 ```
@@ -4300,15 +4315,238 @@ In above example, we can know that
 + In `<o:CharactersWithSpaces>474</o:CharactersWithSpaces>` Office Word estimates this file has 474 characters (including space).
 + In `<o:Version>15</o:Version>`, this file is created with Microsoft Office 2015. Here the version number 15 suggests version 2015.
 
-#### about `wp` namespace
-##### elements in `wp` namespace
-| element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `<wp:inline>` | | inline | configure it (the tag that contains `<wp:inline>`) is inline.</br>For example, a `.xml` file that contains ``<w:drawing><wp:inline> <!-- element omitted --> </wp:inline></w:drawing>``, `<wp:inline>` element signifies that the drawing object is treated as if it were a character within the text flow. | see following example. | | 
-| `<wp:extent>` | | | specifically deals with the size of a drawing object. | | |
-| `<wp:effectExtent>` | | |  specifies the additional extent that should be added to each edge (top, bottom, left, right) of a drawing object to account for any visual effects applied to it. | | |
-| `<wp:docPr/>` | | *d*rawing *o*bje*ct *pr*operties | | |  
-| `<wp:cNvGraphicFramePr>` | | *C*ommon *N*on-*V*isual *Graphic* *Frame* *Pr*operties | holds non-visual properties for a graphic frame within a drawing object in WordprocessingML. | | |
+## `wp` namespace
+### root node
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<wp:anchor>` | | specifies the archor. | | | 
+| `<wp:inline>` | inline | configure it (the tag that contains `<wp:inline>`) is inline.</br>For example, a `.xml` file that contains ``<w:drawing><wp:inline> <!-- element omitted --> </wp:inline></w:drawing>``, `<wp:inline>` element signifies that the drawing object is treated as if it were a character within the text flow. | see following example. | | 
+
+### elements under `<wp:anchor>`
+#### direct children of `<wp:anchor>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<wp:extent>` | | specifies the extents of the parent DrawingML object (i.e. its final height and width). | | |
+| `<wp:effectExtent>` | | specifies the effect extents of the parent DrawingML object (i.e. adds additional four edges) in order to compensate for any drawing effects applied to the DrawingML object. | | |
+| `<wp:positionH>` | *h*orizontal positioning | specifically deals with the size of a drawing object. | | |
+| `<wp:positionV>` | *v*ertical positioning | specifically deals with the size of a drawing object. | | |
+| `<wp:simplePos>` | simple *pos*ition | specifically deals with the size of a drawing object. | | |
+| `<wp:wrapNone/>` | no text wrapping | specifies whether the parent DrawingML object shall not cause any text wrapping within the contents of the host WordprocessingML document based on its display location. | | |
+| `<wp:wrapSquare>` | square wrapping | specifies whether text shall wrap around a virtual rectangle bounding this object.  | | |
+| `<wp:wrapThrough>` | through wrapping | specifies that text shall wrap around the wrapping polygon bounding this object as defined by the child `<wrapPolygon>` element.</br>When this element specifies a wrapping polygon, it shall allow text to wrap within the object's maximum left and right extents. | | |
+| `<wp:wrapTight>` | tight wrapping | specifies that text shall wrap around the wrapping polygon bounding this object as defined by the child `<wrapPolygon>` element.</br>When this element specifies a wrapping polygon, it shall **NOT** allow text to wrap within the object's maximum left and right extents.| | |
+| `<wp:wrapTopAndBottom>` | top and bottom wrapping | specifies that text shall wrap around the top and bottom of this object. (Of course, not its left or right edges.) | | |
+| `<wp:docPr>` | *d*rawing *o*bje*ct *pr*operties | | |  
+| `<wp:graphic>` | | specifies the existence of a single graphic object. | |  
+| `<wp:cNvGraphicFramePr>` | *C*ommon *N*on-*V*isual *Graphic* *Frame* *Pr*operties | holds non-visual properties for a graphic frame within a drawing object in WordprocessingML. | |
+
+#### attributes in `<wp:anchor>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `distB` | *dist*ance from text on *b*ottom Edge | specifies the distance from bottom of the drawing object | Its unit is EMU. | |
+| `distL` | *dist*ance from text on *l*eft Edge | specifies the distance from left of the drawing object | Its unit is EMU. | |
+| `distR` | *dist*ance from text on *r*ight Edge | specifies the distance from right of the drawing object | Its unit is EMU. | |
+| `distT` | *dist*ance from text on *t*op Edge | specifies the distance from top of the drawing object | Its unit is EMU. | |
+| `hidden` | | determines whether this floating DrawingML object shall be displayed | | The default value is `"false"`. |
+| `locked` | anchor locked | determines whether the anchor location for this object shall NOT be modified at runtime when an application edits the contents of this document. | | The default value is `"false"`. |
+| `allowOverlap` | | determines whether a DrawingML object which intersects another DrawingML object at display time shall be allowed to overlap the contents of the other DrawingML object. | | The default value is `"true"`. |
+| `behindDoc` | display behind *doc*ument | determines whether a DrawingML object shall be displayed behind the text of the document  | | The default value is `"false"`. |
+| `simplePos` | simple *pos*ition | determines whether to use simple position | the simple position is defined in `<wp:simplePos>` of direct child in this tag. | The default value is `"false"`. |
+| `layoutInCell` | | determines whether how the DrawingML object shall behave when its anchor is located in a table cell. And its specified position would cause it to intersect with a table cell displayed in the document. | About its behavior, see [`wp:archor`->`layoutInCell`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_anchor_topic_ID0EOB1OB.html?hl=anchor) | The default value is `"false"`. |
+| `relativeHeight` | | specifies the relative Z-ordering of all DrawingML objects in this document.  | | |
+
+##### `<wp:anchor>`->`distB`
+MUST be [`ST_WrapDistance`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_WrapDistance_topic_ID0ENTDPB.html#topic_ID0ENTDPB)
+
+which is a positive number in EMU.
+
+##### `<wp:anchor>`->`distL`
+See `<wp:anchor>`->`distB`
+
+##### `<wp:anchor>`->`distR`
+See `<wp:anchor>`->`distB`
+
+##### `<wp:anchor>`->`distT`
+See `<wp:anchor>`->`distB`
+
+##### `<wp:anchor>`->`hidden`
+MUST be a boolean.
+
+##### `<wp:anchor>`->`locked`
+MUST be a boolean.
+
+##### `<wp:anchor>`->`allowOverlap`
+MUST be a boolean.
+
+##### `<wp:anchor>`->`behindDoc`
+MUST be a boolean.
+
+##### `<wp:anchor>`->`simplePos`
+MUST be a boolean.
+
+##### `<wp:anchor>`->`layoutInCell`
+MUST be a boolean.
+
+##### `<wp:anchor>`->`relativeHeight`
+MUST be an unsigned integer.
+
+### elements under `<wp:anchor>`->`<wp:extent>`
+#### direct children of `<wp:anchor>`->`<wp:extent>` element
+none
+
+#### attributes in `<wp:anchor>`->`<wp:extent>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `cx` | | sets extent length | its unit is EMU | |
+| `cy` | | sets extent height | its unit is EMU | |
+
+##### `<wp:anchor>`->`<wp:extent>`->`cx`
+MUST be [`ST_PositiveCoordinate`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_PositiveCoordinat_topic_ID0EUHZNB.html#topic_ID0EUHZNB)
+
+##### `<wp:anchor>`->`<wp:extent>`->`cy`
+See `<wp:anchor>`->`<wp:extent>`->`cx`
+
+### elements under `<wp:anchor>`->`<wp:effectExtent>`
+#### direct children of `<wp:anchor>`->`<wp:effectExtent>` element
+none
+
+#### attributes in `<wp:anchor>`->`<wp:effectExtent>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `b` | *b*ottom | add additional to bottom edge | its unit is EMU | |
+| `l` | *l*eft | add additional to left edge | its unit is EMU | |
+| `r` | *r*ight | add additional to right edge | its unit is EMU | |
+| `t` | *t*op | add additional to top edge | its unit is EMU | |
+
+##### `<wp:anchor>`->`<wp:effectExtent>`->`b`
+MUST be [`ST_Coordinate`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_Coordinate_topic_ID0E4DQNB.html#topic_ID0E4DQNB)
+
+##### `<wp:anchor>`->`<wp:effectExtent>`->`l`
+See `<wp:anchor>`->`<wp:effectExtent>`->`b`
+
+##### `<wp:anchor>`->`<wp:effectExtent>`->`r`
+See `<wp:anchor>`->`<wp:effectExtent>`->`b`
+
+##### `<wp:anchor>`->`<wp:effectExtent>`->`t`
+See `<wp:anchor>`->`<wp:effectExtent>`->`b`
+
+### elements under `<wp:anchor>`->`<wp:positionH>`
+#### direct children of `<wp:anchor>`->`<wp:positionH>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<wp:align>` | | specifies how a DrawingML object shall be horizontally aligned relative to the horizontal alignment base defined by the parent element.  | | |
+| `<wp:posOffset>` | absolute *pos*ition offset | specifies an absolute measurement for the positioning of a floating DrawingML object within a WordprocessingML document. | | |
+
+#### attributes in `<wp:anchor>`->`<wp:positionH>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `relativeFrom` | | specifies the base to which the relative horizontal positioning of this object shall be calculated.  | | |
+
+##### `<wp:anchor>`->`<wp:positionH>`->`relativeFrom`
+MUST be one of predefined values in data type [`ST_RelFromH`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_RelFromH_topic_ID0EZ5CPB.html#topic_ID0EZ5CPB)
+
+### elements under `<wp:anchor>`->`<wp:positionH>`->`<wp:align>`
+#### direct children of `<wp:anchor>`->`<wp:positionH>`->`<wp:align>` element
+none
+
+#### attributes in `<wp:anchor>`->`<wp:positionH>`->`<wp:align>`
+none
+
+#### innerHTML in `<wp:anchor>`->`<wp:positionH>`->`<wp:align>`
+MUST be one of predefined values in data type [`ST_AlignH`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_AlignH_topic_ID0EMOCPB.html#topic_ID0EMOCPB)
+
+### elements under `<wp:anchor>`->`<wp:positionH>`->`<wp:posOffset>`
+#### direct children of `<wp:anchor>`->`<wp:positionH>`->`<wp:posOffset>` element
+none
+
+#### attributes in `<wp:anchor>`->`<wp:positionH>`->`<wp:posOffset>`
+none
+
+#### innerHTML in `<wp:anchor>`->`<wp:positionH>`->`<wp:posOffset>`
+MUST be one of predefined values in data type [`ST_PositionOffset`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_PositionOffset_topic_ID0EQ2CPB.html#topic_ID0EQ2CPB)
+
+### elements under `<wp:anchor>`->`<wp:positionV>`
+#### direct children of `<wp:anchor>`->`<wp:positionV>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<wp:align>` | | specifies how a DrawingML object shall be horizontally aligned relative to the horizontal alignment base defined by the parent element.  | | |
+| `<wp:posOffset>` | absolute *pos*ition offset | specifies an absolute measurement for the positioning of a floating DrawingML object within a WordprocessingML document. | | |
+
+#### attributes in `<wp:anchor>`->`<wp:positionV>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `relativeFrom` | | specifies the base to which the relative horizontal positioning of this object shall be calculated.  | | |
+
+##### `<wp:anchor>`->`<wp:positionV>`->`relativeFrom`
+MUST be one of predefined values in data type [`ST_RelFromV`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_RelFromV_topic_ID0EDJDPB.html#topic_ID0EDJDPB)
+
+### elements under `<wp:anchor>`->`<wp:positionV>`->`<wp:align>`
+#### direct children of `<wp:anchor>`->`<wp:positionV>`->`<wp:align>` element
+none
+
+#### attributes in `<wp:anchor>`->`<wp:positionV>`->`<wp:align>`
+none
+
+#### innerHTML in `<wp:anchor>`->`<wp:positionV>`->`<wp:align>`
+MUST be one of predefined values in data type [`ST_AlignV`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_AlignV_topic_ID0E5UCPB.html#topic_ID0E5UCPB)
+
+### elements under `<wp:anchor>`->`<wp:positionV>`->`<wp:posOffset>`
+#### direct children of `<wp:anchor>`->`<wp:positionV>`->`<wp:posOffset>` element
+none
+
+#### attributes in `<wp:anchor>`->`<wp:positionV>`->`<wp:posOffset>`
+none
+
+#### innerHTML in `<wp:anchor>`->`<wp:positionV>`->`<wp:posOffset>`
+MUST be one of predefined values in data type [`ST_PositionOffset`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_PositionOffset_topic_ID0EQ2CPB.html#topic_ID0EQ2CPB)
+
+### elements under `<wp:anchor>`->`<wp:simplePos>`
+#### direct children of `<wp:anchor>`->`<wp:simplePos>` element
+none
+
+#### attributes in `<wp:anchor>`->`<wp:simplePos>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `x` | | specifies x-coordinate. | | |
+| `y` | | specifies y-coordinate. | | |
+
+##### `<wp:anchor>`->`<wp:simplePos>`->`x`
+MUST be [`ST_Coordinate`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_Coordinate_topic_ID0E4DQNB.html#topic_ID0E4DQNB)
+
+which MUST between `-27273042329600` and `27273042316900`.
+
+##### `<wp:anchor>`->`<wp:simplePos>`->`y`
+See `<wp:anchor>`->`<wp:simplePos>`->`x`
+
+### elements under `<wp:anchor>`->`<wp:wrapNone/>`
+#### direct children of `<wp:anchor>`->`<wp:wrapNone/>` element
+none
+
+#### attributes in `<wp:anchor>`->`<wp:wrapNone/>`
+none
+
+### elements under `<wp:anchor>`->`<wp:wrapSquare>`
+#### direct children of `<wp:anchor>`->`<wp:wrapSquare>` element
+none
+
+#### attributes in `<wp:anchor>`->`<wp:wrapSquare>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `distB` | | has been discussed before. | | |
+| `distL` | | has been discussed before. | | |
+| `distR` | | has been discussed before. | | |
+| `distT` | | has been discussed before. | | |
+| `wrapText` | | specifies how text shall wrap around the object's left and right sides. | | |
+
+##### `<wp:anchor>`->`<wp:wrapSquare>`->`wrapText`
+MUST be one of predefined values in data type [`ST_WrapText`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_WrapText_topic_ID0E2BEPB.html#topic_ID0E2BEPB)
+
+### elements under `<wp:anchor>`-> `<wp:docPr>`
+#### direct children of `<wp:anchor>`->`<wp:docPr>` element
+See `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`
+
+#### attributes in `<wp:anchor>`->`<wp:docPr>`
+See `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`
 
 ##### attribute about `wp` namespace
 ###### attribute in `<wp:inline>`
@@ -4316,20 +4554,8 @@ In above example, we can know that
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `wp:cx` | | | specifies the width of the drawing object | Its unit is EMU. | |
 | `wp:cy` | | | specifies the height of the drawing object | Its unit is EMU. | |
-| `wp:distT` | | | specifies the distance from top of the drawing object | Its unit is EMU. | |
-| `wp:distB` | | | specifies the distance from bottom of the drawing object | Its unit is EMU. | |
-| `wp:distL` | | | specifies the distance from left of the drawing object | Its unit is EMU. | |
-| `wp:distR` | | | specifies the distance from right of the drawing object | Its unit is EMU. | |
 | `wp:editId` | | | specifies the edit id | | |
 | `wp:anchorId ` | | | specifies the anchor id | | |
-| `wp:simplePos` | | | determines it uses simple position schema | | |
-| `wp:relativeFrom ` | | | determines what the positioning of the object is relative to (e.g., page, margin). | | |
-
-###### attribute in `<wp:extent>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `wp:cx` | | | sets extent length | its unit is EMU | |
-| `wp:cy` | | | sets extent height | its unit is EMU | |
 
 ###### attribute in `<wp:effectExtent>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -4351,7 +4577,7 @@ In above example, we can know that
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `wp:id` | | | speficies the unique identifier | | |
 
-##### examples
+##### examples and explanation
 ###### example 1.1 -- an drawing object with description
 ```
 <wp:docPr id="1" name="" descr="Midori"/>
