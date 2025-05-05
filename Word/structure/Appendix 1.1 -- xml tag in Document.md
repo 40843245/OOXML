@@ -4001,37 +4001,204 @@ The original files are placed at [BarChartExample.docx](https://github.com/40843
 
 The explanation is available at [example-and-explanation.md](https://github.com/40843245/OOXML/blob/main/examples/documents/Word/charts/BarChartExample.docx/example-and-explanation.md)
 
-#### about `pic` namespace
-##### namespace in `pic` namespace
-| namespace | description | notes | notice |
-| :---------- | :----------- | :----- | :--- |
-| `pic:pic` | | | |
+## `pic` namespace
+### root node
+`<pic:pic>`
 
-## elements in `p` namespace
+## `p` namespace (Picture)
+> [!CAUTION]
+> DONT get confused with `p` namespace (PowerPointML)
+
+### root node
+`<p:pic>`
+
+### element under `<p:pic>` element
+#### direct children of `<p:pic>` element
 | elements | meaning | description | notes | notice |
 | :---------- | :----- | :--- | :-- | :-- |
-| `<pic:nvPicPr>` | *N*on-*v*isual *Pic*ture *Pr*operties | acts as a container that contains Non-Visual Picture Properties | | |
-| `<pic:cNvPr>` | *C*ommon *N*on-*v*isual Picture *Pr*operties | defines Common Non-visual Picture Properties | | |
+| `<p:nvPicPr>` | *N*on-*v*isual *Pic*ture *Pr*operties | acts as a container that contains Non-Visual Picture Properties | | |
 | `<p:blipFill>` | | defines how the actual image data is used to fill the shape of the picture object. | it controls aspects like tiling, stretching, and the portion of the image that is visible. | |
-| `<pic:spPr>` | *s*ha*p*e *pr*operties | defines shape properties| | |
+| `<p:spPr/>` | *s*ha*p*e *pr*operties | defines shape properties | | |
 
-### element under `<p:blipFill>` element
-#### direct children of `<p:blipFill>` element
-| elements | meaning | description | notes | notice |
-| :---------- | :----- | :--- | :-- | :-- |
-| `<a:stretch>` |  |  specifies that a BLIP should be stretched to fill the target rectangle. | |  |
-
-#### attributes in `<p:blipFill>` element
+#### attributes in `<p:pic>` element
 none
 
-##### attribute about `pic` namespace
-###### attribute in `<pic:cNvPr>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `id` | | | speficies the id. | | |
-| `name` | | | speficies the name. | | |
+### element under `<p:pic>`->`<p:nvPicPr>` element
+#### direct children of `<p:pic>`->`<p:nvPicPr>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<p:cNvPr>` | *c*ommon *N*on-*V*isual Drawing *Pr*operties | specifies non-visual properties for the canvas.  | | |
+| `<p:cNvPicPr>` | *c*ommon *N*on-*V*isual *Pic*ture Drawing *Pr*operties | specifies the non-visual properties for the picture canvas. | | |
 
-#### about `o` namespace
+#### attributes in `<p:pic>`->`<p:nvPicPr>` element
+none
+
+### element under `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>` element
+#### direct children of `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<a:hlinkHover>` | *h*yper*link* hover | specifies the on-hover hyperlink information to be applied to a run of text. When the hyperlink text is clicked the on-hover event will be invoked  | | |
+| `<a:hlinkClick>` | *h*yper*link* click | specifies the on-click hyperlink information to be applied to a run of text. When the hyperlink text is clicked the on-click event will be invoked | | |
+| `<extLst>` | | has been discussed before. | | |
+
+#### attributes in `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>` element
+| attributes  | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `id` | | speficies the id. | | |
+| `name` | | speficies the name. | | |
+| `descr` | *descr*iption | speficies the description. | | |
+| `hidden` | | determines whether the DrawingML shall be hidden. | | |
+
+##### `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`id`
+MUST be a positive integer.
+
+##### `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`name`
+MUST be a string.
+
+##### `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`descr`
+MUST be a string.
+
+##### `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`hidden`
+MUST be a boolean.
+
+### element under `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<a:hlinkHover>` element
+#### direct children of `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<a:hlinkHover>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<snd>` | *s*ou*nd* | specifies a sound to be played when a hyperlink (the parent element) is activated. | | |
+| `<extLst>` | | has been discussed before. | | |
+
+#### attributes in `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<a:hlinkHover>` element
+| attributes  | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `id` | | secifies the relationship id that when looked up in this slides relationship file will contain the target of this hyperlink. | | It is required |
+| `action` | | specifies the action to be executed when a hyperlink (the parent element) is activated. | |  It is optional. |
+| `endSnd` | end *s*ou*nd* | determines whether stop playing all sounds when the URL in question is clicked. | |  It is optional. |
+| `highlightClick` | | specifies whether this attribute has already been used within this document. | |  It is optional. |
+| `history` | add hyperlink to page history | specifies whether to add this URI to the history when navigating to it. | it allows for the viewing of this presentation without the storing of history information on the viewing machine. |  It is optional. |
+| `invalidUrl` | | specifies the URL when it has been determined by the generating application that the URL is invalid. |  | It is optional. |
+| `tgtFrame` | *t*ar*g*e*t* frame | specifies the target frame that is to be used when opening this hyperlink. | When the hyperlink is activated, this attribute will be used to determine if a new window must be launched for viewing or if an existing one may be used.</br>If this attribute is omitted, than a new window will be opened. | It is optional. |
+| `tooltip` | | specifies the text of tooltip (that is displayed when the hyperlink is hovered) | | It is optional. |
+
+##### `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<a:hlinkHover>`->`action`
+MUST be an positive integer.
+
+##### `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<a:hlinkHover>`->`id`
+MUST be a code snippets represented as string.
+
+Something like `onclick` event attr in native html5, the value must be contain the string that is executed when onclick event is triggered.
+
+##### `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<a:hlinkHover>`->`endSnd`
+MUST be a boolean.
+
+##### `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<a:hlinkHover>`->`highlightClick`
+MUST be a boolean.
+
+##### `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<a:hlinkHover>`->`history`
+MUST be a boolean.
+
+##### `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<a:hlinkHover>`->`invalidUrl`
+MUST be a string.
+
+##### `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<a:hlinkHover>`->`tgtFrame`
+MUST be a string.
+
+But it can be omitted.
+
+##### `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<a:hlinkHover>`->`tooltip`
+MUST be a string.
+
+### element under `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<a:hlinkHover>`->`<snd>` element
+#### direct children of `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<a:hlinkHover>`->`<snd>` element
+none
+
+#### attributes in `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<a:hlinkHover>`->`<snd>` element
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `builtIn` | | determines whether this sound is built-in. | | |
+| `embed` | *embed*ded audio file relationship id | specifies relationship id of embedded audio file | | |
+| `name` | | give a name to the sound. | | |
+
+### element under `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<a:hlinkClick>` element
+#### direct children of `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<a:hlinkClick>` element
+See `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<a:hlinkHover>`
+
+#### attributes in `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<a:hlinkClick>` element
+See `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<a:hlinkHover>`
+
+##### `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<a:hlinkHover>`->`<snd>`->`builtIn`
+MUST be a boolean.
+
+##### `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<a:hlinkHover>`->`<snd>`->`embed`
+MUST be a positive integer.
+
+##### `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<a:hlinkHover>`->`<snd>`->`name`
+MUST be a string.
+
+### element under `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>` element
+#### direct children of `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<p:picLocks>` | *pic*ture locks | specifies all locking properties for a graphic frame.  | | |
+| `<extLst>` | | has been discussed before. | | |
+
+#### attributes in `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>` element
+| attributes  | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `preferRelativeResize` | | determines whether if the user interface should show the resizing of the picture based on the picture's current size or its original size. | If this attribute is set to true, then scaling will be relative to the original picture size as opposed to the current picture size.| |
+
+##### `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`preferRelativeResize`
+MUST be a boolean.
+
+### element under `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<p:picLocks>` element
+#### direct children of `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<p:picLocks>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<extLst>` | | has been discussed before. | | |
+
+#### attributes in `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<p:picLocks>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `noAdjustHandles` | | determines whether the generating application should not adjust handles for the corresponding connection shape. | | |
+| `noChangeArrowheads` | | determines whether the generating application should not allow arrowhead changes for the corresponding connection shape. | | |
+| `noChangeAspect` | | determines whether the generating application should not allow to change aspect ratio for the corresponding connection shape. | | |
+| `noChangeShapeType` | | determines whether  the generating application should not allow to change the shape type for the corresponding connection shape. | | |
+| `noCrop` | | determines whether the generating application should not allow to crop corresponding picture. | | |
+| `noEditPoints` | | determines whether the generating application should not allow to edit shape point for the corresponding connection shape.  | | |
+| `noGrp` | no *gr*ou*p*ing | determines whether the generating application should not allow to group the shape for the corresponding connection shape. | | |
+| `noMove` | | determines whether the generating application should not allow to move the corresponding connection shape. | | |
+| `noResize` | | determines whether the generating application should not allow to resize the corresponding connection shape. | | |
+| `noRot` | no *rot*ation | determines whether the generating application should not allow to rotate the corresponding picture. | | |
+| `noSelect` | | determines whether the generating application should not allow to select the corresponding connection shape. | | |
+
+##### `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<p:picLocks>`->`noAdjustHandles`
+MUST be a boolean.
+
+##### `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<p:picLocks>`->`noChangeArrowheads`
+MUST be a boolean.
+
+##### `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<p:picLocks>`->`noChangeAspect`
+MUST be a boolean.
+
+##### `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<p:picLocks>`->`noChangeShapeType`
+MUST be a boolean.
+
+##### `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<p:picLocks>`->`noCrop`
+MUST be a boolean.
+
+##### `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<p:picLocks>`->`noMove`
+MUST be a boolean.
+
+##### `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<p:picLocks>`->`noResize`
+MUST be a boolean.
+
+##### `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<p:picLocks>`->`noRot`
+MUST be a boolean.
+
+##### `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`->`<p:picLocks>`->`noSelect`
+MUST be a boolean.
+
+## `o` namespace
 `o` namespace contains metadata about the Word document itself.
 
 ##### elements in `o` namespace
