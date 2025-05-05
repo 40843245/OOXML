@@ -300,15 +300,6 @@ Sales |    |    |    |
 | `auto` | | auto | Word will automatically determine the width of the table cell based on its content and the overall table layout. | the value in the `w:w` attribute is typically ignored. | |
 | `nil` | | nil | the value is explicitly set to zero (even if the `w:w` is not set to zero) | | |
 
-#### `<w:tab>` -> `w:leader` attribute
-| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `none` | | nothing | No leader character | default value when not specified | |
-| `dot` | | dot | dot (i.e. `.`) as leader character | | |
-| `hyphen` | | hyphen | hyphen (i.e. `-`) as leader character | | |
-| `underscore` | | underscore | underscore (i.e. `_`) as leader character | | |
-| `middleDot` | | middle dot | middle dot (i.e. `·`) as leader character | | |
-
 #### `<w:instrText>` -> `xml:space` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
