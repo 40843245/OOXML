@@ -4337,7 +4337,7 @@ In above example, we can know that
 | `<wp:wrapTight>` | tight wrapping | specifies that text shall wrap around the wrapping polygon bounding this object as defined by the child `<wrapPolygon>` element.</br>When this element specifies a wrapping polygon, it shall **NOT** allow text to wrap within the object's maximum left and right extents.| | |
 | `<wp:wrapTopAndBottom>` | top and bottom wrapping | specifies that text shall wrap around the top and bottom of this object. (Of course, not its left or right edges.) | | |
 | `<wp:docPr>` | *d*rawing *o*bje*ct *pr*operties | | |  
-| `<wp:graphic>` | | specifies the existence of a single graphic object. | |  
+| `<a:graphic>` | | specifies the existence of a single graphic object. | |  
 | `<wp:cNvGraphicFramePr>` | *C*ommon *N*on-*V*isual *Graphic* *Frame* *Pr*operties | holds non-visual properties for a graphic frame within a drawing object in WordprocessingML. | |
 
 #### attributes in `<wp:anchor>`
@@ -4527,7 +4527,9 @@ none
 
 ### elements under `<wp:anchor>`->`<wp:wrapSquare>`
 #### direct children of `<wp:anchor>`->`<wp:wrapSquare>` element
-none
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<wp:effectExtent>` | | has been discussed before. | | |
 
 #### attributes in `<wp:anchor>`->`<wp:wrapSquare>`
 | attributes | meaning | description | notes | notice |
@@ -4541,6 +4543,85 @@ none
 ##### `<wp:anchor>`->`<wp:wrapSquare>`->`wrapText`
 MUST be one of predefined values in data type [`ST_WrapText`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_WrapText_topic_ID0E2BEPB.html#topic_ID0E2BEPB)
 
+### elements under `<wp:anchor>`->`<wp:wrapThrough>`
+#### direct children of `<wp:anchor>`->`<wp:wrapThrough>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<wp:wrapPolygon>` | | specifies the wrapping polygon for extents | | |
+
+> [!NOTE]
+> For more details, see [`<wp:wrapPolygon>`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_wrapPolygon_topic_ID0EXCAPB.html#topic_ID0EXCAPB)
+
+#### attributes in `<wp:anchor>`->`<wp:wrapThrough>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `distL` | | has been discussed before. | | |
+| `distR` | | has been discussed before. | | |
+| `wrapText` | | has been discussed before. | | |
+
+### elements under `<wp:anchor>`->`<wp:wrapThrough>`->`<wp:wrapPolygon>`
+#### direct children of `<wp:anchor>`->`<wp:wrapThrough>`->`<wp:wrapPolygon>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<wp:start>` | | specifies the starting point | | |
+| `<wp:lineTo>` | | specifies a single point | | |
+
+#### attributes in `<wp:anchor>`->`<wp:wrapThrough>`->`<wp:wrapPolygon>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `edited` | | specifies whether it has been edited. | | |
+
+##### `<wp:anchor>`->`<wp:wrapThrough>`->`<wp:wrapPolygon>`->`edited`
+MUST be a boolean.
+
+### elements under `<wp:anchor>`->`<wp:wrapThrough>`->`<wp:wrapPolygon>`->`<wp:start>`
+#### direct children of `<wp:anchor>`->`<wp:wrapThrough>`->`<wp:wrapPolygon>`->`<wp:start>` element
+none
+
+#### attributes in `<wp:anchor>`->`<wp:wrapThrough>`->`<wp:wrapPolygon>`->`<wp:start>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `x` | | has been discussed before. | | |
+| `y` | | has been discussed before. | | |
+
+##### `<wp:anchor>`->`<wp:wrapThrough>`->`<wp:wrapPolygon>`->`<wp:start>`->`x`
+See `<wp:anchor>`->`<wp:simplePos>`->`x`
+
+##### `<wp:anchor>`->`<wp:wrapThrough>`->`<wp:wrapPolygon>`->`<wp:start>`->`x`
+See `<wp:anchor>`->`<wp:simplePos>`->`x`
+
+### elements under `<wp:anchor>`->`<wp:wrapThrough>`->`<wp:wrapPolygon>`->`<wp:lineTo>`
+#### direct children of `<wp:anchor>`->`<wp:wrapThrough>`->`<wp:wrapPolygon>`->`<wp:lineTo>` element
+See `<wp:anchor>`->`<wp:wrapThrough>`->`<wp:wrapPolygon>`->`<wp:start>`
+
+#### attributes in `<wp:anchor>`->`<wp:wrapThrough>`->`<wp:wrapPolygon>`->`<wp:lineTo>`
+See `<wp:anchor>`->`<wp:wrapThrough>`->`<wp:wrapPolygon>`->`<wp:start>`
+
+### elements under `<wp:anchor>`->`<wp:wrapTight>`
+#### direct children of `<wp:anchor>`->`<wp:wrapTight>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<wp:wrapPolygon>` | | has been discussed before. | | |
+
+#### attributes in `<wp:anchor>`->`<wp:wrapTight>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `distL` | | has been discussed before. | | |
+| `distR` | | has been discussed before. | | |
+| `wrapText` | | has been discussed before. | | |
+
+### elements under `<wp:anchor>`->`<wp:wrapTopAndBottom>`
+#### direct children of `<wp:anchor>`->`<wp:wrapThrough>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<wp:effectExtent>` | | has been discussed before. | | |
+
+#### attributes in `<wp:anchor>`->`<wp:wrapTopAndBottom>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `distB` | | has been discussed before. | | |
+| `distT` | | has been discussed before. | | |
+
 ### elements under `<wp:anchor>`-> `<wp:docPr>`
 #### direct children of `<wp:anchor>`->`<wp:docPr>` element
 See `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`
@@ -4548,37 +4629,37 @@ See `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`
 #### attributes in `<wp:anchor>`->`<wp:docPr>`
 See `<p:pic>`->`<p:nvPicPr>`->`<p:cNvPr>`
 
-##### attribute about `wp` namespace
-###### attribute in `<wp:inline>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `wp:cx` | | | specifies the width of the drawing object | Its unit is EMU. | |
-| `wp:cy` | | | specifies the height of the drawing object | Its unit is EMU. | |
-| `wp:editId` | | | specifies the edit id | | |
-| `wp:anchorId ` | | | specifies the anchor id | | |
+### elements under `<wp:anchor>`->`<wp:cNvGraphicFramePr>`
+#### direct children of `<wp:anchor>`->`<wp:cNvGraphicFramePr>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<a:graphicFrameLocks>` | | has been discussed before. | | |
+| `<extLst>` | | has been discussed before. | | |
 
-###### attribute in `<wp:effectExtent>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `wp:l` | | | specifies additional length in EMUs to be added to the left edge of the drawing object to accommodate effects | its unit is EMU | |
-| `wp:t` | | | specifies additional length in EMUs to be added to the top edge of the drawing object to accommodate effects | its unit is EMU | |
-| `wp:r` | | | specifies additional length in EMUs to be added to the right edge of the drawing object to accommodate effects | its unit is EMU | |
-| `wp:b` | | | specifies additional length in EMUs to be added to the bottom edge of the drawing object to accommodate effects | its unit is EMU | |
+#### attributes in `<wp:anchor>`->`<wp:cNvGraphicFramePr>`
+none
 
-###### attribute in `<wp:docPr>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `id` | | | the id of the drawing object | | |
-| `name` | | | the name of the drawing object | | |
-| `descr` | | *descr*iption | the description of the drawing object | | |
+### elements under `<wp:inline>`
+#### direct children of `<wp:inline>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<wp:extent>` | | has been discussed before. | | |
+| `<wp:effectExtent>` | | has been discussed before. | | |
+| `<a:graphic>` | | has been discussed before. | | |
+| `<wp:docPr>` | | has been discussed before. | | |
+| `<wp:cNvGraphicFramePr>` | | has been discussed before. | | |
+| `<extLst>` | | has been discussed before. | | |
 
-###### attribute in `<wp:cNvGraphicFramePr>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `wp:id` | | | speficies the unique identifier | | |
+#### attributes in `<wp:inline>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `distB` | | has been discussed before. | | |
+| `distL` | | has been discussed before. | | |
+| `distR` | | has been discussed before. | | |
+| `distT` | | has been discussed before. | | |
 
-##### examples and explanation
-###### example 1.1 -- an drawing object with description
+### examples and explanations
+#### example 1.1 -- an drawing object with description
 ```
 <wp:docPr id="1" name="" descr="Midori"/>
 ```
@@ -4587,7 +4668,7 @@ In above example, we can know that
 
 + an drawing object with id `1`, no name, and description `Midori`.
 
-###### example 2.1 -- extent
+#### example 2.1 -- extent
 ```
 <wp:anchor relativeHeight="10" allowOverlap="true">
   </wp:anchor>
@@ -4599,7 +4680,190 @@ In this example, we can know that
 
 + In `<wp:extent cx="1828800" cy="1828800"/>`, it indicates that the drawing object has a width and height of 1,828,800 EMUs.
 
-#### about `w` namespace
+## `w` namespace
+### root node in **`~/word/document.xml`**
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<w:document>` | | the root node of **`~/word/document.xml`** file under a Microsoft Word file. | | |
+| `<w:wordDocument>` | | the root node of **`~/word/document.xml`** file under a Microsoft Word file. | but it is used in older version of Microsoft Office. | |
+
+### elements under `<w:document>`
+#### direct children of `<w:document>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<w:body>` | body | the main part of file in native xml (and native html5) | | |
+| `<w:background>` | background | deals with background settings. | | |
+
+#### attributes in `<w:document>`
+none
+
+### elements under `<w:document>`->`<w:body>`
+#### direct children of `<w:document>`->`<w:body>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<w:p>` | *p*aragraph | defines a paragraph | notice that if an end-user only inputs an whitespace in .docx file, it will have `<w:p>` tag, the article `docx格式文档详解：xml解析并用html还原`[^4] says this situation. | 
+| | | | | | 
+| `<w:bookmarkStart>` | bookmark start | defines a bookmark with start point | | One `<w:bookmarkStart>` tag must match one `<w:bookmarkEnd>` tag. Otherwise, the file is corrupted. | 
+| `<w:bookmarkEnd>` | bookmark end | defines a bookmark with end point to enclose a bookmark | | Same as above | 
+| | | | | | 
+| `<w:sdt>` | *s*tructured *d*ocument *t*ag  | acts like a container for a specific piece content (e.g. TOC). | | |
+| | | | | | 
+| `<w:tbl>` | *t*a*bl*e | a table in Microsoft Word file | | |
+| | | | | | 
+| `<w:sectPr>` | *sect*ion *pr*operty | configure property of a section | | |
+| | | | | | 
+| `<w:ins>` | *ins*erted run content | specifies that the inline-level content contained within it shall be treated as inserted content which has been tracked as a revision. | | |
+| `<w:del>` | *del*eleted run content | specifies that the inline-level content contained within it shall be treated as deleted content which has been tracked as a revision. | | |
+| | | | | | 
+| `<w:moveFrom>` | move source run content | specifies that the inline-level content contained within it shall be treated as content which has been moved away from this location and tracked as a revision. | | |
+| `<w:moveTo>` | move destination run content | specifies that the inline-level content contained within it shall be treated as content which has been moved to this location and tracked as a revision. | | |
+| | | | | | 
+| `<w:moveFromRangeStart>` | move source location container about start | specifies the start of a region whose move source contents are part of a single named move. | | for notice, see [`<w:moveToRangeStart>`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_moveFromRangeStart_topic_ID0EOYGW.html#topic_ID0EOYGW) |
+| `<w:moveFromRangeEnd>` | move source location container about end | specifies the end of a region whose move source contents are part of a single named move. | | for notice, see [`<w:moveFromRangeEnd>`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_moveFromRangeEnd_topic_ID0E3PFW.html#topic_ID0E3PFW) |
+| `<w:moveToRangeStart>` | move destination location container about start | specifies the start of the region whose move destination contents are part of a single named move. | | for notice, see [`<w:moveToRangeStart>`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_moveToRangeStart_topic_ID0EDLNW.html#topic_ID0EDLNW) |
+| `<w:moveToRangeEnd>` | move destination location container about end | specifies the end of the region whose move destination contents are part of a single named move. | | for notice, see [`<w:moveToRangeEnd>`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_moveToRangeEnd_topic_ID0ERCMW.html#topic_ID0ERCMW) |
+| | | | | |
+| `<w:permStart>`| start range *perm*ission | specifies the start of a range permission within a WordprocessingML document | | |
+| `<w:permEnd>`| end range *perm*ission | specifies the end of a single range permission within a WordprocessingML document | | |
+| | | | | |
+| `<w:proofErr>`| *proof*ing archor *err*or | specifies the presence of a start or end anchor for a single proofing error within a WordprocessingML document. | | |
+| | | | | |
+| `<w:oMath>` | *O*ffice Math | specifies an equation or mathematical expression. | In Microsoft Office Word, an equation is typically declared in `m` namespace.</br>See `m` namespace for more details. | |
+| `<w:oMathPara>` | *O*ffice Math *p*aragraph | specifies one or more displayed equations within a single paragraph. | Same as above | |
+| | | | | |
+| `<w:commentRangeStart>`| start range of comment | specifies the start of the range around which a comment is anchored in the content of the WordprocessingML document. | | |
+| `<w:commentRangeEnd>`| end range of comment | specifies the end of the range around which a comment is anchored in the content of the WordprocessingML document. | | |
+| | | | | |
+| `<w:customXml>` | custom Xml element | specifies the presence of a custom XML element around one or more block level structures (paragraphs, tables, etc.).  | | |
+| | | | | |
+| `<w:customXmlInsRangeStart>` | start range of custom Xml markup about *ins*ertion | specifies the start of a region in which all custom XML markup has been inserted and tracked as a revision. | | |
+| `<w:customXmlInsRangeEnd>` | end range of custom Xml markup about *ins*ertion | specifies the end of a region in which all custom XML markup has been inserted and tracked as a revision. | | |
+| `<w:customXmlDelRangeStart>` | start range of custom Xml markup about *del*eletion | specifies the start of a region in which all custom XML markup has been deleted and tracked as a revision. | | |
+| `<w:customXmlDelRangeEnd>` | end range of custom Xml markup about *del*eletion | specifies the end of a region in which all custom XML markup has been deleted and tracked as a revision. | | |
+| | | | | |
+| `<w:customXmlMoveFromRangeStart>` | start range of custom Xml markup about move source | specifies the start of a region within which all custom XML markup was moved to another location in the document and this move was tracked as a revision.  | | |
+| `<w:customXmlMoveFromRangeEnd>` | end range of custom Xml markup about move source | specifies the end of a region within which all custom XML markup was moved to another location in the document and this move was tracked as a revision. | | |
+| `<w:customXmlMoveToRangeStart>` | start range of custom Xml about markup about move destination | specifies the start of a region within which all custom XML markup was moved to this location in the document and this move was tracked as a revision. | | |
+| `<w:customXmlMoveToRangeEnd>` | end range of custom Xml markup about move destination |  specifies the end of a region within which all custom XML markup was moved to this location in the document and this move was tracked as a revision. | | |
+| | | | | |
+| `<w:altChunk>` | | specifies a location within a document for the insertion of the contents of a specified file containing external content to be imported into the main WordprocessingML document. | | |
+
+#### attributes in `<w:document>`->`<w:body>`
+none
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| | | | | | 
+| `<w:pPr>` | *p*aragraph *pr*operty | property of a paragraph (that is inside `<w:p>` tag) in Microsoft Word file | | |
+| | | | | | 
+| `<w:r>` | *r*un | defines a run in a paragraph. | | |
+| | | | | | 
+| `<w:bookmarkStart>` | | has been discussed before. | | One `<w:bookmarkStart>` tag must match one `<w:bookmarkEnd>` tag. Otherwise, the file is corrupted. | 
+| `<w:bookmarkEnd>` | | has been discussed before. | | Same as above | 
+| | | | | | 
+| `<w:fldSimple>` | simple *f*ie*ld* | defines a simple field and acts like a container that contains its' setting (inside this tag). | | | 
+| | | | | | 
+| `<w:hyperlink>` | hyperlink | defines a hyperlink | | |
+| | | | | | 
+| `<w:sdt>` | inline-level *s*tructured *d*ocument *t*ag  | acts like a container which inline-level structured document tag is in one or more inline-level structures. | | |
+| `<w:smartTag>` | inline-level smart tag  | acts like a container which inline-level smart tag is in one or more inline-level structures. | | |
+| | | | | | 
+| `<w:ins>` | | has been discussed before. | | |
+| `<w:del>` | | has been discussed before. | | |
+| | | | | | 
+| `<w:moveFrom>` | | has been discussed before. | | |
+| `<w:moveTo>` | | has been discussed before. | | |
+| | | | | | 
+| `<w:moveFromRangeStart>` | | has been discussed before.  | | for notice, see [`<w:moveToRangeStart>`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_moveFromRangeStart_topic_ID0EOYGW.html#topic_ID0EOYGW) |
+| `<w:moveFromRangeEnd>` | | has been discussed before. | | for notice, see [`<w:moveFromRangeEnd>`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_moveFromRangeEnd_topic_ID0E3PFW.html#topic_ID0E3PFW) |
+| `<w:moveToRangeStart>` | | has been discussed before. | | for notice, see [`<w:moveToRangeStart>`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_moveToRangeStart_topic_ID0EDLNW.html#topic_ID0EDLNW) |
+| `<w:moveToRangeEnd>` | | has been discussed before. | | for notice, see [`<w:moveToRangeEnd>`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_moveToRangeEnd_topic_ID0ERCMW.html#topic_ID0ERCMW) |
+| | | | | |
+| `<w:proofErr>`| | has been discussed before. | | |
+| | | | | |
+| `<w:oMath>` | | has been discussed before. | In Microsoft Office Word, an equation is typically declared in `m` namespace.</br>See `m` namespace for more details. | |
+| `<w:oMathPara>` | | has been discussed before. | Same as above | |
+| | | | | |
+| `<w:commentRangeStart>`| | has been discussed before. | | |
+| `<w:commentRangeEnd>`| | has been discussed before. | | |
+| | | | | |
+| `<w:customXml>` | | has been discussed before.  | | |
+| | | | | |
+| `<w:customXmlInsRangeStart>` | | has been discussed before. | | |
+| `<w:customXmlInsRangeEnd>` | | has been discussed before. | | |
+| `<w:customXmlDelRangeStart>` | | has been discussed before. | | |
+| `<w:customXmlDelRangeEnd>` | | has been discussed before. | | |
+| | | | | |
+| `<w:customXmlMoveFromRangeStart>` | | has been discussed before. | | |
+| `<w:customXmlMoveFromRangeEnd>` | | has been discussed before. | | |
+| `<w:customXmlMoveToRangeStart>` | | has been discussed before. | | |
+| `<w:customXmlMoveToRangeEnd>` | | has been discussed before.| | |
+| | | | | | 
+| `<w:subDoc>` | anchor of location of sub-*doc*ument | specifies a location within a master document for the insertion of the contents of a specified subdocument. | | | 
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`
+none
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`  element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| | | | | | |
+| `<w:rPr>` | *r*un *pr*operty | configure property of a run (that is inside `<w:r>` tag) | | |
+| `<w:sectPr>` | | has been discussed before. | | |
+| `<w:framePr>` | frame *pr*operty | configure property of frame | | |
+| `<w:numPr>` | *num*ber *pr*operty | configure the property if it uses number formatting.  | | |
+| | | | | | |
+| `<w:pPrChange>`| *p*aragraph *pr*operty changed information | specifies the details about a single revision to a set of paragraph properties in a WordprocessingML document. | | | |
+| | | | | | |
+| `<w:pStyle>` | *p*aragraph style | applies style (according to value of `w:val` attribute) to paragraph (that is inside `<w:p>` tag) | the style to apply is defined in `~/word/style.xml` file | |
+| `<w:cnfStyle>` | *c*o*nf*lict styles | It's used to store information about how styles should be applied or resolved in situations where there might be conflicts or variations. | | |
+| | | | | | |
+| `<w:divId>`| | speficies the div id | | | 
+| | | | | | |
+| `<w:bidi/>` | | text | defines the bidirectional text | | |
+| | | | | | |
+| `<w:ind>` | paragraph *ind*entation | configure the indentation for this paragraph. | | |
+| `<w:adjusLeftind>` | adjust left *ind*entation | configure the left indentation will be adjusted due to different window size. | | |
+| `<w:adjusRightind>` | adjust right *ind*entation | configure the right indentation will be adjusted due to different window size. | | |
+| `<w:mirrorIndents>` | | mirror indentation | the indentation should be mirrored.</br>Specifying to `"false"` indicates that the indentation will not be mirrored.</br>Otherwise, specifying to `"true"` indicates that it will be indented. | | Default value is `"false"`. |
+| | | | | | |
+| `<w:spacing>` | spacing | settings about spacing between paragraphs | | |
+| `<w:contextualSpacing>` | | determines that Word can dynamically modify the line spacing in situations | `"true"` to modify, `"false"` to not modify.  | Default value is `"true"` |
+| `<w:autoSpaceDE>` | | controls whether Word should automatically adjust the spacing between Asian characters and Latin text (like English) within a paragraph. | | |
+| `<w:autoSpaceDN>` | | controls whether Word should automatically adjust the spacing between Asian characters and adjacent numbers (0-9) within a paragraph. | | |
+| `<w:snapToGrid>`| | determines whether the content of the paragraph should be snap to a grid (if possible) | | | |
+| | | | | | |
+| `<w:shd>`| *sh*a*d*ing | specifies the shading applied to the contents of the paragraph. | | | |
+| | | | | | |
+| `<w:jc>` | *j*ustifi*c*ation | settings about justification (alignment) of the paragraph | | |
+| `<w:textAlignment>`| | specifies the vertical alignment of all text on each line displayed within a paragraph. | | | |
+| `<w:textDirection>`| text flow direction | specifies the direction of the text flow for this paragraph. | | | |
+| `<w:wordWrap>` | | determines whether word wrapping is allowed (i.e. when a word excceeds the line, can only the overflowed characters in the word go to the next line? ) | | | |
+| | | | | | |
+| `<w:suppressOverlap>`| | determines whether it suppresses when it overlapps to other. | | | |
+| `<w:suppressLineNumbers>`| | specifies the number of lines are suppressed in the paragraph | | | |
+| `<w:suppressAutoHyphens>`| | determines whether it suppresses hyphen automatically | | | |
+| | | | | | |
+| `<w:textboxTightWrap>` | | specifies whether, for paragraphs in a text box, the surrounding text shall be allowed to overlap with the empty text box boundaries and tight wrap to the extents of the text within the text box. | | | |
+| | | | | | |
+| `<w:topLinePunct>` | *punct*uation on top line | determines whether punctuation shall be compressed when it appears as the first character in a line, allowing subsequent characters on the line to be move in accordingly. | | | |
+| `<w:widowControl>` | widow control | determines whether a consumer shall prevent a single line of this paragraph from being displayed on a separate page from the remaining content at display time by moving the line onto the following page. | | | |
+| | | | | | |
+| `<w:tabs>` | | acts like a container of tab stops (`<w:tab>`) | you may see one or more `<w:tab>` tag inside `<w:tabs>` tag. | | 
+| | | | | | |
+| `<w:pBdr>` | *p*aragraph *b*or*d*e*r* | configure paragraph border | | |
+| `<w:keepLines>` | | determines whether keep lines to make the paragraph must be on the same page. | | | 
+| `<w:keepNext>` | | specifies that the contents of this paragraph are at least partly rendered on the same page as the following paragraph whenever possible. | | | 
+| | | | | | |
+| `<w:pageBreakBefore>` | | specifies to add extra paragraph on next page | | | |
+| | | | | | |
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`
+none
+
 ##### elements in `w` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
@@ -4613,14 +4877,8 @@ In this example, we can know that
 | `<w:rsids>` | | *r*evision *s*ave *id*entifier*s* | it is a container of revision save identifiers element (`<w:rsid>`, `<w:rsidRoot>`) | | |
 | `<w:rsidRoot>` | | *r*evision *s*ave *id*entifiers baseline | establishes a revision save identifiers baseline for current editing session or the most recent save operation that affected the main content of the document. | | |
 | `<w:rsid>` | | *r*evi*s*ion save | establishes a revision save identifier. | | |
-| | | | | | |
-| `<w:wordDocument>` | `<html>` | root node | the root node of a Microsoft Word file. | | |
-| `<w:document>` | `<html>` | root node | the root node of **`~/word/document.xml`** file under a Microsoft Word file. | | |
-| | | | | | |
-| `<w:background>` |  | background | deals with background settings. | | |
 | `<w:drawing>` |  | drawing | defines a drawing. | | |
 | `<w:ignoreSubtree>` | | ignore a specific subtree | it instructs the Word processor to ignore a specific subtree of the XML document (according to the value of `w:val` attribute) during processing. | | | 
-| `<w:body>` | `<body>` | body | the main part of file in native xml (and native html5) | | |
 | `<w:lang>` | `<lang>` | language | the language for characters | lang stands for *lang*uage | |
 | `<w:charset>` | `<charset>` in native html5 | charset | configure charset of this font | | |
 | `<w:family>` | | family | configure family of this font | | |
@@ -4639,14 +4897,8 @@ In this example, we can know that
 | `<w:altName>` | `alt` attribute in `<img>` tag in native html5 | *alt*ernative | use the alternative (according to the value specified in `w:val` attribute) **when** an element (such as an image) or things that used in an element (such as font) **can not be used or worked correctly**. | | |
 | `<w:noProof/>` | | no proofing tool used | no spelling check and grammer check inside this tag. | | |
 | | | | | | |
-| `<w:framePr>` | | frame *pr(operty | configure property of frame | | |
 | | | | | | | |
-| `<w:p>` | `<p>` | *p*aragraph | defines a paragraph | notice that if an end-user only inputs an whitespace in .docx file, it will have `<w:p>` tag, the article `docx格式文档详解：xml解析并用html还原`[^4] says this situation. | 
-| `<w:pStyle>` | | *p*aragraph style | applies style (according to value of `w:val` attribute) to paragraph (that is inside `<w:p>` tag) | the style to apply is defined in `~/word/style.xml` file | |
-| `<w:pPr>` | | *p*aragraph *pr*operty | property of a paragraph (that is inside `<w:p>` tag) in Microsoft Word file | | |
 | | | | | | | | 
-| `<w:r>` | | *r*un | defines a run in Word | | |
-| `<w:rPr>` | | *r*un *pr*operty | configure property of a run (that is inside `<w:r>` tag) | | |
 | `<w:rFonts>`| | *r*un fonts | configure fonts of a run (that is inside `<w:rPr>` tag) | | |
 | | | | | | | | 
 | `<w:b/>` | `<b>` and `<b/>` in native html5 | bold | determines whether the non-complex script text is bold | | |
@@ -4654,21 +4906,14 @@ In this example, we can know that
 | `<w:i/>` | | italic | determines whether the non-complex script text is italic. | | |
 | `<w:iCs/>` | | italic | determines whether the complex script text is italic. | | |
 | `<w:t/>` | | text | defines the text | | |
-| `<w:bidi/>` | | text | defines the bidirectional text | | |
 | | | | | | |
 | `<w:rPrDefault>` | | | defines the default formatting properties for all text runs within the document. | | |
 | `<w:pPrDefault/>` | | | defines the default formatting properties for all paragraphs in the document. | | |
 | `<w:latentStyles>` | | | servers as a container for defining the latent styles (i.e. current unused styles). | | |
 | | | | | | |
-| `<w:ind>` | | paragraph *ind*entation | configure the indentation for this paragraph. | | |
-| `<w:adjusLeftind>` | | adjust left *ind*entation | configure the left indentation will be adjusted due to different window size. | | |
-| `<w:adjusRightind>` | | adjust right *ind*entation | configure the right indentation will be adjusted due to different window size. | | |
+
+
 | | | | | | | | 
-| `<w:jc>` | | *j*ustifi*c*ation | settings about justification (alignment) of the paragraph | | |
-| `<w:spacing>` | spacing | settings about spacing between paragraphs | | |
-| | | | | | | | 
-| `<w:autoSpaceDE>` | | | controls whether Word should automatically adjust the spacing between Asian characters and Latin text (like English) within a paragraph. | | |
-| `<w:autoSpaceDN>` | | | controls whether Word should automatically adjust the spacing between Asian characters and adjacent numbers (0-9) within a paragraph. | | |
 | | | | | | | | 
 | `<w:bar>` | | | insert a vertical line | | | | 
 | | | | | | | | 
@@ -4697,7 +4942,6 @@ In this example, we can know that
 | `<w:sz>` | | *s*i*z*e for non-Complex script | defines a font size for standard characters (that is inside `<w:rPr>` tag) | | |
 | `<w:szCs>` | | *s*i*z*e for *C*omplex *s*cript | defines a font size for complex script characters (that is inside `<w:rPr>` tag) | | |
 | | | | | | | | 
-| `<w:tbl>` | `<table>` | *t*a*bl*e | a table in Microsoft Word file | | |
 | `<w:tblPr>` | | *t*a*bl*e *pr*operty | configure property (such as style and appearance) of a table (that is inside `<w:tbl>` tag) in Microsoft Word file | | |
 | `<w:tblGrid>` | `<tr>` (first occurence) | *t*a*bl*e grid | defines a grid (header) of a table in Microsoft Word file | you can think of a grid like a header row ( consists of lots of columns ) in table | |
 | `<w:gridCol>` | `<th>` | table grid column | defines a cell in a grid of a table in Microsoft Word file | | it must be inside `<w:tblGrid>` tag. Otherwise, the Word file is corrupted. |
@@ -4711,20 +4955,16 @@ In this example, we can know that
 | `<w:instrText>` | | *instr*uction text | it defines an instruction text for a field | | |
 | `<w:fldChar>` | | *f*ie*ld* *char*acter | it defines a field character. | | | 
 | | | | | | | | 
-| `<w:fldSimple>` | | simple *f*ie*ld* | defines a simple field and acts like a container that contains its' setting (inside this tag). | | | 
 | | | | | | | | 
-| `<w:sectPr>` | | sect property | configure property of a sect | sect stands for section | |
 | `<w:pgSz>` | | page size | configures a page size (that is inside `<w:sectPr>` tag) | pg stands for *p*a*g*e | |
 | `<w:pgMar>` | | page margin | configures a page margin (that is inside `<w:sectPr>` tag) | Mar stands for *Mar*gin | |
 | `<w:col>` | | columns in section | add columns in section (that is inside `<w:sectPr>` tag) | | |
 | `<w:docGrid>` | | document grid | add document grid (that is inside `<w:sectPr>` tag) | | |
 | | | | | | | | 
-| `<w:tabs>` | | | acts like a container of tab stops (`<w:tab>`) | you may see one or more `<w:tab>` tag inside `<w:tabs>` tag. | | 
 | `<w:defaultTabStop>` | | tab | define property of the default tab stop by assign the value to its attributes. | | | 
 | `<w:tab>` | | tab | define property of a tab stop by assign the value to its attributes. | | | 
 | | | | | | | | 
-| `<w:bookmarkStart>` | | bookmark start | defines a bookmark with start point | | One `<w:bookmarkStart>` tag must match one `<w:bookmarkEnd>` tag. Otherwise, the file is corrupted. | 
-| `<w:bookmarkEnd>` | | bookmark end | defines a bookmark with end point to enclose a bookmark | | Same as above | 
+
 | | | | | | | | 
 | `<w:lists>` | | | acts like a container of a list (`<w:list>`) | | |
 | `<w:numbering>` | | numbering | It acts as a container for numbering definitions, which are then referenced by paragraphs to apply specific list styles. | | |
@@ -4736,7 +4976,6 @@ In this example, we can know that
 | `<w:start>` | | start | configure starting value for the numbering sequence at this list level | | It's only relevant when the <w:numFmt> (number format) for this level is set to a numbering style (like decimal, upperRoman, lowerLetter, etc.). |
 | `<w:numFmt>` | | number *f*or*m*a*t*ting | determines whether this level uses numbers or bullets, and the specific style  | | |
 | `<w:bullet>` | | bullet formatting | same above | | |
-| `<w:numPr>` | | number *property | configure the property if it uses number formatting.  | | |
 | `<w:numId>` | | numbering id | specifies the numbering id to link number formatting given the value of `w:val` attribute.  | | |
 | `<w:suff>` | | suffix | specifies what character (if any) follows the number (e.g., a period, a hyphen, or a tab) | | |
 | `<w:outlineLvl>` | | outline *l*e*v*e*l* | specifies the outline level which shall be associated with the current paragraph in the document. | | |
@@ -4744,10 +4983,8 @@ In this example, we can know that
 | `<w:lvlJc>` | | *l*e*v*e*l* *j*ustifi*c*ation | configures the justification of this level | | | 
 | `<w:nfc>` | | *N*umber *F*ormatting *C*ode | configures Number Formatting Code of this level | | | 
 | | | | | | | |
-| `<w:hyperlink>` | | hyperlink | defines a hyperlink | | |
 | | | | | | | |
 | `<w:bdr>` | `border` in css | *b*or*d*e*r* | configures properties of the border. | | |
-| `<w:pBdr>` | | *p*aragraph *b*or*d*e*r* | configure paragraph border | | |
 | `<w:between>` | | | border that appears between consecutive paragraphs | | |
 | `<w:pgBorders>` | | *p*a*g*e borders | configures properties of the borders of page. | | |
 | | | | | | | |
@@ -4770,24 +5007,18 @@ In this example, we can know that
 | | | | | | |
 | `<w:style>` | | style | defines a style | it usually resides at `~/word/style.xml` file under a Word file. | |
 | `<w:lsdException>` | | LSD exception | defines exceptions to the default behavior of LSD (Linked Style Definitions). | | |
-| `<w:cnfStyle>` | | conflict styles | It's used to store information about how styles should be applied or resolved in situations where there might be conflicts or variations. | | |
 | | | | | | |
 | `<w:vertAlign/>` | | vertical alignment | specifies that which alignment the text within the current run should be formatted to | it usually resides at `~/word/style.xml` file under a Word file. | |
 | `<w:hr>` | | | defines a horizontal rule | | |
 | | | | | | |
-| `<w:contextualSpacing>` | | | determine that Word can dynamically modify the line spacing in situations | `"true"` to modify, `"false"` to not modify. default value to `"true"` | |
 | | | | | | |
-| `<w:divId>`| | | speficies the div id | | | 
 | `<w:separator/>`| | | defines a seperator (maybe section break) | | | 
 | `<w:continuationSeparator/>`| | | defines that the continuation separator for footnotes.) | | | 
 | | | | | | |
-| `<w:keepLines>` | | | determines whether keep lines to make the paragraph must be on the same page. | | | 
-| `<w:keepNext>` | | | specifies that the contents of this paragraph are at least partly rendered on the same page as the following paragraph whenever possible. | | | 
 | | | | | | |
 | <w:kinsoku> | | Kinsoku Shori (禁則處理) | specifies whether East Asian typography and line-breaking rules shall be applied to text in this paragraph to determine which characters can begin and end each line. | | This property only applies to Simplified Chinese, Traditional Chinese, and Japanese text in this paragraph. |
 | `<w:minorIdents>` | | | detemines whether if this tag is present, Word will swap the left and right indent settings if the document or section is set to a right-to-left reading order. | | If this is omitted on a given paragraph, its value is determined by the setting previously set at any level of the style hierarchy (i.e. that previous setting remains unchanged). If this setting is never specified in the style hierarchy, then this property shall not be applied. |
 | | | | | | |
-| `<w:sdt>` | | *s*tructured *d*ocument *t*ag  | acts like a container for a specific piece content (e.g. TOC). | | |
 | `<w:sdtContent>` | | *s*tructured *d*ocument *t*ag content |  acts like a container for the actual content that is displayed within a Structured Document Tag | | |
 | `<w:sdtPr>` | | *s*tructured *d*ocument *t*ag *pr*operties | defines the properties of structured document tag (`<w:sdt>` tag). | About characterist of structured tag, see [here](https://github.com/40843245/Microsoft_Office/blob/main/Product/Word/terms/terms%20list.md#characteristics) | |
 | `<w:sdtEndPr>` | | *s*tructured *d*ocument *t*ag end *pr*operties | specifies properties that are applied to the end delimiter of the content control in the document. | | |
