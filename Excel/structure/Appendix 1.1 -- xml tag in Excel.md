@@ -30,18 +30,7 @@ I just list some of them that commonly seen in Excel file.
 | `xmlns` | | | is used to declare a default namespace for an element and its descendants. Elements without a prefix within this scope belong to this namespace | | |
 
 ### namespace under `xmlns` namespace
-| namespace under `xmlns` namespace | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- |
-| `r` | *R*elationship | it specifies which relationship will be used. | | | 
-| `m` | *M*ath | it specifies which tools about math (its functionalities contain `Equation`) will be used. | | | 
-| `ignorable` | ignorable | it specifies which namespace declaration in this tag will be ignored. | it must be string, seperated by exactly one space. (To represent that many of them will be ignored.) | | 
-| `w` | *W*ordProcessingML | assign a value to it determine which WordprocessingML elements is used. | | |
-| `w14` | *W*ordProcessingML | assign a value to it determine which WordprocessingML (with version id 14) elements is used. | | |
-| `w15` | *W*ordProcessingML | assign a value to it determine which WordprocessingML (with version id 15) elements is used. | | |
-| `w16cid` | *W*ordProcessingML *C*ontent *Id*entifiers | assign a value to it determine which Content Identifiers of WordprocessingML (with version id 16) elements is used. | | |
-| `w16se` | *W*ordProcessingML *S*ymbol *E*xtensibility | assign a value to it determine which Symbol Extensibility of WordprocessingML (with version id 16) elements is used. | | |
-| `wpg` | *W*ordProcessingML *G*rouping  | assign a value to it determine which Symbol Extensibility of WordprocessingML Grouping is used. | | |
-| `wpi` | *W*ordProcessingML *I*nk  | assign a value to it determine which Symbol Extensibility of WordprocessingML Ink is used. | At intial release of WordprocessingML Ink (in Microsoft Office 2010), its namespace is named as `wpi` but it is named as `aink` at later release. | |
+See [`OOXML/Word/structure/Appendix 1.1#namespace under xmlns namespace`](https://github.com/40843245/OOXML/blob/main/Word/structure/Appendix%201.1%20--%20xml%20tag%20in%20Document.md#namespace-under-xmlns-namespace)
 
 ### element and its attribute in xml tag in OOXML
 #### about `mc` namespace
