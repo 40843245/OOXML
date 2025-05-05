@@ -235,18 +235,68 @@ In above example, we can know that
 | `o` | *O*ffice-specific namespace | it contains metadata about the Word document itself. | | |
 
 ## `v` namespace
+### root node
+`<xml>`
+
 ### namespaces in `v` namespace
 | attribute | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `v:ext` | | | specifies editing behavior for shapes created with these defaults. | | |
 
 ## `a` namespace
+### root node
+`<a:graphic>`
+
 ### elements in `a` namespace
 | elements | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | `<a:stretch>` | | stretch | acts as a container whose child will be stretched to fit its content. | | It can have exactly one child. |
 | `<a:fillRect>` | | fill *rect*angle | fills the rectangle | | It can have exactly one child. |
 | | | | | | |
 | `<a:custGeom>` | | *cust*om *geom*etry | defines your own custom geometry. | |
+
+### elements under `<a:graphic>` element
+#### direct children of `<a:graphic>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<a:graphicData>` | | configure properties about the actual graph. | | |
+
+#### attributes in `<a:graphic>` element
+none
+
+### elements under `<a:graphicData>` element
+#### direct children of `<a:graphicData>` element
+none
+
+#### attributes in `<a:graphicData>` element
+> [!NOTE]
+> there are extensibility attributes (which is optional) in `<a:graphicData>` tag.
+
+| attributes | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `a:uri` | uri | specifies uri of the actual graph. |  | It is required. |
+
+### elements under `<a:graphicFrameLocks>` element
+#### direct children of `<a:graphicFrameLocks>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----------- | :----- | :--- | :-- |
+| `<a:extLst>` | | has been discussed before | | |
+
+#### attributes in `<a:graphicFrameLocks>` element
+| attributes |  meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `a:noChangeAspect` | No Change Aspect Ratio | a boolean value indicating whether the aspect ratio of the graphic frame is locked and cannot be changed. | | |
+| `a:noResize` | | a boolean value indicating whether graphic frame cannot be resized. | | |
+| `a:noMove` | |  a boolean value indicating whether the graphic frame cannot be moved. | | |
+| `a:noRotate` | |  a boolean value indicating whether the graphic frame cannot be rotated. | | |
+| `a:noSelect ` | |  a boolean value indicating whether the graphic frame cannot be selected. | | |
+| `a:noChangeArrowheads` | |  a boolean value indicating whether the arrowheads of any lines within the graphic frame can not be changed. | | |
+| `a:noEditPoints` | |  a boolean value indicating whether the points of any shapes within the graphic frame can not be editable. | | |
+| `a:noAdjustHandles` | |  a boolean value indicating whether the points of within the graphic frame can not be modified by adjustment handles. | | |
+| `a:noChangeShapeType` | |  a boolean value indicating whether the type of within the graphic frame can not be changed. | | |
+
+For example,
+
+In `<a:graphicFrameLocks noResize="true">`, the graphic frame can not be resized.
 
 ### elements under `<a:ln>`
 #### direct children of `<a:ln>`
@@ -1035,50 +1085,6 @@ none
 | :---------- | :----------- | :----- | :--- | :-- |
 | `x` | | specifies x-coordinates of the position. | | |
 | `y` | | specifies y-coordinates of the position. | | |
-
-### elements under `<a:graphic>` element
-#### direct children of `<a:graphic>` element
-| elements | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- |
-| `<a:graphicData>` | | configure properties about the actual graph. | | |
-
-#### attributes in `<a:graphic>` element
-none
-
-### elements under `<a:graphicData>` element
-#### direct children of `<a:graphicData>` element
-none
-
-#### attributes in `<a:graphicData>` element
-> [!NOTE]
-> there are extensibility attributes (which is optional) in `<a:graphicData>` tag.
-
-| attributes | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- |
-| `a:uri` | uri | specifies uri of the actual graph. |  | It is required. |
-
-### elements under `<a:graphicFrameLocks>` element
-#### direct children of `<a:graphicFrameLocks>` element
-| elements | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- |
-| `<a:extLst>` | | has been discussed before | | |
-
-#### attributes in `<a:graphicFrameLocks>` element
-| attributes |  meaning | description | notes | notice |
-| :----------  | :----- | :--- | :-- | :-- |
-| `a:noChangeAspect` | No Change Aspect Ratio | a boolean value indicating whether the aspect ratio of the graphic frame is locked and cannot be changed. | | |
-| `a:noResize` | | a boolean value indicating whether graphic frame cannot be resized. | | |
-| `a:noMove` | |  a boolean value indicating whether the graphic frame cannot be moved. | | |
-| `a:noRotate` | |  a boolean value indicating whether the graphic frame cannot be rotated. | | |
-| `a:noSelect ` | |  a boolean value indicating whether the graphic frame cannot be selected. | | |
-| `a:noChangeArrowheads` | |  a boolean value indicating whether the arrowheads of any lines within the graphic frame can not be changed. | | |
-| `a:noEditPoints` | |  a boolean value indicating whether the points of any shapes within the graphic frame can not be editable. | | |
-| `a:noAdjustHandles` | |  a boolean value indicating whether the points of within the graphic frame can not be modified by adjustment handles. | | |
-| `a:noChangeShapeType` | |  a boolean value indicating whether the type of within the graphic frame can not be changed. | | |
-
-For example,
-
-In `<a:graphicFrameLocks noResize="true">`, the graphic frame can not be resized.
 
 ### elements under `<a:blip>` element
 #### direct children of `<a:blip>` element
