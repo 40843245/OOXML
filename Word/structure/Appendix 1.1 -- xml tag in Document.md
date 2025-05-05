@@ -568,7 +568,7 @@ MUST be one of values with data type [`<ST_PositivePercentage>`](https://c-rex.n
 | `<a:noAutofit>` | no auto fit | determines whether the text should not be automatically resized to fit the bounding box. | | |
 | `<a:normAutofit>` | *nor*mal auto fit | specifies that standard automatic resizing of the text to fit the bounding box. | | |
 | `<a:spAutoFit>` | *s*ha*p*e auto fit | determines that the shape itself should be resized to fit the text. | | |
-| `<a:extLst>` | | has been discussed above. | | |
+| `<a:extLst>` | | has been discussed before. | | |
 
 #### attributes in `<a:bodyPr>` element
 | attributes | meaning | description | notes | notice |
@@ -2100,22 +2100,224 @@ MUST be one of values with data type [`ST_GapAmount`](https://c-rex.net/samples/
 > [!IMPORTANT]
 > `ST_GapAmount` is predefined as unsigned short between 0 and 500 (BOTH inclusive).
 
-### element under `<c:ser>` element
-#### direct children of `<c:ser>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:ser>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:ser>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:idx>` | | has been discussed above | | |
 | `<c:order>` | | specifies the order of the series in the collection. | It's zero-based | |
 | `<c:dLbls>` | | has been discussed above | | |
-| `<c:cat>` | | has been discussed above | | |
+| `<c:cat>` | *cat*gory | specifies the data used for the category axis. | | |
 | `<c:errBars>` | *err*or bars | defines error bars for the data points in this series. | |  This is available for</br><ol><li>bar charts</li><li>column (bar) charts</li></ol> |
 | `<c:pictureOptions>` | | specifies the picture to be used on the data point, series, wall, or floor. | | |
 
-#### attributes in `<c:ser>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:ser>` element
 none
 
-### element under `<c:errBars>` element
-#### direct children of `<c:errBars>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:numRef>` | *num*ber *ref*erence | specifies a reference to numeric data with a cache of the last values used. | | |
+| `<c:numLit>` | *num*ber *lit*eral | specifies a set of numbers used for the parent element. | | |
+| `<c:strRef>` | *str*ing *ref*erence | specifies a reference to data for a single data label or title with a cache of the last values used. | | |
+| `<c:strLit>` | *str*ing *lit*eral | specifies a set of strings used for a chart | | |
+| `<c:multiLvlStrRef>` | *multi*ple *l*e*v*e*l* *str*ing *ref*erence | specifies a reference to data for the category axis with a cache of the last values used. | | |
+
+#### attributes in `<c:cat>` element
+none
+
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:numRef>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:numRef>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<numCache>` | | | | |
+| `<c:f>` | f*ormula | contains the formula that specifies the range of cells in the spreadsheet. | | |
+| `<extLst>` | | | | |
+
+### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:numRef4>` element
+none
+
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:numLit>`-> element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:numLit>`-> element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:ptCount>` | *p*oin*t* count | number of point | | |
+| `<c:pt>` | numeric *p*oin*t* | specifies a data point | | |
+| `<c:formatCode>` | | | | |
+| `<extLst>` | | has been discussed before. | | |
+
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:numLit>`-> element
+none
+
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:numLit>`->`<c:ptCount>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:numLit>`->`<c:ptCount>` element
+none
+
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:numLit>`->`<c:ptCount>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `val` | | | | |
+
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:numLit>`->`<c:ptCount>`->`val`
+MUST be a non-negative integer.
+
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:numLit>`->`<c:pt>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:numLit>`->`<c:pt>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:v>` (direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:numLit>`->`<c:pt>`) | | the actual data value of a point in cached copy of numerical values | | |
+
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:numLit>`->`<c:pt>` element
+none
+
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:numLit>`->`<c:pt>`->`<c:v>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:numLit>`->`<c:pt>`->`<c:v>` element
+none
+
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:numLit>`->`<c:pt>`->`<c:v>` element
+none
+
+#### innerHTML of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:numLit>`->`<c:pt>`->`<c:v>`
+MUST be data type [`ST_Xstring`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_Xstring_topic_ID0EZ32RB.html#topic_ID0EZ32RB)
+
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:numLit>`->`<c:formatCode>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:numLit>`->`<c:formatCode>` element
+none
+
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:numLit>`->`<c:formatCode>` element
+none
+
+#### innerHTML of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:numLit>`->`<c:formatCode>`
+MUST be data type [`ST_Xstring`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_Xstring_topic_ID0EZ32RB.html#topic_ID0EZ32RB)
+
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:numRef>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:numRef>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<numCache>` | *num*ber cache | specifies the cached numerice value which stores last data shown on the chart for a series. | | |
+| `<c:f>` | f*ormula | contains the formula that specifies the range of cells in the spreadsheet. | | |
+| `<extLst>` | | | | |
+
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:numRef>`->`<c:numCache>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:numRef>`->`<c:numCache>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:ptCount>` |  | has been discussed before | | |
+| `<c:pt>` | |  has been discussed before | | |
+| `<c:formatCode>` | | has been discussed before | | |
+| `<extLst>` | | has been discussed before. | | |
+
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:numRef>`->`<c:numCache>` element
+none
+
+### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:numRef>` element
+none
+
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:numCache>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:numCache>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:ptCount>` | | number of direct children | | |
+| `<c:pt>` | numeric *p*oin*t* |  has been discussed before | | |
+| `<c:formatCode>` | | has been discussed before | | |
+| `<extLst>` | | has been discussed before. | | |
+
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:numCache>` element
+none
+
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:strLit>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:strLit>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:ptCount>` | | number of direct children | | |
+| `<c:pt>` | string *p*oin*t* | specifies string data for a specific data point. | | |
+| `<extLst>` | | has been discussed before. | | |
+
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:strLit>` element
+none
+
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:strLit>`->`<c:pt>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:strLit>`->`<c:pt>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:v>` | | specifies a text value for a category axis label or a series name. | | |
+
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:strLit>`->`<c:pt>` element
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `idx` | | has been discussed before. | | |
+
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:strLit>`->`<c:pt>`->`idx`
+MUST be an unsigned positive integer.
+
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:strLit>`->`<c:pt>`->`<v>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:strLit>`->`<c:pt>`->`<v>` element
+none
+
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:strLit>`->`<c:pt>`->`<v>` element
+none
+
+#### innerHTML in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:strLit>`->`<c:pt>`->`<v>` element
+MUST be one of predefined values within data type [`ST_Xstring`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_Xstring_topic_ID0EZ32RB.html#topic_ID0EZ32RB)
+
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:strRef>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:strRef>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<strCache>` | *str*ing cache | specifies the cached string which stores the last string data used for a chart. | | |
+| `<c:f>` | | has been discussed before. | | |
+| `<extLst>` | | | | |
+
+### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:strRef>` element
+none
+
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:strCache>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:strCache>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:ptCount>` | | number of direct children | | |
+| `<c:pt>` | string *p*oin*t* |  has been discussed before | | |
+| `<extLst>` | | has been discussed before. | | |
+
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:strCache>` element
+none
+
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:multiLvlStrRef>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:multiLvlStrRef>`` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:multiLvlStrCache>` | *multi*ple *l*e*v*e*l* *str*ing cache | specifies the cached mutli-level string which stores the last data shown on the chart for a category axis. | | |
+| `<c:f>` | |  has been discussed before | | |
+| `<extLst>` | | has been discussed before. | | |
+
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:multiLvlStrRef>` element
+none
+
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:multiLvlStrRef>`->`<c:multiLvlStrCache>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:multiLvlStrRef>`->`<c:multiLvlStrCache>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:ptCount>` | | number of direct children | | |
+| `<c:lvl>` | *l*e*v*e*l*  | specifies data for a single level of labels for a category axis. | | |
+| `<extLst>` | | has been discussed before. | | |
+
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:multiLvlStrRef>`->`<c:multiLvlStrCache>` element
+none
+
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:multiLvlStrRef>`->`<c:multiLvlStrCache>`->`<c:lvl>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:multiLvlStrRef>`->`<c:multiLvlStrCache>`->`<c:lvl>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:ptCount>` | | number of direct children | | |
+| `<c:pt>` | string *p*oin*t* | has been discussed before. | | |
+| `<extLst>` | | has been discussed before. | | |
+
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:cat>`->`<c:multiLvlStrRef>`->`<c:multiLvlStrCache>`->`<c:lvl>` element
+none
+
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:ser>`->`<c:errBars>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:ser>`->`<c:errBars>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:errDir>` | | specifies direction of error bar | | |
@@ -2124,140 +2326,64 @@ none
 | `<c:minus>` | | specifies the error bar value in the negative direction.  | | It should be used iff the value of attr `val` in `<c:errValType>` |
 | `<c:plus>` | | specifies the error bar value in the positive direction. | | same as above. |
 | `<c:noEndCap>` | | determines whether an end cap is not drawn on the error bars. | | |
-| `<c:spPr>` | | has been discussed above. | | |
+| `<c:spPr>` | | has been discussed before. | | |
 | `<c:val>` | | specifies error bar value. | | |
-| `<extLst>` | | has been discussed above. | | |
+| `<extLst>` | | has been discussed before. | | |
 
-#### attributes in `<c:errBars>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:ser>`->`<c:errBars>` element
 none
 
-### element under `<c:errDir>` element
-#### direct children of `<c:errDir>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:ser>`->`<c:errBars>`->`<c:errDir>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:ser>`->`<c:errBars>`->`<c:errDir>` element
 none
 
-#### attributes in `<c:errDir>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:ser>`->`<c:errBars>`->`<c:errDir>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:errDir>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:ser>`->`<c:errBars>`->`<c:errDir>`->`val`
 MUST be one of predefined value in data type [`ST_ErrDir`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_ErrDir_topic_ID0E6LRRB.html#topic_ID0E6LRRB)
 
-### element under `<c:errBarType>` element
-#### direct children of `<c:errBarType>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:ser>`->`<c:errBars>`->`<c:errBarType>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:ser>`->`<c:errBars>`->`<c:errBarType>` element
 none
 
-#### attributes in `<c:errBarType>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:ser>`->`<c:errBars>`->`<c:errBarType>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:errBarType>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:ser>`->`<c:errBars>`->`<c:errBarType>`->`val`
 MUST be one of predefined value in data type [`ST_ErrBarType`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_ErrBarType_topic_ID0EDGRRB.html#topic_ID0EDGRRB)
 
-### element under `<c:errValType>` element
-#### direct children of `<c:errValType>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:ser>`->`<c:errBars>`->`<c:errValType>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:ser>`->`<c:errBars>`->`<c:errValType>` element
 none
 
-#### attributes in `<c:errValType>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:ser>`->`<c:errBars>`->`<c:errValType>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:errValType>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:ser>`->`<c:errBars>`->`<c:errValType>`->`val`
 MUST be one of predefined value in data type [`ST_ErrValType`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_ErrValType_topic_ID0EGRRRB.html#topic_ID0EGRRRB)
 
-### element under `<c:minus>` element
-#### direct children of `<c:minus>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:ser>`->`<c:minus>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:ser>`->`<c:minus>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
-| `<c:numLit>` | *num*ber *lit*eral | | | |
-| `<c:numRef>` | | *num*ber *ref*erence | | |
+| `<c:numLit>` | | has been discussed before. | | |
+| `<c:numRef>` | | has been discussed before. | | |
 
-#### attributes in `<c:minus>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:ser>`->`<c:minus>` element
 none
 
-### element under `<c:numLit>` element
-#### direct children of `<c:numLit>` element
-| elements | meaning | description | notes | notice |
-| :----------  | :----- | :--- | :-- | :-- |
-| `<c:ptCount>` | *p*oin*t* count | number of point | | |
-| `<c:pt>` | *p*oin*t* | specifies a data point | | |
-| `<c:formatCode>` | | | | |
-| `<extLst>` | | has been discussed above. | | |
-
-#### attributes in `<c:numLit>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:varyColors>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:varyColors>` element
 none
 
-### element under `<c:ptCount>` element
-#### direct children of `<c:ptCount>` element
-none
-
-#### attributes in `<c:ptCount>` element
-| attributes | meaning | description | notes | notice |
-| :----------  | :----- | :--- | :-- | :-- |
-| `val` | | | | |
-
-##### `<c:ptCount>`->`val`
-MUST be a non-negative integer.
-
-### element under `<c:pt>` element
-#### direct children of `<c:pt>` element
-| elements | meaning | description | notes | notice |
-| :----------  | :----- | :--- | :-- | :-- |
-| `<c:v>` | | the actual data value of a point in cached copy of string values or numerical values | | |
-
-#### attributes in `<c:pt>` element
-none
-
-### element under `<c:v>` element
-#### direct children of `<c:v>` element
-none
-
-#### attributes in `<c:v>` element
-none
-
-#### innerHTML of `<c:v>`
-MUST be data type [`ST_Xstring`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_Xstring_topic_ID0EZ32RB.html#topic_ID0EZ32RB)
-
-### element under `<c:formatCode>` element
-#### direct children of `<c:formatCode>` element
-none
-
-#### attributes in `<c:formatCode>` element
-none
-
-#### innerHTML of `<c:formatCode>`
-MUST be data type [`ST_Xstring`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_Xstring_topic_ID0EZ32RB.html#topic_ID0EZ32RB)
-
-### element under `<c:numRef>` element
-#### direct children of `<c:numRef>` element
-| elements | meaning | description | notes | notice |
-| :----------  | :----- | :--- | :-- | :-- |
-| `<numCache>` | | | | |
-| `<c:f>` | f*ormula | contains the formula that specifies the range of cells in the spreadsheet. | | |
-| `<extLst>` | | | | |
-
-### attributes in `<c:numCache>` element
-none
-
-### element under `<c:numCache>` element
-#### direct children of `<c:numCache>` element
-| elements | meaning | description | notes | notice |
-| :----------  | :----- | :--- | :-- | :-- |
-| `<c:ptCount>` | | has been discussed before | | |
-| `<c:pt>` | |  has been discussed before | | |
-| `<c:formatCode>` | | has been discussed before | | |
-| `<extLst>` | | has been discussed above. | | |
-
-#### attributes in `<c:numCache>` element5
-none
-
-### element under `<c:varyColors>` element
-#### direct children of `<c:varyColors>` element
-none
-
-#### attributes in `<c:varyColors>` element5
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:varyColors>` element5
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:val>` | |dicussed above.| | |
@@ -2265,7 +2391,8 @@ none
 ##### `<c:varyColors>`->`val`
 MUST be a beolean.
 
-#### direct children of `<c:areaChart>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:areaChart>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:areaChart>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:axId>` | | has been discussed before | | |
@@ -2276,23 +2403,23 @@ MUST be a beolean.
 | `<c:varyColors>` | | has been discussed before | | |
 | `<extLst>` | | has been discussed before. | | |
 
-#### attributes in `<c:areaChart>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:areaChart>` element
 none
 
-### element under `<c:areaChart>`->`<c:grouping>` element
-#### direct children of `<c:areaChart>`->`<c:grouping>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:areaChart>`->`<c:grouping>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:areaChart>`->`<c:grouping>` element
 none
 
-#### attributes in `<c:areaChart>`->`<c:grouping>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:areaChart>`->`<c:grouping>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:areaChart>`->`<c:grouping>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:areaChart>`->`<c:grouping>`->`val`
 MUST be within data type [`ST_Grouping`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_grouping_topic_ID0ET2EQB.html#topic_ID0ET2EQB)
 
-### element under `<c:bar3DChart>` element
-#### direct children of `<c:bar3DChart>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bar3DChart>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bar3DChart>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:axId>` | | has been discussed before| | |
@@ -2305,19 +2432,19 @@ MUST be within data type [`ST_Grouping`](https://c-rex.net/samples/ooxml/e1/Part
 | `<c:varyColors>` | | has been discussed before | | |
 | `<extLst>` | | has been discussed before | | |
 
-#### attributes in `<c:bar3DChart>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bar3DChart>` element
 none
 
-### element under `<c:bar3DChart>`->`<c:grouping>` element
-#### direct children of `<c:bar3DChart>`->`<c:grouping>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bar3DChart>`->`<c:grouping>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bar3DChart>`->`<c:grouping>` element
 none
 
-#### attributes in `<c:bar3DChart>`->`<c:grouping>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bar3DChart>`->`<c:grouping>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:bar3DChart>`->`<c:grouping>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bar3DChart>`->`<c:grouping>`->`val`
 MUST be within data type [`ST_BarGrouping`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_BarGrouping_topic_ID0ETSPRB.html#topic_ID0ETSPRB)
 
 | values | meaning | description | notes | notice |
@@ -2327,8 +2454,8 @@ MUST be within data type [`ST_BarGrouping`](https://c-rex.net/samples/ooxml/e1/P
 | `"clustered"` | clustered | bars (or columns) representing different series within the same category are placed side-by-side. | | |
 | `"stacked"` | stacked | the values from different series within the same category are stacked on top of each other. | The total height (or length) of the stack represents the sum of the values for that category. | |
 
-### element under `<c:barChart>` element
-#### direct children of `<c:barChart>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:barChart>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:barChart>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:axId>` | | has been discussed before | | |
@@ -2342,19 +2469,19 @@ MUST be within data type [`ST_BarGrouping`](https://c-rex.net/samples/ooxml/e1/P
 | `<c:varyColors>` | | has been discussed before | | |
 | `<extLst>` | | has been discussed before | | |
 
-#### attributes in `<c:barChart>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:barChart>` element
 none
 
-### element under `<c:barChart>`->`<c:grouping>` element
-#### direct children of `<c:barChart>`->`<c:grouping>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:barChart>`->`<c:grouping>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:barChart>`->`<c:grouping>` element
 none
 
-#### attributes in `<c:barChart>`->`<c:grouping>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:barChart>`->`<c:grouping>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:barChart>`->`<c:grouping>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:barChart>`->`<c:grouping>`->`val`
 MUST be within data type [`ST_BarGrouping`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_BarGrouping_topic_ID0ETSPRB.html#topic_ID0ETSPRB)
 
 | values | meaning | description | notes | notice |
@@ -2364,16 +2491,16 @@ MUST be within data type [`ST_BarGrouping`](https://c-rex.net/samples/ooxml/e1/P
 | `"clustered"` | clustered | bars (or columns) representing different series within the same category are placed side-by-side. | | |
 | `"stacked"` | stacked | the values from different series within the same category are stacked on top of each other. | The total height (or length) of the stack represents the sum of the values for that category. | |
 
-### element under `<c:barDir>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bar3DChart>`->`<c:barDir>` element
 #### direct children of `<c:barDir>` element
 none
 
-#### attributes in `<c:barDir>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bar3DChart>`->`<c:barDir>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:barDir>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bar3DChart>`->`<c:barDir>`->`val`
 MUST be with data type [`ST_BarDir`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_BarDir_topic_ID0EMNPRB.html#topic_ID0EMNPRB)
 
 which listed in following table.
@@ -2383,40 +2510,40 @@ which listed in following table.
 | `"col"` | *col*umn | The bars will be oriented vertically. | | |
 | `"bar"` | bar | The bars will be oriented horizontally. | | |
 
-### element under `<c:shape>` element
-#### direct children of `<c:shape>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bar3DChart>`->`<c:shape>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bar3DChart>`->`<c:shape>` element
 none
 
-#### attributes in `<c:shape>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bar3DChart>`->`<c:shape>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:shape>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bar3DChart>`->`<c:shape>`->`val`
 MUST be with data type [`ST_Shape`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_Shape_topic_ID0ECGWRB.html#topic_ID0ECGWRB)
 
-### element under `<c:overlap>` element
-#### direct children of `<c:overlap>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:barChart>`->`<c:overlap>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:barChart>`->`<c:overlap>` element
 none
 
-#### attributes in `<c:overlap>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:barChart>`->`<c:overlap>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:overlap>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:barChart>`->`<c:overlap>`->`val`
 MUST be with data type [`ST_Overlap`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_Overlap_topic_ID0EUPURB.html#topic_ID0EUPURB)
 
-### element under `<c:serLines>` element
-#### direct children of `<c:serLines>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:barChart>`->`<c:serLines>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:barChart>`->`<c:serLines>` element
 | element | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<spPr>` | | has been discussed before. | | |
 
-#### attributes in `<c:serLines>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:barChart>`->`<c:serLines>` element
 none
 
-### element under `<c:line3DChart>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:line3DChart>` element
 #### direct children of `<c:line3DChart>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
@@ -2429,14 +2556,14 @@ none
 | `<c:varyColors>` | | has been discussed before | | |
 | `<extLst>` | | has been discussed before | | |
 
-#### attributes in `<c:line3DChart>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:line3DChart>` element
 none
 
-### element under `<c:line3DChart>`->`<c:grouping>` element
-#### direct children of `<c:line3DChart>`->`<c:grouping>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:line3DChart>`->`<c:grouping>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:line3DChart>`->`<c:grouping>` element
 none
 
-#### attributes in `<c:line3DChart>`->`<c:grouping>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:line3DChart>`->`<c:grouping>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
@@ -2444,8 +2571,8 @@ none
 ##### `<c:line3DChart>`->`<c:grouping>`->`val`
 MUST be within data type [`ST_Grouping`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_grouping_topic_ID0ET2EQB.html#topic_ID0ET2EQB)
 
-### element under `<c:lineChart>` element
-#### direct children of `<c:lineChart>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:lineChart>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:lineChart>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:axId>` |  | has been discussed before | | |
@@ -2461,32 +2588,32 @@ MUST be within data type [`ST_Grouping`](https://c-rex.net/samples/ooxml/e1/Part
 | `<c:varyColors>` | | has been discussed before | | |
 | `<extLst>` | | has been discussed before | | |
 
-#### attributes in `<c:lineChart>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:lineChart>` element
 none
 
-### element under `<c:lineChart>`->`<c:grouping>` element
-#### direct children of `<c:lineChart>`->`<c:grouping>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:lineChart>`->`<c:grouping>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:lineChart>`->`<c:grouping>` element
 none
 
-#### attributes in `<c:lineChart>`->`<c:grouping>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:lineChart>`->`<c:grouping>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:lineChart>`->`<c:grouping>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:lineChart>`->`<c:grouping>`->`val`
 MUST be within data type [`ST_Grouping`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_grouping_topic_ID0ET2EQB.html#topic_ID0ET2EQB)
 
-### element under `<c:lineChart>`->`<c:hiLowLines>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:lineChart>`->`<c:hiLowLines>` element
 #### direct children of `<c:lineChart>`->`<c:hiLowLines>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<spPr>` | | has been discussed before | | |
 
-#### attributes in `<c:lineChart>`->`<c:hiLowLines>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:lineChart>`->`<c:hiLowLines>` element
 none
 
-### element under `<c:lineChart>`->`<c:hiLowLines>` element
-#### direct children of `<c:lineChart>`->`<c:hiLowLines>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:lineChart>`->`<c:hiLowLines>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:lineChart>`->`<c:hiLowLines>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:upBars>` | | specifies the up bars. | | |
@@ -2494,49 +2621,49 @@ none
 | `<c:gapWidth>` | | has been discussed before | | |
 | `<extLst>` | | has been discussed before | | |
 
-#### attributes in `<c:lineChart>`->`<c:hiLowLines>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:lineChart>`->`<c:hiLowLines>` element
 none
 
-### element under `<c:lineChart>`->`<c:upBars>` element
-#### direct children of `<c:lineChart>`->`<c:upBars>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:lineChart>`->`<c:upBars>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:lineChart>`->`<c:upBars>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<spPr>` | | has been discussed before | | |
 
-#### attributes in `<c:lineChart>`->`<c:upBars>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:lineChart>`->`<c:upBars>` element
 none
 
-### element under `<c:lineChart>`->`<c:downBars>` element
-#### direct children of `<c:lineChart>`->`<c:downBars>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:lineChart>`->`<c:downBars>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:lineChart>`->`<c:downBars>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<spPr>` | | has been discussed before | | |
 
-#### attributes in `<c:lineChart>`->`<c:downBars>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:lineChart>`->`<c:downBars>` element
 none
 
-### element under `<c:lineChart>`->`<c:marker>` element
-#### direct children of `<c:lineChart>`->`<c:marker>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:lineChart>`->`<c:marker>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:lineChart>`->`<c:marker>` element
 none
 
-#### attributes in `<c:lineChart>`->`<c:marker>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:lineChart>`->`<c:marker>` element
 none
 
-##### `<c:lineChart>`->`<c:marker>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:lineChart>`->`<c:marker>`->`val`
 MUST be a boolean.
 
-### element under `<c:smooth>` element
-#### direct children of `<c:smooth>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:lineChart>`->`<c:smooth>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:lineChart>`->`<c:smooth>` element
 none
 
-#### attributes in `<c:smooth>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:lineChart>`->`<c:smooth>` element
 none
 
-##### `<c:smooth>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:lineChart>`->`<c:smooth>`->`val`
 MUST be a boolean.
 
-### element under `<c:pie3DChart>` element
-#### direct children of `<c:pie3DChart>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:pie3DChart>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:pie3DChart>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:dLbls>` | | has been discussed before | | |
@@ -2544,11 +2671,11 @@ MUST be a boolean.
 | `<c:varyColors>` | | has been discussed before | | |
 | `<extLst>` | | has been discussed before | | |
 
-#### attributes in `<c:pie3DChart>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:pie3DChart>` element
 none
 
-### element under `<c:pieChart>` element
-#### direct children of `<c:pieChart>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:pieChart>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:pieChart>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:dLbls>` | | has been discussed before | | |
@@ -2557,11 +2684,11 @@ none
 | `<c:varyColors>` | | has been discussed before | | |
 | `<extLst>` | | has been discussed before | | |
 
-#### attributes in `<c:pieChart>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:pieChart>` element
 none
 
-### element under `<c:surface3DChart>` element
-#### direct children of `<c:surface3DChart>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:surface3DChart>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:surface3DChart>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:dLbls>` | | has been discussed before | | |
@@ -2570,42 +2697,42 @@ none
 | `<c:wireframe>` | | determines whether the surface chart is drawn as a wireframe. | | |
 | `<extLst>` | | has been discussed before | | |
 
-#### attributes in `<c:surface3DChart>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:surface3DChart>` element
 none
 
-### element under `<c:bandFmts>` element
-#### direct children of `<c:bandFmts>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:surface3DChart>`->`<c:bandFmts>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:surface3DChart>`->`<c:bandFmts>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:bandFmt>` | band *f*or*m*a*t* | specifies the formatting band of a surface chart. | | |
 
-#### attributes in `<c:bandFmts>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:surface3DChart>`->`<c:bandFmts>` element
 none
 
-### element under `<c:bandFmt>` element
-#### direct children of `<c:bandFmt>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:surface3DChart>`->`<c:bandFmts>`->`<c:bandFmt>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:surface3DChart>`->`<c:bandFmts>`->`<c:bandFmt>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<idx>` | | has been discussed before | | |
 | `<spPr>` | | has been discussed before | | |
 
-#### attributes in `<c:bandFmt>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:surface3DChart>`->`<c:bandFmts>`->`<c:bandFmt>` element
 none
 
-### element under `<c:wireframe>` element
-#### direct children of `<c:wireframe>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:surface3DChart>`->`<c:wireframe>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:surface3DChart>`->`<c:wireframe>` element
 none
 
-#### attributes in `<c:wireframe>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:surface3DChart>`->`<c:wireframe>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:wireframe>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:surface3DChart>`->`<c:wireframe>`->`val`
 MUST be a boolean.
 
-## element under `<c:surfaceChart>` element
-#### direct children of `<c:surfaceChart>` element
+## element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:surfaceChart>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:surfaceChart>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:dLbls>` | | has been discussed before | | |
@@ -2614,11 +2741,11 @@ MUST be a boolean.
 | `<c:wireframe>` | | has been discussed before | | |
 | `<extLst>` | | has been discussed before | | |
 
-#### attributes in `<c:surfaceChart>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:surfaceChart>` element
 none
 
-### element under `<c:bubbleChart>` element
-#### direct children of `<c:bubbleChart>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bubbleChart>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bubbleChart>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:axId>` | | has been discussed before | | |
@@ -2631,59 +2758,59 @@ none
 | `<c:varyColors>` | | has been discussed before | | |
 | `<extLst>` | | has been discussed before | | |
 
-#### attributes in `<c:bubbleChart>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bubbleChart>` element
 none
 
-### element under `<c:bubble3D>` element
-#### direct children of `<c:bubble3D>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bubbleChart>`->`<c:bubble3D>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bubbleChart>`->`<c:bubble3D>` element
 none
 
-#### attributes in `<c:bubble3D>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bubbleChart>`->`<c:bubble3D>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:bubble3D>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bubbleChart>`->`<c:bubble3D>`->`val`
 MUST be a boolean.
 
-### element under `<c:bubbleScale>` element
-#### direct children of `<c:bubbleScale>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bubbleChart>`->`<c:bubbleScale>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bubbleChart>`->`<c:bubbleScale>` element
 none
 
-#### attributes in `<c:bubbleScale>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bubbleChart>`->`<c:bubbleScale>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:bubbleScale>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bubbleChart>`->`<c:bubbleScale>`->`val`
 MUST be with data type [`ST_BubbleScale`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_BubbleScale_topic_ID0EEZPRB.html#topic_ID0EEZPRB)
 
-### element under `<c:showNegBubbles>` element
-#### direct children of `<c:showNegBubbles>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bubbleChart>`->`<c:showNegBubbles>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bubbleChart>`->`<c:showNegBubbles>` element
 none
 
-#### attributes in `<c:showNegBubbles>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bubbleChart>`->`<c:showNegBubbles>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:showNegBubbles>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bubbleChart>`->`<c:showNegBubbles>`->`val`
 MUST be a boolean.
 
-### element under `<c:sizeRepresents>` element
-#### direct children of `<c:sizeRepresents>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bubbleChart>`->`<c:sizeRepresents>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bubbleChart>`->`<c:sizeRepresents>` element
 none
 
-#### attributes in `<c:sizeRepresents>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bubbleChart>`->`<c:sizeRepresents>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:sizeRepresents>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bubbleChart>`->`<c:sizeRepresents>`->`val`
 MUST be with data type [`ST_SizeRepresents`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_SizeRepresents_topic_ID0E4NWRB.html#topic_ID0E4NWRB)
 
-### element under `<c:doughnutChart>` element
-#### direct children of `<c:doughnutChart>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:doughnutChart>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:doughnutChart>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:dLbls>` | | has been discussed before | | |
@@ -2694,35 +2821,35 @@ MUST be with data type [`ST_SizeRepresents`](https://c-rex.net/samples/ooxml/e1/
 | `<c:varyColors>` | | has been discussed before | | |
 | `<extLst>` | | has been discussed before. | | |
 
-#### attributes in `<c:doughnutChart>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:doughnutChart>` element
 none
 
-### element under `<c:firstSliceAng>` element
-#### direct children of `<c:firstSliceAng>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:doughnutChart>`->`<c:firstSliceAng>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:doughnutChart>`->`<c:firstSliceAng>` element
 none
 
-#### attributes in `<c:firstSliceAng>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:doughnutChart>`->`<c:firstSliceAng>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:firstSliceAng>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:doughnutChart>`->`<c:firstSliceAng>`->`val`
 MUST be with data type [`ST_FirstSliceAng`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_FirstSliceAng_topic_ID0EMYRRB.html#topic_ID0EMYRRB)
 
-### element under `<c:holeSize>` element
-#### direct children of `<c:holeSize>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:doughnutChart>`->`<c:holeSize>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:doughnutChart>`->`<c:holeSize>` element
 none
 
-#### attributes in `<c:holeSize>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:doughnutChart>`->`<c:holeSize>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:holeSize>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:doughnutChart>`->`<c:holeSize>`->`val`
 MUST be with data type [`ST_HoleSize`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_HoleSize_topic_ID0EIHSRB.html#topic_ID0EIHSRB)
 
-### element under `<c:radarChart>` element
-#### direct children of `<c:radarChart>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:radarChart>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:radarChart>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:axId>` | | has been discussed before | | |
@@ -2732,23 +2859,23 @@ MUST be with data type [`ST_HoleSize`](https://c-rex.net/samples/ooxml/e1/Part4/
 | `<c:varyColors>` | | has been discussed before | | |
 | `<extLst>` | | has been discussed before | | |
 
-#### attributes in `<c:radarChart>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:radarChart>` element
 none
 
-### element under `<c:radarStyle>` element
-#### direct children of `<c:radarStyle>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:radarChart>`->`<c:radarStyle>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:radarChart>`->`<c:radarStyle>` element
 none
 
-#### attributes in `<c:radarStyle>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:radarChart>`->`<c:radarStyle>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:radarStyle>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:radarChart>`->`<c:radarStyle>`->`val`
 MUST be with data type [`ST_RadarStyle`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_RadarStyle_topic_ID0EZLVRB.html#topic_ID0EZLVRB)
 
-### element under `<c:scatterChart>` element
-#### direct children of `<c:scatterChart>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:scatterChart>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:scatterChart>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:axId>` | | has been discussed before | | |
@@ -2758,22 +2885,22 @@ MUST be with data type [`ST_RadarStyle`](https://c-rex.net/samples/ooxml/e1/Part
 | `<c:varyColors>` | | has been discussed before | | |
 | `<extLst>` | | has been discussed before | | |
 
-#### attributes in `<c:scatterChart>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:scatterChart>` element
 none
 
-### element under `<c:scatterStyle>` element
-#### direct children of `<c:scatterStyle>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:scatterStyle>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:scatterStyle>` element
 none
 
-#### attributes in `<c:scatterStyle>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:scatterStyle>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:scatterStyle>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:scatterStyle>`->`val`
 MUST be with data type [`ST_ScatterStyle`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_ScatterStyle_topic_ID0EB1VRB.html#topic_ID0EB1VRB)
 
-## element under `<c:stockChart>` element
+## element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:stockChart>` element
 #### direct children of `<c:stockChart>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
@@ -2785,11 +2912,11 @@ MUST be with data type [`ST_ScatterStyle`](https://c-rex.net/samples/ooxml/e1/Pa
 | `<c:upDownBars>` | | has been discussed before | | |
 | `<extLst>` | | has been discussed before | | |
 
-#### attributes in `<c:stockChart>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:stockChart>` element
 none
 
-## element under `<c:ofPieChart>` element
-#### direct children of `<c:ofPieChart>` element
+## element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:ofPieChart>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:ofPieChart>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:dLbls>` | | has been discussed before | | |
@@ -2803,75 +2930,75 @@ none
 | `<c:splitPos>` | split *pos*ition | specifies the size of the second pie or bar of a pie of pie chart or a bar of pie chart, as a percentage of the size of the first pie. | | |
 | `<extLst>` | | has been discussed before | | |
 
-#### attributes in `<c:ofPieChart>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:ofPieChart>` element
 none
 
-### element under `<c:custSplit>` element
-#### direct children of `<c:custSplit>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:ofPieChart>`->`<c:custSplit>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:ofPieChart>`->`<c:custSplit>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:secondPiePt>` |  | specifies a data point that shall be drawn in the second pie or bar in a pie of pie or bar of pie chart. | | |
 
-#### attributes in `<c:custSplit>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:ofPieChart>`->`<c:custSplit>` element
 none
 
-### element under `<c:secondPiePt>` element
-#### direct children of `<c:secondPiePt>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:ofPieChart>`->`<c:secondPiePt>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:ofPieChart>`->`<c:secondPiePt>` element
 none
 
-#### attributes in `<c:secondPiePt>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:ofPieChart>`->`<c:secondPiePt>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:secondPiePt>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:ofPieChart>`->`<c:secondPiePt>`->`val`
 MUST be an unsigned integer (which takes 8-bits, ranging from `-128` to `127`).
 
-### element under `<c:ofPieType>` element
-#### direct children of `<c:ofPieType>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:ofPieChart>`->`<c:ofPieType>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:ofPieChart>`->`<c:ofPieType>` element
 none
 
-#### attributes in `<c:ofPieType>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:ofPieChart>`->`<c:ofPieType>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:ofPieType>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:ofPieChart>`->`<c:ofPieType>`->`val`
 MUST be one of predefined values in data type [`ST_OfPieType`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_OfPieType_topic_ID0EABURB.html#topic_ID0EABURB) 
 
 which is `bar`, or `pie`.
 
-### element under `<c:secondPieSize>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:ofPieChart>`->`<c:secondPieSize>` element
 #### direct children of `<c:secondPieSize>` element
 none
 
-#### attributes in `<c:secondPieSize>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:ofPieChart>`->`<c:secondPieSize>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:secondPieSize>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:ofPieChart>`->`<c:secondPieSize>`->`val`
 MUST be one of predefined values in data type [`ST_SecondPieSize`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_SecondPieSize_topic_ID0E3BWRB.html#topic_ID0E3BWRB) 
 
-### element under `<c:splitType>` element
-#### direct children of `<c:splitType>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:ofPieChart>`->`<c:splitType>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:ofPieChart>`->`<c:splitType>` element
 none
 
-#### attributes in `<c:splitType>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:ofPieChart>`->`<c:splitType>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:splitType>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:ofPieChart>`->`<c:splitType>`->`val`
 MUST be one of predefined values in data type [`ST_SplitType`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_SplitType_topic_ID0EOXWRB.html#topic_ID0EOXWRB) 
 
-### element under `<c:plotArea>`->`<c:dateAx>` element
-#### direct children of `<c:plotArea>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:axId>` | | has been discussed before | | |
 | `<c:delete/>` | | has been discussed before | | |
-| `<c:axPos>` | specifies the defined axis should be positioned at somewhere of the chart's plot area. | somewhere is according to value of `val` attribute, see [`<c:axPos>` -> `val` attribute section in Appendix 2](https://github.com/40843245/OOXML/blob/main/Word/structure/Appendix%202%20--%20available%20options%20of%20attribute%20of%20tag%20in%20xml%20for%20Word.md#caxpos---val-attribute) for available value of `val` attribute.  | |
+| `<c:axPos>` | specifies the defined axis should be positioned at somewhere of the chart's plot area. | | |
 | `<c:baseTimeUnit>` | | specifies the smallest time unit that is represented on the date axis. | | |
 | `<c:crossAx/>` | cross *ax*is | establishes a relationship between the current axis and another axis in the chart. | The point at which they cross can be further defined by the `<c:crossAt>` element. | |
 | `<c:crosses/>` | | specifies how the axes cross each other.  | | |
@@ -2894,19 +3021,19 @@ MUST be one of predefined values in data type [`ST_SplitType`](https://c-rex.net
 | `<c:txPr>` | | has been discussed before | | |
 | `<extLst>` | | has been discussed before | | |
 
-#### attributes in `<c:plotArea>`->`<c:dateAx>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>` element
 none
 
-### element under `<c:plotArea>`->`<c:dateAx>`->`<c:axPos>` element
-#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:axPos>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:axPos>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:axPos>` element
 none
 
-#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:axPos>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:axPos>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:plotArea>`->`<c:dateAx>`->`<c:axPos>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:axPos>`->`val`
 | values | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `"l"` | *l*eft | specifies the position of the axis is **left** of the plot area of the chart  | | |
@@ -2914,146 +3041,146 @@ none
 | `"r"` | *r*ight | specifies the position of the axis is **right** of the plot area of the chart | | |
 | `"b"` | *b*ottom | specifies the position of the axis is **bottom** of the plot area of the chart | | |
 
-### element under `<c:plotArea>`->`<c:dateAx>`->`<c:crosses>` element
-#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:crosses>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:crosses>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:crosses>` element
 none
 
-#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:crosses>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:crosses>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:plotArea>`->`<c:dateAx>`->`<c:crosses>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:crosses>`->`val`
 MUST be within data type [`ST_Crosses`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_Crosses_topic_ID0ELMQRB.html#topic_ID0ELMQRB)
 
-### element under `<c:plotArea>`->`<c:dateAx>`->`<c:crossAx>` element
-#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:crossAx>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:crossAx>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:crossAx>` element
 none
 
-#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:crossAx>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:crossAx>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:plotArea>`->`<c:dateAx>`->`<c:crossAx>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:crossAx>`->`val`
 MUST be an unsigned integer.
 
 ### element under `<c:plotArea>`->`<c:dateAx>`->`<c:crossesAt>` element
-#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:crossesAt>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:crossesAt>` element
 none
 
-#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:crossesAt>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:crossesAt>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:plotArea>`->`<c:dateAx>`->`<c:crossesAt>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:crossesAt>`->`val`
 MUST be a floating number.
 
-### element under `<c:plotArea>`->`<c:dateAx>`->`<c:baseTimeUnit>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:baseTimeUnit>` element
 #### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:baseTimeUnit>` element
 none
 
-#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:baseTimeUnit>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:baseTimeUnit>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:plotArea>`->`<c:dateAx>`->`<c:baseTimeUnit>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:baseTimeUnit>`->`val`
 MUST be within data type [`ST_TimeUnit`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_TimeUnit_topic_ID0E1N2RB.html#topic_ID0E1N2RB)
 
-### element under `<c:plotArea>`->`<c:dateAx>`->`<c:majorTimeUnit>` element
-#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:majorTimeUnit>` element
+### element under`<c:chartSpace>`->`<c:chart>`-> `<c:plotArea>`->`<c:dateAx>`->`<c:majorTimeUnit>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:majorTimeUnit>` element
 none
 
-#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:majorTimeUnit>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:majorTimeUnit>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:plotArea>`->`<c:dateAx>`->`<c:majorTimeUnit>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:majorTimeUnit>`->`val`
 MUST be within data type [`ST_TimeUnit`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_TimeUnit_topic_ID0E1N2RB.html#topic_ID0E1N2RB)
 
-### element under `<c:plotArea>`->`<c:dateAx>`->`<c:minorTimeUnit>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:minorTimeUnit>` element
 #### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:minorTimeUnit>` element
 none
 
-#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:minorTimeUnit>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:minorTimeUnit>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:plotArea>`->`<c:dateAx>`->`<c:minorTimeUnit>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:minorTimeUnit>`->`val`
 MUST be within data type [`ST_TimeUnit`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_TimeUnit_topic_ID0E1N2RB.html#topic_ID0E1N2RB)
 
-### element under `<c:plotArea>`->`<c:dateAx>`->`<c:majorUnit>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:majorUnit>` element
 #### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:majorUnit>` element
 none
 
-#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:majorUnit>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:majorUnit>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:plotArea>`->`<c:dateAx>`->`<c:majorUnit>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:majorUnit>`->`val`
 MUST be within data type [`ST_AxisUnit`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_AxisUnit_topic_ID0ERCPRB.html#topic_ID0ERCPRB)
 
-### element under `<c:plotArea>`->`<c:dateAx>`->`<c:minorUnit>` element
-#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:minorUnit>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:minorUnit>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:minorUnit>` element
 none
 
-#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:minorUnit>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:minorUnit>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:plotArea>`->`<c:dateAx>`->`<c:minorUnit>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:minorUnit>`->`val`
 MUST be within data type [`ST_AxisUnit`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_AxisUnit_topic_ID0ERCPRB.html#topic_ID0ERCPRB)
 
-### element under `<c:plotArea>`->`<c:dateAx>`->`<c:crosses>` element
-#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:crosses>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:crosses>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:crosses>` element
 none
 
-#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:crosses>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:crosses>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:plotArea>`->`<c:dateAx>`->`<c:crosses>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:crosses>`->`val`
 | values | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `"autoZero"` | | | indicates that the axis will cross at the zero point of the other axis if zero is within the range of that axis.</br>If zero is not within the range, the axis will cross at either the minimum or maximum value of the other axis, whichever is closer to zero. | It is the default value. | |
 | `"min"` | | | forces the axis to cross at the minimum value of the other axis | | |
 | `"max"` | | | forces the axis to cross at the maximum value of the other axis | | |
 
-### element under `<c:plotArea>`->`<c:dateAx>`->`<c:majorGridlines>` element
-#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:majorGridlines>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:majorGridlines>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:majorGridlines>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<spPr>` | | has beeb discussed before. | | |
 
-#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:majorGridlines>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:majorGridlines>` element
 none
 
-### element under `<c:plotArea>`->`<c:dateAx>`->`<c:minorGridlines>` element
-#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:minorGridlines>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:minorGridlines>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:minorGridlines>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<spPr>` | | has beeb discussed before. | | |
 
-#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:minorGridlines>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:minorGridlines>` element
 none
 
-### element under `<c:plotArea>`->`<c:dateAx>`->`<c:majorTickMark>` element
-#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:majorTickMark>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:majorTickMark>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:majorTickMark>` element
 none
 
-#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:majorTickMark>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:majorTickMark>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:plotArea>`->`<c:dateAx>`->`<c:majorTickMark>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:majorTickMark>`->`val`
 | values | meaning | description | notes | notice |
 | :--------- | :----- | :--- | :-- | :-- |
 | `"none"` | none | no major tick marks should be displayed for this axis. | | |
@@ -3061,52 +3188,52 @@ none
 | `"out"` | *out*side | the major tick marks should be drawn outside the plot area, extending from the axis line outwards. | | |
 | `"cross"` | cross it inside and outside | the major tick marks should cross the axis line, extending both inside and outside the plot area. | | |
 
-### element under `<c:plotArea>`->`<c:dateAx>`->`<c:minorTickMark>` element
-#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:minorTickMark>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:minorTickMark>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:minorTickMark>` element
 none
 
-#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:minorTickMark>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:minorTickMark>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:plotArea>`->`<c:dateAx>`->`<c:minorTickMark>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:minorTickMark>`->`val`
 availables value in this is same as that in `<c:majorTickMark>`->`val`, 
 
 but it applies to minor tick marks.
 
-### element under `<c:plotArea>`->`<c:dateAx>`->`<c:tickLblPos>` element
-#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:tickLblPos>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:tickLblPos>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:tickLblPos>` element
 none
 
-#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:tickLblPos>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:tickLblPos>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:plotArea>`->`<c:dateAx>`->`<c:tickLblPos>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:tickLblPos>`->`val`
 | values | meaning | description | notes | notice |
 | :---------- | :----- | :--- | :-- | :-- |
 | `"high"` | above |  The tick labels are positioned **above** relative to the axis line | | |
 | `"low"` | below | The tick labels are positioned **below** relative to the axis line | | |
 | `"nextToAxis"` | next to axis | The tick labels are positioned **next to** the axis line | | |
 
-### element under `<c:plotArea>`->`<c:dateAx>`->`<c:lblOffset>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:lblOffset>` element
 #### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:lblOffset>` element
 none
 
-#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:lblOffset>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:lblOffset>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:plotArea>`->`<c:dateAx>`->`<c:lblOffset>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:lblOffset>`->`val`
 MUST be within data type [`ST_LblOffset`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_LblOffset_topic_ID0E1BTRB.html#topic_ID0E1BTRB)
 
 which ranging from `0` to `1000`.
 
-### element under `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>` element
-#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:scaling>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:scaling>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:orientation>` | | specifies the orientation of the value axis. | | |
@@ -3115,38 +3242,38 @@ which ranging from `0` to `1000`.
 | `<c:logBase>` | | specifies the base for a logarithmic scale. | If present, the axis will use a logarithmic scale with the given base.  | |
 | `<extLst>` | | has been discussed before. | | |
 
-#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:scaling>` element
 none
 
-### element under `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:orientation>` element
-#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:orientation>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:orientation>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:orientation>` element
 none
 
-#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:orientation>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:orientation>` element
 | attributes | meaning | description | notes | notice |
 | :---------- | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:plotArea>`->`<c:dateAx>`->`<c:plotArea>`->`<c:scaling>`->`<c:orientation>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:plotArea>`->`<c:scaling>`->`<c:orientation>`->`val`
 | values | meaning | description | notes | notice |
 | :---------- | :----- | :--- | :-- | :-- |
 | `"minMax"` | | | indicates the normal or standard orientation, where the axis values increase from the minimum value at one end to the maximum value at the other. | <ol><li>For a vertical axis, this typically means values increase from bottom to top.</li><li>For a horizontal axis, values increase from left to right.</li></ol> | It is the default value. |
 | `"maxMin"` | | | inverts the orientation of the axis. The values will decrease from the maximum value at one end to the minimum value at the other. | It is the sematically opposite of `"minMax"` | |
 
-### element under `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:max>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:max>` element
 #### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:max>` element
 none
 
-#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:max>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:max>` element
 | attributes | meaning | description | notes | notice |
 | :---------- | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:max>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:max>`->`val`
 MUST be a positive double floating number.
 
-### element under `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:min>` element
-#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:min>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:min>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:min>` element
 none
 
 #### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:min>` element
@@ -3154,36 +3281,36 @@ none
 | :---------- | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:min>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:min>`->`val`
 MUST be a positive double floating number.
 
-### element under `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:logBase>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:logBase>` element
 #### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:logBase>` element
 none
 
-#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:logBase>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:logBase>` element
 | attributes | meaning | description | notes | notice |
 | :---------- | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:logBase>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:scaling>`->`<c:logBase>`->`val`
 MUST be a positive double floating number.
 
 It will scale by logarithm of given base 
 
 e.g. `"2"`, `"e"`, `"10"`.
 
-### element under `<c:plotArea>`->`<c:dateAx>`->`<c:numFmt>` element
-#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:numFmt>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:numFmt>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:numFmt>` element
 none
 
-#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:numFmt>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:numFmt>` element
 | attributes | meaning | description | notes | notice |
 | :---------- | :----- | :--- | :-- | :-- |
 | `c:sourceLinked` | | specifies that source is linked. | | |
 | `c:formatCode` | number formattig code | specifies number formattig code. | | 
 
-##### `<c:plotArea>`->`<c:dateAx>`->`<c:numFmt>`->`formatCode`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:numFmt>`->`formatCode`
 In standard OOXML, MUST be a format code listed in the field of `formatCode` in [mapping table](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_numFmt_topic_ID0EHDH6.html#topic_ID0EHDH6).
 
 <img width="587" alt="image" src="https://github.com/user-attachments/assets/16e63cdb-93cc-4c33-b84a-9f2679ca3a8b" />
@@ -3206,11 +3333,11 @@ In standard OOXML, MUST be a format code listed in the field of `formatCode` in 
 > + refer the MSDS [Number format codes in Excel](https://support.microsoft.com/en-us/office/number-format-codes-in-excel-for-mac-5026bbd6-04bc-48cd-bf33-80f18b4eae68)
 
 
-##### `<c:plotArea>`->`<c:dateAx>`->`<c:numFmt>`->`sourceLinked`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:numFmt>`->`sourceLinked`
 MUST be a boolean.
 
-### element under <c:plotArea>`->`<c:dateAx>`->`<c:title>` element
-#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:title>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:title>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:title>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:layout>` | | has been discussed before. | | |
@@ -3220,27 +3347,23 @@ MUST be a boolean.
 | `<c:txPr>` | | has been discussed before. | | |
 | `<extLst>` | | has been discussed before. | | |
 
-#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:title>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:title>` element
 none
 
-### element under `<c:plotArea>`->`<c:dateAx>`->`<c:title>`->`<c:overlay>` element
-#### direct children of `<c:plotArea>`->`<c:dateAx>`->`<c:title>`->`<c:overlay>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:title>`->`<c:overlay>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:title>`->`<c:overlay>` element
 none
 
-#### attributes in `<c:plotArea>`->`<c:dateAx>`->`<c:title>`->`<c:overlay>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:title>`->`<c:overlay>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:plotArea>`->`<c:dateAx>`->`<c:title>`->`<c:overlay>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:dateAx>`->`<c:title>`->`<c:overlay>`->`val`
 MUST be a boolean.
 
-### element under <c:plotArea>`->`<c:dateAx>`->`<c:title>` element
-#### direct children of `<c:autoTitleDeleted>` element
-none
-
-### element under `<c:plotArea>`->`<c:catAx>` element
-#### direct children of `<c:plotArea>`->`<c:dateAx>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:catAx>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:catAx>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:axId>` | | has been discussed before | | |
@@ -3263,19 +3386,19 @@ none
 | `<c:txPr>` | | has been discussed before | | |
 | `<extLst>` | | has been discussed before | | |
 
-#### attributes in `<c:plotArea>`->`<c:catAx>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:catAx>` element
 none
 
-### element under `<c:plotArea>`->`<c:catAx>`->`<c:lblAlgn>` element
-#### direct children of `<c:plotArea>`->`<c:catAx>`->`<c:lblAlgn>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:catAx>`->`<c:lblAlgn>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:catAx>`->`<c:lblAlgn>` element
 none
 
-#### attributes in `<c:plotArea>`->`<c:catAx>`->`<c:lblAlgn>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:catAx>`->`<c:lblAlgn>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:plotArea>`->`<c:catAx>`->`<c:lblAlgn>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:catAx>`->`<c:lblAlgn>`->`val`
 MUST be within data type [`ST_LblAlgn`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_LblAlgn_topic_ID0E52SRB.html#topic_ID0E52SRB)
 
 | values | meaning | description | notes | notice |
@@ -3284,44 +3407,44 @@ MUST be within data type [`ST_LblAlgn`](https://c-rex.net/samples/ooxml/e1/Part4
 | `"ctr"` | *c*en*t*e*r* | The text within the axis labels are center-aligned. | | |
 | `"r"` | *r*ight | The text within the axis labels are right-aligned. | | |
 
-### element under `<c:plotArea>`->`<c:catAx>`->`<c:noMultiLvlLbl>` element
-#### direct children of `<c:plotArea>`->`<c:catAx>`->`<c:noMultiLvlLbl>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:catAx>`->`<c:noMultiLvlLbl>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:catAx>`->`<c:noMultiLvlLbl>` element
 none
 
-#### attributes in `<c:plotArea>`->`<c:catAx>`->`<c:noMultiLvlLbl>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:catAx>`->`<c:noMultiLvlLbl>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:plotArea>`->`<c:catAx>`->`<c:noMultiLvlLbl>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:catAx>`->`<c:noMultiLvlLbl>`->`val`
 MUST be a boolean.
 
-### element under `<c:plotArea>`->`<c:catAx>`->`<c:tickLblSkip>` element
-#### direct children of `<c:plotArea>`->`<c:catAx>`->`<c:tickLblSkip>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:catAx>`->`<c:tickLblSkip>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:catAx>`->`<c:tickLblSkip>` element
 none
 
-#### attributes in `<c:plotArea>`->`<c:catAx>`->`<c:tickLblSkip>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:catAx>`->`<c:tickLblSkip>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:plotArea>`->`<c:catAx>`->`<c:tickLblSkip>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:catAx>`->`<c:tickLblSkip>`->`val`
 MUST be within data type [`ST_Skip`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_Skip_topic_ID0EETWRB.html#topic_ID0EETWRB).
 
-### element under `<c:plotArea>`->`<c:catAx>`->`<c:tickMarkSkip>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:catAx>`->`<c:tickMarkSkip>` element
 #### direct children of `<c:plotArea>`->`<c:catAx>`->`<c:tickMarkSkip>` element
 none
 
-#### attributes in `<c:plotArea>`->`<c:catAx>`->`<c:tickMarkSkip>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:catAx>`->`<c:tickMarkSkip>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:plotArea>`->`<c:catAx>`->`<c:tickMarkSkip>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:catAx>`->`<c:tickMarkSkip>`->`val`
 MUST be within data type [`ST_Skip`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_Skip_topic_ID0EETWRB.html#topic_ID0EETWRB).
 
-### element under `<c:plotArea>`->`<valAx>` element
-#### direct children of `<c:plotArea>`->`<valAx>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<valAx>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<valAx>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:axId>` | | has been discussed before. | | |
@@ -3346,19 +3469,19 @@ MUST be within data type [`ST_Skip`](https://c-rex.net/samples/ooxml/e1/Part4/OO
 | `<c:txPr>` | | has been discussed before. | | |
 | `<extLst>` | | has been discussed before. | | |
 
-#### attributes in `<c:plotArea>`->`<valAx>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<valAx>` element
 none
 
-### element under `<c:plotArea>`->`<valAx>`->`<c:crossBetween/>` element
-#### direct children of `<c:plotArea>`->`<valAx>`->`<c:crossBetween/>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<valAx>`->`<c:crossBetween/>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<valAx>`->`<c:crossBetween/>` element
 none
 
-#### attributes in `<c:plotArea>`->`<valAx>`->`<c:crossBetween/>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<valAx>`->`<c:crossBetween/>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:plotArea>`->`<valAx>`->`<c:crossBetween/>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<valAx>`->`<c:crossBetween/>`->`val`
 MUST be one of values predefined in data type [`ST_CrossBetween`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_CrossBetween_topic_ID0EEHQRB.html#topic_ID0EEHQRB)
 
 | values | meaning | description | notes | notice |
@@ -3366,8 +3489,8 @@ MUST be one of values predefined in data type [`ST_CrossBetween`](https://c-rex.
 | `"between"` | | indicates that the data points or labels for the categories will be positioned between the tick marks on the category axis. | It is the default value. | |
 | `"atEnd"` | | positions the data points or labels on the tick marks themselves, effectively aligning them with the end of each category interval. | | |
 
-### element under `<c:plotArea>`->`<valAx>`->`<c:dispUnits>` element
-#### direct children of `<c:plotArea>`->`<valAx>`->`<c:dispUnits>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<valAx>`->`<c:dispUnits>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<valAx>`->`<c:dispUnits>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:builtInUnit>` | | | | |
@@ -3375,35 +3498,35 @@ MUST be one of values predefined in data type [`ST_CrossBetween`](https://c-rex.
 | `<c:dispUnitsLbl>` | | | | |
 | `<extLst>` | | has been discussed before | | |
 
-#### attributes in `<c:plotArea>`->`<valAx>`->`<c:dispUnits>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<valAx>`->`<c:dispUnits>` element
 none
 
-### element under `<c:plotArea>`->`<valAx>`->`<c:dispUnits>`->`<c:builtInUnit>` element
-#### direct children of `<c:plotArea>`->`<valAx>`->`<c:dispUnits>`->`<c:builtInUnit>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<valAx>`->`<c:dispUnits>`->`<c:builtInUnit>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<valAx>`->`<c:dispUnits>`->`<c:builtInUnit>` element
 none
 
-#### attributes in `<c:plotArea>`->`<valAx>`->`<c:dispUnits>`->`<c:builtInUnit>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<valAx>`->`<c:dispUnits>`->`<c:builtInUnit>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:plotArea>`->`<valAx>`->`<c:dispUnits>`->`<c:builtInUnit>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<valAx>`->`<c:dispUnits>`->`<c:builtInUnit>`->`val`
 MUST be one of values predefined in data type [`ST_BuiltInUnit`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_BuiltInUnit_topic_ID0EK4PRB.html#topic_ID0EK4PRB)
 
-### element under `<c:plotArea>`->`<valAx>`->`<c:dispUnits>`->`<c:custUnit>` element
-#### direct children of `<c:plotArea>`->`<valAx>`->`<c:dispUnits>`->`<c:custUnit>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<valAx>`->`<c:dispUnits>`->`<c:custUnit>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<valAx>`->`<c:dispUnits>`->`<c:custUnit>` element
 none
 
-#### attributes in `<c:plotArea>`->`<valAx>`->`<c:dispUnits>`->`<c:custUnit>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<valAx>`->`<c:dispUnits>`->`<c:custUnit>` element
 | attributes | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `val` | | | | |
 
-##### `<c:plotArea>`->`<valAx>`->`<c:dispUnits>`->`<c:custUnit>`->`val`
+##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<valAx>`->`<c:dispUnits>`->`<c:custUnit>`->`val`
 MUST be a floating number.
 
-### element under `<c:plotArea>`->`<valAx>`->`<c:dispUnits>`->`<c:dispUnitsLbl>` element
-#### direct children of `<c:plotArea>`->`<valAx>`->`<c:dispUnits>`->`<c:dispUnitsLbl>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<valAx>`->`<c:dispUnits>`->`<c:dispUnitsLbl>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<valAx>`->`<c:dispUnits>`->`<c:dispUnitsLbl>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:layout>` | | has been discussed before. | | |
@@ -3411,11 +3534,11 @@ MUST be a floating number.
 | `<c:tx>` | | has been discussed before. | | |
 | `<c:txPr>` | | has been discussed before. | | |
 
-#### attributes in `<c:plotArea>`->`<valAx>`->`<c:dispUnits>`->`<c:dispUnitsLbl>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<valAx>`->`<c:dispUnits>`->`<c:dispUnitsLbl>` element
 none
 
-### element under `<c:plotArea>`->`<c:serAx>` element
-#### direct children of `<c:plotArea>`->`<c:serAx>` element
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:serAx>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:serAx>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:axId>` | | has been discussed before | | |
@@ -3434,7 +3557,7 @@ none
 | `<c:txPr>` | | has been discussed before | | |
 | `<extLst>` | | has been discussed before | | |
 
-#### attributes in `<c:plotArea>`->`<c:serAx>` element
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:serAx>` element
 none
 
 ### element under `<c:chartSpace>`->`<c:chart>`->`<c:legend>` element
