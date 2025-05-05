@@ -4966,11 +4966,35 @@ none
 none
 
 #### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:tabs>`->`<w:tab>`
-| elements | meaning | description | notes | notice |
+| attributes | meaning | description | notes | notice |
 | :---------- | :----- | :--- | :-- | :-- |
 | `w:val` | | determines alignment or behavior of the tab stop. | | This attribute is required. |
 | `w:pos` | | determines position of the tab stop. | | This attribute is required. |
 | `w:leader` | leader character | determines leader character that will fill the space before the tab stop.  | | This attribute is optional. |
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<w:br>` | *br*eak line | add break line (i.e. new line) | | |
+| `<w:cr>` | *c*arriage *r*eturn | add carriage return | | |
+| `<w:tab> `| | has been discussed before. | | |
+| | | | | |
+| `<w:sym> | *sym*bol | adds symbol characters | | |
+| `<w:t> | *t*ext | adds text | | |
+| | | | | |
+| <w:rPr> | | has been discussed before. | | |
+| | | | | |
+| `<w:footnoteRef>` | footnote *ref*erence mark | add footnote reference mark | | |
+| `<w:footnoteReference>`| | references a footnote | | |
+| `<w:endnoteRef>` | endnote *ref*erence mark | add endnote reference mark | | |
+| `<w:endnoteReference>`| | references a endnote | | |
+| | | | | |
+| `<w:fldChar>` | *f*ie*ld* *char*acter | it defines a field character. | | | 
+| `<w:instrText>` | *instr*uction text | it defines an instruction text for a field | | |
+| | | | | |
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`
+none
 
 ##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:tabs>`->`<w:tab>`->`w:val`
 MUST be one of predefined values in data type [`ST_TabJc`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_TabJc_topic_ID0EAFT3.html#topic_ID0EAFT3)
@@ -5039,7 +5063,6 @@ MUST be one of predefined values in data type [`ST_TabTlc`](https://c-rex.net/sa
 | `<w:footnotes>` | | footnotes | acts like a container containing footnotes | | | | 
 | `<w:footnote>` | | footnote | defines a footnote | | | |
 | `<w:footnotePr>` | | footnote *pr*operty | defines properties of the footnote | | | |
-| `<w:footnoteRef>` | | footnote *ref*erence | references of the footnote | | | |
 | | | | | | | |
 | `<w:endnotes>` | | endnotes | acts like a container that containing endnotes | | | | 
 | `<w:endnote>` | | endnote | defines a endnotes | | | |
@@ -5070,8 +5093,6 @@ MUST be one of predefined values in data type [`ST_TabTlc`](https://c-rex.net/sa
 | `<w:tblStyle>` | | table style | applies style (according to value of `w:val` attribute) to paragraph (that is inside `<w:tbl>` tag) | the style to apply is defined in `~/word/style.xml` file | |
 | `<w:tblBorders>` | | table borders | specifies the table borders. | | |
 | | | | | | | | 
-| `<w:instrText>` | | *instr*uction text | it defines an instruction text for a field | | |
-| `<w:fldChar>` | | *f*ie*ld* *char*acter | it defines a field character. | | | 
 | | | | | | | | 
 | | | | | | | | 
 | `<w:pgSz>` | | page size | configures a page size (that is inside `<w:sectPr>` tag) | pg stands for *p*a*g*e | |
