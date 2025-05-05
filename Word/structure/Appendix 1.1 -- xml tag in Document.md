@@ -1,4 +1,4 @@
-.2# Appendix 1.1 -- xml tag in Document
+# Appendix 1.1 -- xml tag in Document
 ## Prequisite
 See [`Prequisite.md`](https://github.com/40843245/OOXML/blob/main/Prequisite/Prequisite.md)
 
@@ -1333,28 +1333,6 @@ The above example may output:
 
 ### element under `<c:chartSpace>` element
 #### direct children of `<c:chartSpace>` element
-| elements | meaning | description | notes | notice |
-| :----------  | :----- | :--- | :-- | :-- |
-| `<c:chart>` | chart | defines a chart | | |
-| `<c:style>` | style | specifies the chart style | | |
-| `<spPr>` | | has been discussed above | | |
-| `<c:roundedCorners>` | rounded corners | determines whether all charts in this file should be rounded shape. | | |
-| `<date1904>` | | determines that uses 1904 date system | | The default value is `"false"` |
-| `<externalData>` | external data | specifies the relationship to the data for this chart. | | |
-| `<clrMapOvr>` | *c*o*l*o*r* map *ov*e*r*ride | overrides the applications color mapping if the user has selected keep source formatting after a copy-paste. | | |
-| `<lang>` | *lang*uage | specifies the primary editing language which was use when this chart was last modified. | | |
-| `<pivotSource>` | pivot source | specifies the source pivot table for a pivot chart. | | |
-| `<printSettings>` | | specifies the print settings for the chart. | | |
-| `<protection>` | | specifies the protection. | | |
-| `<txPr>` | *t*e*x*t *pr*operties | specifies text formatting | | |
-| `<userShapes>` | | specifies the relationship id for the relationship for this Chart, Chart Drawing, or VML Drawing part. | | |
-| `<extLst>` | | has been discussed before. | | |
-
-#### attributes in `<c:chartSpace>` element
-none
-
-### element under `<c:chartSpace>`->`<c:chart>`+ element
-#### direct children of `<c:chartSpace>`->`<c:chart>` element
 | elements | meaning | description | notes | notice |
 | :----------  | :----- | :--- | :-- | :-- |
 | `<c:chart>` | chart | defines a chart | | |
