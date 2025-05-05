@@ -39,7 +39,7 @@ See [`OOXML/Word/structure/Appendix 1.1#namespace under xmlns namespace`](https:
 | :---------- | :----------- | :----- | :--- | :-- |
 | `<mc:AlternateContent>` | | acts like a container containing all informations about different versions or representations of certain content within the file | | It is required |
 
-##### children in `<mc:AlternateContent>`
+##### direct children in `<mc:AlternateContent>`
 | elements | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- |
 | `<mc:Choice>` | | acts like a container to present one of the alternative content options. | | It is required |
