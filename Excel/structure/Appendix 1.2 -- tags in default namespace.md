@@ -1,6 +1,6 @@
 # Appendix 1.2 -- tags in default namespace
 ## default namespace
-### elements that are children in default namespace
+### elements that are direct children in default namespace
 + Required elements in `~/DocProps/app.xml` under a `.xlsx` file.
 
 | elements | meaning | description | notes | notice |
@@ -61,7 +61,7 @@
 | :-- | :-- | :-- | :-- | :-- |
 | `<Properties>` | | acts like a container containing all properties in Metadata. | | |
 
-#### children in `<Properties>` element
+#### direct children in `<Properties>` element
 | elements | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `<Application>` | | the application used when the document is created. | | |
@@ -75,7 +75,7 @@
 | `<TitlesOfParts>` | | ists the titles of the individual parts of the document, in this case, worksheets. | | |
 
 ### elements under `<HeadingPairs>` element
-#### children in `<HeadingPairs>` element
+#### direct children in `<HeadingPairs>` element
 | elements | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `<vt:vector>` | | defines a vector for the heading of the Worksheet and acts like a container containing all properties about the vector. | | |
@@ -84,7 +84,7 @@
 none
 
 #### elements under `<vt:vector>` element
-##### children in `<vt:vector>` element
+##### direct children in `<vt:vector>` element
 | elements | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `<vt:variant>` | | acts like a container containing a single value within the vector. | | |
@@ -93,7 +93,7 @@ none
 none
 
 ##### elements under `<vt:variant>` element
-###### children in `<vt:variant>` element
+###### direct children in `<vt:variant>` element
 | elements | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `<vt:lpwstr>` | | usually contains the string value representing the heading text. | | |
@@ -103,7 +103,7 @@ none
 none
 
 ### elements under `<TitlesOfParts>` element
-#### children in `<TitlesOfParts>` element
+#### direct children in `<TitlesOfParts>` element
 | elements | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `<vt:vector>` | | defines a vector for the title of the Worksheet and acts like a container containing all properties about the vector. | | |
@@ -112,7 +112,7 @@ none
 none
 
 #### elements under `<vt:vector>` element
-##### children in `<vt:vector>` element
+##### direct children in `<vt:vector>` element
 | elements | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `<vt:variant>` | | acts like a container containing a single value within the vector. | | |
@@ -121,7 +121,7 @@ none
 none
 
 ##### elements under `<vt:variant>` element
-###### children in `<vt:variant>` element
+###### direct children in `<vt:variant>` element
 | elements | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `<vt:lpwstr>` | | usually contains the string value representing the title text. | | |
@@ -131,7 +131,7 @@ none
 
 ## Required elements in `~/xl/workbook.xml` under a `.xlsx` file.
 ### elements under `<workbook>` element
-#### children in `<workbook>` element
+#### direct children in `<workbook>` element
 | elements | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `<fileVersion/>` | | indicates the file version in the workbook. | | It is required |
@@ -251,13 +251,13 @@ none
 | `calcId` | *calc*ulation id | specifies calculation id for revision tracking. | | |
 
 ### elements under `<extLst>` element
-#### children in `<extLst>` element
+#### direct children in `<extLst>` element
 | elements | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `ext` | *ext*ensibility | specifies a single extension. | | |
 
 ### elements under `<ext>` element
-#### children in `<ext>` element
+#### direct children in `<ext>` element
 | elements | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `x15:workbookPr` | workbook *pr*operties | defines and configures workbook properties | | |
@@ -268,7 +268,7 @@ none
 | `uri` | URI | 128-bit guid of the single extension | | |
 
 ### elements under `<x15:workbookPr/>` element
-#### children in `<x15:workbookPr/>` element
+#### direct children in `<x15:workbookPr/>` element
 none
 
 #### attributes of `<x15:workbookPr/>` element
@@ -277,13 +277,13 @@ none
 | `chartTrackingRefBase` | chart tracking *ref*erence base | determines whether enables a specific mode or feature for tracking the base of chart. | | |
 
 ### elements under `<vt:sheetViews>` element
-#### children in `<vt:sheetViews>` element
+#### direct children in `<vt:sheetViews>` element
 | elements | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `<sheetView>` | | usually contains the string value representing the title text. | | |
 
 ### elements under `<vt:sheetViews>`->`<sheetView>` element
-#### children in `<vt:sheetViews>`->`<sheetView>` element
+#### direct children in `<vt:sheetViews>`->`<sheetView>` element
 | elements | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `<pane>` | | defines the visual splitting of the worksheet. | | |
@@ -319,7 +319,7 @@ none
 
 ## Required elements in `~/xl/worksheets/sheet1.xml` under a `.xlsx` file.
 ### elements under `<worksheet>` element
-#### children in `<worksheet>` element
+#### direct children in `<worksheet>` element
 | elements | meaning | description | notes | notice |
 | :-- | :-- | :-- | :-- | :-- |
 | `<dimension>` | | dimension. | |
@@ -335,13 +335,13 @@ none
 | `ref` | | the reference of the used range (in A1 annotation) | | |
 
 ### elements under `<worksheet>`->`<sheetViews>` element
-#### children in `<worksheet>`->`<sheetViews>` element
+#### direct children in `<worksheet>`->`<sheetViews>` element
 | elements | meaning | description | notes | notice 
 | :-- | :-- | :-- | :-- | :-- |
 | `<sheetView>` | | acts as a container containing a view for a sheet and configures the view. | | |
 
 ### elements under `<sheetView>` element
-#### children in `<sheetView>` element
+#### direct children in `<sheetView>` element
 | elements | meaning | description | notes | notice 
 | :-- | :-- | :-- | :-- | :-- |
 | `<selection>` | | stores information about selection | | |
@@ -370,7 +370,7 @@ none
 See [Google Gemini's answer -- What does `sqref` attribute stand for in OOXML?](https://github.com/40843245/OOXML/blob/main/Excel/tags/abbreviation/sqref/What%20does%20%60sqref%60%20attribute%20stand%20for%20in%20OOXML%3F.md) for more explanation.
 
 ### elements under `<workbookViewId>` element
-#### children in `<workbookViewId>` element
+#### direct children in `<workbookViewId>` element
 | elements | meaning | description | notes | notice 
 | :-- | :-- | :-- | :-- | :-- |
 | `<pane>` | | defines the visual splitting of the worksheet. | | |
@@ -415,13 +415,13 @@ See [Google Gemini's answer -- What does `sqref` attribute stand for in OOXML?](
 | `x14ac:dyDescent` | *dy*namic descent | specifies a dynamic descent of how many pixels for bottom-aligned text in the rows of the sheet. | Its unit is in pixels.| |
 
 ### elements under `<sheetData>` element
-#### children in `<sheetData>` element
+#### direct children in `<sheetData>` element
 | elements | meaning | description | notes | notice 
 | :-- | :-- | :-- | :-- | :-- |
 | `<row>` | | defines a row and configures its properties. | | |
 
 ### elements under `<row>` element
-#### children in `<row>` element
+#### direct children in `<row>` element
 | elements | meaning | description | notes | notice 
 | :-- | :-- | :-- | :-- | :-- |
 | `<c>` | *c*ell | specifies a cell in the row. | | |
@@ -479,7 +479,7 @@ See description above.
 | `"false"` | | phonetic information associated with the cells in this row should NOT be displayed. | | |
 
 ### elements under `<row>`->`<c>` element
-#### children in `<row>`->`<c>` element
+#### direct children in `<row>`->`<c>` element
 | elements | meaning | description | notes | notice 
 | :-- | :-- | :-- | :-- | :-- |
 | `<f>` | *f*ormula | the formula stored as string | the element is appeared iff one has input the formula in the cell. |  |
@@ -526,7 +526,7 @@ See description above.
 | `inlineStr` | inline *str*ing | The cell contains a string value directly within an `<is>` (inline string) child element. | | |
 
 ### elements under `<is>` element
-#### children in `<is>` element
+#### direct children in `<is>` element
 | elements | meaning | description | notes | notice 
 | :-- | :-- | :-- | :-- | :-- |
 | `<t>` | *t*ext | a plain text | | |
@@ -536,20 +536,20 @@ none
 
 ## Required elements in `~/xl/sharedStrings.xml` under a `.xlsx` file.
 ### elements under `<sst>` element
-#### children in `<sst>` element
+#### direct children in `<sst>` element
 | elements | meaning | description | notes | notice 
 | :-- | :-- | :-- | :-- | :-- |
 | `<si>` | *s*hared *i*ndex | contains an `innerHTML` value that is mapped by the given index (the number between `<v>` and `</v>` tag). | | |
 
 ### elements under `<si>` element
-#### children in `<si>` element
+#### direct children in `<si>` element
 | elements | meaning | description | notes | notice 
 | :-- | :-- | :-- | :-- | :-- |
 | `<t>` | *t*ext | the plain text | | |
 
 ## Required elements in `~/xl/styles.xml` under a `.xlsx` file
 ### elements under `<styleSheet>` element
-#### children in `<styleSheet>` element
+#### direct children in `<styleSheet>` element
 | elements | meaning | description | notes | notice 
 | :-- | :-- | :-- | :-- | :-- |
 | `<fonts>` | | acts like a container containing all fonts. | | |
@@ -565,7 +565,7 @@ none
 > DON'T be confused with `<cellStyleXfs>` and `<cellXfs>`.
 
 ### elements under `<fonts>` element
-#### children in `<fonts>` element
+#### direct children in `<fonts>` element
 | elements | meaning | description | notes | notice 
 | :-- | :-- | :-- | :-- | :-- |
 | `<font>` | | defines a font and servers as a container that specifies the properties inside this tag. | | |
@@ -573,11 +573,11 @@ none
 #### attributes in `<fonts>` element
 | attributes | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
-| `count` | | indicates the number of direct children do we have in this tag. | | |
+| `count` | | indicates the number of direct direct children do we have in this tag. | | |
 | `x14ac:knownFonts` | known fonts | suggests that how many are there the defined fonts that is `known` or standard font that the application might handle more efficiently | | |
 
 ### elements under `<font>` element
-#### children in `<font>` element
+#### direct children in `<font>` element
 | elements | meaning | description | notes | notice 
 | :-- | :-- | :-- | :-- | :-- |
 | `<name>` | | gives the font the name | | |
@@ -650,7 +650,7 @@ See `<b/>` in definition of WordProcessML, available at [Appendix 2 -- available
 See `<i/>` in definition of WordProcessML, available at [Appendix 2 -- available options of attribute of tag in xml for Word](https://github.com/40843245/OOXML/blob/main/Word/structure/Appendix%202%20--%20available%20options%20of%20attribute%20of%20tag%20in%20xml%20for%20Word.md).
  
 ### elements under `<u/>` element
-#### children in `<u/>`element
+#### direct children in `<u/>`element
 none
 
 #### attributes in `<u/>`element
@@ -676,7 +676,7 @@ See `<shadow/>` in definition of WordProcessML, available at [Appendix 2 -- avai
 See `<extend/>` in definition of WordProcessML, available at [Appendix 2 -- available options of attribute of tag in xml for Word](https://github.com/40843245/OOXML/blob/main/Word/structure/Appendix%202%20--%20available%20options%20of%20attribute%20of%20tag%20in%20xml%20for%20Word.md).
 
 ### elements under `<fills>` element
-#### children in `<fills>` element
+#### direct children in `<fills>` element
 | elements | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `<fill>` | | defines a filling and servers as a container that specifies the properties in this tag. | | |
@@ -687,7 +687,7 @@ See `<extend/>` in definition of WordProcessML, available at [Appendix 2 -- avai
 | `count` | | specifies the number of fillings | | |
 
 ### elements under `<fill>` element
-#### children in `<fill>` element
+#### direct children in `<fill>` element
 | elements | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `<patternFill>` | | defines the pattern to fill | | |
@@ -696,7 +696,7 @@ See `<extend/>` in definition of WordProcessML, available at [Appendix 2 -- avai
 none
 
 ### elements under `<patternFill>` element
-#### children in `<patternFill>` element
+#### direct children in `<patternFill>` element
 none
 
 #### attributes in `<patternFill>` element
@@ -762,7 +762,7 @@ none
 | `"gray75"` | |  75.00% gray pattern | | |
 
 ### elements under `<borders>` element
-#### children in `<borders>` element
+#### direct children in `<borders>` element
 | elements | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `<border>` | | defines a border and serves as a container that configures the border. | | |
@@ -770,10 +770,10 @@ none
 #### attributes in `<borders>` element
 | attributes | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
-| `count` | | the number of direct children in `<borders>`  | | |
+| `count` | | the number of direct direct children in `<borders>`  | | |
 
 ### elements under `<borders>`->`<border>` element
-#### children in `<borders>`->`<border>` element
+#### direct children in `<borders>`->`<border>` element
 | elements | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `<left/>` | | specifies the left line border | | |
@@ -788,7 +788,7 @@ none
 none
 
 ### elements under `<left/>` element
-#### children in `<left/>` element
+#### direct children in `<left/>` element
 none
 
 #### attributes in `<left/>` element
@@ -823,7 +823,7 @@ Same as `<left/>`.
 Same as `<left/>`.
 
 ### elements under `<diagonal/>` element
-#### children in `<diagonal/>` element
+#### direct children in `<diagonal/>` element
 | elements | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `<color>` | | specifies the color of the diagonal line. | | |
@@ -834,7 +834,7 @@ Same as `<left/>`.
 | `w:style` | | specifies the style of the diagonal line. | | |
 
 ### elements under `<diagonal/>`->`<color>` element
-#### children in `<diagonal/>`->`<color>` element
+#### direct children in `<diagonal/>`->`<color>` element
 none
 
 #### attributes in `<diagonal/>`->`<color>` element
@@ -848,7 +848,7 @@ none
 | `shade` | | specifies the percentage of shading applied to the theme color. | | <ul><li>MUST be an integer between 0 and 255</li><li>If either `rgb` or `indexed` is specified, `shade` attribute will be ignored.</li><li>It is optional.</br>But it can be omitted if either `rgb` or `indexed` is specified.</li></ul> |
 
 ### elements under `<cellStyleXfs>` element
-#### children under `<cellStyleXfs>` element
+#### direct children under `<cellStyleXfs>` element
 | elements | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `<xf>` | *f*ormat e*x*tensions | defines the formatting properties for a cell style. | | |
@@ -856,10 +856,10 @@ none
 #### attributes in `<cellStyleXfs>` element
 | attributes | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
-| `count` | | the number of direct children | | |
+| `count` | | the number of direct direct children | | |
 
 ### elements under `<cellStyleXfs>`->`<xf>` element
-#### children in `<cellStyleXfs>`->`<xf>` element
+#### direct children in `<cellStyleXfs>`->`<xf>` element
 | elements | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `<alignment>` | | defines the alignment properties | | If the `<alignment>` element is absent, the default alignment is typically bottom and left with no text rotation, wrap text set to false, and no indentation. |
@@ -872,7 +872,7 @@ none
 | `<extLst>` | *ext*ension *l*i*st* | for future extension | | It is optional. |
 
 ### elements under `<cellStyleXfs>`->`<alignment>` element
-#### children under `<cellStyleXfs>`->`<alignment>` element
+#### direct children under `<cellStyleXfs>`->`<alignment>` element
 none
 
 #### attributes in `<cellStyleXfs>`->`<alignment>` element
@@ -914,7 +914,7 @@ none
 | `rightToLeft` | | The reading order is explicitly set to right-to-left within the cell, regardless of the content.. | | |
 
 ### elements under `<cellXfs>` element
-#### children under `<cellXfs>` element
+#### direct children under `<cellXfs>` element
 | elements | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `<xf>` | *f*ormat e*x*tensions | defines the formatting properties for a cell style. | | |
@@ -922,17 +922,17 @@ none
 #### attributes in `<cellXfs>` element
 | attributes | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
-| `count` | | the number of direct children | | |
+| `count` | | the number of direct direct children | | |
 
 ### elements under `<cellXfs>`->`<xf>` element
-#### children in `<cellXfs>`->`<xf>` element
-Same as children of `<cellStyleXfs>`->`<xf>`
+#### direct children in `<cellXfs>`->`<xf>` element
+Same as direct children of `<cellStyleXfs>`->`<xf>`
 
 #### attributes in `<cellStyleXfs>`->`<xf>` element
 Same as attributes of `<cellStyleXfs>`->`<xf>`
 
 ### elements under `<cellStyles>` element
-#### children in `<cellStyles>` element
+#### direct children in `<cellStyles>` element
 | elements | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `<cellStyle/>` | | defines the cell style. | | |
@@ -940,10 +940,10 @@ Same as attributes of `<cellStyleXfs>`->`<xf>`
 #### attributes in `<cellStyles>` element
 | attributes | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
-| `count` | | the number of direct children | | |
+| `count` | | the number of direct direct children | | |
 
 ### elements under `<cellStyle/>` element
-#### children in `<cellStyle/>` element
+#### direct children in `<cellStyle/>` element
 none
 
 #### attributes in `<cellStyle/>` element
@@ -956,7 +956,7 @@ none
 | `hidden` | | determines whether the cell style should be hidden. | | The default value is `"false"` |
 
 ### elements under `<dxfs>` element
-#### children in `<dxfs>` element
+#### direct children in `<dxfs>` element
 | elements | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `<dxf>` | *d*ifferential *f*ormatting e*x*tension | defines the differential formatting properties. | | |
@@ -964,10 +964,10 @@ none
 #### attributes in `<dxfs>` element
 | attributes | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
-| `count` | | the number of direct children | | |
+| `count` | | the number of direct direct children | | |
 
 ### elements under `<dxfs>`->`<dxf>` element
-#### children in `<dxfs>`->`<dxf>` element
+#### direct children in `<dxfs>`->`<dxf>` element
 | elements | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `<alignment>` | | defines the alignment properties | | If the `<alignment>` element is absent, the default alignment is typically bottom and left with no text rotation, wrap text set to false, and no indentation. |
@@ -981,21 +981,21 @@ none
 none
 
 ### elements under `<dxfs>`->`<dxf>`->`<border>` element
-#### children in `<dxfs>`->`<dxf>`->`<border>` element
+#### direct children in `<dxfs>`->`<dxf>`->`<border>` element
 Same as `<borders>`->`<border>`
 
 #### attributes in `<dxfs>`->`<dxf>`->`<border>` element
 Same as `<borders>`->`<border>`
 
 ### elements under `<dxfs>`->`<dxf>`->`<fill>` element
-#### children in `<dxfs>`->`<dxf>`->`<fill>` element
+#### direct children in `<dxfs>`->`<dxf>`->`<fill>` element
 Same as `<fills>`->`<fill>`
 
 #### attributes in `<dxfs>`->`<dxf>`->`<border>` element
 Same as `<fills>`->`<fill>
 
 ### elements under `<tableStyles>` element
-#### children in `<tableStyles>` element
+#### direct children in `<tableStyles>` element
 | elements | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `<tableStyle>` | | defines a table style and servers a container containing lots of parts of the table style. | | |
@@ -1003,12 +1003,12 @@ Same as `<fills>`->`<fill>
 #### attributes in `<tableStyles>` element
 | attributes | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
-| `count` | | the number of direct children | | |
+| `count` | | the number of direct direct children | | |
 | `defaultTableStyle` | | specifies the default table style that is used when a user inserts a new table without explicitly choosing a style. | | |
 | `defaultPivotStyle` | | tspecifies the default pivot table style that is used when a user inserts a new pivot table without explicitly choosing a style. | | |
 
 ### elements under `<tableStyle>` element
-#### children in `<tableStyle>` element
+#### direct children in `<tableStyle>` element
 | elements | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `<tableStyleElement>` | | defines an element (part) of the table style. | | |
@@ -1018,7 +1018,7 @@ Same as `<fills>`->`<fill>
 none
 
 ### elements under `<tableStyleElement>` element
-#### children in `<tableStyleElement>` element
+#### direct children in `<tableStyleElement>` element
 | elements | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `<alignment>` | | defines the alignment properties | | If the `<alignment>` element is absent, the default alignment is typically bottom and left with no text rotation, wrap text set to false, and no indentation. |
@@ -1029,35 +1029,35 @@ none
 | `<extLst>` | *ext*ension *l*i*st* | has been discussed before | | |
 
 ### elements under `<tableStyleElement>`->`<alignment>` element
-#### children in `<tableStyleElement>`->`<alignment>` element
+#### direct children in `<tableStyleElement>`->`<alignment>` element
 Same as `<dxfs>`->`<dxf>`->`<alignment>`
 
 #### attributes in `<tableStyleElement>`->`<alignment>` element
 Same as `<dxfs>`->`<dxf>`->`<alignment>`
 
 ### elements under `<tableStyleElement>`->`<protection>` element
-#### children in `<tableStyleElement>`->`<protection>` element
+#### direct children in `<tableStyleElement>`->`<protection>` element
 Same as `<dxfs>`->`<dxf>`->`<protection>`
 
 #### attributes in `<tableStyleElement>`->`<protection>` element
 Same as `<dxfs>`->`<dxf>`->`<protection>`
 
 ### elements under `<tableStyleElement>`->`<font>` element
-#### children in `<tableStyleElement>`->`<font>` element
+#### direct children in `<tableStyleElement>`->`<font>` element
 Same as `<dxfs>`->`<dxf>`->`<font>`
 
 #### attributes in `<tableStyleElement>`->`<font>` element
 Same as `<dxfs>`->`<dxf>`->`<font>`
 
 ### elements under `<tableStyleElement>`->`<border>` element
-#### children in `<tableStyleElement>`->`<border>` element
+#### direct children in `<tableStyleElement>`->`<border>` element
 Same as `<dxfs>`->`<dxf>`->`<border>`
 
 #### attributes in `<tableStyleElement>`->`<border>` element
 Same as `<dxfs>`->`<dxf>`->`<border>`
 
 ### elements under `<tableStyleElement>`->`<fill>` element
-#### children in `<tableStyleElement>`->`<fill>` element
+#### direct children in `<tableStyleElement>`->`<fill>` element
 Same as `<dxfs>`->`<dxf>`->`<fill>`
 
 #### attributes in `<tableStyleElement>`->`<fill>` element
@@ -1065,7 +1065,7 @@ Same as `<dxfs>`->`<dxf>`->`<fill>`
 
 ##  Required elements in `~/xl/calcChain.xml` under a `.xlsx` file.
 ### elements under `<calcChain>` element
-#### children in `<calcChain>` element
+#### direct children in `<calcChain>` element
 | elements | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `<c>` | *c*ell | defines an cell | | |
@@ -1074,7 +1074,7 @@ Same as `<dxfs>`->`<dxf>`->`<fill>`
 none
 
 ### elements under `<calcChain>`->`<c>` element
-#### children in `<calcChain>`->`<c>` element
+#### direct children in `<calcChain>`->`<c>` element
 none
 
 #### attributes in `<calcChain>`->`<c>` element
@@ -1086,7 +1086,7 @@ none
 
 ## Required elements in `~/xl/queryTables/queryTable1.xml` under a `.xlsx` file.
 ### elements under `<queryTable>` element
-#### children in `<queryTable>` element
+#### direct children in `<queryTable>` element
 | elements | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `<queryTableRefresh>` | | serves as a container containing all field in the queryTable will be auto-refreshed (if possible) and specifies the refresh info. | | |
@@ -1107,7 +1107,7 @@ none
 | `applyFontFormats` | | determines whether apply the fonts for formatting of the queryTable. |  | |
 
 ### elements under `<queryTableRefresh>` element
-#### children in `<queryTableRefresh>` element
+#### direct children in `<queryTableRefresh>` element
 | elements | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `<queryTableFields>` | | acts like a container containing all field in the queryTable. | | |
@@ -1118,7 +1118,7 @@ none
 | `nextId` | | next available ID for refresh of the queryTable. |  | |
 
 ### elements under `<queryTableFields>` element
-#### children in `<queryTableFields>` element
+#### direct children in `<queryTableFields>` element
 | elements | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `<queryTableField>` | | defines a field in the queryTable and configures it. | | |
@@ -1126,10 +1126,10 @@ none
 #### attributes in `<queryTableFields>` element
 | attributes | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
-| `count` | | the number of direct children |  | |
+| `count` | | the number of direct direct children |  | |
 
 ### elements under `<queryTableField>` element
-#### children in `<queryTableField>` element
+#### direct children in `<queryTableField>` element
 typically, none.
 
 #### attributes in `<queryTableField>` element
@@ -1141,7 +1141,7 @@ typically, none.
 
 ## Required elements in `~/xl/tables/table1.xml`5 under a `.xlsx` file.
 ### elements under `<table>` element
-#### children in `<table>` element
+#### direct children in `<table>` element
 | elements | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `<autoFilter/>` | | defines the AutoFilter and specifies it. |  | |
@@ -1159,7 +1159,7 @@ typically, none.
 | `totalsRowShown` | | determines whether the a total row will show on the bottom of the table. | | |
 
 ### elements under `<autoFilter/>` element
-#### children in `<autoFilter/>` element
+#### direct children in `<autoFilter/>` element
 none
 
 #### attributes in `<autoFilter/>` element
@@ -1168,7 +1168,7 @@ none
 | `ref` | | the AutoFilter's reference |  | |
 
 ### elements under `<tableColumns>` element
-#### children in `<tableColumns>` element
+#### direct children in `<tableColumns>` element
 | elements | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `<tableColumn/>` | | defines a table column and specifies it. |  | |
@@ -1176,10 +1176,10 @@ none
 #### attributes in `<tableColumns>` element
 | attributes | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
-| `count` | | the number of direct children |  | |
+| `count` | | the number of direct direct children |  | |
 
 ### elements under `<tableColumn/>` element
-#### children in `<tableColumn/>` element
+#### direct children in `<tableColumn/>` element
 none
 
 #### attributes in `<tableColumn/>` element
@@ -1191,7 +1191,7 @@ none
 | `queryTableFieldId` | | the id that matches the field in the query table. | | |
 
 ### elements under `<tableStyleInfo/>` element
-#### children in `<tableStyleInfo/>` element
+#### direct children in `<tableStyleInfo/>` element
 none
 
 #### attributes in `<tableStyleInfo/>` element
@@ -1205,7 +1205,7 @@ none
 
 ## Required elements in `~/xl/connections.xml` under a `.xlsx` file.
 ### elements under `<connections>` element
-#### children in `<connections>` element
+#### direct children in `<connections>` element
 | elements | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `<connection>` | | defines a connection. |  | |
@@ -1214,7 +1214,7 @@ none
 none
 
 ### elements under `<connection>` element
-#### children in `<connection>` element
+#### direct children in `<connection>` element
 | elements | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `<extLst>` | *ext*ension *l*i*st* | acts like a container containing all extensions.| | |
@@ -1237,7 +1237,7 @@ none
 
 
 ### elements under `<extLst>` element
-#### children in `<extLst>` element
+#### direct children in `<extLst>` element
 | elements | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `<ext>` | *ext*ension | defines an extension | | |
@@ -1246,7 +1246,7 @@ none
 none
 
 ### elements under `<ext>` element
-#### children in `<ext>` element
+#### direct children in `<ext>` element
 | elements | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `<x15:connection>` | | defines a connection. | | |
@@ -1255,7 +1255,7 @@ none
 none
 
 ### elements under `<x15:connection>` element
-#### children in `<x15:connection>` element
+#### direct children in `<x15:connection>` element
 | elements | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `<x15:textPr>` | | defines the text properties. | | |
@@ -1267,7 +1267,7 @@ none
 | `autoDelete` | | determines whether it is auto deleted. |  | |
 
 ### elements under `<x15:textPr>` element
-#### children in `<x15:textPr>` element
+#### direct children in `<x15:textPr>` element
 | elements | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `<textFields>` | | acts like a container containing text fields for import. | | |
@@ -1281,7 +1281,7 @@ none
 | `comma` | | determines whether comma is used as delimiter. | | |
 
 ### elements under `<textFields>` element
-#### children in `<textFields>` element
+#### direct children in `<textFields>` element
 | elements | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
 | `<textField>` | | define a text field. | | |
@@ -1289,10 +1289,10 @@ none
 #### attributes in `<textFields>` element
 | attributes | meaning | description | notes | notice
 | :-- | :-- | :-- | :-- | :-- |
-| `count` | | the number of direct children |  | |
+| `count` | | the number of direct direct children |  | |
 
 ### elements under `<textField>` element
-#### children in `<textField>` element
+#### direct children in `<textField>` element
 none
 
 #### attributes in `<textField>` element
@@ -1324,7 +1324,7 @@ none
 See Excel code pages.
 
 ### elements under `<dbPr/>` element
-#### children in `<dbPr/>` element
+#### direct children in `<dbPr/>` element
 none
 
 #### attributes in `<dbPr/>` element
@@ -1355,7 +1355,7 @@ none
 | `"3"` | | indicates that it is a Excel Data Model. | | |
 
 ### elements under `<olapPr/>` element
-#### children in `<olapPr/>` element
+#### direct children in `<olapPr/>` element
 none
 
 #### attributes in `<olapPr/>` element
