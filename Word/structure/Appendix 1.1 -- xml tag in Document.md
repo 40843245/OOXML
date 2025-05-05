@@ -2809,6 +2809,61 @@ none
 ##### `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bubbleChart>`->`<c:sizeRepresents>`->`val`
 MUST be with data type [`ST_SizeRepresents`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_SizeRepresents_topic_ID0E4NWRB.html#topic_ID0E4NWRB)
 
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bubbleChart>`->`<c:ser>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bubbleChart>`->`<c:ser>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:idx>` | | has been discussed before | | |
+| `<c:order>` | | has been discussed before | | |
+| `<c:dLbls>` | | has been discussed before | | |
+| `<c:xVal>` | | specifies the x values which shall be used to define the location of data markers on a chart. | | |
+| `<c:yVal>` | | specifies the y values which shall be used to define the location of data markers on a chart. | | |
+| `<c:bubble3D>` | | determines that the bubbles have a 3-D effect applied to them. | | |
+| `<c:trendline>` | trend line | defines trendlines for this specific series | | |
+| `<c:dPt>` | | has been discussed before | | |
+| `<c:errBars>` | | has been discussed before. | | |
+| `<c:bubbleScale>` | | specifies the scale factor for the bubble chart.  | | |
+| `<c:invertIfNegative>` | | determines whether the color (of bar charts or column charts) will be inverted when its value it represents is negative. | | This is available for</br><ol><li>bar charts</li><li>column charts</li></ol>  |
+| `<c:sizeRepresents>` | | specifies how the bubble size values are represented on the chart. | | |
+| `<c:ser>` | | has been discussed before | | |
+| `<c:varyColors>` | | has been discussed before | | |
+| `<c:spPr>` | | has been discussed before | | |
+| `<c:tx>` | | has been discussed before | | |
+| `<extLst>` | | has been discussed before | | |
+
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bubbleChart>`->`<c:ser>` element
+none
+
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bubbleChart>`->`<c:ser>`->`<c:xVal>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bubbleChart>`->`<c:ser>`->`<c:xVal>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:numRef>` | | has been discussed before | | |
+| `<c:numLit>` | | has been discussed before | | |
+| `<c:strRef>` | | has been discussed before | | |
+| `<c:strLit>` | | has been discussed before | | |
+| `<c:multiLvlStrRef>` | | has been discussed before | | |
+
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bubbleChart>`->`<c:ser>`->`<c:xVal>` element
+none
+
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bubbleChart>`->`<c:ser>`->`<c:yVal>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bubbleChart>`->`<c:ser>`->`<c:yVal>` element
+| elements | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<c:numRef>` | | has been discussed before | | |
+| `<c:numLit>` | | has been discussed before | | |
+
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bubbleChart>`->`<c:ser>`->`<c:yVal>` element
+none
+
+### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bubbleChart>`->`<c:ser>`->`<c:errBars>` element
+#### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bubbleChart>`->`<c:ser>`->`<c:errBars>` element
+See `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:ser>`->`<c:errBars>`
+
+#### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:bubbleChart>`->`<c:ser>`->`<c:errBars>` element
+See `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:area3DChart>`->`<c:ser>`->`<c:errBars>`
+
 ### element under `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:doughnutChart>` element
 #### direct children of `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:doughnutChart>` element
 | elements | meaning | description | notes | notice |
@@ -3469,6 +3524,11 @@ MUST be within data type [`ST_Skip`](https://c-rex.net/samples/ooxml/e1/Part4/OO
 | `<c:txPr>` | | has been discussed before. | | |
 | `<extLst>` | | has been discussed before. | | |
 
+> [!IMPORTANT]
+> How to calculate percentage that a data point takes of its total?
+>
+> See this article -- [How to calculate percentage that a data point takes of its total?](https://github.com/40843245/drawing-objects/blob/main/formula/graphics/chart/data%20point.md)
+
 #### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<valAx>` element
 none
 
@@ -3556,6 +3616,9 @@ none
 | `<c:spPr>` | | has been discussed before | | |
 | `<c:txPr>` | | has been discussed before | | |
 | `<extLst>` | | has been discussed before | | |
+
+> [!IMPORTANT]
+> About `How <c:crossAx> tag establish the relationship to cross the axis`, let's see the answers from [Google Gemini](https://github.com/40843245/OOXML/blob/main/Q%26A/about%20chart/about%20axis/How%20%60%3Cc%3AcrossAx%3E%60%20tag%20establish%20the%20relationship%20to%20cross%20the%20axis%3F.md)
 
 #### attributes in `<c:chartSpace>`->`<c:chart>`->`<c:plotArea>`->`<c:serAx>` element
 none
@@ -3831,110 +3894,12 @@ none
 ##### `<c:chartSpace>`->`<c:chart>`->`<c:view3D>`->`<c:depthPercent>`->`val`
 MUST be one of predefined value with data type [`ST_DepthPercent`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_DepthPercent_topic_ID0EHSQRB.html#topic_ID0EHSQRB).
 
-elements | meaning | description | notes | notice |
-| :----------  | :----- | :--- | :-- | :-- | 
-| `<c:bubbleSize>` | | bubble size | specifies the size of bubbles. | | |
-| `<c:trendline>` | | trend line | defines trendlines for this specific series | | |
-| `<c:invertIfNegative>` | | | determines whether the color (of bar charts or column charts) will be inverted when its value it represents is negative. | | This is available for</br><ol><li>bar charts</li><li>column charts</li></ol>  |
-| | | | | | |
-| `<c:strRef>` | | *str*ing *ref*erence | defines a reference to string data in a spreadsheet. | | |
-| | | | | | |
-| `<c:strCache>` | | *str*ing cached | contains a cached copy of the string values from the referenced range.  | this is often included for performance reasons, so the charting application doesn't have to always access the spreadsheet to get the labels | |
-
-> [!IMPORTANT]
-> How to calculate percentage that a data point takes of its total?
->
-> See this article -- [How to calculate percentage that a data point takes of its total?](https://github.com/40843245/drawing-objects/blob/main/formula/graphics/chart/data%20point.md)
-
-##### namespace declaration about `c` namespace
+### namespace declaration about `c` namespace
 ###### namespace declaration in `<c:chart>`
 | namespace declaration | description | notes | notice |
 | :---------- | :----------- | :----- | :--- |
 | `xmlns:c` | | | as discussed above |
 | `xmlns:r` | | | as discussed above |
-
-###### attribute in `<c:showLegendKey>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `val` | | | determines whether show legend for each series. | | |
-
-###### attribute in `<c:showVal>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `val` | | | determines whether show value for each series. | | |
-
-###### attribute in `<c:showCatName>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `val` | | | determines whether show category name for each series. | | |
-
-###### attribute in `<c:showSerName>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `val` | | | determines whether show name of data series for each series | | |
-
-###### attribute in `<c:showPercent>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `val` | | | determines whether show percentage that a data point takes of its total for each series | | |
-
-###### attribute in `<c:showBubbleSize>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `val` | | | determines whether show bubble size for each series. | | |
-
-###### attribute in `<c:showLeaderLines>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `val` | | | determines whether show leader lines for each series. | | |
-
-###### attribute in `<c:invertIfNegative>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `val` | | | determines whether the color (of bar charts or column charts) will be inverted when its value it represents is negative. | | |
-
-###### attribute in `<c:axId>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `val` | | | specifies the axis id | | |
-
-###### attribute in `<c:orientation>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `val` | | | specifies the orientation of the value axis. | | |
-
-###### attribute in `<c:delete>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `val` | | | stores the data labels is manually deleted by users. | | |
-
-###### attribute in `<c:axPos>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `val` | | | specifies the defined axis should be positioned at somewhere of the chart's plot area. | somewhere is according to value of `val` attribute, see [`<c:axPos>` -> `val` attribute section in Appendix 2](https://github.com/40843245/OOXML/blob/main/Word/structure/Appendix%202%20--%20available%20options%20of%20attribute%20of%20tag%20in%20xml%20for%20Word.md#caxpos---val-attribute) for available value of `val` attribute.  | |
-
-###### attribute in `<c:majorTickMark>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `val` | | | specifies the type and placement of the major tick marks. | | |
-
-###### attribute in `<c:minorTickMark>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `val` | | | specifies the type and placement of the minor tick marks. | | |
-
-###### attribute in `<c:tickLblPos>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `val` | | | controls the position of the tick labels relative to the tick marks on the axis. | | |
-
-###### attribute in `<c:crossAx>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `val` | | | holds the Guid of the of the axis (value of `val` attribute in `<c:axId>`) that the current axis should cross. | the relationship will cross from the current axis by its id (value of `val` attribute in `<c:crossAx>`) to the axis by its id (value of `val` attribute in `<c:axId>`)  | |
-
-> [!IMPORTANT]
-> About `How <c:crossAx> tag establish the relationship to cross the axis`, let's see the answers from [Google Gemini](https://github.com/40843245/OOXML/blob/main/Q%26A/about%20chart/about%20axis/How%20%60%3Cc%3AcrossAx%3E%60%20tag%20establish%20the%20relationship%20to%20cross%20the%20axis%3F.md)
 
 ###### attribute in `<c:auto>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
