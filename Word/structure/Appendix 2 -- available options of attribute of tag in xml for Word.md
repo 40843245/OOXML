@@ -258,10 +258,6 @@ Sales |    |    |    |
 | `"margin"` | | | anchors the frame horizontally to the page margins (with relative position) (left or right, depending on other positioning attributes). | | |
 | `"column"` | | | anchors the frame horizontally to the column boundaries in a multicolumn layout (with relative position)| | |
 
-#### `<w:tab>` -> `w:val` attribute
-| available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-
 #### `<w:mirrorIndents>` -> `w:val` attribute
 | available options of attribute in tag | similar to options of attribute of tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
