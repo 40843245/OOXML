@@ -4843,6 +4843,8 @@ none
 | `<w:textDirection>`| text flow direction | specifies the direction of the text flow for this paragraph. | | | |
 | `<w:wordWrap>` | | determines whether word wrapping is allowed (i.e. when a word excceeds the line, can only the overflowed characters in the word go to the next line? ) | | | |
 | | | | | | |
+| `<w:outlineLvl>` | outline *l*e*v*e*l* | specifies the outline level which shall be associated with the current paragraph in the document. | | |
+| | | | | | |
 | `<w:suppressOverlap>`| | determines whether it suppresses when it overlapps to other. | | | |
 | `<w:suppressLineNumbers>`| | specifies the number of lines are suppressed in the paragraph | | | |
 | `<w:suppressAutoHyphens>`| | determines whether it suppresses hyphen automatically | | | |
@@ -4860,9 +4862,132 @@ none
 | | | | | | |
 | `<w:pageBreakBefore>` | | specifies to add extra paragraph on next page | | | |
 | | | | | | |
+| <w:kinsoku> | Kinsoku Shori (禁則處理) | determines whether East Asian typography and line-breaking rules shall be applied to text in this paragraph to determine which characters can begin and end each line. | | This property only applies to Simplified Chinese, Traditional Chinese, and Japanese text in this paragraph. |
+
+> [!WARNING]
+> This property only applies to Simplified Chinese, Traditional Chinese, and Japanese text in this paragraph.
+
+> [!IMPORTANT]
+> What kind of characters are typically affected by kinsoku rules?
+>
+> + For starting characters: Small kana characters (like っ, ゃ), opening brackets/parentheses, punctuation marks.
+> + For ending characters: Closing brackets/parentheses, certain punctuation marks.
 
 #### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`
 none
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<w:b/>` | *b*old for non-Complex script | determines whether the **non-complex script text** is bold | | |
+| `<w:bCs/>` | *b*old for *c*omplex *s*cript text | determines whether the **complex script text** is italic  | | |
+| `<w:i/>` | *i*talic for non-Complex script | determines whether the **non-complex script text** is bold | | |
+| `<w:iCs/>` | *i*talic for *c*omplex *s*cript text | determines whether the **complex script text** is italic | | |
+| `<w:u/>` | *u*nderlined | determines whether the **non-complex script text** is underlined | | |
+| `<w:strike/>` | single *strike*through | determines whether the **non-complex script text** is single strikethrough | | |
+| `<w:dstrike/>` | *d*ouble *strike*through | determines whether the **non-complex script text** is double strikethrough | | |
+| `<w:highlight/>` | highlighted | determines whether the **non-complex script text** is highlighted | | |
+| `<w:em/>` | *em*phasis mark | determines whether the **non-complex script text** is emphasized. | | |
+| `<w:emboss/>` | emboss | determines whether the **non-complex script text** is embossed. | | |
+| `<w:effect/>` | animation effect | determines whether the **non-complex script text** has animation effect. | | |
+| `<w:shadow>` | shadow effect | determines the text in the run should have shadow effect. | It is optional.</br>Default value is `"false"`. | |
+| `<w:cs/>` | *c*omplex *s*cript | determines whether the text should be treated as **complex script text**. | | |
+| | | | | |
+| `<w:shd>` | *sh*a*d*ing | Like shading in paragraph, it specifies the shading applied to the contents of the run. | | |
+| | | | | |
+| `<w:caps/>` | capital letters | determines whether all **non-complex script text** are capital letters (i.e. uppercase letters). | | |
+| `<w:smallCaps/>` | lowercase letters | determines whether all **non-complex script text** are lowercase letters. | | |
+| | | | | |
+| `<w:sz>` | *s*i*z*e for non-Complex script | defines a font size for **non-complex script text** | | |
+| `<w:szCs>` | *s*i*z*e for *C*omplex *s*cript | defines a font size for **complex script text**  | | |
+| | | | | |
+| `<w:ins>`| *ins*erted paragraph | specifies that the paragraph mark delimiting the end of a paragraph within a WordprocessingML document shall be treated as deleted (i.e. the contents of this paragraph are no longer delimited by this paragraph mark, and are combined with the following paragraph) as part of a tracked revision. | | |
+| `<w:del>` | *del*eted paragraph | specifies that the paragraph mark delimiting the end of a paragraph within a WordprocessingML document shall be treated as deleted (i.e. the contents of this paragraph are no longer delimited by this paragraph mark, and are combined with the following paragraph - but those contents shall not automatically be marked as deleted) as part of a tracked revision. | | |
+| | | | | |
+| `<w:w/>` | | specifies the amount by which each character shall be expanded or when the character is rendered in the document.  | | |
+| | | | | |
+| `<w:rtl>` | *r*ight-*t*o-*l*eft text | specifies the contents is from right to left in the run. | | |
+| `<w:position>` | | specifies the amount by which text shall be raised or lowered for this run in relation to the default baseline of the surrounding non-positioned text. | it allows the text to be repositioned without altering the font size of the contents. | |
+| `<w:vertAlign/>` | *vert*ical alignment | specifies that which alignment the contents within the current run should be formatted to | it usually resides at `~/word/style.xml` file under a Word file. | |
+| | | | | |
+| `<w:spacing>` | | specifies the amount of character pitch which shall be added or removed after each character in this run before the following character is rendered in the document. | | |
+| | | | | |
+| `<w:outline>`| | determines whether to show outline. | | |
+| | | | | |
+| `<w:snapToGrid>` | | determines whether to snap the contents of the run to a grid (if possible). | | |
+| | | | | |
+| `<w:lang>` | *lang*uage | specifies the language for characters | | |
+| | | | | |
+| `<w:rFonts>` | *r*un fonts | configure fonts of a run | | |
+| `<w:kern>`| font *kern*ing | specifies whether font kerning shall be applied to the contents of this run. | | |
+| | | | | |
+| `<w:rStyle>` | *r*un style | specifies the style applied to the run. | | |
+| `<w:rPrChange>` | *r*un *pr*operty changed information | specifies the details about a single revision to a set of run properties applied to a paragraph mark within a WordprocessingML document. | | |
+| `<w:noProof/>` | determines whether no proofing tool used | no spelling check and grammer check inside this tag. | | |
+| | | | | |
+| `<w:vanish>` | vanished text (i.e. hidden text) | determines whether the contents of the run should be hidden at display time | | |
+| `<w:webHidden>` | web hidden text | determines whether the contents of the run should be hidden at display time when the document is displayed in web view. | | |
+| `<w:specVanish>` | | determines whether the paragraph mark should always hidden. | | |
+| | | | | |
+| `<w:imprint>` | | determines whether the contents of the run should be displayed when imprinted | | |
+| | | | | |
+| `<w:oMath>` | | determines whether the contents of the run should be treated as expressions etc in Office Math. | | |
+| | | | | |
+| `<w:moveFrom>`| | specifies that the parent paragraph has been moved away from this location and tracked as a revision. | | |
+| `<w:moveTo> | | specifies that the parent paragraph has been moved to this location and tracked as a revision.  | | |
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:pStyle>`
+none
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:pStyle>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:pStyle>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:pStyle>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:pStyle>`->`w:val`
+MUST be a name of predefined or defined (by your own) style.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:tabs>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:tabs>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<w:tab>` | tab | define property of a tab stop by assign the value to its attributes. | | | 
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:tabs>`
+none
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:tabs>`->`<w:tab>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:tabs>`->`<w:tab>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:tabs>`->`<w:tab>`
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | determines alignment or behavior of the tab stop. | | This attribute is required. |
+| `w:pos` | | determines position of the tab stop. | | This attribute is required. |
+| `w:leader` | leader character | determines leader character that will fill the space before the tab stop.  | | This attribute is optional. |
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:tabs>`->`<w:tab>`->`w:val`
+MUST be one of predefined values in data type [`ST_TabJc`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_TabJc_topic_ID0EAFT3.html#topic_ID0EAFT3)
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:tabs>`->`<w:tab>``->`w:pos`
+MUST be one of predefined values in data type [`ST_SignedTwipsMeasure`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_SignedTwipsMeasur_topic_ID0EGNP3.html#topic_ID0EGNP3)
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:tabs>`->`<w:tab>`->`w:leader`
+MUST be one of predefined values in data type [`ST_TabTlc`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_TabTlc_topic_ID0EYOT3.html#topic_ID0EYOT3)
+
+| values | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `none` | nothing | No leader character | default value when not specified | |
+| `dot` | dot | dot (i.e. `.`) as leader character | | |
+| `hyphen` | hyphen | hyphen (i.e. `-`) as leader character | | |
+| `underscore` | underscore | underscore (i.e. `_`) as leader character | | |
+| `middleDot` | middle dot | middle dot (i.e. `·`) as leader character | | |
 
 ##### elements in `w` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -4879,7 +5004,6 @@ none
 | `<w:rsid>` | | *r*evi*s*ion save | establishes a revision save identifier. | | |
 | `<w:drawing>` |  | drawing | defines a drawing. | | |
 | `<w:ignoreSubtree>` | | ignore a specific subtree | it instructs the Word processor to ignore a specific subtree of the XML document (according to the value of `w:val` attribute) during processing. | | | 
-| `<w:lang>` | `<lang>` | language | the language for characters | lang stands for *lang*uage | |
 | `<w:charset>` | `<charset>` in native html5 | charset | configure charset of this font | | |
 | `<w:family>` | | family | configure family of this font | | |
 | `<w:pitch>` | | character's pitch | configure pitch of characters that uses this font. | | | 
@@ -4895,16 +5019,11 @@ none
 | `<w:next/>` | | | specifies the style to be automatically applied to the next paragraph after a paragraph formatted with the current style. | | |
 | | | | | | |
 | `<w:altName>` | `alt` attribute in `<img>` tag in native html5 | *alt*ernative | use the alternative (according to the value specified in `w:val` attribute) **when** an element (such as an image) or things that used in an element (such as font) **can not be used or worked correctly**. | | |
-| `<w:noProof/>` | | no proofing tool used | no spelling check and grammer check inside this tag. | | |
 | | | | | | |
 | | | | | | | |
 | | | | | | | | 
-| `<w:rFonts>`| | *r*un fonts | configure fonts of a run (that is inside `<w:rPr>` tag) | | |
 | | | | | | | | 
-| `<w:b/>` | `<b>` and `<b/>` in native html5 | bold | determines whether the non-complex script text is bold | | |
-| `<w:bCs/>` | `<b>` and `<b/>` in native html5 | bold | determines whether the complex script text is bold | | |
-| `<w:i/>` | | italic | determines whether the non-complex script text is italic. | | |
-| `<w:iCs/>` | | italic | determines whether the complex script text is italic. | | |
+
 | `<w:t/>` | | text | defines the text | | |
 | | | | | | |
 | `<w:rPrDefault>` | | | defines the default formatting properties for all text runs within the document. | | |
@@ -4939,8 +5058,7 @@ none
 | | | | | | | |
 | `<w:titlePg>` | | title *p*a*g*e | defines a title page. | | | 
 | | | | | | | | 
-| `<w:sz>` | | *s*i*z*e for non-Complex script | defines a font size for standard characters (that is inside `<w:rPr>` tag) | | |
-| `<w:szCs>` | | *s*i*z*e for *C*omplex *s*cript | defines a font size for complex script characters (that is inside `<w:rPr>` tag) | | |
+
 | | | | | | | | 
 | `<w:tblPr>` | | *t*a*bl*e *pr*operty | configure property (such as style and appearance) of a table (that is inside `<w:tbl>` tag) in Microsoft Word file | | |
 | `<w:tblGrid>` | `<tr>` (first occurence) | *t*a*bl*e grid | defines a grid (header) of a table in Microsoft Word file | you can think of a grid like a header row ( consists of lots of columns ) in table | |
@@ -4961,8 +5079,7 @@ none
 | `<w:col>` | | columns in section | add columns in section (that is inside `<w:sectPr>` tag) | | |
 | `<w:docGrid>` | | document grid | add document grid (that is inside `<w:sectPr>` tag) | | |
 | | | | | | | | 
-| `<w:defaultTabStop>` | | tab | define property of the default tab stop by assign the value to its attributes. | | | 
-| `<w:tab>` | | tab | define property of a tab stop by assign the value to its attributes. | | | 
+| `<w:defaultTabStop>` | | tab | define default property  tab stop by assign the value to its attributes. | | | 
 | | | | | | | | 
 
 | | | | | | | | 
@@ -4978,7 +5095,6 @@ none
 | `<w:bullet>` | | bullet formatting | same above | | |
 | `<w:numId>` | | numbering id | specifies the numbering id to link number formatting given the value of `w:val` attribute.  | | |
 | `<w:suff>` | | suffix | specifies what character (if any) follows the number (e.g., a period, a hyphen, or a tab) | | |
-| `<w:outlineLvl>` | | outline *l*e*v*e*l* | specifies the outline level which shall be associated with the current paragraph in the document. | | |
 | `<w:lvlText>` | | *l*e*v*e*l* text | defines the numbering format using placeholders (e.g., "%1." for first-level numbers) | | |
 | `<w:lvlJc>` | | *l*e*v*e*l* *j*ustifi*c*ation | configures the justification of this level | | | 
 | `<w:nfc>` | | *N*umber *F*ormatting *C*ode | configures Number Formatting Code of this level | | | 
@@ -5008,7 +5124,6 @@ none
 | `<w:style>` | | style | defines a style | it usually resides at `~/word/style.xml` file under a Word file. | |
 | `<w:lsdException>` | | LSD exception | defines exceptions to the default behavior of LSD (Linked Style Definitions). | | |
 | | | | | | |
-| `<w:vertAlign/>` | | vertical alignment | specifies that which alignment the text within the current run should be formatted to | it usually resides at `~/word/style.xml` file under a Word file. | |
 | `<w:hr>` | | | defines a horizontal rule | | |
 | | | | | | |
 | | | | | | |
@@ -5016,7 +5131,6 @@ none
 | `<w:continuationSeparator/>`| | | defines that the continuation separator for footnotes.) | | | 
 | | | | | | |
 | | | | | | |
-| <w:kinsoku> | | Kinsoku Shori (禁則處理) | specifies whether East Asian typography and line-breaking rules shall be applied to text in this paragraph to determine which characters can begin and end each line. | | This property only applies to Simplified Chinese, Traditional Chinese, and Japanese text in this paragraph. |
 | `<w:minorIdents>` | | | detemines whether if this tag is present, Word will swap the left and right indent settings if the document or section is set to a right-to-left reading order. | | If this is omitted on a given paragraph, its value is determined by the setting previously set at any level of the style hierarchy (i.e. that previous setting remains unchanged). If this setting is never specified in the style hierarchy, then this property shall not be applied. |
 | | | | | | |
 | `<w:sdtContent>` | | *s*tructured *d*ocument *t*ag content |  acts like a container for the actual content that is displayed within a Structured Document Tag | | |
@@ -5045,20 +5159,6 @@ none
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:val` | | | detemines whether if this tag is present, Word will swap the left and right indent settings if the document or section is set to a right-to-left reading order. | | |
-
-###### attribute in `<w:kinsoku>`
-> [!WARNING]
-> This property only applies to Simplified Chinese, Traditional Chinese, and Japanese text in this paragraph.
-
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w:val` | | | specifies whether East Asian typography and line-breaking rules shall be applied to text in this paragraph to determine which characters can begin and end each line. | | |
-
-> [!IMPORTANT]
-> What kind of characters are typically affected by kinsoku rules?
->
-> + For starting characters: Small kana characters (like っ, ゃ), opening brackets/parentheses, punctuation marks.
-> + For ending characters: Closing brackets/parentheses, certain punctuation marks.
 
 ###### attribute in `<w:keepLines>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
