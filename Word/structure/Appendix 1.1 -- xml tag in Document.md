@@ -5048,7 +5048,6 @@ MUST be one of predefined values in data type [`ST_TabTlc`](https://c-rex.net/sa
 | | | | | | | | 
 | | | | | | | | 
 
-| `<w:t/>` | | text | defines the text | | |
 | | | | | | |
 | `<w:rPrDefault>` | | | defines the default formatting properties for all text runs within the document. | | |
 | `<w:pPrDefault/>` | | | defines the default formatting properties for all paragraphs in the document. | | |
