@@ -5339,7 +5339,7 @@ Will not discussed in this article.
 #### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`  element
 | elements | meaning | description | notes | notice |
 | :---------- | :----- | :--- | :-- | :-- |
-| `<w:rPr>` | *r*un *pr*operty | configure property of a run (that is inside `<w:r>` tag) | | |
+| `<w:rPr>` | *r*un *pr*operty | configure property of the run | | |
 | `<w:sectPr>` | | has been discussed before. | | |
 | `<w:framePr>` | frame *pr*operty | configure property of frame | | |
 | `<w:numPr>` | *num*ber *pr*operty | configure the property if it uses number formatting.  | | |
@@ -5733,7 +5733,7 @@ MUST be a name of predefined or defined (by your own) style.
 #### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:cnfStyle>` element
 | elements | meaning | description | notes | notice |
 | :---------- | :----- | :--- | :-- | :-- |
-| `<w:rPr>` | *r*un *pr*operty | configure property of a run (that is inside `<w:r>` tag) | | |
+| `<w:rPr>` | *r*un *pr*operty | configure property of the run | | |
 
 #### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:cnfStyle>`
 | attributes | meaning | description | notes | notice |
@@ -6041,12 +6041,14 @@ MUST be a boolean.
 | | | | | |
 | <w:rPr> | | has been discussed before. | | |
 | | | | | |
-| `<w:footnoteRef>` | footnote *ref*erence mark | add footnote reference mark | | |
+| `<w:footnoteRef>` | footnote *ref*erence mark | adds footnote reference mark | | |
 | `<w:footnoteReference>`| | references a footnote | | |
-| `<w:endnoteRef>` | endnote *ref*erence mark | add endnote reference mark | | |
+| `<w:endnoteRef>` | endnote *ref*erence mark | adds endnote reference mark | | |
 | `<w:endnoteReference>`| | references a endnote | | |
 | | | | | |
-| `<w:commentReference>` | | add comment reference mark | | |
+| `<w:commentReference>` | | adds comment reference mark | | |
+| | | | | |
+| `<w:annotationRef> `| annotation *ref*erence mark | adds annotation reference mark  | | |
 | | | | | |
 | `<w:continuationSeparator>`| | defines the continuation separator. | | | 
 | `<w:separator/>`| | defines a seperator (maybe section break) | | | 
@@ -6078,6 +6080,160 @@ MUST be a boolean.
 | `w:rsidR` | | has been discussed before. | | |
 | `w:rsidRDefault` | | has been discussed before. | | |
 | `w:rsidSect` | | has been discussed before. | | |
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:sym>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:sym>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:sym>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:font` | | specifies the font in this symbol. | | |
+| `w:char` | | specifies the character code in this symbol. | | |
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:sym>`->`w:font`
+MUST be specified to a predefined font (MUST be a string that match the name of predefined font).
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:sym>`->`w:char`
+MUST be in data type [`ST_ShortHexNumber`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_ShortHexNumber_topic_ID0E2DP3.html#topic_ID0E2DP3)
+
+which is a two-digit short hexidecimal number.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:t>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:t>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:t>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `xml:space` | | has been discussed before. | | |
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:t>`->`xml:space`
+has been discussed before.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:tab>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:tab>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:tab>`
+none
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:softHyphen>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:softHyphen>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:softHyphen>`
+none
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:separator>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:separator>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:separator>`
+none
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:footnoteRef>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:footnoteRef>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:footnoteRef>`
+none
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:endnoteRef>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:endnoteRef>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:endnoteRef>`
+none
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:footnoteReference>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:footnoteReference>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:footnoteReference>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:id` | | references the footnote by value of `w:id` attribute | | | 
+| `w:customMarkFollows` | | determines whether to suppress the footnote or endnote reference mark | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:footnoteReference>`->`w:id`
+MUST be a positive integer that matches the id of footnote.
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:footnoteReference>`->`w:customMarkFollows`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:endnoteReference>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:endnoteReference>` element
+see `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:footnoteReference>`
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:endnoteReference>`
+see `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:footnoteReference>`
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:commentReference>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:commentReference>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:commentReference>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:id` | | references the comment by value of `w:id` attribute | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:commentReference>`->`w:id`
+MUST be a positive integer that matches the id of comment.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:annotationRef>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:annotationRef>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:annotationRef>`
+none
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:fldChar>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:fldChar>` element
+| elements  | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `<w:ffData>` | *f*orm *f*ield data | specifies form field data | | |
+| `<w:fldData>` | custom *f*ie*ld* data | specifies custom field data | | |
+| `<w:numberingChange>` | | specifies the previous state of the numbering | | |
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:fldChar>`
+| attributes  | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `w:fldCharType` | *f*ie*ld* char type | specifies how whitespace should be handled within the text content of the `<w:instrText>` element. | | |
+| `w:dirty` | | specifies whether this tag is dirty (field result is invalidated) | | The default value is `"false"`. |
+| `w:fldLock` | *f*ie*ld* locked | determines whether this tag can be recalculated. | | The default value is `"false"`. |
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:fldChar>`->`w:fldCharType`
+MUST be one of predefined value in data type [`ST_FldCharType`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_FldCharType_topic_ID0E6TU2.html#topic_ID0E6TU2)
+
+| values | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `begin` | | It marks the beginning of the field's instructions and result. | | |
+| `separate` | | It divides the field's instructions (the code that tells Word what to do) from the field's result (the currently displayed output). | | Not all fields have a `separate` character.|
+| `end` | | It marks the end of a field, concluding both the instructions and the result (if present). | | |
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:fldChar>`->`w:dirty`
+MUST be a boolean.
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:fldChar>`->`w:fldLock`
+MUST be a boolean.
+
+### other direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:fldChar>` element
+Skipped.
+
+Will not discussed in this article.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:instrText>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:instrText>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:instrText>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `xml:space` | | specifies how whitespace should be handled within the text content of the `<w:instrText>` element. | | |
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:instrText>`->`xml:space`
+MUST be a base string defined in the namespace (specified in the root node).
 
 ### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:drawing>`
 #### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:drawing>` element
@@ -6132,6 +6288,11 @@ none
 
 #### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:pict>`
 none
+
+### other direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>` element
+Skipped.
+
+Will not discussed in this article.
 
 ##### elements in `w` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -6457,20 +6618,11 @@ Same as attribute in `<w:tab>`.
 | `w:line`| | |  specifiies how many twips for the line spacing to  | its unit is twips (twentieths of a point). | |
 | `w:lineRule`| | | specifiies the line rule. | | |
 
-###### attribute in `<w:instrText>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `xml:space` | | | specifies how whitespace should be handled within the text content of the `<w:instrText>` element. | | |
-
-###### attribute in `<w:fldChar>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w:fldCharType` | | | specifies how whitespace should be handled within the text content of the `<w:instrText>` element. | | |
 
 ###### attribute in `<w:fldSimple>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w:instrText` | | | specifies field instruction. | Recall about field instruction (i.e. content in `<w:instrText>` tag), they have same concepts.</br> For more details, see my notes -- [syntax of field instruction in `<w:instrText>` tag section](https://github.com/40843245/OOXML/blob/main/Word/structure/CH1%20--%20syntax.md#syntax-of-field-instruction-in-winstrtext-tag)| |
+| attributes | meaning | description | notes | notice |
+| :----------  | :----- | :--- | :-- | :-- |
+| `w:instrText` | | specifies field instruction. | Recall about field instruction (i.e. content in `<w:instrText>` tag), they have same concepts.</br> For more details, see my notes -- [syntax of field instruction in `<w:instrText>` tag section](https://github.com/40843245/OOXML/blob/main/Word/structure/CH1%20--%20syntax.md#syntax-of-field-instruction-in-winstrtext-tag)| |
 
 ###### attribute in `<w:footnote>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
