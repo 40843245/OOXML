@@ -4751,6 +4751,55 @@ none
 #### attributes in `<w:document>`->`<w:body>`
 none
 
+### elements under `<w:document>`->`<w:body>`->`<w:sectPr>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:sectPr>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<w:type>` | section type | specifies the section type. | | |
+| `<w:pgNumType>`| *p*a*g*e *num*ber type | specifies the type of page number | | |
+| `<w:lnNumType>`| *l*i*n*e *num*ber type | specifies the type of line number | | |
+| | | | | | |
+| `<w:sectPrChange>` | *sect*ion *pr*operties changed information | specifies the details about a single revision to a set of section properties in a WordprocessingML document. | | | 
+| | | | | | |
+| | | | | | |
+| `<w:bidi/>` | | text | defines the bidirectional text | | |
+| | | | | | |
+| `<w:textDirection>`| text flow direction | specifies the direction of the text flow for this section. | | | |
+| | | | | | |
+| `<w:vAlign>` | *v*ertical *align*ment | specifies the vertical alignment for content in the section. | | | |
+| | | | | | |
+| `<w:footerReference>` | | | references the footer by value of `id` attribute. | | | | 
+| `<w:footnotePr>` | footnote *pr*operty | specifies properties of the footnote | | | |
+| `<w:endnotePr>` | endnote *pr*operty | specifies properties of the endnote | | | |
+| | | | | | |
+| `<w:headerReference>` | | references the header by value of `id` attribute. | | | | 
+| | | | | | |
+| `<w:noEndnote>`| | determines whether to suppress the endnote. | | | |
+| | | | | | |
+| `<w:pgBorders>` | *p*a*g*e borders | configures properties of the borders of page. | | |
+| `<w:pgMar>` | *p*a*g*e *mar*gin | configures a page margin. | | |
+| `<w:pgSz>` | *p*a*g*e *s*i*z*e | configures a page size | | |
+| `<w:rtlGutter>` | *r*ight-*t*o-*l*eft gutter | specifies that the page gutter should be from right to left (i.e. be placed from on the right side of the page) for this section only | | |
+| `<w:printerSettings>`| | references printer settings | | |
+| | | | | | |
+| `<w:paperSrc>`| paper *s*ou*rc*e | specifies the paper source information | | | |
+| | | | | | |
+| `<w:titlePg>` | title *p*a*g*e | defines a title page. | | | 
+| | | | | | |
+| `<w:formProt>` | form *prot*ection | determines whether to enable the form protection, disallowing user to edit contents in this section except the form in this section. | | | |
+| | | | | | |
+| `<w:cols>` | *col*umn*s* | defines columns for this section. | | |
+| | | | | | |
+| `<w:docGrid>` | *doc*ument grid | adds document grid | | |
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:sectPr>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:rsidR` | *r*evision *s*ave *id*entifier for *r*un | specifies revision save id for run  | | |
+| `w:rsidRPr` | *r*evision *s*ave *id*entifier for *r*un *pr*operties | specifies revision save id for run properties | | |
+| `w:rsidSect` | *r*evision *s*ave *id*entifier for *sect*ion | specifies revision save id for section | | It is NOT supported in standard OOXML |
+| `w:rsidDel` | *r*evision *s*ave *id*entifier for paragraph *del*etion | specifies revision save id for paragraph deletion | | | 
+
 ### elements under `<w:document>`->`<w:body>`->`<w:p>`
 #### direct children of `<w:document>`->`<w:body>`->`<w:p>` element
 | elements | meaning | description | notes | notice |
@@ -5060,6 +5109,7 @@ none
 
 ##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:dstrike>`->`w:val`
 MUST be a boolean.
+
 ### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:caps>`
 #### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:caps>` element
 none
@@ -5647,15 +5697,12 @@ none
 | | | | | | | | 
 | `<w:footnotes>` | | footnotes | acts like a container containing footnotes | | | | 
 | `<w:footnote>` | | footnote | defines a footnote | | | |
-| `<w:footnotePr>` | | footnote *pr*operty | defines properties of the footnote | | | |
 | | | | | | | |
 | `<w:endnotes>` | | endnotes | acts like a container that containing endnotes | | | | 
 | `<w:endnote>` | | endnote | defines a endnotes | | | |
-| `<w:endnotePr>` | | endnote *pr*operty | defines properties of the endnote | | | |
 | `<w:endnoteRef/>` | | endnote *ref*erence | references of the endnote | | | |
 | | | | | | | | 
 | `<w:hdr>` | | *h*ea*d*e*r* | configures the header | | | | 
-| `<w:headerReference>` | | | indicates that the parent element refers the header with specific type. | | | | 
 | | | | | | | | 
 | `<w:ftr>` | | *f*oo*t*e*r* | configure the footer | | | | 
 | `<w:footerReference>` | | | indicates that the parent element refers the footer with specific type. | | | | 
@@ -5664,7 +5711,6 @@ none
 | `<w:comment>` | | | defines a comment | | | |
 | `<w:commentPr>` | | | defines properties of the comment | | | |
 | | | | | | | |
-| `<w:titlePg>` | | title *p*a*g*e | defines a title page. | | | 
 | | | | | | | | 
 
 | | | | | | | | 
@@ -5680,10 +5726,7 @@ none
 | | | | | | | | 
 | | | | | | | | 
 | | | | | | | | 
-| `<w:pgSz>` | | page size | configures a page size (that is inside `<w:sectPr>` tag) | pg stands for *p*a*g*e | |
-| `<w:pgMar>` | | page margin | configures a page margin (that is inside `<w:sectPr>` tag) | Mar stands for *Mar*gin | |
 | `<w:col>` | | columns in section | add columns in section (that is inside `<w:sectPr>` tag) | | |
-| `<w:docGrid>` | | document grid | add document grid (that is inside `<w:sectPr>` tag) | | |
 | | | | | | | | 
 | `<w:defaultTabStop>` | | tab | define default property  tab stop by assign the value to its attributes. | | | 
 | | | | | | | | 
@@ -5708,7 +5751,6 @@ none
 | | | | | | | |
 | `<w:bdr>` | `border` in css | *b*or*d*e*r* | configures properties of the border. | | |
 | `<w:between>` | | | border that appears between consecutive paragraphs | | |
-| `<w:pgBorders>` | | *p*a*g*e borders | configures properties of the borders of page. | | |
 | | | | | | | |
 | `<w:top>` | | top | configures properties of top borders of some elements (according to this tag is inside what tag). | | |
 | `<w:left>` | | left | configures properties of left borders of some elements (according to this tag is inside what tag). | | |
@@ -5935,36 +5977,6 @@ Same as attribute in `<w:rFonts>`.
 ###### attribute in `<w:defaultTabStop>`
 Same as attribute in `<w:tab>`.
 
-###### attribute in `<w:b/>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w:val` | | | determines whether the non-complex script text is bold. | | |
-
-###### attribute in `<w:bCs/>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w:val` | | | determines whether the complex script text is bold. | | |
-
-###### attribute in `<w:i/>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w:val` | | | determines whether the non-complex script text is italic. | | |
-
-###### attribute in `<w:iCs/>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w:val` | | | determines whether the complex script text is italic. | | |
-
-###### attribute in `<w:sz>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w:val` | `value` in native html5 | assign the value to determine default font size for **non-complex script characters** (that is inside `<w:pPr>` tag) | its unit is half-point. | |
-
-###### attribute in `<w:szCs>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w:val` | `value` in native html5 | assign the value to determine default font size for **complex script characters** (that is inside `<w:pPr>` tag) | its unit is half-point. | |
-
 ###### attribute in `<w:pgSz>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
@@ -6040,11 +6052,6 @@ Same as attribute in `<w:tab>`.
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:w` | | width | assign an value to determine the width of the cell (that is inside `<w:tc>` tag) | NOTES that its unit is not necessary twips (its unit is according to value of `w:type` attribute. See next record | |
 | `w:type` | | type | assign an value to determine its unit | | |
-
-###### attribute in `<w:pStyle>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w:val` | `value` in native html5 | assign an Guid as value that determines what style of 7the paragraph (that is inside `<w:p>` tag) will apply to | | |
 
 ###### attribute in `<w:tblStyle>`
 Way to parsing it is similar to parsing `<w:pStyle>`.
@@ -6197,8 +6204,6 @@ For more informations and details, see [DocumentFormat.OpenXml.Wordprocessing.Co
 | `w:uiPriority` | | | of the style in the user interface (e.g., in the Styles pane). | Concept similar to the concept mentioned at cell whose row is `w:defUIPriority` and column is `note`. | |
 | `w:unhideWhenUsed` | | | specifies whether the style should become visible in the UI if it's used in the document, even if it was initially semi-hidden. | Concept similar to the concept mentioned at cell whose row is `w:defUnhideWhenUsed` and column is `note`. | | 
 | `w:qFormat` | | | determines whether the style appears in the Quick Styles gallery. | Concept similar to the concept mentioned at cell whose row is `w:defQFormat` and column is `note`. | |
-
-###### attributes in `<w:cnfStyle>`
 
 ###### attribute in `<w:hr>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
