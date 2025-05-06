@@ -4820,6 +4820,83 @@ MUST be one of predefined values in data type [`ST_SectionMark`](https://c-rex.n
 | `nextColumn` | next column page section break | specifies a new column section break, which begins on the following column on the page. | | |
 | `continuous` | continuous section break | specifies a continuous section break, which begins on the following paragraph. | continuous section breaks might not specify certain page-level section properties, since they must be inherited from the following section. | |
 
+### elements under `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgNumType>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgNumType>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgNumType>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:chapSep` | *chap*ter *sep*erator | specifies the separator character that shall appear between the chapter and page number, if a chapter style has been set for page numbers in this section. | | |
+| `w:chapStyle` | *chap*ter style | specifies the index of the heading style applied to chapter titles in the document. It should be used as chapter headings in all page numbers for this section.  | one-based index | |
+| `w:fmt` | *f*or*m*a*t* | specifies the number format for all page numbers in this section. | | |
+| `w:start` | | specifies the start page number in this section. | | |
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgNumType>`->`w:chapSep`
+MUST be in data type [`ST_ChapterSep`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_ChapterSep_topic_ID0EEYJ2.html#topic_ID0EEYJ2)
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgNumType>`->`w:chapStyle`
+MUST be in data type [`ST_DecimalNumber`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_DecimalNumber_topic_ID0EMPM2.html#topic_ID0EMPM2)
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgNumType>`->`w:fmt`
+MUST be in data type [`ST_NumberFormat`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_NumberFormat_topic_ID0EDNB3.html#topic_ID0EDNB3)
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgNumType>`->`w:start`
+MUST be in data type [`ST_DecimalNumber`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_DecimalNumber_topic_ID0EMPM2.html#topic_ID0EMPM2)
+
+### elements under `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:lnNumType>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:lnNumType>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:lnNumType>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:start` | | specifies the start number of counter in line numbers. | | |
+| `w:countBy` | | specifies the interval of counter in line numbers. | | |
+| `w:restart` | | specifies when the line numbering in this section should be reset to the line number specified by the value of `w:start` attribute. | | |
+| `w:distance` | | specifies the distance between the text margin and the edges of any line numbers. | in twips | |
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:lnNumType>`->`w:start`
+MUST be in data type [`ST_DecimalNumber`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_DecimalNumber_topic_ID0EMPM2.html#topic_ID0EMPM2)
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:lnNumType>`->`w:countBy`
+MUST be in data type [`ST_DecimalNumber`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_DecimalNumber_topic_ID0EMPM2.html#topic_ID0EMPM2)
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:lnNumType>`->`w:restart`
+MUST be in data type [`ST_LineNumberRestart`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_LineNumberRestart_topic_ID0EUS42.html#topic_ID0EUS42)
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:lnNumType>`->`w:distance`
+MUST be in data type [`ST_TwipsMeasure`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_TwipsMeasure_topic_ID0EDJZ3.html#topic_ID0EDJZ3)
+
+### elements under `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgSz>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgSz>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgSz>`
+| attributes | meaning | description | notes | notice |
+| :-------- | :----- | :--- | :-- | :-- |
+| `w:w` | *w*idth | specifies width of all pages in this section. | its unit is twips (twentieths of a point). | |
+| `w:h` | *h*eight | specifies height of all pages in this section. | its unit is twips (twentieths of a point). | |
+| `w:orient` | *orient*ation | specifies orientation of all pages in this section. | | |
+| `w:code` | | specifies a printer-specific paper code for the paper type in this section. It is be used when uses printer to print pages.  |  | |
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgSz>`->`w:w`
+MUST be in data type [`ST_TwipsMeasure`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_TwipsMeasure_topic_ID0EDJZ3.html#topic_ID0EDJZ3)
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgSz>`->`w:h`
+MUST be in data type [`ST_TwipsMeasure`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_TwipsMeasure_topic_ID0EDJZ3.html#topic_ID0EDJZ3)
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgSz>`->`w:orient`
+MUST be in data type [`ST_PageOrientation`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_PageOrientation_topic_ID0EKBK3.html#topic_ID0EKBK3)
+
+| values | meaning | description | notes | notice |
+| :-------- | :----- | :--- | :-- | :-- |
+| `landscape` | landscape mode | | In landscape mode, the page contents will be rotated by 90 degree clockerwisely with respect to the normal page orientation. | |
+| `portrait` | portrait mode | | | |
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgSz>`->`w:code`
+MUST be in data type [`ST_DecimalNumber`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_DecimalNumber_topic_ID0EMPM2.html#topic_ID0EMPM2)
+
 ### elements under `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:vAlign>`
 #### direct children of `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:vAlign>` element
 none
@@ -4838,6 +4915,113 @@ MUST be one of predefined values in data type [`ST_VerticalJc`](https://c-rex.ne
 | `bottom` | bottom-aligned | | | | 
 | `center` | center-aligned | | | |
 | `both` | | justifies the content between top margin and bottom margin. | | |
+
+### elements under `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>` element
+| elements | meaning | description | notes | notice |
+| :-------- | :----- | :--- | :-- | :-- |
+| `w:top` | top border | | | |
+| `w:right` | right border | | | |
+| `w:bottom` | bottom border | | | |
+| `w:left` | left border | | | |
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`
+| attributes | meaning | description | notes | notice |
+| :-------- | :----- | :--- | :-- | :-- |
+| `w:display` | | specifies to display borders of specific pages. | | |
+### elements under `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>` element
+| elements | meaning | description | notes | notice |
+| :-------- | :----- | :--- | :-- | :-- |
+| `w:top` | top border | | | |
+| `w:right` | right border | | | |
+| `w:bottom` | bottom border | | | |
+| `w:left` | left border | | | |
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`
+| attributes | meaning | description | notes | notice |
+| :-------- | :----- | :--- | :-- | :-- |
+| `w:display` | | specifies to display borders of specific pages. | | |
+| `w:offsetFrom` | | specifies how the relative positioning of the page borders shall be calculated. | | |
+| `w:zOrder` | | specifies whether the page border is positioned above or below intersecting texts and objects in this document. | | |
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`->`w:display`
+MUST be one of predefined values in data type [`ST_PageBorderDisplay`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_PageBorderDisplay_topic_ID0E6MJ3.html#topic_ID0E6MJ3)
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`->`w:offsetFrom`
+MUST be one of predefined values in data type [`ST_PageBorderOffset`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_PageBorderOffset_topic_ID0EXTJ3.html#topic_ID0EXTJ3)
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`->`w:zOrder`
+MUST be one of predefined values in data type [`ST_PageBorderZOrder`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_PageBorderZOrder_topic_ID0EO2J3.html#topic_ID0EO2J3)
+
+### elements under `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`->`<w:top>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`->`<w:top>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`->`<w:top>`
+| attributes | meaning | description | notes | notice |
+| :-------- | :----- | :--- | :-- | :-- |
+| `w:sz` | *s*i*z*e of border | specifies the width of current border | in eighths of a point | |
+| `w:color` | color of border | | | |
+| `w:space` | spacing | specifies the spacing offset that shall be used to place this border on the parent object.  | | |
+| `w:themeColor` | theme color of border | | | |
+| `w:themeShade` | theme shade of border | | | |
+| `w:themeTint` | theme tint of border | | | |
+| `w:val` | | specifies which style will be applied to this border | | |
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`->`<w:top>`->`w:sz`
+MUST be in data type [`ST_EighthPointMeasure`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_EighthPointMeasur_topic_ID0E63S2.html#topic_ID0E63S2)
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`->`<w:top>`->`w:color`
+MUST be in data type [`ST_HexColor`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_HexColor_topic_ID0EXFX2.html#topic_ID0EXFX2)
+
+which is one of these
+
+    - `auto`(data type [`ST_HexColorAuto`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_HexColorAuto_topic_ID0E6FY2.html#topic_ID0E6FY2)): automatically determined.
+    - a hexdecimal rgb color (data type [`ST_HexColorRGB`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_HexColorRGB_topic_ID0ECLY2.html#topic_ID0ECLY2))
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`->`<w:top>`->`w:themeColor`
+MUST be one of predefined values in data type [`ST_ThemeColor`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_ThemeColor_topic_ID0EG3X3.html#topic_ID0EG3X3)
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`->`<w:top>`->`w:themeShade`
+MUST be in data type [`ST_UcharHexNumber`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_UcharHexNumber_topic_ID0EOC13.html#topic_ID0EOC13)
+
+which is a two-digit hexidecimal number.
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`->`<w:top>`->`w:themeTint`
+MUST be in data type [`ST_UcharHexNumber`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_HexColor_topic_ID0EXFX2.html#topic_ID0EXFX2)
+
+which is a two-digit hexidecimal number.
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`->`<w:top>`->`w:space`
+MUST be in data type [`ST_PointMeasure`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_PointMeasure_topic_ID0EVYK3.html#topic_ID0EVYK3)
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`->`<w:top>`->`w:frame`
+MUST be a boolean.
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`->`<w:top>`->`w:shadow`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`->`<w:left>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`->`<w:left>` element
+see `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`->`<w:top>`
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`->`<w:left>`
+see `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`->`<w:top>`
+
+### elements under `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`->`<w:right>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`->`<w:right>` element
+see `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`->`<w:top>`
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`->`<w:right>`
+see `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`->`<w:top>`
+
+### elements under `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`->`<w:bottom>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`->`<w:bottom>` element
+see `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`->`<w:top>`
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`->`<w:bottom>`
+see `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`->`<w:top>`
 
 ### elements under `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgMar>`
 #### direct children of `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgMar>` element
@@ -6151,17 +6335,6 @@ Same as attribute in `<w:rFonts>`.
 
 ###### attribute in `<w:defaultTabStop>`
 Same as attribute in `<w:tab>`.
-
-###### attribute in `<w:pgSz>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w:w` | `width` in css | specifies width of page size (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
-| `w:h` | `height` in css | specifies height of page size (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
-
-###### attribute in `<w:cols>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w:space` | | space | assign an value to determine the space between columns in section (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
 
 ###### attribute in `<w:spacing/>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
