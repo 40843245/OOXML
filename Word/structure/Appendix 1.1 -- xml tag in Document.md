@@ -4868,6 +4868,66 @@ MUST be in data type [`ST_LineNumberRestart`](https://c-rex.net/samples/ooxml/e1
 ##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:lnNumType>`->`w:distance`
 MUST be in data type [`ST_TwipsMeasure`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_TwipsMeasure_topic_ID0EDJZ3.html#topic_ID0EDJZ3)
 
+### elements under `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:endnotePr>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:endnotePr>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<w:numStart>` | *num*bering start value | specifies numbering start value of endnote | | |
+| `<w:numRestart>` | *num*bering restart location | specifies when to reset the numbering to start value specified by the value of `<w:numStart>`. | | |
+| `<w:pos>` | *pos*ition | specifies position of endnote | | |
+| `<w:numFmt>` | *num*bering *f*or*m*a*t* | specifies numbering format of endnote | | |
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:endnotePr>`
+none
+
+### elements under `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:endnotePr>`->`<w:numStart>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:endnotePr>`->`<w:numStart>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:endnotePr>`->`<w:numStart>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | |
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:endnotePr>`->`<w:numStart>`->`w:val`
+MUST be in data type [`ST_DecimalNumber`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_DecimalNumber_topic_ID0EMPM2.html#topic_ID0EMPM2)
+
+### elements under `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:endnotePr>`->`<w:numRestart>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:endnotePr>`->`<w:numRestart>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:endnotePr>`->`<w:numRestart>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | |
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:endnotePr>`->`<w:numRestart>`->`w:val`
+MUST be in data type [`ST_RestartNumber`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_RestartNumber_topic_ID0EKSM3.html#topic_ID0EKSM3)
+
+### elements under `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:endnotePr>`->`<w:pos>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:endnotePr>`->`<w:pos>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:endnotePr>`->`<w:pos>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | |
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:endnotePr>`->`<w:numRestart>`->`w:pos`
+MUST be in data type [`ST_EdnPos`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_EdnPos_topic_ID0ELWS2.html#topic_ID0ELWS2)
+
+### elements under `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:endnotePr>`->`<w:numFmt>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:endnotePr>`->`<w:numFmt>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:endnotePr>`->`<w:numFmt>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | |
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:endnotePr>`->`<w:numFmt>`->`w:pos`
+MUST be in data type [`ST_NumberFormat`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_NumberFormat_topic_ID0EDNB3.html#topic_ID0EDNB3)
+
 ### elements under `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgSz>`
 #### direct children of `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgSz>` element
 none
@@ -4929,6 +4989,7 @@ MUST be one of predefined values in data type [`ST_VerticalJc`](https://c-rex.ne
 | attributes | meaning | description | notes | notice |
 | :-------- | :----- | :--- | :-- | :-- |
 | `w:display` | | specifies to display borders of specific pages. | | |
+
 ### elements under `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>`
 #### direct children of `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgBorders>` element
 | elements | meaning | description | notes | notice |
@@ -5157,6 +5218,18 @@ none
 | `w:val` | | | | |
 
 ##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:formProt>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:rtlGutter>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:rtlGutter>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:rtlGutter>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | |
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:rtlGutter>`->`w:val`
 MUST be a boolean.
 
 ### elements under `<w:document>`->`<w:body>`->`<w:p>`
