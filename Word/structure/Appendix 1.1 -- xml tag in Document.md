@@ -4762,7 +4762,7 @@ none
 | `<w:sectPrChange>` | *sect*ion *pr*operties changed information | specifies the details about a single revision to a set of section properties in a WordprocessingML document. | | | 
 | | | | | | |
 | | | | | | |
-| `<w:bidi/>` | | text | defines the bidirectional text | | |
+| `<w:bidi/>` | *bidi*rectional text | defines the bidirectional text | | |
 | | | | | | |
 | `<w:textDirection>`| text flow direction | specifies the direction of the text flow for this section. | | | |
 | | | | | | |
@@ -4784,7 +4784,7 @@ none
 | | | | | | |
 | `<w:paperSrc>`| paper *s*ou*rc*e | specifies the paper source information | | | |
 | | | | | | |
-| `<w:titlePg>` | title *p*a*g*e | defines a title page. | | | 
+| `<w:titlePg>` | title *p*a*g*e | determines whether to have different header and footer for its first page. | | | 
 | | | | | | |
 | `<w:formProt>` | form *prot*ection | determines whether to enable the form protection, disallowing user to edit contents in this section except the form in this section. | | | |
 | | | | | | |
@@ -4799,6 +4799,181 @@ none
 | `w:rsidRPr` | *r*evision *s*ave *id*entifier for *r*un *pr*operties | specifies revision save id for run properties | | |
 | `w:rsidSect` | *r*evision *s*ave *id*entifier for *sect*ion | specifies revision save id for section | | It is NOT supported in standard OOXML |
 | `w:rsidDel` | *r*evision *s*ave *id*entifier for paragraph *del*etion | specifies revision save id for paragraph deletion | | | 
+
+### elements under `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:type>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:type>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:type>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | |
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:type>`->`w:val`
+MUST be one of predefined values in data type [`ST_SectionMark`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_SectionMark_topic_ID0EKNN3.html#topic_ID0EKNN3)
+
+| values | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `evenPage` | even-numbered page section break | specifies even-numbered page section break, leaving the next odd-numbered page blank (if necessary). | | |
+| `oddPage` | odd-numbered page section break | specifies odd-numbered page section break, leaving the next even-numbered page blank (if necessary). | | |
+| `nextPage` | next page section break | specifies next page section break. | | |
+| `nextColumn` | next column page section break | specifies a new column section break, which begins on the following column on the page. | | |
+| `continuous` | continuous section break | specifies a continuous section break, which begins on the following paragraph. | continuous section breaks might not specify certain page-level section properties, since they must be inherited from the following section. | |
+
+### elements under `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:vAlign>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:vAlign>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:vAlign>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | |
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:vAlign>`->`w:val`
+MUST be one of predefined values in data type [`ST_VerticalJc`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_VerticalJc_topic_ID0EEL43.html#topic_ID0EEL43)
+
+| values | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `top` | top-aligned | | | |
+| `bottom` | bottom-aligned | | | | 
+| `center` | center-aligned | | | |
+| `both` | | justifies the content between top margin and bottom margin. | | |
+
+### elements under `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgMar>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgMar>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgMar>`
+| attributes | meaning | description | notes | notice |
+| :-------- | :----- | :--- | :-- | :-- |
+| `w:top` | margin-top | specifies top of page margin | its unit is twips (twentieths of a point). | |
+| `w:right` | `margin-right | specifies right of page margin  | its unit is twips (twentieths of a point). | |
+| `w:bottom` | margin-bottom | specifies bottom of page margin | its unit is twips (twentieths of a point). | |
+| `w:left` | margin-left | specifies left of page margin | its unit is twips (twentieths of a point). | |
+| `w:header` | header | specifies the distance from the top edge to the header | its unit is twips (twentieths of a point). | |
+| `w:footer` | footer | specifies the distance from the bottom edge to the footer | its unit is twips (twentieths of a point). | |
+| `w:gutter` | gutter | specifies gutter margin (for binding) | its unit is twips (twentieths of a point). | |
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgMar>`->`w:top`
+MUST be one of predefined values in data type [`ST_SignedTwipsMeasure`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_SignedTwipsMeasur_topic_ID0EGNP3.html#topic_ID0EGNP3)
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgMar>`->`w:right`
+MUST be one of predefined values in data type [`ST_TwipsMeasure`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_TwipsMeasure_topic_ID0EDJZ3.html#topic_ID0EDJZ3)
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgMar>`->`w:bottom`
+MUST be one of predefined values in data type [`ST_SignedTwipsMeasure`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_SignedTwipsMeasur_topic_ID0EGNP3.html#topic_ID0EGNP3)
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgMar>`->`w:left`
+MUST be one of predefined values in data type [`ST_TwipsMeasure`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_TwipsMeasure_topic_ID0EDJZ3.html#topic_ID0EDJZ3)
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgMar>`->`w:header`
+MUST be one of predefined values in data type [`ST_TwipsMeasure`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_TwipsMeasure_topic_ID0EDJZ3.html#topic_ID0EDJZ3)
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgMar>`->`w:footer`
+MUST be one of predefined values in data type [`ST_TwipsMeasure`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_TwipsMeasure_topic_ID0EDJZ3.html#topic_ID0EDJZ3)
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgMar>`->`w:gutter`
+MUST be one of predefined values in data type [`ST_TwipsMeasure`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_TwipsMeasure_topic_ID0EDJZ3.html#topic_ID0EDJZ3)
+
+### elements under `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:cols>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:cols>` element
+| elements | meaning | description | notes | notice |
+| :-------- | :----- | :--- | :-- | :-- |
+| `<w:col>` | *col*umn | defines a column | | |
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:cols>`
+| attributes | meaning | description | notes | notice |
+| :-------- | :----- | :--- | :-- | :-- |
+| `w:space` | spacing | specifies the spacing bewteen columns | in twips | |
+| `w:sep` | *sep*erator | determines whether to draw a vertical line (as seperator) between columns. | | |
+| `w:num` | *num*ber | specifies the number of columns. | | |
+| `w:equalWidth` | | determines whether each column has equal width | | |
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:cols>`->`w:space`
+MUST be in data type [`ST_TwipsMeasure`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_TwipsMeasure_topic_ID0EDJZ3.html#topic_ID0EDJZ3)
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:cols>`->`w:num`
+MUST be in data type [`ST_DecimalNumber`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_DecimalNumber_topic_ID0EMPM2.html#topic_ID0EMPM2)
+
+which is a non-zero real number.
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:cols>`->`w:sep`
+MUST be a boolean.
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:cols>`->`w:equalWidth`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:cols>`->`<w:col>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:cols>`->`<w:col>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:cols>`->`<w:col>`
+| attributes | meaning | description | notes | notice |
+| :-------- | :----- | :--- | :-- | :-- |
+| `w:space` | spacing | specifies the spacing bewteen current column and next column | in twips | |
+| `w:w` | *w*idth | specifies the width of current column, | | |
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:cols>`->`<w:col>`->`w:space`
+MUST be in data type [`ST_TwipsMeasure`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_TwipsMeasure_topic_ID0EDJZ3.html#topic_ID0EDJZ3)
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:cols>`->`<w:col>`->`w:w`
+MUST be in data type [`ST_TwipsMeasure`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_TwipsMeasure_topic_ID0EDJZ3.html#topic_ID0EDJZ3)
+
+### elements under `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:docPr>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:docPr>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:docPr>`
+| attributes | meaning | description | notes | notice |
+| :-------- | :----- | :--- | :-- | :-- |
+| `w:type` | document grid type | specifies the type of the current document grid | | |
+| `w:linePitch` | vertical spacing | specifies the vertical spacing between grid lines in this section. | its unit is twips (twentieths of a point). | |
+| `w:charSpace` | char spacing | specifies the number of characters to be allowed on the document grid for each line in this section. | the value MUST be specified by multiplying the difference between the desired character pitch and the character pitch for that character in the font size of the `Normal` font by `4096` | |
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:docPr>`->`w:type`
+MUST be one of predefined value in data type [`ST_DocGrid`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_DocGrid_topic_ID0ELYP2.html#topic_ID0ELYP2)
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:docPr>`->`w:linePitch`
+MUST be in data type [`ST_DecimalNumber`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_DecimalNumber_topic_ID0EMPM2.html#topic_ID0EMPM2)
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:docPr>`->`w:charSpace`
+MUST be in data type [`ST_DecimalNumber`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_DecimalNumber_topic_ID0EMPM2.html#topic_ID0EMPM2)
+
+### elements under `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:titlePg>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:titlePg>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:titlePg>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | |
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:titlePg>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:formProt>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:formProt>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:formProt>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | |
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:formProt>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:formProt>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:formProt>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:formProt>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | |
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:formProt>`->`w:val`
+MUST be a boolean.
 
 ### elements under `<w:document>`->`<w:body>`->`<w:p>`
 #### direct children of `<w:document>`->`<w:body>`->`<w:p>` element
@@ -4878,7 +5053,7 @@ none
 | | | | | | |
 | `<w:divId>`| | speficies the div id | | | 
 | | | | | | |
-| `<w:bidi/>` | | text | defines the bidirectional text | | |
+| `<w:bidi/>` | *bidi*rectional text | defines the bidirectional text | | |
 | | | | | | |
 | `<w:ind>` | paragraph *ind*entation | configure the indentation for this paragraph. | | |
 | `<w:adjusLeftind>` | adjust left *ind*entation | configure the left indentation will be adjusted due to different window size. | | |
@@ -5980,19 +6155,8 @@ Same as attribute in `<w:tab>`.
 ###### attribute in `<w:pgSz>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w:w` | `width` in css | assign the value to determine width of page size (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
-| `w:h` | `height` in css | assign the value to determine height of page size (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
-
-###### attribute in `<w:pgMar>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w:top` | `margin-top` in css | margin-top |assign the value to determine top of page margin (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
-| `w:right` | `margin-right` in css | margin-right | assign the value to determine right of page margin (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
-| `w:bottom` | `margin-bottom` in css | margin-bottom | assign the value to determine bottom of page margin (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
-| `w:left` | `margin-left` in css | margin-left | assign the value to determine left of page margin (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
-| `w:header` | | header | assign the value to determine the distance from the top edge to the header (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
-| `w:footer` | | footer | assign the value to determine the distance from the bottom edge to the footer (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
-| `w:gutter` | | footer | assign the value to determine gutter margin (for binding) | its unit is twips (twentieths of a point). | |
+| `w:w` | `width` in css | specifies width of page size (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
+| `w:h` | `height` in css | specifies height of page size (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
 
 ###### attribute in `<w:cols>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
@@ -6042,7 +6206,6 @@ Same as attribute in `<w:tab>`.
 ###### attribute in `<w:docGrid>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w:linePitch` | | vertical spacing | assign an value to determine the vertical spacing between grid lines in section (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
 | `w:chartSpace` | | horizontal spacing | assign an value to determine horizontal spacing between grid lines in section (that is inside `<w:sectPr>` tag) | its unit is twips (twentieths of a point). | |
 | `w:type` | | type of document grid | assign an value to determine the type of document grid will be used in section (that is inside `<w:sectPr>` tag) | See `Appendix 2`[^2] for more information | |
 | `w:lineGrid` | | number of line per grid | assign an value to determine number of line per grid in section (that is inside `<w:sectPr>` tag) | | its value must be positive number. |
