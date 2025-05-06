@@ -4804,13 +4804,19 @@ none
 | `<w:subDoc>` | anchor of location of sub-*doc*ument | specifies a location within a master document for the insertion of the contents of a specified subdocument. | | | 
 
 #### attributes in `<w:document>`->`<w:body>`->`<w:p>`
-none
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:rsidP` | *r*evision *s*ave *id*entifier for *p*aragraph | specifies revision save id for paragraph  | | |
+| `w:rsidR` | *r*evision *s*ave *id*entifier for *r*un | specifies revision save id for run  | | |
+| `w:rsidRDefault` | *r*evision *s*ave *id*entifier for *default* *r*un | specifies revision save id for run  | | |
+| `w:rsidRPr` | *r*evision *s*ave *id*entifier for *r*un *pr*operties | specifies revision save id for run properties | | |
+| `w:rsidSect` | *r*evision *s*ave *id*entifier for *sect*ion | specifies revision save id for section | | It is NOT supported in standard OOXML |
+| `w:rsidDel` | *r*evision *s*ave *id*entifier for paragraph *del*etion | specifies revision save id for paragraph deletion | | |
 
 ### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`
 #### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`  element
 | elements | meaning | description | notes | notice |
 | :---------- | :----- | :--- | :-- | :-- |
-| | | | | | |
 | `<w:rPr>` | *r*un *pr*operty | configure property of a run (that is inside `<w:r>` tag) | | |
 | `<w:sectPr>` | | has been discussed before. | | |
 | `<w:framePr>` | frame *pr*operty | configure property of frame | | |
@@ -4819,7 +4825,7 @@ none
 | `<w:pPrChange>`| *p*aragraph *pr*operty changed information | specifies the details about a single revision to a set of paragraph properties in a WordprocessingML document. | | | |
 | | | | | | |
 | `<w:pStyle>` | *p*aragraph style | applies style (according to value of `w:val` attribute) to paragraph (that is inside `<w:p>` tag) | the style to apply is defined in `~/word/style.xml` file | |
-| `<w:cnfStyle>` | *c*o*nf*lict styles | It's used to store information about how styles should be applied or resolved in situations where there might be conflicts or variations. | | |
+| `<w:cnfStyle>` | *c*o*n*ditional *f*ormatting styles | specifies what styles should be applied when the coditional formatting is satisfied. | | |
 | | | | | | |
 | `<w:divId>`| | speficies the div id | | | 
 | | | | | | |
@@ -4937,8 +4943,256 @@ none
 | `<w:moveFrom>`| | specifies that the parent paragraph has been moved away from this location and tracked as a revision. | | |
 | `<w:moveTo> | | specifies that the parent paragraph has been moved to this location and tracked as a revision.  | | |
 
-#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:pStyle>`
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`
 none
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:rFonts>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:rFonts>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:rFonts>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:ascii` | | specifies the font which applies to the content in Ascii encoding. | | | 
+| `w:asciiTheme` | | specifies the theme font which applies to the content in Ascii encoding. | | | 
+| `w:cs` | | specifies the font which applies to the complex-script text in the content in Unicode encoding. | | | 
+| `w:cstheme` | | specifies the theme font which applies to the complex-script text in the content in Unicode encoding. | | | 
+| `w:eastAsia` | | specifies the font which applies to the Eastern Asian text in the content in Unicode encoding. | | | 
+| `w:eastAsiaTheme` | | specifies the theme font which applies to the Eastern Asian text in the content in Unicode encoding. | | | 
+| `w:hAnsi` | | specifies the font which applies to the content in high ANSI encoding. | | | 
+| `w:hAnsiTheme` | | specifies the theme font which applies to the content in high ANSI encoding. | | | 
+
+> [!IMPORTANT]
+> About more information about high ANSI, see [What is ANSI format?](https://stackoverflow.com/questions/701882/what-is-ansi-format)
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:rStyle>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:rStyle>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:rStyle>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:rStyle>`->`w:val`
+MUST be a name of predefined or defined (by your own) run.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:b>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:b>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:b>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:b>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:bCs>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:bCs>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:bCs>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:bCs>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:i>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:i>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:i>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:i>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:iCs>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:iCs>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:iCs>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:iCs>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:cs>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:cs>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:cs>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:cs>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:strike>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:strike>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:strike>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:strike>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:dstrike>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:dstrike>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:dstrike>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:dstrike>`->`w:val`
+MUST be a boolean.
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:caps>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:caps>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:caps>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:caps>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:smallCaps>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:smallCaps>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:smallCaps>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:emboss>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:emboss>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:emboss>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:emboss>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:imprint>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:imprint>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:imprint>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:imprint>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:noProof>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:noProof>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:noProof>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:noProof>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:rtl>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:rtl>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:rtl>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:rtl>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:outline>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:outline>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:outline>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:outline>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:oMath>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:oMath>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:oMath>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:oMath>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:snapToGrid>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:snapToGrid>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:snapToGrid>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:snapToGrid>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:vanish>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:vanish>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:vanish>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:vanish>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:webHidden>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:webHidden>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:webHidden>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`->`<w:webHidden>`->`w:val`
+MUST be a boolean.
+
+### other direct children under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:rPr>`
+Skipped. 
+
+Will not discussed in this article.
 
 ### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:pStyle>`
 #### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:pStyle>` element
@@ -4952,11 +5206,42 @@ none
 ##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:pStyle>`->`w:val`
 MUST be a name of predefined or defined (by your own) style.
 
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:cnfStyle>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:cnfStyle>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<w:rPr>` | *r*un *pr*operty | configure property of a run (that is inside `<w:r>` tag) | | |
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:cnfStyle>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:cnfStyle>`->`w:val`
+MUST be [`ST_Cnf`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_Cnf_topic_ID0EUHK2.html#topic_ID0EUHK2) data type, 
+
+which is a 12-bits for Conditional Formatting Bitmask
+
+| nth bit (LST) (zeor-based) | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| 11 | `firstRow` | apply the style to first row | | |
+| 10 | `lastRow` | apply the style to last row | | |
+| 9 | `firstColumn` | apply the style to first column | | |
+| 8 | `lastColumn` | apply the style to last column | | |
+| 7 | `oddVBand` | odd-numbered vertical bands of applied style | | |
+| 6 | `evenVBand` | even-numbered vertical bands of applied style | | |
+| 5 | `oddHBand` | odd-numbered horizontal bands of applied style | | |
+| 4 | `evenHBand` | even-numbered horizontal bands of applied style | | |
+| 3 | `firstRowLastColumn` | apply the style to first row and last column | | |
+| 2 | `firstRowFirstColumn` | apply the style to first row and first row | | |
+| 1 | `lastRowLastColumn` | apply the style to last row and last column | | |
+| 0 | `lastRowFirstColumn`| apply the style to last row and first column | | |
+
 ### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:tabs>`
 #### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:tabs>` element
 | elements | meaning | description | notes | notice |
 | :---------- | :----- | :--- | :-- | :-- |
-| `<w:tab>` | tab | define property of a tab stop by assign the value to its attributes. | | | 
+| `<w:tab>` | tab | add a tab stop and defines the properties of the tab stop | | | 
 
 #### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:tabs>`
 none
@@ -4971,30 +5256,6 @@ none
 | `w:val` | | determines alignment or behavior of the tab stop. | | This attribute is required. |
 | `w:pos` | | determines position of the tab stop. | | This attribute is required. |
 | `w:leader` | leader character | determines leader character that will fill the space before the tab stop.  | | This attribute is optional. |
-
-### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`
-#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>` element
-| elements | meaning | description | notes | notice |
-| :---------- | :----- | :--- | :-- | :-- |
-| `<w:br>` | *br*eak line | add break line (i.e. new line) | | |
-| `<w:cr>` | *c*arriage *r*eturn | add carriage return | | |
-| `<w:tab> `| | has been discussed before. | | |
-| | | | | |
-| `<w:sym> | *sym*bol | adds symbol characters | | |
-| `<w:t> | *t*ext | adds text | | |
-| | | | | |
-| <w:rPr> | | has been discussed before. | | |
-| | | | | |
-| `<w:footnoteRef>` | footnote *ref*erence mark | add footnote reference mark | | |
-| `<w:footnoteReference>`| | references a footnote | | |
-| `<w:endnoteRef>` | endnote *ref*erence mark | add endnote reference mark | | |
-| `<w:endnoteReference>`| | references a endnote | | |
-| | | | | |
-| `<w:fldChar>` | *f*ie*ld* *char*acter | it defines a field character. | | | 
-| `<w:instrText>` | *instr*uction text | it defines an instruction text for a field | | |
-| | | | | |
-#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`
-none
 
 ##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:tabs>`->`<w:tab>`->`w:val`
 MUST be one of predefined values in data type [`ST_TabJc`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_TabJc_topic_ID0EAFT3.html#topic_ID0EAFT3)
@@ -5013,6 +5274,342 @@ MUST be one of predefined values in data type [`ST_TabTlc`](https://c-rex.net/sa
 | `underscore` | underscore | underscore (i.e. `_`) as leader character | | |
 | `middleDot` | middle dot | middle dot (i.e. `·`) as leader character | | |
 
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:keepLines>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:keepLines>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:keepLines>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:keepLines>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:keepNext>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:keepNext>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:keepNext>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:keepNext>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:kinsoku>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:kinsoku>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:kinsoku>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:kinsoku>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:snapToGrid>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:snapToGrid>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:snapToGrid>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:snapToGrid>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:mirrorIndents>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:mirrorIndents>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:mirrorIndents>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:mirrorIndents>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:suppressAutoHyphens>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:suppressAutoHyphens>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:suppressAutoHyphens>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:suppressAutoHyphens>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:suppressOverlap>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:suppressOverlap>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:suppressOverlap>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:suppressOverlap>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:wordWrap>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:wordWrap>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:wordWrap>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:wordWrap>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:topLinePunct>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:topLinePunct>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:topLinePunct>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:topLinePunct>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:widowControl>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:widowControl>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:widowControl>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:widowControl>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:textboxTightWrap>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:textboxTightWrap>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:textboxTightWrap>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:textboxTightWrap>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:overflowPunct>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:overflowPunct>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:overflowPunct>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:overflowPunct>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:contextualSpacing>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:contextualSpacing>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:contextualSpacing>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:contextualSpacing>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:bidi>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:bidi>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:bidi>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:bidi>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:adjustRightInd>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:adjustRightInd>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:adjustRightInd>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:adjustRightInd>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:adjustLeftInd>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:adjustLeftInd>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:adjustLeftInd>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:adjustLeftInd>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:autoSpaceDE>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:autoSpaceDE>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:autoSpaceDE>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:autoSpaceDE>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:autoSpaceDN>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:autoSpaceDN>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:autoSpaceDN>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:autoSpaceDN>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:pageBreakBefore>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:pageBreakBefore>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:pageBreakBefore>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | | 
+
+##### `<w:document>`->`<w:body>`->`<w:p>`->`<w:pPr>`->`<w:pageBreakBefore>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<w:br>` | *br*eak line | add break line (i.e. new line) | | |
+| `<w:cr>` | *c*arriage *r*eturn | add carriage return | | |
+| `<w:tab>`| | has been discussed before. | | |
+| `<w:ptab>`| absolute position tab character | adds a tab stop in given absolute position | | |
+| `<w:softHyphen>` | | adds a optional hyphen character | | |
+| `<w:noBreakHyphen>` | | adds a non-breaking hyphen character | | |
+| | | | | |
+| `<w:sym> | *sym*bol | adds symbol characters | | |
+| `<w:t> | *t*ext | adds text | | |
+| | | | | |
+| <w:rPr> | | has been discussed before. | | |
+| | | | | |
+| `<w:footnoteRef>` | footnote *ref*erence mark | add footnote reference mark | | |
+| `<w:footnoteReference>`| | references a footnote | | |
+| `<w:endnoteRef>` | endnote *ref*erence mark | add endnote reference mark | | |
+| `<w:endnoteReference>`| | references a endnote | | |
+| | | | | |
+| `<w:commentReference>` | | add comment reference mark | | |
+| | | | | |
+| `<w:continuationSeparator>`| | defines the continuation separator. | | | 
+| `<w:separator/>`| | defines a seperator (maybe section break) | | | 
+| | | | | |
+| `<w:fldChar>` | *f*ie*ld* *char*acter | it defines a field character. | | | 
+| `<w:instrText>` | *instr*uction text | it defines an instruction text for a field | | |
+| | | | | |
+| `<w:delText>` | *del*eted text | add deleted text | | |
+| `<w:delInstrText>` | *del*eted *instr*uction text | add instruction3 text | | |
+| | | | | |
+| `<w:drawing>` | | defines a drawing object. | | |
+| `<w:object>` | | defines an inline object| | |
+| `<w:pict>`| | defines a VML object (including picture) | | |
+| | | | | |
+| `<w:ruby>`| | defines a ruby text block | See [What is ruby text](https://g.co/gemini/share/478eb810eeb3) for more details. | |
+| `<w:pgNum>` | *p*a*g*e *num*ber | defines a page number block | | |
+| `<w:lastRenderedPageBreak>` | | specifies the position delimited the end of a page when this document was last saved by an application which paginates its content. | | |
+| | | | | |
+| `<w:yearLong>` | | defines a date block (long year format) | | |
+| `<w:yearShort>` | | defines a date block (short year format) | | |
+| `<w:monthLong>` | | defines a date block (long month format) | | |
+| `<w:monthShort>` | | defines a date block (short month format) | | |
+| `<w:dayLong>` | | defines a date block (long day format) | | |
+| `<w:dayShort>` | | defines a date block (short day format) | | |
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:rsidR` | | has been discussed before. | | |
+| `w:rsidRDefault` | | has been discussed before. | | |
+| `w:rsidSect` | | has been discussed before. | | |
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:drawing>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:drawing>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<wp:anchor>` | | has been discussed before. | | |
+| `<wp:inline>` | | has been discussed before. | | |
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:drawing>`
+none
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:object>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:object>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<w:control>` | inline embedded control | specifies inline embedded control for the inline emebedded object | | |
+| Any element from the `urn:schemas-microsoft-com:vml` namespace |
+| Any element from the `urn:schemas-microsoft-com:office:office` namespace |
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:object>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `dxaOrig` | *orig*in in `dx` (i.e. *d*ifferential *x*) of `a` (DrawingML object) | specifies the original width of the image representation of the current control | | |
+| `dyaOrig` | *orig*in in `dy` (i.e. *d*ifferential *y*) of `a` (DrawingML object) | specifies the original height of the image representation of the current control | | |
+
+> [!CAUTION]
+> I did NOT find a appropriate explanation about what does `dxa` in `dxaOrig` and `dya` in `dyaOrig` stands for,
+>
+> thus I just give explanation with idea I came up with.
+>
+> Believe it with **CAUTION** 
+
+> [!IMPORTANT]
+> Remember that namespace `a` typically indicates the DrawingML object.
+
+> [!CAUTION]
+> The Google Gemini's answer of the question [What does `<w:object>`->`dxaOrig` attr mean in OOXML](https://g.co/gemini/share/c9382180e394) has some mistakes.
+>
+> **NOT** believe it.
+
+### elements under `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:pict>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:pict>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<w:control>` | floating embedded control | specifies inline embedded control for the inline emebedded object | | |
+| `<w:movie>` | embedded movie | add embedded movie in the VML object | | |
+| Any element from the `urn:schemas-microsoft-com:vml` namespace |
+| Any element from the `urn:schemas-microsoft-com:office:office` namespace |
+
+> [!CAUTION]
+> DON'T get confused with `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:object>`->`<w:control>` element.
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:pict>`
+none
+
 ##### elements in `w` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
@@ -5026,7 +5623,6 @@ MUST be one of predefined values in data type [`ST_TabTlc`](https://c-rex.net/sa
 | `<w:rsids>` | | *r*evision *s*ave *id*entifier*s* | it is a container of revision save identifiers element (`<w:rsid>`, `<w:rsidRoot>`) | | |
 | `<w:rsidRoot>` | | *r*evision *s*ave *id*entifiers baseline | establishes a revision save identifiers baseline for current editing session or the most recent save operation that affected the main content of the document. | | |
 | `<w:rsid>` | | *r*evi*s*ion save | establishes a revision save identifier. | | |
-| `<w:drawing>` |  | drawing | defines a drawing. | | |
 | `<w:ignoreSubtree>` | | ignore a specific subtree | it instructs the Word processor to ignore a specific subtree of the XML document (according to the value of `w:val` attribute) during processing. | | | 
 | `<w:charset>` | `<charset>` in native html5 | charset | configure charset of this font | | |
 | `<w:family>` | | family | configure family of this font | | |
@@ -5043,20 +5639,10 @@ MUST be one of predefined values in data type [`ST_TabTlc`](https://c-rex.net/sa
 | `<w:next/>` | | | specifies the style to be automatically applied to the next paragraph after a paragraph formatted with the current style. | | |
 | | | | | | |
 | `<w:altName>` | `alt` attribute in `<img>` tag in native html5 | *alt*ernative | use the alternative (according to the value specified in `w:val` attribute) **when** an element (such as an image) or things that used in an element (such as font) **can not be used or worked correctly**. | | |
-| | | | | | |
-| | | | | | | |
-| | | | | | | | 
-| | | | | | | | 
-
-| | | | | | |
 | `<w:rPrDefault>` | | | defines the default formatting properties for all text runs within the document. | | |
 | `<w:pPrDefault/>` | | | defines the default formatting properties for all paragraphs in the document. | | |
 | `<w:latentStyles>` | | | servers as a container for defining the latent styles (i.e. current unused styles). | | |
 | | | | | | |
-
-
-| | | | | | | | 
-| | | | | | | | 
 | `<w:bar>` | | | insert a vertical line | | | | 
 | | | | | | | | 
 | `<w:footnotes>` | | footnotes | acts like a container containing footnotes | | | | 
@@ -5147,8 +5733,6 @@ MUST be one of predefined values in data type [`ST_TabTlc`](https://c-rex.net/sa
 | `<w:hr>` | | | defines a horizontal rule | | |
 | | | | | | |
 | | | | | | |
-| `<w:separator/>`| | | defines a seperator (maybe section break) | | | 
-| `<w:continuationSeparator/>`| | | defines that the continuation separator for footnotes.) | | | 
 | | | | | | |
 | | | | | | |
 | `<w:minorIdents>` | | | detemines whether if this tag is present, Word will swap the left and right indent settings if the document or section is set to a right-to-left reading order. | | If this is omitted on a given paragraph, its value is determined by the setting previously set at any level of the style hierarchy (i.e. that previous setting remains unchanged). If this setting is never specified in the style hierarchy, then this property shall not be applied. |
@@ -5260,11 +5844,6 @@ For more details, see [OOXML docs CH117.3.1.15](https://ooxml.info/docs/17/17.3/
 > [!IMPORTANT]
 > The available value of `w:val` attribute in `<w:characterSpacingControl>` is defined in [Character-Level Whitespace Compression Settings](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_CharacterSpacing_topic_ID0E6AK2.html)
 
-###### attribute in `<w:rsid>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w:val` | | | specifies a Guid as a revision save identifier. | | |
-
 ###### attribute in `<w:word>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
@@ -5352,26 +5931,6 @@ same as above.</br>However, it has lower preceedence than `w:first-line-chars`. 
 ###### attribute in `<w:defaultFonts>`
 Same as attribute in `<w:rFonts>`.
 
-###### attribute in `<w:p>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w:rsidR` | | *r*evision *s*ave *id*entifier for *r*un | specifies revision save id for run  | | |
-| `w:rsidRDefault` | | *r*evision *s*ave *id*entifier for *default* *r*un | specifies revision save id for run  | | |
-| `w:rsidSect` | | *r*evision *s*ave *id*entifier for *sect*ion | specifies revision save id for section | | |
-
-##### attribute in `<w:r>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w:rsidR` | | *r*evision *s*ave *id*entifier for *r*un | specifies revision save id for run  | | |
-| `w:rsidRDefault` | | *r*evision *s*ave *id*entifier for *default* *r*un | specifies revision save id for run  | | |
-| `w:rsidSect` | | *r*evision *s*ave *id*entifier for *sect*ion | specifies revision save id for section | | |
-
-###### attribute in `<w:tab>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w:val` | | | determines alignment or behavior of the tab stop. | This attribute is required. | |
-| `w:pos` | | | determines position of the tab stop. | This attribute is required. | |
-| `w:leader` | | leader character | determines leader character that will fill the space before the tab stop.  | This attribute is optional. | |
 
 ###### attribute in `<w:defaultTabStop>`
 Same as attribute in `<w:tab>`.
@@ -5639,25 +6198,7 @@ For more informations and details, see [DocumentFormat.OpenXml.Wordprocessing.Co
 | `w:unhideWhenUsed` | | | specifies whether the style should become visible in the UI if it's used in the document, even if it was initially semi-hidden. | Concept similar to the concept mentioned at cell whose row is `w:defUnhideWhenUsed` and column is `note`. | | 
 | `w:qFormat` | | | determines whether the style appears in the Quick Styles gallery. | Concept similar to the concept mentioned at cell whose row is `w:defQFormat` and column is `note`. | |
 
-###### attribute in `<w:cnfStyle>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w:val` | | | might indicate that some form of conflict resolution or style application rule is active. | | |
-| `w:firstColumn` | | | apply the style to first column | | |
-| `w:lastColumn` | | | apply the style to last column | | |
-| `w:firstRow` | | | apply the style to first row | | |
-| `w:lastRow` | | | apply the style to last row | | |
-| `w:firstRowFirstColumn` | | | apply the style to first row and first row | | |
-| `w:firstRowLastColumn` | | | apply the style to first row and last column | | |
-| `w:lastRowFirstColumn` | | | apply the style to last row and first column | | |
-| `w:lastRowLastColumn` | | | apply the style to last row and last column | | |
-| `w:italic` | | | the applied style is italic | | |
-| `w:bold` | | | the applied style is bold | | |
-| `w:underline` | | | the applied style is underlined | | |
-| `w:color` | | | color of applied style | | |
-| `w:oddHBand` | | | odd numbered horizontal bands of applied style | | |
-| `w:oddVBand` | | | odd numbered vertical bands of applied style | | |
-| `w:evenVBand` | | | even numbered vertical bands of applied style | | |
+###### attributes in `<w:cnfStyle>`
 
 ###### attribute in `<w:hr>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
