@@ -4764,15 +4764,15 @@ none
 | | | | | | |
 | `<w:bidi/>` | *bidi*rectional text | defines the bidirectional text | | |
 | | | | | | |
-| `<w:textDirection>`| text flow direction | specifies the direction of the text flow for this section. | | | |
+| `<w:textDirection>`| text flow direction | specifies the direction of the text flow for this section. | | |
 | | | | | | |
-| `<w:vAlign>` | *v*ertical *align*ment | specifies the vertical alignment for content in the section. | | | |
+| `<w:vAlign>` | *v*ertical *align*ment | specifies the vertical alignment for content in the section. | | |
 | | | | | | |
-| `<w:footerReference>` | | | references the footer by value of `id` attribute. | | | | 
-| `<w:footnotePr>` | footnote *pr*operty | specifies properties of the footnote | | | |
-| `<w:endnotePr>` | endnote *pr*operty | specifies properties of the endnote | | | |
+| `<w:footnotePr>` | footnote *pr*operty | specifies properties of the footnote | | |
+| `<w:endnotePr>` | endnote *pr*operty | specifies properties of the endnote | | | 
 | | | | | | |
-| `<w:headerReference>` | | references the header by value of `id` attribute. | | | | 
+| `<w:headerReference>` | | references the header by value of `id` attribute. | | |  
+| `<w:footerReference>` | | references the footer by value of `id` attribute. | | |
 | | | | | | |
 | `<w:noEndnote>`| | determines whether to suppress the endnote. | | | |
 | | | | | | |
@@ -4927,6 +4927,42 @@ none
 
 ##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:endnotePr>`->`<w:numFmt>`->`w:pos`
 MUST be in data type [`ST_NumberFormat`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_NumberFormat_topic_ID0EDNB3.html#topic_ID0EDNB3)
+
+### elements under `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:footnotePr>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:footnotePr>` element
+see `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:endnotePr>`
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:footnotePr>`
+see `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:endnotePr>`
+
+### elements under `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:footerReference>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:footerReference>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:footerReference>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `r:id` | | specifies the relationship id to a specified part. | | |
+| `w:type` | | specifies the type of header or footer specified by the target relationship id (specified by value of `r:id` attrinbute) | | |
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:footerReference>`->`r:id`
+MUST be a positive integer that match the id of predefined or defined (by your own) footer.
+
+##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:footerReference>`->`w:type`
+MUST be one of predefined values in data type [`ST_HdrFtr`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_HdrFtr_topic_ID0E2UW2.html?hl=st_hdrftr)
+
+| values | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `"default"` | | applies the footer to any pages (first page, odd-numbered pages, and even-numbered pages) | | it is default value. |
+| `"first"` | | applies the footer to first page  | | |
+| `"even"` | | applies the footer to even-numbered pages | | |
+
+### elements under `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:headerReference>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:headerReference>` element
+see `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:footerReference>`
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:headerReference>`
+see `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:footerReference>`
 
 ### elements under `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgSz>`
 #### direct children of `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:pgSz>` element
@@ -5232,14 +5268,19 @@ none
 ##### `<w:document>`->`<w:body>`->`<w:sectPr>`->`<w:rtlGutter>`->`w:val`
 MUST be a boolean.
 
+### other direct children of `<w:document>`->`<w:body>`->`<w:sectPr>` element
+Skipped.
+
+Will not discussed in this article.
+
 ### elements under `<w:document>`->`<w:body>`->`<w:p>`
 #### direct children of `<w:document>`->`<w:body>`->`<w:p>` element
 | elements | meaning | description | notes | notice |
 | :---------- | :----- | :--- | :-- | :-- |
 | | | | | | 
-| `<w:pPr>` | *p*aragraph *pr*operty | property of a paragraph (that is inside `<w:p>` tag) in Microsoft Word file | | |
+| `<w:pPr>` | *p*aragraph *pr*operty | defines the properties of this paragraph | | |
 | | | | | | 
-| `<w:r>` | *r*un | defines a run in a paragraph. | | |
+| `<w:r>` | *r*un | defines a run in this paragraph. | | |
 | | | | | | 
 | `<w:bookmarkStart>` | | has been discussed before. | | One `<w:bookmarkStart>` tag must match one `<w:bookmarkEnd>` tag. Otherwise, the file is corrupted. | 
 | `<w:bookmarkEnd>` | | has been discussed before. | | Same as above | 
