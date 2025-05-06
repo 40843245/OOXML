@@ -6294,6 +6294,50 @@ Skipped.
 
 Will not discussed in this article.
 
+### elements under `<w:document>`->`<w:body>`->`<w:bookmarkStart>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:bookmarkStart>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:bookmarkStart>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:id` | id of start point of bookmark | assign the id of start point of bookmark that in the tag | | |
+| `w:name` | name of start point of bookmark | assign the name of start point of bookmark that in the tag | | |
+| `w:colFirst` | *col*umn first | determines whether the index of the first column in this row which should be part of this bookmark. | zero-based index | |
+| `w:colLast` | *col*umn last | determines whether the index of the last column in this row which should be part of this bookmark. | zero-based index | |
+| `w:displacedByCustomXml` | | determines whether that the parent annotation's placement should be directly linked with the location of the physical presentation of a custom XML element in the document. | | This element ONLY takes effects when the custom XML element is block-level (i.e. surrounds an entire paragraph), as in this scenario the logical and physical placement of the annotation and custom XML element may differ. |
+
+##### `<w:document>`->`<w:body>`->`<w:bookmarkStart>`->`w:id`
+MUST be a positive integer that matches the id of end point of book mark (defined by `<w:bookmarkEnd>`).
+
+##### `<w:document>`->`<w:body>`->`<w:bookmarkStart>`->`w:name`
+MUST be a string.
+
+##### `<w:document>`->`<w:body>`->`<w:bookmarkStart>`->`w:colFirst`
+MUST be a boolean.
+
+##### `<w:document>`->`<w:body>`->`<w:bookmarkStart>`->`w:colLast`
+MUST be a boolean.
+
+##### `<w:document>`->`<w:body>`->`<w:bookmarkStart>`->`w:displacedByCustomXml`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:p>`->`<w:bookmarkEnd>`
+#### direct children of `<w:document>`->`<w:p>`->`<w:bookmarkEnd>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:bookmarkEnd>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:id` | id of end point of bookmark | assign the id of start point of bookmark that in the tag | | |
+| `w:displacedByCustomXml` | | determines whether that the parent annotation's placement should be directly linked with the location of the physical presentation of a custom XML element in the document. | | This element ONLY takes effects when the custom XML element is block-level (i.e. surrounds an entire paragraph), as in this scenario the logical and physical placement of the annotation and custom XML element may differ. |
+
+##### `<w:document>`->`<w:body>`->`<w:bookmarkEnd>`->`w:id`
+MUST be a positive integer that matches the id of start point of book mark (defined by `<w:bookmarkStart>`).
+
+##### `<w:document>`->`<w:body>`->`<w:bookmarkEnd>`->`w:displacedByCustomXml`
+MUST be a boolean.
+
 ##### elements in `w` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
@@ -6666,12 +6710,6 @@ Way to parsing it is similar to parsing `<w:pStyle>`.
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
 | `w:val` | `value` in native html5 | assign an Guid as value that determines what style of the list (that is inside `<w:listDef>` tag) will apply to | | |
-
-###### attribute in `<w:bookmarkStart>`
-| attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
-| :---------- | :----------- | :----- | :--- | :-- | :-- |
-| `w:id` | `id` in native html5 | id of start point of bookmark | assign the id of start point of bookmark that in the tag | | |
-| `w:name` | `name` in native html5 | name of start point of bookmark | assign the name of start point of bookmark that in the tag | | |
 
 ###### attribute in `<w:bookmarkEnd>`
 | attribute in xml tag | stands for (represented as attribute in tag in native xml or native html5)  | meaning | description | notes | notice |
