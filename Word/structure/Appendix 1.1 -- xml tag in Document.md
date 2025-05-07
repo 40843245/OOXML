@@ -6620,6 +6620,93 @@ see `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:funcPr>`->`<w:ctrlPr>
 #### attributes in `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:e>`->`<w:ctrlPr>`
 see `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:funcPr>`->`<w:ctrlPr>`
 
+### elements under `<w:document>`->`<w:body>`->`<w:ins>`->`<w:f>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:ins>`->`<w:f>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<w:fPr>` | *f*raction *pr*operties | specifies the properties of the fraction. | | |
+| `<w:num>` | *num*erator | specifies the numerator of the fraction. | | |
+| `<w:den>` | *den*ominator | specifies the denominator of the fraction. | | |
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:ins>`->`<w:f>`
+none
+
+### elements under `<w:document>`->`<w:body>`->`<w:ins>`->`<w:f>`->`<w:fPr>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:ins>`->`<w:f>`->`<w:fPr>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<w:type>` | | specifies the type of the fraction. | | |
+| `<w:ctrlPr>` | | has been discussed before. | | |
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:ins>`->`<w:f>`->`<w:fPr>`
+none
+
+### elements under `<w:document>`->`<w:body>`->`<w:ins>`->`<w:f>`->`<w:fPr>`->`<w:type>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:ins>`->`<w:f>`->`<w:fPr>`->`<w:type>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:ins>`->`<w:f>`->`<w:fPr>`->`<w:type>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | |
+
+##### `<w:document>`->`<w:body>`->`<w:ins>`->`<w:f>`->`<w:fPr>`->`<w:type>`->`w:val`
+MUST be one of predefined values in data type [`ST_FType`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_FType_topic_ID0EV2S1B.html#topic_ID0EV2S1B)
+
+which stands for fraction type.
+
+| values | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `bar` | | fraction with a horizontal fraction bar. | | |
+| `lin` | *lin*ear | fraction with slanted fraction bar, that takes up no additional vertical space. | | |
+| `noBar` | | stack object, which looks like a fraction with no fraction bar. | | |
+| `skw` | *sk*e*w*ed | fraction with diagonal fraction bar. | | |
+
+### elements under `<w:document>`->`<w:body>`->`<w:ins>`->`<w:f>`->`<w:fPr>`->`<w:num>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:ins>`->`<w:f>`->`<w:fPr>`->`<w:num>` element
+see `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:e>`
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:ins>`->`<w:f>`->`<w:fPr>`->`<w:num>`
+see `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:e>`
+
+### elements under `<w:document>`->`<w:body>`->`<w:ins>`->`<w:f>`->`<w:fPr>`->`<w:den>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:ins>`->`<w:f>`->`<w:fPr>`->`<w:den>` element
+see `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:e>`
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:ins>`->`<w:f>`->`<w:fPr>`->`<w:den>`
+see `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:e>`
+
+### elements under `<w:document>`->`<w:body>`->`<w:ins>`->`<w:eqArr>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:ins>`->`<w:eqArr>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<w:eqArrPr>` | *eq*uation *arr*ay *pr*operties | specifies the properties of the equation array. | | |
+| `<w:e>` | | has been discussed before. | | |
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:ins>`->`<w:eqArr>`
+none
+
+### elements under `<w:document>`->`<w:body>`->`<w:ins>`->`<w:eqArr>`->`<w:eqArrPr>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:ins>`->`<w:eqArr>`->`<w:eqArrPr>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<w:ctrlPr>` | | has been discussed before. | | |
+| `<w:baseJc>` | | has been discussed before. | | |
+| `<w:maxDist>` | | has been discussed before. | | |
+| `<w:objDist>` | | has been discussed before. | | |
+| `<w:rSp>` | | has been discussed before. | | |
+| `<w:rSpRule>` | | has been discussed before. | | |
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:ins>`->`<w:eqArr>`->`<w:eqArrPr>`
+none
+
+### elements under `<w:document>`->`<w:body>`->`<w:ins>`->`<w:eqArr>`->`<w:eqArrPr>`->`<w:ctrlPr>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:ins>`->`<w:eqArr>`->`<w:eqArrPr>`->`<w:ctrlPr>` element
+see `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:funcPr>`->`<w:ctrlPr>`
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:ins>`->`<w:eqArr>`->`<w:eqArrPr>`->`<w:ctrlPr>`
+see `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:funcPr>`->`<w:ctrlPr>`
+
 ##### elements in `w` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
