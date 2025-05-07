@@ -6691,11 +6691,11 @@ none
 | elements | meaning | description | notes | notice |
 | :---------- | :----- | :--- | :-- | :-- |
 | `<w:ctrlPr>` | | has been discussed before. | | |
-| `<w:baseJc>` | | has been discussed before. | | |
-| `<w:maxDist>` | | has been discussed before. | | |
-| `<w:objDist>` | | has been discussed before. | | |
-| `<w:rSp>` | | has been discussed before. | | |
-| `<w:rSpRule>` | | has been discussed before. | | |
+| `<w:baseJc>` | matrix base *j*ustifi*c*ation | specifies the justification of the matrix. | | |
+| `<w:maxDist>` | *max*imum *dist*ribution | determines whether to enable the maximum distribution in the equal array. | When it is enabled, the equation array is forced to be spaced to the maximum width of the containing element | |
+| `<w:objDist>` | *obj*ect *dist*ribution | determines whether to enable object distribution of the equal array. | When it is enabled, the contents of the equation array are forced to be spaced to the maximum width of the equation array object. | |
+| `<w:rSp>` | *r*ow *sp*acing | specifies the spacing between rows of the equal array. | The tag is NOT　ignored iff the value of `w:val` attribute in `<w:rSpRule>` is specified to `3`.  | |
+| `<w:rSpRule>` | *r*ow *sp*acing rule | specifies the rule of row spacing of the equal array.| | |
 
 #### attributes in `<w:document>`->`<w:body>`->`<w:ins>`->`<w:eqArr>`->`<w:eqArrPr>`
 none
@@ -6706,6 +6706,125 @@ see `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:funcPr>`->`<w:ctrlPr>
 
 #### attributes in `<w:document>`->`<w:body>`->`<w:ins>`->`<w:eqArr>`->`<w:eqArrPr>`->`<w:ctrlPr>`
 see `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:funcPr>`->`<w:ctrlPr>`
+
+### elements under `<w:document>`->`<w:body>`->`<w:ins>`->`<w:eqArr>`->`<w:eqArrPr>`->`<w:baseJc>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:ins>`->`<w:eqArr>`->`<w:eqArrPr>`->`<w:baseJc>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:ins>`->`<w:eqArr>`->`<w:eqArrPr>`->`<w:baseJc>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | |
+
+##### `<w:document>`->`<w:body>`->`<w:ins>`->`<w:eqArr>`->`<w:eqArrPr>`->`<w:baseJc>`->`w:val`
+MUST be in data type [`ST_YAlign`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_YAlign_topic_ID0E5CW1B.html#topic_ID0E5CW1B)
+
+### elements under `<w:document>`->`<w:body>`->`<w:ins>`->`<w:eqArr>`->`<w:eqArrPr>`->`<w:maxDist>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:ins>`->`<w:eqArr>`->`<w:eqArrPr>`->`<w:maxDist>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:ins>`->`<w:eqArr>`->`<w:eqArrPr>`->`<w:maxDist>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | |
+
+##### `<w:document>`->`<w:body>`->`<w:ins>`->`<w:eqArr>`->`<w:eqArrPr>`->`<w:maxDist>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:ins>`->`<w:eqArr>`->`<w:eqArrPr>`->`<w:objDist>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:ins>`->`<w:eqArr>`->`<w:eqArrPr>`->`<w:objDist>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:ins>`->`<w:eqArr>`->`<w:eqArrPr>`->`<w:objDist>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | |
+
+##### `<w:document>`->`<w:body>`->`<w:ins>`->`<w:eqArr>`->`<w:eqArrPr>`->`<w:objDist>`->`w:val`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:ins>`->`<w:eqArr>`->`<w:eqArrPr>`->`<w:rSp>`
+> [!IMPORTANT]
+> The tag is NOT　ignored iff the value of `w:val` attribute in `<w:rSpRule>` is specified to `3`.
+
+#### direct children of `<w:document>`->`<w:body>`->`<w:ins>`->`<w:eqArr>`->`<w:eqArrPr>`->`<w:rSp>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:ins>`->`<w:eqArr>`->`<w:eqArrPr>`->`<w:rSp>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | |
+
+##### `<w:document>`->`<w:body>`->`<w:ins>`->`<w:eqArr>`->`<w:eqArrPr>`->`<w:rSp>`->`w:val`
+MUST be a positive unsigned integer.
+
+### elements under `<w:document>`->`<w:body>`->`<w:ins>`->`<w:eqArr>`->`<w:eqArrPr>`->`<w:rSpRule>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:ins>`->`<w:eqArr>`->`<w:eqArrPr>`->`<w:rSpRule>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:ins>`->`<w:eqArr>`->`<w:eqArrPr>`->`<w:rSpRule>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | |
+
+##### `<w:document>`->`<w:body>`->`<w:ins>`->`<w:eqArr>`->`<w:eqArrPr>`->`<w:rSpRule>`->`w:val`
+MUST be in data type [`ST_SpacingRule`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_SpacingRule_topic_ID0E24U1B.html#topic_ID0E24U1B)
+
+### elements under `<w:document>`->`<w:body>`->`<w:ins>`->`<w:groupChr>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:ins>`->`<w:groupChr>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<w:groupChrPr>` | group *ch*a*r* *pr*operties | specifies the properties of the equation array. | | |
+| `<w:e>` | | has been discussed before. | | |
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:ins>`->`<w:groupChr>`
+none
+
+### elements under `<w:document>`->`<w:body>`->`<w:ins>`->`<w:groupChr>`->`<w:groupChrPr>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:ins>`->`<w:groupChr>`->`<w:groupChrPr>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<w:ctrlPr>` | | has been discussed before. | | |
+| `<w:vertJc>` | *vert*ical *j*ustifi*c*ation | specifies the vertical alignment. | | |
+| `<w:pos>` | *pos*ition | specifies the position of the group char.  | | |
+| `<w:chr>` | accent *ch*a*r* | specifies the [accent char code](https://github.com/40843245/Chars/blob/main/term/term%20list.md#accent-char).  | | |
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:ins>`->`<w:groupChr>`->`<w:groupChrPr>`
+none
+
+### elements under `<w:document>`->`<w:body>`->`<w:ins>`->`<w:groupChr>`->`<w:groupChrPr>`->`<w:vertJc>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:ins>`->`<w:groupChr>`->`<w:groupChrPr>`->`<w:vertJc>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:ins>`->`<w:groupChr>`->`<w:groupChrPr>`->`<w:vertJc>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | |
+
+##### `<w:document>`->`<w:body>`->`<w:ins>`->`<w:groupChr>`->`<w:groupChrPr>`->`<w:vertJc>`->`w:val`
+MUST be one of predefined value in data type [`ST_TopBot`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_TopBot_topic_ID0E6LV1B.html#topic_ID0E6LV1B)
+
+| values | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `top` | | | | |
+| `bot` | *bot*tom | | | |
+
+### elements under `<w:document>`->`<w:body>`->`<w:ins>`->`<w:groupChr>`->`<w:groupChrPr>`->`<w:pos>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:ins>`->`<w:groupChr>`->`<w:groupChrPr>`->`<w:pos>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:ins>`->`<w:groupChr>`->`<w:groupChrPr>`->`<w:pos>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | The default value is `top`. |
+
+##### `<w:document>`->`<w:body>`->`<w:ins>`->`<w:groupChr>`->`<w:groupChrPr>`->`<w:pos>`->`w:val`
+MUST be one of predefined value in data type [`ST_TopBot`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_TopBot_topic_ID0E6LV1B.html#topic_ID0E6LV1B)
+
+| values | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `top` | | | | |
+| `bot` | *bot*tom | | | |
 
 ##### elements in `w` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
