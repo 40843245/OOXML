@@ -6322,8 +6322,8 @@ MUST be a boolean.
 ##### `<w:document>`->`<w:body>`->`<w:bookmarkStart>`->`w:displacedByCustomXml`
 MUST be a boolean.
 
-### elements under `<w:document>`->`<w:p>`->`<w:bookmarkEnd>`
-#### direct children of `<w:document>`->`<w:p>`->`<w:bookmarkEnd>` element
+### elements under `<w:document>`->`<w:body>`->`<w:bookmarkEnd>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:bookmarkEnd>` element
 none
 
 #### attributes in `<w:document>`->`<w:body>`->`<w:bookmarkEnd>`
@@ -6337,6 +6337,288 @@ MUST be a positive integer that matches the id of start point of book mark (defi
 
 ##### `<w:document>`->`<w:body>`->`<w:bookmarkEnd>`->`w:displacedByCustomXml`
 MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:commentRangeStart>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:commentRangeStart>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:commentRangeStart>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:id` | | assign the id of start point of comment that in the tag | | |
+| `w:displacedByCustomXml` | | has been discussed before.| | has been discussed before. |
+
+##### `<w:document>`->`<w:body>`->`<w:commentRangeStart>`->`w:id`
+MUST be a positive integer that matches the id of end point of book mark (defined by `<w:commentRangeEnd>`).
+
+##### `<w:document>`->`<w:body>`->`<w:commentRangeStart>`->`w:displacedByCustomXml`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:commentRangeEnd>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:commentRangeEnd>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:commentRangeEnd>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:id` | | assign the id of end point of comment that in the tag | | |
+| `w:displacedByCustomXml` | | has been discussed before.| | has been discussed before. |
+
+##### `<w:document>`->`<w:body>`->`<w:commentRangeEnd>`->`w:id`
+MUST be a positive integer that matches the id of end point of book mark (defined by `<w:commentRangeStart>`).
+
+##### `<w:document>`->`<w:body>`->`<w:commentRangeEnd>`->`w:displacedByCustomXml`
+MUST be a boolean.
+
+### elements under `<w:document>`->`<w:body>`->`<w:ins>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:ins>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<w:bookmarkStart>` | | has been discussed before. | | |
+| `<w:bookmarkEnd>` | | has been discussed before. | | |
+| `<w:commentRangeStart>` | | has been discussed before. | | |
+| `<w:commentRangeEnd>` | | has been discussed before. | | |
+| | | | | |
+| `<w:moveFrom>` | | has been discussed before. | | |
+| `<w:moveTo>` | | has been discussed before. | | |
+| `<w:moveFromRangeStart>` | | has been discussed before. | | |
+| `<w:moveFromRangeEnd>` | | has been discussed before. | | |
+| `<w:moveToRangeStart>` | | has been discussed before. | | |
+| `<w:moveToRangeEnd>` | | has been discussed before. | | |
+| | | | | |
+| `<w:moveToRangeStart>` | | has been discussed before. | | |
+| `<w:moveToRangeEnd>` | | has been discussed before. | | |
+| | | | | |
+| `<w:permStart>` | | has been discussed before. | | |
+| `<w:permEnd>` | | has been discussed before. | | |
+| | | | | |
+| `<w:customXml>` | | has been discussed before. | | |
+| `<w:customXmlMoveFromRangeStart>` | | has been discussed before. | | |
+| `<w:customXmlMoveFromRangeEnd>` | | has been discussed before. | | |
+| `<w:customXmlMoveToRangeStart>` | | has been discussed before. | | |
+| `<w:customXmlMoveToRangeEnd>` | | has been discussed before. | | |
+| `<w:customXmlInsRangeStart>` | | has been discussed before. | | |
+| `<w:customXmlInsRangeEnd>` | | has been discussed before. | | |
+| `<w:customXmlDelRangeStart>` | | has been discussed before. | | |
+| `<w:customXmlDelRangeEnd>` | | has been discussed before. | | |
+| | | | | |
+| `<w:ins>` | | has been discussed before. | | |
+| `<w:del>` | | has been discussed before. | | |
+| | | | | |
+| `<w:proofErr>` | | has been discussed before. | | |
+| | | | | |
+| `<w:r>` (§2.3.2.23) | text *r*un | specifies the text run in this inserted paragraph. | | |
+| `<w:r>` | | has been discussed before. | | |
+| | | | | |
+| `<w:sdt>` | | has been discussed before. | | |
+| | | | | |
+| `<w:smartTag>` | | has been discussed before. | | |
+| | | | | |
+| `<w:oMath>` | | has been discussed before. | | |
+| `<w:oMathPara>` | | has been discussed before. | | |
+| | | | | |
+| `<w:func>` | *func*tion apply function | | | |
+| `<w:f>` | *f*raction function | | | |
+| `<w:eqArr>` | *eq*ual *arr*ay function | | | |
+| `<w:groupChr>` | group *ch*a*r* function | | | |
+| `<w:m>` | *m*atrix function | | | |
+| `<w:limUpp>` | *upp*er-*lim*it function | | | |
+| `<w:limLow>` | *low*er-*lim*it function | | | |
+| `<w:nary>` | *n*-*ary* operator function | | | |
+| `<w:acc>` | *acc*ent function | | | |
+| `<w:bar>` | bar function | | | |
+| `<w:d>` | *d*elimiter function | | | |
+| `<w:phant>` | *phant*om function | | | |
+| `<w:rad>` | *rad*ical function | | | |
+| `<w:sSub>` | *sub*script Function | | | |
+| `<w:sPre>` | *pre*-sub-superscript function | | | |
+| `<w:sSup>` | *sup*erscript function | | | |
+| `<w:sSubSup>` | *sub*-*sup*erscript Function | | | |
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:ins>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:id` | | specifies the uid of the annotation. | | |
+| `w:author` | | specifies the author of the annotation. | | |
+| `w:date` | | specifies the date information of the annotation. | | |
+
+##### `<w:document>`->`<w:body>`->`<w:ins>`->`w:id`
+MUST be a positive integer.
+
+##### `<w:document>`->`<w:body>`->`<w:ins>`->`w:author`
+MUST be a string.
+
+##### `<w:document>`->`<w:body>`->`<w:ins>`->`w:date`
+MUST be in data type [`ST_DateTime`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_DateTime_topic_ID0EBXL2.html#topic_ID0EBXL2),
+
+which stands for `Standard Date and Time Storage Format`.
+
+### elements under `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<w:funcPr>` | *func*tion *pr*operties | specifies the properties of the function. | | |
+| `<w:fName>` | *f*unction name | specifies the name of the function. | | |
+| `<w:e>` | base argument | specifies the name of the function. | | |
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`
+none
+
+### elements under `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:funcPr>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:funcPr>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<w:ctrlPr>` | *c*on*tr*ol* *pr*operties | specifies the properties of control characters (i.e. object characters that cannot be selected.) | | |
+| `<w:fName>` | *f*unction name | specifies the name of the function. | | |
+| `<w:e>` | base argument | specifies the name of the function. | | |
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:funcPr>`
+none
+
+### elements under `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:funcPr>`->`<w:ctrlPr>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:funcPr>`->`<w:ctrlPr>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<w:rPr>` | | has been discussed before. | | |
+| `<w:ins>` (§2.13.5.17) | *ins*erted math control character | specifies that the Office Open XML Math control character which contains this element was inserted and tracked as a revision. | | |
+| `<w:del>` (§2.13.5.15) | *del*eted math control character | specifies that the Office Open XML Math control character which contains this element was deleted and tracked as a revision. | | |
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:funcPr>`->`<w:ctrlPr>`
+none
+
+### elements under `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:funcPr>`->`<w:ctrlPr>`->`<w:ins>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:funcPr>`->`<w:ctrlPr>`->`<w:ins>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<w:rPr>` (§2.3.2.26) | previous *r*un *pr*operties | specifies a set of properties of the run which should be attributed to a revision by a particular author and at a particular time.  | | |
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:funcPr>`->`<w:ctrlPr>`->`<w:ins>`
+see attributes of `<w:document>`->`<w:body>`->`<w:ins>`
+
+### elements under `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:funcPr>`->`<w:ctrlPr>`->`<w:ins>`->`<w:rPr>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:funcPr>`->`<w:ctrlPr>`->`<w:ins>`->`<w:rPr>` element
+see `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:rPr>`
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:funcPr>`->`<w:ctrlPr>`->`<w:ins>`->`<w:rPr>`
+see `<w:document>`->`<w:body>`->`<w:p>`->`<w:r>`->`<w:rPr>`
+
+### elements under `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:funcPr>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:funcPr>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<w:ctrlPr>` | *func*tion *pr*operties | specifies the properties of the function. | | |
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:funcPr>`
+none
+
+### elements under `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:fName>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:fName>` element
+see direct children of `<w:document>`->`<w:body>`->`<w:ins>`
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:fName>`
+none
+
+### elements under `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:e>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:e>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<w:argPr>` | *arg*ument *pr*operties | specifies the properties of arguments | | |
+| `<w:ctrlPr>` | | *c*on*tr*ol* *pr*operties | specifies the properties of control characters (i.e. object characters that cannot be selected.) | | | | | |
+| | | | | |
+| `<w:bookmarkStart>` | | has been discussed before. | | |
+| `<w:bookmarkEnd>` | | has been discussed before. | | |
+| `<w:commentRangeStart>` | | has been discussed before. | | |
+| `<w:commentRangeEnd>` | | has been discussed before. | | |
+| | | | | |
+| `<w:moveFrom>` | | has been discussed before. | | |
+| `<w:moveTo>` | | has been discussed before. | | |
+| `<w:moveFromRangeStart>` | | has been discussed before. | | |
+| `<w:moveFromRangeEnd>` | | has been discussed before. | | |
+| `<w:moveToRangeStart>` | | has been discussed before. | | |
+| `<w:moveToRangeEnd>` | | has been discussed before. | | |
+| | | | | |
+| `<w:moveToRangeStart>` | | has been discussed before. | | |
+| `<w:moveToRangeEnd>` | | has been discussed before. | | |
+| | | | | |
+| `<w:permStart>` | | has been discussed before. | | |
+| `<w:permEnd>` | | has been discussed before. | | |
+| | | | | |
+| `<w:customXml>` | | has been discussed before. | | |
+| `<w:customXmlMoveFromRangeStart>` | | has been discussed before. | | |
+| `<w:customXmlMoveFromRangeEnd>` | | has been discussed before. | | |
+| `<w:customXmlMoveToRangeStart>` | | has been discussed before. | | |
+| `<w:customXmlMoveToRangeEnd>` | | has been discussed before. | | |
+| `<w:customXmlInsRangeStart>` | | has been discussed before. | | |
+| `<w:customXmlInsRangeEnd>` | | has been discussed before. | | |
+| `<w:customXmlDelRangeStart>` | | has been discussed before. | | |
+| `<w:customXmlDelRangeEnd>` | | has been discussed before. | | |
+| | | | | |
+| `<w:ins>` | | has been discussed before. | | |
+| `<w:del>` | | has been discussed before. | | |
+| | | | | |
+| `<w:proofErr>` | | has been discussed before. | | |
+| | | | | |
+| `<w:r>` | | has been discussed before. | | |
+| | | | | |
+| `<w:sdt>` | | has been discussed before. | | |
+| | | | | |
+| `<w:smartTag>` | | has been discussed before. | | |
+| | | | | |
+| `<w:oMath>` | | has been discussed before. | | |
+| `<w:oMathPara>` | | has been discussed before. | | |
+| | | | | |
+| `<w:func>` | | has been discussed before. | | | 
+| `<w:f>` | | has been discussed before. | | | 
+| `<w:eqArr>` | | has been discussed before. | | | 
+| `<w:groupChr>` | | has been discussed before. | | |
+| `<w:m>` | | has been discussed before. | | | 
+| `<w:limUpp>` | | has been discussed before. | | |
+| `<w:limLow>` | | has been discussed before. | | | 
+| `<w:nary>` | | has been discussed before. | | |
+| `<w:acc>` | | has been discussed before. | | |
+| `<w:bar>` | | has been discussed before. | | |
+| `<w:d>` | | has been discussed before. | | |
+| `<w:phant>` | | has been discussed before. | | |
+| `<w:rad>` | | has been discussed before. | | |
+| `<w:sSub>` | | has been discussed before. | | |
+| `<w:sPre>` | | has been discussed before. | | |
+| `<w:sSup>` | | has been discussed before. | | |
+| `<w:sSubSup>` | | has been discussed before. | | |
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:e>`
+none
+
+### elements under `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:e>`->`<w:argPr>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:e>`->`<w:argPr>` element
+| elements | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `<w:argSz>` | *arg*ument *s*i*z*e | specifies the number of arguments | | |
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:e>`->`<w:argPr>`
+none
+
+### elements under `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:e>`->`<w:argPr>`->`<w:argSz>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:e>`->`<w:argPr>`->`<w:argSz>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:e>`->`<w:argPr>`->`<w:argSz>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | |
+
+##### `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:e>`->`<w:argPr>`->`<w:argSz>`->`w:val`
+MUST be in data type [`ST_Integer2`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_Integer2_topic_ID0EGCT1B.html#topic_ID0EGCT1B)
+
+which is between -2 and 2 (BOTH inclusive).
+
+### elements under `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:e>`->`<w:ctrlPr>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:e>`->`<w:ctrlPr>` element
+see `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:funcPr>`->`<w:ctrlPr>`
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:e>`->`<w:ctrlPr>`
+see `<w:document>`->`<w:body>`->`<w:ins>`->`<w:func>`->`<w:funcPr>`->`<w:ctrlPr>`
 
 ##### elements in `w` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
