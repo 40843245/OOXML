@@ -6826,6 +6826,20 @@ MUST be one of predefined value in data type [`ST_TopBot`](https://c-rex.net/sam
 | `top` | | | | |
 | `bot` | *bot*tom | | | |
 
+### elements under `<w:document>`->`<w:body>`->`<w:ins>`->`<w:groupChr>`->`<w:groupChrPr>`->`<w:chr>`
+#### direct children of `<w:document>`->`<w:body>`->`<w:ins>`->`<w:groupChr>`->`<w:groupChrPr>`->`<w:chr>` element
+none
+
+#### attributes in `<w:document>`->`<w:body>`->`<w:ins>`->`<w:groupChr>`->`<w:groupChrPr>`->`<w:chr>`
+| attributes | meaning | description | notes | notice |
+| :---------- | :----- | :--- | :-- | :-- |
+| `w:val` | | | | The default value is `top`. |
+
+##### `<w:document>`->`<w:body>`->`<w:ins>`->`<w:groupChr>`->`<w:groupChrPr>`->`<w:chr>`->`w:val`
+MUST be one of predefined value in data type [`ST_Char`](https://c-rex.net/samples/ooxml/e1/Part4/OOXML_P4_DOCX_ST_Char_topic_ID0E1US1B.html#topic_ID0E1US1B)
+
+which is a character.
+
 ##### elements in `w` namespace
 | element in xml tag | stands for (represented as tag in native xml or native html5)  | meaning | description | notes | notice |
 | :---------- | :----------- | :----- | :--- | :-- | :-- |
